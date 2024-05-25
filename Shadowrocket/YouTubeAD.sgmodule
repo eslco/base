@@ -1,0 +1,39 @@
+#!url=https://raw.githubusercontent.com/254c/Mods/Shadowrocket/YouTubeAD.sgmodule
+#!此版本由 https://github.com/254c 维护并更新 (updating)
+#!源模块URL //https://whatshub.top/module/YouTubeAd.sgmodule
+#!name = YouTubeNoAD
+#!desc =PiP+Ambient Mode (Modules Updating)
+#!original author = Maasea 
+
+#!more Shadowrocket modules at homepage=https://whatshub.top
+#!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
+
+[URL Rewrite]
+# 覆盖更多广告请求
+(^https?:\/\/[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)&ctier=L(&.+?),ctier,(.+) $1$2$3 302
+^https?:\/\/[\w-]+\.googlevideo\.com\/(?!(dclk_video_ads|videoplayback\?)).+&oad _ reject-200
+^https?:\/\/[\w-]+\.googlevideo\.com\/.*&pltype=ad&.*$ _ reject-200
+^https?:\/\/(www|s)\.youtube\.com\/api\/stats\/ads _ reject-200
+^https?:\/\/(www|s)\.youtube\.com\/(pagead|ptracking) _ reject-200
+^https?:\/\/(www|s)\.youtube\.com\/.*ad_break.* _ reject-200
+^https?:\/\/(www|s)\.youtube\.com\/.*ad_.+?\.js _ reject-200
+^https?:\/\/s\.youtube\.com\/api\/stats\/qoe\?adcontext _ reject-200
+^https?:\/\/s\.youtube\.com\/api\/stats\/adsense.* _ reject-200
+^https?:\/\/s\.youtube\.com\/api\/stats\/gfp_.* _ reject-200
+^https?:\/\/(www|s)\.youtube\.com\/get_midroll _ reject-200
+
+# 新增针对 doubleclick, ytimg 和 googletagmanager 的拦截规则
+^https?:\/\/ad\.doubleclick\.net\/.* _ reject-200
+^https?:\/\/[\w-]+\.doubleclick\.net\/.* _ reject-200
+^https?:\/\/[\w-]+\.ytimg\.com\/.*ad.* _ reject-200
+^https?:\/\/www\.googletagmanager\.com\/.* _ reject-200
+
+[Script]
+# 验证并更新脚本路径
+youtube.response.beta=type=http-response,pattern=^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting),requires-body=1,binary-mode=1,script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.response.beta.js
+youtube.request.beta=type=http-request,pattern=^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence),requires-body=1,binary-mode=1,script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.request.beta.js
+
+[MITM]
+# 确保MITM设置的完整性和准确性
+hostname = %APPEND% -redirector*.googlevideo.com,*.googlevideo.com,www.youtube.com,s.youtube.com,youtubei.googleapis.com,*.doubleclick.net,*.ytimg.com,www.googletagmanager.com
+
