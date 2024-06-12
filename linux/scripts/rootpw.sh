@@ -34,8 +34,8 @@ sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak || { echo "Failed to backu
 # 如果备份失败，则输出错误信息并退出脚本。
 
 # 修改 SSH 配置以允许 root 登录和启用密码认证
-sudo sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin yes/g' /etc/ssh/sshd_config || { echo "Failed to update PermitRootLogin"; exit 1; }
-sudo sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication yes/g' /etc/ssh/sshd_config || { echo "Failed to update PasswordAuthentication"; exit 1; }
+sudo sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin Yes/g' /etc/ssh/sshd_config || { echo "Failed to update PermitRootLogin"; exit 1; }
+sudo sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication Yes/g' /etc/ssh/sshd_config || { echo "Failed to update PasswordAuthentication"; exit 1; }
 # 使用sed命令编辑SSH配置文件，启用PermitRootLogin（允许root登录）和PasswordAuthentication（启用密码认证）。
 # 如果修改失败，则输出错误信息并退出脚本。
 
@@ -44,7 +44,7 @@ if [ -f /etc/os-release ]; then
     . /etc/os-release
     if [ "$ID" == "ubuntu" ]; then
         # 修改 ChallengeResponseAuthentication 为 yes（如果存在）
-        sudo sed -i 's/^#\?ChallengeResponseAuthentication.*/ChallengeResponseAuthentication yes/g' /etc/ssh/sshd_config || { echo "Failed to update ChallengeResponseAuthentication"; exit 1; }
+        sudo sed -i 's/^#\?ChallengeResponseAuthentication.*/ChallengeResponseAuthentication Yes/g' /etc/ssh/sshd_config || { echo "Failed to update ChallengeResponseAuthentication"; exit 1; }
     fi
 fi
 # 检查系统是否为Ubuntu。
@@ -67,4 +67,3 @@ echo "Password changed successfully and SSH configuration updated."
 ## 如果系统是Ubuntu，还启用ChallengeResponseAuthentication。
 ## 重启SSH服务。
 ## 输出操作成功的信息。
-#
