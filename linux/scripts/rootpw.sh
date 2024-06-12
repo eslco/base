@@ -33,10 +33,11 @@ sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak || { echo "Failed to backu
 # 备份当前的SSH配置文件/etc/ssh/sshd_config到/etc/ssh/sshd_config.bak。
 # 如果备份失败，则输出错误信息并退出脚本。
 
-# 修改 SSH 配置以允许 root 登录和启用密码认证
+# 修改 SSH 配置以允许 root 登录和启用密码认证，公钥登录认证。
 sudo sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin Yes/g' /etc/ssh/sshd_config || { echo "Failed to update PermitRootLogin"; exit 1; }
 sudo sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication Yes/g' /etc/ssh/sshd_config || { echo "Failed to update PasswordAuthentication"; exit 1; }
-# 使用sed命令编辑SSH配置文件，启用PermitRootLogin（允许root登录）和PasswordAuthentication（启用密码认证）。
+sudo sed -i 's/^#\?PubkeyAuthentication.*/PubkeyAuthentication Yes/g' /etc/ssh/sshd_config || { echo "Failed to open PubkeyAuthentication"; exit 1;}
+# 使用sed命令编辑SSH配置文件，启用PermitRootLogin（允许root登录）和PasswordAuthentication（启用密码认证）,启用 PubkeyAuthentication(公钥登录认证)。
 # 如果修改失败，则输出错误信息并退出脚本。
 
 # 检查系统是否为 Ubuntu
@@ -63,7 +64,7 @@ echo "Password changed successfully and SSH configuration updated."
 ## 提示用户输入和确认新root密码。
 ## 更新root密码。
 ## 备份SSH配置文件。
-## 修改SSH配置以允许root登录并启用密码认证。
+## 修改SSH配置以允许root登录并启用密码认证，公钥登录认证。
 ## 如果系统是Ubuntu，还启用ChallengeResponseAuthentication。
 ## 重启SSH服务。
 ## 输出操作成功的信息。
