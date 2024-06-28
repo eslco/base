@@ -19,14 +19,9 @@ AND,((DOMAIN,youtubei.googleapis.com), (PROTOCOL,UDP)),REJECT
 ^https?:\/\/(www|s)\.youtube\.com\/(pagead|ptracking) _ reject-200
 ^https?:\/\/s\.youtube\.com\/api\/stats\/qoe\?adcontext _ reject-200
 # 覆盖更多广告请求
-#(^https?:\/\/[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)&ctier=L(&.+?),ctier,(.+) $1$2$3 302
-#^https?:\/\/[\w-]+\.googlevideo\.com\/(?!(dclk_video_ads|videoplayback\?)).+&oad _ reject-200
 ^https?:\/\/[\w-]+\.googlevideo\.com\/.*&pltype=ad&.*$ _ reject-200
-#^https?:\/\/(www|s)\.youtube\.com\/api\/stats\/ads _ reject-200
-#^https?:\/\/(www|s)\.youtube\.com\/(pagead|ptracking) _ reject-200
 ^https?:\/\/(www|s)\.youtube\.com\/.*ad_break.* _ reject-200
 ^https?:\/\/(www|s)\.youtube\.com\/.*ad_.+?\.js _ reject-200
-#^https?:\/\/s\.youtube\.com\/api\/stats\/qoe\?adcontext _ reject-200
 ^https?:\/\/s\.youtube\.com\/api\/stats\/adsense.* _ reject-200
 ^https?:\/\/s\.youtube\.com\/api\/stats\/gfp_.* _ reject-200
 ^https?:\/\/(www|s)\.youtube\.com\/get_midroll _ reject-200
