@@ -35,7 +35,7 @@ AND,((DOMAIN,youtubei.googleapis.com), (PROTOCOL,UDP)),REJECT
 ^https?:\/\/ad\.doubleclick\.net\/.* _ reject-200
 ^https?:\/\/[\w-]+\.doubleclick\.net\/.* _ reject-200
 ^https?:\/\/[\w-]+\.ytimg\.com\/.*ad.* _ reject-200
-^https?:\/\/www\.googletagmanager\.com\/.* _ reject-200
+#^https?:\/\/www\.googletagmanager\.com\/.* _ reject-200
 
 [Script]
 # 验证并更新脚本路径
@@ -46,4 +46,4 @@ youtube.response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.c
 
 [MITM]
 # 确保MITM设置的完整性和准确性
-hostname = %APPEND% -redirector*.googlevideo.com,*.googlevideo.com,www.youtube.com,s.youtube.com,youtubei.googleapis.com,*.doubleclick.net,*.ytimg.com,www.googletagmanager.com
+hostname = %APPEND% -redirector*.googlevideo.com,*.googlevideo.com,www.youtube.com,s.youtube.com,youtubei.googleapis.com,*.doubleclick.net,*.ytimg.com
