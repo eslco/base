@@ -4,6 +4,7 @@
 #!name = YouTubeNoAD
 #!desc = PiP+Ambient Mode (Updating)
 #!Credit : Maasea 
+#!Original_Repo:!https://github.com/Maasea/sgmodule/blob/master/YouTube.Enhance.sgmodule
 
 #!more Shadowrocket modules at homepage=https://whatshub.top
 #!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
@@ -11,6 +12,7 @@
 [Rule]
 AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)),REJECT
 AND,((DOMAIN,youtubei.googleapis.com), (PROTOCOL,UDP)),REJECT
+AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)),REJECT-DROP
 
 [URL Rewrite]
 (^https?:\/\/[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)&ctier=L(&.+?),ctier,(.+) $1$2$3 302
@@ -18,6 +20,13 @@ AND,((DOMAIN,youtubei.googleapis.com), (PROTOCOL,UDP)),REJECT
 ^https?:\/\/(www|s)\.youtube\.com\/api\/stats\/ads _ reject-200
 ^https?:\/\/(www|s)\.youtube\.com\/(pagead|ptracking) _ reject-200
 ^https?:\/\/s\.youtube\.com\/api\/stats\/qoe\?adcontext _ reject-200
+
+# 投屏播放AD
+(https?:\/\/[\w-]+.googlevideo.com\/.+?)(&ctier=L|\/ctier\/L)((&|\/).+?)(,ctier|%2Cctier)((,|%2C).+) $1$3$6 302
+
+# Video初始化AD
+^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad _ reject-200
+
 # 覆盖更多广告请求
 ^https?:\/\/[\w-]+\.googlevideo\.com\/.*&pltype=ad&.*$ _ reject-200
 ^https?:\/\/(www|s)\.youtube\.com\/.*ad_break.* _ reject-200
@@ -38,6 +47,9 @@ youtube.request = type=http-request,pattern=^https:\/\/youtubei\.googleapis\.com
 youtube.response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch),requires-body=1,max-size=-1,binary-body-mode=1,engine={{{脚本执行引擎}}},script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.response.preview.js,argument="{"lyricLang":"{{{歌词翻译语言}}}","captionLang":"{{{字幕翻译语言}}}","blockUpload":{{{屏蔽上传按钮}}},"blockImmersive":{{{屏蔽选段按钮}}},"debug":{{{启用调试模式}}}}"
 #youtube.response.beta=type=http-response,pattern=^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting),requires-body=1,binary-mode=1,script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.response.beta.js
 #youtube.request.beta=type=http-request,pattern=^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence),requires-body=1,binary-mode=1,script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.request.beta.js
+
+[Map Local]
+^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data-type=text data=""
 
 [MITM]
 # 确保MITM设置的完整性和准确性
