@@ -2,8 +2,8 @@
 #!此版本由 https://github.com/254c 维护并更新 (updating as in 20240628)
 #!源模块URL //https://whatshub.top/module/YouTubeAd.sgmodule
 #!name = YouTubeNoAD
-#!desc =PiP+Ambient Mode (Updating)
-#!original author = Maasea 
+#!desc = PiP+Ambient Mode (Updating)
+#!Credit : Maasea 
 
 #!more Shadowrocket modules at homepage=https://whatshub.top
 #!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
@@ -41,4 +41,4 @@ youtube.response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.c
 
 [MITM]
 # 确保MITM设置的完整性和准确性
-hostname = %APPEND% -redirector*.googlevideo.com,*.googlevideo.com,www.youtube.com,s.youtube.com,youtubei.googleapis.com,*.doubleclick.net,*.ytimg.com
+hostname = %APPEND% -redirector*.googlevideo.com,*.googlevideo.com,s.youtube.com,youtubei.googleapis.com,*.doubleclick.net,*.ytimg.com
