@@ -39,7 +39,8 @@ AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)),REJECT-DROP
 ^https?:\/\/ad\.doubleclick\.net\/.* _ reject-200
 ^https?:\/\/[\w-]+\.doubleclick\.net\/.* _ reject-200
 ^https?:\/\/[\w-]+\.ytimg\.com\/.*ad.* _ reject-200
-#^https?:\/\/www\.googletagmanager\.com\/.* _ reject-200
+## googletag個性化標籤 按需開啟
+^https?:\/\/www\.googletagmanager\.com\/.* _ reject-img
 
 [Script]
 # 验证并更新脚本路径
