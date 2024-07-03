@@ -21,7 +21,7 @@
 AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)),REJECT
 AND,((DOMAIN,youtubei.googleapis.com), (PROTOCOL,UDP)),REJECT
 AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)),REJECT-DROP
-URL-REGEX,(^https?:\/\/([\w-]+)\.googlevideo\.com\/initplayback(\?.*oad=.+)$,reject-img
+URL-REGEX,(^https?:\/\/([\w-]+)\.googlevideo\.com\/initplayback(\?.*oad=.+)$,reject-200
 
 [URL Rewrite]
 (^https?:\/\/[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)&ctier=L(&.+?),ctier,(.+) $1$2$3 302
@@ -34,7 +34,7 @@ URL-REGEX,(^https?:\/\/([\w-]+)\.googlevideo\.com\/initplayback(\?.*oad=.+)$,rej
 (https?:\/\/[\w-]+.googlevideo.com\/.+?)(&ctier=L|\/ctier\/L)((&|\/).+?)(,ctier|%2Cctier)((,|%2C).+) $1$3$6 302
 
 # 首頁初始化AD 适用非Surge用户
-^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad _ reject-200
+^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback(\?.*oad=.*)?$ _ reject-200
 
 # 覆蓋更多廣告請求
 ^https?:\/\/[\w-]+\.googlevideo\.com\/.*&pltype=ad&.*$ _ reject-200
