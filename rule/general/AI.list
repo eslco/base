@@ -1,6 +1,6 @@
 #! Name: AI
 #! Author: 254c
-#! repo:=https://raw.githubusercontent.com/254c/iconf/master/rule/general/ai.list
+#! repo:=https://raw.githubusercontent.com/254c/iconf/master/rule/general/AI.list
 #! for study or research use only
 DOMAIN,cdn.openai.com
 DOMAIN,api.statsig.com
