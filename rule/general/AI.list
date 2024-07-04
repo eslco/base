@@ -47,6 +47,9 @@ DOMAIN-SUFFIX,openaiapi-site.azureedge.net
 #Others
 DOMAIN,bard.google.com
 DOMAIN,ai.google.dev
+DOMAIN,browser-intake-datadoghq.com
+DOMAIN,openaicomproductionae4b.blob.core.windows.net
+DOMAIN,production-openaicom-storage.azureedge.net
 DOMAIN,gemini.google.com
 DOMAIN-SUFFIX,googleapis.com
 DOMAIN-SUFFIX,opendns.com
@@ -61,9 +64,7 @@ DOMAIN-SUFFIX,statsigapi.net
 DOMAIN-SUFFIX,featuregates.org
 DOMAIN-SUFFIX,turn.livekit.cloud
 DOMAIN-SUFFIX,aistudio.google.com
-DOMAIN,browser-intake-datadoghq.com
-DOMAIN,openaicomproductionae4b.blob.core.windows.net
-DOMAIN,production-openaicom-storage.azureedge.net
+
 #IP-CIDR
 IP-CIDR,24.199.123.28/32
 IP-CIDR,64.23.132.171/32
