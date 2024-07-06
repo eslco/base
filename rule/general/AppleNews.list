@@ -5,14 +5,13 @@
 # DOMAIN: x
 # USER-AGENT: x
 # TOTAL: x
-USER-AGENT,*AssistantServices*,Proxy
+USER-AGENT,*AssistantServices*
 # Apple Optimizer
-DOMAIN-SUFFIX,ls.apple.com,Proxy
-PROCESS-NAME,News,Proxy
-USER-AGENT,AppleNews*,Proxy
-USER-AGENT,News*,Proxy
-DOMAIN,apple.comscoreresearch.com,Proxy
+PROCESS-NAME,News
+DOMAIN-SUFFIX,ls.apple.com
 DOMAIN,gspe1-ssl.ls.apple.com
+DOMAIN,apple.comscoreresearch.com
 DOMAIN,news-client-search.apple.com
+USER-AGENT,News*
 USER-AGENT,AppleNews*
 USER-AGENT,com.apple.news*
