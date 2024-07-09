@@ -1,0 +1,14 @@
+# Name: Bitwarden.list
+# Author: 254c esinco
+# Update as in 2024.07.09
+
+DOMAIN-SUFFIX,bitwarden.eu
+DOMAIN-SUFFIX,bitwarden.com
+DOMAIN-SUFFIX,vault.bitwarden.eu
+DOMAIN-SUFFIX,vault.bitwarden.com
+DOMAIN-KEYWORD,bitwarden
+USER-AGENT,Bitwarden
+IP-CIDR,151.101.1.91/32,no-resolve
+IP-CIDR,151.101.65.91/32,no-resolve
+IP-CIDR,151.101.129.91/32,no-resolve
+IP-CIDR,151.101.193.91/32,no-resolve
