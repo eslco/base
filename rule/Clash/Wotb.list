@@ -1,6 +1,7 @@
-# Name: wotblitz
+# Name: Wotb.list
 # Author: 254c
 # Update: 20240717
+
 
 DOMAIN-SUFFIX,tmsis.wotblitz.asia
 DOMAIN-SUFFIX,asia.wargaming.net
@@ -38,6 +39,9 @@ DOMAIN-SUFFIX,gamegrids.net
 DOMAIN-SUFFIX,wotb.app
 DOMAIN-SUFFIX,wotblitz.com
 DOMAIN-SUFFIX,wargaming.net
+DOMAIN-KEYWORD,wotb
+DOMAIN-KEYWORD,wotblitz
+DOMAIN-KEYWORD,wargaming
 IP-CIDR,92.223.16.0/24
 IP-CIDR,92.223.78.0/24
 IP-CIDR,92.223.84.0/24
