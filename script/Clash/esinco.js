@@ -13,9 +13,9 @@ const domesticNameservers = [
 ];
 // remote DNS servers
 const foreignNameservers = [
-  "https://1.1.1.1/dns-query", // Cloudflare(main)
-  "https://1.0.0.1/dns-query", // Cloudflare(back)
-  "https://unfiltered.adguard-dns.com/dns-query" //Adguard DNS
+  "https://1.0.0.1/dns-query", // Cloudflare(main)
+  "https://security.cloudflare-dns.com/dns-query", // Cloudflare(back)
+  //"https://unfiltered.adguard-dns.com/dns-query" //Adguard DNS
   //"https://dns.adguard-dns.com/dns-query", //Adguard DNS
   //"https://dnns.google/dns-query",//Google DNS
   //"https://208.67.222.222/dns-query", // OpenDNS(main)
@@ -202,14 +202,6 @@ function main(config) {
       "include-all": true,
       icon: "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/adjust.svg",
     },
-     {
-      ...groupBaseOption,
-      name: "Gaming",
-      type: "select",
-      proxies: ["FallBack", "LB-Hashing", "LB-Robin"],
-      "include-all": true,
-      icon: "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/adjust.svg",
-    },
     {
       ...groupBaseOption,
       name: "URLTest",
@@ -240,6 +232,14 @@ function main(config) {
       strategy: "round-robin",
       "include-all": true,
       icon: "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/balance.svg",
+    }, 
+    {
+      ...groupBaseOption,
+      name: "Gaming",
+      type: "select",
+      proxies: ["Proxy","FallBack", "LB-Hashing", "LB-Robin"],
+      "include-all": true,
+      icon: "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/adjust.svg",
     },
     {
       ...groupBaseOption,
