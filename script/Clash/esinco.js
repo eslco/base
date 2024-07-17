@@ -54,6 +54,12 @@ const ruleProviderCommon = {
 };
 // 规则集配置
 const ruleProviders = {
+    "Wotb": {
+    ...ruleProviderCommon,
+    behavior: "domain",
+    url: "https://raw.githubusercontent.com/254c/base/main/rule/Clash/Wotb.list",
+    path: "./rulesets/254c/Wotb.yaml",
+  },
   reject: {
     ...ruleProviderCommon,
     behavior: "domain",
@@ -136,7 +142,7 @@ const ruleProviders = {
 // 规则
 const rules = [
   //254c Rule
-  "DOMAIN-SUFFIX,
+  "RULE-SET,Wotb,Gaming", //Wotb Wargaming.net
   // 自定义规则
   "DOMAIN-SUFFIX,googleapis.cn,Proxy", // Google服务
   "DOMAIN-SUFFIX,gstatic.com,Proxy", // Google静态资源
