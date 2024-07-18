@@ -2,12 +2,18 @@
 # Author: 254c
 # Update: 20240717
 
-
 DOMAIN-SUFFIX,tmsis.wotblitz.asia
 DOMAIN-SUFFIX,asia.wargaming.net
 DOMAIN-SUFFIX,login0.wotblitz.asia
 DOMAIN-SUFFIX,login1.wotblitz.asia
 DOMAIN-SUFFIX,login2.wotblitz.asia
+DOMAIN-SUFFIX,login3.wotblitz.asia
+DOMAIN-SUFFIX,login4.wotblitz.asia
+DOMAIN-SUFFIX,login0.wotblitz.eu
+DOMAIN-SUFFIX,login1.wotblitz.eu
+DOMAIN-SUFFIX,login2.wotblitz.eu
+DOMAIN-SUFFIX,login3.wotblitz.eu
+DOMAIN-SUFFIX,login4.wotblitz.eu
 DOMAIN-SUFFIX,events.appsflyer.com
 DOMAIN-SUFFIX,nts.gamegrids.net
 DOMAIN-SUFFIX,api.gamegrids.net
@@ -27,21 +33,21 @@ IP-CIDR,92.223.16.81/32
 IP-CIDR,92.223.16.144/32
 IP-CIDR,92.223.16.145/32
 IP-CIDR,92.223.17.82/32
-IP-CIDR,92.223.29.19/32
-IP-CIDR,92.223.29.22/32
-IP-CIDR,92.223.29.27/32
 IP-CIDR,92.223.78.30/32
 IP-CIDR,95.85.94.205/32
 IP-CIDR,13.35.122.38/32
 IP-CIDR,13.35.122.68/32
 IP-CIDR,18.67.93.124/32
 
+DOMAIN-SUFFIX,wotb.app
 DOMAIN-SUFFIX,wgcdn.co
 DOMAIN-SUFFIX,gamegrids.net
-DOMAIN-SUFFIX,wotb.app
 DOMAIN-SUFFIX,wotblitz.com
+DOMAIN-SUFFIX,wotblitz.asia
+DOMAIN-SUFFIX,wotblitz.eu
 DOMAIN-SUFFIX,wargaming.net
 DOMAIN-KEYWORD,wotb
+DOMAIN-KEYWORD,wgcdn
 DOMAIN-KEYWORD,wotblitz
 DOMAIN-KEYWORD,wargaming
 IP-CIDR,92.223.16.0/24
