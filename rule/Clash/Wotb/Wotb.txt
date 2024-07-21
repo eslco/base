@@ -4,16 +4,6 @@
 
 DOMAIN-SUFFIX,tmsis.wotblitz.asia
 DOMAIN-SUFFIX,asia.wargaming.net
-DOMAIN-SUFFIX,login0.wotblitz.asia
-DOMAIN-SUFFIX,login1.wotblitz.asia
-DOMAIN-SUFFIX,login2.wotblitz.asia
-DOMAIN-SUFFIX,login3.wotblitz.asia
-DOMAIN-SUFFIX,login4.wotblitz.asia
-DOMAIN-SUFFIX,login0.wotblitz.eu
-DOMAIN-SUFFIX,login1.wotblitz.eu
-DOMAIN-SUFFIX,login2.wotblitz.eu
-DOMAIN-SUFFIX,login3.wotblitz.eu
-DOMAIN-SUFFIX,login4.wotblitz.eu
 DOMAIN-SUFFIX,events.appsflyer.com
 DOMAIN-SUFFIX,nts.gamegrids.net
 DOMAIN-SUFFIX,api.gamegrids.net
@@ -22,6 +12,7 @@ DOMAIN-SUFFIX,static.gamegrids.net
 DOMAIN-SUFFIX,media-wbp.wgcdn.co
 DOMAIN-SUFFIX,stufficons.wgcdn.co
 DOMAIN-SUFFIX,wotblitzasia.xmpp.wargaming.net
+DOMAIN-SUFFIX,wotblitzeu.xmpp.wargaming.net
 DOMAIN-SUFFIX,dl-wotblitz-gc.wargaming.net
 DOMAIN-SUFFIX,cdn.static.wotb.app
 DOMAIN-SUFFIX,roaster.wotb.app
@@ -42,7 +33,6 @@ IP-CIDR,13.35.122.38/32
 IP-CIDR,13.35.122.68/32
 IP-CIDR,18.67.93.124/32
 
-DOMAIN-SUFFIX,login0.wotblitz.asia
 DOMAIN-SUFFIX,wgcdn.co
 DOMAIN-SUFFIX,gamegrids.net
 DOMAIN-SUFFIX,wotb.app
