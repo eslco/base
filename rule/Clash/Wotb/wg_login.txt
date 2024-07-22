@@ -49,9 +49,9 @@ DOMAIN-SUFFIX,login1.wotblitz.eu
 DOMAIN-SUFFIX,login2.wotblitz.eu
 DOMAIN-SUFFIX,login3.wotblitz.eu
 DOMAIN-SUFFIX,login4.wotblitz.eu
-DOMAIN-SUFFIX,login0.wotblitz.net
-DOMAIN-SUFFIX,login1.wotblitz.net
-DOMAIN-SUFFIX,login2.wotblitz.net
+DOMAIN-SUFFIX,login0.wotblitz.com
+DOMAIN-SUFFIX,login1.wotblitz.com
+DOMAIN-SUFFIX,login2.wotblitz.com
 DOMAIN-SUFFIX,login0.wotblitz.asia
 DOMAIN-SUFFIX,login1.wotblitz.asia
 DOMAIN-SUFFIX,login2.wotblitz.asia
