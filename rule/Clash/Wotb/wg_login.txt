@@ -66,7 +66,6 @@ URL-REGEX,^login-[a-z]{2,3}\.worldofwarplanes\.com$
 URL-REGEX,^(wotasia\d+|wotna\d+)\.login\.wargaming\.net$|^login\.(p\d+)\.worldoftanks\.eu$
 URL-REGEX,^login\d+\.worldofwarships\.(com|eu|asia|jp|sg|net)$
 
-
 #IPCIDR
 IP-CIDR,92.223.16.0/24
 IP-CIDR,95.85.94.0/24
