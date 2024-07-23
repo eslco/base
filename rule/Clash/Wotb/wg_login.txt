@@ -55,7 +55,7 @@ DOMAIN-SUFFIX,login2.wotblitz.com
 DOMAIN-SUFFIX,login0.wotblitz.asia
 DOMAIN-SUFFIX,login1.wotblitz.asia
 DOMAIN-SUFFIX,login2.wotblitz.asia
-URL-REGEX,^login\d+\.wotblitz\.(eu|com|asia|net|jp)$
+URL-REGEX,^login\d+\.wotblitz\.(eu|com|asia|net)$
 URL-REGEX,^login-[a-z]{2,3}\.worldofwarplanes\.com$
 URL-REGEX,^(wotasia\d+|wotna\d+)\.login\.wargaming\.net$|^login\.(p\d+)\.worldoftanks\.eu$
 URL-REGEX,^login\d+\.worldofwarships\.(com|eu|asia|jp|sg|net)$
