@@ -2,6 +2,16 @@
 #! Author: 254c
 #! repo:=https://raw.githubusercontent.com/254c/base/main/rule/general/AI.list
 #! for study or research use only
+
+#! /cdn-cgi/trace
+#! https://chatgpt.com/cdn-cgi/trace
+DOMAIN-SUFFIX,chat.openai.com
+DOMAIN-SUFFIX,ios.chat.openai.com
+DOMAIN-SUFFIX,ios.chat.openai.com.cdn.cloudflare.net
+DOMAIN-SUFFIX,android.chat.openai.com
+DOMAIN-SUFFIX,android.chat.openai.com.cdn.cloudflare.net
+#! https://chatgpt.com/cdn-cgi/trace
+
 DOMAIN,cdn.openai.com
 DOMAIN,api.statsig.com
 DOMAIN,o33249.ingest.sentry.io
@@ -11,8 +21,7 @@ DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
 DOMAIN-SUFFIX,openai.com
 DOMAIN-SUFFIX,chatgpt.com
 DOMAIN-SUFFIX,cdn.auth0.com
-DOMAIN-SUFFIX,chat.openai.com
-DOMAIN-SUFFIX,ios.chat.openai.com
+
 DOMAIN-SUFFIX,stripe.com
 DOMAIN-SUFFIX,intercom.io
 DOMAIN-SUFFIX,oaistatic.com
@@ -60,6 +69,11 @@ DOMAIN-SUFFIX,statsigapi.net
 DOMAIN-SUFFIX,featuregates.org
 DOMAIN-SUFFIX,turn.livekit.cloud
 DOMAIN-SUFFIX,aistudio.google.com
+
 #IP-CIDR
 IP-CIDR,24.199.123.28/32
 IP-CIDR,64.23.132.171/32
+IP-CIDR,172.64.148.171/32
+IP-CIDR,104.18.39.85/32
+IP-CIDR,172.64.155.214/32
+IP-CIDR,104.18.32.42/32
