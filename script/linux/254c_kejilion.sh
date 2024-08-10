@@ -18,14 +18,14 @@ cyan='\033[96m'
 
 permission_granted="false"
 
-# CheckFirstRun_true() {
-#     if grep -q '^permission_granted="true"' /usr/local/bin/k > /dev/null 2>&1; then
-#         sed -i 's/^permission_granted="false"/permission_granted="true"/' ./kejilion.sh
-#         sed -i 's/^permission_granted="false"/permission_granted="true"/' /usr/local/bin/k
-#     fi
-# }
+ CheckFirstRun_true() {
+     if grep -q '^permission_granted="true"' /usr/local/bin/k > /dev/null 2>&1; then
+         sed -i 's/^permission_granted="false"/permission_granted="true"/' ./kejilion.sh
+         sed -i 's/^permission_granted="false"/permission_granted="true"/' /usr/local/bin/k
+     fi
+ }
 
-# CheckFirstRun_true
+ CheckFirstRun_true
 
 
 # 收集功能埋点信息的函数，记录当前脚本版本号，使用时间，系统版本，CPU架构，机器所在国家和用户使用的功能名称，绝对不涉及任何敏感信息，请放心！请相信我！
@@ -112,12 +112,13 @@ UserLicenseAgreement() {
     read -r -p "是否忽略以上条款？(y/n): " user_input
 
 
-    if [ "$user_input" = "n" ] || [ "$user_input" = "N" ]; then
-        send_stats "快速进入通道" @已注释(收集用户信息)相关代码
+    if [ "$user_input" = "y" ] || [ "$user_input" = "Y" ]; then
+        send_stats "快速进入菜单，@已注释(收集用户信息)相关代码
         sed -i 's/^permission_granted="false"/permission_granted="true"/' ./kejilion.sh
         sed -i 's/^permission_granted="false"/permission_granted="true"/' /usr/local/bin/k
     else
-        send_stats "已许可"
+        [ "$user_input" = "n" ] || [ "$user_input" = "N" ]; then
+        send_stats "Authorized to Enter 許可進入"
         clear
         # exit 1
     fi
