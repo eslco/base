@@ -6,6 +6,7 @@ DOMAIN-SUFFIX,bitwarden.eu
 DOMAIN-SUFFIX,bitwarden.com
 DOMAIN-SUFFIX,vault.bitwarden.eu
 DOMAIN-SUFFIX,vault.bitwarden.com
+DOMAIN-SUFFIX,n.sni.global.fastly.net
 DOMAIN-KEYWORD,bitwarden
 USER-AGENT,Bitwarden
 IP-CIDR,151.101.1.91/32
