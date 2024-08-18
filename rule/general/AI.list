@@ -3,14 +3,14 @@
 #! repo:=https://raw.githubusercontent.com/254c/base/main/rule/general/AI.list
 #! for study or research use only
 
-#! /cdn-cgi/trace
+#! chatgpt/cdn-cgi/trace
 #! https://chatgpt.com/cdn-cgi/trace
 DOMAIN-SUFFIX,chat.openai.com
 DOMAIN-SUFFIX,ios.chat.openai.com
 DOMAIN-SUFFIX,ios.chat.openai.com.cdn.cloudflare.net
 DOMAIN-SUFFIX,android.chat.openai.com
 DOMAIN-SUFFIX,android.chat.openai.com.cdn.cloudflare.net
-#! https://chatgpt.com/cdn-cgi/trace
+#! https://chat.openai.com/cdn-cgi/trace
 
 DOMAIN,cdn.openai.com
 DOMAIN,api.statsig.com
@@ -49,6 +49,15 @@ DOMAIN-SUFFIX,launchdarkly.com
 DOMAIN-SUFFIX,observeit.net
 DOMAIN-SUFFIX,openaicom.imgix.net
 DOMAIN-SUFFIX,segment.io
+
+# CiciAI
+DOMAIN-SUFFIX,ciciai.com
+DOMAIN-SUFFIX,byteoversea.com
+DOMAIN-SUFFIX,vmweb-va.ciciai.com
+DOMAIN-SUFFIX,mcs-va.ciciai.com
+DOMAIN-SUFFIX,lf-rc1.yhgfb-static.com
+DOMAIN-SUFFIX,itobsnssdk.com
+
 #Others
 DOMAIN,bard.google.com
 DOMAIN,ai.google.dev
