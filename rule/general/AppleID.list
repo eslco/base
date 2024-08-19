@@ -1,6 +1,11 @@
 #!Name: AppleID
 #!Author: 254c
-#!Repo:https://raw.githubusercontent.com/254c/iconf/master/Shadowrocket/rule/AppleID.list
+#!Repo:https://raw.githubusercontent.com/254c/iconf/master/Shadowrocket/rule/general/AppleID.list
+
+# Apple AppStore
+DOMAIN-SUFFIX,apps.apple.com
+#Update at 2024.08.19
+
 DOMAIN-SUFFIX,query.ess.apple.com
 DOMAIN-SUFFIX,identity.ess.apple.com
 DOMAIN-KEYWORD,-courier.push.apple
