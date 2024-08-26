@@ -3,6 +3,7 @@
 #! repo:=https://raw.githubusercontent.com/254c/base/main/rule/general/AI.list
 #! for study or research use only
 
+
 #! chatgpt/cdn-cgi/trace
 #! https://chatgpt.com/cdn-cgi/trace
 DOMAIN-SUFFIX,chat.openai.com
@@ -11,6 +12,9 @@ DOMAIN-SUFFIX,ios.chat.openai.com.cdn.cloudflare.net
 DOMAIN-SUFFIX,android.chat.openai.com
 DOMAIN-SUFFIX,android.chat.openai.com.cdn.cloudflare.net
 #! https://chat.openai.com/cdn-cgi/trace
+
+#! Groq API
+DOMAIN-SUFFIX,api.groq.com
 
 DOMAIN,cdn.openai.com
 DOMAIN,api.statsig.com
@@ -59,6 +63,7 @@ DOMAIN-SUFFIX,lf-rc1.yhgfb-static.com
 DOMAIN-SUFFIX,itobsnssdk.com
 
 #Others
+
 DOMAIN,bard.google.com
 DOMAIN,ai.google.dev
 DOMAIN,browser-intake-datadoghq.com
