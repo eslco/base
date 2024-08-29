@@ -5,9 +5,9 @@
 
 ## Usage Tips: 
   > Copy the url  of any example.ini and paste  it to Shadowrocket's ADD button and download it.
-   - [Light_Blue_2784F0.ini](https://raw.githubusercontent.com/254c/base/main/Shadowrocket/Color/Light_Blue_2784F0.ini)
+   - [Light_Blue_2784F0.cfg](https://raw.githubusercontent.com/254c/base/main/Shadowrocket/Color/Light_Blue_2784F0.cfg)
 
-   - [Dark_Blue_88C0FF.ini](https://raw.githubusercontent.com/254c/base/main/Shadowrocket/Color/Dark_Blue_88C0FF.ini)
+   - [Dark_Blue_88C0FF.cfg](https://raw.githubusercontent.com/254c/base/main/Shadowrocket/Color/Dark_Blue_88C0FF.cfg)
 
    - .  .  .  .
    
