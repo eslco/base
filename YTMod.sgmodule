@@ -1,7 +1,7 @@
 #!name=YT(Music)Enhance M
 #!desc=PiP+Ambient Mode enabled(Updating)
 #!url=https://raw.githubusercontent.com/254c/base/main/YTMod.sgmodule
-# 此版本由 https://github.com/254c 维护并更新 (updating as in 20240912)
+# 此版本由 https://github.com/254c 维护并更新 (updating as in 20240914)
 
 # Credit : Maasea 
 # Original_Repo: https://github.com/Maasea/sgmodule/blob/master/YouTube.Enhance.sgmodule
@@ -49,7 +49,7 @@ URL-REGEX,(^https?:\/\/([\w-]+)\.googlevideo\.com\/initplayback(\?.*oad=.+)$),RE
 ^https?:\/\/ad\.doubleclick\.net\/.* _ reject-200
 ^https?:\/\/[\w-]+\.doubleclick\.net\/.* _ reject-200
 ^https?:\/\/[\w-]+\.ytimg\.com\/.*ad.* _ reject-200
-## googletag個性化標籤 按需開啟
+## googletag 個性化標籤 按需開啟
 #^https?:\/\/www\.googletagmanager\.com\/.* _ reject-img
 
 [Script]
