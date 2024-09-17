@@ -2,7 +2,7 @@
 
 # Fixed Twitch 1080P Probelm for CF VLESS
 DOMAIN,hls.ttvnw.net
-# DOMAIN-SUFFIX,hls.ttvnw.net
+DOMAIN-SUFFIX,hls.ttvnw.net
 
 # 新增
 USER-AGENT,archero*
