@@ -1,0 +1,55 @@
+{
+  "hosts": {
+    "la.visa.nyc.mn": "142.171.88.212",
+    "l.aesin.sbs": "142.171.88.212",
+    "dns.google": "8.8.4.4",
+    "cloudflare-dns.com": "1.0.0.1",
+    "security.cloudflare-dns.com": "1.0.0.2",
+    "dns.twnic.tw": ["101.102.103.104","101.101.101.101"],
+    "dns.adguard-dns.com": ["94.140.14.14","94.140.15.15"],
+    "geosite:category-ads-all": "127.0.0.1"
+   },
+ "servers": [
+   {
+    "address": "https://cloudflare-dns.com/dns-query",
+    "domains": [
+                      "geosite:cloudflare","geosite:geolocation-!cn","ipget.net","la.visa.nyc.mn",
+                      "regexp:^login\\d+\\.wotblitz\\.(eu|com|asia)$",
+                      "regexp:^(?:[a-zA-Z0-9-]+\\.)*visa\\.nyc\\.mn$"   
+                     ],
+    "expectIPs": ["geoip:!cn"],
+    "skipFallback": false,
+    "clientIp": "168.95.1.1",
+    "queryStrategy": "AsIs"
+   },
+   {
+    "address": "https://dns.twnic.tw/dns-query",
+    "domains": [
+                      "geosite:geolocation-cn","geoip:private","geosite:cn","la.visa.nyc.mn"
+                     ],
+    "expectIPs": ["geoip:cn"],
+    "skipFallback": false,
+    "clientIp": "1.34.0.0",
+    "queryStrategy": "AsIs"
+   },
+    {
+    "address": "https://doh.dns.sb/dns-query",
+    "domains": ["www.apple.com",
+                      "geosite:cloudflare","geosite:openai","geosite:netflix"
+                     ],
+    "expectIPs": ["geoip:!cn"],
+    "skipFallback": true,
+    "clientIp": "1.34.0.0",
+    "queryStrategy": "AsIs"
+   },
+   {
+    "address": "localhost",
+    "skipFallback": true
+   }
+  ],
+  "queryStrategy": "AsIs",
+  "disableCache": true,
+  "disableFallback": true,
+  "disableFallbackIfMatch": true,
+  "tag": "dns_inbound"
+ }
