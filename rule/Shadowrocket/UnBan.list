@@ -1,8 +1,29 @@
 # Whitelist 白名单 不应被屏蔽的特殊规则列表
 
-# Fixed Twitch 1080P Probelm for CF VLESS
-DOMAIN,hls.ttvnw.net
+# Fixed Twitch 1080P Playback Line Probelm for CF VLESS
+DOMAIN-SUFFIX,tpe01.hls.ttvnw.net
+DOMAIN-SUFFIX,waw02.hls.ttvnw.net
+DOMAIN-SUFFIX,mrs02.hls.ttvnw.net
+DOMAIN-SUFFIX,syd03.hls.ttvnw.net
+DOMAIN-SUFFIX,lhr03.hls.ttvnw.net
+DOMAIN-SUFFIX,lax03.hls.ttvnw.net
+DOMAIN-SUFFIX,hkg06.hls.ttvnw.net
+DOMAIN-SUFFIX,sjc06.hls.ttvnw.net
+DOMAIN-SUFFIX,cdg10.hls.ttvnw.net
+
+DOMAIN-SUFFIX,tpe01.abs.hls.ttvnw.net
+DOMAIN-SUFFIX,pdx01.abs.hls.ttvnw.net
+DOMAIN-SUFFIX,mrs02.abs.hls.ttvnw.net
+DOMAIN-SUFFIX,lax03.abs.hls.ttvnw.net
+DOMAIN-SUFFIX,syd03.abs.hls.ttvnw.net
+DOMAIN-SUFFIX,hkg06.abs.hls.ttvnw.net
+DOMAIN-SUFFIX,sjc06.abs.hls.ttvnw.net
+DOMAIN-SUFFIX,lhr08.abs.hls.ttvnw.net
+DOMAIN-SUFFIX,cdg10.abs.hls.ttvnw.net
+DOMAIN-SUFFIX,abs.hls.ttvnw.net
 DOMAIN-SUFFIX,hls.ttvnw.net
+DOMAIN-KEYWORD,hls
+# DOMAIN-SUFFIX,hls.ttvnw.net 1080P+ Resolve
 
 # 新增
 USER-AGENT,archero*
