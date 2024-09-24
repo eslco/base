@@ -3,19 +3,37 @@
 # URL: https://raw.githubusercontent.com/esineo/ruleset/Shadowrocket/Twitch/Twitch.list
 # Original AUTHOR: blackmatrix7
 # Original REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-09-16 12:16:56
+# UPDATED: 2024-09-25 15:25 PM
 # DOMAIN-KEYWORD: 1
 # DOMAIN-SUFFIX: 9
-# IP-CIDR: 12
+# IP-CIDR: ~~
 # TOTAL: 22
 
 # DOMAIN-SUFFIX,hls.ttvnw.net
-# DOMAIN-SUFFIX,video-edge-5bb484.lax03.abs.hls.ttvnw.net
-# DOMAIN-SUFFIX,abs.hls.ttvnw.net
+# DOMAIN-SUFFIX,video-weaver.lax03.hls.ttvnw.net
+# DOMAIN-SUFFIX,video-weaver.sjc06.hls.ttvnw.net
+# DOMAIN-SUFFIX,video-weaver.cdg10.hls.ttvnw.net
 
+# DOMAIN-SUFFIX,abs.hls.ttvnw.net
+# DOMAIN-SUFFIX,sjc06.abs.hls.ttvnw.net
+# DOMAIN-SUFFIX,lax03.abs.hls.ttvnw.net
+# DOMAIN-SUFFIX,hkg06.abs.hls.ttvnw.net
+# DOMAIN-SUFFIX,pdx01.abs.hls.ttvnw.net
+# DOMAIN-SUFFIX,syd03.abs.hls.ttvnw.net
+
+IP-CIDR,99.181.91.59/32,no-resolve
+IP-CIDR,99.181.127.5/32,no-resolve
+IP-CIDR,103.53.48.215/32,no-resolve
+IP-CIDR,99.181.107.40/32,no-resolve
+IP-CIDR,35.163.143.41/32,no-resolve
+IP-CIDR,52.129.131.86/32,no-resolve
+IP-CIDR,52.223.241.7/32,no-resolve
+IP-CIDR,52.223.247.99/32,no-resolve
+
+DOMAIN-SUFFIX,playlist.ttvnw.net
+DOMAIN-SUFFIX,usher.ttvnw.net
 DOMAIN-SUFFIX,scorecardresearch.com
 DOMAIN-SUFFIX,static-cdn.jtvnw.net
-DOMAIN-SUFFIX,usher.ttvnw.net
 DOMAIN-SUFFIX,vod-secure.twitch.tv
 DOMAIN-SUFFIX,assets.twitch.tv
 DOMAIN-SUFFIX,pubsub-edge.twitch.tv
@@ -44,15 +62,52 @@ IP-CIDR,44.238.175.31/32,no-resolve
 IP-CIDR,44.228.62.191/32,no-resolve
 # chat
 
-IP-CIDR,103.53.48.0/23,no-resolve
-IP-CIDR,185.42.204.0/22,no-resolve
-IP-CIDR,192.108.239.0/24,no-resolve
-IP-CIDR,192.16.64.0/21,no-resolve
-IP-CIDR,199.9.248.0/21,no-resolve
+# 20240925 Updated
+# IPv4
 IP-CIDR,23.160.0.0/24,no-resolve
-IP-CIDR,2402:2a80::/32,no-resolve
 IP-CIDR,45.113.128.0/22,no-resolve
+IP-CIDR,52.129.128.0/20,no-resolve
+IP-CIDR,52.129.130.0/24,no-resolve
+IP-CIDR,52.129.131.0/24,no-resolve
 IP-CIDR,52.223.192.0/20,no-resolve
 IP-CIDR,52.223.208.0/21,no-resolve
-IP-CIDR,52.223.224.0/19,no-resolve
-IP-CIDR,99.181.64.0/18,no-resolve
+IP-CIDR,52.223.216.0/21,no-resolve
+IP-CIDR,52.223.224.0/20,no-resolve
+IP-CIDR,52.223.240.0/20,no-resolve
+IP-CIDR,99.181.64.0/20,no-resolve
+IP-CIDR,99.181.80.0/21,no-resolve
+IP-CIDR,99.181.88.0/21,no-resolve
+IP-CIDR,99.181.96.0/19,no-resolve
+IP-CIDR,103.53.48.0/23,no-resolve
+IP-CIDR,103.53.48.0/22,no-resolve
+IP-CIDR,185.42.204.0/22,no-resolve
+IP-CIDR,192.16.64.0/21,no-resolve
+IP-CIDR,192.108.239.0/24,no-resolve
+IP-CIDR,199.9.248.0/21,no-resolve
+#IPv4
+
+#IPv6
+IP-CIDR,2402:2a80::/32,no-resolve
+IP-CIDR,2402:2a80:1000::/36,no-resolve
+IP-CIDR,2402:2a80:2000::/36,no-resolve
+IP-CIDR,2402:2a80:3000::/36,no-resolve
+IP-CIDR,2402:2a80:4000::/36,no-resolve
+IP-CIDR,2402:2a80:4200::/40,no-resolve
+IP-CIDR,2402:2a80:5000::/36,no-resolve
+IP-CIDR,2402:2a80:6000::/36,no-resolve
+IP-CIDR,2402:2a80:b000::/36,no-resolve
+#IPv6
+
+# Old Backup
+# IP-CIDR,103.53.48.0/23,no-resolve
+# IP-CIDR,185.42.204.0/22,no-resolve
+# IP-CIDR,192.108.239.0/24,no-resolve
+# IP-CIDR,192.16.64.0/21,no-resolve
+# IP-CIDR,199.9.248.0/21,no-resolve
+# IP-CIDR,23.160.0.0/24,no-resolve
+# IP-CIDR,2402:2a80::/32,no-resolve
+# IP-CIDR,45.113.128.0/22,no-resolve
+# IP-CIDR,52.223.192.0/20,no-resolve
+# IP-CIDR,52.223.208.0/21,no-resolve
+# IP-CIDR,52.223.224.0/19,no-resolve
+# IP-CIDR,99.181.64.0/18,no-resolve
