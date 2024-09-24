@@ -3,7 +3,12 @@ URL: https://raw.githubusercontent.com/254c/base/main/rule/Shadowrocket/Twitch/D
 Author: esinco, eslion
 This Domain list for test and study usages only
 
-# DOMAIN-SUFFIX,playlist.ttvnw.net
+DOMAIN-SUFFIX,static-cdn.jtvnw.net
+DOMAIN-SUFFIX,global.poe.live-video.net
+DOMAIN-SUFFIX,ase11-0.playlist.ttvnw.net
+DOMAIN-SUFFIX,live001-ttvnw.akamaized.net
+
+# hls.ttvnw.net
 DOMAIN-SUFFIX,tpe01.hls.ttvnw.net
 DOMAIN-SUFFIX,waw02.hls.ttvnw.net
 DOMAIN-SUFFIX,mrs02.hls.ttvnw.net
@@ -14,8 +19,6 @@ DOMAIN-SUFFIX,hkg06.hls.ttvnw.net
 DOMAIN-SUFFIX,sjc06.hls.ttvnw.net
 DOMAIN-SUFFIX,cdg10.hls.ttvnw.net
 
-
-# hls.ttvnw.net
 DOMAIN-SUFFIX,tpe01.abs.hls.ttvnw.net
 DOMAIN-SUFFIX,pdx01.abs.hls.ttvnw.net
 DOMAIN-SUFFIX,mrs02.abs.hls.ttvnw.net
@@ -25,10 +28,10 @@ DOMAIN-SUFFIX,hkg06.abs.hls.ttvnw.net
 DOMAIN-SUFFIX,sjc06.abs.hls.ttvnw.net
 DOMAIN-SUFFIX,lhr08.abs.hls.ttvnw.net
 DOMAIN-SUFFIX,cdg10.abs.hls.ttvnw.net
+# ...
 # hls.ttvnw.net
 
-
-# hls.ttvnw.net
+# hls.ttvnw.net IP-CDIR
 IP-CIDR,35.163.143.41/32,no-resolve
 IP-CIDR,52.129.131.86/32,no-resolve
 IP-CIDR,52.223.203.200/32,no-resolve
@@ -40,7 +43,7 @@ IP-CIDR,99.181.91.59/32,no-resolve
 IP-CIDR,99.181.107.40/32,no-resolve
 IP-CIDR,99.181.127.5/32,no-resolve
 IP-CIDR,103.53.48.215/32,no-resolve
-# hls.ttvnw.net
+# hls.ttvnw.net IP-CIDR
 
 
 DOMAIN-SUFFIX,hls.ttvnw.net
