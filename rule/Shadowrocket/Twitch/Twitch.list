@@ -10,16 +10,40 @@
 # TOTAL: 22
 
 # DOMAIN-SUFFIX,hls.ttvnw.net
+# DOMAIN-SUFFIX,video-edge-5bb484.lax03.abs.hls.ttvnw.net
+# DOMAIN-SUFFIX,abs.hls.ttvnw.net
+
+DOMAIN-SUFFIX,scorecardresearch.com
+DOMAIN-SUFFIX,static-cdn.jtvnw.net
+DOMAIN-SUFFIX,usher.ttvnw.net
+DOMAIN-SUFFIX,vod-secure.twitch.tv
+DOMAIN-SUFFIX,assets.twitch.tv
+DOMAIN-SUFFIX,pubsub-edge.twitch.tv
+
+# DOMAIN-SUFFIX,ttvnw.net
+DOMAIN-SUFFIX,ttvnw.net
 
 DOMAIN-SUFFIX,twitch.tv
 DOMAIN-SUFFIX,ext-twitch.tv
-DOMAIN-SUFFIX,ttvnw.net
 DOMAIN-SUFFIX,jtvnw.net
 DOMAIN-SUFFIX,live-video.net
 DOMAIN-SUFFIX,twitch-ext.rootonline.de
 DOMAIN-SUFFIX,twitchcdn.net
 DOMAIN-SUFFIX,twitchsvc.net
-DOMAIN-KEYWORD,ttvnw
+# DOMAIN-KEYWORD,ttvnw
+
+DOMAIN-SUFFIX,irc-ws.chat.twitch.tv
+# chat
+IP-CIDR,52.26.161.211/32,no-resolve
+IP-CIDR,44.235.206.9/32,no-resolve
+IP-CIDR,34.213.205.75/32,no-resolve
+IP-CIDR,52.89.201.32/32,no-resolve
+IP-CIDR,54.69.102.66/32,no-resolve
+IP-CIDR,52.36.231.249/32,no-resolve
+IP-CIDR,44.238.175.31/32,no-resolve
+IP-CIDR,44.228.62.191/32,no-resolve
+# chat
+
 IP-CIDR,103.53.48.0/23,no-resolve
 IP-CIDR,185.42.204.0/22,no-resolve
 IP-CIDR,192.108.239.0/24,no-resolve
