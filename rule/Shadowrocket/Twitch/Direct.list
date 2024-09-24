@@ -1,0 +1,36 @@
+Name: Direct.list
+URL: https://raw.githubusercontent.com/254c/base/main/rule/Shadowrocket/Twitch/Direct.list
+Author: esinco, eslion
+This Domain list for test and study usages only
+
+# DOMAIN-SUFFIX,playlist.ttvnw.net
+DOMAIN-SUFFIX,vodeo-weaver.tpe04.hls.ttvnw.net
+DOMAIN-SUFFIX,video-weaver.lax03.hls.ttvnw.net
+DOMAIN-SUFFIX,video-weaver.sjc06.hls.ttvnw.net
+DOMAIN-SUFFIX,video-weaver.cdg10.hls.ttvnw.net
+DOMAIN-SUFFIX,video-weaver.tpe04.hls.ttvnw.net
+DOMAIN-SUFFIX,video-weaver.syd03.hls.ttvnw.net
+
+# hls.ttvnw.net
+DOMAIN-SUFFIX,tpe04.abs.hls.ttvnw.net
+DOMAIN-SUFFIX,sjc06.abs.hls.ttvnw.net
+DOMAIN-SUFFIX,lax03.abs.hls.ttvnw.net
+DOMAIN-SUFFIX,hkg06.abs.hls.ttvnw.net
+DOMAIN-SUFFIX,pdx01.abs.hls.ttvnw.net
+DOMAIN-SUFFIX,syd03.abs.hls.ttvnw.net
+# hls.ttvnw.net
+
+# abs.hls.ttvnw.net
+IP-CIDR,99.181.91.59/32,no-resolve
+IP-CIDR,99.181.127.5/32,no-resolve
+IP-CIDR,103.53.48.215/32,no-resolve
+IP-CIDR,99.181.107.40/32,no-resolve
+IP-CIDR,35.163.143.41/32,no-resolve
+IP-CIDR,52.129.131.86/32,no-resolve
+IP-CIDR,52.223.241.7/32,no-resolve
+IP-CIDR,52.223.247.99/32,no-resolve
+# abs.hls.ttvnw.net
+
+DOMAIN-SUFFIX,hls.ttvnw.net
+DOMAIN-SUFFIX,abs.hls.ttvnw.net
+DOMAIN-KEYWORD,hls
