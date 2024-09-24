@@ -9,7 +9,7 @@
 # IP-CIDR: ~~
 # TOTAL: ~~
 
-# DOMAIN-SUFFIX,hls.ttvnw.net
+# DOMAIN-SUFFIX,hls.ttvnw.net 1080P+ Resolve
 # DOMAIN-SUFFIX,video-weaver.tpe01.hls.ttvnw.net
 # DOMAIN-SUFFIX,video-weaver.hkg06.hls.ttvnw.net
 # DOMAIN-SUFFIX,video-weaver.sjc06.hls.ttvnw.net
@@ -18,7 +18,7 @@
 # DOMAIN-SUFFIX,video-weaver.syd03.hls.ttvnw.net
 # ...
 
-# DOMAIN-SUFFIX,abs.hls.ttvnw.net
+# DOMAIN-SUFFIX,abs.hls.ttvnw.net 1080P+ Resolve
 # DOMAIN-SUFFIX,tpe01.abs.hls.ttvnw.net
 # DOMAIN-SUFFIX,hkg06.abs.hls.ttvnw.net
 # DOMAIN-SUFFIX,sjc06.abs.hls.ttvnw.net
