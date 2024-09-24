@@ -10,7 +10,7 @@ DOMAIN-SUFFIX,lax03.hls.ttvnw.net
 DOMAIN-SUFFIX,hkg06.hls.ttvnw.net
 DOMAIN-SUFFIX,sjc06.hls.ttvnw.net
 DOMAIN-SUFFIX,cdg10.hls.ttvnw.net
-
+# DOMAIN-SUFFIX,hls.ttvnw.net 1080P+ Resolve
 DOMAIN-SUFFIX,tpe01.abs.hls.ttvnw.net
 DOMAIN-SUFFIX,pdx01.abs.hls.ttvnw.net
 DOMAIN-SUFFIX,mrs02.abs.hls.ttvnw.net
@@ -22,8 +22,8 @@ DOMAIN-SUFFIX,lhr08.abs.hls.ttvnw.net
 DOMAIN-SUFFIX,cdg10.abs.hls.ttvnw.net
 DOMAIN-SUFFIX,abs.hls.ttvnw.net
 DOMAIN-SUFFIX,hls.ttvnw.net
-DOMAIN-KEYWORD,hls
-# DOMAIN-SUFFIX,hls.ttvnw.net 1080P+ Resolve
+DOMAIN-KEYWORD,hls.ttvnw.net
+
 
 # 新增
 USER-AGENT,archero*
