@@ -9,7 +9,8 @@
 # IP-CIDR: ~~
 # TOTAL: ~~
 
-# DOMAIN-SUFFIX,hls.ttvnw.net 1080P+ Resolve
+# 1080P+ Resolve
+# DOMAIN-SUFFIX,hls.ttvnw.net 
 # DOMAIN-SUFFIX,video-weaver.tpe01.hls.ttvnw.net
 # DOMAIN-SUFFIX,video-weaver.hkg06.hls.ttvnw.net
 # DOMAIN-SUFFIX,video-weaver.sjc06.hls.ttvnw.net
@@ -17,8 +18,7 @@
 # DOMAIN-SUFFIX,video-weaver.cdg10.hls.ttvnw.net
 # DOMAIN-SUFFIX,video-weaver.syd03.hls.ttvnw.net
 # ...
-
-# DOMAIN-SUFFIX,abs.hls.ttvnw.net 1080P+ Resolve
+# DOMAIN-SUFFIX,abs.hls.ttvnw.net 
 # DOMAIN-SUFFIX,tpe01.abs.hls.ttvnw.net
 # DOMAIN-SUFFIX,hkg06.abs.hls.ttvnw.net
 # DOMAIN-SUFFIX,sjc06.abs.hls.ttvnw.net
@@ -26,15 +26,18 @@
 # DOMAIN-SUFFIX,pdx01.abs.hls.ttvnw.net
 # DOMAIN-SUFFIX,syd03.abs.hls.ttvnw.net
 # ...
+# 1080P+ Resolve
 
-IP-CIDR,99.181.91.59/32,no-resolve
-IP-CIDR,99.181.127.5/32,no-resolve
-IP-CIDR,103.53.48.215/32,no-resolve
-IP-CIDR,99.181.107.40/32,no-resolve
-IP-CIDR,35.163.143.41/32,no-resolve
-IP-CIDR,52.129.131.86/32,no-resolve
-IP-CIDR,52.223.241.7/32,no-resolve
-IP-CIDR,52.223.247.99/32,no-resolve
+# hls.ttvnw.net
+# IP-CIDR,99.181.91.59/32,no-resolve
+# IP-CIDR,99.181.127.5/32,no-resolve
+# IP-CIDR,103.53.48.215/32,no-resolve
+# IP-CIDR,99.181.107.40/32,no-resolve
+# IP-CIDR,35.163.143.41/32,no-resolve
+# IP-CIDR,52.129.131.86/32,no-resolve
+# IP-CIDR,52.223.241.7/32,no-resolve
+# IP-CIDR,52.223.247.99/32,no-resolve
+# hls.ttvnw.net
 
 DOMAIN-SUFFIX,playlist.ttvnw.net
 DOMAIN-SUFFIX,usher.ttvnw.net
@@ -104,16 +107,5 @@ IP-CIDR,2402:2a80:b000::/36,no-resolve
 #IPv6# 
 
 # Old Backup
-# IP-CIDR,103.53.48.0/23,no-resolve
-# IP-CIDR,185.42.204.0/22,no-resolve
-# IP-CIDR,192.108.239.0/24,no-resolve
-# IP-CIDR,192.16.64.0/21,no-resolve
-# IP-CIDR,199.9.248.0/21,no-resolve
-# IP-CIDR,23.160.0.0/24,no-resolve
-# IP-CIDR,2402:2a80::/32,no-resolve
-# IP-CIDR,45.113.128.0/22,no-resolve
-# IP-CIDR,52.223.192.0/20,no-resolve
-# IP-CIDR,52.223.208.0/21,no-resolve
-
 IP-CIDR,52.223.224.0/19,no-resolve
 IP-CIDR,99.181.64.0/18,no-resolve
