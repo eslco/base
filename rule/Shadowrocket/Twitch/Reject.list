@@ -1,0 +1,37 @@
+NAME: 
+Author: esinco, eslion
+# NAME: Reject.list
+# AUTHOR: eslion ,esineo
+# URL: https://raw.githubusercontent.com/esineo/ruleset/Shadowrocket/Twitch/Reject.list
+# UPDATED: 2024-09-25 20:11 PM
+# DOMAIN-KEYWORD: 1
+# DOMAIN-SUFFIX: ~
+# IP-CIDR: ~~
+# TOTAL: ~~
+DOMAIN-SUFFIX,d2v02itv0y9u9t.cloudfront.net
+DOMAIN-SUFFIX,secure-sts-prod.imrworldwide.com
+DOMAIN-SUFFIX,aax-us-east.amazon-adsystem.com
+DOMAIN-SUFFIX,vaes.amazon-adsystem.com
+DOMAIN-SUFFIX,cdn-a.amazon-adsystem.com
+DOMAIN-SUFFIX,pubads.g.doubleclick.net
+#
+DOMAIN-SUFFIX,sb.scorecardresearch.com
+DOMAIN-SUFFIX,scorecardresearch.com
+DOMAIN-SUFFIX,s.amazon-adsystem.com
+#
+DOMAIN-SUFFIX,reporting.cdndex.io
+DOMAIN-SUFFIX,ad.doubleclick.net
+DOMAIN-SUFFIX,api.mixpanel.com
+DOMAIN-SUFFIX,spade.twitch.tv
+#
+DOMAIN-KEWORD,video-weaver
+# Test API
+DOMAIN-SUFFIX,api.amplitude.com
+DOMAIN-SUFFIX,api.sprig.com
+# Test API
+DOMAIN-SUFFIX,ads.twitch.tv
+
+
+
+
+
