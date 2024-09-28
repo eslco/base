@@ -1,18 +1,6 @@
 # NAME: talkatoneAdBlock
 # DESCRIPTION: 去除 talkatone 中的广告
 # REJECT
-DOMAIN-SUFFIX,ads.inmobi.com
-DOMAIN-SUFFIX,tappx.com
-DOMAIN-SUFFIX,criteo.com
-DOMAIN-SUFFIX,pubmatic.com
-DOMAIN-SUFFIX,smaato.net
-DOMAIN-SUFFIX,amazon-adsystem.com
-DOMAIN-KEYWORD,googleads
-DOMAIN-SUFFIX,adsappier.com
-DOMAIN-SUFFIX,appier.net
-DOMAIN-SUFFIX,appiersig.com
-
-
 # List URL: https://raw.githubusercontent.com/baiitang/Sakura/main/Loon/Rules/TalkatoneAD.list
 # 规则来源于
 # https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
@@ -49,6 +37,16 @@ DOMAIN-SUFFIX,adsappier.com
 DOMAIN-SUFFIX,appier.net
 DOMAIN-SUFFIX,appiersig.com
 
+DOMAIN-SUFFIX,ads.inmobi.com
+DOMAIN-SUFFIX,tappx.com
+DOMAIN-SUFFIX,criteo.com
+DOMAIN-SUFFIX,pubmatic.com
+DOMAIN-SUFFIX,smaato.net
+DOMAIN-SUFFIX,amazon-adsystem.com
+DOMAIN-KEYWORD,googleads
+DOMAIN-SUFFIX,adsappier.com
+DOMAIN-SUFFIX,appier.net
+DOMAIN-SUFFIX,appiersig.com
 
 [URL Rewrite] 
 #> URL Redirect
