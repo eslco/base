@@ -30,7 +30,7 @@ const foreignNameservers = [
 // DNS config
 const dnsConfig = {
   dns: true,
-  listen: 1053,
+  listen: "0.0.0.0:1053",
   ipv6: true,
   "use-hosts": true,
   "cache-algorithm": "arc",
