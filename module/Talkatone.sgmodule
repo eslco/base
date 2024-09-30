@@ -49,17 +49,16 @@ DOMAIN-SUFFIX,cohere.com,DIRECT
 DOMAIN-SUFFIX,ip-api.com,DIRECT
 DOMAIN-SUFFIX,agkn.com,DIRECT
 DOMAIN-SUFFIX,tktn.at,DIRECT
+DOMAIN-SUFFIX,tenor.com,DIRECT
+# IPCIDR
 IP-CIDR,50.117.27.0/24,DIRECT
 IP-CIDR,69.46.75.0/24,DIRECT
 IP-CIDR,205.164.56.0/24,DIRECT
 IP-CIDR,63.251.124.0/24,DIRECT
-DOMAIN-SUFFIX,tenor.com,DIRECT
 IP-CIDR,205.164.56.29/24,DIRECT
 
 
 [URL Rewrite] 
-#> URL Redirect
-
 # Talkatone
 hostname = alt-r.my.com, imgx.jampp.com
 URL-Regex,^https?:\/\/alt-r\.my\.com\/mobile url reject-dict
