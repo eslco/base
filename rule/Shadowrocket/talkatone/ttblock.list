@@ -17,7 +17,9 @@ DOMAIN-SUFFIX,cdn2.inner-active.mobi
 DOMAIN-SUFFIX,sdk-events.inner-active.mobi
 DOMAIN-SUFFIX,googleads.g.doubleclick-cn.net
 
-#2024.6.11
+DOMAIN-SUFFIX,googleads.g.doubleclick.net
+
+#2024.09.31
 DOMAIN-SUFFIX,tappx.com
 DOMAIN-SUFFIX,appier.net
 DOMAIN-SUFFIX,criteo.com
@@ -32,7 +34,9 @@ DOMAIN-SUFFIX,amazon-adsystem.com
 
 [URL Rewrite] 
 #> URL Redirect
+
 # Talkatone
+
 hostname = alt-r.my.com, imgx.jampp.com
 URL-Regex,^https?:\/\/alt-r\.my\.com\/mobile url reject-dict
 URL-Regex,^https?:\/\/imgx\.jampp\.com\/imgsrv\/tn url reject-img
