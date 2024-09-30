@@ -245,4 +245,5 @@ DOMAIN-SUFFIX,xoom.io
 DOMAIN-SUFFIX,xoom.net.cn
 DOMAIN-SUFFIX,xoom.us
 DOMAIN-SUFFIX,xoomcom.com
+USER-AGENT,Paypal*
 DOMAIN-KEYWORD,paypal
