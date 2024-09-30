@@ -7,12 +7,12 @@
 # Author : eslco
 # Credit : LOWERTOP
 
-# 本模块主要为解决使用某些节点无法直接使用 Talkatone 的问题，使用本模块进行策略分流，并附带去广告规则。本模块仅适用于登陆 Talkatone 后使用，不适用于软件注册。
-# 仓库地址：https://github.com/eslco/base/main/module
-# 规则来源：https://github.com/LOWERTOP/Shadowrocket-First https://t.me/ShadowrocketApp
+# 本模組主要用於解決使用某些节点無法直接使用Talkatone的問題，使用本模組進行策略分流，並附帶去廣告規則。 本模組僅適用於登入Talkatone後使用，不適用於軟體註冊。
+# 倉庫地址：https://github.com/eslco/base/main/module
+# 規則來源：https://github.com/LOWERTOP/Shadowrocket-First https://t.me/ShadowrocketApp
 
 [Rule]
-# 以下为该软件部分去广告规则
+# Talkatone NoAD RuleSet
 DOMAIN-SUFFIX,gum.criteo.com,REJECT-200
 DOMAIN-SUFFIX,ow.pubmatic.com,REJECT-200
 DOMAIN-SUFFIX,bidder.criteo.com,REJECT-200
@@ -35,10 +35,10 @@ DOMAIN-SUFFIX,ads.inmobi.com,REJECT-200
 DOMAIN-SUFFIX,cr.adsappier.com,REJECT-200
 DOMAIN-SUFFIX,amazon-adsystem.com,REJECT-200
 
-# tktn.be 需要走代理
+# tktn.be 域名代理 Proxy
 DOMAIN-SUFFIX,tktn.be,PROXY
 
-# 以下需要走直连
+# Following domians just Directly to go 以下域名直連
 DOMAIN-SUFFIX,inner-active.mobi,DIRECT
 DOMAIN-SUFFIX,mobilefuse.com,DIRECT
 DOMAIN-SUFFIX,inmobi.com,DIRECT
@@ -59,7 +59,7 @@ IP-CIDR,205.164.56.29/24,DIRECT
 
 
 [URL Rewrite] 
-# Talkatone
+# Talkatone Rewrite 重寫
 hostname = alt-r.my.com, imgx.jampp.com
 URL-Regex,^https?:\/\/alt-r\.my\.com\/mobile url reject-dict
 URL-Regex,^https?:\/\/imgx\.jampp\.com\/imgsrv\/tn url reject-img
