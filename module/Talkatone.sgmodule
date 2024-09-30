@@ -1,5 +1,5 @@
 #!name=Talkatone.sgmodule
-#!desc=Talkatone 代理规则模块，使 Talkatone 服务不再对不同代理节点过于敏感
+#!desc=Talkatone Rule & NoAD(Updating)
 #!url=https://raw.githubusercontent.com/eslco/base/main/module/Talkatone.sgmodule
 
 # Author : eslco
