@@ -1,6 +1,6 @@
-#!url=https://raw.githubusercontent.com/eslco/base/main/module/Talkatone.sgmodule
-#!name=Talkatone.sgmodule
-#!desc=Talkatone Rule & NoAD(Updating)
+#!url = https://raw.githubusercontent.com/eslco/base/main/module/Talkatone.sgmodule
+#!name = Talkatone.sgmodule
+#!desc = Talkatone Rule & NoAD(Updating)
 
 # CDN URL : https://raw.gitmirror.com/eslco/base/main/module/Talkatone.sgmodule
 
@@ -9,8 +9,7 @@
 
 # 本模块主要为解决使用某些节点无法直接使用 Talkatone 的问题，使用本模块进行策略分流，并附带去广告规则。本模块仅适用于登陆 Talkatone 后使用，不适用于软件注册。
 # 仓库地址：https://github.com/eslco/base/main/module
-# 规则来源：https://github.com/LOWERTOP/Shadowrocket-First
-           https://t.me/ShadowrocketApp
+# 规则来源：https://github.com/LOWERTOP/Shadowrocket-First https://t.me/ShadowrocketApp
 
 [Rule]
 # 以下为该软件部分去广告规则
