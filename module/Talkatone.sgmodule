@@ -1,0 +1,65 @@
+#!name=Talkatone.sgmodule
+#!desc=Talkatone 代理规则模块，使 Talkatone 服务不再对不同代理节点过于敏感
+#!url=https://raw.githubusercontent.com/254c/base/main/module/Surge/Talkatone.sgmodule
+
+# Author : eslco
+# Credit : LOWERTOP
+
+# 本模块主要为解决使用某些节点无法直接使用 Talkatone 的问题，使用本模块进行策略分流，并附带去广告规则。本模块仅适用于登陆 Talkatone 后使用，不适用于软件注册。
+# 仓库地址：https://github.com/eslco/base/main/module
+# 规则来源：https://github.com/LOWERTOP/Shadowrocket-First
+           https://t.me/ShadowrocketApp
+
+[Rule]
+# 以下为该软件部分去广告规则
+DOMAIN-SUFFIX,gum.criteo.com,REJECT-200
+DOMAIN-SUFFIX,ow.pubmatic.com,REJECT-200
+DOMAIN-SUFFIX,bidder.criteo.com,REJECT-200
+DOMAIN-SUFFIX,wv.inner-active.mobi,REJECT-200
+DOMAIN-SUFFIX,sdk-dnt.ad.smaato.net,REJECT-200
+DOMAIN-SUFFIX,c.amazon-adsystem.com,REJECT-200
+DOMAIN-SUFFIX,cdn2.inner-active.mobi,REJECT-200
+DOMAIN-SUFFIX,sdk-events.inner-active.mobi,REJECT-200
+DOMAIN-SUFFIX,googleads.g.doubleclick-cn.net,REJECT-200
+DOMAIN-SUFFIX,googleads.g.doubleclick.net,REJECT-200
+DOMAIN-SUFFIX,tappx.com,REJECT-200
+DOMAIN-SUFFIX,appier.net,REJECT-200
+DOMAIN-SUFFIX,criteo.com,REJECT-200
+DOMAIN-KEYWORD,googleads,REJECT-200
+DOMAIN-SUFFIX,smaato.net,REJECT-200
+DOMAIN-SUFFIX,pubmatic.com,REJECT-200
+DOMAIN-SUFFIX,appiersig.com,REJECT-200
+DOMAIN-SUFFIX,adsappier.com,REJECT-200
+DOMAIN-SUFFIX,ads.inmobi.com,REJECT-200
+DOMAIN-SUFFIX,cr.adsappier.com,REJECT-200
+DOMAIN-SUFFIX,amazon-adsystem.com,REJECT-200
+
+# tktn.be 需要走代理
+DOMAIN-SUFFIX,tktn.be,PROXY
+
+# 以下需要走直连
+DOMAIN-SUFFIX,inner-active.mobi,DIRECT
+DOMAIN-SUFFIX,mobilefuse.com,DIRECT
+DOMAIN-SUFFIX,inmobi.com,DIRECT
+DOMAIN-SUFFIX,crashlytics.com,DIRECT
+DOMAIN-SUFFIX,talkatone.com,DIRECT
+DOMAIN-SUFFIX,kochava.com,DIRECT
+DOMAIN-SUFFIX,cohere.com,DIRECT
+DOMAIN-SUFFIX,ip-api.com,DIRECT
+DOMAIN-SUFFIX,agkn.com,DIRECT
+DOMAIN-SUFFIX,tktn.at,DIRECT
+IP-CIDR,50.117.27.0/24,DIRECT
+IP-CIDR,69.46.75.0/24,DIRECT
+IP-CIDR,205.164.56.0/24,DIRECT
+IP-CIDR,63.251.124.0/24,DIRECT
+DOMAIN-SUFFIX,tenor.com,DIRECT
+IP-CIDR,205.164.56.29/24,DIRECT
+
+
+[URL Rewrite] 
+#> URL Redirect
+
+# Talkatone
+hostname = alt-r.my.com, imgx.jampp.com
+URL-Regex,^https?:\/\/alt-r\.my\.com\/mobile url reject-dict
+URL-Regex,^https?:\/\/imgx\.jampp\.com\/imgsrv\/tn url reject-img
