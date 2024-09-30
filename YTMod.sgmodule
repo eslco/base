@@ -6,7 +6,7 @@
 # Credit : Maasea 
 # Original_Repo: https://github.com/Maasea/sgmodule/blob/master/YouTube.Enhance.sgmodule
 
-#!arguments=屏蔽上传按钮:true,屏蔽选段按钮:false,字幕翻译语言:zh-Hant,歌词翻译语言:zh-Hant,脚本执行引擎:jsc,启用调试模式:false
+#!arguments=屏蔽上传按钮:true,屏蔽选段按钮:false,字幕翻译语言:zh-Hans,歌词翻译语言:zh-Hant,脚本执行引擎:jsc,启用调试模式:false
 
 #!arguments-desc=- 屏蔽参数：[true, false] \n- 翻译参数：[语言代码, off] \n- 脚本引擎：[auto, jsc, webview]\n\n1. 语言代码遵循 Google Translate Languages Codes, 当填入 off 时关闭翻译\n2. 推荐使用 jsc 引擎，但你仍可以切换成 webview 体验 Surge 新特性\n3. 开启调试模式用于输出更多日志
 
@@ -54,8 +54,8 @@ URL-REGEX,(^https?:\/\/([\w-]+)\.googlevideo\.com\/initplayback(\?.*oad=.+)$),RE
 
 [Script]
 # 验证并更新脚本路径
-youtube.request = type=http-request,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence|get_watch),requires-body=1,max-size=-1,binary-body-mode=1,engine=auto,script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.request.preview.js 
-youtube.response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch),requires-body=1,max-size=-1,binary-body-mode=1,engine=auto,script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.response.preview.js,argument={"lyricLang":"en-US","captionLang":"zh-hant","blockUpload":true,"blockImmersive":false,"debug":false}
+youtube.request = type=http-request,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence|get_watch),requires-body=1,max-size=-1,binary-body-mode=1,engine=jsc,script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.request.preview.js 
+youtube.response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch),requires-body=1,max-size=-1,binary-body-mode=1,engine=sjc,script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.response.preview.js,argument={"lyricLang":"zh-Hans","captionLang":"zh-hant","blockUpload":false,"blockImmersive":false,"debug":false}
 
 # 首頁初始化AD 
 # 适用Surge (其他客户端如遇到兼容性问题，请关闭此条规则)
