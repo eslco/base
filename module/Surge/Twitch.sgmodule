@@ -1,11 +1,11 @@
 #!url=https://raw.githubusercontent.com/eslco/base/main/module/Surge/Twitch.sgmodule
 #!name=Twitch Omega
-#!desc=Twitch Rule & NoAD(Update)
+#!desc=Twitch 1080p + NoAD(Update)
 
 # CDN URL: https://raw.gitmirror.com/eslco/base/main/module/Surge/Twitch.sgmodule
 
-# Author : eslco
-# Credit : William
+# Author: https://github.com/eslco
+# Crédit: https://t.me/cmliussss
 
 # 本模組主要用於解決使用CF Workers节点無法固定連線ttvnw.net的問題，使用本模組進行策略分流，並附帶去廣告規則。 本模組僅適用於登入Twitch後使用，不適用於Twitch軟體註冊。
 
