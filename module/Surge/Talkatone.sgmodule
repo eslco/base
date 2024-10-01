@@ -4,7 +4,7 @@
 
 # CDN URL: https://raw.gitmirror.com/eslco/base/main/module/Surge/Talkatone.sgmodule
 
-# Author : eslco
+# Author : https://github.com/eslco
 # Credit : LOWERTOP
 
 # 本模組主要用於解決使用某些节点無法直接使用Talkatone的問題，使用本模組進行策略分流，並附帶去廣告規則。 本模組僅適用於登入Talkatone後使用，不適用於軟體註冊。
