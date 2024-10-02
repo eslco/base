@@ -1,5 +1,6 @@
-# BlockChain Rule
-
+# Name : Domain.list
+# Author : eslco
+# URL : https://raw.githubusercontent.com/eslco/base/main/rule/Surge/Blockchain/Domain.list 
 
 DOMAIN-SUFFIX,binance.com
 DOMAIN-SUFFIX,binance.cloud

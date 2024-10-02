@@ -1,6 +1,7 @@
 # Name: Direct.list
-# Author: esinco, eslion
-# URL: https://raw.gitAuthor: esinco, eslionhubusercontent.com/eslco/base/main/rule/Shadowrocket/Twitch/Direct.list
+# Author: eslco, eslion
+# URL: https://raw.githubusercontent.com/eslco/base/main/rule/Shadowrocket/Twitch/Direct.list
+
 # This Domain list for test and study usages only
 
 DOMAIN-SUFFIX,static-cdn.jtvnw.net

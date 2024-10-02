@@ -1,3 +1,5 @@
+# Name : Paypal.list
+# Author : eslco  
 PROCESS-NAME,com.paypal.android.p2pmobile
 DOMAIN-SUFFIX,account-paypal.info
 DOMAIN-SUFFIX,account-paypal.net
