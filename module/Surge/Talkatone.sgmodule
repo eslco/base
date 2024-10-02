@@ -1,0 +1,66 @@
+#!url=https://raw.githubusercontent.com/eslco/base/main/module/Surge/Talkatone.sgmodule
+#!name=Talkatone Opt
+#!desc=Global Roaming & NoAD Rule(Updating)
+
+# CDN URL: https://raw.gitmirror.com/eslco/base/main/module/Surge/Talkatone.sgmodule
+
+# Author : https://github.com/eslco
+# Credit : LOWERTOP
+
+# 本模組主要用於解決使用某些地區IP节点無法直接連接Talkatone的問題，使用本模組進行策略分流，並附帶去廣告規則(功能更新中·)
+# 注意! 本模組僅適用於登入Talkatone後使用，不適用於軟體註冊。
+# 倉庫地址：https://github.com/eslco/base/main/module
+# 規則來源：https://github.com/LOWERTOP/Shadowrocket-First https://t.me/ShadowrocketApp
+
+[Rule]
+# Talkatone NoAD RuleSet
+DOMAIN-SUFFIX,gum.criteo.com,REJECT-200
+DOMAIN-SUFFIX,ow.pubmatic.com,REJECT-200
+DOMAIN-SUFFIX,bidder.criteo.com,REJECT-200
+DOMAIN-SUFFIX,wv.inner-active.mobi,REJECT-200
+DOMAIN-SUFFIX,sdk-dnt.ad.smaato.net,REJECT-200
+DOMAIN-SUFFIX,c.amazon-adsystem.com,REJECT-IMG
+DOMAIN-SUFFIX,cdn2.inner-active.mobi,REJECT-IMG
+DOMAIN-SUFFIX,sdk-events.inner-active.mobi,REJECT-200
+DOMAIN-SUFFIX,googleads.g.doubleclick-cn.net,REJECT-IMG
+DOMAIN-SUFFIX,googleads.g.doubleclick.net,REJECT-IMG
+DOMAIN-SUFFIX,tappx.com,REJECT-200
+DOMAIN-SUFFIX,appier.net,REJECT-200
+DOMAIN-SUFFIX,criteo.com,REJECT-200
+DOMAIN-KEYWORD,googleads,REJECT-IMG
+DOMAIN-SUFFIX,smaato.net,REJECT-200
+DOMAIN-SUFFIX,pubmatic.com,REJECT-IMG
+DOMAIN-SUFFIX,appiersig.com,REJECT-IMG
+DOMAIN-SUFFIX,adsappier.com,REJECT-IMG
+DOMAIN-SUFFIX,ads.inmobi.com,REJECT-TINYGIF
+DOMAIN-SUFFIX,cr.adsappier.com,REJECT-IMG
+DOMAIN-SUFFIX,amazon-adsystem.com,REJECT-DICT
+
+# tktn.be 域名代理 Proxy
+DOMAIN-SUFFIX,tktn.be,PROXY
+
+# Following domians just Directly to go 以下域名直連
+DOMAIN-SUFFIX,inner-active.mobi,DIRECT
+DOMAIN-SUFFIX,mobilefuse.com,DIRECT
+DOMAIN-SUFFIX,inmobi.com,DIRECT
+DOMAIN-SUFFIX,crashlytics.com,DIRECT
+DOMAIN-SUFFIX,talkatone.com,DIRECT
+DOMAIN-SUFFIX,kochava.com,DIRECT
+DOMAIN-SUFFIX,cohere.com,DIRECT
+DOMAIN-SUFFIX,ip-api.com,DIRECT
+DOMAIN-SUFFIX,agkn.com,DIRECT
+DOMAIN-SUFFIX,tktn.at,DIRECT
+DOMAIN-SUFFIX,tenor.com,DIRECT
+# IPCIDR
+IP-CIDR,50.117.27.0/24,DIRECT
+IP-CIDR,69.46.75.0/24,DIRECT
+IP-CIDR,205.164.56.0/24,DIRECT
+IP-CIDR,63.251.124.0/24,DIRECT
+IP-CIDR,205.164.56.29/24,DIRECT
+
+
+[URL Rewrite] 
+# Talkatone Rewrite 重寫
+hostname = alt-r.my.com, imgx.jampp.com
+URL-Regex,^https?:\/\/alt-r\.my\.com\/mobile url reject-dict
+URL-Regex,^https?:\/\/imgx\.jampp\.com\/imgsrv\/tn url reject-img
