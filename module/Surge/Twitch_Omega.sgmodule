@@ -7,40 +7,133 @@
 # Author: https://github.com/eslco
 # Crédit: https://t.me/cmliussss
 
-# 本模組主要用於解決使用CF Workers节点無法固定連線ttvnw.net的問題，使用本模組進行策略分流，並附帶去廣告規則。 本模組僅適用於登入Twitch後使用，不適用於Twitch軟體註冊。
+# 本模組主要用於解決使用Workers&Pages等CDN节点無法穩定連線Twitch串流*.ttvnw.net的問題，使用本模組進行策略分流，並附帶去廣告規則。 
+#本模組僅適用於登入Twitch後使用，不適用於Twitch軟體註冊。
 
 # 倉庫地址：https://github.com/eslco/base/main/module
 
 [Rule]
-# Twitch 1080P Fixed
+DOMAIN-SUFFIX,static-cdn.jtvnw.net,DIRECT
+DOMAIN-SUFFIX,global.poe.live-video.net,DIRECT
+DOMAIN-SUFFIX,live001-ttvnw.akamaized.net,DIRECT
+DOMAIN-SUFFIX,playlist.ttvnw.net,DIRECT
 
-RULE-SET,https://raw.githubusercontent.com/eslco/base/main/rule/Shadowrocket/Twitch/Direct.list,DIRECT
-
-# IP-CIDR hls.ttvnw.net
-IP-CIDR,35.163.143.41/32,DIRECT
-IP-CIDR,52.129.131.86/32,DIRECT
-IP-CIDR,52.223.203.200/32,DIRECT
-IP-CIDR,52.223.241.7/32,DIRECT
-IP-CIDR,52.223.247.99/32,DIRECT
-IP-CIDR,54.187.48.101/32,DIRECT
-IP-CIDR,99.181.79.0/24,DIRECT
-IP-CIDR,99.181.91.59/32,DIRECT
-IP-CIDR,99.181.107.40/32,DIRECT
-IP-CIDR,99.181.127.5/32,DIRECT
-IP-CIDR,103.53.48.215/32,DIRECT
-# IP-CIDR hls.ttvnw.net
-
+# Twitch 1080P+ CDN
 DOMAIN-SUFFIX,abs.hls.ttvnw.net,DIRECT
 DOMAIN-SUFFIX,hls.ttvnw.net,DIRECT
-DOMAIN-KEYWORD,hls.ttvnw,DIRECT
+DOMAIN-KEYWORD,hls.ttvnw.net,DIRECT
+# Twitch 1080P+ CDN
+
+# IP-CIDR hls.ttvnw.net
+IP-CIDR,35.163.143.41/32,DIRECT,no-resolve
+IP-CIDR,52.129.131.86/32,DIRECT,no-resolve
+IP-CIDR,52.223.203.200/32,DIRECT,no-resolve
+IP-CIDR,52.223.241.7/32,DIRECT,no-resolve
+IP-CIDR,52.223.247.99/32,DIRECT,no-resolve
+IP-CIDR,54.187.48.101/32,DIRECT,no-resolve
+IP-CIDR,99.181.91.59/32,DIRECT,no-resolve
+IP-CIDR,99.181.107.40/32,DIRECT,no-resolve
+IP-CIDR,99.181.127.5/32,DIRECT,no-resolve
+IP-CIDR,103.53.48.215/32,DIRECT,no-resolve
+# ...
+# IP-CIDR hls.ttvnw.net
+
 # Twitch 1080P Fixed
 
-# Reject AD
-RULE-SET,https://raw.githubusercontent.com/eslco/base/main/rule/Shadowrocket/Twitch/Reject.list,REJECT-200
-# Reject AD
+# Reject Twitch AD
+DOMAIN-SUFFIX,d2v02itv0y9u9t.cloudfront.net,REJECT-200
+DOMAIN-SUFFIX,secure-sts-prod.imrworldwide.com,REJECT-200
+DOMAIN-SUFFIX,aax-us-east.amazon-adsystem.com,REJECT-DICT
+DOMAIN-SUFFIX,vaes.amazon-adsystem.com,REJECT-IMG
+DOMAIN-SUFFIX,cdn-a.amazon-adsystem.com,REJECT-IMG
+DOMAIN-SUFFIX,pubads.g.doubleclick.net,REJECT-DICT
+DOMAIN-SUFFIX,scorecardresearch.com,REJECT-IMG
+DOMAIN-SUFFIX,s.amazon-adsystem.com,REJECT-IMG
+DOMAIN-SUFFIX,reporting.cdndex.io,REJECT-IMG
+DOMAIN-SUFFIX,ad.doubleclick.net,REJECT-200
+DOMAIN-SUFFIX,api.mixpanel.com,REJECT-DICT
+DOMAIN-SUFFIX,spade.twitch.tv,REJECT-TINYGIF
+DOMAIN-SUFFIX,fan.twitch.tv,REJECT-DICT
+DOMAIN-KEYWORD,video-weaver,REJECT-TINYGIF
+
+# Test API
+DOMAIN-SUFFIX,api.amplitude.com,REJECT-DICT
+DOMAIN-SUFFIX,api.sprig.com,REJECT-ARRAY
+# Test API
+DOMAIN-SUFFIX,ads.twitch.tv,REJECT-IMG
+# Reject Twitch AD
+
 # Proxy Rule
-RULE-SET,https://raw.githubusercontent.com/eslco/base/main/rule/Shadowrocket/Twitch/Twitch.list,PROXY
-RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Twitch/Twitch.list,PROXY
+DOMAIN-SUFFIX,assets.twitch.tv,PROXY
+DOMAIN-SUFFIX,usher.ttvnw.net,PROXY
+DOMAIN-SUFFIX,playlist.ttvnw.net,PROXY
+DOMAIN-SUFFIX,vod-secure.twitch.tv,PROXY
+DOMAIN-SUFFIX,pubsub-edge.twitch.tv,PROXY
+
+DOMAIN-SUFFIX,twitch.tv,PROXY
+DOMAIN-SUFFIX,ext-twitch.tv,PROXY
+DOMAIN-SUFFIX,live-video.net,PROXY
+DOMAIN-SUFFIX,twitch-ext.rootonline.de,PROXY
+DOMAIN-SUFFIX,twitchcdn.net,PROXY
+DOMAIN-SUFFIX,twitchsvc.net,PROXY
+
+DOMAIN-SUFFIX,irc-ws.chat.twitch.tv
+
+# IP-CIDR chat.twitch.tv #
+IP-CIDR,52.26.161.211/32,PROXY,no-resolve
+IP-CIDR,44.235.206.9/32,PROXY,no-resolve
+IP-CIDR,34.213.205.75/32,PROXY,no-resolve
+IP-CIDR,52.89.201.32/32,PROXY,no-resolve
+IP-CIDR,54.69.102.66/32,PROXY,no-resolve
+IP-CIDR,52.36.231.249/32,PROXY,no-resolve
+IP-CIDR,44.238.175.31/32,PROXY,no-resolve
+IP-CIDR,44.228.62.191/32,PROXY,no-resolve
+# IP-CIDR chat.twitch.tv #
+
+# IPv4 twitch # 20240926 Updated 
+IP-CIDR,23.160.0.0/24,PROXY,no-resolve   
+IP-CIDR,45.113.128.0/22,PROXY,no-resolve 
+IP-CIDR,52.129.128.0/20,PROXY,no-resolve 
+IP-CIDR,52.129.130.0/24,PROXY,no-resolve 
+IP-CIDR,52.129.131.0/24,PROXY,no-resolve 
+IP-CIDR,52.129.160.0/20,PROXY,no-resolve 
+IP-CIDR,52.223.192.0/20,PROXY,no-resolve 
+IP-CIDR,52.223.208.0/21,PROXY,no-resolve 
+IP-CIDR,52.223.216.0/21,PROXY,no-resolve 
+IP-CIDR,52.223.224.0/20,PROXY,no-resolve 
+IP-CIDR,52.223.240.0/20,PROXY,no-resolve 
+IP-CIDR,99.181.64.0/20,PROXY,no-resolve  
+IP-CIDR,99.181.80.0/21,PROXY,no-resolve  
+IP-CIDR,99.181.88.0/21,PROXY,no-resolve  
+IP-CIDR,99.181.96.0/19,PROXY,no-resolve  
+IP-CIDR,103.53.48.0/22,PROXY,no-resolve  
+IP-CIDR,103.53.48.0/23,PROXY,no-resolve  
+IP-CIDR,185.42.204.0/22,PROXY,no-resolve 
+IP-CIDR,192.16.64.0/21,PROXY,no-resolve
+IP-CIDR,192.108.239.0/24,PROXY,no-resolve
+IP-CIDR,199.9.248.0/21,PROXY,no-resolve
+# IPv4 twitch # 20241004 Updated
+
+# IPv6 twitch # 20241004 Updated
+IP-CIDR,2402:2a80::/32,PROXY,no-resolve
+IP-CIDR,2402:2a80:1000::/36,PROXY,no-resolve
+IP-CIDR,2402:2a80:2000::/36,PROXY,no-resolve
+IP-CIDR,2402:2a80:3000::/36,PROXY,no-resolve
+IP-CIDR,2402:2a80:4000::/36,PROXY,no-resolve
+IP-CIDR,2402:2a80:4200::/40,PROXY,no-resolve
+IP-CIDR,2402:2a80:5000::/36,PROXY,no-resolve
+IP-CIDR,2402:2a80:6000::/36,PROXY,no-resolve
+IP-CIDR,2402:2a80:b000::/36,PROXY,no-resolve
+# IPv6 twitch # 20241004 Updated
+
+# Old Backup
+IP-CIDR,52.223.224.0/19,PROXY,no-resolve
+IP-CIDR,99.181.64.0/18,PROXY,no-resolve
+# Old Backup
+
+
+# 备份
+# RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Twitch/Twitch.list,PROXY
 
 # Twitch Rule
 [URL-REGEX]

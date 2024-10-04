@@ -8,13 +8,12 @@
 # IP-CIDR: ~~
 # TOTAL: ~~
 
-
-DOMAIN-SUFFIX,playlist.ttvnw.net
-DOMAIN-SUFFIX,usher.ttvnw.net
-DOMAIN-SUFFIX,scorecardresearch.com
-DOMAIN-SUFFIX,static-cdn.jtvnw.net
-DOMAIN-SUFFIX,vod-secure.twitch.tv
 DOMAIN-SUFFIX,assets.twitch.tv
+DOMAIN-SUFFIX,usher.ttvnw.net
+DOMAIN-SUFFIX,static-cdn.jtvnw.net
+DOMAIN-SUFFIX,playlist.ttvnw.net
+DOMAIN-SUFFIX,scorecardresearch.com
+DOMAIN-SUFFIX,vod-secure.twitch.tv
 DOMAIN-SUFFIX,pubsub-edge.twitch.tv
 
 # DOMAIN-SUFFIX,ttvnw.net

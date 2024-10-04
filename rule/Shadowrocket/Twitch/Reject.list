@@ -21,6 +21,7 @@ DOMAIN-SUFFIX,reporting.cdndex.io
 DOMAIN-SUFFIX,ad.doubleclick.net
 DOMAIN-SUFFIX,api.mixpanel.com
 DOMAIN-SUFFIX,spade.twitch.tv
+DOMAIN-SUFFIX,fan.twitch.tv
 #
 DOMAIN-KEYWORD,video-weaver
 # Test API
