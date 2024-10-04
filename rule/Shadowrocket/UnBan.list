@@ -3,8 +3,6 @@
 #Twitch TV
 DOMAIN-SUFFIX,static-cdn.jtvnw.net
 DOMAIN-SUFFIX,global.poe.live-video.net
-DOMAIN-SUFFIX,ase11-0.playlist.ttvnw.net
-DOMAIN-SUFFIX,apn12-0.playlist.ttvnw.net
 DOMAIN-SUFFIX,live001-ttvnw.akamaized.net
 DOMAIN-SUFFIX,playlist.ttvnw.net
 
