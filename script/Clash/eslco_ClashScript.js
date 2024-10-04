@@ -58,8 +58,8 @@ const ruleProviders = {
     "Wotb": {
     ...ruleProviderCommon,
     behavior: "domain",
-    url: "https://raw.githubusercontent.com/254c/base/main/rule/Clash/Wotb.list",
-    path: "./rulesets/254c/Wotb.yaml",
+    url: "https://raw.githubusercontent.com/eslco/base/main/rule/Clash/Wotb.list",
+    path: "./rulesets/eslco/Wotb.yaml",
   },
   reject: {
     ...ruleProviderCommon,

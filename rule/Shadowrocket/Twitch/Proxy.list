@@ -1,4 +1,4 @@
-# NAME: Twitch.list
+# NAME: Proxy.list
 # AUTHOR: eslco,esineo
 # URL: https://raw.githubusercontent.com/eslco/base/rule/Shadowrocket/Twitch/Proxy.list
 # Credit REPO: https://github.com/blackmatrix7/ios_rule_script
@@ -8,24 +8,25 @@
 # IP-CIDR: ~~
 # TOTAL: ~~
 
+
+DOMAIN-SUFFIX,static-cdn.jtvnw.net
+DOMAIN-SUFFIX,jtvnw.net
 DOMAIN-SUFFIX,assets.twitch.tv
 DOMAIN-SUFFIX,usher.ttvnw.net
-DOMAIN-SUFFIX,static-cdn.jtvnw.net
 DOMAIN-SUFFIX,playlist.ttvnw.net
-DOMAIN-SUFFIX,scorecardresearch.com
 DOMAIN-SUFFIX,vod-secure.twitch.tv
 DOMAIN-SUFFIX,pubsub-edge.twitch.tv
 
-# DOMAIN-SUFFIX,ttvnw.net
 
 DOMAIN-SUFFIX,twitch.tv
 DOMAIN-SUFFIX,ext-twitch.tv
-DOMAIN-SUFFIX,jtvnw.net
 DOMAIN-SUFFIX,live-video.net
 DOMAIN-SUFFIX,twitch-ext.rootonline.de
 DOMAIN-SUFFIX,twitchcdn.net
 DOMAIN-SUFFIX,twitchsvc.net
-# DOMAIN-KEYWORD,ttvnw
+
+# DOMAIN-SUFFIX,ttvnw.net
+# DOMAIN-KEYWORD,ttvnw.net
 
 DOMAIN-SUFFIX,irc-ws.chat.twitch.tv
 # chat
