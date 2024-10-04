@@ -7,7 +7,7 @@
 # Author: https://github.com/eslco
 # Crédit: https://t.me/cmliussss
 
-# 本模組主要用於解決使用Workers&Pages等CDN节点無法穩定連線Twitch串流網路*.ttvnw.net的問題，使用本模組進行策略分流，並附帶去廣告規則。 
+# 本模組主要用於解決使用Workers&Pages等CDN节点無法穩定連線Twitch串流網路(ttvnw.net)問題，使用本模組進行策略分流，並附帶去廣告規則。 
 #本模組僅適用於登入Twitch後串流使用，不適用於Twitch軟體註冊。
 
 # 倉庫地址：https://github.com/eslco/base/main/module
@@ -81,6 +81,7 @@ DOMAIN-SUFFIX,vod-secure.twitch.tv,PROXY
 DOMAIN-SUFFIX,pubsub-edge.twitch.tv,PROXY
 
 DOMAIN-SUFFIX,twitch.tv,PROXY
+DOMAIN-SUFFIX,gql.twitch.tv,PROXY
 DOMAIN-SUFFIX,ext-twitch.tv,PROXY
 DOMAIN-SUFFIX,live-video.net,PROXY
 DOMAIN-SUFFIX,twitch-ext.rootonline.de,PROXY
