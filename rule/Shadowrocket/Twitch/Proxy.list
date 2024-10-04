@@ -19,6 +19,7 @@ DOMAIN-SUFFIX,pubsub-edge.twitch.tv
 
 
 DOMAIN-SUFFIX,twitch.tv
+DOMAIN-SUFFIX,gql.twitch.tv
 DOMAIN-SUFFIX,ext-twitch.tv
 DOMAIN-SUFFIX,live-video.net
 DOMAIN-SUFFIX,twitch-ext.rootonline.de
