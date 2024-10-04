@@ -44,11 +44,11 @@ IP-CIDR,52.223.203.200/32,no-resolve
 IP-CIDR,52.223.241.7/32,no-resolve
 IP-CIDR,52.223.247.99/32,no-resolve
 IP-CIDR,54.187.48.101/32,no-resolve
-IP-CIDR,99.181.79.0/24,no-resolve
 IP-CIDR,99.181.91.59/32,no-resolve
 IP-CIDR,99.181.107.40/32,no-resolve
 IP-CIDR,99.181.127.5/32,no-resolve
 IP-CIDR,103.53.48.215/32,no-resolve
+# ...
 # hls.ttvnw.net IP-CIDR
 
 DOMAIN-SUFFIX,abs.hls.ttvnw.net
