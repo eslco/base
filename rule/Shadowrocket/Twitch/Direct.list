@@ -6,8 +6,6 @@
 
 DOMAIN-SUFFIX,static-cdn.jtvnw.net
 DOMAIN-SUFFIX,global.poe.live-video.net
-DOMAIN-SUFFIX,ase11-0.playlist.ttvnw.net
-DOMAIN-SUFFIX,apn12-0.playlist.ttvnw.net
 DOMAIN-SUFFIX,live001-ttvnw.akamaized.net
 DOMAIN-SUFFIX,playlist.ttvnw.net
 
@@ -55,4 +53,4 @@ IP-CIDR,103.53.48.215/32,no-resolve
 
 DOMAIN-SUFFIX,abs.hls.ttvnw.net
 DOMAIN-SUFFIX,hls.ttvnw.net
-DOMAIN-KEYWORD,hls.ttvnw
+DOMAIN-KEYWORD,hls.ttvnw.net
