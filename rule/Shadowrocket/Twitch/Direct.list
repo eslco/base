@@ -8,6 +8,7 @@ DOMAIN-SUFFIX,static-cdn.jtvnw.net
 DOMAIN-SUFFIX,global.poe.live-video.net
 DOMAIN-SUFFIX,live001-ttvnw.akamaized.net
 DOMAIN-SUFFIX,playlist.ttvnw.net
+DOMAIN-SUFFIX,usher.ttvnw.net
 
 # hls.ttvnw.net
 DOMAIN-SUFFIX,tpe01.hls.ttvnw.net

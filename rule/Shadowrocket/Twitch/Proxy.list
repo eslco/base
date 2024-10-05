@@ -8,26 +8,33 @@
 # IP-CIDR: ~~
 # TOTAL: ~~
 
-
-DOMAIN-SUFFIX,static-cdn.jtvnw.net
-DOMAIN-SUFFIX,jtvnw.net
 DOMAIN-SUFFIX,assets.twitch.tv
-DOMAIN-SUFFIX,usher.ttvnw.net
-DOMAIN-SUFFIX,playlist.ttvnw.net
 DOMAIN-SUFFIX,vod-secure.twitch.tv
 DOMAIN-SUFFIX,pubsub-edge.twitch.tv
-
-
-DOMAIN-SUFFIX,twitch.tv
 DOMAIN-SUFFIX,gql.twitch.tv
+DOMAIN-SUFFIX,api.twitch.tv
 DOMAIN-SUFFIX,ext-twitch.tv
-DOMAIN-SUFFIX,live-video.net
+
 DOMAIN-SUFFIX,twitch-ext.rootonline.de
 DOMAIN-SUFFIX,twitchcdn.net
 DOMAIN-SUFFIX,twitchsvc.net
+DOMAIN-SUFFIX,twitch.tv
 
-# DOMAIN-SUFFIX,ttvnw.net
-# DOMAIN-KEYWORD,ttvnw.net
+# Twitch DIRECT #
+# static CDN
+DOMAIN-SUFFIX,static-cdn.jtvnw.net
+DOMAIN-SUFFIX,usher.ttvnw.net
+DOMAIN-SUFFIX,playlist.ttvnw.net
+DOMAIN-SUFFIX,jtvnw.net
+# 
+# Twitch HD+
+DOMAIN-SUFFIX,global.poe.live-video.net
+DOMAIN-SUFFIX,live-video.net
+DOMAIN-SUFFIX,abs.hls.ttvnw.net
+DOMAIN-SUFFIX,hls.ttvnw.net
+DOMAIN-KEYWORD,hls.ttvnw.net
+# Twitch HD+
+# DIRECT #
 
 DOMAIN-SUFFIX,irc-ws.chat.twitch.tv
 # chat
@@ -63,9 +70,9 @@ IP-CIDR,185.42.204.0/22,no-resolve
 IP-CIDR,192.16.64.0/21,no-resolve
 IP-CIDR,192.108.239.0/24,no-resolve
 IP-CIDR,199.9.248.0/21,no-resolve
-#IPv4
+# IPv4 #
 
-#IPv6# 20240925 Updated
+# IPv6 # 20240925 Updated
 IP-CIDR,2402:2a80::/32,no-resolve
 IP-CIDR,2402:2a80:1000::/36,no-resolve
 IP-CIDR,2402:2a80:2000::/36,no-resolve
@@ -75,8 +82,8 @@ IP-CIDR,2402:2a80:4200::/40,no-resolve
 IP-CIDR,2402:2a80:5000::/36,no-resolve
 IP-CIDR,2402:2a80:6000::/36,no-resolve
 IP-CIDR,2402:2a80:b000::/36,no-resolve
-#IPv6# 
+# IPv6 # 
 
-# Old Backup
+# Reserved Rule #
 IP-CIDR,52.223.224.0/19,no-resolve
 IP-CIDR,99.181.64.0/18,no-resolve
