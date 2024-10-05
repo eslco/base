@@ -6,9 +6,14 @@
 
 DOMAIN-SUFFIX,static-cdn.jtvnw.net
 DOMAIN-SUFFIX,global.poe.live-video.net
+DOMAIN-KEYWORD,live-video.net
+URL-REGEX,^https?:\/\/[\w-]+\.live-video\.net\/.*
 DOMAIN-SUFFIX,live001-ttvnw.akamaized.net
 DOMAIN-SUFFIX,playlist.ttvnw.net
 DOMAIN-SUFFIX,usher.ttvnw.net
+URL-REGEX,^https?:\/\/.*\.ext-twitch\.tv\/.*
+DOMAIN-KEYWORD,ext-twitch.tv
+
 
 # hls.ttvnw.net
 DOMAIN-SUFFIX,tpe01.hls.ttvnw.net
@@ -51,6 +56,9 @@ IP-CIDR,99.181.127.5/32,no-resolve
 IP-CIDR,103.53.48.215/32,no-resolve
 # ...
 # hls.ttvnw.net IP-CIDR
+
+URL-REGEX,^https?:\/\/video-weaver\..*\.hls\.ttvnw\.net\/.*
+URL-REGEX,^https?:\/\/video-edge-.*\.abs\.hls\.ttvnw\.net\/.*
 
 DOMAIN-SUFFIX,abs.hls.ttvnw.net
 DOMAIN-SUFFIX,hls.ttvnw.net

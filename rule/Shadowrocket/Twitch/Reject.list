@@ -18,12 +18,12 @@ DOMAIN-SUFFIX,scorecardresearch.com
 DOMAIN-SUFFIX,s.amazon-adsystem.com
 #
 DOMAIN-SUFFIX,reporting.cdndex.io
+DOMAIN-KEYWORD,ingest.sentry.io
 DOMAIN-SUFFIX,ad.doubleclick.net
 DOMAIN-SUFFIX,api.mixpanel.com
 DOMAIN-SUFFIX,spade.twitch.tv
-DOMAIN-SUFFIX,fan.twitch.tv
+# DOMAIN-SUFFIX,fan.twitch.tv
 #
-DOMAIN-KEYWORD,video-weaver
 # Test API
 DOMAIN-SUFFIX,api.amplitude.com
 DOMAIN-SUFFIX,api.sprig.com

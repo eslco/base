@@ -3,7 +3,7 @@
 #!desc=HD+ Guaranteed + NoAD Rule(Updating)
 
 # CDN URL: https://raw.gitmirror.com/eslco/base/main/module/Surge/TwitchOmega.sgmodule
-# Updated at 2024.10.05 17:31 PM
+# Updated at 2024.10.05 18:25 PM
 # Author: https://github.com/eslco
 # Crédit: https://t.me/cmliussss
 
@@ -16,14 +16,15 @@
 # BanAD #
 ## General AD ##
 ^https?:\/\/d2v02itv0y9u9t\.cloudfront\.net\/.* _ REJECT-200
-^https?:\/\/secure-sts-prod\.imrworldwide\.com\/.* _ REJECT-200
+^https?:\/\/secure-sts-prod\.imrworldwide\.com\/cgi-bin\/gn\?.* _ REJECT-IMG
 ^https?:\/\/aax-us-east\.amazon-adsystem\.com\/.* _ REJECT-DICT
 ^https?:\/\/vaes\.amazon-adsystem\.com\/.* _ REJECT-IMG
 ^https?:\/\/cdn-a\.amazon-adsystem\.com\/.* _ REJECT-IMG
 ^https?:\/\/pubads\.g\.doubleclick\.net\/.* _ REJECT-DICT
-^https?:\/\/scorecardresearch\.com\/.* _ REJECT-IMG
-^https?:\/\/s\.amazon-adsystem\.com\/.* _ REJECT-IMG
+^https?:\/\/.*\.scorecardresearch\.com\/.* _ REJECT-200
+^https?:\/\/.*\.s\.amazon-adsystem\.com\/.* _ REJECT-IMG
 ^https?:\/\/reporting\.cdndex\.io\/.* _ REJECT-DICT
+^https?:\/\/.*\.sentry\.io\/api\/.*\/envelope\/.* _ REJECT-200
 ^https?:\/\/ad\.doubleclick\.net\/.* _ REJECT-200
 ^https?:\/\/api\.mixpanel\.com\/.* _ REJECT-DICT
 ## General AD ##
@@ -48,15 +49,23 @@
 ## Twitch static CDN ##
 DOMAIN-SUFFIX,static-cdn.jtvnw.net,DIRECT
 DOMAIN-SUFFIX,global.poe.live-video.net,DIRECT
+DOMAIN-SUFFIX,live-video.net,DIRECT
+URL-REGEX,^https?:\/\/[\w-]+\.live-video\.net\/.*,DIRECT
+# URL-REGEX,^https?:\/\/.*\.live-video\.net\/.*,DIRECT
 DOMAIN-SUFFIX,live001-ttvnw.akamaized.net,DIRECT
 DOMAIN-SUFFIX,playlist.ttvnw.net,DIRECT
 DOMAIN-SUFFIX,usher.ttvnw.net,DIRECT
 ## Twitch static CDN ##
 ## Twitch 1080P+ Fixed ##
+
+URL-REGEX,^https?:\/\/video-weaver\..*\.hls\.ttvnw\.net\/.*,DIRECT
+URL-REGEX,^https?:\/\/video-edge-.*\.abs\.hls\.ttvnw\.net\/.*,DIRECT
+
 DOMAIN-SUFFIX,abs.hls.ttvnw.net,DIRECT
 DOMAIN-SUFFIX,hls.ttvnw.net,DIRECT
 DOMAIN-KEYWORD,hls.ttvnw.net,DIRECT
 DOMAIN-KEYWORD,video-weaver,DIRECT
+
 ## Twitch 1080P+ Fixed ##
 
 ##  hls.ttvnw.net ##
@@ -72,6 +81,10 @@ IP-CIDR,99.181.127.5/32,DIRECT,no-resolve
 IP-CIDR,103.53.48.215/32,DIRECT,no-resolve
 # ...
 ##  hls.ttvnw.net ##
+
+## Twitch Extension ##
+URL-REGEX,^https?:\/\/.*\.ext-twitch\.tv\/.*,DIRECT
+## Twitch Extension ##
 # Twitch Direct #
 
 # Twitch Proxy #
@@ -82,12 +95,13 @@ DOMAIN-SUFFIX,pubsub-edge.twitch.tv,PROXY
 DOMAIN-SUFFIX,twitchcdn.net,PROXY
 DOMAIN-SUFFIX,twitchsvc.net,PROXY
 DOMAIN-SUFFIX,assets.twitch.tv,PROXY
-DOMAIN-SUFFIX,gql.twitch.tv,PROXY
-DOMAIN-SUFFIX,api.twitch.tv,PROXY
-DOMAIN-SUFFIX,ext-twitch.tv,PROXY
+DOMAIN-KEYWORD,gql.twitch.tv,PROXY
+DOMAIN-KEYWORD,api.twitch.tv,PROXY
+# URL-REGEX,^https?:\/\/.*\.ext-twitch\.tv\/.*,PROXY
+URL-REGEX,^https?:\/\/.*\.twitch\.tv\/.*,PROXY
 DOMAIN-SUFFIX,twitch.tv,PROXY
 
-## IP-CIDR chat.twitch.tv ##
+## IP-CIDR chat.twitch.tv 聊天室伺服器 ##
 DOMAIN-SUFFIX,irc-ws.chat.twitch.tv
 IP-CIDR,52.26.161.211/32,PROXY,no-resolve
 IP-CIDR,44.235.206.9/32,PROXY,no-resolve
@@ -97,7 +111,7 @@ IP-CIDR,54.69.102.66/32,PROXY,no-resolve
 IP-CIDR,52.36.231.249/32,PROXY,no-resolve
 IP-CIDR,44.238.175.31/32,PROXY,no-resolve
 IP-CIDR,44.228.62.191/32,PROXY,no-resolve
-### IP-CIDR chat.twitch.tv ##
+### IP-CIDR chat.twitch.tv 聊天室伺服器 ##
 
 # Twitch Proxy #
 
