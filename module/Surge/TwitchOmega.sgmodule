@@ -3,7 +3,7 @@
 #!desc=HD+ Guaranteed + NoAD Rule(Updating)
 
 # CDN URL: https://raw.gitmirror.com/eslco/base/main/module/Surge/TwitchOmega.sgmodule
-# Update at 2024.10.05 17:25 PM
+# Updated at 2024.10.05 17:31 PM
 # Author: https://github.com/eslco
 # Crédit: https://t.me/cmliussss
 
@@ -13,7 +13,8 @@
 # 倉庫地址：https://github.com/eslco/base/main/module
 
 [URL Rewrite]
-## 一般廣告請求 General AD ##
+# BanAD #
+## General AD ##
 ^https?:\/\/d2v02itv0y9u9t\.cloudfront\.net\/.* _ REJECT-200
 ^https?:\/\/secure-sts-prod\.imrworldwide\.com\/.* _ REJECT-200
 ^https?:\/\/aax-us-east\.amazon-adsystem\.com\/.* _ REJECT-DICT
@@ -25,7 +26,7 @@
 ^https?:\/\/reporting\.cdndex\.io\/.* _ REJECT-DICT
 ^https?:\/\/ad\.doubleclick\.net\/.* _ REJECT-200
 ^https?:\/\/api\.mixpanel\.com\/.* _ REJECT-DICT
-## 一般廣告請求 General AD ##
+## General AD ##
 
 ## Twitch AD ##
 ^https?:\/\/spade\.twitch\.tv\/.* _ REJECT-TINYGIF
@@ -39,7 +40,7 @@
 ^https?:\/\/[\w-]+\.twitch\.tv\/api\/stats\/ads.* _ REJECT-200
 ^https?:\/\/[\w-]+\.twitch\.tv\/api\/stats\/adsense.* _ REJECT-200
 ## Twitch AD ##
-
+# BanAD #
 
 [Rule]
 
