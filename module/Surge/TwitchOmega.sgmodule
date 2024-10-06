@@ -35,11 +35,8 @@
 ^https?:\/\/api\.sprig\.com\/.* _ REJECT-ARRAY
 ^https?:\/\/edge\.ads\.twitch\.tv\/.* _ REJECT-IMG
 ^https?:\/\/ads\.twitch\.tv\/.* _ REJECT-IMG
+^https?:\/\/[\w-]+\.twitch\.tv\/(?:.*ad.*|api\/stats\/ad(?:s|sense).*) _ REJECT-IMG
 
-^https?:\/\/[\w-]+\.twitch\.tv\/.*ad.* _ REJECT-200
-^https?:\/\/[\w-]+\.twitch\.tv\/.*ads.* _ REJECT-200
-^https?:\/\/[\w-]+\.twitch\.tv\/api\/stats\/ads.* _ REJECT-200
-^https?:\/\/[\w-]+\.twitch\.tv\/api\/stats\/adsense.* _ REJECT-200
 ## Twitch AD ##
 # BanAD #
 
@@ -47,24 +44,39 @@
 
 # Twitch Direct #
 ## Twitch static CDN ##
-DOMAIN-SUFFIX,static-cdn.jtvnw.net,DIRECT
+URL-REGEX,^https?:\/\/(?:[^.]+\.)?(?:static-cdn\.)?jtvnw\.net\/.*$,DIRECT
+URL-REGEX,^https?:\/\/(.*\.)?playlist\.ttvnw\.net\/.*$,DIRECT
+URL-REGEX,^https?:\/\/.*ttvnw\.akamaized\.net\/.*$,DIRECT
+URL-REGEX,^https?:\/\/[\w-]+\.live-video\.net\/.*$,DIRECT
 DOMAIN-SUFFIX,global.poe.live-video.net,DIRECT
-DOMAIN-SUFFIX,live-video.net,DIRECT
-URL-REGEX,^https?:\/\/[\w-]+\.live-video\.net\/.*,DIRECT
-# URL-REGEX,^https?:\/\/.*\.live-video\.net\/.*,DIRECT
-DOMAIN-SUFFIX,live001-ttvnw.akamaized.net,DIRECT
-DOMAIN-SUFFIX,playlist.ttvnw.net,DIRECT
-DOMAIN-SUFFIX,usher.ttvnw.net,DIRECT
-## Twitch static CDN ##
-## Twitch 1080P+ Fixed ##
+DOMAIN-KEYWORD,static-cdn.jtvnw.net,DIRECT
+DOMAIN-KEYWORD,playlist.ttvnw.net,DIRECT
 
-URL-REGEX,^https?:\/\/video-weaver\..*\.hls\.ttvnw\.net\/.*,DIRECT
-URL-REGEX,^https?:\/\/video-edge-.*\.abs\.hls\.ttvnw\.net\/.*,DIRECT
+# DOMAIN-SUFFIX,usher.ttvnw.net,DIRECT
+
+
+## Twitch static CDN ##
+
+## Twitch 1080P+ Fixed ##
+# 默认匹配 (video-(weaver|edge)
+URL-REGEX,^https?:\/\/video-weaver\..*\.hls\.ttvnw\.net\/.*$,DIRECT
+URL-REGEX,^https?:\/\/video-edge.*\.abs\.hls\.ttvnw\.net\/.*$,DIRECT
+
+# 精准匹配 Twitch (Cloudfront) CDN
+URL-REGEX,^https?:\/\/.*cloudfront.*\.(hls\.ttvnw\.net|ttvnw\.net)\/.*$,DIRECT
+
+# 广域匹配 (使用捕获组,可選子域名)
+URL-REGEX,^https?:\/\/(.*\.)?video-(weaver|edge).*?(\.abs)?\.hls\.ttvnw\.net\/.*$,DIRECT
+
+# 精准匹配 兼容性(使用非捕获组,可選子域名匹配任何字符)
+URL-REGEX,^https?:\/\/(?:.*\.)?(?:video-(weaver|edge))?(?:.*\.)?(?:\.abs)?\.hls\.ttvnw\.net\/.*$,DIRECT
+
+# 精准匹配 性能效率(使用非捕获组,可選子域名匹配字母、数字、点或下划线、破折号，防止非逻辑URL)
+URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?(?:video-(?:weaver|edge))?(?:-[\w.-]+)?(?:\.abs)?\.hls\.ttvnw\.net\/.*$,DIRECT
 
 DOMAIN-SUFFIX,abs.hls.ttvnw.net,DIRECT
 DOMAIN-SUFFIX,hls.ttvnw.net,DIRECT
 DOMAIN-KEYWORD,hls.ttvnw.net,DIRECT
-DOMAIN-KEYWORD,video-weaver,DIRECT
 
 ## Twitch 1080P+ Fixed ##
 
@@ -97,8 +109,9 @@ DOMAIN-SUFFIX,twitchsvc.net,PROXY
 DOMAIN-SUFFIX,assets.twitch.tv,PROXY
 DOMAIN-KEYWORD,gql.twitch.tv,PROXY
 DOMAIN-KEYWORD,api.twitch.tv,PROXY
-# URL-REGEX,^https?:\/\/.*\.ext-twitch\.tv\/.*,PROXY
+URL-REGEX,^https?:\/\/.*\.ext-twitch\.tv\/.*,PROXY
 URL-REGEX,^https?:\/\/.*\.twitch\.tv\/.*,PROXY
+DOMAIN-SUFFIX,usher.ttvnw.net,PROXY
 DOMAIN-SUFFIX,twitch.tv,PROXY
 
 ## IP-CIDR chat.twitch.tv 聊天室伺服器 ##
