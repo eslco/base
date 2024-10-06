@@ -46,7 +46,7 @@
 ## Twitch static CDN ##
 URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?(?:static-cdn\.)?jtvnw\.net\/.*$,DIRECT
 URL-REGEX,^https?:\/\/(?:.*\.)？playlist\.ttvnw\.net\/.*$,DIRECT
-URL-REGEX,^https?:\/\/.*ttvnw\.akamaized\.net\/.*$,DIRECT
+URL-REGEX,^https?:\/\/.*ttvnw.*\.akamaized\.net\/.*$,DIRECT
 URL-REGEX,^https?:\/\/[\w-]+\.live-video\.net\/.*$,DIRECT
 DOMAIN-SUFFIX,global.poe.live-video.net,DIRECT
 DOMAIN-KEYWORD,static-cdn.jtvnw.net,DIRECT
