@@ -57,22 +57,23 @@ DOMAIN-KEYWORD,playlist.ttvnw.net,DIRECT
 
 ## Twitch static CDN ##
 
-## Twitch 1080P+ Fixed ##
-# 默认匹配 (video-(weaver|edge)
-URL-REGEX,^https?:\/\/video-weaver\..*\.hls\.ttvnw\.net\/.*$,DIRECT
-URL-REGEX,^https?:\/\/video-edge.*\.abs\.hls\.ttvnw\.net\/.*$,DIRECT
-
 # 精准匹配 Twitch (Cloudfront) CDN
 URL-REGEX,^https?:\/\/.*cloudfront.*\.(hls\.ttvnw\.net|ttvnw\.net)\/.*$,DIRECT
 
-# 广域匹配 (使用捕获组,可選子域名)
-URL-REGEX,^https?:\/\/(.*\.)?video-(weaver|edge).*?(\.abs)?\.hls\.ttvnw\.net\/.*$,DIRECT
+## Twitch 1080P+ Fixed ##
+
+# 精准匹配 最高效率(使用非捕获组,可選子域名匹配字母、数字、点或下划线、破折号，防止非逻辑URL)
+URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?(?:video-(?:weaver|edge))?(?:-[\w.-]+)?(?:\.abs)?\.hls\.ttvnw\.net\/.*$,DIRECT
 
 # 精准匹配 兼容性(使用非捕获组,可選子域名匹配任何字符)
 URL-REGEX,^https?:\/\/(?:.*\.)?(?:video-(weaver|edge))?(?:.*\.)?(?:\.abs)?\.hls\.ttvnw\.net\/.*$,DIRECT
 
-# 精准匹配 性能效率(使用非捕获组,可選子域名匹配字母、数字、点或下划线、破折号，防止非逻辑URL)
-URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?(?:video-(?:weaver|edge))?(?:-[\w.-]+)?(?:\.abs)?\.hls\.ttvnw\.net\/.*$,DIRECT
+# 广域匹配 (使用捕获组,可選子域名)
+URL-REGEX,^https?:\/\/(.*\.)?video-(weaver|edge).*?(\.abs)?\.hls\.ttvnw\.net\/.*$,DIRECT
+
+# 默认匹配 (video-(weaver|edge)
+URL-REGEX,^https?:\/\/video-weaver\..*\.hls\.ttvnw\.net\/.*$,DIRECT
+URL-REGEX,^https?:\/\/video-edge.*\.abs\.hls\.ttvnw\.net\/.*$,DIRECT
 
 DOMAIN-SUFFIX,abs.hls.ttvnw.net,DIRECT
 DOMAIN-SUFFIX,hls.ttvnw.net,DIRECT
@@ -95,7 +96,7 @@ IP-CIDR,103.53.48.215/32,DIRECT,no-resolve
 ##  hls.ttvnw.net ##
 
 ## Twitch Extension ##
-URL-REGEX,^https?:\/\/.*\.ext-twitch\.tv\/.*,DIRECT
+URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?\.ext-twitch\.tv\/.*,DIRECT
 ## Twitch Extension ##
 # Twitch Direct #
 
