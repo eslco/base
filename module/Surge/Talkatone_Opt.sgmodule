@@ -62,5 +62,5 @@ IP-CIDR,205.164.56.29/24,DIRECT
 [URL Rewrite] 
 # Talkatone Rewrite 重寫
 hostname = alt-r.my.com, imgx.jampp.com
-URL-Regex,^https?:\/\/alt-r\.my\.com\/mobile url reject-dict
-URL-Regex,^https?:\/\/imgx\.jampp\.com\/imgsrv\/tn url reject-img
+URL-Regex,^https?:\/\/alt-r\.my\.com\/mobile url REJECT-DICT
+URL-Regex,^https?:\/\/imgx\.jampp\.com\/imgsrv\/tn url REJECT-IMG
