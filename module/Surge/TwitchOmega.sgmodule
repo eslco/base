@@ -45,13 +45,13 @@
 # Twitch Direct #
 ## Twitch static CDN ##
 URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?(?:static-cdn\.)?jtvnw\.net\/.*$,DIRECT
-URL-REGEX,^https?:\/\/(?:[\w.-]*\.)？playlist\.ttvnw\.net\/.*$,DIRECT
-URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?ttvnw\.akamaized\.net\/.*$,DIRECT
+URL-REGEX,^https?:\/\/(?:.*\.)？playlist\.ttvnw\.net\/.*$,DIRECT
+URL-REGEX,^https?:\/\/.*ttvnw\.akamaized\.net\/.*$,DIRECT
 URL-REGEX,^https?:\/\/[\w-]+\.live-video\.net\/.*$,DIRECT
 DOMAIN-SUFFIX,global.poe.live-video.net,DIRECT
 DOMAIN-KEYWORD,static-cdn.jtvnw.net,DIRECT
 DOMAIN-KEYWORD,playlist.ttvnw.net,DIRECT
-DOMAIN-SUFFIX,usher.ttvnw.net,DIRECT
+# DOMAIN-SUFFIX,usher.ttvnw.net,DIRECT
 
 ## Twitch static CDN ##
 
@@ -92,7 +92,7 @@ IP-CIDR,103.53.48.215/32,DIRECT,no-resolve
 ##  hls.ttvnw.net ##
 
 ## Twitch Extension ##
-URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?\.ext-twitch\.tv\/.*,DIRECT
+# URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?\.ext-twitch\.tv\/.*,DIRECT
 ## Twitch Extension ##
 # Twitch Direct #
 
@@ -106,9 +106,9 @@ DOMAIN-SUFFIX,twitchsvc.net,PROXY
 DOMAIN-SUFFIX,assets.twitch.tv,PROXY
 DOMAIN-KEYWORD,gql.twitch.tv,PROXY
 DOMAIN-KEYWORD,api.twitch.tv,PROXY
-# URL-REGEX,^https?:\/\/.*\.ext-twitch\.tv\/.*,PROXY
+URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?\.ext-twitch\.tv\/.*,PROXY
 URL-REGEX,^https?:\/\/.*\.twitch\.tv\/.*,PROXY
-# DOMAIN-SUFFIX,usher.ttvnw.net,PROXY
+DOMAIN-SUFFIX,usher.ttvnw.net,PROXY
 DOMAIN-SUFFIX,twitch.tv,PROXY
 
 ## IP-CIDR chat.twitch.tv 聊天室伺服器 ##
