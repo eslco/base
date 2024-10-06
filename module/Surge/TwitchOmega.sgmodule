@@ -3,7 +3,7 @@
 #!desc=HD+ Guaranteed + NoAD Rule(Updating)
 
 # CDN URL: https://raw.gitmirror.com/eslco/base/main/module/Surge/TwitchOmega.sgmodule
-# Updated at 2024.10.05 18:25 PM
+# Updated at 2024.10.06 16:54 PM
 # Author: https://github.com/eslco
 # Crédit: https://t.me/cmliussss
 
@@ -52,7 +52,9 @@ DOMAIN-SUFFIX,global.poe.live-video.net,DIRECT
 DOMAIN-KEYWORD,static-cdn.jtvnw.net,DIRECT
 DOMAIN-KEYWORD,playlist.ttvnw.net,DIRECT
 
-# DOMAIN-SUFFIX,usher.ttvnw.net,DIRECT
+URL-REGEX,^https?:\/\/.*\.ext-twitch\.tv\/.*,DIRECT
+
+DOMAIN-SUFFIX,usher.ttvnw.net,DIRECT
 
 
 ## Twitch static CDN ##
@@ -65,20 +67,18 @@ URL-REGEX,^https?:\/\/.*cloudfront.*\.(hls\.ttvnw\.net|ttvnw\.net)\/.*$,DIRECT
 # 精准匹配 最高效率(使用非捕获组,可選子域名匹配字母、数字、点或下划线、破折号，防止非逻辑URL)
 URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?(?:video-(?:weaver|edge))?(?:-[\w.-]+)?(?:\.abs)?\.hls\.ttvnw\.net\/.*$,DIRECT
 
+DOMAIN-SUFFIX,hls.ttvnw.net,DIRECT
+DOMAIN-KEYWORD,hls.ttvnw.net,DIRECT
+
 # 精准匹配 兼容性(使用非捕获组,可選子域名匹配任何字符)
 URL-REGEX,^https?:\/\/(?:.*\.)?(?:video-(weaver|edge))?(?:.*\.)?(?:\.abs)?\.hls\.ttvnw\.net\/.*$,DIRECT
 
 # 广域匹配 (使用捕获组,可選子域名)
 URL-REGEX,^https?:\/\/(.*\.)?video-(weaver|edge).*?(\.abs)?\.hls\.ttvnw\.net\/.*$,DIRECT
 
-# 默认匹配 (video-(weaver|edge)
+# 默认匹配 video-(weaver|edge)
 URL-REGEX,^https?:\/\/video-weaver\..*\.hls\.ttvnw\.net\/.*$,DIRECT
 URL-REGEX,^https?:\/\/video-edge.*\.abs\.hls\.ttvnw\.net\/.*$,DIRECT
-
-DOMAIN-SUFFIX,abs.hls.ttvnw.net,DIRECT
-DOMAIN-SUFFIX,hls.ttvnw.net,DIRECT
-DOMAIN-KEYWORD,hls.ttvnw.net,DIRECT
-
 ## Twitch 1080P+ Fixed ##
 
 ##  hls.ttvnw.net ##
@@ -110,7 +110,7 @@ DOMAIN-SUFFIX,twitchsvc.net,PROXY
 DOMAIN-SUFFIX,assets.twitch.tv,PROXY
 DOMAIN-KEYWORD,gql.twitch.tv,PROXY
 DOMAIN-KEYWORD,api.twitch.tv,PROXY
-URL-REGEX,^https?:\/\/.*\.ext-twitch\.tv\/.*,PROXY
+# URL-REGEX,^https?:\/\/.*\.ext-twitch\.tv\/.*,PROXY
 URL-REGEX,^https?:\/\/.*\.twitch\.tv\/.*,PROXY
 DOMAIN-SUFFIX,usher.ttvnw.net,PROXY
 DOMAIN-SUFFIX,twitch.tv,PROXY
@@ -128,7 +128,7 @@ IP-CIDR,44.228.62.191/32,PROXY,no-resolve
 ### IP-CIDR chat.twitch.tv 聊天室伺服器 ##
 
 # Twitch Proxy #
-
+# Deprecated Ruleset
 # RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Twitch/Twitch.list,PROXY
 
 #...
