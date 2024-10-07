@@ -3,7 +3,7 @@
 #!desc=HD+ Guaranteed & NoAD Rule
 
 # CDN URL: https://raw.gitmirror.com/eslco/base/main/module/Surge/TwitchOmega.sgmodule
-# Updated at 2024.10.07 02:35 AM
+# Updated at 2024.10.07 09:22 AM
 # Author: https://github.com/eslco
 # Crédit: https://t.me/cmliussss
 
@@ -116,5 +116,6 @@ IP-CIDR,44.228.62.191/32,PROXY,no-resolve
 # Twitch Proxy #
 # Reserved RULESET #
 # RULE-SET,https://raw.githubusercontent.com/eslco/base/main/rule/Shadowrocket/Twitch/Proxy.list,PROXY
+# Deprecated RULESET #
 # RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Twitch/Twitch.list,PROXY
 # ...
