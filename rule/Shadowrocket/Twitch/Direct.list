@@ -4,15 +4,12 @@
 
 # This Domain list for test and study usages only
 
-DOMAIN-SUFFIX,static-cdn.jtvnw.net
-DOMAIN-SUFFIX,global.poe.live-video.net
+URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?(?:static-cdn\.)?jtvnw\.net\/.*$
 URL-REGEX,^https?:\/\/[\w-]+\.live-video\.net\/.*$
 DOMAIN-SUFFIX,live001-ttvnw.akamaized.net
-DOMAIN-SUFFIX,playlist.ttvnw.net
+URL-REGEX,^https?:\/\/(?:.*\.)？playlist\.ttvnw\.net\/.*$
 # DOMAIN-SUFFIX,usher.ttvnw.net
-URL-REGEX,^https?:\/\/.*\.ext-twitch\.tv\/.*$
-# DOMAIN-KEYWORD,ext-twitch.tv
-
+# URL-REGEX,^https?:\/\/.*\.ext-twitch\.tv\/.*$
 
 # hls.ttvnw.net
 DOMAIN-SUFFIX,tpe01.hls.ttvnw.net
