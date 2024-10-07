@@ -22,15 +22,18 @@ DOMAIN-SUFFIX,twitch.tv
 
 # Twitch DIRECT #
 # static CDN
-DOMAIN-SUFFIX,static-cdn.jtvnw.net
+URL-REGEX,^https?:\/\/[\w-]+\.live-video\.net\/.*$
+URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?(?:static-cdn\.)?jtvnw\.net\/.*$
+URL-REGEX,^https?:\/\/(?:.*\.)？playlist\.ttvnw\.net\/.*$
 DOMAIN-SUFFIX,usher.ttvnw.net
-DOMAIN-SUFFIX,playlist.ttvnw.net
-DOMAIN-SUFFIX,jtvnw.net
-# 
+
 # Twitch HD+
-DOMAIN-SUFFIX,global.poe.live-video.net
-DOMAIN-SUFFIX,live-video.net
-DOMAIN-SUFFIX,abs.hls.ttvnw.net
+# 精准匹配 Twitch (Cloudfront) CDN
+URL-REGEX,^https?:\/\/.*cloudfront.*\.(?:hls\.)?ttvnw\.net\/.*$
+
+## Twitch 1080P+ Fixed ##
+# 精准匹配 最高效率(使用非捕獲組,可選子域名兼容匹配合法字符，防止非邏輯URL)
+URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?(?:video-(?:weaver|edge))?(?:-[\w.-]+)?(?:\.abs)?\.hls\.ttvnw\.net\/.*$
 DOMAIN-SUFFIX,hls.ttvnw.net
 DOMAIN-KEYWORD,hls.ttvnw.net
 # Twitch HD+
