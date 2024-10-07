@@ -121,5 +121,4 @@ IP-CIDR,44.228.62.191/32,PROXY,no-resolve
 # Twitch Proxy #
 # Deprecated Ruleset
 # RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Twitch/Twitch.list,PROXY
-
-#...
+# ...
