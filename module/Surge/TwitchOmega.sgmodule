@@ -3,7 +3,7 @@
 #!desc=HD+ Guaranteed + NoAD Rule(Updating)
 
 # CDN URL: https://raw.gitmirror.com/eslco/base/main/module/Surge/TwitchOmega.sgmodule
-# Updated at 2024.10.07 05:02 AM
+# Updated at 2024.10.07 01:42 PM
 # Author: https://github.com/eslco
 # Crédit: https://t.me/cmliussss
 
@@ -48,9 +48,6 @@ URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?(?:static-cdn\.)?jtvnw\.net\/.*$,DIRECT
 URL-REGEX,^https?:\/\/(?:.*\.)？playlist\.ttvnw\.net\/.*$,DIRECT
 URL-REGEX,^https?:\/\/.*ttvnw.*\.akamaized\.net\/.*$,DIRECT
 URL-REGEX,^https?:\/\/[\w-]+\.live-video\.net\/.*$,DIRECT
-DOMAIN-SUFFIX,global.poe.live-video.net,DIRECT
-DOMAIN-KEYWORD,static-cdn.jtvnw.net,DIRECT
-DOMAIN-KEYWORD,playlist.ttvnw.net,DIRECT
 # DOMAIN-SUFFIX,usher.ttvnw.net,DIRECT
 
 ## Twitch static CDN ##
@@ -61,17 +58,14 @@ URL-REGEX,^https?:\/\/.*cloudfront.*\.(?:hls\.)?ttvnw\.net\/.*$,DIRECT
 # 精准匹配 最高效率(使用非捕獲組,可選子域名兼容匹配合法字符，防止非邏輯URL)
 URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?(?:video-(?:weaver|edge))?(?:-[\w.-]+)?(?:\.abs)?\.hls\.ttvnw\.net\/.*$,DIRECT
 
-DOMAIN-SUFFIX,hls.ttvnw.net,DIRECT
-DOMAIN-KEYWORD,hls.ttvnw.net,DIRECT
-
 # 精准匹配 兼容性(使用非捕获组,可選子域名模糊匹配)
 URL-REGEX,^https?:\/\/(?:.*\.)?(?:video-(weaver|edge))?(?:.*\.)?(?:\.abs)?\.hls\.ttvnw\.net\/.*$,DIRECT
 
-# 广域匹配 (使用捕获组,可選子域名兼容匹配)
-URL-REGEX,^https?:\/\/(.*\.)?video-(weaver|edge).*?(\.abs)?\.hls\.ttvnw\.net\/.*$,DIRECT
-
 # Final全局匹配 cloudfront video-(weaver|edge)
 URL-REGEX,^https?:\/\/(?:.*cloudfront.*\.(?:hls\.)?ttvnw\.net|(?:[\w.-]*\.)?(?:video-(?:weaver|edge))?(?:-[\w.-]+)?(?:\.abs)?\.hls\.ttvnw\.net)\/.*$,DIRECT
+
+DOMAIN-SUFFIX,hls.ttvnw.net,DIRECT
+DOMAIN-KEYWORD,hls.ttvnw.net,DIRECT
 
 ## Twitch 1080P+ Fixed ##
 
