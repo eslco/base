@@ -3,7 +3,7 @@
 #!desc=HD+ Guaranteed + NoAD Rule(Updating)
 
 # CDN URL: https://raw.gitmirror.com/eslco/base/main/module/Surge/TwitchOmega.sgmodule
-# Updated at 2024.10.06 05:02 AM
+# Updated at 2024.10.07 05:02 AM
 # Author: https://github.com/eslco
 # Crédit: https://t.me/cmliussss
 
@@ -60,16 +60,16 @@ URL-REGEX,^https?:\/\/.*cloudfront.*\.(hls\.ttvnw\.net|ttvnw\.net)\/.*$,DIRECT
 
 ## Twitch 1080P+ Fixed ##
 
-# 精准匹配 最高效率(使用非捕获组,可選子域名匹配字母、数字、点或下划线、破折号，防止非逻辑URL)
+# 精准匹配 最高效率(使用非捕獲組,可選子域名兼容匹配合法字符，防止非邏輯URL)
 URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?(?:video-(?:weaver|edge))?(?:-[\w.-]+)?(?:\.abs)?\.hls\.ttvnw\.net\/.*$,DIRECT
 
 DOMAIN-SUFFIX,hls.ttvnw.net,DIRECT
 DOMAIN-KEYWORD,hls.ttvnw.net,DIRECT
 
-# 精准匹配 兼容性(使用非捕获组,可選子域名匹配任何字符)
+# 精准匹配 兼容性(使用非捕获组,可選子域名模糊匹配)
 URL-REGEX,^https?:\/\/(?:.*\.)?(?:video-(weaver|edge))?(?:.*\.)?(?:\.abs)?\.hls\.ttvnw\.net\/.*$,DIRECT
 
-# 广域匹配 (使用捕获组,可選子域名)
+# 广域匹配 (使用捕获组,可選子域名兼容匹配)
 URL-REGEX,^https?:\/\/(.*\.)?video-(weaver|edge).*?(\.abs)?\.hls\.ttvnw\.net\/.*$,DIRECT
 
 # 默认匹配 video-(weaver|edge)
