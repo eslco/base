@@ -61,10 +61,10 @@ URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?(?:video-(?:weaver|edge))?(?:-[\w.-]+)?(?:\.
 URL-REGEX,^https?:\/\/(?:.*\.)?(?:video-(weaver|edge))?(?:.*\.)?(?:\.abs)?\.hls\.ttvnw\.net\/.*$,DIRECT
 
 # Final全局匹配 cloudfront video-(weaver|edge)
-URL-REGEX,^https?:\/\/(?:.*cloudfront.*\.(?:hls\.)?ttvnw\.net|(?:[\w.-]*\.)?(?:video-(?:weaver|edge))?(?:-[\w.-]+)?(?:\.abs)?\.hls\.ttvnw\.net)\/.*$,DIRECT
+# URL-REGEX,^https?:\/\/(?:.*cloudfront.*\.(?:hls\.)?ttvnw\.net|(?:[\w.-]*\.)?(?:video-(?:weaver|edge))?(?:-[\w.-]+)?(?:\.abs)?\.hls\.ttvnw\.net)\/.*$,DIRECT
 
-DOMAIN-SUFFIX,hls.ttvnw.net,DIRECT
-DOMAIN-KEYWORD,hls.ttvnw.net,DIRECT
+# DOMAIN-SUFFIX,hls.ttvnw.net,DIRECT
+# DOMAIN-KEYWORD,hls.ttvnw.net,DIRECT
 
 ## Twitch 1080P+ Fixed ##
 
