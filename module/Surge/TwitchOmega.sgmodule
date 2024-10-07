@@ -48,6 +48,9 @@ URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?(?:static-cdn\.)?jtvnw\.net\/.*$,DIRECT
 URL-REGEX,^https?:\/\/(?:.*\.)？playlist\.ttvnw\.net\/.*$,DIRECT
 URL-REGEX,^https?:\/\/.*ttvnw.*\.akamaized\.net\/.*$,DIRECT
 URL-REGEX,^https?:\/\/[\w-]+\.live-video\.net\/.*$,DIRECT
+DOMAIN-SUFFIX,global.poe.live-video.net,DIRECT
+DOMAIN-SUFFIX,static-cdn.jtvnw.net,DIRECT
+DOMAIN-KEYWORD,playlist.ttvnw.net,DIRECT
 DOMAIN-SUFFIX,usher.ttvnw.net,DIRECT
 
 ## Twitch static CDN ##
