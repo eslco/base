@@ -47,11 +47,10 @@ URL-REGEX,^https?:\/\/(?:.*\.)？playlist\.ttvnw\.net\/.*$,DIRECT
 URL-REGEX,^https?:\/\/.*ttvnw.*\.akamaized\.net\/.*$,DIRECT
 URL-REGEX,^https?:\/\/[\w-]+\.live-video\.net\/.*$,DIRECT
 DOMAIN-SUFFIX,global.poe.live-video.net,DIRECT
-# DOMAIN-SUFFIX,usher.ttvnw.net,DIRECT
+DOMAIN-SUFFIX,usher.ttvnw.net,DIRECT
 
 ## Twitch static CDN ##
 # 精准匹配 Twitch (Cloudfront) CDN
-URL-REGEX,^https?:\/\/.*cloudfront.*\.hls\.ttvnw\.net\/.*$,DIRECT
 URL-REGEX,^https?:\/\/.*cloudfront.*\.(?:hls\.)?ttvnw\.net\/.*$,DIRECT
 
 ## Twitch 1080P+ Fixed ##
@@ -63,9 +62,8 @@ URL-REGEX,^https?:\/\/(?:.*\.)?(?:video-(weaver|edge))?(?:.*\.)?(?:\.abs)?\.hls\
 
 # Final全局匹配 cloudfront video-(weaver|edge)
 # URL-REGEX,^https?:\/\/(?:.*cloudfront.*\.(?:hls\.)?ttvnw\.net|(?:[\w.-]*\.)?(?:video-(?:weaver|edge))?(?:-[\w.-]+)?(?:\.abs)?\.hls\.ttvnw\.net)\/.*$,DIRECT
-
+# Final Matches #
 DOMAIN-SUFFIX,hls.ttvnw.net,DIRECT
-# DOMAIN-KEYWORD,hls.ttvnw.net,DIRECT
 
 ## Twitch 1080P+ Fixed ##
 
@@ -116,6 +114,7 @@ IP-CIDR,44.228.62.191/32,PROXY,no-resolve
 ### IP-CIDR chat.twitch.tv 聊天室伺服器 ##
 
 # Twitch Proxy #
-# Deprecated RULESET
+# Reserved RULESET #
+# RULE-SET,https://raw.githubusercontent.com/eslco/base/main/rule/Shadowrocket/Twitch/Proxy.list,PROXY
 # RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Twitch/Twitch.list,PROXY
 # ...
