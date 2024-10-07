@@ -2,20 +2,22 @@
 
 #Twitch TV
 DOMAIN-SUFFIX,static-cdn.jtvnw.net
-URL-REGEX,^https?:\/\/.*\.jtvnw\.net\/.*
-DOMAIN-SUFFIX,global.poe.live-video.net
-DOMAIN-KEYWORD,live-video.net
-URL-REGEX,^https?:\/\/[\w-]+\.live-video\.net\/.*
+URL-REGEX,^https?:\/\/.*\.jtvnw\.net\/.*$
+URL-REGEX,^https?:\/\/[\w-]+\.live-video\.net\/.*$
+
+URL-REGEX,^https?:\/\/.*ttvnw.*\.akamaized\.net\/.*$
+URL-REGEX,^https?:\/\/.*\.ext-twitch\.tv\/.*$
 DOMAIN-SUFFIX,live001-ttvnw.akamaized.net
 DOMAIN-SUFFIX,playlist.ttvnw.net
 DOMAIN-SUFFIX,usher.ttvnw.net
-URL-REGEX,^https?:\/\/.*\.ext-twitch\.tv\/.*
+DOMAIN-KEYWORD,live-video.net
 DOMAIN-KEYWORD,ext-twitch.tv
 
 # Fixed Twitch 1080P+ CDN Service
 
-URL-REGEX,^https?:\/\/video-weaver\..*\.hls\.ttvnw\.net\/.*
-URL-REGEX,^https?:\/\/video-edge-.*\.abs\.hls\.ttvnw\.net\/.*
+
+URL-REGEX,^https?:\/\/video-weaver\..*\.hls\.ttvnw\.net\/.*$
+URL-REGEX,^https?:\/\/video-edge-.*\.abs\.hls\.ttvnw\.net\/.*$
 
 DOMAIN-SUFFIX,abs.hls.ttvnw.net
 DOMAIN-SUFFIX,hls.ttvnw.net
