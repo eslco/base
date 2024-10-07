@@ -9,7 +9,6 @@ URL-REGEX,^https?:\/\/.*\.ext-twitch\.tv\/.*$
 DOMAIN-SUFFIX,live001-ttvnw.akamaized.net
 DOMAIN-SUFFIX,playlist.ttvnw.net
 DOMAIN-SUFFIX,usher.ttvnw.net
-DOMAIN-KEYWORD,live-video.net
 
 # Fixed Twitch 1080P+ CDN Service
 URL-REGEX,^https?:\/\/.*cloudfront.*\.(?:hls\.)?ttvnw\.net\/.*$
@@ -17,7 +16,6 @@ URL-REGEX,^https?:\/\/.*cloudfront.*\.(?:hls\.)?ttvnw\.net\/.*$
 URL-REGEX,^https?:\/\/video-weaver\..*\.hls\.ttvnw\.net\/.*$
 URL-REGEX,^https?:\/\/video-edge-.*\.abs\.hls\.ttvnw\.net\/.*$
 
-DOMAIN-SUFFIX,abs.hls.ttvnw.net
 DOMAIN-SUFFIX,hls.ttvnw.net
 DOMAIN-KEYWORD,hls.ttvnw.net
 
