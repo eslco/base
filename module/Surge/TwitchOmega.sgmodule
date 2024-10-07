@@ -1,15 +1,14 @@
 #!url=https://raw.githubusercontent.com/eslco/base/main/module/Surge/TwitchOmega.sgmodule
 #!name=TwitchOmega
-#!desc=HD+ Guaranteed + NoAD
+#!desc=HD+ Guaranteed & NoAD Rule
 
 # CDN URL: https://raw.gitmirror.com/eslco/base/main/module/Surge/TwitchOmega.sgmodule
-# Updated at 2024.10.07 02:04 AM
+# Updated at 2024.10.07 02:35 AM
 # Author: https://github.com/eslco
 # Crédit: https://t.me/cmliussss
 
 # 本模組主要用於解決使用Workers&Pages等CDN节点無法穩定連線Twitch串流網路(ttvnw.net)問題，使用本模組進行策略分流，並附帶去廣告規則。 
 #本模組僅適用於登入Twitch後串流使用，不適用於Twitch軟體註冊。
-
 # 倉庫地址：https://github.com/eslco/base/main/module
 
 [URL Rewrite]
@@ -41,7 +40,6 @@
 # BanAD #
 
 [Rule]
-
 # Twitch Direct #
 ## Twitch static CDN ##
 URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?(?:static-cdn\.)?jtvnw\.net\/.*$,DIRECT
@@ -92,7 +90,6 @@ IP-CIDR,103.53.48.215/32,DIRECT,no-resolve
 # Twitch Direct #
 
 # Twitch Proxy #
-
 DOMAIN-SUFFIX,twitch-ext.rootonline.de,PROXY
 DOMAIN-SUFFIX,vod-secure.twitch.tv,PROXY
 DOMAIN-SUFFIX,pubsub-edge.twitch.tv,PROXY
@@ -119,6 +116,6 @@ IP-CIDR,44.228.62.191/32,PROXY,no-resolve
 ### IP-CIDR chat.twitch.tv 聊天室伺服器 ##
 
 # Twitch Proxy #
-# Deprecated Ruleset
+# Deprecated RULESET
 # RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Twitch/Twitch.list,PROXY
 # ...
