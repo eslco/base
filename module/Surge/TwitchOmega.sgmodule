@@ -29,22 +29,21 @@
 ## General AD ##
 
 ## Twitch AD ##
-^https?://(?:www\.)?amazon\.com/(?:dp/|gp/video/storefront|gp/product|gp/offer-listing|x/c/)|aax-us-pdx\.amazon-adsystem\.com/x/c/(?:\?[^ ]*)?\/.* _ REJECT-IMG
+^https?://(?:www\.)?amazon\.com/(?:dp/|gp/video/storefront|gp/product|gp/offer-listing|x/c/)|aax-us-pdx\.amazon-adsystem\.com/x/c/(?:\?[^ ]*)?\/.* _ REJECT-TINYGIF
 
 ^https?:\/\/spade\.twitch\.tv\/.* _ REJECT-TINYGIF
 ^https?:\/\/api\.amplitude\.com\/.* _ REJECT-DICT
-^https?:\/\/api\.sprig\.com\/.* _ REJECT-ARRAY
+^https?:\/\/api\.sprig\.com\/.* _ REJECT-200
 ^https?:\/\/(?:.*\.)?(?:edge\.)?ads\.twitch\.tv\/.* _ REJECT-IMG
 ^https?:\/\/.*ads.*\.twitch\.tv\/.* _ REJECT-IMG
-^https?:\/\/[\w-]+\.twitch\.tv\/(?:.*ad.*|api\/stats\/ad(?:s|sense).*) _ REJECT-IMG
+^https?:\/\/[\w-]+\.twitch\.tv\/(?:.*ad.*|api\/stats\/ad(?:s|sense).*) _ REJECT-200
 
 ## Twitch AD ##
 # BanAD #
 
 [Rule]
 
-URL-REGEX,^https?://(?:www\.)?amazon\.com/(?:dp/|gp/video/storefront|gp/product|gp/offer-listing|x/c/)|aax-us-pdx\.amazon-adsystem\.com/x/c/(?:\?[^ ]*)?\/.*$,REJECT-IMG
-
+URL-REGEX,^https?://(?:www\.)?amazon\.com/(?:dp/|gp/video/storefront|gp/product|gp/offer-listing|x/c/)|aax-us-pdx\.amazon-adsystem\.com/x/c/(?:\?[^ ]*)?\/.*$,REJECT-200
 # Twitch Direct #
 ## Twitch static CDN ##
 URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?(?:static-cdn\.)?jtvnw\.net\/.*$,DIRECT
