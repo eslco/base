@@ -13,8 +13,7 @@ DOMAIN-SUFFIX,playlist.ttvnw.net
 # Fixed Twitch 1080P+ CDN Service
 URL-REGEX,^https?:\/\/.*cloudfront.*\.(?:hls\.)?ttvnw\.net\/.*$
 
-URL-REGEX,^https?:\/\/video-weaver\..*\.hls\.ttvnw\.net\/.*$
-URL-REGEX,^https?:\/\/video-edge-.*\.abs\.hls\.ttvnw\.net\/.*$
+URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?(?:video-(?:weaver|edge))?(?:-[\w.-]+)?(?:\.abs)?\.hls\.ttvnw\.net\/.*$
 
 DOMAIN-SUFFIX,hls.ttvnw.net
 DOMAIN-KEYWORD,hls.ttvnw.net
