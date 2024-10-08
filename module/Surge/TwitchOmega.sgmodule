@@ -47,11 +47,11 @@ URL-REGEX,^https?://(?:www\.)?amazon\.com/(?:dp/|gp/video/storefront|gp/product|
 # Twitch Direct #
 ## Twitch static CDN ##
 URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?(?:static-cdn\.)?jtvnw\.net\/.*$,DIRECT
-URL-REGEX,^https?:\/\/(?:.*\.)？playlist\.ttvnw\.net\/.*$,DIRECT
+# URL-REGEX,^https?:\/\/(?:.*\.)？playlist\.ttvnw\.net\/.*$,DIRECT
 URL-REGEX,^https?:\/\/.*ttvnw.*\.akamaized\.net\/.*$,DIRECT
 URL-REGEX,^https?:\/\/[\w-]+\.live-video\.net\/.*$,DIRECT
 DOMAIN-SUFFIX,global.poe.live-video.net,DIRECT
-DOMAIN-SUFFIX,usher.ttvnw.net,DIRECT
+# DOMAIN-SUFFIX,usher.ttvnw.net,DIRECT
 
 ## Twitch static CDN ##
 # 精准匹配 Twitch (Cloudfront) CDN
@@ -101,8 +101,9 @@ DOMAIN-SUFFIX,gql.twitch.tv,PROXY
 DOMAIN-SUFFIX,api.twitch.tv,PROXY
 DOMAIN-SUFFIX,player.twitch.tv,PROXY
 URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?\.ext-twitch\.tv\/.*$,PROXY
+URL-REGEX,^https?:\/\/(?:.*\.)？playlist\.ttvnw\.net\/.*$,PROXY
 URL-REGEX,^https?:\/\/.*\.twitch\.tv\/.*$,PROXY
-# DOMAIN-SUFFIX,usher.ttvnw.net,PROXY
+DOMAIN-SUFFIX,usher.ttvnw.net,PROXY
 DOMAIN-SUFFIX,twitch.tv,PROXY
 
 ## IP-CIDR chat.twitch.tv 聊天室伺服器 ##
