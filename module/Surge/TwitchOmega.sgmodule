@@ -29,7 +29,7 @@
 ## General AD ##
 
 ## Twitch AD ##
-^https?://(?:www\.)?amazon\.com/(?:dp/|gp/video/storefront|gp/product|gp/offer-listing)(?:\?[^ ]*)?\/.* _ REJECT-IMG
+^https?://(?:www\.)?amazon\.com/(?:dp/|gp/video/storefront|gp/product|gp/offer-listing|x/c/)|aax-us-pdx\.amazon-adsystem\.com/x/c/(?:\?[^ ]*)?\/.* _ REJECT-IMG
 
 ^https?:\/\/spade\.twitch\.tv\/.* _ REJECT-TINYGIF
 ^https?:\/\/api\.amplitude\.com\/.* _ REJECT-DICT
@@ -43,7 +43,7 @@
 
 [Rule]
 
-URL-REGEX,^https?://(?:www\.)?amazon\.com/(?:dp/|gp/video/storefront|gp/product|gp/offer-listing)(?:\?[^ ]*)?\/.*$,REJECT-IMG
+URL-REGEX,^https?://(?:www\.)?amazon\.com/(?:dp/|gp/video/storefront|gp/product|gp/offer-listing|x/c/)|aax-us-pdx\.amazon-adsystem\.com/x/c/(?:\?[^ ]*)?\/.*$,REJECT-IMG
 
 # Twitch Direct #
 ## Twitch static CDN ##
