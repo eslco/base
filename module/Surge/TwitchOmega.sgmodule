@@ -31,6 +31,7 @@
 ## Twitch AD ##
 ^https?://(?:www\.)?amazon\.com/(?:dp/|gp/video/storefront|gp/product|gp/offer-listing|x/c/)|aax-us-pdx\.amazon-adsystem\.com/x/c/(?:\?[^ ]*)?\/.* _ REJECT-TINYGIF
 
+^https?:\/\/(?=.*\b(ads|s)\.)(?:.*\.)?scorecardresearch\.com\/.* _ REJECT-IMG
 ^https?:\/\/spade\.twitch\.tv\/.* _ REJECT-TINYGIF
 ^https?:\/\/api\.amplitude\.com\/.* _ REJECT-DICT
 ^https?:\/\/api\.sprig\.com\/.* _ REJECT-200
@@ -44,6 +45,9 @@
 [Rule]
 
 URL-REGEX,^https?://(?:www\.)?amazon\.com/(?:dp/|gp/video/storefront|gp/product|gp/offer-listing|x/c/)|aax-us-pdx\.amazon-adsystem\.com/x/c/(?:\?[^ ]*)?\/.*$,REJECT-200
+
+URL-REGEX,^https?:\/\/(?=.*\b(ads|s)\.)(?:.*\.)?scorecardresearch\.com\/.*$,REJECT-IMG
+
 # Twitch Direct #
 ## Twitch static CDN ##
 URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?(?:static-cdn\.)?jtvnw\.net\/.*$,DIRECT
