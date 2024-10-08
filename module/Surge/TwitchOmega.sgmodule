@@ -16,10 +16,8 @@
 ## General AD ##
 ^https?:\/\/d2v02itv0y9u9t\.cloudfront\.net\/.* _ REJECT-200
 ^https?:\/\/secure-sts-prod\.imrworldwide\.com\/cgi-bin\/gn\?.* _ REJECT-IMG
-^https?:\/\/aax-us-east\.amazon-adsystem\.com\/.* _ REJECT-DICT
-^https?:\/\/vaes\.amazon-adsystem\.com\/.* _ REJECT-IMG
-^https?:\/\/cdn-a\.amazon-adsystem\.com\/.* _ REJECT-IMG
-^https?:\/\/pubads\.g\.doubleclick\.net\/.* _ REJECT-DICT
+^https?:\/\/(aax-us-east|vaes|cdn-a)\.amazon-adsystem\.com\/.* _ REJECT-IMG
+^https?:\/\/pubads\.g\.doubleclick\.net\/.* _ REJECT-IMG
 ^https?:\/\/.*\.scorecardresearch\.com\/.* _ REJECT-200
 ^https?:\/\/.*\.s\.amazon-adsystem\.com\/.* _ REJECT-IMG
 ^https?:\/\/reporting\.cdndex\.io\/.* _ REJECT-DICT
@@ -44,9 +42,13 @@
 
 [Rule]
 
+URL-REGEX,^https?:\/\/(aax-us-east|vaes|cdn-a)\.amazon-adsystem\.com\/.*$,REJECT-200
+
 URL-REGEX,^https?://(?:www\.)?amazon\.com/(?:dp/|gp/video/storefront|gp/product|gp/offer-listing|x/c/)|aax-us-pdx\.amazon-adsystem\.com/x/c/(?:\?[^ ]*)?\/.*$,REJECT-200
 
 URL-REGEX,^https?:\/\/(?=.*\b(ads|s)\.)(?:.*\.)?scorecardresearch\.com\/.*$,REJECT-IMG
+
+URL-REGEX,^https?:\/\/.*\.sentry\.io\/api\/.*\/envelope\/.*$,REJECT-200
 
 # Twitch Direct #
 ## Twitch static CDN ##
