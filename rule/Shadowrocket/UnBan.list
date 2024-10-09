@@ -1,18 +1,17 @@
 # Whitelist 白名单 不应被屏蔽的特殊规则列表
 
 #Twitch TV
-DOMAIN-SUFFIX,static-cdn.jtvnw.net
+# DOMAIN-SUFFIX,static-cdn.jtvnw.net
 URL-REGEX,^https?:\/\/.*\.jtvnw\.net\/.*$
 URL-REGEX,^https?:\/\/[\w-]+\.live-video\.net\/.*$
 URL-REGEX,^https?:\/\/.*ttvnw.*\.akamaized\.net\/.*$
 # URL-REGEX,^https?:\/\/.*\.ext-twitch\.tv\/.*$
-DOMAIN-SUFFIX,live001-ttvnw.akamaized.net
+# DOMAIN-SUFFIX,live001-ttvnw.akamaized.net
 # DOMAIN-SUFFIX,playlist.ttvnw.net
 # DOMAIN-SUFFIX,usher.ttvnw.net
 
 # Fixed Twitch 1080P+ CDN Service
 URL-REGEX,^https?:\/\/.*cloudfront.*\.(?:hls\.)?ttvnw\.net\/.*$
-
 # URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?(?:video-(?:weaver|edge))?(?:-[\w.-]+)?(?:\.abs)?\.hls\.ttvnw\.net\/.*$
 
 DOMAIN-SUFFIX,hls.ttvnw.net
@@ -20,7 +19,6 @@ DOMAIN-KEYWORD,hls.ttvnw.net
 
 # Fixed Twitch 1080P+ CDN Service 
 #Twitch TV
-
 
 # 新增
 USER-AGENT,archero*
