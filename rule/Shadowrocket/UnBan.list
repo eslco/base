@@ -2,16 +2,16 @@
 
 #Twitch TV
 # DOMAIN-SUFFIX,static-cdn.jtvnw.net
-URL-REGEX,^https?:\/\/.*\.jtvnw\.net\/.*$
-URL-REGEX,^https?:\/\/[\w-]+\.live-video\.net\/.*$
-URL-REGEX,^https?:\/\/.*ttvnw.*\.akamaized\.net\/.*$
+# URL-REGEX,^https?:\/\/.*\.jtvnw\.net\/.*$
+ URL-REGEX,^https?:\/\/[\w-]+\.live-video\.net\/.*$
+# URL-REGEX,^https?:\/\/.*ttvnw.*\.akamaized\.net\/.*$
 # URL-REGEX,^https?:\/\/.*\.ext-twitch\.tv\/.*$
 # DOMAIN-SUFFIX,live001-ttvnw.akamaized.net
 # DOMAIN-SUFFIX,playlist.ttvnw.net
 # DOMAIN-SUFFIX,usher.ttvnw.net
 
 # Fixed Twitch 1080P+ CDN Service
-URL-REGEX,^https?:\/\/.*cloudfront.*\.(?:hls\.)?ttvnw\.net\/.*$
+# URL-REGEX,^https?:\/\/.*cloudfront.*\.(?:hls\.)?ttvnw\.net\/.*$
 # URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?(?:video-(?:weaver|edge))?(?:-[\w.-]+)?(?:\.abs)?\.hls\.ttvnw\.net\/.*$
 
 DOMAIN-SUFFIX,hls.ttvnw.net
