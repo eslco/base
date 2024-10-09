@@ -27,7 +27,8 @@
 ## General AD ##
 
 ## Twitch AD ##
-^https?://(?:www\.)?amazon\.com/(?:dp/|gp/video/storefront|gp/product|gp/offer-listing|x/c/)|aax-us-pdx\.amazon-adsystem\.com/x/c/(?:\?[^ ]*)?\/.* _ REJECT-TINYGIF
+
+^https?:\/\/(?:.*\.(ads|s)\.)?aax-.*\.amazon-adsystem\.com/x/c/.*https?:\/\/(?:www\.)?amazon\.com/(?:dp/|gp/video/storefront|gp/product|gp/offer-listing)(?:\?[^ ]*)?/.* _ REJECT-TINYGIF
 
 ^https?:\/\/(?=.*\b(ads|s)\.)(?:.*\.)?scorecardresearch\.com\/.* _ REJECT-IMG
 ^https?:\/\/spade\.twitch\.tv\/.* _ REJECT-TINYGIF
@@ -44,7 +45,7 @@
 
 URL-REGEX,^https?:\/\/(aax-us-east|vaes|cdn-a)\.amazon-adsystem\.com\/.*$,REJECT-200
 
-URL-REGEX,^https?://(?:www\.)?amazon\.com/(?:dp/|gp/video/storefront|gp/product|gp/offer-listing|x/c/)|aax-us-pdx\.amazon-adsystem\.com/x/c/(?:\?[^ ]*)?\/.*$,REJECT-200
+URL-REGEX,^https?:\/\/(?:.*\.(ads|s)\.)?aax-.*\.amazon-adsystem\.com/x/c/.*https?:\/\/(?:www\.)?amazon\.com/(?:dp/|gp/video/storefront|gp/product|gp/offer-listing)(?:\?[^ ]*)?/.*$,REJECT-200
 
 URL-REGEX,^https?:\/\/(?=.*\b(ads|s)\.)(?:.*\.)?scorecardresearch\.com\/.*$,REJECT-IMG
 
