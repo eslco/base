@@ -28,7 +28,7 @@
     "expectIPs": ["geoip:cn"],
     "skipFallback": false,
     "clientIp": "1.34.1.0",
-    "queryStrategy": "AsIs"
+    "queryStrategy": "UseIPv4"
    },
     {
     "address": "https://doh.dns.sb/dns-query",
@@ -38,14 +38,14 @@
     "expectIPs": ["geoip:!cn"],
     "skipFallback": true,
     "clientIp": "1.34.1.0",
-    "queryStrategy": "AsIs"
+    "queryStrategy": "UseIPv4"
    },
    {
     "address": "localhost",
     "skipFallback": true
    }
   ],
-  "queryStrategy": "AsIs",
+  "queryStrategy": "UseIP",
   "disableCache": true,
   "disableFallback": true,
   "disableFallbackIfMatch": true,
