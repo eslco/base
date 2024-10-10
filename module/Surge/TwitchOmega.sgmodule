@@ -131,3 +131,9 @@ IP-CIDR,44.228.62.191/32,PROXY,no-resolve
 # Deprecated RULESET #
 # RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Twitch/Twitch.list,PROXY
 # ...
+
+[MITM]
+  - pattern: '^https?://(?:.*\.(ads|s)\\.)?aax-.*\\.amazon-adsystem\\.com/x/c/.*https?://(?:www\\.)?amazon\\.com/(?:dp/|gp/video/storefront|gp/product|gp/offer-listing)(?:\\?[^ ]*)?/.*$'
+  - action: REJECT-IMG
+[MITM]
+^https?:\/\/(?:.*\.(ads|s)\\.)?aax-.*\\.amazon-adsystem\\.com/x/c/.*https?://(?:www\\.)?amazon\\.com/(?:dp/|gp/video/storefront|gp/product|gp/offer-listing)(?:\\?[^ ]*)?/.*$,REJECT-IMG
