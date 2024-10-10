@@ -2,6 +2,6 @@
 
 ## Disclaimer 
   - Just for test and study usages only. Do not share with others plz!
-  > Test template and related config files. Uploaded by author Leo Aurel.
+  > Test template and related config files. Uploaded by author eslco.
 ## License 
   - CC BY 4.0 LICENCE
