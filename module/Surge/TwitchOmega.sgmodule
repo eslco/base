@@ -133,7 +133,8 @@ IP-CIDR,44.228.62.191/32,PROXY,no-resolve
 # ...
 
 [MITM]
-  - pattern: '^https?://(?:.*\.(ads|s)\\.)?aax-.*\\.amazon-adsystem\\.com/x/c/.*https?://(?:www\\.)?amazon\\.com/(?:dp/|gp/video/storefront|gp/product|gp/offer-listing)(?:\\?[^ ]*)?/.*$'
-  - action: REJECT-IMG
-[MITM]
 ^https?:\/\/(?:.*\.(ads|s)\\.)?aax-.*\\.amazon-adsystem\\.com/x/c/.*https?://(?:www\\.)?amazon\\.com/(?:dp/|gp/video/storefront|gp/product|gp/offer-listing)(?:\\?[^ ]*)?/.*$,REJECT-IMG
+hostname = %APPEND% *.amazon-adsystem.com, aax-*.amazon-adsystem.com, vaes.amazon-adsystem.com, cdn-a.amazon-adsystem.com, *.scorecardresearch.com, spade.twitch.tv, api.amplitude.com, api.sprig.com, *.ads.twitch.tv, edge.ads.twitch.tv, *.twitch.tv, *.sentry.io
+#MITM:
+#  - pattern: '^https?://(?:.*\.(ads|s)\\.)?aax-.*\\.amazon-adsystem\\.com/x/c/.*https?://(?:www\\.)?amazon\\.com/(?:dp/|gp/video/storefront|gp/product|gp/offer-listing)(?:\\?[^ ]*)?/.*$'
+#    action: REJECT-IMG
