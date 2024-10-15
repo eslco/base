@@ -51,14 +51,16 @@ URL-REGEX,^https?:\/\/(?=.*\b(ads|s)\.)(?:.*\.)?scorecardresearch\.com\/.*$,REJE
 
 URL-REGEX,^https?:\/\/.*\.sentry\.io\/api\/.*\/envelope\/.*$,REJECT-200
 
+
+
 # Twitch Direct #
+DOMAIN-SUFFIX,usher.ttvnw.net,PROXY
 ## Twitch static CDN ##
 URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?(?:static-cdn\.)?jtvnw\.net\/.*$,DIRECT
-# URL-REGEX,^https?:\/\/(?:.*\.)？playlist\.ttvnw\.net\/.*$,DIRECT
+URL-REGEX,^https?:\/\/(?:.*\.)？playlist\.ttvnw\.net\/.*$,DIRECT
 URL-REGEX,^https?:\/\/.*ttvnw.*\.akamaized\.net\/.*$,DIRECT
 URL-REGEX,^https?:\/\/[\w-]+\.live-video\.net\/.*$,DIRECT
 DOMAIN-SUFFIX,global.poe.live-video.net,DIRECT
-# DOMAIN-SUFFIX,usher.ttvnw.net,DIRECT
 
 ## Twitch static CDN ##
 # 精准匹配 Twitch (Cloudfront) CDN
@@ -78,7 +80,7 @@ DOMAIN-SUFFIX,hls.ttvnw.net,DIRECT
 
 ## Twitch 1080P+ Fixed ##
 
-##  hls.ttvnw.net ##
+## hls.ttvnw.net ##
 IP-CIDR,35.163.143.41/32,DIRECT,no-resolve
 IP-CIDR,52.129.131.86/32,DIRECT,no-resolve
 IP-CIDR,52.223.203.200/32,DIRECT,no-resolve
@@ -90,7 +92,7 @@ IP-CIDR,99.181.107.40/32,DIRECT,no-resolve
 IP-CIDR,99.181.127.5/32,DIRECT,no-resolve
 IP-CIDR,103.53.48.215/32,DIRECT,no-resolve
 # ...
-##  hls.ttvnw.net ##
+## hls.ttvnw.net ##
 
 ## Twitch Extension ##
 # URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?\.ext-twitch\.tv\/.*$,DIRECT
@@ -107,10 +109,10 @@ DOMAIN-SUFFIX,assets.twitch.tv,PROXY
 DOMAIN-SUFFIX,gql.twitch.tv,PROXY
 DOMAIN-SUFFIX,api.twitch.tv,PROXY
 DOMAIN-SUFFIX,player.twitch.tv,PROXY
+# DOMAIN-SUFFIX,usher.ttvnw.net,PROXY
+# URL-REGEX,^https?:\/\/(?:.*\.)？playlist\.ttvnw\.net\/.*$,PROXY
 URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?\.ext-twitch\.tv\/.*$,PROXY
-URL-REGEX,^https?:\/\/(?:.*\.)？playlist\.ttvnw\.net\/.*$,PROXY
 URL-REGEX,^https?:\/\/.*\.twitch\.tv\/.*$,PROXY
-DOMAIN-SUFFIX,usher.ttvnw.net,PROXY
 DOMAIN-SUFFIX,twitch.tv,PROXY
 
 ## IP-CIDR chat.twitch.tv 聊天室伺服器 ##
