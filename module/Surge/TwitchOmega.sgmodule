@@ -3,7 +3,7 @@
 #!desc=HD+ Guaranteed & NoAD(update)
 
 # CDN URL: https://raw.gitmirror.com/eslco/base/main/module/Surge/TwitchOmega.sgmodule
-# Updated at 2024.10.08 07:34 AM
+# Updated at 2024.10.26 07:34 AM
 # Author: https://github.com/eslco
 # Crédit: https://t.me/cmliussss
 
@@ -53,7 +53,7 @@ URL-REGEX,^https?:\/\/.*\.sentry\.io\/api\/.*\/envelope\/.*$,REJECT-200
 
 
 
-# Twitch Direct #
+# Twitch CDN #
 DOMAIN-SUFFIX,usher.ttvnw.net,PROXY
 ## Twitch static CDN ##
 URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?(?:static-cdn\.)?jtvnw\.net\/.*$,DIRECT
@@ -64,8 +64,7 @@ DOMAIN-SUFFIX,global.poe.live-video.net,DIRECT
 
 ## Twitch static CDN ##
 # 精准匹配 Twitch (Cloudfront) CDN
-URL-REGEX,^https?:\/\/.*cloudfront.*\.(?:hls\.)?ttvnw\.net\/.*$,DIRECT
-
+URL-REGEX,^(?:https?:\/\/)?(?:.*cloudfront.*\.(?:hls\.)?ttvnw\.net\/.*)$,PROXY
 ## Twitch 1080P+ Fixed ##
 # 精准匹配 最高效率(使用非捕獲組,可選子域名兼容匹配合法字符，防止非邏輯URL)
 URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?(?:video-(?:weaver|edge))?(?:-[\w.-]+)?(?:\.abs)?\.hls\.ttvnw\.net\/.*$,DIRECT
@@ -76,6 +75,7 @@ URL-REGEX,^https?:\/\/(?:.*\.)?(?:video-(weaver|edge))?(?:.*\.)?(?:\.abs)?\.hls\
 # Final全局匹配 cloudfront video-(weaver|edge)
 # URL-REGEX,^https?:\/\/(?:.*cloudfront.*\.(?:hls\.)?ttvnw\.net|(?:[\w.-]*\.)?(?:video-(?:weaver|edge))?(?:-[\w.-]+)?(?:\.abs)?\.hls\.ttvnw\.net)\/.*$,DIRECT
 # Final Matches #
+DOMAIN-SUFFIX,cloudfront.hls.ttvnw.net,PROXY
 DOMAIN-SUFFIX,hls.ttvnw.net,DIRECT
 
 ## Twitch 1080P+ Fixed ##
@@ -97,7 +97,7 @@ IP-CIDR,103.53.48.215/32,DIRECT,no-resolve
 ## Twitch Extension ##
 # URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?\.ext-twitch\.tv\/.*$,DIRECT
 ## Twitch Extension ##
-# Twitch Direct #
+# Twitch CDN #
 
 # Twitch Proxy #
 DOMAIN-SUFFIX,twitch-ext.rootonline.de,PROXY
@@ -113,6 +113,7 @@ DOMAIN-SUFFIX,player.twitch.tv,PROXY
 # URL-REGEX,^https?:\/\/(?:.*\.)？playlist\.ttvnw\.net\/.*$,PROXY
 URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?\.ext-twitch\.tv\/.*$,PROXY
 URL-REGEX,^https?:\/\/.*\.twitch\.tv\/.*$,PROXY
+DOMAIN-SUFFIX,ext-twitch.tv,PROXY
 DOMAIN-SUFFIX,twitch.tv,PROXY
 
 ## IP-CIDR chat.twitch.tv 聊天室伺服器 ##
