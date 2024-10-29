@@ -1,9 +1,12 @@
-## this domain Must set Proxy
+# Name: ttdirect.list
+# Author: eslco
 ## DOMAIN-SUFFIX,tktn.be
 ## DOMAIN-SUFFIX,talkatone.com
 ## DOMAIN-SUFFIX,tenor.com
 ## DOMAIN-SUFFIX,agkn.com
 ## DOMAIN-SUFFIX,tktn.at
+## The above domain name must be set up with Proxy
+
 
 # Direct rules
 DOMAIN-SUFFIX,inmobi.com
