@@ -1,7 +1,7 @@
 #!url=https://raw.githubusercontent.com/eslco/base/main/module/Surge/Talkatone_Opt.sgmodule
 #!name=Talkatone_Opt
 #!desc=Global Roaming & NoAD
-# Update at 2024.10.08 07:34 AM
+# Update at 2024.10.29 05:40 AM
 
 # CDN URL: https://raw.gitmirror.com/eslco/base/main/module/Surge/Talkatone_Opt.sgmodule
 
@@ -38,20 +38,21 @@ DOMAIN-SUFFIX,cr.adsappier.com,REJECT-IMG
 DOMAIN-SUFFIX,amazon-adsystem.com,REJECT-DICT
 
 # tktn.be 域名代理 Proxy
+DOMAIN-SUFFIX,talkatone.com,PROXY
+DOMAIN-SUFFIX,agkn.com,PROXY
+DOMAIN-SUFFIX,tenor.com,PROXY
+DOMAIN-SUFFIX,tktn.at,PROXY
 DOMAIN-SUFFIX,tktn.be,PROXY
 
-# Following domians just Directly to go 以下域名直連
+# Following domians just Direct to connect 以下域名直連
 DOMAIN-SUFFIX,inner-active.mobi,DIRECT
+DOMAIN-SUFFIX,crashlytics.com,DIRECT
 DOMAIN-SUFFIX,mobilefuse.com,DIRECT
 DOMAIN-SUFFIX,inmobi.com,DIRECT
-DOMAIN-SUFFIX,crashlytics.com,DIRECT
-DOMAIN-SUFFIX,talkatone.com,DIRECT
 DOMAIN-SUFFIX,kochava.com,DIRECT
 DOMAIN-SUFFIX,cohere.com,DIRECT
 DOMAIN-SUFFIX,ip-api.com,DIRECT
-DOMAIN-SUFFIX,agkn.com,DIRECT
-DOMAIN-SUFFIX,tktn.at,DIRECT
-DOMAIN-SUFFIX,tenor.com,DIRECT
+
 # IPCIDR
 IP-CIDR,50.117.27.0/24,DIRECT
 IP-CIDR,69.46.75.0/24,DIRECT
