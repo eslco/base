@@ -1,0 +1,10 @@
+# Talkatone Proxy Rule(Update)
+# Author: eslco
+# Updated at 2024.10.29 05:31 PM
+# './n'
+
+DOMAIN-SUFFIX,talkatone.com
+DOMAIN-SUFFIX,tenor.com
+DOMAIN-SUFFIX,agkn.com
+DOMAIN-SUFFIX,tktn.at
+DOMAIN-SUFFIX,tktn.be
