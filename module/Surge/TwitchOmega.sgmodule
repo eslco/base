@@ -3,7 +3,7 @@
 #!desc=HD+ Guaranteed & NoAD(update)
 
 # CDN URL: https://raw.gitmirror.com/eslco/base/main/module/Surge/TwitchOmega.sgmodule
-# Updated at 2024.10.27 16:20 AM
+# Updated at 2024.11.01 12:20 PM
 # Author: https://github.com/eslco
 # Crédit: https://t.me/cmliussss
 
@@ -66,13 +66,12 @@ DOMAIN-SUFFIX,global.poe.live-video.net,DIRECT
 # 精准匹配 Twitch (Cloudfront) CDN
 URL-REGEX,^(?:https?:\/\/)?(?:\w+\.)?cloudfront\.\w+\.(?:hls\.)?ttvnw\.net\/.*$,PROXY
 ## Twitch 1080P+ Fixed ##
-# 精准匹配 最高效率(使用非捕獲組,可選子域名兼容匹配合法字符，防止非邏輯URL)
+# 精准匹配 最高效率(使用非捕獲組,子域名兼容匹配合法字符，防止非邏輯URL)
 URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?(?:video-(?:weaver|edge))?(?:-[\w.-]+)?(?:\.abs)?\.hls\.ttvnw\.net\/.*$,DIRECT
 
-# 精准匹配 兼容性(使用非捕获组,可選子域名模糊匹配)
+# 廣泛匹配 兼容性(使用非捕获组,可選子域名模糊匹配)
 URL-REGEX,^https?:\/\/(?:.*\.)?(?:video-(weaver|edge))?(?:.*\.)?(?:\.abs)?\.hls\.ttvnw\.net\/.*$,DIRECT
 
-# Final全局匹配 cloudfront video-(weaver|edge)
 # Final Matches #
 DOMAIN-SUFFIX,cloudfront.hls.ttvnw.net,PROXY
 DOMAIN-SUFFIX,hls.ttvnw.net,DIRECT
