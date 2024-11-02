@@ -3,7 +3,7 @@
 #!desc=HD+ Guaranteed & NoAD(update)
 
 # CDN URL: https://raw.gitmirror.com/eslco/base/main/module/Surge/TwitchOmega.sgmodule
-# Updated at 2024.11.01 12:20 PM
+# Updated at 2024.11.02 06:20 AM
 # Author: https://github.com/eslco
 # Crédit: https://t.me/cmliussss
 
@@ -68,9 +68,6 @@ URL-REGEX,^(?:https?:\/\/)?(?:\w+\.)?cloudfront\.\w+\.(?:hls\.)?ttvnw\.net\/.*$,
 ## Twitch 1080P+ Fixed ##
 # 精准匹配 最高效率(使用非捕獲組,子域名兼容匹配合法字符，防止非邏輯URL)
 URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?(?:video-(?:weaver|edge))?(?:-[\w.-]+)?(?:\.abs)?\.hls\.ttvnw\.net\/.*$,DIRECT
-
-# 廣泛匹配 兼容性(使用非捕获组,可選子域名模糊匹配)
-URL-REGEX,^https?:\/\/(?:.*\.)?(?:video-(weaver|edge))?(?:.*\.)?(?:\.abs)?\.hls\.ttvnw\.net\/.*$,DIRECT
 
 # Final Matches #
 DOMAIN-SUFFIX,cloudfront.hls.ttvnw.net,PROXY
