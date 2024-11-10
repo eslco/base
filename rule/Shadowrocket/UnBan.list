@@ -11,10 +11,6 @@ URL-REGEX,^https?:\/\/.*ttvnw.*\.akamaized\.net\/.*$
 # DOMAIN-SUFFIX,usher.ttvnw.net
 
 # Fixed Twitch 1080P+ CDN Service
-# URL-REGEX,^https?:\/\/.*cloudfront.*\.(?:hls\.)?ttvnw\.net\/.*$,DIRECT
-# URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?(?:video-(?:weaver|edge))?(?:-[\w.-]+)?(?:\.abs)?\.hls\.ttvnw\.net\/.*$,DIRECT
-
-# Fixed Twitch 1080P+ CDN Service
 # URL-REGEX,^https?:\/\/.*cloudfront.*\.(?:hls\.)?ttvnw\.net\/.*$
 # URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?(?:video-(?:weaver|edge))?(?:-[\w.-]+)?(?:\.abs)?\.hls\.ttvnw\.net\/.*$
 
