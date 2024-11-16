@@ -1,0 +1,40 @@
+# Public DNS Resolver #
+74.82.42.42               ordns.he.net
+8.8.4.4                   dns.google
+101.101.101.101           dns.twnic.tw
+101.102.103.104           dns.twnic.tw
+52.246.182.50             dnslow.me
+
+# YogaDNS #
+172.66.47.7               cf.090227.xyz
+172.66.46.249             cf.090227.xyz
+172.66.45.8               doh.090227.xyz
+172.66.46.248             doh.090227.xyz
+
+# CF CDN #
+104.16.41.196             www.chaturbate.com
+104.16.42.196             www.chaturbate.com
+104.16.43.196             www.chaturbate.com
+104.16.44.196             www.chaturbate.com
+104.16.45.196             www.chaturbate.com
+172.64.150.71             www.ecosia.org
+104.18.37.185             www.ecosia.org
+104.16.183.15             gold.org
+104.16.183.15             www.gold.org
+104.16.35.67              www.gold.org
+104.16.35.67              gold.org
+
+# Wotb #
+92.223.16.59              login0.wotblitz.asia
+92.223.16.81              login0.wotblitz.asia
+92.223.16.30              login1.wotblitz.asia
+92.223.16.145             login1.wotblitz.asia
+92.223.16.147             login1.wotblitz.asia
+
+95.85.94.91               login2.wotblitz.asia
+95.85.94.170              login2.wotblitz.asia
+
+# Update time: 2024-11-16T10:45:31+08:00
+# Update url: https://raw.hellogithub.com/hosts
+# Star me: https://github.com/eslco/base/hosts
+# GitHub520 Host End
