@@ -16,6 +16,8 @@ fi
 echo "正在備份原始 resolv.conf..."
 cp /etc/resolv.conf /etc/resolv.conf.backup.$(date +%Y%m%d_%H%M%S)
 
+echo "備份完成!"
+
 # 嘗試解除文件不可變屬性
 echo "正在解除文件不可變屬性..."
 if ! chattr -i /etc/resolv.conf 2>/dev/null; then
@@ -57,6 +59,8 @@ else
         fi
     fi
 fi
+
+printf "\033c"
 
 echo "DNS 配置更新完成！"
 echo "======================================================"
