@@ -59,9 +59,13 @@ else
 fi
 
 echo "DNS 配置更新完成！"
+echo "======================================================"
 echo "Tips:"
 echo "可以使用 'cat /etc/resolv.conf' 檢查配置"
 echo "使用 'ping -6 google.com' 測試 IPv6 連接"
 echo "======================================================"
-echo "感謝使用此脚本! 更多内容 可查看 https://github.com/eslco/base/script"
+echo "感謝使用此脚本!"
+echo "更多内容 請查看"
+echo "https://github.com/eslco/base/script"
+echo "======================================================" 
 echo "感謝使用!再見"
