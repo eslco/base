@@ -16,6 +16,9 @@ masked_ip=$(echo $ipv4_address | awk -F'.' '{print "*."$3"."$4}')
 IP=$(echo $SSH_CONNECTION | awk '{print $1}')
 TIME=$(date +"%Y-%m-%d %H:%M:%S")
 
+# URL 转义 函数 HTML
+
+
 
 # 查詢IP地址對應的地理信息 GeoLocation 
 # 備用 ACCESS0=$(curl -s https://ipapi.co/$IP/json/ | jq -r '.city')
