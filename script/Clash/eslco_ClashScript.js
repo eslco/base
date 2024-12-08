@@ -152,7 +152,7 @@ const ruleProviders = {
 const rules = [
   //254c Rule
   "RULE-SET,aesindomain,Proxy", //aesindomain
-  "RULE-SET,aesincidr,Proxy", //aesincidr
+  "RULE-SET,aesincidr,Proxy,no-resolve", //aesincidr
   "RULE-SET,Wotb,Gaming", //Wotb Wargaming.net
   // 自定义规则
   "DOMAIN-SUFFIX,googleapis.cn,Proxy", // Google服务
