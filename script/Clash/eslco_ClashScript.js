@@ -6,23 +6,25 @@
 
 // local DNS servers
 const domesticNameservers = [
-  "https://ordns.he.net/dns-query", // He.net DNS
-  "https://1.0.0.1/dns-query" // Cloudflare(main)
-  // "https://dns.alidns.com/dns-query", // 阿里云公共DNS
+  "https://doh.apad.pro/dns-query",
+  "https://dns.twnic.tw/dns-query",
+  "https://public.dns.iij.jp/dns-query"
+  // "https://dns.alidns./dns-query", // 阿里云公共DNS
   // "https://doh.pub/dns-query", // 腾讯DNSPod
-  // "https://doh.360.cn/dns-query", // 360安全DNS
-  // "https://dns.twnic.tw/dns-query", //TWNIC
+  //"https://doh.360.cn/dns-query", // 360安全DNS
+  //"https://dns.twnic.tw/dns-query", //TWNIC
 ];
 // remote DNS servers
 const foreignNameservers = [
-  "https://dns.google/dns-query",//Google DNS
-  "https://dns.adguard-dns.com/dns-query", //Adguard DNS
-  "https://security.cloudflare-dns.com/dns-query" // Cloudflare(back)
-  // "https://unfiltered.adguard-dns.com/dns-query" //Adguard DNS
-  // "https://208.67.222.222/dns-query", // OpenDNS(main)
-  // "https://208.67.220.220/dns-query", // OpenDNS(back)
+  "https://1.0.0.1/dns-query", // Cloudflare(main)
+  "https://security.cloudflare-dns.com/dns-query", // Cloudflare(Security)
   // "https://194.242.2.2/dns-query", // Mullvad(main)
-  // "https://194.242.2.3/dns-query", // Mullvad(back)
+  // "https://194.242.2.3/dns-query" // Mullvad(back)   
+  //"https://dns.google/dns-query",//Google DNS
+  //"https://208.67.222.222/dns-query", // OpenDNS(main)
+  //"https://208.67.220.220/dns-query", // OpenDNS(back)
+  //"https://unfiltered.adguard-dns.com/dns-query", //Adguard DNS
+  //"https://dns.adguard-dns.com/dns-query", //Adguard DNS
 ];
 // DNS config
 const dnsConfig = {
@@ -39,11 +41,11 @@ const dnsConfig = {
     "+.msftconnecttest.com",
     "+.msftncsi.com",
   ],
-  "default-nameserver": ["1.1.1.1", "1.0.0.1"],//"223.5.5.5", "114.114.114.114"
+  "default-nameserver": ["168.95.1.1", "103.2.57.5", "223.5.5.5", "119.29.29.29"],//
   nameserver: [...domesticNameservers, ...foreignNameservers],
   "proxy-server-nameserver": [...domesticNameservers, ...foreignNameservers],
   "nameserver-policy": {
-    "geosite:private,cn,geolocation-cn,geolocation@cn": domesticNameservers,
+    "geosite:private,cn,geolocation-cn": domesticNameservers,
     "geosite:google,youtube,telegram,gfw,geolocation-!cn": foreignNameservers,
   },
 };
@@ -58,8 +60,8 @@ const ruleProviders = {
     "Wotb": {
     ...ruleProviderCommon,
     behavior: "domain",
-    url: "https://raw.githubusercontent.com/eslco/base/main/rule/Clash/Wotb.list",
-    path: "./rulesets/eslco/Wotb.yaml",
+    url: "https://raw.githubusercontent.com/254c/base/main/rule/Clash/Wotb.list",
+    path: "./rulesets/254c/Wotb.yaml",
   },
   reject: {
     ...ruleProviderCommon,
