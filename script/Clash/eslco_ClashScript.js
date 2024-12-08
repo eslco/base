@@ -6,21 +6,21 @@
 
 // local DNS servers
 const domesticNameservers = [
-  "https://doh.apad.pro/dns-query",
-  "https://dns.twnic.tw/dns-query",
-  "https://public.dns.iij.jp/dns-query"
+  "https://doh.apad.pro/dns-query", // Diversion Strategy Upstream: Global Cloudflare & Google | CN Mainland DNSPod & AliDNS
+  "https://dns.twnic.tw/dns-query", // TWNIC
+  "https://public.dns.iij.jp/dns-query" // IIJ.JP Public DNS
   // "https://dns.alidns./dns-query", // 阿里云公共DNS
   // "https://doh.pub/dns-query", // 腾讯DNSPod
   //"https://doh.360.cn/dns-query", // 360安全DNS
-  //"https://dns.twnic.tw/dns-query", //TWNIC
+  //"https://dns.hinet.net/dns-query", //TW Hinet DNS
 ];
 // remote DNS servers
 const foreignNameservers = [
   "https://1.0.0.1/dns-query", // Cloudflare(main)
   "https://security.cloudflare-dns.com/dns-query", // Cloudflare(Security)
   // "https://194.242.2.2/dns-query", // Mullvad(main)
-  // "https://194.242.2.3/dns-query" // Mullvad(back)   
-  //"https://dns.google/dns-query",//Google DNS
+  // "https://194.242.2.3/dns-query", // Mullvad(back)   
+  //"https://dns.google/dns-query", //Google DNS
   //"https://208.67.222.222/dns-query", // OpenDNS(main)
   //"https://208.67.220.220/dns-query", // OpenDNS(back)
   //"https://unfiltered.adguard-dns.com/dns-query", //Adguard DNS
