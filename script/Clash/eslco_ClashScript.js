@@ -57,11 +57,17 @@ const ruleProviderCommon = {
 };
 // 规则集配置
 const ruleProviders = {
-    "Wotb": {
+  "aesindomain": {
     ...ruleProviderCommon,
     behavior: "domain",
-    url: "https://raw.githubusercontent.com/254c/base/main/rule/Clash/Wotb.list",
-    path: "./rulesets/254c/Wotb.yaml",
+    url: "https://rawhub.pages.dev/main/self/domain.list?token=visa",
+    path: "./rulesets/eslco/domain.yaml",
+  },
+  "aesincidr": {
+    ...ruleProviderCommon,
+    behavior: "ipcidr",
+    url: "https://rawhub.pages.dev/main/self/ipcidr.list?token=visa",
+    path: "./rulesets/eslco/ipcidr.yaml",
   },
   reject: {
     ...ruleProviderCommon,
@@ -145,6 +151,8 @@ const ruleProviders = {
 // 规则
 const rules = [
   //254c Rule
+  "RULE-SET,aesindomain,Proxy", //aesindomain
+  "RULE-SET,aesincidr,Proxy", //aesincidr
   "RULE-SET,Wotb,Gaming", //Wotb Wargaming.net
   // 自定义规则
   "DOMAIN-SUFFIX,googleapis.cn,Proxy", // Google服务
