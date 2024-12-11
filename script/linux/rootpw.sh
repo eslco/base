@@ -41,31 +41,45 @@ is_port_in_use() {
 }
 
 # 提示用戶輸入新的 SSH 端口或選擇隨機端口
+ports=()
 while true; do
-    read -p "請輸入新的 SSH 端口（留空則隨機選擇）: " new_port
-    if [ -z "$new_port" ]; then
+    read -p "請輸入新的 SSH 端口（留空則隨機選擇），多個端口用逗號分隔: " input_ports
+    if [ -z "$input_ports" ]; then
         # 隨機選擇一個未被佔用的端口
         while true; do
             new_port=$(( ( RANDOM % 64000 ) + 1024 ))
             if ! is_port_in_use "$new_port"; then
+                ports+=("$new_port")
                 break
             fi
         done
-        echo "選擇的隨機端口: $new_port"
-    elif ! [[ "$new_port" =~ ^[0-9]+$ ]] || [ "$new_port" -lt 1024 ] || [ "$new_port" -gt 65535 ]; then
-        echo "無效的端口號。請輸入一個有效的端口號(1024-65535)。"
-        continue
-    elif is_port_in_use "$new_port"; then
-        echo "端口 $new_port 已被佔用。請選擇另一個端口。"
-        continue
+        echo "選擇的隨機端口: ${ports[-1]}"
     else
+        IFS=',' read -ra port_list <<< "$input_ports"
+        for port in "${port_list[@]}"; do
+            if ! [[ "$port" =~ ^[0-9]+$ ]] || [ "$port" -lt 1024 ] || [ "$port" -gt 65535 ]; then
+                echo "無效的端口號。請輸入一個有效的端口號（1024-65535）。"
+                continue 2
+            elif is_port_in_use "$port"; then
+                echo "端口 $port 已被佔用。請選擇另一個端口。"
+                continue 2
+            else
+                ports+=("$port")
+            fi
+        done
         break
     fi
 done
 
-# 修改 SSH 配置文件中的 Port 參數
-sudo sed -i "s/^#\?Port.*/Port $new_port/g" /etc/ssh/sshd_config || { echo "更新 SSH Port 失敗"; exit 1; }
+# 檢查是否有使用默認端口 22
+if [[ " ${ports[@]} " =~ " 22 " ]]; then
+    echo "警告: 使用默認端口 22 可能會有安全風險。建議使用其他端口。"
+fi
 
+# 修改 SSH 配置文件中的 Port 參數
+for port in "${ports[@]}"; do
+    echo "Port $port" | sudo tee -a /etc/ssh/sshd_config > /dev/null || { echo "更新 SSH Port 失敗"; exit 1; }
+done
 # 修改默認 SSH 監聽地址
 sudo sed -i 's/^#\?ListenAddress.*/ListenAddress 0.0.0.0\nListenAddress ::/g' /etc/ssh/sshd_config || { echo "更新 ListenAddress 0.0.0.0 |:: 失敗"; exit 1; }
 
