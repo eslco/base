@@ -6,9 +6,10 @@
 
 // local DNS servers
 const domesticNameservers = [
- "https://dns.alidns.com/dns-query", // 阿里云公共DNS
+ "https://public.dns.iij.jp/dns-query",
  "https://101.101.101.101/dns-query" // TWNIC
   // "https://doh.apad.pro/dns-query", //DNS Intergated 
+  // "https://dns.alidns.com/dns-query", // 阿里云公共DNS
   // "https://doh.pub/dns-query", // 腾讯DNSPod
   // "https://dns.twnic.tw/dns-query" //TWNIC
   // "https://doh.360.cn/dns-query", // 360安全DNS
@@ -18,7 +19,7 @@ const domesticNameservers = [
 const foreignNameservers = [
   "https://1.0.0.1/dns-query", // Cloudflare(main)
   "https://security.cloudflare-dns.com/dns-query",// Cloudflare(Security)
-  "https://public.dns.iij.jp/dns-query", // IIJ JP Public DNS
+   // IIJ JP Public DNS
   "https://dns.google/dns-query"//Google DNS
   // "https://doh.dns.sb/dns-query", //DNS.SB
   // "https://194.242.2.2/dns-query", // Mullvad(main)
