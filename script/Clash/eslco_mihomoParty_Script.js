@@ -6,7 +6,7 @@
 
 // local DNS servers
 const domesticNameservers = [
- "https://public.dns.iij.jp/dns-query",
+ "https://public.dns.iij.jp/dns-query",// IIJ JP Public DNS
  "https://101.101.101.101/dns-query" // TWNIC
   // "https://doh.apad.pro/dns-query", //DNS Intergated 
   // "https://dns.alidns.com/dns-query", // 阿里云公共DNS
@@ -19,15 +19,14 @@ const domesticNameservers = [
 const foreignNameservers = [
   "https://1.0.0.1/dns-query", // Cloudflare(main)
   "https://security.cloudflare-dns.com/dns-query",// Cloudflare(Security)
-   // IIJ JP Public DNS
-  "https://dns.google/dns-query"//Google DNS
-  // "https://doh.dns.sb/dns-query", //DNS.SB
+  "https://dns.google/dns-query", // Google DNS
+  "https://doh.dns.sb/dns-query" //DNS.SB
   // "https://194.242.2.2/dns-query", // Mullvad(main)
   // "https://194.242.2.3/dns-query" // Mullvad(back)   
   // "https://208.67.222.222/dns-query", // OpenDNS(main)
   // "https://208.67.220.220/dns-query", // OpenDNS(back)
   // "https://unfiltered.adguard-dns.com/dns-query", //Adguard DNS
-  // "https://dns.adguard-dns.com/dns-query", //Adguard DNS
+  // "https://dns.adguard-dns.com/dns-query", // Adguard DNS
 ];
 // DNS config
 const dnsConfig = {
