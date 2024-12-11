@@ -6,25 +6,27 @@
 
 // local DNS servers
 const domesticNameservers = [
-  "https://doh.apad.pro/dns-query", // Diversion Strategy Upstream: Global Cloudflare & Google | CN Mainland DNSPod & AliDNS
-  "https://dns.twnic.tw/dns-query", // TWNIC
-  "https://public.dns.iij.jp/dns-query" // IIJ.JP Public DNS
-  // "https://dns.alidns./dns-query", // 阿里云公共DNS
+ "https://dns.alidns.com/dns-query", // 阿里云公共DNS
+ "https://101.101.101.101/dns-query" // TWNIC
+  // "https://doh.apad.pro/dns-query", //DNS Intergated 
   // "https://doh.pub/dns-query", // 腾讯DNSPod
-  //"https://doh.360.cn/dns-query", // 360安全DNS
-  //"https://dns.hinet.net/dns-query", //TW Hinet DNS
+  // "https://dns.twnic.tw/dns-query" //TWNIC
+  // "https://doh.360.cn/dns-query", // 360安全DNS
+
 ];
 // remote DNS servers
 const foreignNameservers = [
   "https://1.0.0.1/dns-query", // Cloudflare(main)
-  "https://security.cloudflare-dns.com/dns-query", // Cloudflare(Security)
+  "https://security.cloudflare-dns.com/dns-query",// Cloudflare(Security)
+  "https://public.dns.iij.jp/dns-query", // IIJ JP Public DNS
+  "https://dns.google/dns-query" // Google DNS
+  // "https://doh.dns.sb/dns-query", //DNS.SB
   // "https://194.242.2.2/dns-query", // Mullvad(main)
-  // "https://194.242.2.3/dns-query", // Mullvad(back)   
-  //"https://dns.google/dns-query", //Google DNS
-  //"https://208.67.222.222/dns-query", // OpenDNS(main)
-  //"https://208.67.220.220/dns-query", // OpenDNS(back)
-  //"https://unfiltered.adguard-dns.com/dns-query", //Adguard DNS
-  //"https://dns.adguard-dns.com/dns-query", //Adguard DNS
+  // "https://194.242.2.3/dns-query" // Mullvad(back)   
+  // "https://208.67.222.222/dns-query", // OpenDNS(main)
+  // "https://208.67.220.220/dns-query", // OpenDNS(back)
+  // "https://unfiltered.adguard-dns.com/dns-query", //Adguard DNS
+  // "https://dns.adguard-dns.com/dns-query", //Adguard DNS
 ];
 // DNS config
 const dnsConfig = {
@@ -43,7 +45,7 @@ const dnsConfig = {
   ],
   "default-nameserver": ["168.95.1.1", "103.2.57.5", "223.5.5.5", "119.29.29.29"],//
   nameserver: [...domesticNameservers, ...foreignNameservers],
-  "proxy-server-nameserver": [...domesticNameservers, ...foreignNameservers],
+  "proxy-server-nameserver": [...foreignNameservers],
   "nameserver-policy": {
     "geosite:private,cn,geolocation-cn": domesticNameservers,
     "geosite:google,youtube,telegram,gfw,geolocation-!cn": foreignNameservers,
@@ -57,17 +59,23 @@ const ruleProviderCommon = {
 };
 // 规则集配置
 const ruleProviders = {
-  "aesindomain": {
-    ...ruleProviderCommon,
-    behavior: "domain",
-    url: "https://rawhub.pages.dev/main/self/domain.list?token=visa",
-    path: "./rulesets/eslco/domain.yaml",
-  },
-  "aesincidr": {
+   aesincidr: {
     ...ruleProviderCommon,
     behavior: "ipcidr",
     url: "https://rawhub.pages.dev/main/self/ipcidr.list?token=visa",
     path: "./rulesets/eslco/ipcidr.yaml",
+  },
+    aesindomain: {
+    ...ruleProviderCommon,
+    behavior: "domain",
+    url: "https://rawhub.pages.dev/main/self/domain.list?token=visa",
+    path: "./rulesets/esloc/domain.yaml",
+  },
+    wotb: {
+    ...ruleProviderCommon,
+    behavior: "domain",
+    url: "https://raw.githubusercontent.com/eslco/base/main/rule/Clash/Wotb.list",
+    path: "./rulesets/254c/Wotb.yaml",
   },
   reject: {
     ...ruleProviderCommon,
@@ -151,9 +159,26 @@ const ruleProviders = {
 // 规则
 const rules = [
   //254c Rule
-  "RULE-SET,aesindomain,Proxy", //aesindomain
-  "RULE-SET,aesincidr,Proxy,no-resolve", //aesincidr
-  "RULE-SET,Wotb,Gaming", //Wotb Wargaming.net
+  "RULE-SET,aesindomain,Proxy", //Domain
+  "RULE-SET,aesincidr,Proxy,no-resolve",// IPCIDR
+  "RULE-SET,wotb,Gaming", //Wotb Wargaming.net
+  "DOMAIN-SUFFIX,ipip.net,Proxy",
+  "DOMAIN-SUFFIX,en.ipip.net,Proxy",
+  //
+  "DOMAIN-SUFFIX,ip138.com,DirectO",
+  "DOMAIN-SUFFIX,ipv4dns.com,DirectO",
+  "DOMAIN-SUFFIX,alicdn.com,DirectO",
+  "DOMAIN-SUFFIX,ipchaxun.com,DirectO",
+  "DOMAIN-SUFFIX,speedtest.cn,DirectO",
+  //
+  "DOMAIN-SUFFIX,ip.sb,Proxy",
+  "DOMAIN-SUFFIX,ip-api.com,Proxy",
+  "DOMAIN-SUFFIX,ip.skk.moe,Proxy",
+  "DOMAIN-SUFFIX,ipinfo.io,Proxy",
+  "DOMAIN-SUFFIX,api.myip.com,Proxy",
+  //  
+
+  "DOMAIN-SUFFIX,en.ipip.net,Proxy",
   // 自定义规则
   "DOMAIN-SUFFIX,googleapis.cn,Proxy", // Google服务
   "DOMAIN-SUFFIX,gstatic.com,Proxy", // Google静态资源
@@ -168,15 +193,15 @@ const rules = [
   "RULE-SET,proxy,Proxy",
   "RULE-SET,gfw,Proxy",
   "RULE-SET,tld-not-cn,Proxy",
-  "RULE-SET,applications,DirectN",
-  "RULE-SET,private,DirectN",
-  "RULE-SET,direct,DirectN",
-  "RULE-SET,lancidr,DirectN,no-resolve",
-  "RULE-SET,cncidr,DirectN,no-resolve",
+  "RULE-SET,applications,DirectO",
   "RULE-SET,telegramcidr,Telegram,no-resolve",
+  "RULE-SET,direct,DirectO",
+  "RULE-SET,cncidr,DirectO",
   // 其他规则
-  "GEOIP,LAN,DirectN,no-resolve",
-  "GEOIP,CN,DirectN,no-resolve",
+  "RULE-SET,lancidr,DIRECT,no-resolve",
+  "RULE-SET,private,DIRECT,no-resolve",
+  "GEOIP,LAN,DIRECT,no-resolve",
+  "GEOIP,CN,DirectO",
   "MATCH,Final",
 ];
 // 代理组通用配置
@@ -209,10 +234,22 @@ function main(config) {
       ...groupBaseOption,
       name: "Proxy",
       type: "select",
-      proxies: ["URLTest", "FallBack", "LB-Hashing", "LB-Robin"],
+      proxies: ["URLTest", "FallBack", "LB-Hashing", "LB-Robin", "DIRECT"],
       "include-all": true,
       icon: "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/adjust.svg",
     },
+    {
+      ...groupBaseOption,
+      name: "DirectO",
+      type: "select",
+      proxies: [
+        "DIRECT",
+        "Proxy",
+        "Final"
+      ],
+      "include-all": false,
+      icon: "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/adjust.svg",
+    }, 
     {
       ...groupBaseOption,
       name: "URLTest",
@@ -243,14 +280,15 @@ function main(config) {
       strategy: "round-robin",
       "include-all": true,
       icon: "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/balance.svg",
-    }, 
+    },
+    
     {
       ...groupBaseOption,
       name: "Gaming",
       type: "select",
       proxies: ["Proxy","FallBack", "LB-Hashing", "LB-Robin"],
       "include-all": true,
-      icon: "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/adjust.svg",
+      icon: "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Game.png",
     },
     {
       ...groupBaseOption,
@@ -262,7 +300,7 @@ function main(config) {
         "FallBack",
         "LB-Hashing",
         "LB-Robin",
-        "DirectN",
+        "DirectO",
       ],
       "include-all": true,
       icon: "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/google.svg",
@@ -277,7 +315,7 @@ function main(config) {
         "FallBack",
         "LB-Hashing",
         "LB-Robin",
-        "DirectN",
+        "DirectO",
       ],
       "include-all": true,
       icon: "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/youtube.svg",
@@ -292,7 +330,7 @@ function main(config) {
         "FallBack",
         "LB-Hashing",
         "LB-Robin",
-        "DirectN",
+        "DirectO",
       ],
       "include-all": true,
       icon: "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/telegram.svg",
@@ -302,7 +340,7 @@ function main(config) {
       name: "Microsoft",
       type: "select",
       proxies: [
-        "DirectN",
+        "DirectO",
         "Proxy",
         "URLTest",
         "FallBack",
@@ -322,7 +360,7 @@ function main(config) {
         "FallBack",
         "LB-Hashing",
         "LB-Robin",
-        "DirectN",
+        "DirectO",
       ],
       "include-all": true,
       icon: "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/apple.svg",
@@ -334,21 +372,7 @@ function main(config) {
       proxies: ["REJECT", "DIRECT"],
       icon: "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/bug.svg",
     },
-    {
-      ...groupBaseOption,
-      name: "DirectN",
-      type: "select",
-      proxies: [
-        "DIRECT",
-        "Proxy",
-        "URLTest",
-        "FallBack",
-        "LB-Hashing",
-        "LB-Robin",
-      ],
-      "include-all": true,
-      icon: "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/link.svg",
-    },
+    
     {
       ...groupBaseOption,
       name: "Block",
@@ -362,11 +386,8 @@ function main(config) {
       type: "select",
       proxies: [
         "Proxy",
-        "URLTest",
-        "FallBack",
-        "LB-Hashing",
-        "LB-Robin",
-        "DirectN",
+        "DIRECT",
+        "REJECT"
       ],
       "include-all": true,
       icon: "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/fish.svg",

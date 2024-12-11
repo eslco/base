@@ -1,6 +1,5 @@
 
-			  root_use
-			  send_stats "电报预警"
+			  root_use		  
 			  echo "TG-bot监控预警功能"
 			  echo "视频介绍: https://youtu.be/vLL-eb3Z_TY"
 			  echo "------------------------------------------------"
@@ -11,7 +10,6 @@
 
 			  case "$choice" in
 				[Yy])
-				  send_stats "电报预警启用"
 				  cd ~
 				  install nano tmux bc jq
 				  check_crontab_installed

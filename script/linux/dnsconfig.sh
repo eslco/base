@@ -21,7 +21,7 @@ echo "備份完成!"
 # 嘗試解除文件不可變屬性
 echo "正在解除文件不可變屬性..."
 if ! chattr -i /etc/resolv.conf 2>/dev/null; then
-    echo "警告：無法解除文件不可變屬性，可能本來就未設置"
+    echo "警告：無法解除文件鎖定屬性，可能未設置"
 fi
 
 # 寫入新的 DNS 配置
@@ -62,7 +62,9 @@ fi
 
 printf "\033c"
 
-echo "DNS 配置更新完成！"
+echo "DNS 配置更新完成!"
+echo "当前DNS配置文件路径: /etc/resolv.conf"
+cat /etc/resolv.conf 
 echo "======================================================"
 echo "Tips:"
 echo "可以使用 'cat /etc/resolv.conf' 檢查配置"
