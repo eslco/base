@@ -46,7 +46,7 @@ readonly DEFAULT_PASSWORD_LENGTH=32
 
 # 特殊字符集(跨平台兼容)
 
-readonly SPECIAL_CHARS='@#$%^&*()_+-={}[]|:;<>?,.~'
+readonly SPECIAL_CHARS='@#$%^&*()_+=?.'
 
 
 
@@ -188,8 +188,6 @@ security_check() {
 
     )
 
-    
-
     for file in "${files_to_check[@]}"; do
 
         if [ -f "$file" ]; then
@@ -208,8 +206,6 @@ security_check() {
 
     done
 
-    
-
     # 检查目录权限
 
     local dirs_to_check=(
@@ -221,8 +217,6 @@ security_check() {
         "$TEMP_DIR"
 
     )
-
-    
 
     for dir in "${dirs_to_check[@]}"; do
 
@@ -244,15 +238,11 @@ security_check() {
 
 }
 
-
-
 # 系统环境检查函数
 
 check_environment() {
 
     log "INFO" "检查系统环境..."
-
-    
 
     # 检查操作系统
 
@@ -261,8 +251,6 @@ check_environment() {
         error_exit "不支持的操作系统" $E_NOSYSTEM
 
     }
-
-    
 
     # 检查必要命令
 
@@ -286,8 +274,6 @@ check_environment() {
 
     )
 
-    
-
     for cmd in "${required_commands[@]}"; do
 
         if ! command -v "$cmd" >/dev/null 2>&1; then
@@ -298,16 +284,11 @@ check_environment() {
 
     done
 
-    
-
     # 执行安全检查
 
     security_check
 
 }
-
-
-
 # 生成随机密码函数
 
 generate_password() {
@@ -318,17 +299,13 @@ generate_password() {
 
     local chars="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789${SPECIAL_CHARS}"
 
-    
-
     # 验证长度参数
 
     if [ "$length" -lt "$MIN_PASSWORD_LENGTH" ] || [ "$length" -gt "$MAX_PASSWORD_LENGTH" ]; then
 
         error_exit "无效的密码长度: $length" $E_INVALID_INPUT
 
-    fi
-
-    
+    fi  
 
     # 确保至少包含每种类型的字符
 
@@ -340,9 +317,7 @@ generate_password() {
 
     password+=$(echo ${SPECIAL_CHARS} | fold -w1 | shuf | head -n1) # 特殊字符
 
-    
-
-    # 生成剩余字符
+  # 生成剩余字符
 
     local remain=$((length - 4))
 
@@ -352,16 +327,11 @@ generate_password() {
 
     done
 
-    
-
     # 使用 openssl 进行额外随机化
 
     echo $password | fold -w1 | shuf -n$length | tr -d '\n'
 
 }
-
-
-
 # 验证密码复杂度
 
 validate_password() {
@@ -369,9 +339,6 @@ validate_password() {
     local password=$1
 
     local length=${#password}
-
-    
-
     # 检查长度
 
     if [ $length -lt $MIN_PASSWORD_LENGTH ] || [ $length -gt $MAX_PASSWORD_LENGTH ]; then
@@ -379,9 +346,6 @@ validate_password() {
         return 1
 
     fi
-
-    
-
     # 检查复杂度
 
     [[ "$password" =~ [A-Z] ]] && \
@@ -606,7 +570,6 @@ PasswordAuthentication yes
 ChallengeResponseAuthentication no
 UsePAM yes
 X11Forwarding no
-PrintMotd no
 AcceptEnv LANG LC_*
 Subsystem sftp /usr/lib/openssh/sftp-server
 
