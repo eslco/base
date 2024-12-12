@@ -1,11 +1,11 @@
 # Whitelist 白名单 不应被屏蔽的特殊规则列表
 #!update url https://raw.githubusercontent.com/eslco/base/main/rule/Shadowrocket/UnBan.list
 
-#Twitch TV
-URL-REGEX,^https?:\/\/.*\.jtvnw\.net\/.*$
-URL-REGEX,^https?:\/\/[\w-]+\.live-video\.net\/.*$
+# Twitch TV
+# URL-REGEX,^https?:\/\/.*\.jtvnw\.net\/.*$
+# URL-REGEX,^https?:\/\/[\w-]+\.live-video\.net\/.*$
 # URL-REGEX,^https?:\/\/(?:.*\.)？playlist\.ttvnw\.net\/.*$
-URL-REGEX,^https?:\/\/.*ttvnw.*\.akamaized\.net\/.*$
+# URL-REGEX,^https?:\/\/.*ttvnw.*\.akamaized\.net\/.*$
 # URL-REGEX,^https?:\/\/.*\.ext-twitch\.tv\/.*$
 # DOMAIN-SUFFIX,live001-ttvnw.akamaized.net
 # DOMAIN-SUFFIX,playlist.ttvnw.net
