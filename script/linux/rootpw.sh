@@ -109,7 +109,8 @@ sudo sed -i 's/^#\?PermitTTY.*/PermitTTY yes/g' /etc/ssh/sshd_config || { echo "
 sudo service ssh restart || { echo "Failed to restart SSH service"; exit 1; }
 
 echo "Password changed successfully and SSH configuration updated."
-
+echo "SSH 配置已更新!"
+echo "新的 SSH 登錄端口為: $new_port"
 # 总结
 ## 这段脚本主要实现了以下功能：
 ## 检查是否以root用户运行。
@@ -120,5 +121,3 @@ echo "Password changed successfully and SSH configuration updated."
 ## 如果系统是Ubuntu，还启用ChallengeResponseAuthentication。
 ## 重启SSH服务。
 ## 输出操作成功的信息。
-echo "SSH 配置已更新!"
-echo "新的 SSH 登錄端口為: $new_port"
