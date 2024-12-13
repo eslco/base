@@ -1,7 +1,5 @@
 #!/bin/bash
 
-
-
 TELEGRAM_BOT_TOKEN="${TGBotToken}" # 輸入你的 Bot API Token
 CHAT_ID="${TGChatID}" # 輸入你的TG ID
 

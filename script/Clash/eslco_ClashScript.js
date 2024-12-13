@@ -6,9 +6,9 @@
 
 // local DNS servers
 const domesticNameservers = [
- "https://dns.alidns.com/dns-query", // 阿里云公共DNS
- "https://101.101.101.101/dns-query" // TWNIC
-  // "https://doh.apad.pro/dns-query", //DNS Intergated 
+  "https://doh.apad.pro/dns-query", //DNS Intergated    
+  "https://101.101.101.101/dns-query" // TWNIC
+  // "https://dns.alidns.com/dns-query", // 阿里云公共DNS
   // "https://doh.pub/dns-query", // 腾讯DNSPod
   // "https://dns.twnic.tw/dns-query" //TWNIC
   // "https://doh.360.cn/dns-query", // 360安全DNS
@@ -43,7 +43,7 @@ const dnsConfig = {
     "+.msftconnecttest.com",
     "+.msftncsi.com",
   ],
-  "default-nameserver": ["168.95.1.1", "103.2.57.5", "223.5.5.5", "119.29.29.29"],//
+  "default-nameserver": ["168.95.1.1", "103.2.57.5","101.101.101.101" ],//
   nameserver: [...domesticNameservers, ...foreignNameservers],
   "proxy-server-nameserver": [...foreignNameservers],
   "nameserver-policy": {
