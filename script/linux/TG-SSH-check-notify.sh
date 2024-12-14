@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # 設置Telegram Bot Token 和 Chat ID
-TELEGRAM_BOT_TOKEN="Type輸入Your你的TG Bot API Token" # Your 你的Telegram Bot Token
-CHAT_ID="Type输入YourTG的Chat账号ID" # Your 你的Telegram Chat ID
+TELEGRAM_BOT_TOKEN="TG Bot API Token" # Your 你的Telegram Bot Token
+CHAT_ID="TG Chat ID" # Your 你的Telegram Chat ID
 
 # 設置CURL超時時間 #URL_TIMEOUT=8
 # 獲取登錄信息 Information
@@ -37,10 +37,10 @@ MESSAGE="ℹ️ 登錄信息SSH Info:
 時間 Time: $TIME
 地點 GeoData: ${ACCESS_CN}|${ACCESS_US}
 登錄 IP: <a href="http://ip-api.com/json/${IP}">${IP}</a>
-Org所屬組織: ${IP_org}
-AS自治域: ${IP_as}
+<b>Org所屬組織: ${IP_org} </b>
+<b>AS自治域: $IP_as </b>
 風險因數 <a href="https://scamalytics.com/ip/${IP}"><strong>FraudScore:${ScamRiskScore}</strong></a>
-IP詳情MoreInfo: <a href="https://html.zone/ip/query?ip=${IP}">HTML.Zone</a> | <a href="https://ip.im/${IP}">IP.IM</a> | <a href="https://ip.ping0.cc/ip/${IP}"><strong>Ping0.cc(${IP})</strong></a>"
+<blockquoute expandable> IP詳情MoreInfo: <a href='https://html.zone/ip/query?ip=${IP}'>HTML.Zone</a>\n<a href='https://ip.im/${IP}'>IP.IM</a>\n <a href='https://ip.ping0.cc/ip/${IP}'><strong>Ping0.cc(${IP})</strong></a></blockquote>"
 
  # 發送 Telegram 消息
 curl -s -X POST "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" \
