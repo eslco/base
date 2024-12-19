@@ -5,5 +5,11 @@ This Repository is a open storage used for a lots of network proxy tools like Sh
 * CC-BY-SA-4.0
 
 
-## Stargazers over time
-[![Stargazers over time](https://starchart.cc/eslco/base.svg?variant=adaptive)](https://starchart.cc/eslco/base)
+## Starry Stars!
+<a href="https://star-history.com/#eslco/base&Timeline">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=eslco/base&type=Timeline&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=eslco/base&type=Timeline" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=eslco/base&type=Timeline" />
+ </picture>
+</a>
