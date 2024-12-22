@@ -157,6 +157,11 @@ const ruleProviders = {
 };
 // 规则
 const rules = [
+  // Steam CDN Diversions Stradegy
+ "DOMAIN,steamcdn-a.akamaihd.net,Gaming",
+ "DOMAIN-SUFFIX,steamserver.net,Gaming",
+  // Steam CDN Strategy
+  
   //254c Rule
   "RULE-SET,aesindomain,Proxy", //Domain
   "RULE-SET,aesincidr,Proxy,no-resolve",// IPCIDR
@@ -178,13 +183,13 @@ const rules = [
   //  
 
   "DOMAIN-SUFFIX,en.ipip.net,Proxy",
-  // 自定义规则
+  // 自定义规则 Customized
   "DOMAIN-SUFFIX,googleapis.cn,Proxy", // Google服务
   "DOMAIN-SUFFIX,gstatic.com,Proxy", // Google静态资源
   "DOMAIN-SUFFIX,xn--ngstr-lra8j.com,Proxy", // Google Play下载服务
   "DOMAIN-SUFFIX,github.io,Proxy", // Github Pages
   "DOMAIN,v2rayse.com,Proxy", // V2rayse节点工具
-  // Loyalsoldier 规则集
+  // Loyalsoldier 规则集 RULESET
   "RULE-SET,reject,BanAD",
   "RULE-SET,icloud,Microsoft",
   "RULE-SET,apple,Apple",
@@ -196,7 +201,7 @@ const rules = [
   "RULE-SET,telegramcidr,Telegram,no-resolve",
   "RULE-SET,direct,DirectO",
   "RULE-SET,cncidr,DirectO",
-  // 其他规则
+  // 其他规则 Other Rules
   "RULE-SET,lancidr,DIRECT,no-resolve",
   "RULE-SET,private,DIRECT,no-resolve",
   "GEOIP,LAN,DIRECT,no-resolve",
@@ -286,7 +291,14 @@ function main(config) {
       ...groupBaseOption,
       name: "Gaming",
       type: "select",
-      proxies: ["Proxy","FallBack", "LB-Hashing", "LB-Robin"],
+      proxies: [
+        "Proxy",
+        "DIRECT",
+        "FallBack",
+        "LB-Hashing",
+        "LB-Robin",
+        "DirectO"
+      ],
       "include-all": true,
       icon: "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Game.png",
     },
