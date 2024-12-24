@@ -62,10 +62,16 @@ fi
 
 printf "\033c"
 
+
+
+
 echo "DNS 配置更新完成!"
 echo "当前DNS配置文件路径: /etc/resolv.conf"
-cat /etc/resolv.conf 
-echo "======================================================"
+echo "当前DNS配置文件内容如下: (CLI命令`cat /etc/resolv.conf`)"
+echo #######################################################
+cat /etc/resolv.conf
+echo "以上是当前DNS配置文件内容"
+echo #######################################################
 echo "Tips:"
 echo "可以使用 'cat /etc/resolv.conf' 檢查配置"
 echo "使用 'ping -6 google.com' 測試 IPv6 連接"
