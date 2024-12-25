@@ -1,3 +1,17 @@
+# Name: 101555.list
+# REPO: https://raw.github.com/eslco/base/main/rule/Apple/101555.list
+# Author eslco
+# Source: https://support.apple.com/zh-TW/101555
+# Ref: https://github.com/blackmatrix7/ios_rule_script  
+     
+# UPDATED: 2024-12-17 02:10:06
+# DOMAIN: X
+# DOMAIN-KEYWORD: X
+# DOMAIN-SUFFIX: 176
+# IP-CIDR: 1
+# USER-AGENT: X
+# TOTAL: 176
+
 # Apple Services Domain
 
 # Device Settings
