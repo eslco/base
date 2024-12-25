@@ -186,4 +186,4 @@ DOMAIN-SUFFIX,idv-prod1.apple.com
 DOMAIN-SUFFIX,apple.com
 
 # Apple IP-CIDR
-# IP-CIDR,17.0.0.0/8,no-resolve
+IP-CIDR,17.0.0.0/8,no-resolve
