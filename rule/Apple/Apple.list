@@ -49,7 +49,7 @@ IP-CIDR,139.178.128.0/18,no-resolve
 IP-CIDR,144.178.0.0/19,no-resolve
 IP-CIDR,144.178.36.0/22,no-resolve
 IP-CIDR,144.178.48.0/20,no-resolve
-IP-CIDR,17.0.0.0/8,no-resolve
+# IP-CIDR,17.0.0.0/8,no-resolve
 IP-CIDR,192.35.50.0/24,no-resolve
 IP-CIDR,198.183.17.0/24,no-resolve
 IP-CIDR,205.180.175.0/24,no-resolve
@@ -180,7 +180,7 @@ DOMAIN,smp-device-content.apple.com
 DOMAIN,idv.cdn-apple.com
 DOMAIN,idv-prod1.apple.com
 
-# Apple Domain
+# Apple General Domain
 DONAIN-SUFFIX,apple.com
-# Apple IP CIDR
+# Apple General IPCIDR
 IP-CIDR,17.0.0.0/8,no-resolve
