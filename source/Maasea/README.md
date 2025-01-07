@@ -1,3 +1,3 @@
-# Important
+# :bulb: Import from the Author below
 
-Author: Massea
+Credit: [__@Massea/sgmodule__](https://github.com/Maasea/sgmodule)
