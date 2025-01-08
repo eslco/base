@@ -1,0 +1,458 @@
+rule-providers:
+    # 基礎規則集 | Basic rule set
+    private:
+        type: http
+        behavior: domain
+        url: https://ghp.ci/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.yaml
+        path: ./ruleset/private.yaml
+        interval: 86400
+    cn_domain:
+        type: http
+        behavior: domain
+        url: https://ghp.ci/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.yaml
+        path: ./ruleset/cn_domain.yaml
+        interval: 86400
+    geolocation-!cn:
+        type: http
+        behavior: domain
+        url: https://ghp.ci/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.yaml
+        path: ./ruleset/geolocation-!cn.yaml
+        interval: 86400
+    cn_ip:
+        type: http
+        behavior: ipcidr
+        url: https://ghp.ci/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.yaml
+        path: ./ruleset/cn_ip.yaml
+        interval: 86400
+
+    # 流媒體規則集 | Streaming rule set
+    netflix:
+        type: http
+        behavior: classical
+        url: https://ghp.ci/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.yaml
+        path: ./ruleset/netflix.yaml
+        interval: 86400
+    disney:
+        type: http
+        behavior: classical
+        url: https://ghp.ci/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.yaml
+        path: ./ruleset/disney.yaml
+        interval: 86400
+    youtube:
+        type: http
+        behavior: classical
+        url: https://ghp.ci/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml
+        path: ./ruleset/youtube.yaml
+        interval: 86400
+    spotify:
+        type: http
+        behavior: classical
+        url: https://ghp.ci/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml
+        path: ./ruleset/spotify.yaml
+        interval: 86400
+
+    # 社交媒體規則集 | Social media rule set
+    telegram:
+        type: http
+        behavior: classical
+        url: https://ghp.ci/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml
+        path: ./ruleset/telegram.yaml
+        interval: 86400
+    twitter:
+        type: http
+        behavior: classical
+        url: https://ghp.ci/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Twitter/Twitter.yaml
+        path: ./ruleset/twitter.yaml
+        interval: 86400
+    facebook:
+        type: http
+        behavior: classical
+        url: https://ghp.ci/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Facebook/Facebook.yaml
+        path: ./ruleset/facebook.yaml
+        interval: 86400
+    instagram:
+        type: http
+        behavior: classical
+        url: https://ghp.ci/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Instagram/Instagram.yaml
+        path: ./ruleset/instagram.yaml
+        interval: 86400
+
+    # AI服務規則集 | AI services rule set
+    ai_services:
+        type: http
+        behavior: classical
+        url: https://ghp.ci/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml
+        path: ./ruleset/ai_services.yaml
+        interval: 86400
+    claude:
+        type: http
+        behavior: classical
+        url: https://ghp.ci/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Claude/Claude.yaml
+        path: ./ruleset/claude.yaml
+        interval: 86400
+    gemini:
+        type: http
+        behavior: classical
+        url: https://ghp.ci/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Gemini/Gemini.yaml
+        path: ./ruleset/gemini.yaml
+        interval: 86400
+    bard:
+        type: http
+        behavior: classical
+        url: https://ghp.ci/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BardAI/BardAI.yaml
+        path: ./ruleset/bard.yaml
+        interval: 86400
+    google:
+        type: http
+        behavior: classical
+        url: https://ghp.ci/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml
+        path: ./ruleset/google.yaml
+        interval: 86400
+
+    # 常用軟體規則集 | Common software rule set
+    microsoft:
+        type: http
+        behavior: classical
+        url: https://ghp.ci/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml
+        path: ./ruleset/microsoft.yaml
+        interval: 86400
+    steam:
+        type: http
+        behavior: classical
+        url: https://ghp.ci/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Steam/Steam.yaml
+        path: ./ruleset/steam.yaml
+        interval: 86400
+    github:
+        type: http
+        behavior: classical
+        url: https://ghp.ci/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GitHub/GitHub.yaml
+        path: ./ruleset/github.yaml
+        interval: 86400
+    docker:
+        type: http
+        behavior: classical
+        url: https://ghp.ci/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Docker/Docker.yaml
+        path: ./ruleset/docker.yaml
+        interval: 86400
+
+    # 下載規則集 | Download rule set
+    download:
+        type: http
+        behavior: classical
+        url: https://ghp.ci/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Download/Download.yaml
+        path: ./ruleset/download.yaml
+        interval: 86400
+
+proxy-groups:
+# 主要代理組 | Main proxy group
+- name: PROXY
+    type: select
+    proxies:
+    - AUTO
+    - DIRECT
+    - US
+    - UK
+    - CA
+    - RU
+    - JP
+    - TW
+    - SG
+    - HK
+    - Balance
+    - Lantency
+    include-all: true
+    exclude-filter: (?i)GB|Traffic|Expire|Premium|頻道|訂閱|ISP|流量|到期|重置
+
+# 地區分組 | Regional groups
+- name: US
+    type: url-test
+    hidden: true
+    include-all: true
+    filter: (?i)美國|USA|US|🇺🇸
+    interval: 300
+    tolerance: 50
+    url: http://www.gstatic.com/generate_204
+    exclude-filter: (?i)GB|Traffic|Expire|Premium|頻道|訂閱|ISP|流量|到期|重置
+
+- name: UK
+    type: url-test
+    hidden: true
+    include-all: true
+    filter: (?i)英國|UK|GB|🇬🇧
+    interval: 300
+    tolerance: 50
+    url: http://www.gstatic.com/generate_204
+    exclude-filter: (?i)GB|Traffic|Expire|Premium|頻道|訂閱|ISP|流量|到期|重置
+
+- name: CA
+    type: url-test
+    include-all: true
+    hidden: true
+    filter: (?i)加拿大|Canada|CA|🇨🇦
+    interval: 300
+    tolerance: 50
+    url: http://www.gstatic.com/generate_204
+    exclude-filter: (?i)GB|Traffic|Expire|Premium|頻道|訂閱|ISP|流量|到期|重置
+
+- name: RU
+    type: url-test
+    include-all: true
+    filter: (?i)俄羅斯|Russia|RU|🇷🇺
+    hidden: true
+    interval: 300
+    tolerance: 50
+    url: http://www.gstatic.com/generate_204
+    exclude-filter: (?i)GB|Traffic|Expire|Premium|頻道|訂閱|ISP|流量|到期|重置
+
+- name: JP
+    type: url-test
+    include-all: true
+    filter: (?i)日本|Japan|JP|🇯🇵
+    hidden: true
+    interval: 300
+    tolerance: 50
+    url: http://www.gstatic.com/generate_204
+    exclude-filter: (?i)GB|Traffic|Expire|Premium|頻道|訂閱|ISP|流量|到期|重置
+
+- name: TW
+    type: url-test
+    include-all: true
+    filter: (?i)台灣|Taiwan|TW|🇹🇼
+    hidden: true
+    interval: 300
+    tolerance: 50
+    url: http://www.gstatic.com/generate_204
+    exclude-filter: (?i)GB|Traffic|Expire|Premium|頻道|訂閱|ISP|流量|到期|重置
+
+- name: SG
+    type: url-test
+    include-all: true
+    filter: (?i)新加坡|Singapore|SG|🇸🇬
+    hidden: true
+    interval: 300
+    tolerance: 50
+    url: http://www.gstatic.com/generate_204
+    exclude-filter: (?i)GB|Traffic|Expire|Premium|頻道|訂閱|ISP|流量|到期|重置
+
+- name: HK
+    type: url-test
+    include-all: true
+    filter: (?i)香港|Hong Kong|HK|🇭🇰
+    hidden: true
+    interval: 300
+    tolerance: 50
+    url: http://www.gstatic.com/generate_204
+    exclude-filter: (?i)GB|Traffic|Expire|Premium|頻道|訂閱|ISP|流量|到期|重置
+
+# AI和谷歌服務分組 | AI and Google services group
+- name: AIGC
+    type: select
+    proxies:
+    - US
+    - UK
+    - CA
+    - RU
+    - JP
+    - TW
+    - SG
+    - HK
+    - AUTO
+    - PROXY
+    - Balance
+    - Lantency
+
+- name: Google
+    type: select
+    proxies:
+    - US
+    - UK
+    - CA
+    - RU
+    - JP
+    - TW
+    - SG
+    - HK
+    - AUTO
+    - PROXY
+    - Balance
+    - Lantency
+
+# 流媒體分組 | Streaming group
+- name: Streaming
+    type: select
+    proxies:
+    - AUTO
+    - PROXY
+    - US
+    - UK
+    - CA
+    - RU
+    - JP
+    - TW
+    - SG
+    - HK
+    - Balance
+    - Lantency
+
+# 社交媒體分組 | Social media group
+- name: Social
+    type: select
+    proxies:
+    - AUTO
+    - PROXY
+    - US
+    - UK
+    - CA
+    - RU
+    - JP
+    - TW
+    - SG
+    - HK
+    - Balance
+    - Lantency
+
+- name: Microsoft
+    type: select
+    proxies:
+    - DIRECT
+    - AUTO
+    - PROXY
+    - US
+    - UK
+    - CA
+    - JP
+    - TW
+    - SG
+    - HK
+
+# 自動選擇分組 | Auto select group
+- name: AUTO
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    include-all: true
+    exclude-filter: (?i)GB|Traffic|Expire|Premium|頻道|訂閱|ISP|流量|到期|重置
+
+# 策略組 | Strategy group
+- name: Balance
+    type: load-balance
+    strategy: round-robin
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+    - US
+    - UK
+    - CA
+    - RU
+    - JP
+    - TW
+    - SG
+    - HK
+
+- name: Lantency
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+    - US
+    - UK
+    - CA
+    - RU
+    - JP
+    - SG
+
+- name: 故障轉移 | Failover
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+    - US
+    - UK
+    - CA
+    - RU
+    - JP
+    - SG
+    - AUTO
+    - Balance
+    - Lantency
+
+rules:
+# 自定義 | Custom
+- DOMAIN-SUFFIX,linux.do,PROXY
+- PROCESS-NAME,docker,PROXY
+
+# 直連規則 | Direct connection rules
+- RULE-SET,private,DIRECT
+- RULE-SET,cn_domain,DIRECT
+- RULE-SET,cn_ip,DIRECT
+- RULE-SET,download,DIRECT
+
+# AI和谷歌服務規則 | AI and Google services rules
+- RULE-SET,ai_services,AIGC
+- RULE-SET,claude,AIGC
+- RULE-SET,gemini,AIGC
+- RULE-SET,bard,AIGC
+- RULE-SET,google,Google
+
+# 流媒體規則 | Streaming rules
+- RULE-SET,netflix,Streaming
+- RULE-SET,disney,Streaming
+- RULE-SET,youtube,Streaming
+- RULE-SET,spotify,Streaming
+
+# 社交媒體規則 | Social media rules
+- RULE-SET,telegram,Social
+- RULE-SET,twitter,Social
+- RULE-SET,facebook,Social
+- RULE-SET,instagram,Social
+
+# 軟體規則 | Software rules
+- RULE-SET,microsoft,Microsoft
+- RULE-SET,steam,PROXY
+- RULE-SET,github,PROXY
+- RULE-SET,docker,PROXY
+
+# 開發相關域名規則 | Development-related domain rules
+- DOMAIN-SUFFIX,github.com,PROXY
+- DOMAIN-SUFFIX,githubusercontent.com,PROXY
+- DOMAIN-SUFFIX,ghcr.io,PROXY
+- DOMAIN-SUFFIX,pkg.github.com,PROXY
+- DOMAIN-SUFFIX,docker.io,PROXY
+- DOMAIN-SUFFIX,docker.com,PROXY
+- DOMAIN-SUFFIX,dockerhub.com,PROXY
+- DOMAIN-SUFFIX,registry.docker-cn.com,PROXY
+- DOMAIN-SUFFIX,hub.docker.com,PROXY
+- DOMAIN-SUFFIX,gcr.io,PROXY
+- DOMAIN-SUFFIX,k8s.gcr.io,PROXY
+- DOMAIN-KEYWORD,github,PROXY
+- DOMAIN-KEYWORD,docker,PROXY
+
+# AI相關域名規則 | AI-related domain rules
+- DOMAIN-SUFFIX,anthropic.com,AIGC
+- DOMAIN-SUFFIX,claude.ai,AIGC
+- DOMAIN-SUFFIX,gemini.google.com,AIGC
+- DOMAIN-SUFFIX,bard.google.com,AIGC
+- DOMAIN-SUFFIX,deepmind.com,AIGC
+- DOMAIN-SUFFIX,openai.com,AIGC
+- DOMAIN-SUFFIX,chat.openai.com,AIGC
+- DOMAIN-SUFFIX,ai.com,AIGC
+- DOMAIN-SUFFIX,auth0.com,AIGC
+- DOMAIN-SUFFIX,challenges.cloudflare.com,AIGC
+- DOMAIN-SUFFIX,client-api.arkoselabs.com,AIGC
+- DOMAIN-SUFFIX,events.statsigapi.net,AIGC
+- DOMAIN-SUFFIX,featuregates.org,AIGC
+- DOMAIN-SUFFIX,identrust.com,AIGC
+- DOMAIN-SUFFIX,intercom.io,AIGC
+- DOMAIN-SUFFIX,intercomcdn.com,AIGC
+- DOMAIN-SUFFIX,poe.com,AIGC
+- DOMAIN-SUFFIX,sentry.io,AIGC
+- DOMAIN-SUFFIX,stripe.com,AIGC
+- DOMAIN-KEYWORD,openai,AIGC
+- DOMAIN-KEYWORD,anthropic,AIGC
+
+# 全局規則 | Global rules
+- GEOIP,CN,DIRECT
+- RULE-SET,geolocation-!cn,PROXY
+- MATCH,故障轉移 | Failover
