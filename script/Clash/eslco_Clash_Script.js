@@ -166,23 +166,21 @@ const rules = [
   "RULE-SET,aesindomain,Proxy", //Domain
   "RULE-SET,aesincidr,Proxy,no-resolve",// IPCIDR
   "RULE-SET,wotb,Gaming", //Wotb Wargaming.net
-  "DOMAIN-SUFFIX,ipip.net,Proxy",
-  "DOMAIN-SUFFIX,en.ipip.net,Proxy",
+  
   //
-  "DOMAIN-SUFFIX,ip138.com,DirectO",
-  "DOMAIN-SUFFIX,ipv4dns.com,DirectO",
-  "DOMAIN-SUFFIX,alicdn.com,DirectO",
-  "DOMAIN-SUFFIX,ipchaxun.com,DirectO",
-  "DOMAIN-SUFFIX,speedtest.cn,DirectO",
-  //
-  "DOMAIN-SUFFIX,ip.sb,Proxy",
-  "DOMAIN-SUFFIX,ip-api.com,Proxy",
-  "DOMAIN-SUFFIX,ip.skk.moe,Proxy",
-  "DOMAIN-SUFFIX,ipinfo.io,Proxy",
-  "DOMAIN-SUFFIX,api.myip.com,Proxy",
+  // "DOMAIN-SUFFIX,ip138.com,DirectO",
+  // "DOMAIN-SUFFIX,ipv4dns.com,DirectO",
+  // "DOMAIN-SUFFIX,alicdn.com,DirectO",
+  // "DOMAIN-SUFFIX,ipchaxun.com,DirectO",
+  // "DOMAIN-SUFFIX,speedtest.cn,DirectO",
+  // 
+  // "DOMAIN-SUFFIX,ip.sb,Proxy",
+  // "DOMAIN-SUFFIX,ip-api.com,Proxy",
+  // "DOMAIN-SUFFIX,ip.skk.moe,Proxy",
+  // "DOMAIN-SUFFIX,ipinfo.io,Proxy",
+  // "DOMAIN-SUFFIX,api.myip.com,Proxy",
   //  
 
-  "DOMAIN-SUFFIX,en.ipip.net,Proxy",
   // 自定义规则 Customized
   "DOMAIN-SUFFIX,googleapis.cn,Proxy", // Google服务
   "DOMAIN-SUFFIX,gstatic.com,Proxy", // Google静态资源
