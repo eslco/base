@@ -2,8 +2,9 @@
 #!desc= Youtube&YTMusic Module @eslco
 #!arguments=屏蔽上传按钮:true,屏蔽选段按钮:true,字幕翻译语言:zh-Hant,歌词翻译语言:zh-Hant,脚本执行引擎:auto,启用调试模式:false
 #！ Arguments-desc=- 遮蔽引數：[true, false] \n- 翻譯引數：[語言程式碼, off] \n- 指令碼引擎：[auto, jsc, webview]\n\n1. 語言程式碼遵循谷歌翻譯語言程式碼，當填入關閉時關閉翻譯\n2。 推薦使用jsc引擎，但你仍然可以切換成webview體驗Surge新特性\n3。 開啟调试模式用於輸出更多日誌
-# Origin Repo URL: https://raw.githubusercontent.com/Maasea/sgmodule/master/YouTube.Enhance.sgmodule
+
 # > Note
+# Origin Repo URL: https://raw.githubusercontent.com/Maasea/sgmodule/master/YouTube.Enhance.sgmodule
 # Youtube 畫中畫和後臺播放可在客戶內端關閉
 #   - 设置 -> 播放 -> 画中画
 #   - 设置 -> 后台播放和下载 -> 后台播放
