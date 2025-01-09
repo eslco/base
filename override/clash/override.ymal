@@ -3,25 +3,25 @@ rule-providers:
     private:
         type: http
         behavior: domain
-        url: https://ghp.ci/https://raw.github🇺🇸USercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.yaml
+        url: https://ghp.ci/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.yaml
         path: ./ruleset/private.yaml
         interval: 86400
     cn_domain:
         type: http
         behavior: domain
-        url: https://ghp.ci/https://raw.github🇺🇸USercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.yaml
+        url: https://ghp.ci/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.yaml
         path: ./ruleset/cn_domain.yaml
         interval: 86400
     geolocation-!cn:
         type: http
         behavior: domain
-        url: https://ghp.ci/https://raw.github🇺🇸USercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.yaml
+        url: https://ghp.ci/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.yaml
         path: ./ruleset/geolocation-!cn.yaml
         interval: 86400
     cn_ip:
         type: http
         behavior: ipcidr
-        url: https://ghp.ci/https://raw.github🇺🇸USercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.yaml
+        url: https://ghp.ci/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.yaml
         path: ./ruleset/cn_ip.yaml
         interval: 86400
 
@@ -29,25 +29,25 @@ rule-providers:
     netflix:
         type: http
         behavior: classical
-        url: https://ghp.ci/https://raw.github🇺🇸USercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.yaml
+        url: https://ghp.ci/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.yaml
         path: ./ruleset/netflix.yaml
         interval: 86400
     disney:
         type: http
         behavior: classical
-        url: https://ghp.ci/https://raw.github🇺🇸USercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.yaml
+        url: https://ghp.ci/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.yaml
         path: ./ruleset/disney.yaml
         interval: 86400
     youtube:
         type: http
         behavior: classical
-        url: https://ghp.ci/https://raw.github🇺🇸USercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml
+        url: https://ghp.ci/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml
         path: ./ruleset/youtube.yaml
         interval: 86400
     spotify:
         type: http
         behavior: classical
-        url: https://ghp.ci/https://raw.github🇺🇸USercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml
+        url: https://ghp.ci/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml
         path: ./ruleset/spotify.yaml
         interval: 86400
 
@@ -55,25 +55,25 @@ rule-providers:
     telegram:
         type: http
         behavior: classical
-        url: https://ghp.ci/https://raw.github🇺🇸USercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml
+        url: https://ghp.ci/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml
         path: ./ruleset/telegram.yaml
         interval: 86400
     twitter:
         type: http
         behavior: classical
-        url: https://ghp.ci/https://raw.github🇺🇸USercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Twitter/Twitter.yaml
+        url: https://ghp.ci/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Twitter/Twitter.yaml
         path: ./ruleset/twitter.yaml
         interval: 86400
     facebook:
         type: http
         behavior: classical
-        url: https://ghp.ci/https://raw.github🇺🇸USercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Facebook/Facebook.yaml
+        url: https://ghp.ci/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Facebook/Facebook.yaml
         path: ./ruleset/facebook.yaml
         interval: 86400
     instagram:
         type: http
         behavior: classical
-        url: https://ghp.ci/https://raw.github🇺🇸USercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Instagram/Instagram.yaml
+        url: https://ghp.ci/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Instagram/Instagram.yaml
         path: ./ruleset/instagram.yaml
         interval: 86400
 
@@ -81,31 +81,31 @@ rule-providers:
     ai_services:
         type: http
         behavior: classical
-        url: https://ghp.ci/https://raw.github🇺🇸USercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml
+        url: https://ghp.ci/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml
         path: ./ruleset/ai_services.yaml
         interval: 86400
     claude:
         type: http
         behavior: classical
-        url: https://ghp.ci/https://raw.github🇺🇸USercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Claude/Claude.yaml
+        url: https://ghp.ci/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Claude/Claude.yaml
         path: ./ruleset/claude.yaml
         interval: 86400
     gemini:
         type: http
         behavior: classical
-        url: https://ghp.ci/https://raw.github🇺🇸USercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Gemini/Gemini.yaml
+        url: https://ghp.ci/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Gemini/Gemini.yaml
         path: ./ruleset/gemini.yaml
         interval: 86400
     bard:
         type: http
         behavior: classical
-        url: https://ghp.ci/https://raw.github🇺🇸USercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BardAI/BardAI.yaml
+        url: https://ghp.ci/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BardAI/BardAI.yaml
         path: ./ruleset/bard.yaml
         interval: 86400
     google:
         type: http
         behavior: classical
-        url: https://ghp.ci/https://raw.github🇺🇸USercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml
+        url: https://ghp.ci/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml
         path: ./ruleset/google.yaml
         interval: 86400
 
@@ -113,25 +113,25 @@ rule-providers:
     microsoft:
         type: http
         behavior: classical
-        url: https://ghp.ci/https://raw.github🇺🇸USercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml
+        url: https://ghp.ci/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml
         path: ./ruleset/microsoft.yaml
         interval: 86400
     steam:
         type: http
         behavior: classical
-        url: https://ghp.ci/https://raw.github🇺🇸USercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Steam/Steam.yaml
+        url: https://ghp.ci/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Steam/Steam.yaml
         path: ./ruleset/steam.yaml
         interval: 86400
     github:
         type: http
         behavior: classical
-        url: https://ghp.ci/https://raw.github🇺🇸USercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GitHub/GitHub.yaml
+        url: https://ghp.ci/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GitHub/GitHub.yaml
         path: ./ruleset/github.yaml
         interval: 86400
     docker:
         type: http
         behavior: classical
-        url: https://ghp.ci/https://raw.github🇺🇸USercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Docker/Docker.yaml
+        url: https://ghp.ci/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Docker/Docker.yaml
         path: ./ruleset/docker.yaml
         interval: 86400
 
@@ -139,7 +139,7 @@ rule-providers:
     download:
         type: http
         behavior: classical
-        url: https://ghp.ci/https://raw.github🇺🇸USercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Download/Download.yaml
+        url: https://ghp.ci/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Download/Download.yaml
         path: ./ruleset/download.yaml
         interval: 86400
 
@@ -363,7 +363,7 @@ proxy-groups:
     - 🇯🇵JP
     - 🇸🇬SG
 
-- name: 故障轉移 | Failover
+- name:  # 故障轉移 | Failover
     type: fallback
     url: https://www.gstatic.com/generate_204
     interval: 300
@@ -379,7 +379,7 @@ proxy-groups:
     - Lantency
 
 rules:
-# 自定義 | C🇺🇸UStom
+# 自定義 | Custom
 - DOMAIN-SUFFIX,linux.do,PROXY
 - PROCESS-NAME,docker,PROXY
 
@@ -416,7 +416,7 @@ rules:
 
 # 開發相關域名規則 | Development-related domain rules
 - DOMAIN-SUFFIX,github.com,PROXY
-- DOMAIN-SUFFIX,github🇺🇸USercontent.com,PROXY
+- DOMAIN-SUFFIX,githubusercontent.com,PROXY
 - DOMAIN-SUFFIX,ghcr.io,PROXY
 - DOMAIN-SUFFIX,pkg.github.com,PROXY
 - DOMAIN-SUFFIX,docker.io,PROXY
@@ -443,7 +443,7 @@ rules:
 - DOMAIN-SUFFIX,client-api.arkoselabs.com,AIGC
 - DOMAIN-SUFFIX,events.statsigapi.net,AIGC
 - DOMAIN-SUFFIX,featuregates.org,AIGC
-- DOMAIN-SUFFIX,identr🇺🇸USt.com,AIGC
+- DOMAIN-SUFFIX,identrust.com,AIGC
 - DOMAIN-SUFFIX,intercom.io,AIGC
 - DOMAIN-SUFFIX,intercomcdn.com,AIGC
 - DOMAIN-SUFFIX,poe.com,AIGC
@@ -455,5 +455,4 @@ rules:
 # 全局規則 | Global rules
 - GEOIP,CN,DIRECT
 - RULE-SET,geolocation-!cn,PROXY
-- FINAL,PROXY,dnsfailed
-- MATCH,故障转移
+- MATCH,fallback
