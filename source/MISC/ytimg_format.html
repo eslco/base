@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube 縮圖生成器</title>
+    <script>
+        /**
+         * 從 YouTube URL 中提取影片 ID
+         * @param {string} url - YouTube 影片的 URL
+         * @returns {string|null} - 影片 ID 或 null
+         */
+        function extractVideoId(url) {
+            const regex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+            const match = url.match(regex);
+            return match ? match[1] : null;
+        }
+
+        /**
+         * 生成 YouTube 影片縮圖的 URL
+         * @param {string} youtubeUrl - YouTube 影片的 URL
+         * @returns {string|null} - 縮圖的 URL 或 null
+         */
+        function getYoutubeThumbnailUrl(youtubeUrl) {
+            const videoId = extractVideoId(youtubeUrl);
+            if (videoId) {
+                return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+            }
+            return null;
+        }
+
+        /**
+         * 處理表單提交事件
+         * @param {Event} event - 表單提交事件
+         */
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const youtubeUrl = document.getElementById('youtubeUrl').value;
+            const thumbnailUrl = getYoutubeThumbnailUrl(youtubeUrl);
+            const resultElement = document.getElementById('result');
+            if (thumbnailUrl) {
+                resultElement.innerHTML = `<a href="${thumbnailUrl}" target="_blank">${thumbnailUrl}</a>`;
+            } else {
+                resultElement.textContent = '無效的 YouTube URL';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>YouTube 縮圖生成器</h1>
+    <form onsubmit="handleFormSubmit(event)">
+        <label for="youtubeUrl">輸入 YouTube 影片 URL：</label>
+        <input type="text" id="youtubeUrl" name="youtubeUrl" required>
+        <button type="submit">生成縮圖 URL</button>
+    </form>
+    <div id="result"></div>
+</body>
+</html>
