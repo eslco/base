@@ -1,4 +1,5 @@
-# URL: https://raw.githubusercontent.com/LucaLin233/Luca_Conf/main/Surge/Rule/Telegram.list
+# Ref URL: https://raw.githubusercontent.com/LucaLin233/Luca_Conf/main/Surge/Rule/Telegram.list
+# URL: https://raw.githubusercontent.com/eslco/base/main/rule/Clash/Telegram/Telegram.list
 # AUTHOR: blackmatrix7 & DH & Luca
 # Update at 2025.01.18
 
@@ -63,6 +64,6 @@ IP-ASN,59930,no-resolve
 IP-ASN,44907,no-resolve
 # DC3-ASN
 IP-ASN,211157,no-resolve
-PROCESS-NAME,nekox.messenger
+# PROCESS-NAME,nekox.messenger
 PROCESS-NAME,org.telegram.messenger
 PROCESS-NAME,telegram-desktop
