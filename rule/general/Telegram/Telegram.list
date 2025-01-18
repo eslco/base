@@ -1,0 +1,149 @@
+# Ref URL: https://raw.githubusercontent.com/LucaLin233/Luca_Conf/main/Surge/Rule/Telegram.list
+# Update URL: https://raw.githubusercontent.com/eslco/base/main/rule/general/Telegram/Telegram.list
+# AUTHOR: blackmatrix7 & DH & Luca
+# Update at 2025.01.18
+
+# 如果會頻繁的轉圈，可以新增以下規則
+# IP-CIDR,95.161.76.100/31,REJECT-NO-DROP,no-resolve,pre-matching
+# 如果頻繁轉圈，可以設定此規則
+
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2025-1-18 08:38:08
+# DOMAIN: X
+# DOMAIN-KEYWORD: X
+# DOMAIN-SUFFIX: 22
+# IP-ASN: 5
+# IP-CIDR: 8
+# TOTAL: 38
+DOMAIN,api.imem.app
+DOMAIN,api.swiftgram.app
+DOMAIN-SUFFIX,cdn-telegram.org
+DOMAIN-SUFFIX,comments.app
+DOMAIN-SUFFIX,contest.com
+DOMAIN-SUFFIX,graph.org
+DOMAIN-SUFFIX,legra.ph
+DOMAIN-SUFFIX,mbrx.app
+DOMAIN-SUFFIX,quiz.directory
+DOMAIN-SUFFIX,stel.com
+DOMAIN-SUFFIX,t.me
+DOMAIN-SUFFIX,tdesktop.com
+DOMAIN-SUFFIX,telega.one
+DOMAIN-SUFFIX,telegra.ph
+DOMAIN-SUFFIX,telegram-cdn.org
+DOMAIN-SUFFIX,telegram.dog
+DOMAIN-SUFFIX,telegram.me
+DOMAIN-SUFFIX,telegram.org
+DOMAIN-SUFFIX,telegram.space
+DOMAIN-SUFFIX,telegramdownload.com
+DOMAIN-SUFFIX,telesco.pe
+DOMAIN-SUFFIX,tg.dev
+DOMAIN-SUFFIX,tx.me
+DOMAIN-SUFFIX,usercontent.dev
+DOMAIN-KEYWORD,nicegram
+
+
+# Ref URL: https://raw.githubusercontent.com/LucaLin233/Luca_Conf/main/Surge/Rule/Telegram.list
+# Update URL: https://raw.githubusercontent.com/eslco/base/main/rule/Clash/Telegram/Telegram.list
+# AUTHOR: blackmatrix7 & DH & Luca
+# Update at 2025.01.18
+
+DOMAIN,api.swiftgram.app
+DOMAIN-SUFFIX,comments.app
+DOMAIN-SUFFIX,contest.com
+DOMAIN-SUFFIX,graph.org
+DOMAIN-SUFFIX,legra.ph
+DOMAIN-SUFFIX,mbrx.app
+DOMAIN-SUFFIX,quiz.directory
+DOMAIN-SUFFIX,stel.com
+DOMAIN-SUFFIX,t.me
+DOMAIN-SUFFIX,tdesktop.com
+DOMAIN-SUFFIX,telega.one
+DOMAIN-SUFFIX,telegra.ph
+DOMAIN-SUFFIX,telesco.pe
+DOMAIN-SUFFIX,tg.dev
+DOMAIN-SUFFIX,tx.me
+DOMAIN-SUFFIX,usercontent.dev
+DOMAIN-KEYWORD,telegram
+DOMAIN-KEYWORD,nicegram
+# DC5
+IP-CIDR,91.108.16.0/22,no-resolve
+IP-CIDR,91.108.56.0/23,no-resolve
+IP-CIDR,149.154.168.0/22,no-resolve
+# DC4
+IP-CIDR,91.108.4.0/22,no-resolve
+IP-CIDR,91.108.8.0/22,no-resolve
+IP-CIDR,91.108.56.0/22,no-resolve
+IP-CIDR,95.161.64.0/20,no-resolve
+IP-CIDR,149.154.160.0/22,no-resolve
+IP-CIDR,149.154.162.0/23,no-resolve
+IP-CIDR,149.154.164.0/22,no-resolve
+IP-CIDR,149.154.166.0/23,no-resolve
+# DC1
+IP-CIDR,91.108.12.0/22,no-resolve
+IP-CIDR,149.154.172.0/22,no-resolve
+# DC2
+IP-CIDR,91.108.20.0/22,no-resolve
+# DC3
+IP-CIDR,91.105.192.0/23,no-resolve
+IP-CIDR,185.76.151.0/24,no-resolve
+# DC5-V6
+IP-CIDR6,2001:b28:f23f::/48,no-resolve
+# DC4-V6
+IP-CIDR6,2001:67c:4e8::/48,no-resolve
+# DC1-V6
+IP-CIDR6,2001:b28:f23d::/48,no-resolve
+# DC2-V6
+IP-CIDR6,2001:b28:f23c::/48,no-resolve
+# DC3-V6
+IP-CIDR6,2a0a:f280:203::/48,no-resolve
+
+# DC1-ASN
+IP-ASN,59930,no-resolve
+# DC2-ASN
+IP-ASN,44907,no-resolve
+# DC3-ASN
+IP-ASN,211157,no-resolve
+# DC4-ASN
+IP-ASN,62041,no-resolve
+# DC4-ASN
+IP-ASN,62041,no-resolve
+
+# PROCESS-NAME,nekox.messenger
+PROCESS-NAME,org.telegram.messenger
+PROCESS-NAME,telegram-desktop
+
+IP-CIDR,109.239.140.0/24,no-resolve
+IP-CIDR,149.154.160.0/20,no-resolve
+IP-CIDR,5.28.192.0/18,no-resolve
+# IP-CIDR,91.108.0.0/16,no-resolve
+
+IP-CIDR,2001:67c:4e8::/48,no-resolve
+IP-CIDR,2001:b28:f23c::/47,no-resolve
+IP-CIDR,2001:b28:f23f::/48,no-resolve
+IP-CIDR,2a0a:f280::/29,no-resolve
+
+
+IP-CIDR,91.108.56.0/22,no-resolve
+IP-CIDR,91.108.4.0/22,no-resolve
+IP-CIDR,91.108.8.0/22,no-resolve
+IP-CIDR,91.108.16.0/22,no-resolve
+IP-CIDR,91.108.12.0/22,no-resolve
+IP-CIDR,91.105.192.0/23,no-resolve
+
+# IP-CIDR DC5 Additional Rule
+IP-CIDR,95.161.76.100/31,REJECT-NO-DROP,no-resolve
+# IP-CIDR DC5 額外規則
+
+IP-CIDR,185.76.151.0/24,no-resolve
+
+# IP-CIDR,91.108.20.0/22,no-resolve
+# IP-CIDR,149.154.160.0/20,no-resolve
+
+IP-CIDR,2001:b28:f23d::/48,no-resolve
+IP-CIDR,2a0a:f280::/32,no-resolve
+
+IP-ASN,211157,no-resolve
+IP-ASN,44907,no-resolve
+IP-ASN,59930,no-resolve
+IP-ASN,62014,no-resolve
+IP-ASN,62041,no-resolve
