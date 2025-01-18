@@ -4,11 +4,11 @@
 # Update at 2025.01.18
 
 # 如果會頻繁的轉圈，可以新增以下規則
-IP-CIDR,95.161.76.100/31,REJECT-NO-DROP,no-resolve,pre-matching
+# IP-CIDR,95.161.76.100/31,REJECT-NO-DROP,no-resolve,pre-matching
 # 如果頻繁轉圈，可以設定此規則
 
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2025-1-18 16:16:08
+# UPDATED: 2025-1-18 08:38:08
 # DOMAIN: X
 # DOMAIN-KEYWORD: X
 # DOMAIN-SUFFIX: 22
@@ -130,9 +130,10 @@ IP-CIDR,91.108.16.0/22,no-resolve
 IP-CIDR,91.108.12.0/22,no-resolve
 IP-CIDR,91.105.192.0/23,no-resolve
 
-# IP-CIDR DC5
+# IP-CIDR DC5 Additional Rule
 IP-CIDR,95.161.76.100/31,REJECT-NO-DROP,no-resolve
-# IP-CIDR DC5
+IP-CIDR,95.161.76.100/31,REJECT-NO-DROP,no-resolve,pre-matching
+# IP-CIDR DC5 額外規則
 
 IP-CIDR,185.76.151.0/24,no-resolve
 
