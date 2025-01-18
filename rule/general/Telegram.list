@@ -1,5 +1,12 @@
-# NAME: Telegram
-# AUTHOR: blackmatrix7
+# Ref URL: https://raw.githubusercontent.com/LucaLin233/Luca_Conf/main/Surge/Rule/Telegram.list
+# Update URL: https://raw.githubusercontent.com/eslco/base/main/rule/Clash/Telegram/Telegram.list
+# AUTHOR: blackmatrix7 & DH & Luca
+# Update at 2025.01.18
+
+# 如果會頻繁的轉圈，可以新增以下規則
+IP-CIDR,95.161.76.100/31,REJECT-NO-DROP,no-resolve,pre-matching
+# 如果頻繁轉圈，可以設定此規則
+
 # REPO: https://github.com/blackmatrix7/ios_rule_script
 # UPDATED: 2025-1-18 16:16:08
 # DOMAIN: X
@@ -39,9 +46,6 @@ DOMAIN-KEYWORD,nicegram
 # Update URL: https://raw.githubusercontent.com/eslco/base/main/rule/Clash/Telegram/Telegram.list
 # AUTHOR: blackmatrix7 & DH & Luca
 # Update at 2025.01.18
-
-# 如果会频繁的转圈，可以将以下规则添加
-IP-CIDR,95.161.76.100/31,REJECT-NO-DROP,no-resolve,pre-matching
 
 DOMAIN,api.swiftgram.app
 DOMAIN-SUFFIX,comments.app
