@@ -15,15 +15,14 @@
 
 [Rule]
 # Talkatone NoAD RuleSet
-# 图片类广告资源
+# 圖片類廣告資源
 DOMAIN-SUFFIX,cdn.mobilefuse.com,REJECT-TINYGIF
 DOMAIN-SUFFIX,cdn2.inner-active.mobi,REJECT-TINYGIF
 DOMAIN-SUFFIX,cdn-f.adsmoloco.com,REJECT-TINYGIF
 DOMAIN-SUFFIX,impression.link,REJECT-TINYGIF
 DOMAIN-SUFFIX,impression-asia.liftoff.io,REJECT-TINYGIF
 DOMAIN-SUFFIX,wv.inner-active.mobi,REJECT-TINYGIF
-
-# API接口类请求
+# API接口類請求
 DOMAIN-SUFFIX,ads.pubmatic.com,REJECT-200
 DOMAIN-SUFFIX,amazon-adsystem.com,REJECT-200
 DOMAIN-SUFFIX,app-analytics-services.com,REJECT-200
@@ -65,8 +64,7 @@ DOMAIN-SUFFIX,supply.inmobicdn.net,REJECT-200
 DOMAIN-SUFFIX,tappx.com,REJECT-200
 DOMAIN-SUFFIX,view.adjust.com,REJECT-200
 DOMAIN-SUFFIX,vst.c.appier.net,REJECT-200
-
-# 完全阻止的请求
+# 完全阻止的請求
 DOMAIN-KEYWORD,googleads,REJECT-DROP
 DOMAIN-SUFFIX,googleads.g.doubleclick.net,REJECT-DROP
 DOMAIN-SUFFIX,googleads.g.doubleclick-cn.net,REJECT-DROP
@@ -101,18 +99,14 @@ DOMAIN-SUFFIX,tappx.com,REJECT-DROP
 DOMAIN-SUFFIX,wv.inner-active.mobi,REJECT-DROP
 DOMAIN-SUFFIX,www.googletagservices-cn.com,REJECT-DROP
 
-DOMAIN-SUFFIX,gum.criteo.com,REJECT-200
+# 附加的請求
 DOMAIN-SUFFIX,ow.pubmatic.com,REJECT-200
-DOMAIN-SUFFIX,bidder.criteo.com,REJECT-200
 DOMAIN-SUFFIX,wv.inner-active.mobi,REJECT-200
-DOMAIN-SUFFIX,sdk-dnt.ad.smaato.net,REJECT-200
 DOMAIN-SUFFIX,c.amazon-adsystem.com,REJECT-IMG
 DOMAIN-SUFFIX,cdn2.inner-active.mobi,REJECT-IMG
-DOMAIN-SUFFIX,sdk-events.inner-active.mobi,REJECT-200
 DOMAIN-SUFFIX,googleads.g.doubleclick-cn.net,REJECT-IMG
 DOMAIN-SUFFIX,googleads.g.doubleclick.net,REJECT-IMG
 DOMAIN-SUFFIX,tappx.com,REJECT-200
-DOMAIN-SUFFIX,appier.net,REJECT-200
 DOMAIN-SUFFIX,criteo.com,REJECT-200
 DOMAIN-KEYWORD,googleads,REJECT-IMG
 DOMAIN-SUFFIX,smaato.net,REJECT-200
@@ -122,6 +116,7 @@ DOMAIN-SUFFIX,adsappier.com,REJECT-IMG
 DOMAIN-SUFFIX,ads.inmobi.com,REJECT-TINYGIF
 DOMAIN-SUFFIX,cr.adsappier.com,REJECT-IMG
 DOMAIN-SUFFIX,amazon-adsystem.com,REJECT-DICT
+# #
 
 # tktn.be 域名代理 Proxy
 DOMAIN-SUFFIX,talkatone.com,PROXY
@@ -130,6 +125,7 @@ DOMAIN-SUFFIX,tenor.com,PROXY
 DOMAIN-SUFFIX,tktn.at,PROXY
 DOMAIN-SUFFIX,tktn.be,PROXY
 #
+DOMAIN-SUFFIX,cohere.com,PROXY
 DOMAIN-SUFFIX,ip-api.com,PROXY
 
 # Following domians just Direct to connect 以下域名直連
@@ -138,7 +134,6 @@ DOMAIN-SUFFIX,crashlytics.com,DIRECT
 DOMAIN-SUFFIX,mobilefuse.com,DIRECT
 DOMAIN-SUFFIX,inmobi.com,DIRECT
 DOMAIN-SUFFIX,kochava.com,DIRECT
-DOMAIN-SUFFIX,cohere.com,DIRECT
 
 # DOMAIN-SUFFIX,agkn.com,DIRECT
 # DOMAIN-SUFFIX,tenor.com,DIRECT
