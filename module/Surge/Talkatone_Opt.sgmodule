@@ -1,7 +1,7 @@
 #!url=https://raw.githubusercontent.com/eslco/base/main/module/Surge/Talkatone_Opt.sgmodule
 #!name=Talkatone_Opt
 #!desc=Global Roaming & NoAD
-# Update at 2024.10.29 05:40 AM
+# Update at 2025.01.19 06:43 AM
 
 # CDN URL: https://raw.gitmirror.com/eslco/base/main/module/Surge/Talkatone_Opt.sgmodule
 
@@ -15,6 +15,7 @@
 
 [Rule]
 # Talkatone NoAD RuleSet
+
 # 圖片類廣告資源
 DOMAIN-SUFFIX,cdn.mobilefuse.com,REJECT-TINYGIF
 DOMAIN-SUFFIX,cdn2.inner-active.mobi,REJECT-TINYGIF
@@ -116,8 +117,9 @@ DOMAIN-SUFFIX,adsappier.com,REJECT-IMG
 DOMAIN-SUFFIX,ads.inmobi.com,REJECT-TINYGIF
 DOMAIN-SUFFIX,cr.adsappier.com,REJECT-IMG
 DOMAIN-SUFFIX,amazon-adsystem.com,REJECT-DICT
-# #
+# # NoAD Rules Ends
 
+# # Proxy
 # tktn.be 域名代理 Proxy
 DOMAIN-SUFFIX,talkatone.com,PROXY
 DOMAIN-SUFFIX,agkn.com,PROXY
