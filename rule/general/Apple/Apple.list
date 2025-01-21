@@ -1,0 +1,251 @@
+# Update URL: https://raw.githubusercontent.com/eslco/base/main/rule/general/Apple/Apple.list
+# Name: Apple.list
+# Source URL: https://support.apple.com/zh-tw/101555
+# Ref Repo: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Apple/Apple.list
+# Author esinco blackmatrix7
+
+# REPO: https://github.com/blackmatrix7/ios_rule_script  
+     
+# UPDATED: 2025-01-19 02:44
+# DOMAIN: X
+# DOMAIN-KEYWORD: X
+# DOMAIN-SUFFIX: XXXX
+# IP-CIDR: X
+# USER-AGENT: X
+# TOTAL: XXXX
+
+# [Device setup | 裝置設定 ]
+DOMAIN,albert.apple.com
+DOMAIN,captive.apple.com  
+DOMAIN,gs.apple.com
+DOMAIN,humb.apple.com
+DOMAIN,static.ips.apple.com
+DOMAIN,sq-device.apple.com 
+DOMAIN,tbsc.apple.com
+DOMAIN,time-ios.apple.com
+DOMAIN,time.apple.com
+DOMAIN,time-macos.apple.com
+
+# Device management | 裝置管理和MDM
+DOMAIN-SUFFIX,push.apple.com
+DOMAIN,deviceenrollment.apple.com
+DOMAIN,deviceservices-external.apple.com
+DOMAIN,gdmf.apple.com
+DOMAIN,identity.apple.com
+DOMAIN,iprofiles.apple.com
+DOMAIN,mdmenrollment.apple.com
+DOMAIN,setup.icloud.com
+DOMAIN,vpp.itunes.apple.com
+DOMAIN-SUFFIX,appattest.apple.com
+DOMAIN,axm-servicediscovery.apple.com
+
+# Apple Business Manager and Apple School Manager | Apple 商務管理和 Apple 校務管理
+DOMAIN-SUFFIX,school.apple.com
+DOMAIN,appleid.cdn-apple.com
+DOMAIN,idmsa.apple.com
+DOMAIN-SUFFIX,itunes.apple.com
+DOMAIN-SUFFIX,mzstatic.com
+DOMAIN,api.ent.apple.com
+DOMAIN,api.edu.apple.com
+DOMAIN,statici.icloud.com
+DOMAIN-SUFFIX,vertexsmb.com
+DOMAIN,www.apple.com
+DOMAIN,upload.appleschoolcontent.com
+
+## Employees and students | 員工和學生
+DOMAIN,ws-ee-maidsvc.icloud.com
+
+# Apple Business Essentials device management | Apple 商務必備裝置管理
+DOMAIN,axm-adm-enroll.apple.com
+DOMAIN,axm-adm-mdm.apple.com
+DOMAIN,axm-adm-scep.apple.com
+DOMAIN,axm-app.apple.com
+DOMAIN-SUFFIX,apple-mapkit.com
+DOMAIN,icons.axm-usercontent-apple.com
+
+# Classroom & Schoolwork | 課堂與課業
+DOMAIN,s.mzstatic.com
+DOMAIN,play.itunes.apple.com
+#__DOMAIN,ws-ee-maidsvc.icloud.com
+DOMAIN,ws.school.apple.com
+DOMAIN,pg-bootstrap.itunes.apple.com
+DOMAIN,cls-iosclient.itunes.apple.com
+DOMAIN,cls-ingest.itunes.apple.com
+
+# Software Updates | 軟體更新
+DOMAIN,appldnld.apple.com
+DOMAIN,configuration.apple.com
+#__DOMAIN,gdmf.apple.com
+DOMAIN,gg.apple.com
+#__DOMAIN,gs.apple.com
+DOMAIN,ig.apple.com
+DOMAIN,mesu.apple.com
+DOMAIN,ns.itunes.apple.com
+DOMAIN,oscdn.apple.com
+DOMAIN,osrecovery.apple.com
+DOMAIN,skl.apple.com
+DOMAIN,swcdn.apple.com
+DOMAIN,swdist.apple.com
+DOMAIN,swdownload.apple.com
+DOMAIN,swscan.apple.com
+DOMAIN,updates-http.cdn-apple.com
+DOMAIN,updates.cdn-apple.com
+DOMAIN,xp.apple.com
+DOMAIN,gdmf-ados.apple.com
+DOMAIN,gsra.apple.com
+DOMAIN,wkms-public.apple.com
+DOMAIN,fcs-keys-pub-prod.cdn-apple.com
+
+# Apps and additional content | App 和其他內容
+DOMAIN-SUFFIX,itunes.apple.com
+DOMAIN-SUFFIX,apps.apple.com
+DOMAIN-SUFFIX,mzstatic.com
+#__DOMAIN,itunes.apple.com
+DOMAIN,ppq.apple.com
+DOMAIN,api.apple-cloudkit.com
+DOMAIN-SUFFIX,appattest.apple.com
+DOMAIN-SUFFIX,apps-marketplace.apple.com
+DOMAIN,token.safebrowsing.apple
+DOMAIN,audiocontentdownload.apple.com
+DOMAIN,devimages-cdn.apple.com
+DOMAIN,download.developer.apple.com
+DOMAIN,playgrounds-assets-cdn.apple.com
+DOMAIN,playgrounds-cdn.apple.com
+DOMAIN,sylvan.apple.com
+DOMAIN,gateway.icloud.com
+
+# Carrier updates| 電信業者更新
+#__DOMAIN,appldnld.apple.com
+DOMAIN,appldnld.apple.com.edgesuite.net
+DOMAIN,itunes.com
+#__DOMAIN,itunes.apple.com
+#__DOMAIN,updates-http.cdn-apple.com
+#__DOMAIN,updates.cdn-apple.com
+
+# Content Caching 內容快取
+DOMAIN,lcdn-registration.apple.com
+DOMAIN,suconfig.apple.com
+DOMAIN,xp-cdn.apple.com
+DOMAIN,lcdn-locator.apple.com
+DOMAIN,serverstatus.apple.com
+
+# Beta Update | Beta 版更新項目
+DOMAIN,bpapi.apple.com
+DOMAIN,cssubmissions.apple.com
+DOMAIN,fba.apple.com
+
+# Apple diagnostics | Apple 診斷
+DOMAIN,diagassets.apple.com
+
+# (DNS Service) Domain Name System resolution | 網域名稱系統解析
+DOMAIN,doh.dns.apple.com
+
+# Certificate validation | 憑證驗證
+DOMAIN,certs.apple.com
+DOMAIN,crl.apple.com
+DOMAIN,crl3.digicert.com
+DOMAIN,crl4.digicert.com
+DOMAIN,ocsp.apple.com
+DOMAIN,ocsp.digicert.cn
+DOMAIN,ocsp.digicert.com
+DOMAIN,ocsp2.apple.com
+DOMAIN,valid.apple.com
+
+# Apple Account| Apple帳號
+DOMAIN,account.apple.com
+#__DOMAIN,appleid.cdn-apple.com
+#__DOMAIN,idmsa.apple.com
+DOMAIN,gsa.apple.com
+
+# iCloud 服務
+DOMAIN-SUFFIX,apple-cloudkit.com
+DOMAIN-SUFFIX,apple-livephotoskit.com
+DOMAIN-SUFFIX,apzones.com
+DOMAIN-SUFFIX,cdn-apple.com
+DOMAIN-SUFFIX,gc.apple.com
+DOMAIN-SUFFIX,icloud.com
+DOMAIN-SUFFIX,icloud.com.cn
+DOMAIN-SUFFIX,icloud.apple.com
+DOMAIN-SUFFIX,icloud-content.com
+DOMAIN-SUFFIX,iwork.apple.com
+DOMAIN,mask.icloud.com
+DOMAIN,mask-h2.icloud.com
+DOMAIN,mask-api.icloud.com
+
+# Apple Intelligence, Siri, and Search | Apple Intelligence、Siri 和搜尋
+DOMAIN,guzzoni.apple.com
+DOMAIN-SUFFIX,smoot.apple.com
+DOMAIN,apple-relay.cloudflare.com
+DOMAIN,apple-relay.fastly-edge.com
+DOMAIN,cp4.cloudflare.com
+DOMAIN,apple-relay.apple.com
+
+# Associated Domains | 相關的網域
+DOMAIN,app-site-association.cdn-apple.com
+DOMAIN,app-site-association.networking.apple
+
+# Tap to Pay on iPhone | 卡緊收
+DOMAIN,pos-device.apple.com
+#__DOMAIN,humb.apple.com
+DOMAIN,phonesubmissions.apple.com
+
+# ID Verifier on | iPhone 上的「證件驗證」
+DOMAIN,smp-device-content.apple.com
+DOMAIN,idv.cdn-apple.com
+DOMAIN,idv-prod1.apple.com
+#__DOMAIN,humb.apple.com
+
+
+# Related Items 關鍵詞
+DOMAIN-KEYWORD,apple-support.akadns.net
+DOMAIN-KEYWORD,apple.com.akadns.net
+DOMAIN-KEYWORD,apple.com.edgekey.net
+DOMAIN-KEYWORD,buy.itunes.apple.com
+DOMAIN-KEYWORD,smp-device
+DOMAIN-KEYWORD,testflight
+DOMAIN-KEYWORD,icloud.com.akadns.net
+
+USER-AGENT,*FindMyiPhone?
+USER-AGENT,*Music?
+USER-AGENT,*WeatherFoundation*
+USER-AGENT,*com.apple.Maps?
+USER-AGENT,*com.apple.mobileme.fmip1
+USER-AGENT,FMDClient*
+USER-AGENT,FMFD*
+USER-AGENT,FindMyFriends*
+USER-AGENT,FindMyiPhone*
+USER-AGENT,Maps*
+USER-AGENT,Wallet*
+USER-AGENT,com.apple.Maps
+USER-AGENT,com.apple.appstored*
+USER-AGENT,fmflocatord*
+USER-AGENT,geod*
+USER-AGENT,locationd*
+USER-AGENT,passd*
+USER-AGENT,Music*
+USER-AGENT,AppleNews*
+USER-AGENT,AppleTV*
+USER-AGENT,com.apple.news*
+USER-AGENT,com.apple.trustd*
+USER-AGENT,com.apple.tv*
+
+# Apple 其他IP-CIDR
+IP-CIDR,139.178.128.0/18,no-resolve
+IP-CIDR,144.178.0.0/19,no-resolve
+IP-CIDR,144.178.36.0/22,no-resolve
+IP-CIDR,144.178.48.0/20,no-resolve
+IP-CIDR,192.35.50.0/24,no-resolve
+IP-CIDR,198.183.17.0/24,no-resolve
+IP-CIDR,205.180.175.0/24,no-resolve
+IP-CIDR,63.92.224.0/19,no-resolve
+IP-CIDR,65.199.22.0/23,no-resolve
+
+# Apple General Domain
+DOMAIN-SUFFIX,apple.com
+
+# Apple General IPCIDR
+IP-CIDR,17.0.0.0/8,no-resolve
+
+# Apple IP-ASN
+IP-ASN,714,no-resolve
+IP-ASN,6185,no-resolve

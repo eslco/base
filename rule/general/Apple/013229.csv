@@ -1,0 +1,58 @@
+傳輸埠,類型,服務或通訊協定,服務名稱
+22,TCP,安全 Shell（SSH）、SSH 檔案傳送通訊協定（SFTP）和安全副本（scp）,ssh  //RFC 4253
+25,TCP,簡易郵件傳輸通訊協定（SMTP）,smtp  //RFC 5321
+53,TCP、UDP,網域名稱系統（DNS）,domain  //RFC 1034
+80,TCP,超文字傳輸通訊協定（HTTP）,http  //RFC 2616
+88,TCP,Kerberos,kerberos  //RFC 4120
+110,TCP,郵局通訊協定（POP3）、認證郵局通訊協定（APOP）,pop3  //RFC 1939
+123,UDP,網路時間通訊協定（NTP）,ntp  //RFC 1305
+137,UDP,Windows 網際網路名稱服務（WINS）,netbios-ns
+138,UDP,NETBIOS Datagram Service,netbios-dgm
+139,TCP,伺服器訊息區塊（SMB）,netbios-ssn
+143,TCP,網際網路訊息存取通訊協定（IMAP）,imap  //RFC 3501
+192,UDP,OSU 網路監控系統,osu-nms
+389,TCP,輕量目錄存取通訊協定（LDAP）,ldap  //RFC 4511
+443,TCP,安全編碼傳輸技術（SSL 或 HTTPS）,https  //RFC 2818
+443,UDP,QUIC,https
+445,TCP,Microsoft SMB 網域伺服器,microsoft-ds
+465,TCP,「郵件」的郵件傳送（認證 SMTP）,smtp
+500,UDP,Wi-Fi 通話,isakmp  //RFC 5996
+515,TCP,行列式印表機（LPR）、行列式印表機服務程式（LPD）,printer
+548,TCP,透過 TCP 的 Apple 檔案通訊協定（AFP）,afpovertcp
+554,TCP、UDP,即時串流通訊協定（RTSP）,rtsp  //RFC 2326
+587,TCP,「郵件」的郵件傳送（認證 SMTP）,submission  //RFC 4409
+631,TCP,網際網路列印通訊協定（IPP）,ipp  //RFC 2910
+636,TCP,安全 LDAP,ldaps
+749,TCP、UDP,Kerberos 5 admin/changepw,kerberos-adm
+993,TCP,郵件 IMAP SSL,imaps
+995,TCP、UDP,郵件 POP SSL,pop3s
+1900,UDP,SSDP,ssdp
+2197,TCP,Apple 推播通知服務（APNS）,mnp-exchange
+3031,TCP、UDP,遠端 Apple Event,eppc
+3283,TCP、UDP,Apple 遠端桌面和「課堂」,net-assistant
+3284,TCP,「課堂」檔案傳送,classroom
+3285,TCP,課堂,classroom
+3478-3497,UDP,—,nat-stun-port
+3689,TCP,數位音訊存取通訊協定（DAAP）,daap
+3690,TCP、UDP,Subversion,svn
+4398,UDP,—,—
+4500,UDP,Wi-Fi 通話,ipsec-msft  //RFC 5996
+5100,TCP,—,socalia
+5223,TCP,Apple 推播通知服務（APNS）,—
+5228,TCP,—,—
+5297,TCP,—,—
+5350,UDP,NAT 傳輸埠對應通訊協定宣告,—
+5351,UDP,NAT 傳輸埠對應通訊協定,nat-pmp
+5353,UDP,多點發送 DNS（MDNS）,mdns  //RFC 3927
+5900,TCP,遠端影格緩衝,rfb  //RFC 6143
+5900,UDP,遠端影格緩衝、即時傳輸通訊協定（RTP）、即時控制通訊協定（RTCP）,rfb
+5901-5902,UDP,即時傳輸通訊協定（RTP）、即時控制通訊協定（RTCP）,—
+8000-8999,TCP,—,irdmi
+9100,TCP,Printing,hp-pdl-datastr
+9418,TCP、UDP,git pack transfer,git
+16384-16403,UDP,即時傳輸通訊協定（RTP）、即時控制通訊協定（RTCP）,connected
+16384-16387,UDP,即時傳輸通訊協定（RTP）、即時控制通訊協定（RTCP）,connected
+16393-16402,UDP,即時傳輸通訊協定（RTP）、即時控制通訊協定（RTCP）,connected
+16403-16472,UDP,即時傳輸通訊協定（RTP）、即時控制通訊協定（RTCP）,—
+42000-42999,TCP,—,—
+49152-65535,TCP,Xsan,—

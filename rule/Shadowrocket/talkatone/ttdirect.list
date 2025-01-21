@@ -13,8 +13,8 @@ DOMAIN-SUFFIX,inmobi.com
 DOMAIN-SUFFIX,mobilefuse.com
 DOMAIN-SUFFIX,crashlytics.com
 DOMAIN-SUFFIX,kochava.com
-DOMAIN-SUFFIX,cohere.com
-DOMAIN-SUFFIX,ip-api.com
+# DOMAIN-SUFFIX,cohere.com
+# DOMAIN-SUFFIX,ip-api.com
 # IP-CIDR
 IP-CIDR,50.117.27.0/24
 IP-CIDR,63.251.124.0/24
