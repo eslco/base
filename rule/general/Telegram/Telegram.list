@@ -43,10 +43,10 @@ DOMAIN-SUFFIX,tx.me
 DOMAIN-SUFFIX,usercontent.dev
 
 # 域名關鍵字匹配
-DOMAIN-KEYWORD,telegram
-DOMAIN-KEYWORD,nicegram
-DOMAIN-KEYWORD,mdgram
-DOMAIN-KEYWORD,turrit
+#DOMAIN-KEYWORD,telegram
+#DOMAIN-KEYWORD,nicegram
+#DOMAIN-KEYWORD,mdgram
+#DOMAIN-KEYWORD,turrit
 
 # IP-CIDR 匹配 - DC 分類
 ## DC1
@@ -105,7 +105,6 @@ IP-ASN,62041,no-resolve
 IP-ASN,62014,no-resolve
 
 # PROCESS-NAME,nekox.messenger
-# PROCESS-NAME,turrit.messenger
 # PROCESS-NAME,mdgram.messenger
 PROCESS-NAME,org.telegram.messenger
 PROCESS-NAME,telegram-desktop
