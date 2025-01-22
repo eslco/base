@@ -54,7 +54,7 @@ URL-REGEX,^https?:\/\/.*ttvnw.*\.akamaized\.net\/.*$,DIRECT
 URL-REGEX,^https?:\/\/[\w-]+\.live-video\.net\/.*$,DIRECT
 DOMAIN-SUFFIX,global.poe.live-video.net,DIRECT
 # Twitch video AD
-AND,((USER-AGENT,Twitch*),^https?:\/\/\w+\.twitch\.tv\/gql\?operationName=PlaybackAccessToken),REJECT-DICT
+# AND,((USER-AGENT,Twitch*),^https?:\/\/\w+\.twitch\.tv\/gql\?operationName=PlaybackAccessToken),REJECT-DICT
 
 ## Twitch static CDN ##
 # 精准匹配 Twitch (Cloudfront) CDN
@@ -64,7 +64,7 @@ URL-REGEX,^https?:\/\/(?:[a-z0-9-]+\.)*cloudfront\.[a-z0-9-]+\.(?:hls\.)?ttvnw\.
 ## Twitch Video Weaver/Edge (Direct Connect) ##
 URL-REGEX,^https?:\/\/(?:[a-z0-9-]+\.)*video-(?:weaver|edge)(?:-[a-z0-9-]+)*(?:\.abs)?\.hls\.ttvnw\.net\/.*$,DIRECT
 # Final Matches #
-DOMAIN-SUFFIX,hls.ttvnw.net,PROXY
+DOMAIN-SUFFIX,hls.ttvnw.net,DIRECT
 
 ## Twitch Extension ##
 # URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?\.ext-twitch\.tv\/.*$,DIRECT
