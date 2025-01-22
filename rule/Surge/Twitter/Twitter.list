@@ -8,34 +8,60 @@
 # TOTAL: X
 
 # 2022
+
+# 廣告相關域名
 DOMAIN-SUFFIX,ads-twitter.com
-DOMAIN-SUFFIX,cms-twdigitalassets.com
-DOMAIN-SUFFIX,periscope.tv
-DOMAIN-SUFFIX,pscp.tv
-DOMAIN-SUFFIX,t.co
-DOMAIN-SUFFIX,tellapart.com
-DOMAIN-SUFFIX,tweetdeck.com
+DOMAIN-SUFFIX,app-measurement.com
+DOMAIN-SUFFIX,googleads.g.doubleclick.net
+
+# API相關域名
+DOMAIN-SUFFIX,api.twitter.com
+DOMAIN-SUFFIX,api-stream.twitter.com
+DOMAIN-SUFFIX,api-0-4-5.twitter.com
+DOMAIN-SUFFIX,api-21-0-0.twitter.com
+DOMAIN-SUFFIX,api-3-0-0.twitter.com
+DOMAIN-SUFFIX,api-46-0-0.twitter.com
+DOMAIN-SUFFIX,dc-api.twitter.com
+
+# 媒體相關域名
+DOMAIN-SUFFIX,pbs.twimg.com
+DOMAIN-SUFFIX,video.twimg.com
+DOMAIN-SUFFIX,abs.twimg.com
 DOMAIN-SUFFIX,twimg.co
 DOMAIN-SUFFIX,twimg.com
 DOMAIN-SUFFIX,twimg.org
-DOMAIN-SUFFIX,twitpic.com
-DOMAIN-SUFFIX,twitter.biz
+DOMAIN-SUFFIX,twvid.com
+
+# 主要服務域名
 DOMAIN-SUFFIX,twitter.com
+DOMAIN-SUFFIX,twitter.biz
 DOMAIN-SUFFIX,twitter.jp
 DOMAIN-SUFFIX,twittercommunity.com
 DOMAIN-SUFFIX,twitterflightschool.com
 DOMAIN-SUFFIX,twitterinc.com
 DOMAIN-SUFFIX,twitteroauth.com
 DOMAIN-SUFFIX,twitterstat.us
+DOMAIN-SUFFIX,x.com
+
+# 其他相關服務
+DOMAIN-SUFFIX,cms-twdigitalassets.com
+DOMAIN-SUFFIX,periscope.tv
+DOMAIN-SUFFIX,pscp.tv
+DOMAIN-SUFFIX,t.co
+DOMAIN-SUFFIX,tellapart.com
+DOMAIN-SUFFIX,tweetdeck.com
+DOMAIN-SUFFIX,twitpic.com
 DOMAIN-SUFFIX,twtrdns.net
 DOMAIN-SUFFIX,twttr.com
 DOMAIN-SUFFIX,twttr.net
-DOMAIN-SUFFIX,twvid.com
 DOMAIN-SUFFIX,vine.co
-DOMAIN-SUFFIX,x.com
-# DOMAIN-KEYWORD
-DOMAIN-KEYWORD,x.com
+
+# 關鍵字匹配
 DOMAIN-KEYWORD,twitter
+DOMAIN-KEYWORD,x.com
+
+# 安全瀏覽
+DOMAIN-SUFFIX,token.safebrowsing.apple
 
 # IP-CIDR
 IP-CIDR,209.237.192.0/19,no-resolve

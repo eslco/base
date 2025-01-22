@@ -28,8 +28,9 @@
 ^https?:\/\/vod-secure\.ttvnw\.net\/.*\/chunked\/has-ad\.m3u8 _ REJECT-302
 ^https?:\/\/vod(-secure)?\.ttvnw\.net\/.*\/chunked\/has-ad\.m3u8 _ REJECT-302
 # Twitch video AD
-# AND,((USER-AGENT,Twitch*),^https?:\/\/\w+\.twitch\.tv\/gql\?operationName=PlaybackAccessToken),REJECT-DICT
-^https?:\/\/\w+\.twitch\.tv\/gql\?operationName=PlaybackAccessToken) _ REJECT-DICT
+# AND,((USER-AGENT,Twitch*),^https?:\/\/\w+\.twitch\.tv\/gql\?operationName=PlaybackAccessToken) REJECT-DICT
+AND,((USER-AGENT,Twitch*),^https?:\/\/\w+\.twitch\.tv\/gql\?operationName=PlaybackAccessToken) REJECT-DICT
+^https?:\/\/\w+\.twitch\.tv\/gql\?operationName=PlaybackAccessToken _ REJECT-DICT
 
 # ========== 通用广告拦截 ==========
 # DoubleClick广告网络

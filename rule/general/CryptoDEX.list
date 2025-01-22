@@ -1,0 +1,14 @@
+DOMAIN-SUFFIX,coinbase.com
+DOMAIN-SUFFIX,binance.com
+
+# OKX
+DOMAIN-SUFFIX,okx.com
+DOMAIN-SUFFIX,www.okx.com
+DOMAIN-SUFFIX,wspri.okx.com
+DOMAIN-SUFFIX,wsdexpri.okx.com
+DOMAIN-SUFFIX,wspri.ouyich.biz
+DOMAIN-SUFFIX,wsdexpri.ouyich.biz
+DOMAIN-SUFFIX,wsdexpri.ouyich.show
+DOMAIN-SUFFIX,wspri.ouyich.show
+
+DOMAIN-SUFFIX,bybit.com
