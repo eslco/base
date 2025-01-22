@@ -13,50 +13,38 @@
 
 [URL Rewrite]
 # Amazon 廣告攔截 (配合MITM)
-^https?:\/\/\w+\.amazon-adsystem\.com\/(px|aax)\/  REJECT-IMG
-
-# Twitch 核心廣告阻斷
-^https?:\/\/spade\.twitch\.tv\/v1\/track  REJECT-DICT
-^https?:\/\/\w+\.ads\.twitch\.tv\/v\d\/  REJECT-IMG
-
+^https?:\/\/\w+\.amazon-adsystem\.com\/(px|aax)\/.$ _ REJECT-IMG
 # ttvnw 視頻流AD淨化
-^https?:\/\/vod-secure\.ttvnw\.net\/.*\/chunked\/has-ad\.m3u8  REJECT-302
+^https?:\/\/vod-secure\.ttvnw\.net\/.*\/chunked\/has-ad\.m3u8 _ REJECT-302
 
-# [URL Rewrite]
-## 精准广告拦截 (General) ##
-# Amazon广告系统 #
-^https?:\/\/(aax-\w+|vaes|cdn-a)\.amazon-adsystem\.com\/(ads\/|aax\/) REJECT-IMG
-^https?:\/\/s\.amazon-adsystem\.com\/amazonai\/.*_ads\.js REJECT
+[URL Rewrite]
+# ========== Amazon广告拦截 ==========
+# 合并子域名匹配，覆盖所有广告路径
+^https?:\/\/[\w-]+\.amazon-adsystem\.com\/(px|aax|ads)\/ _ REJECT-IMG
+# 拦截亚马逊AI广告脚本
+^https?:\/\/s\.amazon-adsystem\.com\/amazonai\/.*_ads\.js _ REJECT
 
-# DoubleClick广告 #
-^https?:\/\/pubads\.g\.doubleclick\.net\/gampad\/ads REJECT-IMG
-^https?:\/\/ad\.doubleclick\.net\/ddm\/track REJECT
+# ========== Twitch广告拦截 ==========
+# 广告追踪阻断 (合并v1/v2版本)
+^https?:\/\/spade\.twitch\.tv\/v\d\/(track|event) _ REJECT-DICT
+# 广告资源拦截 (合并区域前缀)
+^https?:\/\/(us\|eu)?\.?ads\.twitch\.tv\/v\d\/ad?_? _ REJECT-IMG
+# 广告配置文件拦截
+^https?:\/\/static\.twitch\.tv\/assets\/ads-\w+\.js _ REJECT
+# 视频流广告元数据净化
+^https?:\/\/vod(-secure)?\.ttvnw\.net\/.*\/chunked\/has-ad\.m3u8 _ REJECT-302
 
-# 统计分析拦截 #
-^https?:\/\/b\.scorecardresearch\.com\/beacon\.php REJECT
-^https?:\/\/secure\.imrworldwide\.com\/cgi-bin\/gn\?cid= REJECT-IMG
+# ========== 通用广告拦截 ==========
+# DoubleClick广告网络
+^https?:\/\/pubads\.g\.doubleclick\.net\/gampad\/ads _ REJECT-IMG
+^https?:\/\/ad\.doubleclick\.net\/ddm\/track _ REJECT
 
-## 精准广告拦截 (General) ##
-
-## Twitch专用规则 ##
-# 广告追踪阻断 #
-^https?:\/\/spade\.twitch\.tv\/v\d\/(track|event) REJECT-DICT
-^https?:\/\/(us\|eu)\.ads\.twitch\.tv\/v\d\/ad_slots REJECT-IMG
-
-# 视频流净化 #
-^https?:\/\/\w+\.twitch\.tv\/api\/stats\/adsense REJECT
-^https?:\/\/\w+\.twitch\.tv\/gql\?operationName=PlaybackAccessToken REJECT-DICT
-
-# 广告资源配置 #
-^https?:\/\/static\.twitch\.tv\/assets\/ads-\w+\.js REJECT
-
-## Twitch专用规则 ##
+# ========== 统计分析拦截 ==========
+# 用户行为追踪屏蔽
+^https?:\/\/b\.scorecardresearch\.com\/ _ REJECT
+^https?:\/\/secure\.imrworldwide\.com\/cgi-bin\/gn\?cid= _ REJECT-IMG
 
 [Rule]
-# 混合规则增强 #
-URL-REGEX,^https?:\/\/\w+\.amazon-adsystem\.com\/x/c/.*\/storefront,REJECT-TINYGIF
-URL-REGEX,^https?:\/\/vod\.ttvnw\.net\/.*\/chunked\/has-ad\.m3u8,REJECT-302
-
 # Twitch CDN #
 DOMAIN-SUFFIX,usher.ttvnw.net,PROXY
 ## Twitch static CDN ##
