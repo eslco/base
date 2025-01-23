@@ -1,7 +1,7 @@
 # NAME: Reject.list
 # Author: eslco, eslion
-# URL: https://raw.githubusercontent.com/eslco/ruleset/Shadowrocket/Twitch/Reject.list
-# UPDATED: 2024-09-27 08:02 PM
+# URL: https://raw.githubusercontent.com/eslco/base/main/rule/Shadowrocket/Twitch/Reject.list
+# UPDATED: 2025-01-23 08:02 PM
 # DOMAIN-KEYWORD: 1
 # DOMAIN-SUFFIX: ~
 # IP-CIDR: ~~
@@ -14,7 +14,6 @@ DOMAIN-SUFFIX,cdn-a.amazon-adsystem.com
 DOMAIN-SUFFIX,pubads.g.doubleclick.net
 #
 DOMAIN-SUFFIX,sb.scorecardresearch.com
-DOMAIN-SUFFIX,scorecardresearch.com
 DOMAIN-SUFFIX,s.amazon-adsystem.com
 #
 DOMAIN-SUFFIX,reporting.cdndex.io
