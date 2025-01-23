@@ -1,0 +1,29 @@
+# Name: TD.list
+# URL: https://raw.github.com/eslco/base/main/rule/Surge/Twitch/TD.list
+# Author: eslco 
+# Repo URzL: https://github.com/eslco/base
+# Update at 2025.01.23
+
+# ======== Twitch basic CDN ======== #
+# Twitch static CDN 
+DOMAIN-SUFFIX,jtvnw.net
+DOMAIN-SUFFIX,live-video.net
+DOMAIN-SUFFIX,playlist.ttvnw.net
+DOMAIN-SUFFIX,global.poe.live-video.net
+URL-REGEX,^https?:\/\/[^\/]*ttvnw[^\/]*\.akamaized\.net(\/.*)?$
+# Depercated RULE SET
+# URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?(?:static-cdn\.)?jtvnw\.net\/.*$
+# URL-REGEX,^https?:\/\/(?:.*\.)？playlist\.ttvnw\.net\/.*$
+# URL-REGEX,^https?:\/\/[\w-]+\.live-video\.net\/.*$
+
+# ======== Twitch Region Detect ======== #
+DOMAIN-SUFFIX,usher.ttvnw.net,PROXY
+
+# ======== Twitch Streaming ======== #
+# 精准匹配 Twitch (Cloudfront) CDN #
+# URL-REGEX,^https?:\/\/(?:[a-z0-9-]+\.)*cloudfront\.[a-z0-9-]+\.(?:hls\.)?ttvnw\.net\/.*$,PROXY
+## Twitch Video (Weaver|Edge) ##1080P+ Fixed | 精准匹配 最高效率(使用非捕獲組,子域名兼容匹配合法字符，防止非邏輯URL)
+URL-REGEX,^https?:\/\/(?:[a-z0-9-]+\.)*video-(?:weaver|edge)(?:-[a-z0-9-]+)*(?:\.abs)?\.hls\.ttvnw\.net\/.*$
+
+# Final Matches #
+DOMAIN-SUFFIX,hls.ttvnw.net
