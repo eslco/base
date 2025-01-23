@@ -1,0 +1,93 @@
+# NAME: Twitter.list
+# URL: https://raw.githubusercontent.com/eslco/base/main/rule/general/Twitter/Twitter.list
+# AUTHOR: eslco
+# Credit: blackmatrix7
+# Origin REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2025-01-23 16:16:10
+# DOMAIN-KEYWORD: 1
+# DOMAIN-SUFFIX: X
+# IP-CIDR: X
+# TOTAL: X
+# Update at 2025.01.19
+
+# 廣告相關域名
+DOMAIN-SUFFIX,ads-twitter.com
+# DOMAIN-SUFFIX,app-measurement.com
+
+# API相關域名
+DOMAIN-SUFFIX,api.twitter.com
+DOMAIN-SUFFIX,api-stream.twitter.com
+DOMAIN-SUFFIX,api-0-4-5.twitter.com
+DOMAIN-SUFFIX,api-21-0-0.twitter.com
+DOMAIN-SUFFIX,api-3-0-0.twitter.com
+DOMAIN-SUFFIX,api-46-0-0.twitter.com
+DOMAIN-SUFFIX,dc-api.twitter.com
+# URL-REGEX,^https?:\/\/([a-zA-Z0-9-]+\.)*api([a-zA-Z0-9-]+)?\.twitter\.com(\/.*)?$
+URL-REGEX,^https?:\/\/(?:[a-zA-Z0-9-]+\.)*(?:api[a-zA-Z0-9-]*|(?:[a-zA-Z0-9-]+-)*api)(?:\.[a-zA-Z0-9-]+)*\.twitter\.com(?:\/.*)?$
+
+# 媒體相關域名
+DOMAIN-SUFFIX,pbs.twimg.com
+DOMAIN-SUFFIX,video.twimg.com
+DOMAIN-SUFFIX,abs.twimg.com
+DOMAIN-SUFFIX,twimg.co
+DOMAIN-SUFFIX,twimg.com
+DOMAIN-SUFFIX,twimg.org
+DOMAIN-SUFFIX,twvid.com
+
+# 主要服務域名
+DOMAIN-SUFFIX,twitter.com
+DOMAIN-SUFFIX,twitter.biz
+DOMAIN-SUFFIX,twitter.jp
+DOMAIN-SUFFIX,twittercommunity.com
+DOMAIN-SUFFIX,twitterflightschool.com
+DOMAIN-SUFFIX,twitterinc.com
+DOMAIN-SUFFIX,twitteroauth.com
+DOMAIN-SUFFIX,twitterstat.us
+DOMAIN-SUFFIX,x.com
+
+# 其他相關服務
+DOMAIN-SUFFIX,cms-twdigitalassets.com
+DOMAIN-SUFFIX,periscope.tv
+DOMAIN-SUFFIX,pscp.tv
+DOMAIN-SUFFIX,t.co
+DOMAIN-SUFFIX,tellapart.com
+DOMAIN-SUFFIX,tweetdeck.com
+DOMAIN-SUFFIX,twitpic.com
+DOMAIN-SUFFIX,twtrdns.net
+DOMAIN-SUFFIX,twttr.com
+DOMAIN-SUFFIX,twttr.net
+DOMAIN-SUFFIX,vine.co
+
+# 關鍵字匹配
+DOMAIN-KEYWORD,twitter.com
+DOMAIN-KEYWORD,x.com
+
+# IP-CIDR
+IP-CIDR,209.237.192.0/19,no-resolve
+IP-CIDR,202.160.130.0/24,no-resolve
+IP-CIDR,104.244.40.0/24,no-resolve
+IP-CIDR,199.16.156.0/22,no-resolve
+IP-CIDR,202.160.131.0/24,no-resolve
+IP-CIDR,199.59.148.0/22,no-resolve
+IP-CIDR,202.160.129.0/24,no-resolve
+IP-CIDR,104.244.41.0/24,no-resolve
+IP-CIDR,103.252.112.0/23,no-resolve
+IP-CIDR,202.160.128.0/24,no-resolve
+IP-CIDR,199.96.56.0/23,no-resolve
+IP-CIDR,103.252.114.0/23,no-resolve
+IP-CIDR,192.133.76.0/22,no-resolve
+## ======================================
+
+IP-CIDR,199.96.56.0/21,no-resolve
+IP-CIDR,202.160.128.0/22,no-resolve
+IP-CIDR,69.195.160.0/19,no-resolve
+## ======================================
+
+##  IP-CIDR,199.16.156.0/23,no-resolve
+##  IP-CIDR,192.133.76.0/22
+##  IP-CIDR,199.59.148.0/22
+##  IP-CIDR,209.237.192.0/19
+
+# IP-ASN Twitter
+IP-ASN,13414,no-resolve
+IP-ASN,35995,no-resolve
