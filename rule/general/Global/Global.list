@@ -1,5 +1,6 @@
 # NAME: Global
-# AUTHOR: blackmatrix7
+# AUTHOR: eslco @Credit blackmatrix7
+# URL: https://raw.githubusercontent.com/eslco/base/main/rule/general/Global/Global.list
 # REPO: https://github.com/blackmatrix7/ios_rule_script
 # UPDATED: 2025-01-23 11:59
 # DOMAIN: 84
@@ -69,9 +70,8 @@ USER-AGENT,Pandora*
 USER-AGENT,Prime%20Video*
 USER-AGENT,SoundCloud*
 USER-AGENT,Spotify*
-# Added at 202501
+# Twitch Added at 202501 #
 USER-AGENT,Twitch*
-
 USER-AGENT,TIDAL*
 USER-AGENT,TaiwanGood*
 USER-AGENT,TikTok*
