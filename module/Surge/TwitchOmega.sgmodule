@@ -24,7 +24,7 @@
 ^https?:\/\/spade\.twitch\.tv\/v\d\/(track|event) _ REJECT-DICT
 # ^https?:\/\/spade\.twitch\.tv\/v\d\/(?:(track|event))?\/.*$ _ REJECT-DICT
 # 广告资源拦截 (合并区域前缀)
-^https?:\/\/(us\|eu)?\.?ads\.twitch\.tv\/v\d\/ad?_? _ REJECT-IMG
+^https?:\/\/(us\|eu)?\.?ads\.twitch\.tv\/(?:v\d/)?.*$ _ REJECT-IMG
 # 广告配置文件拦截
 ^https?:\/\/static\.twitch\.tv\/assets\/ads-\w+\.js _ REJECT-200
 # 視頻廣告 淨化 Video AD Neutralizing(中和|協調)
@@ -50,7 +50,7 @@ DOMAIN-SUFFIX,live-video.net,DIRECT
 DOMAIN-SUFFIX,playlist.ttvnw.net,DIRECT
 DOMAIN-SUFFIX,global.poe.live-video.net,DIRECT
 URL-REGEX,^https?:\/\/[^\/]*ttvnw[^\/]*\.akamaized\.net(\/.*)?$,DIRECT
-# Depercated RULE SET
+# Depercated URL-REGEX RULE SET
 # URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?(?:static-cdn\.)?jtvnw\.net\/.*$,DIRECT
 # URL-REGEX,^https?:\/\/(?:.*\.)？playlist\.ttvnw\.net\/.*$,DIRECT
 # URL-REGEX,^https?:\/\/[\w-]+\.live-video\.net\/.*$,DIRECT
@@ -82,7 +82,7 @@ DOMAIN-SUFFIX,gql.twitch.tv,PROXY
 # ======== Dynamic Subdomains (Regex) ======== #
 # 匹配所有 ext-twitch.tv 的动态子域名（如 *.ext-twitch.tv)
 DOMAIN-SUFFIX,ext-twitch.tv,PROXY
-# URL-REGEX,^https?:\/\/(?:[a-z0-9-]+\.)+ext-twitch\.tv\/,PROXY
+# URL-REGEX,^https?:\/\/(?:[a-z0-9-]+\.)+ext-twitch\.tv\/.*$,PROXY
 
 # ======== Third-Party Extensions ======== #
 DOMAIN-SUFFIX,twitch-ext.rootonline.de,PROXY
@@ -99,12 +99,12 @@ IP-CIDR,52.36.231.249/32,PROXY,no-resolve
 IP-CIDR,44.238.175.31/32,PROXY,no-resolve
 IP-CIDR,44.228.62.191/32,PROXY,no-resolve
 
-# ====== Twitch ASN ====== #
-# IP-ASN of Twitch AS46489
+# ====== Twitch IP-ASN ====== #
+# ASN (Autonomous System Number) of Twitch AS46489
 # IP-ASN,48489,no-resolve
 
 # Deprecated RULESET #
-# RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Twitch/Twitch.list,
+# RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Twitch/Twitch.list
 
 [MITM]
 Passphrase = Shadowrocket
