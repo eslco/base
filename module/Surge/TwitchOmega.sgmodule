@@ -3,7 +3,7 @@
 #!desc=HD+ Guaranteed & NoAD(update)
 
 # CDN URL: https://raw.gitmirror.com/eslco/base/main/module/Surge/TwitchOmega.sgmodule
-# Updated at 2025.1.23 10:59 AM
+# Updated at 2025.1.23 20:59 AM
 # Author: https://github.com/eslco
 # Crédit: https://t.me/cmliussss
 
@@ -58,8 +58,7 @@ URL-REGEX,^https?:\/\/.*ttvnw.*\.akamaized\.net\/.*$,DIRECT
 # URL-REGEX,^https?:\/\/[\w-]+\.live-video\.net\/.*$,DIRECT
 
 # Twitch video AD 
-# AND,((USER-AGENT,Twitch*),^https?:\/\/\w+\.twitch\.tv\/gql\?operationName=PlaybackAccessToken),REJECT-DICT
-
+AND,((USER-AGENT,Twitch*),(^https?:\/\/\w+\.twitch\.tv\/gql\?operationName=PlaybackAccessToken)),REJECT-DICT
 # ======== Twitch Region Detect ======== #
 DOMAIN-SUFFIX,usher.ttvnw.net,PROXY
 
