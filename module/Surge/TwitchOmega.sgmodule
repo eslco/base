@@ -57,8 +57,8 @@ URL-REGEX,^https?:\/\/.*ttvnw.*\.akamaized\.net\/.*$,DIRECT
 # URL-REGEX,^https?:\/\/(?:.*\.)？playlist\.ttvnw\.net\/.*$,DIRECT
 # URL-REGEX,^https?:\/\/[\w-]+\.live-video\.net\/.*$,DIRECT
 
-# Twitch video AD 
-AND,((USER-AGENT,Twitch*),(^https?:\/\/\w+\.twitch\.tv\/gql\?operationName=PlaybackAccessToken)),REJECT-DICT
+# Twitch Video AD Neutralizing(中和|協調) 視頻廣告 淨化
+AND,((USER-AGENT,Twitch*), (^https?:\/\/\w+\.twitch\.tv\/gql\?operationName=PlaybackAccessToken)),REJECT-DICT
 # ======== Twitch Region Detect ======== #
 DOMAIN-SUFFIX,usher.ttvnw.net,PROXY
 
