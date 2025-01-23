@@ -1,18 +1,18 @@
 # NAME: Twitter
-# AUTHOR: blackmatrix7
-# REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:10
+# URL: https://raw.githubusercontent.com/eslco/base/main/rule/Surge/Twitter/Twitter.list
+# AUTHOR: eslco
+# Credir: blackmatrix7
+# Origin REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2025-01-22 16:16:10
 # DOMAIN-KEYWORD: 1
 # DOMAIN-SUFFIX: 25
 # IP-CIDR: 6
 # TOTAL: X
-
-# 2022
+# Update at 2025.01.19
 
 # 廣告相關域名
 DOMAIN-SUFFIX,ads-twitter.com
-DOMAIN-SUFFIX,app-measurement.com
-DOMAIN-SUFFIX,googleads.g.doubleclick.net
+# DOMAIN-SUFFIX,app-measurement.com
 
 # API相關域名
 DOMAIN-SUFFIX,api.twitter.com
@@ -22,6 +22,8 @@ DOMAIN-SUFFIX,api-21-0-0.twitter.com
 DOMAIN-SUFFIX,api-3-0-0.twitter.com
 DOMAIN-SUFFIX,api-46-0-0.twitter.com
 DOMAIN-SUFFIX,dc-api.twitter.com
+# URL-REGEX,^https?:\/\/([a-zA-Z0-9-]+\.)*api([a-zA-Z0-9-]+)?\.twitter\.com(\/.*)?$
+URL-REGEX,^https?:\/\/(?:[a-zA-Z0-9-]+\.)*(?:api[a-zA-Z0-9-]*|(?:[a-zA-Z0-9-]+-)*api)(?:\.[a-zA-Z0-9-]+)*\.twitter\.com(?:\/.*)?$
 
 # 媒體相關域名
 DOMAIN-SUFFIX,pbs.twimg.com
@@ -57,11 +59,8 @@ DOMAIN-SUFFIX,twttr.net
 DOMAIN-SUFFIX,vine.co
 
 # 關鍵字匹配
-DOMAIN-KEYWORD,twitter
+DOMAIN-KEYWORD,twitter.com
 DOMAIN-KEYWORD,x.com
-
-# 安全瀏覽
-DOMAIN-SUFFIX,token.safebrowsing.apple
 
 # IP-CIDR
 IP-CIDR,209.237.192.0/19,no-resolve
