@@ -3,7 +3,7 @@
 #!desc=HD+ Guaranteed & NoAD(update)
 
 # CDN URL: https://raw.gitmirror.com/eslco/base/main/module/Surge/TwitchOmega.sgmodule
-# Updated at 2025.1.23 20:59 AM
+# Updated at 2025.1.23 6:03 AM
 # Author: https://github.com/eslco
 # Crédit: https://t.me/cmliussss
 
@@ -26,7 +26,9 @@
 ^https?:\/\/(us\|eu)?\.?ads\.twitch\.tv\/v\d\/ad?_?.*$ _ REJECT-IMG
 # 广告配置文件拦截
 ^https?:\/\/static\.twitch\.tv\/assets\/ads-\w+\.js _ REJECT-200
-# ttvnw 視頻流AD淨化
+# 視頻廣告 淨化 Video AD Neutralizing(中和|協調)
+AND,((USER-AGENT,Twitch*), (^https?:\/\/\w+\.twitch\.tv\/gql\?operationName=PlaybackAccessToken)),REJECT-DICT
+# ttvnw CDN視頻流AD淨化
 ^https?:\/\/vod-[a-z0-9]+\.ttvnw\.net\/.*\/chunked\/has-ad\.m3u8$, _ REJECT-302
 
 # ======== 通用广告拦截 ======== #
@@ -52,8 +54,6 @@ URL-REGEX,^https?:\/\/[^\/]*ttvnw[^\/]*\.akamaized\.net(\/.*)?$,DIRECT
 # URL-REGEX,^https?:\/\/(?:.*\.)？playlist\.ttvnw\.net\/.*$,DIRECT
 # URL-REGEX,^https?:\/\/[\w-]+\.live-video\.net\/.*$,DIRECT
 
-# Twitch Video AD Neutralizing(中和|協調) 視頻廣告 淨化
-AND,((USER-AGENT,Twitch*), (^https?:\/\/\w+\.twitch\.tv\/gql\?operationName=PlaybackAccessToken)),REJECT-DICT
 # ======== Twitch Region Detect ======== #
 DOMAIN-SUFFIX,usher.ttvnw.net,PROXY
 
