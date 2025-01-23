@@ -5,6 +5,9 @@
 # Repo URL: https://github.com/eslco/base
 # Update at 2025.01.23
 
+# ======== Twitch Region Detect ======== #
+DOMAIN-SUFFIX,usher.ttvnw.net
+
 # ======== Twitch Core Services ======== #
 DOMAIN-SUFFIX,twitch.tv
 DOMAIN-SUFFIX,ext-twitch.tv
