@@ -56,5 +56,5 @@ IP-CIDR,103.53.48.215/32,no-resolve
 URL-REGEX,^https?:\/\/video-weaver\..*\.hls\.ttvnw\.net\/.*$
 URL-REGEX,^https?:\/\/video-edge-.*\.abs\.hls\.ttvnw\.net\/.*$
 
-DOMAIN-SUFFIX,hls.ttvnw.net
-DOMAIN-KEYWORD,hls.ttvnw.net
+# DOMAIN-SUFFIX,hls.ttvnw.net
+# DOMAIN-KEYWORD,hls.ttvnw.net
