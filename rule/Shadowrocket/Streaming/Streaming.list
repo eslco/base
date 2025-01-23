@@ -266,13 +266,16 @@ DOMAIN-KEYWORD,-tiktokcdn-com
 USER-AGENT,TVer-Release*
 DOMAIN-SUFFIX,tver.jp
 DOMAIN,edge.api.brightcove.com
+
 # > Twitch
 DOMAIN-SUFFIX,usher.ttvnw.net
-DOMAIN-SUFFIX,jtvnw.net
-# DOMAIN-SUFFIX,ttvnw.net
-DOMAIN-SUFFIX,twitch.tv
 DOMAIN-SUFFIX,twitchcdn.net
-## DOMAIN-KEYWORD,ttvnw
+DOMAIN-SUFFIX,twitch.tv
+
+# DOMAIN-SUFFIX,jtvnw.net #
+# DOMAIN-SUFFIX,ttvnw.net #
+# DOMAIN-KEYWORD,ttvnw.net #
+
 # > ViuTV
 USER-AGENT,Viu*
 DOMAIN-SUFFIX,viu.com
