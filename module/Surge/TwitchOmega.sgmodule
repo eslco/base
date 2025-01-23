@@ -3,97 +3,98 @@
 #!desc=HD+ Guaranteed & NoAD(update)
 
 # CDN URL: https://raw.gitmirror.com/eslco/base/main/module/Surge/TwitchOmega.sgmodule
-# Updated at 2025.1.22 06:20 AM
+# Updated at 2025.1.23 10:59 AM
 # Author: https://github.com/eslco
 # Crédit: https://t.me/cmliussss
+
 # 本模組主要用於解決使用Workers&Pages等CDN节点無法穩定連線Twitch串流網路(ttvnw.net)問題，使用本模組進行策略分流，並附帶去廣告規則。 
 #本模組僅適用於登入Twitch後串流使用，不適用於Twitch軟體註冊。
 # 倉庫地址：https://github.com/eslco/base/main/module
+# Reversed Rule # RULE-SET,https://raw.githubusercontent.com/eslco/base/main/rule/Shadowrocket/Twitch/Proxy.list,PROXY
 
 [URL Rewrite]
-# ========== Amazon广告拦截 ==========
 # Amazon 廣告攔截 (配合MITM)
-^https?:\/\/[\w-]+\.amazon-adsystem\.com\/(px|aax|ads)\/.$ _ REJECT-IMG
-# 拦截亚马逊AI广告脚本
-^https?:\/\/s\.amazon-adsystem\.com\/amazonai\/.*_ads\.js _ REJECT
+^https?:\/\/\w+\.amazon-adsystem\.com\/(px|aax)\/.$ _ REJECT-IMG
+# ttvnw 視頻流AD淨化
+^https?:\/\/vod-secure\.ttvnw\.net\/.*\/chunked\/has-ad\.m3u8 _ REJECT-200
 
-# ========== Twitch广告拦截 ==========
+[URL Rewrite]
+# ========== Amazon广告拦截 ========== #
+# 合并子域名匹配，覆盖所有广告路径
+^https?:\/\/[\w-]+\.amazon-adsystem\.com\/(px|aax|ads)\/ _ REJECT-IMG
+# 拦截亚马逊AI广告脚本
+^https?:\/\/s\.amazon-adsystem\.com\/amazonai\/.*_ads\.js _ REJECT-200
+
+# ========== Twitch广告拦截 ========== #
 # 广告追踪阻断 (合并v1/v2版本)
 ^https?:\/\/spade\.twitch\.tv\/v\d\/(track|event) _ REJECT-DICT
 # 广告资源拦截 (合并区域前缀)
 ^https?:\/\/(us\|eu)?\.?ads\.twitch\.tv\/v\d\/ad?_? _ REJECT-IMG
 # 广告配置文件拦截
-^https?:\/\/static\.twitch\.tv\/assets\/ads-\w+\.js _ REJECT
-# ttvnw 視頻流AD淨化
-^https?:\/\/vod-secure\.ttvnw\.net\/.*\/chunked\/has-ad\.m3u8 _ REJECT-302
+^https?:\/\/static\.twitch\.tv\/assets\/ads-\w+\.js _ REJECT-200
+# 视频流广告元数据净化
 ^https?:\/\/vod(-secure)?\.ttvnw\.net\/.*\/chunked\/has-ad\.m3u8 _ REJECT-302
-# Twitch video AD
-# AND,((USER-AGENT,Twitch*),^https?:\/\/\w+\.twitch\.tv\/gql\?operationName=PlaybackAccessToken) REJECT-DICT
-AND,((USER-AGENT,Twitch*),^https?:\/\/\w+\.twitch\.tv\/gql\?operationName=PlaybackAccessToken) REJECT-DICT
-^https?:\/\/\w+\.twitch\.tv\/gql\?operationName=PlaybackAccessToken _ REJECT-DICT
 
-# ========== 通用广告拦截 ==========
+# ======== 通用广告拦截 ======== #
 # DoubleClick广告网络
 ^https?:\/\/pubads\.g\.doubleclick\.net\/gampad\/ads _ REJECT-IMG
-^https?:\/\/ad\.doubleclick\.net\/ddm\/track _ REJECT
+^https?:\/\/ad\.doubleclick\.net\/ddm\/track _ REJECT-IMG
 
-# ========== 统计分析拦截 ==========
-# 用户行为追踪屏蔽
-^https?:\/\/b\.scorecardresearch\.com\/ _ REJECT
+# ======== 统计分析拦截 ======== #
+# 用户行为追踪屏蔽 
+^https?:\/\/b\.scorecardresearch\.com\/.$ _ REJECT-200
 ^https?:\/\/secure\.imrworldwide\.com\/cgi-bin\/gn\?cid= _ REJECT-IMG
 
 [Rule]
-# Twitch CDN #
-DOMAIN-SUFFIX,usher.ttvnw.net,PROXY
-## Twitch static CDN ##
-URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?(?:static-cdn\.)?jtvnw\.net\/.*$,DIRECT
-URL-REGEX,^https?:\/\/(?:.*\.)？playlist\.ttvnw\.net\/.*$,DIRECT
-URL-REGEX,^https?:\/\/.*ttvnw.*\.akamaized\.net\/.*$,DIRECT
-URL-REGEX,^https?:\/\/[\w-]+\.live-video\.net\/.*$,DIRECT
+# ======== Twitch basic CDN ======== #
+# Twitch static CDN 
+DOMAIN-SUFFIX,jtvnw.net,DIRECT
+DOMAIN-SUFFIX,live-video.net,DIRECT
+DOMAIN-SUFFIX,playlist.ttvnw.net,DIRECT
 DOMAIN-SUFFIX,global.poe.live-video.net,DIRECT
+URL-REGEX,^https?:\/\/.*ttvnw.*\.akamaized\.net\/.*$,DIRECT
+# URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?(?:static-cdn\.)?jtvnw\.net\/.*$,DIRECT
+# URL-REGEX,^https?:\/\/(?:.*\.)？playlist\.ttvnw\.net\/.*$,DIRECT
+# URL-REGEX,^https?:\/\/[\w-]+\.live-video\.net\/.*$,DIRECT
 
-## Twitch static CDN ##
-# 精准匹配 Twitch (Cloudfront) CDN
+# Twitch video AD 
+# AND,((USER-AGENT,Twitch*),^https?:\/\/\w+\.twitch\.tv\/gql\?operationName=PlaybackAccessToken),REJECT-DICT
+
+# ======== Twitch Region Detect ======== #
+DOMAIN-SUFFIX,usher.ttvnw.net,PROXY
+
+# ======== Twitch Streaming ======== #
+# 精准匹配 Twitch (Cloudfront) CDN #
 URL-REGEX,^https?:\/\/(?:[a-z0-9-]+\.)*cloudfront\.[a-z0-9-]+\.(?:hls\.)?ttvnw\.net\/.*$,PROXY
-# URL-REGEX,^(?:https?:\/\/)?(?:\w+\.)?cloudfront\.\w+\.(?:hls\.)?ttvnw\.net\/.*$,PROXY
-## Twitch 1080P+ Fixed | 精准匹配 最高效率(使用非捕獲組,子域名兼容匹配合法字符，防止非邏輯URL)
-## Twitch Video Weaver/Edge (Direct Connect) ##
+## Twitch Video (Weaver|Edge) ##1080P+ Fixed | 精准匹配 最高效率(使用非捕獲組,子域名兼容匹配合法字符，防止非邏輯URL)
 URL-REGEX,^https?:\/\/(?:[a-z0-9-]+\.)*video-(?:weaver|edge)(?:-[a-z0-9-]+)*(?:\.abs)?\.hls\.ttvnw\.net\/.*$,DIRECT
 # Final Matches #
 DOMAIN-SUFFIX,hls.ttvnw.net,DIRECT
-# Twitch CDN #
 
-## Twitch Extension ##
-# URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?\.ext-twitch\.tv\/.*$,DIRECT
-## Twitch Extension ##
-# Twitch Proxy #
 # ======== Twitch Core Services ======== #
+DOMAIN-SUFFIX,twitch.tv,PROXY
+DOMAIN-SUFFIX,ext-twitch.tv,PROXY
 DOMAIN-SUFFIX,twitchcdn.net,PROXY
 DOMAIN-SUFFIX,twitchsvc.net,PROXY
 
 # ======== Critical Subdomains (API/Player) ======== #
-DOMAIN-SUFFIX,api.twitch.tv,PROXY
-DOMAIN-SUFFIX,gql.twitch.tv,PROXY
+DOMAIN-SUFFIX,pubsub-edge.twitch.tv,PROXY
 DOMAIN-SUFFIX,player.twitch.tv,PROXY
 DOMAIN-SUFFIX,assets.twitch.tv,PROXY
-DOMAIN-SUFFIX,hermes.twitch.tv,PROXY
-DOMAIN-SUFFIX,passport.twitch.tv,PROXY
-
-# ======== CDN & Streaming ======== #
-DOMAIN-SUFFIX,vod-secure.twitch.tv,PROXY
-DOMAIN-SUFFIX,pubsub-edge.twitch.tv,PROXY
+DOMAIN-SUFFIX,api.twitch.tv,PROXY
+DOMAIN-SUFFIX,gql.twitch.tv,PROXY
 
 # ======== Dynamic Subdomains (Regex) ======== #
-# 匹配所有 ext-twitch.tv 的动态子域名（如 *.ext-twitch.tv）
-URL-REGEX,^https?:\/\/(?:[a-z0-9-]+\.)+ext-twitch\.tv\/,PROXY
+# 匹配所有 ext-twitch.tv 的动态子域名（如 *.ext-twitch.tv)
+DOMAIN-SUFFIX,ext-twitch.tv,PROXY
+# URL-REGEX,^https?:\/\/(?:[a-z0-9-]+\.)+ext-twitch\.tv\/,PROXY
 
 # ======== Third-Party Extensions ======== #
 DOMAIN-SUFFIX,twitch-ext.rootonline.de,PROXY
-DOMAIN-SUFFIX,twitch.tv,PROXY
-# Twitch Proxy
 
-## IP-CIDR chat.twitch.tv 聊天室伺服器 ##
+# ======== Twitch Chat Server ======= #
 DOMAIN-SUFFIX,irc-ws.chat.twitch.tv,PROXY
+## IP-CIDR of Chat Server 聊天室伺服器IP-CIDR ##
 IP-CIDR,52.26.161.211/32,PROXY,no-resolve
 IP-CIDR,44.235.206.9/32,PROXY,no-resolve
 IP-CIDR,34.213.205.75/32,PROXY,no-resolve
@@ -102,25 +103,20 @@ IP-CIDR,54.69.102.66/32,PROXY,no-resolve
 IP-CIDR,52.36.231.249/32,PROXY,no-resolve
 IP-CIDR,44.238.175.31/32,PROXY,no-resolve
 IP-CIDR,44.228.62.191/32,PROXY,no-resolve
-### IP-CIDR chat.twitch.tv 聊天室伺服器 ##
 
+# ====== Twitch ASN ====== #
 # IP-ASN of Twitch AS46489
 # IP-ASN,48489,no-resolve
 
-
-# Reserved RULESET #
-# RULE-SET,https://raw.githubusercontent.com/eslco/base/main/rule/Shadowrocket/Twitch/Proxy.list,PROXY
 # Deprecated RULESET #
-# RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Twitch/Twitch.list,PROXY
-# ...
+# RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Twitch/Twitch.list,
 
 [MITM]
 Passphrase = Shadowrocket
 # ca-12 = 
-hostname = %APPEND% *.amazon-adsystem.com, spade.twitch.tv, *.ads.twitch.tv, *.twitch.tv, *.ttvnw.net
+hostname = %APPEND% *.scorecardresearch.com, *.amazon-adsystem.com, spade.twitch.tv, *.ads.twitch.tv, *.twitch.tv
 
-# 可选扩展域名（按需添加）
-# *.scorecardresearch.com,
+# 可选扩展域名（按需添加
 # *.imrworldwide.com, 
 # *.ttvnw.net,
 # amplitude.com, 
