@@ -21,15 +21,16 @@
 
 # ========== Twitch广告拦截 ========== #
 # 广告追踪阻断 (合并v1/v2版本)
-^https?:\/\/spade\.twitch\.tv\/v\d\/(?:(track|event))?\/.*$ _ REJECT-DICT
+^https?:\/\/spade\.twitch\.tv\/v\d\/(track|event) _ REJECT-DICT
+# ^https?:\/\/spade\.twitch\.tv\/v\d\/(?:(track|event))?\/.*$ _ REJECT-DICT
 # 广告资源拦截 (合并区域前缀)
-^https?:\/\/(us\|eu)?\.?ads\.twitch\.tv\/v\d\/ad?_?.*$ _ REJECT-IMG
+^https?:\/\/(us\|eu)?\.?ads\.twitch\.tv\/v\d\/ad?_? _ REJECT-IMG
 # 广告配置文件拦截
 ^https?:\/\/static\.twitch\.tv\/assets\/ads-\w+\.js _ REJECT-200
 # 視頻廣告 淨化 Video AD Neutralizing(中和|協調)
 AND,((USER-AGENT,Twitch*), (^https?:\/\/\w+\.twitch\.tv\/gql\?operationName=PlaybackAccessToken)),REJECT-DICT
 # ttvnw CDN視頻流AD淨化
-^https?:\/\/vod-[a-z0-9]+\.ttvnw\.net\/.*\/chunked\/has-ad\.m3u8$, _ REJECT-302
+# ^https?:\/\/vod-[a-z0-9]+\.ttvnw\.net\/.*\/chunked\/has-ad\.m3u8 _ REJECT-302
 
 # ======== 通用广告拦截 ======== #
 # DoubleClick广告网络
