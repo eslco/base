@@ -1,7 +1,8 @@
-# NAME: Global
+# NAME: Global.list
 # AUTHOR: eslco @Credit blackmatrix7
 # URL: https://raw.githubusercontent.com/eslco/base/main/rule/general/Global/Global.list
-# REPO: https://github.com/blackmatrix7/ios_rule_script
+# Ref Repo URL:https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Global/Global.list
+# Origin REPO: https://github.com/blackmatrix7/ios_rule_script
 # UPDATED: 2025-01-23 11:59
 # DOMAIN: 84
 # DOMAIN-KEYWORD: 36
@@ -9,6 +10,7 @@
 # IP-CIDR: 116
 # USER-AGENT: 47
 # TOTAL: XXXX
+
 DOMAIN-KEYWORD,amazon
 DOMAIN-KEYWORD,avoddashs
 DOMAIN-KEYWORD,bbcfmt
