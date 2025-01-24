@@ -11,36 +11,36 @@ url: |-
 
 rules:
 # Twitch static CDN 
-  - DOMAIN-SUFFIX,jtvnw.net,DIRECT
-  - DOMAIN-SUFFIX,live-video.net,DIRECT
-  - DOMAIN-SUFFIX,playlist.ttvnw.net,DIRECT
-  - DOMAIN-SUFFIX,global.poe.live-video.net,DIRECT
+  - DOMAIN-SUFFIX,jtvnw.net,Direct
+  - DOMAIN-SUFFIX,live-video.net,Direct
+  - DOMAIN-SUFFIX,playlist.ttvnw.net,Direct
+  - DOMAIN-SUFFIX,global.poe.live-video.net,Direct
 # Final Matches 
-  - DOMAIN-SUFFIX,hls.ttvnw.net,DIRECT
-  - RULE-SET,https://raw.githubusercontent.com/eslco/base/main/rule/Surge/Twitch/TD.list,DIRECT
+  - DOMAIN-SUFFIX,hls.ttvnw.net,Direct
+  - RULE-SET,https://raw.githubusercontent.com/eslco/base/main/rule/Surge/Twitch/TD.list,Direct
 
 
 # ======== Critical Subdomains (API/Player)
-- DOMAIN-SUFFIX,pubsub-edge.twitch.tv,PROXY
-- DOMAIN-SUFFIX,player.twitch.tv,PROXY
-- DOMAIN-SUFFIX,assets.twitch.tv,PROXY
-- DOMAIN-SUFFIX,api.twitch.tv,PROXY
-- DOMAIN-SUFFIX,gql.twitch.tv,PROXY
+- DOMAIN-SUFFIX,pubsub-edge.twitch.tv,Proxy
+- DOMAIN-SUFFIX,player.twitch.tv,Proxy
+- DOMAIN-SUFFIX,assets.twitch.tv,Proxy
+- DOMAIN-SUFFIX,api.twitch.tv,Proxy
+- DOMAIN-SUFFIX,gql.twitch.tv,Proxy
 
 # ======== Third-Party Extensions 
-- DOMAIN-SUFFIX,twitch-ext.rootonline.de,PROXY
+- DOMAIN-SUFFIX,twitch-ext.rootonline.de,Proxy
 
 # ======== Dynamic Subdomains (Regex)
 # 匹配所有 ext-twitch.tv 的动态子域名（如 *.ext-twitch.tv)
-- DOMAIN-SUFFIX,ext-twitch.tv,PROXY
-# URL-REGEX,^https?:\/\/(?:[a-z0-9-]+\.)+ext-twitch\.tv\/.*$,PROXY
+- DOMAIN-SUFFIX,ext-twitch.tv,Proxy
+# URL-REGEX,^https?:\/\/(?:[a-z0-9-]+\.)+ext-twitch\.tv\/.*$,Proxy
 
 # ======== Twitch Core Services
-- DOMAIN-SUFFIX,ext-twitch.tv,PROXY
-- DOMAIN-SUFFIX,twitchcdn.net,PROXY
-- DOMAIN-SUFFIX,twitchsvc.net,PROXY
-- DOMAIN-SUFFIX,twitch.tv,PROXY
-- RULE-SET,https://raw.githubusercontent.com/eslco/base/main/rule/Surge/Twitch/TP.list,PROXY
+- DOMAIN-SUFFIX,ext-twitch.tv,Proxy
+- DOMAIN-SUFFIX,twitchcdn.net,Proxy
+- DOMAIN-SUFFIX,twitchsvc.net,Proxy
+- DOMAIN-SUFFIX,twitch.tv,Proxy
+- RULE-SET,https://raw.githubusercontent.com/eslco/base/main/rule/Surge/Twitch/TP.list,Proxy
 
 http:
 
@@ -55,7 +55,7 @@ http:
 
 # TTVNW
     - >-
-      ^https?:\/\/[^\/]* ttvnw[^\/]*\.akamaized\.net(?:\/.*)?$ _ DIRECT
+      ^https?:\/\/[^\/]* ttvnw[^\/]*\.akamaized\.net(?:\/.*)?$ _ Direct
 
 # Amazon 廣告攔截 (配合MITM)
     - >-
