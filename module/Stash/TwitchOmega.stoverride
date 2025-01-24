@@ -1,0 +1,45 @@
+name: |-
+  TwitchOmega
+desc: |-
+  HD+ Guaranteed & NoAD(update)
+icon: |-
+  https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1099.png
+url: |-
+  https://raw.githubusercontent.com/eslco/base/main/module/Stash/TwitchOmega.stoverride
+
+http:
+
+  mitm:
+    - "*.scorecardresearch.com"
+    - "*.amazon-adsystem.com"
+    - "spade.twitch.tv"
+    - "*.ads.twitch.tv"
+    - "*.twitch.tv"
+
+  url-rewrite:
+# Amazon 廣告攔截 (配合MITM)
+    - >-
+      ^https?:\/\/[\w-]+\.amazon-adsystem\.com\/(px|aax|ads)\/.*$ - reject-img
+# 拦截亚马逊AI广告脚本
+    - >-
+      ^https?:\/\/s\.amazon-adsystem\.com\/amazonai\/.*_ads\.js - reject-200
+# 广告追踪阻断 (合并v1/v2版本)
+    - >-
+      ^https?:\/\/spade\.twitch\.tv\/v\d\/(?:(track|event))?\/.*$ - reject-dict
+# 广告资源拦截 (合并区域前缀)
+    - >-
+      ^https?:\/\/(us\|eu)?\.?ads\.twitch\.tv\/v\d\/ad?_?.*$ - reject-img
+# 广告配置文件拦截
+    - >-
+      ^https?:\/\/static\.twitch\.tv\/assets\/ads-\w+\.js - reject-200
+# DoubleClick广告网络
+    - >-
+      ^https?:\/\/(?:(pubads\.g)?\.doubleclick\.net\/gampad\/ads\/.*$ - reject-img
+    - >-
+      ^https?:\/\/ad\.doubleclick\.net\/ddm\/track\/.$ - reject-img
+# 用户行为追踪屏蔽 
+    - >-
+      ^https?:\/\/b\.scorecardresearch\.com\/.$ - reject-200
+    - >-
+      ^https?:\/\/secure\.imrworldwide\.com\/cgi-bin\/gn\?cid= - reject-drop
+
