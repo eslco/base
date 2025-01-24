@@ -1,11 +1,46 @@
+# SUBSCRIBED https://raw.githubusercontent.com/eslco/base/main/module/Stash/TwitchOmega.stoverride
+
 name: |-
   TwitchOmega
 desc: |-
   HD+ Guaranteed & NoAD(update)
 icon: |-
-  https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1099.png
+  https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1062.png
 url: |-
   https://raw.githubusercontent.com/eslco/base/main/module/Stash/TwitchOmega.stoverride
+
+rules:
+# Twitch static CDN 
+  - DOMAIN-SUFFIX,jtvnw.net,DIRECT
+  - DOMAIN-SUFFIX,live-video.net,DIRECT
+  - DOMAIN-SUFFIX,playlist.ttvnw.net,DIRECT
+  - DOMAIN-SUFFIX,global.poe.live-video.net,DIRECT
+# Final Matches 
+  - DOMAIN-SUFFIX,hls.ttvnw.net,DIRECT
+  - RULE-SET,https://raw.githubusercontent.com/eslco/base/main/rule/Surge/Twitch/TD.list,DIRECT
+
+
+# ======== Critical Subdomains (API/Player)
+- DOMAIN-SUFFIX,pubsub-edge.twitch.tv,PROXY
+- DOMAIN-SUFFIX,player.twitch.tv,PROXY
+- DOMAIN-SUFFIX,assets.twitch.tv,PROXY
+- DOMAIN-SUFFIX,api.twitch.tv,PROXY
+- DOMAIN-SUFFIX,gql.twitch.tv,PROXY
+
+# ======== Third-Party Extensions 
+- DOMAIN-SUFFIX,twitch-ext.rootonline.de,PROXY
+
+# ======== Dynamic Subdomains (Regex)
+# 匹配所有 ext-twitch.tv 的动态子域名（如 *.ext-twitch.tv)
+- DOMAIN-SUFFIX,ext-twitch.tv,PROXY
+# URL-REGEX,^https?:\/\/(?:[a-z0-9-]+\.)+ext-twitch\.tv\/.*$,PROXY
+
+# ======== Twitch Core Services
+- DOMAIN-SUFFIX,ext-twitch.tv,PROXY
+- DOMAIN-SUFFIX,twitchcdn.net,PROXY
+- DOMAIN-SUFFIX,twitchsvc.net,PROXY
+- DOMAIN-SUFFIX,twitch.tv,PROXY
+- RULE-SET,https://raw.githubusercontent.com/eslco/base/main/rule/Surge/Twitch/TP.list,PROXY
 
 http:
 
@@ -17,6 +52,11 @@ http:
     - "*.twitch.tv"
 
   url-rewrite:
+
+# TTVNW
+    - >-
+      ^https?:\/\/[^\/]* ttvnw[^\/]*\.akamaized\.net(?:\/.*)?$ _ DIRECT
+
 # Amazon 廣告攔截 (配合MITM)
     - >-
       ^https?:\/\/[\w-]+\.amazon-adsystem\.com\/(px|aax|ads)\/.*$ - reject-img
@@ -25,16 +65,16 @@ http:
       ^https?:\/\/s\.amazon-adsystem\.com\/amazonai\/.*_ads\.js - reject-200
 # 广告追踪阻断 (合并v1/v2版本)
     - >-
-      ^https?:\/\/spade\.twitch\.tv\/v\d\/(?:(track|event))?\/.*$ - reject-dict
+      ^https?:\/\/spade\.twitch\.tv\/v\d\/(track|event) - reject-dict
 # 广告资源拦截 (合并区域前缀)
     - >-
-      ^https?:\/\/(us\|eu)?\.?ads\.twitch\.tv\/v\d\/ad?_?.*$ - reject-img
+      ^https?:\/\/(us\|eu)?\.?ads\.twitch\.tv\/(?:v\d/)? - reject-img
 # 广告配置文件拦截
     - >-
       ^https?:\/\/static\.twitch\.tv\/assets\/ads-\w+\.js - reject-200
 # DoubleClick广告网络
     - >-
-      ^https?:\/\/(?:(pubads\.g)?\.doubleclick\.net\/gampad\/ads\/.*$ - reject-img
+      ^https?:\/\/(?:(pubads\.g)?\.doubleclick\.net\/gampad\/ads - reject-img
     - >-
       ^https?:\/\/ad\.doubleclick\.net\/ddm\/track\/.$ - reject-img
 # 用户行为追踪屏蔽 
@@ -42,4 +82,3 @@ http:
       ^https?:\/\/b\.scorecardresearch\.com\/.$ - reject-200
     - >-
       ^https?:\/\/secure\.imrworldwide\.com\/cgi-bin\/gn\?cid= - reject-drop
-
