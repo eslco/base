@@ -1,6 +1,6 @@
 # Name: Wotb.list
 # Author: eslco
-# Update: 20240717
+# Update: 20250123
 
 DOMAIN-SUFFIX,nts.gamegrids.net
 DOMAIN-SUFFIX,api.gamegrids.net
