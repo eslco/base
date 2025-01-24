@@ -1,0 +1,76 @@
+#! URL: https://raw.github.com/eslco/base/main/rule/general/wargaming/wg_login.list
+#! Name: wg_login.list
+#! Author: eslco
+#Wotb Login Server Domain Records
+# Asia Servers
+#SG_C0, 92.223.16.81:20016, login0.wotblitz.asia, Singapore (Singapore)
+#IP-CIDR,92.223.16.59/32
+#IP-CIDR,92.223.16.81/32
+#IP-CIDR,92.223.16.143/32
+#IP-CIDR,92.223.16.0/24
+#SG_C1, 92.223.16.145:20016, login1.wotblitz.asia, Singapore (Singapore)
+
+#SG_C2, 95.85.94.91:20016, login2.wotblitz.asia, Japan (Tokyo)
+#IP-CIDR,95.85.94.91/32
+#IP-CIDR,95.85.94.170/32
+#IP-CIDR,95.85.94.114/32
+#IP-CIDR,95.85.94.115/32
+#IP-CIDR,95.85.94.131/32
+#IP-CIDR,95.85.94.205/32
+#IP-CIDR,95.85.94.0/24
+
+#Europe Servers
+#EU_C0, 92.223.31.136:20016, login0.wotblitz.eu, Netherlands (Kingdom of the) (Amsterdam)
+#EU_C0, 92.223.31.132:20016, login0.wotblitz.eu, Netherlands (Kingdom of the) (Amsterdam)
+#IP-CIDR,92.223.31.132/32
+#IP-CIDR,92.223.31.0/24
+
+#EU_C1, 92.223.31.138
+#IP-CIDR,92.223.31.138/32
+#IP-CIDR,92.223.31.139/32
+
+#EU_C2,80.240.112.16:20016, login2.wotblitz.eu, Germany (Frankfurt am Main)
+#EU_C2,80.240.112.201:20016, login2.wotblitz.eu, Germany (Frankfurt am Main)
+#IP-CIDR,80.240.112.16/32
+#IP-CIDR,80.240.112.24/32
+#IP-CIDR,80.240.112.184/32
+#IP-CIDR,80.240.112.201/32
+#IP-CIDR,80.240.112.203/32
+#IP-CIDR,80.240.112.210/32
+#IP-CIDR,80.240.112.0/24
+
+#EU_C3, 94.156.45.237:20016, login3.wotblitz.eu, Poland (Warsaw)
+#IP-CIDR,94.156.45.149/32
+#IP-CIDR,94.156.45.176/32
+#IP-CIDR,94.156.45.237/32
+#IP-CIDR,94.156.45.0/24
+
+#EU_C4,83.229.15.195:20016, login4.wotblitz.eu, Kazakhstan (Almaty)
+#IP-CIDR,83.229.15.137/32
+#IP-CIDR,83.229.15.0/24
+
+
+#RULE-SET
+DOMAIN-SUFFIX,login0.wotblitz.eu
+DOMAIN-SUFFIX,login1.wotblitz.eu
+DOMAIN-SUFFIX,login2.wotblitz.eu
+DOMAIN-SUFFIX,login3.wotblitz.eu
+DOMAIN-SUFFIX,login4.wotblitz.eu
+DOMAIN-SUFFIX,login0.wotblitz.com
+DOMAIN-SUFFIX,login1.wotblitz.com
+DOMAIN-SUFFIX,login2.wotblitz.com
+DOMAIN-SUFFIX,login0.wotblitz.asia
+DOMAIN-SUFFIX,login1.wotblitz.asia
+DOMAIN-SUFFIX,login2.wotblitz.asia
+URL-REGEX,^login\d+\.wotblitz\.(eu|com|asia|net)$
+URL-REGEX,^login-[a-z]{2,3}\.worldofwarplanes\.com$
+URL-REGEX,^(wotasia\d+|wotna\d+)\.login\.wargaming\.net$|^login\.(p\d+)\.worldoftanks\.eu$
+URL-REGEX,^login\d+\.worldofwarships\.(com|eu|asia|jp|sg|net)$
+
+#IPCIDR
+IP-CIDR,92.223.16.0/24
+IP-CIDR,95.85.94.0/24
+IP-CIDR,92.223.31.0/24
+IP-CIDR,80.240.112.0/24
+IP-CIDR,94.156.45.0/24
+IP-CIDR,83.229.15.0/24
