@@ -12,6 +12,160 @@ readonly BACKUP_DIR="$CONFIG_DIR/backups"
 readonly LOG_DIR="$CONFIG_DIR/logs"
 readonly LOG_FILE="$LOG_DIR/dnsconfig.log"
 
+# Language related definitions | 語言相關定義
+readonly DEFAULT_LANG="en"  # Default language | 默認語言
+readonly FALLBACK_LANG="en" # Fallback language | 後備語言
+
+# Define supported languages | 定義支持的語言
+declare -A SUPPORTED_LANGUAGES=(
+    [zh]="中文:Chinese:zh_TW.UTF-8"
+    [en]="English:English:en_US.UTF-8"
+    [es]="Español:Spanish:es_ES.UTF-8"
+    [ar]="العربية:Arabic:ar_SA.UTF-8"
+    [fr]="Français:French:fr_FR.UTF-8"
+    [ru]="Русский:Russian:ru_RU.UTF-8"
+)
+
+# Complete message definitions | 完整的消息定義
+declare -A MESSAGES_ZH MESSAGES_EN
+init_messages() {
+    # Chinese messages | 中文消息
+    MESSAGES_ZH=(
+        [MENU_TITLE]="DNS配置管理脚本"
+        [CURRENT_CONFIG]="當前DNS配置"
+        [AUTO_CONFIG]="根據GeoIP自動配置DNS"
+        [MANUAL_CONFIG]="手動配置DNS菜單"
+        [REGION_MANAGE]="DNS區域管理"
+        [EXIT]="退出"
+        [INVALID_OPTION]="無效選項"
+        [PRESS_ANY_KEY]="按任意鍵繼續..."
+        [ERROR_OCCURRED]="發生錯誤"
+        [ERROR_CODE]="錯誤代碼"
+        [ERROR_MESSAGE]="錯誤信息"
+        [SUGGESTED_ACTION]="建議操作"
+        [EXECUTE_ACTION]="是否執行建議操作"
+        [CONFIRM_EXIT]="確定要退出嗎"
+        [YES_NO_PROMPT]="是否繼續？(y/n)"
+        [LOADING]="正在加載..."
+        [SUCCESS]="操作成功"
+        [FAILED]="操作失敗"
+        [BACKUP_CREATED]="已創建備份"
+        [CONFIG_UPDATED]="配置已更新"
+        [NETWORK_ERROR]="網絡錯誤"
+        [PERMISSION_ERROR]="權限錯誤"
+        [FILE_ERROR]="文件錯誤"
+        [VALIDATION_ERROR]="驗證錯誤"
+    )
+
+    # English messages | 英文消息
+    MESSAGES_EN=(
+        [MENU_TITLE]="DNS Configuration Management"
+        [CURRENT_CONFIG]="Current DNS Configuration"
+        [AUTO_CONFIG]="Auto-configure DNS by GeoIP"
+        [MANUAL_CONFIG]="Manual DNS Configuration Menu"
+        [REGION_MANAGE]="DNS Region Management"
+        [EXIT]="Exit"
+        [INVALID_OPTION]="Invalid option"
+        [PRESS_ANY_KEY]="Press any key to continue..."
+        [ERROR_OCCURRED]="Error Occurred"
+        [ERROR_CODE]="Error Code"
+        [ERROR_MESSAGE]="Error Message"
+        [SUGGESTED_ACTION]="Suggested Action"
+        [EXECUTE_ACTION]="Execute suggested action"
+        [CONFIRM_EXIT]="Confirm exit"
+        [YES_NO_PROMPT]="Continue? (y/n)"
+        [LOADING]="Loading..."
+        [SUCCESS]="Operation successful"
+        [FAILED]="Operation failed"
+        [BACKUP_CREATED]="Backup created"
+        [CONFIG_UPDATED]="Configuration updated"
+        [NETWORK_ERROR]="Network error"
+        [PERMISSION_ERROR]="Permission error"
+        [FILE_ERROR]="File error"
+        [VALIDATION_ERROR]="Validation error"
+    )
+}
+
+# Improved language loading | 改進的語言加載
+load_language() {
+    local lang=${1:-$DEFAULT_LANG}
+    
+    # Validate language | 驗證語言
+    if [[ ! -v SUPPORTED_LANGUAGES[$lang] ]]; then
+        echo "Warning: Unsupported language '$lang', falling back to $FALLBACK_LANG"
+        lang=$FALLBACK_LANG
+    fi
+    
+    # Set locale | 設置語言環境
+    IFS=':' read -r _ _ locale <<< "${SUPPORTED_LANGUAGES[$lang]}"
+    if ! locale -a | grep -q "^$locale$"; then
+        echo "Warning: Locale $locale not available, using system default"
+    else
+        export LANG=$locale
+        export LC_ALL=$locale
+    fi
+    
+    CURRENT_LANG=$lang
+    return 0
+}
+
+# Improved message retrieval | 改進的消息獲取
+get_message() {
+    local key=$1
+    local message=""
+    
+    # Try current language | 嘗試當前語言
+    case "$CURRENT_LANG" in
+        "zh") message="${MESSAGES_ZH[$key]}" ;;
+        "en") message="${MESSAGES_EN[$key]}" ;;
+        *) message="" ;;
+    esac
+    
+    # Fallback to English if message not found | 如果消息未找到則使用英文
+    if [[ -z "$message" ]]; then
+        message="${MESSAGES_EN[$key]}"
+    fi
+    
+    # Return message or key if not found | 返回消息或鍵名（如果未找到）
+    echo "${message:-$key}"
+}
+
+# Language menu | 語言菜單
+show_language_menu() {
+    clear
+    echo "╔════════════════════════════════════════╗"
+    echo "║ Select Language / 選擇語言             ║"
+    echo "╠════════════════════════════════════════╣"
+    
+    local counter=1
+    for lang in "${!SUPPORTED_LANGUAGES[@]}"; do
+        IFS=':' read -r native english _ <<< "${SUPPORTED_LANGUAGES[$lang]}"
+        printf "║ %d. %-20s %-15s ║\n" "$counter" "$native" "($english)"
+        ((counter++))
+    done
+    
+    echo "╠════════════════════════════════════════╣"
+    echo "║ 0. Exit / 退出                         ║"
+    echo "╚════════════════════════════════════════╝"
+    
+    while true; do
+        read -p "Your choice / 您的選擇: " choice
+        if [[ "$choice" == "0" ]]; then
+            exit 0
+        elif [[ "$choice" =~ ^[1-9]$ ]] && [ "$choice" -le "${#SUPPORTED_LANGUAGES[@]}" ]; then
+            local lang_code=$(echo "${!SUPPORTED_LANGUAGES[@]}" | tr ' ' '\n' | sed -n "${choice}p")
+            load_language "$lang_code"
+            save_language_config
+            break
+        else
+            echo "Invalid choice / 無效選擇"
+        fi
+    done
+}
+
+# Initialize messages on script start | 腳本啟動時初始化消息
+init_messages
+
 # Initialize directories and files | 初始化目錄和文件
 init_environment() {
     # Create necessary directories | 創建必要的目錄
@@ -104,13 +258,13 @@ handle_error() {
     log_message "ERROR" "Code: $error_code, Message: $error_message"
     
     # Display error | 顯示錯誤
-    echo "╔════════════════════════════════════════╗"
-    echo "║ $(get_message ERROR_OCCURRED)          ║"
-    echo "╠════════════════════════════════════════╣"
-    echo "║ $(get_message ERROR_CODE): $error_code ║"
-    echo "║ $(get_message ERROR_MESSAGE):          ║"
-    echo "║ $error_message                         ║"
-    
+        echo "╔════════════════════════════════════════╗"
+        echo "║ $(get_message ERROR_OCCURRED)          ║"
+        echo "╠════════════════════════════════════════╣"
+        echo "║ $(get_message ERROR_CODE): $error_code ║"
+        echo "║ $(get_message ERROR_MESSAGE):          ║"
+        echo "║ $error_message                         ║"
+        echo "║                                        ║"
     if [ -n "$recovery_action" ]; then
         echo "╠════════════════════════════════════════╣"
         echo "║ $(get_message SUGGESTED_ACTION):       ║"
@@ -129,7 +283,7 @@ handle_error() {
     return $error_code
 }
 
-# Progress bar function | 進度條函數
+# **Progress bar function** | **進度條函數**
 show_progress() {
     local current=$1
     local total=$2
@@ -160,17 +314,6 @@ show_help() {
     echo "  $0 --help                   顯示此幫助信息"
 }
 
-# 在主程序入口前添加語言相關定義
-# 定義支持的語言（按使用人數排序）
-readonly SUPPORTED_LANGUAGES=(
-    "zh:Chinese:中文"
-    "en:English:English"
-    "es:Spanish:Español"
-    "ar:Arabic:العربية"
-    "fr:French:Français"
-    "ru:Russian:Русский"
-)
-
 # 語言配置文件路徑
 LANG_CONFIG_FILE="/etc/dns_lang.conf"
 
@@ -187,74 +330,6 @@ load_language_config() {
 # 保存語言配置
 save_language_config() {
     echo "$CURRENT_LANG" > "$LANG_CONFIG_FILE"
-}
-
-# 顯示語言選擇菜單
-show_language_menu() {
-    clear
-    echo "Please select your language / 请选择语言:"
-    echo "----------------------------------------"
-    local counter=1
-    for lang_info in "${SUPPORTED_LANGUAGES[@]}"; do
-        IFS=':' read -r code name native <<< "$lang_info"
-        echo "$counter. $native ($name)"
-        ((counter++))
-    done
-    echo "----------------------------------------"
-    echo "0. Exit / 退出"
-    
-    while true; do
-        read -p "Your choice / 您的选择: " choice
-        if [[ "$choice" == "0" ]]; then
-            exit 0
-        elif [[ "$choice" =~ ^[1-6]$ ]]; then
-            IFS=':' read -r CURRENT_LANG _ _ <<< "${SUPPORTED_LANGUAGES[$((choice-1))]}"
-            save_language_config
-            break
-        else
-            echo "Invalid choice / 无效选择"
-        fi
-    done
-}
-
-# 語言字符串定義
-declare -A MESSAGES
-load_messages() {
-    case "$CURRENT_LANG" in
-        "zh")
-            MESSAGES=(
-                [MENU_TITLE]="DNS配置管理脚本"
-                [CURRENT_CONFIG]="當前DNS配置"
-                [AUTO_CONFIG]="根據GeoIP自動配置DNS"
-                [MANUAL_CONFIG]="手動配置DNS菜單"
-                [REGION_MANAGE]="DNS區域管理"
-                [EXIT]="退出"
-                [INVALID_OPTION]="無效選項"
-                [PRESS_ANY_KEY]="按任意鍵繼續..."
-                # ... 添加更多中文消息
-            )
-            ;;
-        "en")
-            MESSAGES=(
-                [MENU_TITLE]="DNS Configuration Management"
-                [CURRENT_CONFIG]="Current DNS Configuration"
-                [AUTO_CONFIG]="Auto-configure DNS by GeoIP"
-                [MANUAL_CONFIG]="Manual DNS Configuration Menu"
-                [REGION_MANAGE]="DNS Region Management"
-                [EXIT]="Exit"
-                [INVALID_OPTION]="Invalid option"
-                [PRESS_ANY_KEY]="Press any key to continue..."
-                # ... 添加更多英文消息
-            )
-            ;;
-        # ... 添加其他語言的消息定義
-    esac
-}
-
-# 獲取消息文本的輔助函數
-get_message() {
-    local key=$1
-    echo "${MESSAGES[$key]:-${MESSAGES_EN[$key]}}"  # 如果當前語言無該消息，使用英語
 }
 
 # 定義支持的編輯器

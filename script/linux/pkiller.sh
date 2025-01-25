@@ -26,8 +26,8 @@ select_language() {
     echo "1. English"
     echo "2. 简体中文"
     echo "3. 繁體中文"
-    read -p "Enter choice (1-3): " lang_choice
-    case $lang_choice in
+    read -p "Enter choice (1-3): " Lang
+    case $Lang in
         1)
             LANGUAGE=en
             ;;

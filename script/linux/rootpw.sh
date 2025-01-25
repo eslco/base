@@ -10,7 +10,8 @@ fi
 
 # 獲取用戶輸入的密碼，並進行二次確認
 while true; do
-    read -sp "Enter new root password: " root_password
+    echo "ROOT密碼可通過修改 sysctl.conf 配置文件開啓明文顯示"
+    read -sp "Enter new root password(已關閉明文顯示): " root_password 
     echo
     read -sp "Confirm new root password: " confirm_password
     echo
@@ -21,12 +22,11 @@ while true; do
         echo "密碼不匹配。請重試!"
     fi
 done
-
 # 提示用户输入新root密码，并进行确认。
 # 使用read -sp读取用户输入的密码，-s选项使输入不可见（隐藏）。
 # 验证两次输入的密码是否一致。如果一致，则继续；否则，提示重新输入。
 # 修改 root 用户的密码
-echo "注意,當前ROOT密碼已關閉明文顯示, 可通過修改 sysctl.conf 配置文件開啓顯示"
+
 echo "root:$root_password" | sudo chpasswd || { echo "Failed to change root password"; exit 1; }
 echo "ROOT密碼修改完成!"
 echo  "請妥善保存 $root_password"
