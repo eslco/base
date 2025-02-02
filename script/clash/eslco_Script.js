@@ -1,5 +1,6 @@
 // Define main function (script entry)
-
+// Online File URL: https://raw.githubusercontent.com/eslco/base/main/script/clash/eslco_Script.js
+// Online CDN URL: https://raw.gitmirror.com/eslco/base/main/script/clash/eslco_Script.js
 //function main(config, profileName) {
 // return config;}
 // Define the `main` function
