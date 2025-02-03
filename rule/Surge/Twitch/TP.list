@@ -3,7 +3,7 @@
 # URL: https://raw.githubusercontent.com/eslco/base/main/rule/Surge/Twitch/TP.list
 # Author: eslco 
 # Repo URL: https://github.com/eslco/base/rule
-# Update at 2025.01.28
+# Update at 2025.02.03
 
 # ======== Twitch Region Detect ======== #
 DOMAIN-SUFFIX,usher.ttvnw.net
@@ -31,7 +31,7 @@ DOMAIN-SUFFIX,twitch-ext.rootonline.de
 
 # ======== Twitch Chat Server ======= #
 DOMAIN-SUFFIX,irc-ws.chat.twitch.tv
-DOMAIN-KEYWORD,chat.twitch.tv
+DOMAIN-SUFFIX,chat.twitch.tv
 ## IP-CIDR of Twitch Chat Server 聊天室伺服器IP-CIDR ##
 IP-CIDR,52.26.161.211/32,no-resolve
 IP-CIDR,44.235.206.9/32,no-resolve
