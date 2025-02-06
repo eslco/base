@@ -3,10 +3,8 @@
 # Author: @eslco https://github.com/eslco/base/main/hosts
 
 # First time Created: 2025-02-06T15:30:00+08:00
-
-// # GitHub520 Host Start
-
-// # Public DNS Resolver #
+# GitHub520 Host Start
+# Public DNS Resolver #
 74.82.42.42               ordns.he.net
 8.8.4.4                   dns.google
 101.101.101.101           dns.twnic.tw
