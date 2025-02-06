@@ -13,9 +13,9 @@
    {
     "address": "https://doh.apad.pro/dns-query",
     "domains": [
-                      "geosite:steam","geosite:cloudflare","geosite:geolocation-!cn","www.apple.com","speedtest.cn",
-                      "la.visa.nyc.mn","gh.esin.cloud","aesin.sbs","esdns.ggff.net","wotblitz.aisa","wotblitz.com"
-                     ],
+                "geosite:steam","geosite:cloudflare","geosite:geolocation-!cn","www.apple.com","speedtest.cn",
+                "la.visa.nyc.mn","gh.esin.cloud","aesin.sbs","esdns.ggff.net","wotblitz.aisa","wotblitz.com"
+                ],
     "expectIPs": ["geoip:!cn"],
     "skipFallback": false,
     "clientIp": "1.34.1.0",
@@ -24,8 +24,8 @@
    {
     "address": "https://public.dns.iij.jp/dns-query",
     "domains": [
-                      "geosite:geolocation-cn","geoip:private","geosite:cn"
-                     ],
+               "geosite:geolocation-cn","geoip:private","geosite:cn"
+               ],
     "expectIPs": ["geoip:cn"],
     "skipFallback": false,
     "clientIp": "1.0.1.0",
