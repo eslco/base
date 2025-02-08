@@ -18,9 +18,8 @@
 
 [Rule]
 AND,((DOMAIN,youtubei.googleapis.com), (PROTOCOL,UDP)),REJECT
-AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)),REJECT
-URL-REGEX,(^https?:\/\/([\w-]+)\.googlevideo\.com\/initplayback(\?.*oad=.+)$),REJECT-200
-
+AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)),REJECT-200
+# URL-REGEX,(^https?:\/\/([\w-]+)\.googlevideo\.com\/initplayback(\?.*oad=.+)$),REJECT-200
 [URL Rewrite]
 (^https?:\/\/[\w-]+\.googlevideo\.com\/(?!dclk_video_ads).+?)&ctier=L(&.+?),ctier,(.+) $1$2$3 302
 ^https?:\/\/[\w-]+\.googlevideo\.com\/(?!(dclk_video_ads|videoplayback\?)).+&oad _ reject-200
