@@ -18,7 +18,7 @@
 
 [Rule]
 AND,((DOMAIN,youtubei.googleapis.com), (PROTOCOL,UDP)),REJECT
-AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)),REJECT-DROP
+AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)),REJECT
 URL-REGEX,(^https?:\/\/([\w-]+)\.googlevideo\.com\/initplayback(\?.*oad=.+)$),REJECT-200
 
 [URL Rewrite]
@@ -47,7 +47,7 @@ URL-REGEX,(^https?:\/\/([\w-]+)\.googlevideo\.com\/initplayback(\?.*oad=.+)$),RE
 ^https?:\/\/[\w-]+\.doubleclick\.net\/.* _ reject-200
 ^https?:\/\/[\w-]+\.ytimg\.com\/.*ad.* _ reject-200
 ## googletag 個性化標籤 按需開啟
-#^https?:\/\/www\.googletagmanager\.com\/.* _ reject-img
+# ^https?:\/\/www\.googletagmanager\.com\/.* _ reject-img
 
 [Script]
 # 验证并更新脚本路径
@@ -56,8 +56,8 @@ URL-REGEX,(^https?:\/\/([\w-]+)\.googlevideo\.com\/initplayback(\?.*oad=.+)$),RE
 youtube.response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch),requires-body=1,max-size=-1,binary-body-mode=1,engine=jsc,script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.response.preview.js, argument='{"lyricLang":"zh-Hant","captionLang":"zh-Hant","blockUpload":true,"blockImmersive":false,"debug":false}'
 # 首頁初始化AD 
 # 适用Surge (其他客户端如遇到兼容性问题，请关闭此条规则)
-[Map Local] 
-^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data-type=text data=""
+# [Map Local] 
+# ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data-type=text data=""
 
 [MITM]
 # 确保MITM设置的完整性和准确性
