@@ -1,0 +1,89 @@
+name: |-
+  Talkatone_Opt
+desc: |-
+  Global Roaming & NoAD
+icon: |-
+  https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1056.png
+url: |-
+  https://raw.githubusercontent.com/eslco/base/main/module/Stash/Talkatone_Opt.stoverride
+
+rules:
+# 图片类广告资源 (REJECT-TINYGIF)
+  - DOMAIN-SUFFIX,cdn.mobilefuse.com,REJECT
+  - DOMAIN-SUFFIX,cdn2.inner-active.mobi,REJECT
+  - DOMAIN-SUFFIX,cdn-f.adsmoloco.com,REJECT
+  - DOMAIN-SUFFIX,impression.link,REJECT
+  - DOMAIN-SUFFIX,impression-asia.liftoff.io,REJECT
+  - DOMAIN-SUFFIX,wv.inner-active.mobi,REJECT
+# API接口类请求 (REJECT-200)
+  - DOMAIN-SUFFIX,ads.pubmatic.com,REJECT
+  - DOMAIN-SUFFIX,amazon-adsystem.com,REJECT
+  - DOMAIN-SUFFIX,app-analytics-services.com,REJECT
+  - DOMAIN-SUFFIX,appier.net,REJECT
+  - DOMAIN-SUFFIX,appiersig.com,REJECT
+  - DOMAIN-SUFFIX,ads.inmobi.com,REJECT
+  - DOMAIN-SUFFIX,bidder.criteo.com,REJECT
+  - DOMAIN-SUFFIX,config.inmobi.com,REJECT
+  - DOMAIN-SUFFIX,cr.adsappier.com,REJECT
+  - DOMAIN-SUFFIX,ets-ap-southeast-1.track.smaato.net,REJECT
+  - DOMAIN-SUFFIX,exchange-b-events.inner-active.mobi,REJECT
+  - DOMAIN-SUFFIX,ins.track.tappx.com,REJECT
+  - DOMAIN-SUFFIX,mfx.mobilefuse.com,REJECT
+  - DOMAIN-SUFFIX,sdk-dnt.ad.smaato.net,REJECT
+  - DOMAIN-SUFFIX,sdk-files.smaato.net,REJECT
+  - DOMAIN-SUFFIX,sdk-hb-cfg.smaato.net,REJECT
+  - DOMAIN-SUFFIX,ssp.api.tappx.com,REJECT
+  - DOMAIN-SUFFIX,tappx.com,REJECT
+  - DOMAIN-SUFFIX,view.adjust.com,REJECT
+# 完全阻止的請求 (REJECT-DROP)
+  - DOMAIN-KEYWORD,googleads,REJECT
+  - DOMAIN-SUFFIX,googleads.g.doubleclick.net,REJECT
+  - DOMAIN-SUFFIX,googleads.g.doubleclick-cn.net,REJECT
+  - DOMAIN-SUFFIX,lh3.googleadsserving.cn,REJECT
+  - DOMAIN-SUFFIX,pagead2.googlesyndication-cn.com,REJECT
+  - DOMAIN-SUFFIX,pubmatic.com,REJECT
+  - DOMAIN-SUFFIX,smaato.net,REJECT
+  - DOMAIN-SUFFIX,criteo.com,REJECT
+  - DOMAIN-SUFFIX,au.w.inmobi.com,REJECT
+# Following domians just Direct to connect 以下域名直連
+  - DOMAIN-SUFFIX,inner-active.mobi,DIRECT
+  - DOMAIN-SUFFIX,crashlytics.com,DIRECT
+  - DOMAIN-SUFFIX,mobilefuse.com,DIRECT
+  - DOMAIN-SUFFIX,inmobi.com,DIRECT
+  - DOMAIN-SUFFIX,kochava.com,DIRECT
+# IPCIDR
+  - IP-CIDR,205.164.56.0/24,DIRECT,no-resolve
+  - IP-CIDR,216.172.154.0/24,DIRECT,no-resolve
+  - IP-CIDR,50.117.27.0/24,DIRECT,no-resolve
+  - IP-CIDR,63.251.124.0/24,DIRECT,no-resolve
+  - IP-CIDR,69.46.75.0/24,DIRECT,no-resolve
+
+http:
+
+  mitm:
+    - "alt-r.my.com"
+    - "imgx.jampp.com"
+    - "*.mobilefuse.com"
+    - "*.inner-active.mobi"
+    - "*.adsmoloco.com"
+    - "impression.link"
+    - "*.liftoff.io"
+    - "ads.pubmatic.com"
+    - "*.amazon-adsystem.com"
+    - "*.inmobi.com"
+    - "*.criteo.com"
+    - "*.appier.net"
+    - "*.smaato.net"
+    - "*.tappx.com"
+    - "googleads.g.doubleclick.net"
+    - "pagead2.googlesyndication-cn.com"
+    - "pubmatic.com"
+    - "smaato.net"
+    - "criteo.com"
+
+  url-rewrite:
+# Talkatone Rewrite 重寫
+    - >-
+      ^https?:\/\/alt-r\.my\.com\/mobile - reject-dict
+    - >-
+      ^https?:\/\/imgx\.jampp\.com\/imgsrv\/tn - reject-img
