@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # DNS Configuration Management Script | DNS配置管理脚本
-# Author: ESL Co. | 作者：ESL Co.
+# Author: ESL Co. | 作者：Eslco.
 # Version: 2.0 | 版本：2.0
 
 # Global Constants | 全局常量
