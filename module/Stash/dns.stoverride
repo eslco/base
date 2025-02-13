@@ -1,5 +1,5 @@
-name: DNS
-desc: 大陸Apad.pro+HKTnet Domestic DNS.Pub | Global IIJ.jp &Google DNS
+name: DNS Resolve
+desc: HKTNet Domestic TWNIC & IIJ.JP | Global ADGuard & CF DNS
 icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Global.png"
 category: "General"
 
@@ -8,8 +8,8 @@ dns:
   ipv6: true
   listen: 0.0.0.0:53
   default-nameserver: 
-    - 119.29.29.29
     - 202.67.240.222
+    - 119.29.29.29
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter:
@@ -27,11 +27,11 @@ dns:
     - '*.blzstatic.cn'
     - '*.battle.net'
   nameserver:
-    - https://doh.pub/dns-query
-    - https://doh.apad.pro/dns-query
-  fallback:
     - https://public.dns.iij.jp/dns-query
-    - https://dns.google/dns-query
+    - https://101.101.101.101/dns-query
+  fallback:
+    - https://dns.adguard-dns.com/dns-query
+    - https://1.0.0.1/dns-query
   fallback-filter:
     geoip: true
     geoip-code: CN
