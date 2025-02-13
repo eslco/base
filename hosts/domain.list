@@ -30,11 +30,28 @@
 104.16.35.67              www.gold.org
 104.16.35.67              gold.org
 
+#Bili CDN
+# 163.181.66.243  i0.hdslb.com.w.kunlunno.com
+# 163.181.66.242  i0.hdslb.com.w.kunlunno.com
+# 163.181.66.241  i0.hdslb.com.w.kunlunno.com
+# 163.181.66.246  i0.hdslb.com.w.kunlunno.com
+# 163.181.66.238  i0.hdslb.com.w.kunlunno.com
+# 163.181.66.239  i0.hdslb.com.w.kunlunno.com
+# 163.181.66.240  i0.hdslb.com.w.kunlunno.com
+# 163.181.66.245  i0.hdslb.com.w.kunlunno.com
+
+
+i0.hdslb.com.w.kunlunno.com i0.hdslb.com
+
+
+# 23.236.112.179            i0.hdslb.com
+# 98.98.201.152             i0.hdslb.com
 # Linux.do
 104.18.2.161              linux.do
 104.18.3.161              linux.do
 162.159.152.2             linux.do
 162.159.153.2             linux.do
+
 
 # Wotb #
 92.223.16.59              login0.wotblitz.asia
