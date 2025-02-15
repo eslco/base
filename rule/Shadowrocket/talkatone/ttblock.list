@@ -65,11 +65,7 @@ DOMAIN-SUFFIX,smaato.net
 DOMAIN-SUFFIX,criteo.com
 DOMAIN-SUFFIX,inmobi.com
 
-[URL Rewrite] 
-#> URL Redirect
-
-# Talkatone
-
-hostname = alt-r.my.com, imgx.jampp.com
-URL-Regex,^https?:\/\/alt-r\.my\.com\/mobile url reject-dict
-URL-Regex,^https?:\/\/imgx\.jampp\.com\/imgsrv\/tn url reject-img
+# [URL Rewrite]
+# hostname = alt-r.my.com, imgx.jampp.com
+# URL-Regex,^https?:\/\/alt-r\.my\.com\/mobile url reject-dict
+# URL-Regex,^https?:\/\/imgx\.jampp\.com\/imgsrv\/tn url reject-img
