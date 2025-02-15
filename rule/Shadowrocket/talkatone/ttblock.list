@@ -1,18 +1,18 @@
-# Name: talkatoneAdBlock
+# Name: ttblock.list
 # DESC: Talkatone NoAD 
-# REJECT
+# URL: https://raw.githubusercontent.com/eslco/base/main/rule/Shadowrocket/talkatone/ttblock.list
 # Ref List URL: https://raw.githubusercontent.com/baiitang/Sakura/main/Loon/Rules/TalkatoneAD.list
 # 规则来源于
 # https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
 # https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list
 # Talkatone如果发现有剩余的广告，可以引用上面两个分流，自行排查（欢迎反馈，Thx）
 
-DOMAIN-SUFFIX,cdn.mobilefuse.com
+DOMAIN-SUFFIX,impression-asia.liftoff.io
 DOMAIN-SUFFIX,cdn2.inner-active.mobi
+DOMAIN-SUFFIX,wv.inner-active.mobi
 DOMAIN-SUFFIX,cdn-f.adsmoloco.com
 DOMAIN-SUFFIX,impression.link
-DOMAIN-SUFFIX,impression-asia.liftoff.io
-DOMAIN-SUFFIX,wv.inner-active.mobi
+
 # API接口類請求
 DOMAIN-SUFFIX,ads.pubmatic.com
 DOMAIN-SUFFIX,amazon-adsystem.com
@@ -22,25 +22,18 @@ DOMAIN-SUFFIX,appiersig.com
 DOMAIN-SUFFIX,aax.amazon-adsystem.com
 DOMAIN-SUFFIX,aax-fe.amazon-adsystem.com
 DOMAIN-SUFFIX,aax-fe-sin.amazon-adsystem.com
-DOMAIN-SUFFIX,ads.inmobi.com
 DOMAIN-SUFFIX,adsappier.com
 DOMAIN-SUFFIX,bidder.criteo.com
 DOMAIN-SUFFIX,c.amazon-adsystem.com
-DOMAIN-SUFFIX,config.inmobi.com
 DOMAIN-SUFFIX,cr.adsappier.com
-DOMAIN-SUFFIX,dspbeacons.ihasdsp.inmobi.com
-DOMAIN-SUFFIX,dspbeacons.old.ihasdsp.inmobi.com
-DOMAIN-SUFFIX,et-eus.w.inmobi.com
 DOMAIN-SUFFIX,ets-ap-southeast-1.track.smaato.net
 DOMAIN-SUFFIX,exchange-b-events.inner-active.mobi
 DOMAIN-SUFFIX,firebaseinstallations.googleapis.com
-DOMAIN-SUFFIX,firebaselogging-pa.googleapis.com
 DOMAIN-SUFFIX,firebaseremoteconfig.googleapis.com
 DOMAIN-SUFFIX,firebase-settings.crashlytics.com
 DOMAIN-SUFFIX,gum.criteo.com
 DOMAIN-SUFFIX,i.l.inmobicdn.net
 DOMAIN-SUFFIX,i.l-dsp.inmobicdn.net
-DOMAIN-SUFFIX,ic.de.inmobi.com
 DOMAIN-SUFFIX,ins.track.tappx.com
 DOMAIN-SUFFIX,mads.amazon-adsystem.com
 DOMAIN-SUFFIX,mfx.mobilefuse.com
@@ -55,69 +48,22 @@ DOMAIN-SUFFIX,supply.inmobicdn.net
 DOMAIN-SUFFIX,tappx.com
 DOMAIN-SUFFIX,view.adjust.com
 DOMAIN-SUFFIX,vst.c.appier.net
-# 完全阻止的請求
+
+# 完全阻止的請求 - Google Ads 及相关
 DOMAIN-KEYWORD,googleads
-DOMAIN-SUFFIX,googleads.g.doubleclick.net
-DOMAIN-SUFFIX,googleads.g.doubleclick-cn.net
-DOMAIN-SUFFIX,lh3.googleadsserving.cn
-DOMAIN-SUFFIX,pagead2.googlesyndication-cn.com
 DOMAIN-SUFFIX,googleads.g.doubleclick.net
 DOMAIN-SUFFIX,googleads.g.doubleclick-cn.net
 DOMAIN-SUFFIX,lh3.googleadsserving.cn
 DOMAIN-SUFFIX,pagead2.googlesyndication-cn.com
 DOMAIN-SUFFIX,tpc.googlesyndication-cn.com
 DOMAIN-SUFFIX,www.googletagservices-cn.com
-DOMAIN-SUFFIX,pubmatic.com
-DOMAIN-SUFFIX,smaato.net
-DOMAIN-SUFFIX,criteo.com
-DOMAIN-SUFFIX,au.w.inmobi.com
-DOMAIN-SUFFIX,b.de.inmobi.com
-DOMAIN-SUFFIX,et-eus.w.inmobi.com
-DOMAIN-SUFFIX,ets-ap-southeast-1.track.smaato.net
-DOMAIN-SUFFIX,exchange-b-events.inner-active.mobi
-DOMAIN-SUFFIX,ic.de.inmobi.com
-DOMAIN-SUFFIX,i.l.inmobicdn.net
-DOMAIN-SUFFIX,i.l-dsp.inmobicdn.net
-DOMAIN-SUFFIX,impression.link
-DOMAIN-SUFFIX,impression-asia.liftoff.io
-DOMAIN-SUFFIX,ins.track.tappx.com
-DOMAIN-SUFFIX,itunes.apple.com
-DOMAIN-SUFFIX,mt-usw.appiersig.com
-DOMAIN-SUFFIX,skadnetworks.fyber.com
-DOMAIN-SUFFIX,ssp.api.tappx.com
-DOMAIN-SUFFIX,supply.inmobicdn.net
-DOMAIN-SUFFIX,tappx.com
-DOMAIN-SUFFIX,wv.inner-active.mobi
-DOMAIN-SUFFIX,www.googletagservices-cn.com
 
-# 附加的請求
+# 完全阻止的請求 - 通用广告平台
 DOMAIN-SUFFIX,ow.pubmatic.com
-DOMAIN-SUFFIX,wv.inner-active.mobi
-DOMAIN-SUFFIX,c.amazon-adsystem.com
-DOMAIN-SUFFIX,cdn2.inner-active.mobi
-DOMAIN-SUFFIX,googleads.g.doubleclick-cn.net
-DOMAIN-SUFFIX,googleads.g.doubleclick.net
-DOMAIN-SUFFIX,amazon-adsystem.com
-DOMAIN-SUFFIX,smaato.net
 DOMAIN-SUFFIX,pubmatic.com
-DOMAIN-SUFFIX,appiersig.com
-DOMAIN-SUFFIX,adsappier.com
-DOMAIN-SUFFIX,ads.inmobi.com
-DOMAIN-SUFFIX,cr.adsappier.com
-DOMAIN-SUFFIX,gum.criteo.com
+DOMAIN-SUFFIX,smaato.net
 DOMAIN-SUFFIX,criteo.com
-
-#2024.09.31
-DOMAIN-SUFFIX,tappx.com
-DOMAIN-SUFFIX,appier.net
-DOMAIN-KEYWORD,googleads
-DOMAIN-SUFFIX,smaato.net
-DOMAIN-SUFFIX,pubmatic.com
-DOMAIN-SUFFIX,appiersig.com
-DOMAIN-SUFFIX,adsappier.com
-DOMAIN-SUFFIX,ads.inmobi.com
-DOMAIN-SUFFIX,cr.adsappier.com
-DOMAIN-SUFFIX,amazon-adsystem.com
+DOMAIN-SUFFIX,inmobi.com
 
 [URL Rewrite] 
 #> URL Redirect
