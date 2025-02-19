@@ -14,6 +14,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import os
 
+# SRC: https://zhuanlan.zhihu.com/p/668890258 
 
 class VideoPlayerApp:
     def __init__(self, width=500, height=300):
