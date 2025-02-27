@@ -1,0 +1,33 @@
+SUBSCRIBED: https://whatshub.top/module/picsart.module | https://github.com/eslco/base
+
+name: |-
+  Picsart Unlock APPL
+desc: |-
+  picsart 解鎖會員
+author: |-
+  NobyDa
+icon: |-
+  https://raw.githubusercontent.com/deezertidal/private/main/icons/picsart.png
+url: |- 
+  https://raw.githubusercontent.com/eslco/base/main/module/Stash/picsart.stoverride
+  
+homepage: |-
+  https://whatshub.top
+
+http:
+
+  mitm:
+    - "api.picsart.c*"
+    - "api.meiease.c*"
+
+  script:
+    - match: https:\/\/api\.(picsart|meiease)\.c(n|om)\/users\/show\/me\.json
+      name: "Picsart_7"
+      type: response
+      require-body: true
+      max-size: 0
+
+script-providers:
+  "Picsart_7":
+    url: https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/PicsArt.js
+    interval: 86400
