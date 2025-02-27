@@ -9,7 +9,7 @@ dns:
   listen: 0.0.0.0:53
   default-nameserver: 
     - 202.67.240.222
-    - 119.29.29.29
+    - 103.2.57.5
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter:
