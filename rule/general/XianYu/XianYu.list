@@ -1,0 +1,31 @@
+# NAME: XianYu
+# AUTHOR: blackmatrix7
+# REPO: https://github.com/blackmatrix7/ios_rule_script
+# UPDATED: 2024-07-03 16:16:47
+# DOMAIN-SUFFIX: 16
+# TOTAL: 16
+DOMAIN-SUFFIX,ewqcxz.com
+DOMAIN-SUFFIX,hjkhjkl.com
+DOMAIN-SUFFIX,iopiopl.com
+DOMAIN-SUFFIX,lkjujm.com
+DOMAIN-SUFFIX,mnbvdfg.com
+DOMAIN-SUFFIX,nfmrtfv.com
+DOMAIN-SUFFIX,poiuytw.com
+DOMAIN-SUFFIX,qazasd.com
+DOMAIN-SUFFIX,redfcv.com
+DOMAIN-SUFFIX,svfrrg.com
+DOMAIN-SUFFIX,tfgvb.com
+DOMAIN-SUFFIX,uyhjnm.com
+DOMAIN-SUFFIX,vbmnmy.com
+DOMAIN-SUFFIX,wsxsdf.com
+DOMAIN-SUFFIX,xcbbtf.com
+DOMAIN-SUFFIX,xianyu.mobi
+DOMAIN-SUFFIX,goofish.com
+DOMAIN-KEYWORD,goofish
+IP-CIDR,203.119.175.213/32,no-resolve
+IP-CIDR,203.119.175.216/32,no-resolve
+IP-CIDR,203.119.169.0/24,no-resolve
+IP-CIDR,203.119.144.20/32,no-resolve
+IP-CIDR,203.119.144.59/32,no-resolve
+
+# No anyone wants to waste life. Right
