@@ -1,9 +1,9 @@
-# NAME: Twitter
+# NAME: Twitter X
 # URL: https://raw.githubusercontent.com/eslco/base/main/rule/Surge/Twitter/Twitter.list
 # AUTHOR: eslco
 # Credir: blackmatrix7
 # Origin REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2025-01-22 16:16:10
+# UPDATED: 2025-03-06 16:16:10
 # DOMAIN-KEYWORD: 1
 # DOMAIN-SUFFIX: 25
 # IP-CIDR: 6
@@ -59,8 +59,8 @@ DOMAIN-SUFFIX,twttr.net
 DOMAIN-SUFFIX,vine.co
 
 # 關鍵字匹配
-DOMAIN-KEYWORD,twitter.com
-DOMAIN-KEYWORD,x.com
+# DOMAIN-KEYWORD,twitter.com
+# DOMAIN-KEYWORD,x.com
 
 # IP-CIDR
 IP-CIDR,209.237.192.0/19,no-resolve
