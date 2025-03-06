@@ -154,3 +154,5 @@ main() {
 
 # 执行主函数
 main
+
+# Repo URL: https://raw.github.com/eslco/base/main/script/linux/restore-apt.sh
