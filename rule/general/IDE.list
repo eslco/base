@@ -1,0 +1,14 @@
+# NAME: IDE.list
+# URL: https://github.com/eslco/base/blob/main/rule/general/IDE.list
+# REPO: https://github.com/eslco/base/tree/main/rule/general
+# Update 2025.03.13
+
+
+# Cursor IDE
+DOMAIN-SUFFIX,cursor.sh
+DOMAIN-SUFFIX,api.cursor.sh
+
+#Windsurf
+DOMAIN-SUFFIX,windsurf.com
+DOMAIN-SUFFIX,api.windsurf.com
+
