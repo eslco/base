@@ -37,8 +37,8 @@ DOMAIN-KEYWORD,-spotify-com
 USER-AGENT,TIDAL*
 DOMAIN-SUFFIX,tidal.com
 # > YouTubeMusic
-USER-AGENT,com.google.ios.youtubemusic*
-USER-AGENT,YouTubeMusic*
+# USER-AGENT,com.google.ios.youtubemusic*
+# USER-AGENT,YouTubeMusic*
 # (Video)
 # > AbemaTV
 USER-AGENT,AbemaTV*
