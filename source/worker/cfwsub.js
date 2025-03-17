@@ -13,13 +13,7 @@ let timestamp = 4102329600000; // 2099-12-31
 
 // Node links + subscription links | 節點鏈接 + 訂閱鏈接
 let MainData = `
-https://raw.githubusercontent.com/mfuu/v2ray/master/v2ray
-https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list_raw.txt
-https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/v2ray.txt
-https://raw.githubusercontent.com/aiboboxx/v2rayfree/main/v2
-https://raw.githubusercontent.com/mahdibland/SSAggregator/master/sub/airport_sub_merge.txt
-https://raw.githubusercontent.com/mahdibland/SSAggregator/master/sub/sub_merge.txt
-https://raw.githubusercontent.com/Pawdroid/Free-servers/refs/heads/main/sub
+
 `
 
 let urls = [];
@@ -749,7 +743,7 @@ async function KV(request, env, txt = 'ADD.txt', guest) {
 
 								updateButtonText('Prepare button reset function | 準備按鈕重置函數');
 								const resetButton = () => {
-									button.textContent = '保存';
+									button.textContent = 'Save | 保存';
 									button.disabled = false;
 								};
 
@@ -788,7 +782,7 @@ async function KV(request, env, txt = 'ADD.txt', guest) {
 								}
 							} catch (error) {
 								console.error('保存过程出错:', error);
-								button.textContent = '保存';
+								button.textContent = 'Save | 保存';
 								button.disabled = false;
 								const statusElem = document.getElementById('saveStatus');
 								if (statusElem) {
