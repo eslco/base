@@ -1,12 +1,13 @@
 # NAME: IPTV Global
 # URL: https://raw.githubusercontent.com/eslco/base/main/rule/general/IPTV_Global/IPTV_Global.list
+# URL: 
+
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:18:27
+# UPDATED: 2025-03-22 16:18:27
 # DOMAIN: 2299
 # IP-CIDR: 515
 # TOTAL: 2814
-
 
 DOMAIN,0813a4e76b5d404a97a4070b8e087bc4.mediatailor.us-east-1.amazonaws.com
 DOMAIN,0b1ea79d9170498c91073ff8c460de18.mediatailor.us-west-2.amazonaws.com
