@@ -9,8 +9,6 @@
 
 
 DOMAIN-SUFFIX,0472.org
-
-
 DOMAIN,1-fss24-s0.streamhoster.com
 DOMAIN,1.cache.applinzi.com
 DOMAIN,12371alic.v.myalicdn.com
@@ -1855,6 +1853,7 @@ IP-CIDR,239.3.1.64/27,no-resolve
 IP-CIDR,239.3.1.7/32,no-resolve
 IP-CIDR,239.3.1.9/32,no-resolve
 IP-CIDR,239.3.1.96/29,no-resolve
+IP-CIDR,239.3.1.0/24,no-resolve
 
 IP-CIDR,239.37.0.1/32,no-resolve
 IP-CIDR,239.37.0.10/32,no-resolve
