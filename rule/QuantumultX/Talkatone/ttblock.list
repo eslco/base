@@ -7,63 +7,63 @@
 # https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list
 # Talkatone如果发现有剩余的广告，可以引用上面两个分流，自行排查（欢迎反馈，Thx）
 
-DOMAIN-SUFFIX,impression-asia.liftoff.io
-DOMAIN-SUFFIX,cdn2.inner-active.mobi
-DOMAIN-SUFFIX,wv.inner-active.mobi
-DOMAIN-SUFFIX,cdn-f.adsmoloco.com
-DOMAIN-SUFFIX,impression.link
+HOST-SUFFIX,impression-asia.liftoff.io,Talkatone
+HOST-SUFFIX,cdn2.inner-active.mobi,Talkatone
+HOST-SUFFIX,wv.inner-active.mobi,Talkatone
+HOST-SUFFIX,cdn-f.adsmoloco.com,Talkatone
+HOST-SUFFIX,impression.link,Talkatone
 
 # API接口類請求
-DOMAIN-SUFFIX,ads.pubmatic.com
-DOMAIN-SUFFIX,amazon-adsystem.com
-DOMAIN-SUFFIX,app-analytics-services.com
-DOMAIN-SUFFIX,appier.net
-DOMAIN-SUFFIX,appiersig.com
-DOMAIN-SUFFIX,aax.amazon-adsystem.com
-DOMAIN-SUFFIX,aax-fe.amazon-adsystem.com
-DOMAIN-SUFFIX,aax-fe-sin.amazon-adsystem.com
-DOMAIN-SUFFIX,adsappier.com
-DOMAIN-SUFFIX,bidder.criteo.com
-DOMAIN-SUFFIX,c.amazon-adsystem.com
-DOMAIN-SUFFIX,cr.adsappier.com
-DOMAIN-SUFFIX,ets-ap-southeast-1.track.smaato.net
-DOMAIN-SUFFIX,exchange-b-events.inner-active.mobi
-DOMAIN-SUFFIX,firebaseinstallations.googleapis.com
-DOMAIN-SUFFIX,firebaseremoteconfig.googleapis.com
-DOMAIN-SUFFIX,firebase-settings.crashlytics.com
-DOMAIN-SUFFIX,gum.criteo.com
-DOMAIN-SUFFIX,i.l.inmobicdn.net
-DOMAIN-SUFFIX,i.l-dsp.inmobicdn.net
-DOMAIN-SUFFIX,ins.track.tappx.com
-DOMAIN-SUFFIX,mads.amazon-adsystem.com
-DOMAIN-SUFFIX,mfx.mobilefuse.com
-DOMAIN-SUFFIX,mt-usw.appiersig.com
-DOMAIN-SUFFIX,sdk-dnt.ad.smaato.net
-DOMAIN-SUFFIX,sdk-events.inner-active.mobi
-DOMAIN-SUFFIX,sdk-files.smaato.net
-DOMAIN-SUFFIX,sdk-hb-cfg.smaato.net
-DOMAIN-SUFFIX,skadnetworks.fyber.com
-DOMAIN-SUFFIX,ssp.api.tappx.com
-DOMAIN-SUFFIX,supply.inmobicdn.net
-DOMAIN-SUFFIX,tappx.com
-DOMAIN-SUFFIX,view.adjust.com
-DOMAIN-SUFFIX,vst.c.appier.net
+HOST-SUFFIX,ads.pubmatic.com,Talkatone
+HOST-SUFFIX,amazon-adsystem.com,Talkatone
+HOST-SUFFIX,app-analytics-services.com,Talkatone
+HOST-SUFFIX,appier.net,Talkatone
+HOST-SUFFIX,appiersig.com,Talkatone
+HOST-SUFFIX,aax.amazon-adsystem.com,Talkatone
+HOST-SUFFIX,aax-fe.amazon-adsystem.com,Talkatone
+HOST-SUFFIX,aax-fe-sin.amazon-adsystem.com,Talkatone
+HOST-SUFFIX,adsappier.com,Talkatone
+HOST-SUFFIX,bidder.criteo.com,Talkatone
+HOST-SUFFIX,c.amazon-adsystem.com,Talkatone
+HOST-SUFFIX,cr.adsappier.com,Talkatone
+HOST-SUFFIX,ets-ap-southeast-1.track.smaato.net,Talkatone
+HOST-SUFFIX,exchange-b-events.inner-active.mobi,Talkatone
+HOST-SUFFIX,firebaseinstallations.googleapis.com,Talkatone
+HOST-SUFFIX,firebaseremoteconfig.googleapis.com,Talkatone
+HOST-SUFFIX,firebase-settings.crashlytics.com,Talkatone
+HOST-SUFFIX,gum.criteo.com,Talkatone
+HOST-SUFFIX,i.l.inmobicdn.net,Talkatone
+HOST-SUFFIX,i.l-dsp.inmobicdn.net,Talkatone
+HOST-SUFFIX,ins.track.tappx.com,Talkatone
+HOST-SUFFIX,mads.amazon-adsystem.com,Talkatone
+HOST-SUFFIX,mfx.mobilefuse.com,Talkatone
+HOST-SUFFIX,mt-usw.appiersig.com,Talkatone
+HOST-SUFFIX,sdk-dnt.ad.smaato.net,Talkatone
+HOST-SUFFIX,sdk-events.inner-active.mobi,Talkatone
+HOST-SUFFIX,sdk-files.smaato.net,Talkatone
+HOST-SUFFIX,sdk-hb-cfg.smaato.net,Talkatone
+HOST-SUFFIX,skadnetworks.fyber.com,Talkatone
+HOST-SUFFIX,ssp.api.tappx.com,Talkatone
+HOST-SUFFIX,supply.inmobicdn.net,Talkatone
+HOST-SUFFIX,tappx.com,Talkatone
+HOST-SUFFIX,view.adjust.com,Talkatone
+HOST-SUFFIX,vst.c.appier.net,Talkatone
 
 # 完全阻止的請求 - Google Ads 及相关
-DOMAIN-KEYWORD,googleads
-DOMAIN-SUFFIX,googleads.g.doubleclick.net
-DOMAIN-SUFFIX,googleads.g.doubleclick-cn.net
-DOMAIN-SUFFIX,lh3.googleadsserving.cn
-DOMAIN-SUFFIX,pagead2.googlesyndication-cn.com
-DOMAIN-SUFFIX,tpc.googlesyndication-cn.com
-DOMAIN-SUFFIX,www.googletagservices-cn.com
+HOST-KEYWORD,googleads,Talkatone
+HOST-SUFFIX,googleads.g.doubleclick.net,Talkatone
+HOST-SUFFIX,googleads.g.doubleclick-cn.net,Talkatone
+HOST-SUFFIX,lh3.googleadsserving.cn,Talkatone
+HOST-SUFFIX,pagead2.googlesyndication-cn.com,Talkatone
+HOST-SUFFIX,tpc.googlesyndication-cn.com,Talkatone
+HOST-SUFFIX,www.googletagservices-cn.com,Talkatone
 
 # 完全阻止的請求 - 通用广告平台
-DOMAIN-SUFFIX,ow.pubmatic.com
-DOMAIN-SUFFIX,pubmatic.com
-DOMAIN-SUFFIX,smaato.net
-DOMAIN-SUFFIX,criteo.com
-DOMAIN-SUFFIX,inmobi.com
+HOST-SUFFIX,ow.pubmatic.com,Talkatone
+HOST-SUFFIX,pubmatic.com,Talkatone
+HOST-SUFFIX,smaato.net,Talkatone
+HOST-SUFFIX,criteo.com,Talkatone
+HOST-SUFFIX,inmobi.com,Talkatone
 
 # [URL Rewrite]
 # hostname = alt-r.my.com, imgx.jampp.com
