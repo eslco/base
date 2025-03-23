@@ -1,0 +1,71 @@
+# Name: ttblock.list
+# DESC: Talkatone NoAD 
+# URL: https://raw.githubusercontent.com/eslco/base/main/rule/Shadowrocket/talkatone/ttblock.list
+# Ref List URL: https://raw.githubusercontent.com/baiitang/Sakura/main/Loon/Rules/TalkatoneAD.list
+# 规则来源于
+# https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
+# https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list
+# Talkatone如果发现有剩余的广告，可以引用上面两个分流，自行排查（欢迎反馈，Thx）
+
+DOMAIN-SUFFIX,impression-asia.liftoff.io
+DOMAIN-SUFFIX,cdn2.inner-active.mobi
+DOMAIN-SUFFIX,wv.inner-active.mobi
+DOMAIN-SUFFIX,cdn-f.adsmoloco.com
+DOMAIN-SUFFIX,impression.link
+
+# API接口類請求
+DOMAIN-SUFFIX,ads.pubmatic.com
+DOMAIN-SUFFIX,amazon-adsystem.com
+DOMAIN-SUFFIX,app-analytics-services.com
+DOMAIN-SUFFIX,appier.net
+DOMAIN-SUFFIX,appiersig.com
+DOMAIN-SUFFIX,aax.amazon-adsystem.com
+DOMAIN-SUFFIX,aax-fe.amazon-adsystem.com
+DOMAIN-SUFFIX,aax-fe-sin.amazon-adsystem.com
+DOMAIN-SUFFIX,adsappier.com
+DOMAIN-SUFFIX,bidder.criteo.com
+DOMAIN-SUFFIX,c.amazon-adsystem.com
+DOMAIN-SUFFIX,cr.adsappier.com
+DOMAIN-SUFFIX,ets-ap-southeast-1.track.smaato.net
+DOMAIN-SUFFIX,exchange-b-events.inner-active.mobi
+DOMAIN-SUFFIX,firebaseinstallations.googleapis.com
+DOMAIN-SUFFIX,firebaseremoteconfig.googleapis.com
+DOMAIN-SUFFIX,firebase-settings.crashlytics.com
+DOMAIN-SUFFIX,gum.criteo.com
+DOMAIN-SUFFIX,i.l.inmobicdn.net
+DOMAIN-SUFFIX,i.l-dsp.inmobicdn.net
+DOMAIN-SUFFIX,ins.track.tappx.com
+DOMAIN-SUFFIX,mads.amazon-adsystem.com
+DOMAIN-SUFFIX,mfx.mobilefuse.com
+DOMAIN-SUFFIX,mt-usw.appiersig.com
+DOMAIN-SUFFIX,sdk-dnt.ad.smaato.net
+DOMAIN-SUFFIX,sdk-events.inner-active.mobi
+DOMAIN-SUFFIX,sdk-files.smaato.net
+DOMAIN-SUFFIX,sdk-hb-cfg.smaato.net
+DOMAIN-SUFFIX,skadnetworks.fyber.com
+DOMAIN-SUFFIX,ssp.api.tappx.com
+DOMAIN-SUFFIX,supply.inmobicdn.net
+DOMAIN-SUFFIX,tappx.com
+DOMAIN-SUFFIX,view.adjust.com
+DOMAIN-SUFFIX,vst.c.appier.net
+
+# 完全阻止的請求 - Google Ads 及相关
+DOMAIN-KEYWORD,googleads
+DOMAIN-SUFFIX,googleads.g.doubleclick.net
+DOMAIN-SUFFIX,googleads.g.doubleclick-cn.net
+DOMAIN-SUFFIX,lh3.googleadsserving.cn
+DOMAIN-SUFFIX,pagead2.googlesyndication-cn.com
+DOMAIN-SUFFIX,tpc.googlesyndication-cn.com
+DOMAIN-SUFFIX,www.googletagservices-cn.com
+
+# 完全阻止的請求 - 通用广告平台
+DOMAIN-SUFFIX,ow.pubmatic.com
+DOMAIN-SUFFIX,pubmatic.com
+DOMAIN-SUFFIX,smaato.net
+DOMAIN-SUFFIX,criteo.com
+DOMAIN-SUFFIX,inmobi.com
+
+# [URL Rewrite]
+# hostname = alt-r.my.com, imgx.jampp.com
+# URL-Regex,^https?:\/\/alt-r\.my\.com\/mobile url reject-dict
+# URL-Regex,^https?:\/\/imgx\.jampp\.com\/imgsrv\/tn url reject-img

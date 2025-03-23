@@ -1,0 +1,12 @@
+# Talkatone Proxy Rule(Update)
+# Author: eslco
+# Updated at 2025.03.23 05:31 PM
+# './n'
+
+HOST-SUFFIX,talkatone.com,Talkatnone
+HOST-SUFFIX,tenor.com,Talkatnone
+HOST-SUFFIX,agkn.com,Talkatnone
+HOST-SUFFIX,tktn.at,Talkatnone
+HOST-SUFFIX,tktn.be,Talkatnone
+# HOST-SUFFIX,cohere.com
+# HOST-SUFFIX,ip-api.com
