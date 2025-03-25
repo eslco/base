@@ -1,11 +1,16 @@
 # NAME: DNS.list
 # URL: https://github.com/eslco/base/raw/main/rule/Clash/DNS/DNS.list
 # Repo: https://github.com/eslco/base//main/
+DOMAIN-SUFFIX,doh.pub
+DOMAIN-SUFFIX,dns.rubyfish.cn
+DOMAIN-SUFFIX,dns.alidns.com
 
+DOMAIN-SUFFIX,one.one.one.one
 DOMAIN-SUFFIX,cloudflare-dns.com
 DOMAIN-SUFFIX,public.dns.iij.jp
 DOMAIN-SUFFIX,iphone-ld.apple.com
-DOMAIN-SUFFIX,one.one.one.one
+# NoAD DoH
+DOMAIN-SUFFIX,doh.apad.pro
 
 # Cloudflare DNS
 IP-CDIR,1.0.0.1/32,no-resolve
