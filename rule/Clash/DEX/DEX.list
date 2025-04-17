@@ -7,6 +7,9 @@
 DOMAIN-SUFFIX,coinbase.com
 DOMAIN-SUFFIX,binance.com
 
+# CoinBase
+DOMAIN-SUFFIX,coinbase.com
+
 # Binance
 DOMAIN-SUFFIX,binance.com
 DOMAIN-SUFFIX,www.binance.com
