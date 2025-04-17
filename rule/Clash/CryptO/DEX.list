@@ -1,0 +1,27 @@
+# Name: DEX.list
+# Update Time: 2025.04.18
+# Decentralized Exchange 
+
+# Leading DEX
+DOMAIN-SUFFIX,coinbase.com
+DOMAIN-SUFFIX,binance.com
+
+# Binance
+DOMAIN-SUFFIX,binance.com
+DOMAIN-SUFFIX,www.binance.com
+
+# OKX
+DOMAIN-SUFFIX,okx.com
+DOMAIN-SUFFIX,www.okx.com
+DOMAIN-SUFFIX,wspri.okx.com
+DOMAIN-SUFFIX,wsdexpri.okx.com
+DOMAIN-SUFFIX,wspri.ouyich.biz
+DOMAIN-SUFFIX,wsdexpri.ouyich.biz
+DOMAIN-SUFFIX,wsdexpri.ouyich.show
+DOMAIN-SUFFIX,wspri.ouyich.show
+
+# Bybit
+DOMAIN-SUFFIX,bybit.com
+
+# Gate.io
+DOMAIN-SUFFIX,gate.io
