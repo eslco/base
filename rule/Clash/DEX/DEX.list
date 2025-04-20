@@ -1,9 +1,9 @@
 # Name: DEX.list
-# URL : https://raw.github.com/eslco/base/main/rule/Clash/DEX/DEX.list
+# URL: https://raw.github.com/eslco/base/main/rule/Clash/DEX/DEX.list
 # Update Time: 2025.04.18
-# Decentralized Exchange 
-
+# Decentralized Exchange
 # Leading DEX
+
 DOMAIN-SUFFIX,coinbase.com
 DOMAIN-SUFFIX,binance.com
 
@@ -28,4 +28,4 @@ DOMAIN-SUFFIX,wspri.ouyich.show
 DOMAIN-SUFFIX,bybit.com
 
 # Gate.io
-DOMAIN-SUFFIX,gate.io
+DOMAIN-SUFFIX,gate.
