@@ -11,12 +11,13 @@ DOMAIN-SUFFIX,binance.com
 DOMAIN-SUFFIX,coinbase.com
 
 # Binance
-DOMAIN-SUFFIX,binance.com
+DOMAIN-SUFFIX,api.binance.com
 DOMAIN-SUFFIX,www.binance.com
 
 # OKX
 DOMAIN,www.okx.com
 DOMAIN-SUFFIX,okx.com
+DOMAIN-SUFFIX,wspri.okx.com.cdn.cloudflare.net
 DOMAIN-SUFFIX,wspri.okx.com
 DOMAIN-SUFFIX,wsdexpri.okx.com
 DOMAIN-SUFFIX,wspri.ouyich.biz
