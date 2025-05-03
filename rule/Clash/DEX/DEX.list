@@ -28,8 +28,10 @@ DOMAIN-SUFFIX,wspri.ouyich.show
 # Bybit
 DOMAIN-SUFFIX,bybit.com
 
+
 # Gate.io
 DOMAIN-SUFFIX,gate.io
+DOMAIN-SUFFIX,gatesites.com
 
 # Biyapay.com
 DOMAIN-SUFFIX,app.biyapay.com
