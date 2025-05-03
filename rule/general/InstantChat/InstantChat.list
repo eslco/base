@@ -1,0 +1,27 @@
+# NAME: InstantChat.list
+# AUTHOR: blackmatrix7 x eslco
+# URL: https://raw.githubusercontent.com/eslco/base/main/rule/general/InstantChat/InstantChat.list
+# REPO: https://github.com/eslco/base/blob/main/rule/Clash/README.md
+# DOMAIN-KEYWORD: 2
+# DOMAIN-SUFFIX: 544
+# IP-ASN: X
+# IP-CIDR: X
+# TOTAL: X
+
+# Signal
+DOMAIN,chat.signal.org
+DOMAIN-SUFFIX,signal.org
+
+# Session
+DOMAIN-SUFFIX,session.org
+
+# Martix Chat
+# example.com
+
+# xMessenger
+DOMAIN-SUFFIX,session.org
+
+# SimpleX Chat
+
+# DOMAIN-KEYWORD,SimpleX
+DOMAIN-SUFFIX,simplex.im

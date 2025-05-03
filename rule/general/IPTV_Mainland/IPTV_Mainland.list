@@ -7,6 +7,8 @@
 # IP-CIDR: 1307
 # TOTAL: 2200+
 
+DOMAIN-SUFFIX,live.izbds.com
+DOMAIN-SUFFIX,live.zbds.top
 
 DOMAIN-SUFFIX,0472.org
 DOMAIN,1-fss24-s0.streamhoster.com
