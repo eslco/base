@@ -1,22 +1,27 @@
 # Name: DEX.list
-# URL : https://raw.github.com/eslco/base/main/rule/general/DEX/DEX.list
+# URL: https://github.com/eslco/base/raw/main/rule/Clash/DEX/DEX.list
 # Update Time: 2025.04.18
-# Decentralized Exchange 
+# Decentralized Exchange
 
 # Leading DEX
 DOMAIN-SUFFIX,coinbase.com
 DOMAIN-SUFFIX,binance.com
 
-# Coinbase
+# CoinBase
+DOMAIN-SUFFIX,cb.id
 DOMAIN-SUFFIX,coinbase.com
+DOMAIN-SUFFIX,coinbase.net
 
 # Binance
-DOMAIN-SUFFIX,binance.com
+DOMAIN-SUFFIX,www.bmwweb.net
+DOMAIN-SUFFIX,api.binance.com
 DOMAIN-SUFFIX,www.binance.com
+DOMAIN-SUFFIX,binance.com
 
 # OKX
+DOMAIN,www.okx.com
 DOMAIN-SUFFIX,okx.com
-DOMAIN-SUFFIX,www.okx.com
+DOMAIN-SUFFIX,wspri.okx.com.cdn.cloudflare.net
 DOMAIN-SUFFIX,wspri.okx.com
 DOMAIN-SUFFIX,wsdexpri.okx.com
 DOMAIN-SUFFIX,wspri.ouyich.biz
@@ -29,3 +34,7 @@ DOMAIN-SUFFIX,bybit.com
 
 # Gate.io
 DOMAIN-SUFFIX,gate.io
+DOMAIN-SUFFIX,gatesites.com
+
+# Biyapay.com
+DOMAIN-SUFFIX,app.biyapay.com

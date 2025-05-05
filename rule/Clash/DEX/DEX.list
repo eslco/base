@@ -1,5 +1,5 @@
 # Name: DEX.list
-# URL: https://raw.github.com/eslco/base/main/rule/Clash/DEX/DEX.list
+# URL: https://github.com/eslco/base/raw/main/rule/Clash/DEX/DEX.list
 # Update Time: 2025.04.18
 # Decentralized Exchange
 
@@ -8,11 +8,15 @@ DOMAIN-SUFFIX,coinbase.com
 DOMAIN-SUFFIX,binance.com
 
 # CoinBase
+DOMAIN-SUFFIX,cb.id
 DOMAIN-SUFFIX,coinbase.com
+DOMAIN-SUFFIX,coinbase.net
 
 # Binance
+DOMAIN-SUFFIX,www.bmwweb.net
 DOMAIN-SUFFIX,api.binance.com
 DOMAIN-SUFFIX,www.binance.com
+DOMAIN-SUFFIX,binance.com
 
 # OKX
 DOMAIN,www.okx.com
@@ -27,7 +31,6 @@ DOMAIN-SUFFIX,wspri.ouyich.show
 
 # Bybit
 DOMAIN-SUFFIX,bybit.com
-
 
 # Gate.io
 DOMAIN-SUFFIX,gate.io
