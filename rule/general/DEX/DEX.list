@@ -1,11 +1,24 @@
 # Name: DEX.list
 # URL: https://github.com/eslco/base/raw/main/rule/Clash/DEX/DEX.list
-# Update Time: 2025.04.18
+
+# Related URL: https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/Crypto/Crypto.list
+# Related URL: https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/Cryptocurrency/Cryptocurrency.list
+# Update Time: 2025.05.05   
 # Decentralized Exchange
 
-# Leading DEX
+# Leading No.10 DEX (Data as 250505 from https://cryptorank.io/exchanges )
+DOMAIN-SUFFIX,binance.com 
+DOMAIN-SUFFIX,bitget.com
+DOMAIN-SUFFIX,okx.com
 DOMAIN-SUFFIX,coinbase.com
-DOMAIN-SUFFIX,binance.com
+DOMAIN-SUFFIX,mexc.com
+DOMAIN-SUFFIX,bybit.com
+DOMAIN-SUFFIX,www.bitmart.com
+DOMAIN-SUFFIX,bingx.com
+DOMAIN-SUFFIX,www.kucoin.com
+DOMAIN-SUFFIX,www.gate.io
+DOMAIN-SUFFIX,www.gatesites.net
+DOMAIN-SUFFIX,crypto.com
 
 # CoinBase
 DOMAIN-SUFFIX,cb.id
