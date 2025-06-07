@@ -3,7 +3,24 @@
 #! repo: https://github.com/eslco/base/raw/main/rule/general/AI.list
 #! for study or research use only
 
-#! chatgpt/cdn-cgi/trace
+# Cursor IDE
+
+
+
+DOMAIN-SUFFIX,api.cursor.com
+DOMAIN-SUFFIX,cursor.com
+
+
+DOMAIN-SUFFIX,api3.cursor.sh
+DOMAIN-SUFFIX,api2.cursor.sh
+DOMAIN-SUFFIX,api1.cursor.sh
+DOMAIN-SUFFIX,api0.cursor.sh
+DOMAIN-SUFFIX,api.cursor.sh
+DOMAIN-SUFFIX,repo42.cursor.sh
+DOMAIN-SUFFIX,cursor.sh
+
+
+#! ChatGPT /cdn-cgi/trace
 #! https://chatgpt.com/cdn-cgi/trace
 DOMAIN-SUFFIX,chat.openai.com
 DOMAIN-SUFFIX,ios.chat.openai.com
