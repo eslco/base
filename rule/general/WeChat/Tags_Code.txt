@@ -1,0 +1,232 @@
++1US, United States, 美国
++1CA, Canada, 加拿大
++1AG, Antigua and Barbuda, 安提瓜和巴布达
++1AI, Anguilla, 安圭拉
++1AS, American Samoa, 美属萨摩亚
++1BB, Barbados, 巴巴多斯
++1BM, Bermuda, 百慕大
++1BS, Bahamas, 巴哈马
++1DM, Dominica, 多米尼克
++1DO, Dominican Republic, 多米尼加共和国
++1GD, Grenada, 格林纳达
++1GU, Guam, 关岛
++1JM, Jamaica, 牙买加
++1KN, Saint Kitts and Nevis, 圣基茨和尼维斯
++1KY, Cayman Islands, 开曼群岛
++1LC, Saint Lucia, 圣卢西亚
++1MP, Northern Mariana Islands, 北马里亚纳群岛
++1MS, Montserrat, 蒙特塞拉特
++1PR, Puerto Rico, 波多黎各
++1TC, Turks and Caicos Islands, 特克斯和凯科斯群岛
++1TT, Trinidad and Tobago, 特立尼达和多巴哥
++1VC, Saint Vincent and the Grenadines, 圣文森特和格林纳丁斯
++1VI, U.S. Virgin Islands, 美属维尔京群岛
++7RU, Russia, 俄罗斯
++7KZ, Kazakhstan, 哈萨克斯坦
++20EG, Egypt, 埃及
++27ZA, South Africa, 南非
++30GR, Greece, 希腊
++31NL, Netherlands, 荷兰
++32BE, Belgium, 比利时
++33FR, France, 法国
++34ES, Spain, 西班牙
++36HU, Hungary, 匈牙利
++39IT, Italy, 意大利
++39VA, Vatican City, 梵蒂冈
++40RO, Romania, 罗马尼亚
++41CH, Switzerland, 瑞士
++43AT, Austria, 奥地利
++44GB, United Kingdom, 英国
++45DK, Denmark, 丹麦
++46SE, Sweden, 瑞典
++47NO, Norway, 挪威
++48PL, Poland, 波兰
++49DE, Germany, 德国
++51PE, Peru, 秘鲁
++52MX, Mexico, 墨西哥
++53CU, Cuba, 古巴
++54AR, Argentina, 阿根廷
++55BR, Brazil, 巴西
++56CL, Chile, 智利
++57CO, Colombia, 哥伦比亚
++58VE, Venezuela, 委内瑞拉
++60MY, Malaysia, 马来西亚
++61AU, Australia, 澳大利亚
++62ID, Indonesia, 印度尼西亚
++63PH, Philippines, 菲律宾
++64NZ, New Zealand, 新西兰
++65SG, Singapore, 新加坡
++66TH, Thailand, 泰国
++81JP, Japan, 日本
++82KR, South Korea, 韩国
++84VN, Vietnam, 越南
++90TR, Turkey, 土耳其
++91IN, India, 印度
++92PK, Pakistan, 巴基斯坦
++93AF, Afghanistan, 阿富汗
++94LK, Sri Lanka, 斯里兰卡
++95MM, Myanmar, 缅甸
++98IR, Iran, 伊朗
++212MA, Morocco, 摩洛哥
++213DZ, Algeria, 阿尔及利亚
++216TN, Tunisia, 突尼斯
++218LY, Libya, 利比亚
++220GM, Gambia, 冈比亚
++221SN, Senegal, 塞内加尔
++222MR, Mauritania, 毛里塔尼亚
++223ML, Mali, 马里
++224GN, Guinea, 几内亚
++225CI, Côte d'Ivoire, 科特迪瓦
++226BF, Burkina Faso, 布基纳法索
++227NE, Niger, 尼日尔
++228TG, Togo, 多哥
++229BJ, Benin, 贝宁
++230MU, Mauritius, 毛里求斯
++231LR, Liberia, 利比里亚
++232SL, Sierra Leone, 塞拉利昂
++233GH, Ghana, 加纳
++234NG, Nigeria, 尼日利亚
++235TD, Chad, 乍得
++236CF, Central African Republic, 中非共和国
++237CM, Cameroon, 喀麦隆
++238CV, Cape Verde, 佛得角
++239ST, São Tomé and Príncipe, 圣多美和普林西比
++240GQ, Equatorial Guinea, 赤道几内亚
++241GA, Gabon, 加蓬
++242CG, Republic of the Congo, 刚果共和国
++243CD, Democratic Republic of the Congo, 刚果民主共和国
++244AO, Angola, 安哥拉
++245GW, Guinea-Bissau, 几内亚比绍
++246IO, British Indian Ocean Territory, 英属印度洋领地
++247AC, Ascension Island, 阿森松岛
++248SC, Seychelles, 塞舌尔
++249SD, Sudan, 苏丹
++250RW, Rwanda, 卢旺达
++251ET, Ethiopia, 埃塞俄比亚
++252SO, Somalia, 索马里
++253DJ, Djibouti, 吉布提
++254KE, Kenya, 肯尼亚
++255TZ, Tanzania, 坦桑尼亚
++256UG, Uganda, 乌干达
++257BI, Burundi, 布隆迪
++258MZ, Mozambique, 莫桑比克
++260ZM, Zambia, 赞比亚
++261MG, Madagascar, 马达加斯加
++262RE, Réunion, 留尼汪
++263ZW, Zimbabwe, 津巴布韦
++264NA, Namibia, 纳米比亚
++265MW, Malawi, 马拉维
++266LS, Lesotho, 莱索托
++267BW, Botswana, 博茨瓦纳
++268SZ, Eswatini, 斯威士兰
++269KM, Comoros, 科摩罗
++290SH, Saint Helena, 圣赫勒拿
++291ER, Eritrea, 厄立特里亚
++297AW, Aruba, 阿鲁巴
++298FO, Faroe Islands, 法罗群岛
++299GL, Greenland, 格陵兰
++350GI, Gibraltar, 直布罗陀
++351PT, Portugal, 葡萄牙
++352LU, Luxembourg, 卢森堡
++353IE, Ireland, 爱尔兰
++354IS, Iceland, 冰岛
++355AL, Albania, 阿尔巴尼亚
++356MT, Malta, 马耳他
++357CY, Cyprus, 塞浦路斯
++358FI, Finland, 芬兰
++358AX, Åland Islands, 奥兰群岛
++359BG, Bulgaria, 保加利亚
++370LT, Lithuania, 立陶宛
++371LV, Latvia, 拉脱维亚
++372EE, Estonia, 爱沙尼亚
++373MD, Moldova, 摩尔多瓦
++374AM, Armenia, 亚美尼亚
++375BY, Belarus, 白俄罗斯
++376AD, Andorra, 安道尔
++377MC, Monaco, 摩纳哥
++378SM, San Marino, 圣马力诺
++379VA, Vatican City, 梵蒂冈
++380UA, Ukraine, 乌克兰
++381RS, Serbia, 塞尔维亚
++382ME, Montenegro, 黑山
++383XK, Kosovo, 科索沃
++385HR, Croatia, 克罗地亚
++386SI, Slovenia, 斯洛文尼亚
++387BA, Bosnia and Herzegovina, 波斯尼亚和黑塞哥维那
++389MK, North Macedonia, 北马其顿
++420CZ, Czech Republic, 捷克
++421SK, Slovakia, 斯洛伐克
++423LI, Liechtenstein, 列支敦士登
++500FK, Falkland Islands, 福克兰群岛
++501BZ, Belize, 伯利兹
++502GT, Guatemala, 危地马拉
++503SV, El Salvador, 萨尔瓦多
++504HN, Honduras, 洪都拉斯
++505NI, Nicaragua, 尼加拉瓜
++506CR, Costa Rica, 哥斯达黎加
++507PA, Panama, 巴拿马
++508PM, Saint Pierre and Miquelon, 圣皮埃尔和密克隆
++509HT, Haiti, 海地
++590GP, Guadeloupe, 瓜德罗普
++591BO, Bolivia, 玻利维亚
++592GY, Guyana, 圭亚那
++593EC, Ecuador, 厄瓜多尔
++594GF, French Guiana, 法属圭亚那
++595PY, Paraguay, 巴拉圭
++596MQ, Martinique, 马提尼克
++597SR, Suriname, 苏里南
++598UY, Uruguay, 乌拉圭
++599BQ, Bonaire, Sint Eustatius and Saba, 荷属加勒比区
++599CW, Curaçao, 库拉索
++670TL, East Timor, 东帝汶
++672AQ, Antarctica, 南极洲
++673BN, Brunei, 文莱
++674NR, Nauru, 瑙鲁
++675PG, Papua New Guinea, 巴布亚新几内亚
++676TO, Tonga, 汤加
++677SB, Solomon Islands, 所罗门群岛
++678VU, Vanuatu, 瓦努阿图
++679FJ, Fiji, 斐济
++680PW, Palau, 帕劳
++681WF, Wallis and Futuna, 瓦利斯和富图纳
++682CK, Cook Islands, 库克群岛
++683NU, Niue, 纽埃
++685WS, Samoa, 萨摩亚
++686KI, Kiribati, 基里巴斯
++687NC, New Caledonia, 新喀里多尼亚
++688TV, Tuvalu, 图瓦卢
++689PF, French Polynesia, 法属波利尼西亚
++690TK, Tokelau, 托克劳
++691FM, Micronesia, 密克罗尼西亚
++692MH, Marshall Islands, 马绍尔群岛
++850KP, North Korea, 朝鲜
++852HK, Hong Kong, 香港
++853MO, Macau, 澳门
++855KH, Cambodia, 柬埔寨
++856LA, Laos, 老挝
++86CN, China, 中国
++880BD, Bangladesh, 孟加拉国
++886TW, Taiwan, 台湾
++960MV, Maldives, 马尔代夫
++961LB, Lebanon, 黎巴嫩
++962JO, Jordan, 约旦
++963SY, Syria, 叙利亚
++964IQ, Iraq, 伊拉克
++965KW, Kuwait, 科威特
++966SA, Saudi Arabia, 沙特阿拉伯
++967YE, Yemen, 也门
++968OM, Oman, 阿曼
++970PS, Palestine, 巴勒斯坦
++971AE, United Arab Emirates, 阿联酋
++972IL, Israel, 以色列
++973BH, Bahrain, 巴林
++974QA, Qatar, 卡塔尔
++975BT, Bhutan, 不丹
++976MN, Mongolia, 蒙古
++977NP, Nepal, 尼泊尔
++992TJ, Tajikistan, 塔吉克斯坦
++993TM, Turkmenistan, 土库曼斯坦
++994AZ, Azerbaijan, 阿塞拜疆
++995GE, Georgia, 格鲁吉亚
++996KG, Kyrgyzstan, 吉尔吉斯斯坦
++998UZ, Uzbekistan, 乌兹别克斯坦

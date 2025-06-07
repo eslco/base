@@ -9,7 +9,14 @@
 # DOMAIN-SUFFIX: 4
 # TOTAL: 4
 DOMAIN-SUFFIX,fengkongcloud.com
+DOMAIN-SUFFIX,fe-video-qc.xhscdn.com
 DOMAIN-SUFFIX,xhscdn.com
 DOMAIN-SUFFIX,xhscdn.net
 DOMAIN-SUFFIX,xiaohongshu.com
-DOMAIN,www.xiaohongshu.com
+DOMAIN-SUFFIX,xiaohongshu.com.cdn.cloudflare.net
+DOMAIN-SUFFIX,xiaohongshu.com.edge.bunnycdn.com
+Domain-SUFFIX,xiaohongshu.com.edge.net
+DOMAIN-SUFFIX,xiaohongshu.com.edge.net.s3-website.ap-southeast-1.amazonaws.com
+DOMAIN-SUFFIX,xiaohongshu.com.edge.net.s3-website.eu-central-1.amazonaws.com
+DOMAIN-SUFFIX,xiaohongshu.com.edge.net.s3-website.us-east-1.amazonaws.com
+DOMAIN-SUFFIX,xiaohongshu.com.edge.net.s3-website.us-west-1.amazonaws.com
