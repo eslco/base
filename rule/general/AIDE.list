@@ -1,5 +1,7 @@
 # NAME: AIDE.list
-# URL: https://github.com/eslco/base/blob/main/rule/general/IDE.list
+# URL: https://github.com/eslco/base/raw/main/rule/general/AIDE.list
+
+
 # REPO: https://github.com/eslco/base/tree/main/rule/general
 # Update 2025.03.13
 
@@ -19,3 +21,97 @@ DOMAIN-SUFFIX,cursor.sh
 #Windsurf
 DOMAIN-SUFFIX,windsurf.com
 DOMAIN-SUFFIX,api.windsurf.com
+
+
+# Devin
+DOMAIN-SUFFIX,devin.ai
+DOMAIN-SUFFIX,api.devin.ai
+DOMAIN-SUFFIX,app.devin.ai
+DOMAIN-SUFFIX,cognition-labs.com
+DOMAIN-SUFFIX,api.cognition-labs.com
+
+# Aider
+DOMAIN-SUFFIX,aider.chat
+DOMAIN-SUFFIX,api.aider.chat
+
+# OpenRouter
+DOMAIN-SUFFIX,openrouter.ai
+DOMAIN-SUFFIX,api.openrouter.ai
+DOMAIN-SUFFIX,openrouter.com
+DOMAIN-SUFFIX,api.openrouter.com
+
+# Trae
+DOMAIN-SUFFIX,trae.ai
+DOMAIN-SUFFIX,api.trae.ai
+DOMAIN-SUFFIX,app.trae.ai
+
+# JetBrains AI Assistant
+DOMAIN-SUFFIX,jetbrains.com
+DOMAIN-SUFFIX,api.jetbrains.com
+DOMAIN-SUFFIX,account.jetbrains.com
+DOMAIN-SUFFIX,plugins.jetbrains.com
+DOMAIN-SUFFIX,download.jetbrains.com
+DOMAIN-SUFFIX,resources.jetbrains.com
+DOMAIN-SUFFIX,grazie.ai
+DOMAIN-SUFFIX,grazie.aws.intellij.net
+
+# GitHub Copilot
+# DOMAIN-SUFFIX,github.com
+# DOMAIN-SUFFIX,api.github.com
+# DOMAIN-SUFFIX,api.githubcopilot.com
+# DOMAIN-SUFFIX,copilot-proxy.githubusercontent.com
+# DOMAIN-SUFFIX,raw.githubusercontent.com
+
+# Replit
+DOMAIN-SUFFIX,replit.com
+DOMAIN-SUFFIX,api.replit.com
+DOMAIN-SUFFIX,repl.it
+DOMAIN-SUFFIX,replitusercontent.com
+
+# CodeWhisperer (Amazon)
+DOMAIN-SUFFIX,codewhisperer.aws
+DOMAIN-SUFFIX,aws.amazon.com
+DOMAIN-SUFFIX,amazonwebservices.com
+
+# Tabnine
+DOMAIN-SUFFIX,tabnine.com
+DOMAIN-SUFFIX,api.tabnine.com
+DOMAIN-SUFFIX,app.tabnine.com
+
+# Codeium
+DOMAIN-SUFFIX,codeium.com
+DOMAIN-SUFFIX,api.codeium.com
+DOMAIN-SUFFIX,web.codeium.com
+
+# Continue.dev
+DOMAIN-SUFFIX,continue.dev
+DOMAIN-SUFFIX,api.continue.dev
+
+# Sourcegraph Cody
+DOMAIN-SUFFIX,sourcegraph.com
+DOMAIN-SUFFIX,api.sourcegraph.com
+DOMAIN-SUFFIX,cody.dev
+
+# Codex (OpenAI)
+# DOMAIN-SUFFIX,openai.com
+# DOMAIN-SUFFIX,api.openai.com
+
+# Kite (已停止服务但可能仍有流量)
+DOMAIN-SUFFIX,kite.com
+DOMAIN-SUFFIX,api.kite.com
+
+# Mintlify
+DOMAIN-SUFFIX,mintlify.com
+DOMAIN-SUFFIX,api.mintlify.com
+
+# Pieces
+DOMAIN-SUFFIX,pieces.app
+DOMAIN-SUFFIX,api.pieces.app
+
+# Blackbox AI
+DOMAIN-SUFFIX,blackbox.ai
+DOMAIN-SUFFIX,api.blackbox.ai
+
+# CodeT5
+DOMAIN-SUFFIX,huggingface.co
+DOMAIN-SUFFIX,api.huggingface.co
