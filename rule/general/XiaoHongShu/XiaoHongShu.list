@@ -2,8 +2,12 @@
 
 # URL: https://raw.githubusercontent.com/eslco/base/main/rule/general/XiaoHongShu/XiaoHongShu.list
 # CDN URL: https://raw.gitmirror.com/eslco/base/main/rule/general/XiaoHongShu/XiaoHongShu.list
+
+# https://github.com/blackmatrix7/ios_rule_script/raw/refs/heads/master/rule/Clash/XiaoHongShu/XiaoHongShu.list
 # AUTHOR: blackmatrix7 x eslco
 # REPO: https://github.com/eslco/base/blob/main
+
+
 
 # UPDATED: 2025-03-11 16:17:40
 # DOMAIN-SUFFIX: 4
@@ -13,8 +17,10 @@ DOMAIN-SUFFIX,fe-video-qc.xhscdn.com
 DOMAIN-SUFFIX,xhscdn.com
 DOMAIN-SUFFIX,xhscdn.net
 DOMAIN-SUFFIX,xiaohongshu.com
+
 DOMAIN-SUFFIX,xiaohongshu.com.cdn.cloudflare.net
-DOMAIN-SUFFIX,xiaohongshu.com.edge.bunnycdn.com
+DOMAIN-SUFFIX,xiaohongshu.com.edge.bunnycdn.co
+
 Domain-SUFFIX,xiaohongshu.com.edge.net
 DOMAIN-SUFFIX,xiaohongshu.com.edge.net.s3-website.ap-southeast-1.amazonaws.com
 DOMAIN-SUFFIX,xiaohongshu.com.edge.net.s3-website.eu-central-1.amazonaws.com
