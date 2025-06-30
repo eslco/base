@@ -4,7 +4,7 @@
 
 # Author: @eslco https://github.com/eslco/base/main/hosts
 
-# First time Craeted by @eslco in 3 Jan 2025 21:29 PM
+# First time Craeted by @eslco in 30 Jun 2025 22:48 PM
 
 142.250.4.90          translate.googleapis.com translate.google.com translate-pa.googleapis.com jnn-pa.googleapis.com
 172.253.114.90        translate.googleapis.com translate.google.com translate-pa.googleapis.com jnn-pa.googleapis.com
@@ -129,7 +129,7 @@
 124.251.1.90          translate-pa.googleapis.com
 124.251.1.90          jnn-pa.googleapis.com
 
-# Update time: 2025-06-30T22:43:00-UTC08:00
+# Update time: 2025-06-30T22:48:00-UTC08:00
 # Update url: https://unpkg.com/@hcfy/google-translate-ip/ips.txt
 # Star me: https://github.com/eslco/base
 # Translate_Google Host End
