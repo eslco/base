@@ -1,0 +1,25 @@
+# T.me/IPTV_9999999
+# https://t.me/IPTV_9999999
+# RAW: https://raw.githubusercontent.com/eslco/base/main/rule/general/IPTV_Global/IPTV_9999999_TW.list
+# RAW: https://github.com/eslco/base/raw/main/rule/general/IPTV_Global/IPTV_9999999_TW.list
+# Path: rule/general/IPTV_Global/IPTV_9999999.list
+
+# US
+# DOMAIN-SUFFIX,smart.pendy.dpdns.org
+# DOMAIN-SUFFIX,sport.pendy.dpdns.org
+# DOMAIN-SUFFIX,iptv.mydiver.eu.org
+# DOMAIN-SUFFIX,4gtv.livednow.dpdns.org
+
+
+#　以下全部走台湾
+DOMAIN-SUFFIX,ofissaifreepc.akamaized.net
+DOMAIN-SUFFIX,litvpc-hichannel.cdn.hinet.net
+DOMAIN-SUFFIX,4gtvfreepc-cds.cdn.hinet.net
+DOMAIN-SUFFIX,4gtvfree-cds.cdn.hinet.net
+DOMAIN-SUFFIX,ntd-tgc.cdn.hinet.net
+# 4gtv.tv
+DOMAIN-SUFFIX,4gtvfree-mozai.4gtv.tv
+DOMAIN-SUFFIX,api2.4gtv.tv
+
+＃ 或者简单一点
+DOMAIN-SUFFIX,cdn.hinet.net
