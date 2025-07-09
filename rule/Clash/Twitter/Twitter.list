@@ -1,5 +1,5 @@
 # NAME: Twitter X
-# URL: https://raw.githubusercontent.com/eslco/base/main/rule/Surge/Twitter/Twitter.list
+# URL: https://raw.githubusercontent.com/eslco/base/main/rule/Clash/Twitter/Twitter.list
 # AUTHOR: eslco
 # Credir: blackmatrix7
 # Origin REPO: https://github.com/blackmatrix7/ios_rule_script
@@ -22,7 +22,6 @@ DOMAIN-SUFFIX,api-21-0-0.twitter.com
 DOMAIN-SUFFIX,api-3-0-0.twitter.com
 DOMAIN-SUFFIX,api-46-0-0.twitter.com
 DOMAIN-SUFFIX,dc-api.twitter.com
-# URL-REGEX,^https?:\/\/([a-zA-Z0-9-]+\.)*api([a-zA-Z0-9-]+)?\.twitter\.com(\/.*)?$
 
 # 媒體相關域名
 DOMAIN-SUFFIX,pbs.twimg.com
@@ -75,6 +74,7 @@ IP-CIDR,202.160.128.0/24,no-resolve
 IP-CIDR,199.96.56.0/23,no-resolve
 IP-CIDR,103.252.114.0/23,no-resolve
 IP-CIDR,192.133.76.0/22,no-resolve
+## ======================================
 
 IP-CIDR,199.96.56.0/21,no-resolve
 IP-CIDR,202.160.128.0/22,no-resolve
