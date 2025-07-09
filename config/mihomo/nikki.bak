@@ -3,7 +3,7 @@ config status 'status'
 
 config subscription
 	option name 'ESNewSub'
-	option url 'https://esub.example.com/sub?token=xxx&clash'
+	option url 'https://sub.example.com/sub?token=xxx&clash'
 	option user_agent 'clash'
 	option prefer 'remote'
 	option update_interval '3600'
