@@ -14,7 +14,7 @@ proxy-providers:
 # 节点信息
 proxies:
   - {name: Direct, type: direct}
-
+  - {name: Reject, type: reject}
 # 全局配置 
 port: 7890
 socks-port: 20087
@@ -38,11 +38,11 @@ profile:
   store-fake-ip: true
 
 # 控制面板
-external-controller: 0.0.0.0:9090
-secret: ""
-external-ui: "/etc/nikki/run"
-external-ui-name: zashboard
-external-ui-url: "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
+# external-controller: 0.0.0.0:9090
+# secret: ""
+# external-ui: "/etc/nikki/run"
+# external-ui-name: zashboard
+# external-ui-url: "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
 
 # 嗅探
 sniffer:
@@ -97,9 +97,9 @@ dns:
  
 # 出站策略
 # 注意锚点必须放在引用的上方，可以集中把锚点全部放yaml的顶部。
-pr: &pr {type: select, proxies: [🚀 Proxy, 🔯 HK.bak, 🔯 JP.bak, ♻️ HK Auto, ♻️ JP Auto, ♻️ US Auto, ♻️ Auto, 🇭🇰 HK, 🇯🇵 JP, 🇺🇲 US, 🌐 Manual, Direct]}
+pr: &pr {type: select, proxies: [🚀 Proxy, 🔯 HK.bak, 🔯 JP.bak, ♻️ HK Auto, ♻️ JP Auto, ♻️ US Auto, ♻️ Auto, 🇭🇰 HK, 🇯🇵 JP, 🇺🇸 US, 🌐 Manual, Direct]}
 proxy-groups:
-  - {name: 🚀 Proxy, type: select, proxies: [🔯 HK.bak, 🔯 JP.bak, ♻️ HK Auto, ♻️ JP Auto, ♻️ US Auto, ♻️ Auto, 🇭🇰 HK, 🇯🇵 JP, 🇺🇲 US, 🌐 Manual, Direct]}
+  - {name: 🚀 Proxy, type: select, proxies: [🌐 Manual, 🔯 HK.bak, 🔯 JP.bak, ♻️ HK Auto, ♻️ JP Auto, ♻️ US Auto, ♻️ Auto, 🇭🇰 HK, 🇯🇵 JP, 🇺🇸 US, Direct]}
   - {name: 🌐 Manual, type: select, include-all: true}
   - {name: 📹 YouTube, <<: *pr}
   - {name: 🍀 Google, <<: *pr}
@@ -117,7 +117,7 @@ proxy-groups:
   - {name: 🐟 Final, <<: *pr}
   - {name: 🇭🇰 HK, type: select, include-all: true, filter: "(?i)港|hk|hongkong|hong kong"}
   - {name: 🇯🇵 JP, type: select, include-all: true, filter: "(?i)日|jp|japan"}
-  - {name: 🇺🇲 US, type: select, include-all: true, filter: "(?i)美|us|unitedstates|united states"}
+  - {name: 🇺🇸 US, type: select, include-all: true, filter: "(?i)美|us|unitedstates|united states"}
   - {name: 🔯 HK.bak, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$"}
   - {name: 🔯 JP.bak, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$" }
   - {name: ♻️ HK Auto, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$"}
