@@ -3,8 +3,14 @@
 
 
 # REPO: https://github.com/eslco/base/tree/main/rule/general
-# Update 2025.03.13
+# Update 2025.06.13
 
+# GitHub Copilot
+# DOMAIN-SUFFIX,github.com
+# DOMAIN-SUFFIX,api.github.com
+# DOMAIN-SUFFIX,api.githubcopilot.com
+# DOMAIN-SUFFIX,copilot-proxy.githubusercontent.com
+# DOMAIN-SUFFIX,raw.githubusercontent.com
 
 # Cursor IDE
 DOMAIN-SUFFIX,api.cursor.com
@@ -26,7 +32,6 @@ DOMAIN-SUFFIX,workos.com
 DOMAIN-SUFFIX,windsurf.com
 DOMAIN-SUFFIX,api.windsurf.com
 
-
 # Devin
 DOMAIN-SUFFIX,devin.ai
 DOMAIN-SUFFIX,api.devin.ai
@@ -44,6 +49,17 @@ DOMAIN-SUFFIX,api.openrouter.ai
 DOMAIN-SUFFIX,openrouter.com
 DOMAIN-SUFFIX,api.openrouter.com
 
+# Replit
+DOMAIN-SUFFIX,replit.com
+DOMAIN-SUFFIX,api.replit.com
+DOMAIN-SUFFIX,repl.it
+DOMAIN-SUFFIX,replitusercontent.com
+
+# CodeWhisperer (Amazon)
+DOMAIN-SUFFIX,codewhisperer.aws
+DOMAIN-SUFFIX,aws.amazon.com
+DOMAIN-SUFFIX,amazonwebservices.com
+
 # Trae
 DOMAIN-SUFFIX,trae.ai
 DOMAIN-SUFFIX,api.trae.ai
@@ -58,24 +74,6 @@ DOMAIN-SUFFIX,download.jetbrains.com
 DOMAIN-SUFFIX,resources.jetbrains.com
 DOMAIN-SUFFIX,grazie.ai
 DOMAIN-SUFFIX,grazie.aws.intellij.net
-
-# GitHub Copilot
-# DOMAIN-SUFFIX,github.com
-# DOMAIN-SUFFIX,api.github.com
-# DOMAIN-SUFFIX,api.githubcopilot.com
-# DOMAIN-SUFFIX,copilot-proxy.githubusercontent.com
-# DOMAIN-SUFFIX,raw.githubusercontent.com
-
-# Replit
-DOMAIN-SUFFIX,replit.com
-DOMAIN-SUFFIX,api.replit.com
-DOMAIN-SUFFIX,repl.it
-DOMAIN-SUFFIX,replitusercontent.com
-
-# CodeWhisperer (Amazon)
-DOMAIN-SUFFIX,codewhisperer.aws
-DOMAIN-SUFFIX,aws.amazon.com
-DOMAIN-SUFFIX,amazonwebservices.com
 
 # Tabnine
 DOMAIN-SUFFIX,tabnine.com
