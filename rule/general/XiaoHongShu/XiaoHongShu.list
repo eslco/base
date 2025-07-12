@@ -21,8 +21,5 @@ DOMAIN-SUFFIX,xiaohongshu.com
 DOMAIN-SUFFIX,xiaohongshu.com.cdn.cloudflare.net
 DOMAIN-SUFFIX,xiaohongshu.com.edge.bunnycdn.co
 
-Domain-SUFFIX,xiaohongshu.com.edge.net
-DOMAIN-SUFFIX,xiaohongshu.com.edge.net.s3-website.ap-southeast-1.amazonaws.com
-DOMAIN-SUFFIX,xiaohongshu.com.edge.net.s3-website.eu-central-1.amazonaws.com
-DOMAIN-SUFFIX,xiaohongshu.com.edge.net.s3-website.us-east-1.amazonaws.com
-DOMAIN-SUFFIX,xiaohongshu.com.edge.net.s3-website.us-west-1.amazonaws.com
+DOMAIN-SUFFIX,xiaohongshu.com.edge.net
+# DOMAIN-SUFFIX,xiaohongshu.com.edge.net.s3-website-us-east-1.amazonaws.com
