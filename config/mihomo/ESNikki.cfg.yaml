@@ -103,13 +103,13 @@ dns:
 # 锚点引用 Anthor: Mihomo
 # 注意锚点必须放在引用的上方， 也可以集中把锚点全部放.yaml顶部
 CN: &cn {type: select, proxies: [ Direct, 🚀 Proxy, 🔯 JP Back, 🔯 HK Back, 🇦🇺 AU, 🇬🇧 GB, 🇯🇵 JP, 🇹🇼 TW, 🇸🇬 SG, 🇺🇸 US, ☑️ Manual]}
-PR: &pr {type: select, proxies: [ 🚀 Proxy, 🔯 JP Back, 🔯 HK Back, ♻️ JP Auto, ♻️ HK Auto, 🇦🇺 AU, 🇬🇧 GB, 🇭🇰 HK, 🇯🇵 JP, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US, Direct]}
+PR: &pr {type: select, proxies: [ 🚀 Proxy, 🔯 JP Back, 🔯 HK Back, ♻️ JP Auto, ♻️ HK Auto, 🇦🇺 AU, 🇬🇧 GB, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US, Direct]} # 🇭🇰 HK, 🇯🇵 JP
 
 # 代理組 Group Policy
 # 注意: 如果有多個代理組, 必須保證每個代理組的名稱唯一, 否則將會無法切換
-# (Must be unique for each group, otherwise it will not work)
+# (Must be unique for each group, otherwise it will not work) 🇭🇰 HK, 🇯🇵 JP
 proxy-groups:
-  - {name: 🚀 Proxy, type: select, proxies: [ ☑️ Manual, 🔯 JP Back, 🔯 HK Back, ♻️ JP Auto, ♻️ HK Auto, 🇦🇺 AU, 🇬🇧 GB, 🇭🇰 HK, 🇯🇵 JP, 🇹🇼 TW, 🇸🇬 SG, 🇺🇸 US, Direct]}
+  - {name: 🚀 Proxy, type: select, proxies: [ ☑️ Manual, 🔯 JP Back, 🔯 HK Back, ♻️ JP Auto, ♻️ HK Auto, 🇦🇺 AU, 🇬🇧 GB, 🇹🇼 TW, 🇸🇬 SG, 🇺🇸 US, Direct]}
   - {name: ☑️ Manual, type: select, include-all: true}
   - {name: 💶 PayPal, <<: *pr} 
   - {name: 📹 YouTube, <<: *pr}
@@ -127,17 +127,18 @@ proxy-groups:
   - {name: 📱 WhatsApp, <<: *pr}
   - {name: 📞 WeChat, <<: *cn}
   - {name: 📕 XHS RedNote, <<: *cn}
-  - {name: 🔯 HK Back, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇭🇰|HK|港|(?i)Hong))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|🇯🇵|JP|日|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
-  - {name: 🔯 JP Back, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇯🇵|JP|日|(?i)Japan))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
-  - {name: ♻️ HK Auto, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇭🇰|HK|港|(?i)Hong))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|🇯🇵|JP|日|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
-  - {name: ♻️ JP Auto, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇯🇵|JP|日|(?i)Japan))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
-  - {name: 🇦🇺 AU, type: select, include-all: true, filter: "(?i)🇦🇺|AU|Australia|Aus|澳|悉尼|墨尔本|布里斯班|堪培拉|珀斯|阿德莱德|Darwin|Sydney|Melbourne|Brisbane|Canberra|Perth|Adelaide|DRW|SYD|MEL|BNE|CBR|PER|ADL"}
+  - {name: 🔯 HK Back, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇭🇰|HK|港|(?i)🇭🇰|HK|港|澳門|hong|Macau|MO|HKG|MFM|Central|Kowloon|觀塘|中環|銅鑼灣))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|🇯🇵|JP|日|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
+  - {name: 🔯 JP Back, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇯🇵|JP|日|(?i)🇰🇷|KR|韩|Korea|🇯🇵|JP|日|Japan|Tokyo|Osaka|NRT|KIX|NGO|CTS|FUK|东京|大阪|[^-]日|沪日))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
+  - {name: ♻️ HK Auto, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇭🇰|HK|港|(?i)🇭🇰|HK|港|澳門|hong|Macau|MO|HKG|MFM|Central|Kowloon|觀塘|中環|銅鑼灣))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|🇯🇵|JP|日|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
+  - {name: ♻️ JP Auto, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇯🇵|JP|日|(?i)🇰🇷|KR|韩|Korea|🇯🇵|JP|日|Japan|Tokyo|Osaka|NRT|KIX|NGO|CTS|FUK|东京|大阪|[^-]日|沪日))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
+  - {name: 🇦🇺 AU, type: select, include-all: true, filter: "🇦🇺|aus|Aus|澳|悉尼|墨尔本|布里斯班|堪培拉|珀斯|阿德莱德|Darwin|Sydney|Melbourne|Brisbane|Canberra|Perth|Adelaide|DRW|SYD|MEL|BNE|CBR|PER|ADL"}
   - {name: 🇬🇧 GB, type: select, include-all: true, filter: "(?i)🇬🇧|GB|UK|Britain|英国|伦敦|曼彻斯特|伯明翰|利兹|London|Manchester|Birmingham|Leeds|LON|MAN|BHX|LBA"}                            
-  - {name: 🇭🇰 HK, type: select, include-all: true, filter: "(?i)🇭🇰|HK|港|澳門|hong|Macau|MO|HKG|MFM|Central|Kowloon|觀塘|中環|銅鑼灣"}
-  - {name: 🇯🇵 JP, type: select, include-all: true, filter: "(?i)🇯🇵|JP|日本|Japan|Tokyo|Osaka|Nagoya|Sapporo|Fukuoka|NRT|KIX|NGO|CTS|FUK|川日|东京|大阪|名古屋|札幌|福冈|泉日|埼玉|沪日|深日|[^-]日"}
+  # - {name: 🇭🇰 HK, type: select, include-all: true, filter: "(?i)"}
+  # - {name: 🇯🇵 JP, type: select, include-all: true, filter: "(?i)🇰🇷|KR|韩|Korea|🇯🇵|JP|日|Japan|Tokyo|Osaka|Nagoya|Fukuoka|NRT|KIX|NGO|CTS|FUK|东京|大阪|神奈川|埼玉|[^-]日|沪日|深日"}
+  # - {name: 🇰🇷 KR, type: select, include-all: true, filter: "(?i)🇰🇷|KR|韩|Korea|KOR|Seoul|首尔|春川|釜山|大邱|仁川|光州|大田|韩|韓|ICN|PUS|TAE|INC|KWJ|CJJ"}
   - {name: 🇸🇬 SG, type: select, include-all: true, filter: "(?i)🇸🇬|SG|新加坡|坡|狮城|Singapore|Changi|Jurong|Woodlands|SIN|XSP|樟宜|裕廊|兀兰"}
   - {name: 🇹🇼 TW, type: select, include-all: true, filter: "(?i)🇹🇼|TW|taiwan|台|臺灣|新北|彰化|桃園|台中|高雄|Taipei|Taichung|Kaohsiung|TPE|KHH|TSA|RMQ"}
-  - {name: 🇺🇸 US, type: select, include-all: true, filter: "(?i)|US|美|united states|ccs|Newark|San Jose|Silicon Valley|Portland|Dallas|Phoenix|Las Vegas|Los Angeles|Seattle|Chicago|New York|Atlanta|ATL|BUF|DFW|EWR|IAD|LAX|MCI|MIA|ORD|PHX|PDX|SEA|SJC|JFK|LGA"}
+  - {name: 🇺🇸 US, type: select, include-all: true, filter: "🇺🇸|US|美|United States|San Jose|Portland|Dallas|Phoenix|Las Vegas|Angeles|Seattle|Chicago|New York|Atlanta|ATL|BUF|DFW|EWR|IAD|LAX|MCI|MIA|ORD|PHX|PDX|SEA|SJC|JFK|LGA"}
   - {name: ♻️ Auto, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(Direct)).)*$"}
   # - {name: 🐬 OneDrive, <<: *pr}
   - {name: 🎵 Spotify, <<: *pr}
