@@ -100,20 +100,20 @@ dns:
     - 223.6.6.6
     - 119.28.28.28
  
-# 出站策略
-# 注意锚点必须放在引用的上方，可以集中把锚点全部放yaml的顶部。
-CN: &cn {type: select, proxies: [Direct, 🇭🇰 HK, 🇹🇼 TW, 🇸🇬 SG, ☑️ Manual]}
-PR: &pr {type: select, proxies: [🚀 Proxy, ♻️ Auto, 🇦🇺 AU, 🇭🇰 HK, 🇯🇵 JP, 🇹🇼 TW, 🇸🇬 SG, 🇺🇸 US, ☑️ Manual, Direct]}
+# 锚点引用 Anthor: Mihomo
+# 注意锚点必须放在引用的上方， 也可以集中把锚点全部放.yaml顶部
+CN: &cn {type: select, proxies: [ Direct, 🚀 Proxy, 🔯 JP.bak, 🔯 HK.bak, 🇦🇺 AU, 🇬🇧 GB, 🇯🇵 JP, 🇹🇼 TW, 🇸🇬 SG, 🇺🇸 US, ☑️ Manual]}
+PR: &pr {type: select, proxies: [ 🚀 Proxy, 🔯 JP.bak, 🔯 HK.bak, ♻️ JP Auto, ♻️ HK Auto, 🇦🇺 AU, 🇬🇧 GB, 🇭🇰 HK, 🇯🇵 JP, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US, Direct]}
 
-# 代理組
+# 代理組 Group Policy
 # 注意: 如果有多個代理組, 必須保證每個代理組的名稱唯一, 否則將會無法切換
 # (Must be unique for each group, otherwise it will not work)
 proxy-groups:
-  - {name: 🚀 Proxy, type: select, proxies: [ ♻️ Auto, 🇦🇺 AU, 🇭🇰 HK, 🇯🇵 JP, 🇺🇸 US, 🇹🇼 TW, ☑️ Manual, Direct]}
+  - {name: 🚀 Proxy, type: select, proxies: [ ☑️ Manual, 🔯 JP.bak, 🔯 HK.bak, ♻️ JP Auto, ♻️ HK Auto, 🇦🇺 AU, 🇬🇧 GB, 🇭🇰 HK, 🇯🇵 JP, 🇹🇼 TW, 🇸🇬 SG, 🇺🇸 US, Direct]}
   - {name: ☑️ Manual, type: select, include-all: true}
   - {name: 💶 PayPal, <<: *pr} 
   - {name: 📹 YouTube, <<: *pr}
-  - {name: 📺 Bilibili, <<: *pr}
+  - {name: 📺 Bilibili, <<: *cn}
   - {name: 🍀 Google, <<: *pr}
   - {name: 🔯 AI, <<: *pr}
   - {name: ☕ DEX, <<: *pr}
@@ -125,10 +125,14 @@ proxy-groups:
   - {name: 🎥 ProxyMedia, <<: *pr}
   - {name: 🌐 Social+, <<: *pr}
   - {name: 📱 WhatsApp, <<: *pr}
-  - {name: 📞 WeChat, <<: *pr}
-  - {name: 📕 XHS RedNote, <<: *pr}
+  - {name: 📞 WeChat, <<: *cn}
+  - {name: 📕 XHS RedNote, <<: *cn}
+  - {name: 🔯 HK.bak, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇭🇰|HK|港|(?i)Hong))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|🇯🇵|JP|日|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
+  - {name: 🔯 JP.bak, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇯🇵|JP|日|(?i)Japan))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
+  - {name: ♻️ HK Auto, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇭🇰|HK|港|(?i)Hong))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|🇯🇵|JP|日|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
+  - {name: ♻️ JP Auto, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇯🇵|JP|日|(?i)Japan))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
   - {name: 🇦🇺 AU, type: select, include-all: true, filter: "(?i)🇦🇺|AU|Australia|Aus|澳|悉尼|墨尔本|布里斯班|堪培拉|珀斯|阿德莱德|Darwin|Sydney|Melbourne|Brisbane|Canberra|Perth|Adelaide|DRW|SYD|MEL|BNE|CBR|PER|ADL"}
-  # - {name: 🇬🇧 GB, type: select, include-all: true, filter: "(?i)🇬🇧|GB|UK|Britain|英国|伦敦|曼彻斯特|伯明翰|利兹|London|Manchester|Birmingham|Leeds|LON|MAN|BHX|LBA"}                            
+  - {name: 🇬🇧 GB, type: select, include-all: true, filter: "(?i)🇬🇧|GB|UK|Britain|英国|伦敦|曼彻斯特|伯明翰|利兹|London|Manchester|Birmingham|Leeds|LON|MAN|BHX|LBA"}                            
   - {name: 🇭🇰 HK, type: select, include-all: true, filter: "(?i)🇭🇰|HK|港|澳門|hong|Macau|MO|HKG|MFM|Central|Kowloon|觀塘|中環|銅鑼灣"}
   - {name: 🇯🇵 JP, type: select, include-all: true, filter: "(?i)🇯🇵|JP|日本|Japan|Tokyo|Osaka|Nagoya|Sapporo|Fukuoka|NRT|KIX|NGO|CTS|FUK|川日|东京|大阪|名古屋|札幌|福冈|泉日|埼玉|沪日|深日|[^-]日"}
   - {name: 🇸🇬 SG, type: select, include-all: true, filter: "(?i)🇸🇬|SG|新加坡|坡|狮城|Singapore|Changi|Jurong|Woodlands|SIN|XSP|樟宜|裕廊|兀兰"}
@@ -259,7 +263,7 @@ rule-providers:
   bilibili: { <<: *class, url: "https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/Ruleset/Bilibili.list"}
   bilibili_global: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/BiliBili/BiliBili.list"}
   # Emarket    
-    # Alibaba
+    # Alibaba 1688 Taobao Goofish
   alibaba_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/alibaba.mrs"}
   alibaba_list: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/Alibaba/Alibaba.list"}
     # Amazon
@@ -268,7 +272,7 @@ rule-providers:
   shopee_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/shopee.mrs"}
     # eBay
   ebay_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/ebay.mrs"}
-    # 京东
+    # JD
   jd_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/jd.mrs"}
   # IPTV
   iptv_global: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/general/IPTV_Global/IPTV9.list"}
