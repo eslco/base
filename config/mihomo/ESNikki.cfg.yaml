@@ -1,7 +1,7 @@
 # 注意规则在满足自己需求情况下，尽量做到精简，不要过度复杂，以免影响性能。
 # 机场订阅
 proxy-providers:
-  Airport1:
+  ESub:
     url: "https://sub.example.com/sub?token=XXX&clash"
     type: http
     interval: 86400
@@ -9,14 +9,14 @@ proxy-providers:
       enable: true
       url: https://www.apple.com/library/test/success.html
       interval: 300
+    proxy: direct
 
 # 节点信息
 proxies:
   - {name: Direct, type: direct}
   - {name: Reject, type: reject}
-
 # 全局配置 
-port: 20080
+port: 7890
 socks-port: 20087
 redir-port: 7892
 mixed-port: 7893
@@ -49,12 +49,12 @@ sniffer:
   enable: true
   sniff:
     HTTP:
-      ports: [80, 8080-8880]
+      ports: [80, 8080-8880, 2052, 2053, 2082, 2086, 2095]
       override-destination: true
     TLS:
-      ports: [443, 8443]
+      ports: [443, 8443, 853]
     QUIC:
-      ports: [443, 8443]
+      ports: [443, 8443, 2053, 2083, 2087, 2096]
   force-domain:
     - "+.v2ex.com"
   skip-domain:
@@ -87,12 +87,14 @@ dns:
     - "+.msftconnecttest.com"
     - "+.msftncsi.com"
     - "time.*.com"
+    - "*.localhost"
+    - "*.local"    
     - "*.lan"    
   default-nameserver:
     - 8.8.4.4
     - 1.0.0.1
   proxy-server-nameserver:
-    - https://public.dns.iij.jp/dns-query
+    - https://223.6.6.6/dns-query
   # namesever尽量用运营商提供的DNS
   nameserver:
     - 223.6.6.6
@@ -111,88 +113,124 @@ proxy-groups:
   - {name: ☑️ Manual, type: select, include-all: true}
   - {name: 💶 PayPal, <<: *pr} 
   - {name: 📹 YouTube, <<: *pr}
-  - {name: 📺 Bilibili, <<: *cn}
+  - {name: 📺 Bilibili, <<: *pr}
   - {name: 🍀 Google, <<: *pr}
   - {name: 🔯 AI, <<: *pr}
   - {name: ☕ DEX, <<: *pr}
   # - {name: 👨🏿‍💻 GitHub, <<: *pr}
   - {name: 📺 IPTV Global, <<: *pr}
-  - {name: 🎵 Tiktok, <<: *pr}
+  - {name: 🎵 TikTok, <<: *pr}
+  - {name: 📊 EMarket, <<: *pr}
   - {name: ☎️ Telegram, <<: *pr}
   - {name: 🎥 ProxyMedia, <<: *pr}
   - {name: 🌐 Social+, <<: *pr}
-  - {name: 📕 XHS RedNote, <<: *cn}
-  - {name: Ⓜ️ Microsoft, <<: *pr} 
-  - {name: 🍎 Apple, type: select, proxies: [Direct, 🚀 Proxy]}
-  - {name: 🎯 DirectN, type: select, proxies: [Direct, ☑️ Manual, 🚀 Proxy]}
-  - {name: 🐟 Final, <<: *pr}
-  # - {name: 🐬 OneDrive, <<: *pr}
-  - {name: 🎵 Spotify, <<: *pr}
-  # - {name: ✈️ Speedtest, <<: *pr}
   - {name: 📱 WhatsApp, <<: *pr}
-
+  - {name: 📞 WeChat, <<: *pr}
+  - {name: 📕 XHS RedNote, <<: *pr}
   - {name: 🇦🇺 AU, type: select, include-all: true, filter: "(?i)🇦🇺|AU|Australia|Aus|澳|悉尼|墨尔本|布里斯班|堪培拉|珀斯|阿德莱德|Darwin|Sydney|Melbourne|Brisbane|Canberra|Perth|Adelaide|DRW|SYD|MEL|BNE|CBR|PER|ADL"}
   # - {name: 🇬🇧 GB, type: select, include-all: true, filter: "(?i)🇬🇧|GB|UK|Britain|英国|伦敦|曼彻斯特|伯明翰|利兹|London|Manchester|Birmingham|Leeds|LON|MAN|BHX|LBA"}                            
   - {name: 🇭🇰 HK, type: select, include-all: true, filter: "(?i)🇭🇰|HK|港|澳門|hong|Macau|MO|HKG|MFM|Central|Kowloon|觀塘|中環|銅鑼灣"}
   - {name: 🇯🇵 JP, type: select, include-all: true, filter: "(?i)🇯🇵|JP|日本|Japan|Tokyo|Osaka|Nagoya|Sapporo|Fukuoka|NRT|KIX|NGO|CTS|FUK|川日|东京|大阪|名古屋|札幌|福冈|泉日|埼玉|沪日|深日|[^-]日"}
   - {name: 🇸🇬 SG, type: select, include-all: true, filter: "(?i)🇸🇬|SG|新加坡|坡|狮城|Singapore|Changi|Jurong|Woodlands|SIN|XSP|樟宜|裕廊|兀兰"}
   - {name: 🇹🇼 TW, type: select, include-all: true, filter: "(?i)🇹🇼|TW|taiwan|台|臺灣|新北|彰化|桃園|台中|高雄|Taipei|Taichung|Kaohsiung|TPE|KHH|TSA|RMQ"}
-  - {name: 🇺🇸 US, type: select, include-all: true, filter: "(?i)🇺🇸|US|united states|美|ccs|Newark|San Jose|Silicon Valley|Portland|Dallas|Phoenix|Las Vegas|Los Angeles|Seattle|Chicago|New York|Atlanta|ATL|BUF|DFW|EWR|IAD|LAX|MCI|MIA|ORD|PHX|PDX|SEA|SJC|JFK|LGA|美國|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|纽约|亚特兰大"}
+  - {name: 🇺🇸 US, type: select, include-all: true, filter: "(?i)🇺🇸|US|美|united states|ccs|Newark|San Jose|Silicon Valley|Portland|Dallas|Phoenix|Las Vegas|Los Angeles|Seattle|Chicago|New York|Atlanta|ATL|BUF|DFW|EWR|IAD|LAX|MCI|MIA|ORD|PHX|PDX|SEA|SJC|JFK|LGA"}
   - {name: ♻️ Auto, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(Direct)).)*$"}
-
-  # - {name: ♻️ US Auto, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(美|US|(?i)States|America))^((?!(港|台|日|韩|新)).)*$"}
-
+  # - {name: 🐬 OneDrive, <<: *pr}
+  - {name: 🎵 Spotify, <<: *pr}
+  # - {name: ✈️ Speedtest, <<: *pr}
+  - {name: Ⓜ️ Microsoft, <<: *pr}
+  - {name: 🍎 Apple, type: select, proxies: [Direct, 🚀 Proxy, ☑️ Manual]}
+  # - {name: 🎯 DirectN, type: select, proxies: [Direct, 🚀 Proxy]}
+  - {name: 🐟 Final, <<: *pr}
 # 規則匹配
 # 此規則尚未作DNS防泄漏處理，because of the (弊大於利) CON is more than benefit
 rules:
-  - DOMAIN-SUFFIX,aesin.eu,🚀 Proxy 
-  - RULE-SET,xhs_rednote,📕 XHS RedNote
-  - RULE-SET,private_domain,Direct
+  - DOMAIN-SUFFIX,aesin.eu,🚀 Proxy
+  # PayPal
+  - RULE-SET,paypal_domain,💶 PayPal
+  - RULE-SET,speedtest_domain,🚀 Proxy  
+  # ADBlock
+  - RULE-SET,ttblock,Reject
+  - RULE-SET,httpdns_adblock,Reject
+  - RULE-SET,twitch_reject,Reject
   - RULE-SET,apple_domain,🍎 Apple
-  - RULE-SET,ttdirect,🎯 DirectN
+  # Talkatone
+  - RULE-SET,ttdirect,Direct  
   - RULE-SET,ttproxy,🔯 AI
+  # DEX
   - RULE-SET,dex_domain,☕ DEX
-  - RULE-SET,speedtest_domain,🚀 Proxy
+  # AI
+  - RULE-SET,aide,🔯 AI
+  - RULE-SET,ai,🔯 AI
+  - RULE-SET,ai_domain,🔯 AI
+
+  # EMarket  
+  # Amazon Alibaba Ebay Shopee JD
+  - RULE-SET,alibaba_list,📊 EMarket
+  - RULE-SET,alibaba_domain,📊 EMarket
+  - RULE-SET,amazon_domain,📊 EMarket
+  - RULE-SET,shopee_domain,📊 EMarket
+  - RULE-SET,ebay_domain,📊 EMarket
+  - RULE-SET,jd_domain,📊 EMarket
+
+  # Bili
+  - RULE-SET,bilibili,📺 Bilibili
+  - RULE-SET,bilibili_global,📺 Bilibili
   # ProxyMedia
-  - RULE-SET,tiktok_domain,🎵 Tiktok
-  # Social Apps
-  - RULE-SET,wechat_domain,🎯 DirectN
+  - RULE-SET,netflix_domain,🎥 ProxyMedia
+  # IM Apps
+  - RULE-SET,wechat_domain,📞 WeChat
   - RULE-SET,whatsapp_list,📱 WhatsApp
+  - RULE-SET,whatsapp_domain,📱 WhatsApp
+  - RULE-SET,rakuten_domain,📱 WhatsApp
+  - RULE-SET,line_domain,📱 WhatsApp
+  - RULE-SET,telegram_domain,☎️ Telegram
+  # LinkedIn
+  - RULE-SET,linkedin,🚀 Proxy
+  - RULE-SET,linkedin_cn,Direct
+  # Social+
   - RULE-SET,facebook_domain,🌐 Social+
   - RULE-SET,instagram_domain,🌐 Social+
   - RULE-SET,threads_domain,🌐 Social+
   - RULE-SET,twitter_domain,🌐 Social+
-  - RULE-SET,rakuten_domain,🌐 Social+
-  - RULE-SET,line_domain,🌐 Social+
+
+  # Spotify
+  - RULE-SET,spotify_domain,🎵 Spotify
+  # IPTV
+  - RULE-SET,iptv_global,📺 IPTV Global
+  - RULE-SET,iptv_cn,Direct
+  - RULE-SET,iptv_tw,🇹🇼 TW
+  # TikTok
+  - RULE-SET,tiktok_list,🎵 TikTok
+  - RULE-SET,tiktok_domain,🎵 TikTok  
+  # Twitch
+  - RULE-SET,twitch_proxy,🚀 Proxy
+  - RULE-SET,twitch_direct,Direct
   # Games
   - RULE-SET,category_games,🚀 Proxy
-  - RULE-SET,category_games_cn,🎯 DirectN
-  # Social+
-  - RULE-SET,bilibili,📺 Bilibili
-  - RULE-SET,bilibili_global,📺 Bilibili
-  - RULE-SET,ai_domain,🔯 AI
-  - RULE-SET,aide_domain,🔯 AI
+  - RULE-SET,category_games_cn,Direct
+  # Apps
   - RULE-SET,github_domain,🚀 Proxy
   - RULE-SET,youtube_domain,📹 YouTube
-  - DOMAIN-SUFFIX,bilibili.com,📺 Bilibili
-  
   - RULE-SET,google_domain,🍀 Google
   - RULE-SET,onedrive_domain,Ⓜ️ Microsoft
   - RULE-SET,microsoft_domain,Ⓜ️ Microsoft
-  - RULE-SET,tiktok_domain,🌐 Social+
 # - RULE-SET,speedtest_domain,✈️ Speedtest
-  - RULE-SET,telegram_domain,☎️ Telegram
-  - RULE-SET,netflix_domain,🎥 ProxyMedia
-  - RULE-SET,paypal_domain,💶 PayPal
+
+  # XHS RedNote
+  - RULE-SET,xhs_rednote,📕 XHS RedNote
+  - RULE-SET,rednote,📕 XHS RedNote
+  # Private
+  - RULE-SET,private_domain,Direct
+  # GFW
   - RULE-SET,gfw_domain,🚀 Proxy
   - RULE-SET,geolocation-!cn,🚀 Proxy
-  - RULE-SET,cn_domain,🎯 DirectN
+  - RULE-SET,cn_domain,Direct
   - RULE-SET,google_ip,🍀 Google,no-resolve
   - RULE-SET,netflix_ip,🎥 ProxyMedia,no-resolve
   - RULE-SET,telegram_ip,☎️ Telegram,no-resolve
-  - RULE-SET,cn_ip,🎯 DirectN
+  - RULE-SET,cn_ip,Direct
   - MATCH,🐟 Final
-
 
 # 规则集
 rule-anchor:
@@ -202,47 +240,71 @@ rule-anchor:
 rule-providers: 
 # ES Rules.ymal
   # ADBlock
-  ttblock: { <<: *class, url: "https://raw.githubusercontent.com/eslco/base/main/rule/Clash/talkatone/ttblock.list"}
-  httpdns_adblock: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/category-httpdns-cn%40ads.mrs.txt?raw=true"}
-  
-  # AI 
+  ttblock: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/Talkatone/ttblock.list"}
+  twitch_reject: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Surge/Twitch/TR.list"}
+  httpdns_adblock: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-httpdns-cn.mrs"}
+  # Whatsapp
+  whatsapp_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/whatsapp.mrs"}
+  whatsapp_list: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/Whatsapp/Whatsapp.list"}
+  # IM Apps
+  rakuten_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/rakuten.mrs"}
+  line_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/line.mrs"}
+  # WeChat
+  wechat_domain: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/WeChat/WeChat.list"}
+  # AI
   aide: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/general/AIDE.list"}
   ai: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/general/AI.list"}
 
-  #Bili 
-  bilibili: { <<: *class, url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Bilibili.list"}
-  bilibili_global: { <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BiliBili/BiliBili.list"}
-  # XHS RedNote
-  xhs_rednote: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/general/XiaoHongShu/XiaoHongShu.list"}
+  #Bilibili
+  bilibili: { <<: *class, url: "https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/Ruleset/Bilibili.list"}
+  bilibili_global: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/BiliBili/BiliBili.list"}
+  # Emarket    
+    # Alibaba
+  alibaba_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/alibaba.mrs"}
+  alibaba_list: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/Alibaba/Alibaba.list"}
+    # Amazon
+  amazon_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/amazon.mrs"}
+    # Shopee
+  shopee_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/shopee.mrs"}
+    # eBay
+  ebay_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/ebay.mrs"}
+    # 京东
+  jd_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/jd.mrs"}
+  # IPTV
+  iptv_global: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/general/IPTV_Global/IPTV9.list"}
+  iptv_tw: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/general/IPTV_Global/IPTV9_TW.list"}
+  iptv_cn: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/IPTVMainland/IPTVMainland.list"}
+  # LinkedIn
+  linkedin: { <<: *class, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/linkedin.mrs"}
+  linkedin_cn: { <<: *class, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/linkedin_cn.mrs"}
   # Talkatone
   ttdirect: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/Talkatone/ttdirect.list"}
   ttproxy: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/Talkatone/ttproxy.list"}
+  # TikTok
+  tiktok_list: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/TikTok/TikTok.list"}
   # DEX
   dex_domain: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/DEX/DEX.list"}
-  # Whatsapp
-  whatsapp_list: { <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Whatsapp/Whatsapp.list"}
-  # WeChat
-  wechat_domain: { <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/WeChat/WeChat.list"}
-  # Alibaba
-  alibaba_list: { <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Alibaba/Alibaba_Domain.list"}
-  alibaba: { <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Alibaba/Alibaba.list"}
-  # Social Apps
+# Games
+  category_games_cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-games-cn.mrs"}
+  category_games: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-games-!cn.mrs"}
+  # Social+ Apps
   twitter_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/twitter.mrs"}
-  rakuten_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/rakuten.mrs"}
-  line_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/line.mrs"}
   facebook_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/facebook.mrs"}
   instagram_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/instagram.mrs"}
   threads_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/threads.mrs"}
-  # spotify
+  # Spotify
   spotify_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/spotify.mrs"}
-  # Games
-  category_games_cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-games-cn.mrs"}
-  category_games: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-games-!cn.mrs"}
-# ES Rules.ymal
-# qcy_nikki.config.yaml 
+  # Twitch
+  twitch_direct : { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Surge/Twitch/TD.list"}
+  twitch_proxy: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Surge/Twitch/TP.list"}
+  # XHS RedNote
+  rednote: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/general/XiaoHongShu/XiaoHongShu.list"}
+  xhs_rednote: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/XiaoHongShu/XiaoHongShu.list"}
+# ES Rules.yaml
+
+# qcy_nikki.config.yaml
   private_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/private.mrs"}
   # proxylite: { <<: *class, url: "https://raw.githubusercontent.com/qichiyuhub/rule/main/proxy.list"}
-  
   ai_domain: {  <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-ai-!cn.mrs"}
   youtube_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/youtube.mrs"}
   google_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/google.mrs"}
@@ -254,7 +316,7 @@ rule-providers:
   microsoft_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/microsoft.mrs"}
   apple_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/apple-cn.mrs"}
   speedtest_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/ookla-speedtest.mrs"} 
-  tiktok_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/tiktok.mrs"}
+  tiktok_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/tiktok.list"}
   gfw_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/gfw.mrs"}
   geolocation-!cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/geolocation-!cn.mrs"}
   cn_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/cn.mrs"}
@@ -263,18 +325,3 @@ rule-providers:
   google_ip: { <<: *ip, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geoip/google.mrs"}
   telegram_ip: { <<: *ip, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geoip/telegram.mrs"}
   netflix_ip: { <<: *ip, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geoip/netflix.mrs"}
-
-# ✅ proxy-providers、proxies、proxy-groups、rules、rule-providers 等主要部分结构完整
-# ✅ 代理组引用的锚点(pr, dtcn)均已在顶部定义
-# ✅ 规则引用的 rule-providers 名称与下方定义一致
-# ✅ 端口、面板、DNS、tun、sniffer 等全局配置项齐全
-# ✅ 规则顺序合理，覆盖 Ads、PayPal、AI、IPTV、社交、游戏、GFW、GeoIP 等常见场景
-# ✅ 代理组名称唯一，未发现重复
-# ✅ 规则组引用的代理组均已在 proxy-groups 定义（如有需要可取消注释 GitHub、Tiktok 等组）
-# ✅ rule-anchor 锚点定义合理，rule-providers 继承无误
-# ✅ fake-ip-filter、nameserver、proxy-server-nameserver 配置合理
-# ✅ 规则引用的 rule-providers 均已定义，未发现缺失
-
-# ⚠️ 提示：如需启用 GitHub、Tiktok、Speedtest 等代理组或规则，请取消相关注释并确保 rule-providers 已定义
-# ⚠️ 提示：如需自定义规则顺序或策略组，请根据实际需求调整
-# ⚠️ 提示：如需进一步精简规则，可合并部分规则组或优化规则顺序
