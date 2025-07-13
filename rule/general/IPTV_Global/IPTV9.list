@@ -1,8 +1,8 @@
 # T.me/IPTV_9999999
 # https://t.me/IPTV_9999999
-# https://raw.githubusercontent.com/eslco/base/main/rule/general/IPTV_Global/IPTV_9999999.list
-# https://github.com/eslco/base/raw/main/rule/general/IPTV_Global/IPTV_9999999.list
-# Path: rule/general/IPTV_Global/IPTV_9999999.list
+# https://raw.githubusercontent.com/eslco/base/main/rule/general/IPTV_Global/IPTV9.list
+# https://github.com/eslco/base/raw/main/rule/general/IPTV_Global/IPTV9.list
+# Path: rule/general/IPTV_Global/IPTV9.list
 
 # US
 DOMAIN-SUFFIX,smart.pendy.dpdns.org
