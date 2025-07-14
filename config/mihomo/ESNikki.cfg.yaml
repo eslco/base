@@ -190,6 +190,8 @@ rules:
   - RULE-SET,whatsapp_domain,📱 WhatsApp
   - RULE-SET,rakuten_domain,📱 WhatsApp
   - RULE-SET,line_domain,📱 WhatsApp
+  - RULE-SET,signal_domain,🚀 Proxy
+  - RULE-SET,signal_list,🚀 Proxy
   - RULE-SET,telegram_domain,☎️ Telegram
   # LinkedIn
   - RULE-SET,linkedin,🚀 Proxy
@@ -253,6 +255,8 @@ rule-providers:
   whatsapp_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/whatsapp.mrs"}
   whatsapp_list: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/Whatsapp/Whatsapp.list"}
   # IM Apps
+  signal_list: { <<: *class, url: "https://raw.githubusercontent.com/eslco/base/main/rule/general/signal/signal.list"}
+  signal_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/signal.mrs"}
   rakuten_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/rakuten.mrs"}
   line_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/line.mrs"}
   # WeChat
