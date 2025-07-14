@@ -16,10 +16,19 @@ DOMAIN-SUFFIX,fengkongcloud.com
 DOMAIN-SUFFIX,fe-video-qc.xhscdn.com
 DOMAIN-SUFFIX,xhscdn.com
 DOMAIN-SUFFIX,xhscdn.net
-DOMAIN-SUFFIX,xiaohongshu.com
 
-DOMAIN-SUFFIX,xiaohongshu.com.cdn.cloudflare.net
-DOMAIN-SUFFIX,xiaohongshu.com.edge.bunnycdn.co
+DOMAIN-SUFFIX,xiaohongshu.com
+DOMAIN-SUFFIX,xhslink.com
+
+DOMAIN-SUFFIX,xhsimg.com
+DOMAIN-SUFFIX,xhsimg.net
+
 
 DOMAIN-SUFFIX,xiaohongshu.com.edge.net
-# DOMAIN-SUFFIX,xiaohongshu.com.edge.net.s3-website-us-east-1.amazonaws.com
+
+DOMAIN-SUFFIX,xhslink.com.edgeone.net
+DOMAIN-SUFFIX,xhs.com.edgeone.net.cn
+
+DOMAIN-SUFFIX,xiaohongshu.com.edge.bunnycdn.com
+DOMAIN-SUFFIX,xiaohongshu.com.cdn.cloudflare.net
+DOMAIN-SUFFIX,xiaohongshu.com.edge.bunnycdn.co
