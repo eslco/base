@@ -15,7 +15,7 @@ proxy-providers:
 proxies:
   - {name: Direct, type: direct}
   - {name: Reject, type: reject}
-# 全局配置 
+# General Settings
 port: 7890
 socks-port: 20087
 redir-port: 7892
@@ -44,7 +44,8 @@ external-ui: "/etc/nikki/run"
 external-ui-name: zashboard
 external-ui-url: "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/gh-pages.zip"
 
-# 嗅探
+# Sniffer Module
+# 注意: Sniffer 模块，开启后会增加 CPU 和内存的使用
 sniffer:
   enable: true
   sniff:
@@ -62,7 +63,7 @@ sniffer:
     - "+.msftconnecttest.com"
     - "+.msftncsi.com"
 
-# 入站  
+# Outbound
 tun:
   enable: true
   # system/gvisor/mixed
@@ -72,7 +73,7 @@ tun:
   auto-redirect: true
   auto-detect-interface: true
 
-# DNS模块
+# DNS Module
 dns:
   enable: true
   listen: 0.0.0.0:1053
@@ -117,7 +118,7 @@ proxy-groups:
   - {name: 🍀 Google, <<: *pr}
   - {name: 🔯 AI, <<: *pr}
   - {name: ☕ DEX, <<: *pr}
-  # - {name: 👨🏿‍💻 GitHub, <<: *pr}
+  - {name: 👨🏿‍💻 GitHub, <<: *pr}
   - {name: 📺 IPTV Global, <<: *pr}
   - {name: 🎵 TikTok, <<: *pr}
   - {name: 📊 EMarket, <<: *pr}
@@ -215,7 +216,7 @@ rules:
   - RULE-SET,category_games,🚀 Proxy
   - RULE-SET,category_games_cn,Direct
   # Apps
-  - RULE-SET,github_domain,🚀 Proxy
+  - RULE-SET,github_domain,👨🏿‍💻 GitHub
   - RULE-SET,youtube_domain,📹 YouTube
   - RULE-SET,google_domain,🍀 Google
   - RULE-SET,onedrive_domain,Ⓜ️ Microsoft
