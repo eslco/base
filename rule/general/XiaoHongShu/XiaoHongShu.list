@@ -22,13 +22,13 @@ DOMAIN-SUFFIX,xhslink.com
 
 DOMAIN-SUFFIX,xhsimg.com
 DOMAIN-SUFFIX,xhsimg.net
+DOMAIN-SUFFIX,xiaohongshu.com
+DOMAIN-SUFFIX,crash.xiaohongshu.com
+DOMAIN-SUFFIX,api.xiaohongshu.com
 
 
-DOMAIN-SUFFIX,xiaohongshu.com.edge.net
+DOMAIN-SUFFIX,xhsci-10008268.cos.ap-shanghai.myqcloud.com
 
-DOMAIN-SUFFIX,xhslink.com.edgeone.net
-DOMAIN-SUFFIX,xhs.com.edgeone.net.cn
-
-DOMAIN-SUFFIX,xiaohongshu.com.edge.bunnycdn.com
-DOMAIN-SUFFIX,xiaohongshu.com.cdn.cloudflare.net
+DOMAIN-KEYWORD,xhscdn
+DOMAIN-KEYWORD,xhsci
 DOMAIN-SUFFIX,xiaohongshu.com.edge.bunnycdn.co
