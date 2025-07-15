@@ -214,9 +214,13 @@ rules:
   # Twitch
   - RULE-SET,twitch_proxy,🚀 Proxy
   - RULE-SET,twitch_direct,Direct
-  # Games
-  - RULE-SET,category_games,🚀 Proxy
+  # Download Games
   - RULE-SET,category_games_cn,Direct
+  - RULE-SET,category-game-platforms-download-cn,Direct
+  - RULE-SET,category_games,🚀 Proxy
+  - RULE-SET,category--android-app,🚀 Proxy  
+  - RULE-SET,category-game-platforms-download,🚀 Proxy
+
   # Apps
   - RULE-SET,github_domain,👨🏿‍💻 GitHub
   - RULE-SET,youtube_domain,📹 YouTube
@@ -246,7 +250,9 @@ rule-anchor:
   domain: &domain {type: http, interval: 86400, behavior: domain, format: mrs}
   class: &class {type: http, interval: 86400, behavior: classical, format: text}
 rule-providers: 
-# ES Rules.ymal
+# ES Rules.ymal  
+  # DEX
+  dex_domain: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/DEX/DEX.list"}
   # ADBlock
   ttblock: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/Talkatone/ttblock.list"}
   twitch_reject: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Surge/Twitch/TR.list"}
@@ -255,8 +261,10 @@ rule-providers:
   whatsapp_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/whatsapp.mrs"}
   whatsapp_list: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/Whatsapp/Whatsapp.list"}
   # IM Apps
-  signal_list: { <<: *class, url: "https://raw.githubusercontent.com/eslco/base/main/rule/general/signal/signal.list"}
+  signal_list: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/general/signal/signal.list"}
   signal_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/signal.mrs"}
+  snapchat_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/snapchat.list"}
+  messenger_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/messenger.mrs"}
   rakuten_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/rakuten.mrs"}
   line_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/line.mrs"}
   # WeChat
@@ -292,11 +300,12 @@ rule-providers:
   ttproxy: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/Talkatone/ttproxy.list"}
   # TikTok
   tiktok_list: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/TikTok/TikTok.list"}
-  # DEX
-  dex_domain: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/DEX/DEX.list"}
-# Games
+# Downloads Games
   category_games_cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-games-cn.mrs"}
   category_games: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-games-!cn.mrs"}
+  category-game-platforms-download: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-game-platforms-download.mrs"}
+  category-game-platforms-download-cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/category-game-platforms-download@cn.mrs"}
+  category--android-app: { *domain, url <<:"https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/category-android-app-download.mrs"}
   # Social+ Apps
   twitter_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/twitter.mrs"}
   facebook_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/facebook.mrs"}
@@ -307,6 +316,7 @@ rule-providers:
   # Twitch
   twitch_direct : { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Surge/Twitch/TD.list"}
   twitch_proxy: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Surge/Twitch/TP.list"}
+  twitch_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/twitch.mrs"}
   # XHS RedNote
   rednote: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/general/XiaoHongShu/XiaoHongShu.list"}
   xhs_rednote: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/XiaoHongShu/XiaoHongShu.list"}

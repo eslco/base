@@ -17,16 +17,22 @@ DOMAIN-SUFFIX,fe-video-qc.xhscdn.com
 DOMAIN-SUFFIX,xhscdn.com
 DOMAIN-SUFFIX,xhscdn.net
 
-DOMAIN-SUFFIX,xiaohongshu.com
-DOMAIN-SUFFIX,xhslink.com
-
 DOMAIN-SUFFIX,xhsimg.com
 DOMAIN-SUFFIX,xhsimg.net
+
+DOMAIN,as.xiaohongshu.com
+DOMAIN,fe.xiaohongshu.com
+DOMAIN,apm-fe.xiaohongshu.com
+DOMAIN,crash.xiaohongshu.com
+DOMAIN,picasso-static.xiaohongshu.com
+DOMAIN,creator.xiaohongshu.com
+DOMAIN,api.xiaohongshu.com
 DOMAIN-SUFFIX,xiaohongshu.com
-DOMAIN-SUFFIX,crash.xiaohongshu.com
-DOMAIN-SUFFIX,api.xiaohongshu.com
 
+DOMAIN,creator.xhslink.com
+DOMAIN-SUFFIX,xhslink.com
 
+# CDN
 DOMAIN-SUFFIX,xhsci-10008268.cos.ap-shanghai.myqcloud.com
 
 DOMAIN-KEYWORD,xhscdn
