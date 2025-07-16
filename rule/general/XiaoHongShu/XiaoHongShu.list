@@ -1,6 +1,6 @@
 # NAME: XiaoHongShu.list
 
-# URL: https://raw.githubusercontent.com/eslco/base/main/rule/general/XiaoHongShu/XiaoHongShu.list
+# URL: https://github.com/eslco/base/main/rule/general/XiaoHongShu/XiaoHongShu.list
 # CDN URL: https://raw.gitmirror.com/eslco/base/main/rule/general/XiaoHongShu/XiaoHongShu.list
 
 # Temp Repo: https://github.com/blackmatrix7/ios_rule_script/raw//master/rule/Clash/XiaoHongShu/XiaoHongShu.list
@@ -9,17 +9,17 @@
 
 
 
-# UPDATED: 2025-03-11 16:17:40
+# UPDATED: 2025-07-15 16:17:40
 # DOMAIN-SUFFIX: 4
 # TOTAL: 4
-DOMAIN-SUFFIX,fengkongcloud.com
-DOMAIN-SUFFIX,fe-video-qc.xhscdn.com
-DOMAIN-SUFFIX,xhscdn.com
-DOMAIN-SUFFIX,xhscdn.net
 
-DOMAIN-SUFFIX,xhsimg.com
-DOMAIN-SUFFIX,xhsimg.net
 
+DOMAIN,xhsci-hk-cos.xiaohongshu.net
+DOMAIN-SUFFIX,xiaohongshu.net
+
+hcdnw.v6.xhs.c.cdnhwc2.com
+# DOMAIN-SUFFIX,xhscdn.cn
+DOMAIN,spider-tracker.xiaohongshu.com
 DOMAIN,as.xiaohongshu.com
 DOMAIN,fe.xiaohongshu.com
 DOMAIN,apm-fe.xiaohongshu.com
@@ -27,14 +27,28 @@ DOMAIN,crash.xiaohongshu.com
 DOMAIN,picasso-static.xiaohongshu.com
 DOMAIN,creator.xiaohongshu.com
 DOMAIN,api.xiaohongshu.com
-DOMAIN-SUFFIX,xiaohongshu.com
-
 DOMAIN,creator.xhslink.com
 DOMAIN-SUFFIX,xhslink.com
+DOMAIN-SUFFIX,xiaohongshu.com
 
-# CDN
+# DOMAIN-SUFFIX,xhscdn.me
+# DOMAIN-SUFFIX,xhscdn.net
+# xhsci-hk-cos.xiaohongshu.net
+
+# XHS CDN
+DOMAIN-SUFFIX,xhs.c.cdnhwc2.com
+DOMAIN-SUFFIX,hcdnw.v6.xhs.c.cdnhwc2.com
 DOMAIN-SUFFIX,xhsci-10008268.cos.ap-shanghai.myqcloud.com
-
+DOMAIN-SUFFIX,lb-ohtjikul-jmn2p8ec53b49d7r.clb.ap-shanghai.tencentclb.com
+DOMAIN,picasso-static.xiaohongshu.com.w.kunluncan.com
+DOMAIN,spider-tracker.xiaohongshu.com.w.kunluncan.com
+DOMAIN,fe-video-qc.xhscdn.com
+DOMAIN,sns-na-i8.xhscdn.com
+DOMAIN,live-source-play-hw.xhscdn.com
+DOMAIN,search.xhscdn.com
+DOMAIN-SUFFIX,fengkongcloud.com
+DOMAIN-SUFFIX,xhscdn.com
 DOMAIN-KEYWORD,xhscdn
 DOMAIN-KEYWORD,xhsci
+
 DOMAIN-SUFFIX,xiaohongshu.com.edge.bunnycdn.co
