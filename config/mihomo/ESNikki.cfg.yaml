@@ -271,7 +271,7 @@ rule-providers:
   # IM Apps
   signal_list: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/general/signal/signal.list"}
   signal_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/signal.mrs"}
-  snapchat_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/snapchat.list"}
+# snapchat_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/snapchat.mrs"}
   messenger_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/messenger.mrs"}
   rakuten_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/rakuten.mrs"}
   line_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/line.mrs"}
