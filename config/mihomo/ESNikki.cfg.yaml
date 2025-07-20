@@ -104,7 +104,8 @@ dns:
 # 锚点引用 Anthor: Mihomo
 # 注意锚点必须放在引用的上方， 也可以集中把锚点全部放.yaml顶部
 CN: &cn {type: select, proxies: [ Direct, 🚀 Proxy, 🔯 JP Back, 🔯 HK Back, 🇦🇺 AU, 🇬🇧 GB, 🇹🇼 TW, 🇸🇬 SG, 🇺🇸 US, ☑️ Manual]}
-PR: &pr {type: select, proxies: [ 🚀 Proxy, 🔯 JP Back, 🔯 HK Back, ♻️ JP Auto, ♻️ HK Auto, 🇦🇺 AU, 🇬🇧 GB, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US, Direct]} # 🇭🇰 HK, 🇯🇵 JP
+PR: &pr {type: select, proxies: [ ☑️ Manual, 🚀 Proxy, 🔯 JP Back, 🔯 HK Back, ♻️ JP Auto, ♻️ HK Auto, 🇦🇺 AU, 🇬🇧 GB, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US, Direct]} # 🇭🇰 HK, 🇯🇵 JP
+TR: &dtcn {type: select, proxies: [ ☑️ Manual, 🚀 Proxy, Direct]}
 
 # 代理組 Group Policy
 # 注意: 如果有多個代理組, 必須保證每個代理組的名稱唯一, 否則將會無法切換
@@ -145,8 +146,8 @@ proxy-groups:
   - {name: 🎵 Spotify, <<: *pr}
   # - {name: ✈️ Speedtest, <<: *pr}
   - {name: Ⓜ️ Microsoft, <<: *pr}
-  - {name: 🍎 Apple, type: select, proxies: [Direct, 🚀 Proxy, ☑️ Manual]}
-  # - {name: 🎯 DirectN, type: select, proxies: [Direct, 🚀 Proxy]}
+  - {name: 🍎 Apple,<<: *dtcn }
+  - {name: 🎯 DirectN, type: select, proxies: [Direct, 🚀 Proxy, ☑️ Manual]}
   - {name: 🐟 Final, <<: *pr}
 # 規則匹配
 # 此規則尚未作DNS防泄漏處理，because of the (弊大於利) CON is more than benefit
@@ -186,6 +187,7 @@ rules:
   - RULE-SET,netflix_domain,🎥 ProxyMedia
   # IM Apps
   - RULE-SET,wechat_domain,📞 WeChat
+  - RULE-SET,whatsapp,📱 WhatsApp
   - RULE-SET,whatsapp_list,📱 WhatsApp
   - RULE-SET,whatsapp_domain,📱 WhatsApp
   - RULE-SET,rakuten_domain,📱 WhatsApp
@@ -250,7 +252,10 @@ rule-anchor:
   domain: &domain {type: http, interval: 86400, behavior: domain, format: mrs}
   class: &class {type: http, interval: 86400, behavior: classical, format: text}
 rule-providers: 
-# ES Rules.ymal  
+# ES Rules.ymal    
+# XHS RedNote
+  rednote: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/general/XiaoHongShu/XiaoHongShu.list"}
+  xhs_rednote: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/XiaoHongShu/XiaoHongShu.list"}
   # DEX
   dex_domain: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/DEX/DEX.list"}
   # ADBlock
@@ -258,7 +263,8 @@ rule-providers:
   twitch_reject: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Surge/Twitch/TR.list"}
   httpdns_adblock: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-httpdns-cn.mrs"}
   # Whatsapp
-  whatsapp_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/whatsapp.mrs"}
+  whatsapp: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/Whatsapp/Whatsapp.list"}
+  whatsapp_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/whatsapp.list"}
   whatsapp_list: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/Whatsapp/Whatsapp.list"}
   # IM Apps
   signal_list: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/general/signal/signal.list"}
@@ -317,9 +323,6 @@ rule-providers:
   twitch_direct : { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Surge/Twitch/TD.list"}
   twitch_proxy: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Surge/Twitch/TP.list"}
   twitch_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/twitch.mrs"}
-  # XHS RedNote
-  rednote: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/general/XiaoHongShu/XiaoHongShu.list"}
-  xhs_rednote: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/XiaoHongShu/XiaoHongShu.list"}
 # ES Rules.yaml
 
 # qcy_nikki.config.yaml
