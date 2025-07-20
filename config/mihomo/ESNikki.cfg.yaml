@@ -188,7 +188,8 @@ rules:
   - RULE-SET,netflix_domain,🎥 ProxyMedia
   # IM Apps
   - RULE-SET,wechat_domain,📞 WeChat
-  - RULE-SET,whatsapp,📱 WhatsApp
+
+  - RULE-SET,whatsapp_diy,📱 WhatsApp
   - RULE-SET,whatsapp_list,📱 WhatsApp
   - RULE-SET,whatsapp_domain,📱 WhatsApp
   - RULE-SET,rakuten_domain,📱 WhatsApp
@@ -264,9 +265,9 @@ rule-providers:
   twitch_reject: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Surge/Twitch/TR.list"}
   httpdns_adblock: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-httpdns-cn.mrs"}
   # Whatsapp
-  whatsapp: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/Whatsapp/Whatsapp.list"}
-  whatsapp_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/whatsapp.list"}
+  whatsapp_diy: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/WhatsApp/WhatsApp.list"}
   whatsapp_list: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/Whatsapp/Whatsapp.list"}
+  whatsapp_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/whatsapp.mrs"}  
   # IM Apps
   signal_list: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/general/signal/signal.list"}
   signal_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/signal.mrs"}
