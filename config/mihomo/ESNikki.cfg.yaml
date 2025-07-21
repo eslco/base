@@ -2,7 +2,7 @@
 # 机场订阅
 proxy-providers:
   ESub:
-    url: "https://esub.aesin.eu/sub?token=aes&clash"
+    url: "https://sub.example.com/sub?token=XXX&clash"
     type: http
     interval: 86400
     health-check:
