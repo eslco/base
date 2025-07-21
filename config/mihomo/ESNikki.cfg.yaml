@@ -2,7 +2,7 @@
 # 机场订阅
 proxy-providers:
   ESub:
-    url: "https://sub.example.com/sub?token=XXX&clash"
+    url: "https://esub.aesin.eu/sub?token=aes&clash"
     type: http
     interval: 86400
     health-check:
@@ -199,7 +199,7 @@ rules:
   - RULE-SET,telegram_domain,☎️ Telegram
   # LinkedIn
   - RULE-SET,linkedin,🚀 Proxy
-  - RULE-SET,linkedin_cn,Direct
+  - RULE-SET,linkedin_cn,🎯 DirectN
   # Social+
   - RULE-SET,facebook_domain,🌐 Social+
   - RULE-SET,instagram_domain,🌐 Social+
@@ -210,7 +210,7 @@ rules:
   - RULE-SET,spotify_domain,🎵 Spotify
   # IPTV
   - RULE-SET,iptv_global,📺 IPTV Global
-  - RULE-SET,iptv_cn,Direct
+  - RULE-SET,iptv_cn,🎯 DirectN
   - RULE-SET,iptv_tw,🇹🇼 TW
   # TikTok
   - RULE-SET,tiktok_list,🎵 TikTok
@@ -219,8 +219,8 @@ rules:
   - RULE-SET,twitch_proxy,🚀 Proxy
   - RULE-SET,twitch_direct,Direct
   # Download Games
-  - RULE-SET,category_games_cn,Direct
-  - RULE-SET,category-game-platforms-download-cn,Direct
+  - RULE-SET,category_games_cn,🎯 DirectN
+  - RULE-SET,category-game-platforms-download-cn,🎯 DirectN
   - RULE-SET,category_games,🚀 Proxy
   - RULE-SET,category--android-app,🚀 Proxy  
   - RULE-SET,category-game-platforms-download,🚀 Proxy
@@ -241,11 +241,11 @@ rules:
   # GFW
   - RULE-SET,gfw_domain,🚀 Proxy
   - RULE-SET,geolocation-!cn,🚀 Proxy
-  - RULE-SET,cn_domain,Direct
+  - RULE-SET,cn_domain,🎯 DirectN
   - RULE-SET,google_ip,🍀 Google,no-resolve
   - RULE-SET,netflix_ip,🎥 ProxyMedia,no-resolve
   - RULE-SET,telegram_ip,☎️ Telegram,no-resolve
-  - RULE-SET,cn_ip,Direct
+  - RULE-SET,cn_ip,🎯 DirectN
   - MATCH,🐟 Final
 
 # 规则集
@@ -254,7 +254,7 @@ rule-anchor:
   domain: &domain {type: http, interval: 86400, behavior: domain, format: mrs}
   class: &class {type: http, interval: 86400, behavior: classical, format: text}
 rule-providers: 
-# ES Rules.ymal    
+# ES Rules.ymal
 # XHS RedNote
   rednote: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/general/XiaoHongShu/XiaoHongShu.list"}
   xhs_rednote: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/XiaoHongShu/XiaoHongShu.list"}
@@ -271,7 +271,6 @@ rule-providers:
   # IM Apps
   signal_list: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/general/signal/signal.list"}
   signal_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/signal.mrs"}
-# snapchat_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/snapchat.mrs"}
   messenger_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/messenger.mrs"}
   rakuten_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/rakuten.mrs"}
   line_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/line.mrs"}
@@ -301,8 +300,8 @@ rule-providers:
   iptv_tw: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/general/IPTV_Global/IPTV9_TW.list"}
   iptv_cn: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/IPTVMainland/IPTVMainland.list"}
   # LinkedIn
-  linkedin: { <<: *class, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/linkedin.mrs"}
-  linkedin_cn: { <<: *class, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/linkedin_cn.mrs"}
+  linkedin: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/linkedin.mrs"}
+  linkedin_cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/linkedin_cn.mrs"}
   # Talkatone
   ttdirect: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/Talkatone/ttdirect.list"}
   ttproxy: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/Talkatone/ttproxy.list"}
@@ -313,7 +312,7 @@ rule-providers:
   category_games: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-games-!cn.mrs"}
   category-game-platforms-download: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-game-platforms-download.mrs"}
   category-game-platforms-download-cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/category-game-platforms-download@cn.mrs"}
-  category--android-app: { *domain, url <<:"https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/category-android-app-download.mrs"}
+  category--android-app: { <<: *domain, url <<:"https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/category-android-app-download.mrs"}
   # Social+ Apps
   twitter_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/twitter.mrs"}
   facebook_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/facebook.mrs"}
@@ -341,7 +340,7 @@ rule-providers:
   microsoft_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/microsoft.mrs"}
   apple_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/apple-cn.mrs"}
   speedtest_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/ookla-speedtest.mrs"} 
-  tiktok_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/tiktok.list"}
+  tiktok_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/tiktok.mrs"}
   gfw_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/gfw.mrs"}
   geolocation-!cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/geolocation-!cn.mrs"}
   cn_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/cn.mrs"}
