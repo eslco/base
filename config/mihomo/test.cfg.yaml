@@ -1,4 +1,5 @@
 # 注意规则在满足自己需求情况下，尽量做到精简，不要过度复杂，以免影响性能。
+# 注意: 该配置文件仅供参考，具体配置请根据实际情况调整。
 # 机场订阅
 proxy-providers:
   ESub:
@@ -146,7 +147,7 @@ proxy-groups:
   - {name: ♻️ Auto, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(Direct)).)*$"}
   # - {name: 🐬 OneDrive, <<: *pr}
   - {name: 🎵 Spotify, <<: *pr}
-  # - {name: ✈️ Speedtest, <<: *pr}
+  - {name: ✈️ Speedtest, <<: *pr}
   - {name: Ⓜ️ Microsoft, <<: *pr}
   - {name: 🍎 Apple,<<: *dtcn }
   - {name: 🎯 DirectN, type: select, proxies: [Direct, 🚀 Proxy, ☑️ Manual]}
@@ -157,7 +158,7 @@ rules:
   - DOMAIN-SUFFIX,aesin.eu,🚀 Proxy
   # PayPal
   - RULE-SET,paypal_domain,💶 PayPal
-  - RULE-SET,speedtest_domain,🚀 Proxy  
+  - RULE-SET,speedtest_domain,✈️ Speedtest
   # ADBlock
   - RULE-SET,ttblock,Reject
   - RULE-SET,httpdns_adblock,Reject
@@ -187,10 +188,12 @@ rules:
   - RULE-SET,bilibili_global,📺 Bilibili
   # ProxyMedia
   - RULE-SET,netflix_domain,🎥 ProxyMedia
+  # Netease Music
+  - RULE-SET,netease_music_list,🎵 Netease Music
+  - RULE-SET,netease_music,🎵 Netease Music
   # IM Apps
   - RULE-SET,wechat_NobyDa,📞 WeChat
   - RULE-SET,wechat_domain,📞 WeChat
-
   - RULE-SET,whatsapp_diy,📱 WhatsApp
   - RULE-SET,whatsapp_list,📱 WhatsApp
   - RULE-SET,whatsapp_domain,📱 WhatsApp
