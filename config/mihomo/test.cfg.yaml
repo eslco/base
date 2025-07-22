@@ -146,7 +146,7 @@ proxy-groups:
   - {name: ♻️ Auto, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(Direct)).)*$"}
   # - {name: 🐬 OneDrive, <<: *pr}
   - {name: 🎵 Spotify, <<: *pr}
-  - {name: ✈️ Speedtest, <<: *pr}
+  # - {name: ✈️ Speedtest, <<: *pr}
   - {name: Ⓜ️ Microsoft, <<: *pr}
   - {name: 🍎 Apple,<<: *dtcn }
   - {name: 🎯 DirectN, type: select, proxies: [Direct, 🚀 Proxy, ☑️ Manual]}
@@ -157,7 +157,7 @@ rules:
   - DOMAIN-SUFFIX,aesin.eu,🚀 Proxy
   # PayPal
   - RULE-SET,paypal_domain,💶 PayPal
-  - RULE-SET,speedtest_domain,✈️ Speedtest
+  - RULE-SET,speedtest_domain,🚀 Proxy  
   # ADBlock
   - RULE-SET,ttblock,Reject
   - RULE-SET,httpdns_adblock,Reject
@@ -187,12 +187,10 @@ rules:
   - RULE-SET,bilibili_global,📺 Bilibili
   # ProxyMedia
   - RULE-SET,netflix_domain,🎥 ProxyMedia
-  # Netease Music
-  - RULE-SET,netease_music_list,🎵 Netease Music
-  - RULE-SET,netease_music,🎵 Netease Music
   # IM Apps
   - RULE-SET,wechat_NobyDa,📞 WeChat
   - RULE-SET,wechat_domain,📞 WeChat
+
   - RULE-SET,whatsapp_diy,📱 WhatsApp
   - RULE-SET,whatsapp_list,📱 WhatsApp
   - RULE-SET,whatsapp_domain,📱 WhatsApp
@@ -214,7 +212,7 @@ rules:
   - RULE-SET,spotify_domain,🎵 Spotify
   # IPTV
   - RULE-SET,iptv_global,📺 IPTV Global
-  - RULE-SET,iptv_cn,🎯 DirectN
+  - RULE-SET,iptv_cn,Direct
   - RULE-SET,iptv_tw,🇹🇼 TW
   # TikTok
   - RULE-SET,tiktok_list,🎵 TikTok
@@ -223,8 +221,8 @@ rules:
   - RULE-SET,twitch_proxy,🚀 Proxy
   - RULE-SET,twitch_direct,Direct
   # Download Games
-  - RULE-SET,category_games_cn,🎯 DirectN
-  - RULE-SET,category-game-platforms-download-cn,🎯 DirectN
+  - RULE-SET,category_games_cn,Direct
+  - RULE-SET,category-game-platforms-download-cn,Direct
   - RULE-SET,category_games,🚀 Proxy
   - RULE-SET,category--android-app,🚀 Proxy  
   - RULE-SET,category-game-platforms-download,🚀 Proxy
@@ -280,20 +278,18 @@ rule-providers:
   line_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/line.mrs"}
   # WeChat
   wechat_NobyDa: { <<: *class, url: "https://github.com/NobyDa/Script/raw/master/Surge/WeChat.list"}
-  wechat_list: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/WeChat/WeChat.list"}
+  wechat_domain: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/WeChat/WeChat.list"}
   # AI
   aide: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/general/AIDE.list"}
   ai: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/general/AI.list"}
-  # Netease Music
-  netease_music_list: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/NetEaseMusic/NetEaseMusic.list"}
-  netease_music: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/netease.mrs"}
+
   #Bilibili
   bilibili: { <<: *class, url: "https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/Ruleset/Bilibili.list"}
   bilibili_global: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/BiliBili/BiliBili.list"}
   # Emarket    
     # Alibaba 1688 Taobao Goofish
+  alibaba_list: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/Alibaba/Alibaba.list"}    
   alibaba_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/alibaba.mrs"}
-  alibaba_list: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/Alibaba/Alibaba.list"}
     # Amazon
   amazon_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/amazon.mrs"}
     # Shopee
