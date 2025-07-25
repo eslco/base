@@ -58,11 +58,15 @@ sniffer:
       ports: [443, 8443, 2053, 2083, 2087, 2096]
   force-domain:
     - "+.v2ex.com"
+    - "+.whatsapp.net"
+    - "+.whatsapp.com"
+    - "+.facebook.com"
   skip-domain:
     - "+.baidu.com"
     - "+.msftconnecttest.com"
     - "+.msftncsi.com"
-
+    - "+.market.xiaomi.com"
+    
 # Outbound
 tun:
   enable: true
@@ -92,10 +96,10 @@ dns:
     - "*.local"    
     - "*.lan"    
   default-nameserver:
-    - 8.8.4.4
+    - 1.1.8.8
     - 1.0.0.1
   proxy-server-nameserver:
-    - https://120.53.53.53/dns-query
+    - https://1.0.0.1/dns-query
     - https://8.8.4.4/dns-query
   # namesever尽量用运营商提供的DNS
   nameserver:
@@ -155,6 +159,8 @@ proxy-groups:
 # 此規則尚未作DNS防泄漏處理，because of the (弊大於利) CON is more than benefit
 rules:
   - DOMAIN-SUFFIX,aesin.eu,🚀 Proxy
+  # DIY List
+  - RULE-SET,diy_list,🚀 Proxy
   # PayPal
   - RULE-SET,paypal_domain,💶 PayPal
   - RULE-SET,speedtest_domain,✈️ Speedtest
@@ -192,7 +198,7 @@ rules:
   - RULE-SET,netease_music,🎵 Netease Music
   # IM Apps
   - RULE-SET,wechat_NobyDa,📞 WeChat
-  - RULE-SET,wechat_domain,📞 WeChat
+  - RULE-SET,wechat_list,📞 WeChat
   - RULE-SET,whatsapp_diy,📱 WhatsApp
   - RULE-SET,whatsapp_list,📱 WhatsApp
   - RULE-SET,whatsapp_domain,📱 WhatsApp
@@ -259,6 +265,8 @@ rule-anchor:
   class: &class {type: http, interval: 86400, behavior: classical, format: text}
 rule-providers: 
 # ES Rules.ymal
+# DIY_list
+  diy_list: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/DIY/DIY.list"}
 # XHS RedNote
   rednote: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/general/XiaoHongShu/XiaoHongShu.list"}
   xhs_rednote: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/XiaoHongShu/XiaoHongShu.list"}
@@ -292,8 +300,8 @@ rule-providers:
   bilibili_global: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/BiliBili/BiliBili.list"}
   # Emarket    
     # Alibaba 1688 Taobao Goofish
-  alibaba_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/alibaba.mrs"}
   alibaba_list: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/Alibaba/Alibaba.list"}
+  alibaba_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/alibaba.mrs"}
     # Amazon
   amazon_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/amazon.mrs"}
     # Shopee
@@ -318,8 +326,8 @@ rule-providers:
   category_games_cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-games-cn.mrs"}
   category_games: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-games-!cn.mrs"}
   category-game-platforms-download: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-game-platforms-download.mrs"}
-  category-game-platforms-download-cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/category-game-platforms-download@cn.mrs"}
-  category--android-app: { <<: *domain, url <<:"https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/category-android-app-download.mrs"}
+  category-game-platforms-download-cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-game-platforms-download@cn.mrs"}
+  category--android-app: { <<: *domain, url <<:"https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-android-app-download.mrs"}
   # Social+ Apps
   twitter_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/twitter.mrs"}
   facebook_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/facebook.mrs"}
