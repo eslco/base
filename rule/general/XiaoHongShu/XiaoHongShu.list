@@ -40,9 +40,12 @@ DOMAIN-SUFFIX,xhslink.com
 DOMAIN-SUFFIX,xiaohongshu.com
 DOMAIN-SUFFIX,xhscdn.me
 DOMAIN-SUFFIX,xhscdn.net
-DOMAIN-SUFFIX,xiaohongshu.net
+
 
 # XHS CDN
+
+# DOMAIN-SUFFIX,xiaohongshu.com.edge.bunnycdn.co
+DOMAIN,xhsci-hk-al.xiaohongshu.net
 DOMAIN,xhsci-hk-cos.xiaohongshu.net
 DOMAIN,picasso-static.xiaohongshu.com.w.kunluncan.com
 DOMAIN,spider-tracker.xiaohongshu.com.w.kunluncan.com
@@ -50,17 +53,19 @@ DOMAIN,fe-video-qc.xhscdn.com
 DOMAIN,sns-na-i8.xhscdn.com
 DOMAIN,live-source-play-hw.xhscdn.com
 DOMAIN,search.xhscdn.com
-DOMAIN-SUFFIX,clb.ap-shanghai.tencentclb.com
-DOMAIN-SUFFIX,ipip-gl1.qiezibenpao.com
-DOMAIN-SUFFIX,qiezibenpao.com
+DOMAIN-SUFFIX,xiaohongshu.net
 
+DOMAIN-SUFFIX,clb.ap-shanghai.tencentclb.com
 DOMAIN-SUFFIX,xhs.c.cdnhwc2.com
 DOMAIN-SUFFIX,hcdnw.v6.xhs.c.cdnhwc2.com
 DOMAIN-SUFFIX,xhsci-10008268.cos.ap-shanghai.myqcloud.com
 DOMAIN-SUFFIX,fengkongcloud.com
 DOMAIN-SUFFIX,xhscdn.com
 DOMAIN-SUFFIX,clb.sh-tencentclb.cloud
-DOMAIN-SUFFIX,xiaohongshu.com.edge.bunnycdn.co
+DOMAIN-SUFFIX,ipip-gl1.qiezibenpao.com
+DOMAIN-SUFFIX,xhscdn.me
+
+DOMAIN-KEYWORD,xiaohongshu
 DOMAIN-KEYWORD,xhscdn
 DOMAIN-KEYWORD,xhsci
 
