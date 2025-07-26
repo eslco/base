@@ -96,10 +96,10 @@ dns:
     - "*.local"    
     - "*.lan"    
   default-nameserver:
-    - 1.1.8.8
+    - 8.8.4.4
     - 1.0.0.1
   proxy-server-nameserver:
-    - https://1.0.0.1/dns-query
+    - https://120.53.53.53/dns-query
     - https://8.8.4.4/dns-query
   # namesever尽量用运营商提供的DNS
   nameserver:
@@ -300,8 +300,8 @@ rule-providers:
   bilibili_global: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/BiliBili/BiliBili.list"}
   # Emarket    
     # Alibaba 1688 Taobao Goofish
-  alibaba_list: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/Alibaba/Alibaba.list"}
   alibaba_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/alibaba.mrs"}
+  alibaba_list: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/Alibaba/Alibaba.list"}
     # Amazon
   amazon_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/amazon.mrs"}
     # Shopee

@@ -38,7 +38,6 @@ DOMAIN,creator.xhslink.com
 
 DOMAIN-SUFFIX,xhslink.com
 DOMAIN-SUFFIX,xiaohongshu.com
-
 DOMAIN-SUFFIX,xhscdn.me
 DOMAIN-SUFFIX,xhscdn.net
 DOMAIN-SUFFIX,xiaohongshu.net
@@ -51,6 +50,7 @@ DOMAIN,fe-video-qc.xhscdn.com
 DOMAIN,sns-na-i8.xhscdn.com
 DOMAIN,live-source-play-hw.xhscdn.com
 DOMAIN,search.xhscdn.com
+DOMAIN-SUFFIX,clb.ap-shanghai.tencentclb.com
 DOMAIN-SUFFIX,ipip-gl1.qiezibenpao.com
 DOMAIN-SUFFIX,qiezibenpao.com
 
