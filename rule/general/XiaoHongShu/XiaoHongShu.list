@@ -12,17 +12,15 @@
 # TOTAL: 68
 # DOMAIN,api-tracker.xiaohongshu.com
 
-DOMAIN,xhsci-hk-cos.xiaohongshu.net
-DOMAIN-SUFFIX,xiaohongshu.net
-
-hcdnw.v6.xhs.c.cdnhwc2.com
+DOMAIN,apm-native.xiaohongshu.com
+DOMAIN,hcdnw.v6.xhs.c.cdnhwc2.com
 # DOMAIN-SUFFIX,xhscdn.cn
 DOMAIN,spider-tracker.xiaohongshu.com
 DOMAIN,as.xiaohongshu.com
 DOMAIN,live-go.xiaohongshu.com
 DOMAIN,apppush-rts.xiaohongshu.com
 DOMAIN,apm-fe.xiaohongshu.com
-DOMAIN,apm-native.xiaohongshu.com
+
 DOMAIN,crash.xiaohongshu.com
 DOMAIN,mediacloud.xiaohongshu.com
 DOMAIN,fe.xiaohongshu.com
@@ -71,3 +69,5 @@ DOMAIN-KEYWORD,xhsci
 
 IP-CIDR,116.211.127.11/32,no-resolve
 IP-CIDR,1.13.116.46/32,no-resolve
+
+IP-CIDR,8.153.109.248/32,no-resolve
