@@ -5,7 +5,11 @@
 # DIY List for Clash
 # This list includes various domains and services that can be used in Clash configurations.
 
-DOMAINS-SUFFIX,github.io
+DOMAINS-SUFFIX,tandem.net
+DOMAINS-SUFFIX,tandem.app
+DOMAINS-SUFFIX,tandem.io
+DOMAINS-KEYWORD,tandem
+
 DOMAINS-SUFFIX,todaysdyney.net
 DOMAINS-SUFFIX,routinehub.co
 DOMAINS-SUFFIX,routinehub.app
