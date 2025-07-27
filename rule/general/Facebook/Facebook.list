@@ -8,6 +8,7 @@
 # IP-CIDR: 23
 # TOTAL: 570
 
+DOMAIN-SUFFIX,graph.facebook.com
 DOMAIN-SUFFIX,aboutfacebook.com
 DOMAIN-SUFFIX,accessfacebookfromschool.com
 DOMAIN-SUFFIX,accountkit.com
