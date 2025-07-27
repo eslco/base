@@ -1,0 +1,24 @@
+# This file is auto-generated. Do not edit manually.
+# Wechat.list as part of ESLCO base rules.
+# This file contains rules for WeChat services.
+
+# domain-suffix
+DOMAIN-SUFFIX,wx.qq.com
+DOMAIN-SUFFIX,mp.weixin.qq.com
+DOMAIN-SUFFIX,wechat.com
+DOMAIN-SUFFIX,wechatapp.com
+DOMAIN-SUFFIX,wechat.com.cn
+DOMAIN-SUFFIX,wechatpay.com
+DOMAIN-SUFFIX,wechat.com.hk
+DOMAIN-SUFFIX,wechat.com.tw
+DOMAIN-SUFFIX,wechat.com.sg
+DOMAIN-SUFFIX,wechat.com
+
+# domain-keyword
+DOMAIN-KEYWORD,wechat
+DOMAIN-KEYWORD,wechatapp
+DOMAIN-KEYWORD,wechatpay
+DOMAIN-KEYWORD,mp.weixin
+# IP-CIDR
+IP-CIDR,8.153.0.0/16,no-resolve
+IP-DICR,43.174.97.0/24,no-resolve
