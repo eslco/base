@@ -159,6 +159,9 @@ proxy-groups:
 # 此規則尚未作DNS防泄漏處理，because of the (弊大於利) CON is more than benefit
 rules:
   - DOMAIN-SUFFIX,aesin.eu,🚀 Proxy
+   # XHS RedNote
+  - RULE-SET,xhs_rednote,📕 XHS RedNote
+  - RULE-SET,rednote,📕 XHS RedNote
   # DIY List
   - RULE-SET,diy_list,🚀 Proxy
   # PayPal
@@ -243,9 +246,6 @@ rules:
   - RULE-SET,microsoft_domain,Ⓜ️ Microsoft
 # - RULE-SET,speedtest_domain,✈️ Speedtest
 
-  # XHS RedNote
-  - RULE-SET,xhs_rednote,📕 XHS RedNote
-  - RULE-SET,rednote,📕 XHS RedNote
   # Private
   - RULE-SET,private_domain,Direct
   # GFW
@@ -316,7 +316,7 @@ rule-providers:
   iptv_cn: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/IPTVMainland/IPTVMainland.list"}
   # LinkedIn
   linkedin: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/linkedin.mrs"}
-  linkedin_cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/linkedin_cn.mrs"}
+  linkedin_cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/linkedin@cn.mrs"}
   # Talkatone
   ttdirect: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/Talkatone/ttdirect.list"}
   ttproxy: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/Talkatone/ttproxy.list"}
