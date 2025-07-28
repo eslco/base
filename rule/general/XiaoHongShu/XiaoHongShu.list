@@ -7,61 +7,40 @@
 # AUTHOR: blackmatrix7 x eslco
 # REPO: https://github.com/eslco/base/blob/main
 
-# UPDATED: 2025-07-15 16:17:40
+# UPDATED: 2025-07-27 16:17:40
 # DOMAIN-SUFFIX: 4
-# TOTAL: 68
+# TOTAL: 36
+
 # DOMAIN,api-tracker.xiaohongshu.com
+DOMAIN-SUFFIX,api-tracker.xiaohongshu.com
 
-DOMAIN,apm-native.xiaohongshu.com
-DOMAIN,hcdnw.v6.xhs.c.cdnhwc2.com
-# DOMAIN-SUFFIX,xhscdn.cn
-DOMAIN,spider-tracker.xiaohongshu.com
-DOMAIN,as.xiaohongshu.com
-DOMAIN,live-go.xiaohongshu.com
-DOMAIN,apppush-rts.xiaohongshu.com
-DOMAIN,apm-fe.xiaohongshu.com
-
-DOMAIN,crash.xiaohongshu.com
-DOMAIN,mediacloud.xiaohongshu.com
-DOMAIN,fe.xiaohongshu.com
-DOMAIN,edith.xiaohongshu.com
-DOMAIN,picasso-static.xiaohongshu.com
-DOMAIN,creator.xiaohongshu.com
-DOMAIN,search.xiaohongshu.com
-DOMAIN,mall.xiaohongshu.com
-DOMAIN,live-source-play-hw.xiaohongshu.com
-DOMAIN,lng.xiaohongshu.com
-DOMAIN,api.xiaohongshu.com
-DOMAIN,creator.xhslink.com
-
-DOMAIN-SUFFIX,xhslink.com
+DOMAIN-SUFFIX,xiaohongshu-mycdn.com
+DOMAIN-SUFFIX,xiaohongshulvyou.com
+DOMAIN-SUFFIX,xiaohongshu.net
 DOMAIN-SUFFIX,xiaohongshu.com
-DOMAIN-SUFFIX,xhscdn.me
-DOMAIN-SUFFIX,xhscdn.net
-
+DOMAIN-SUFFIX,xhslink.com
+DOMAIN-SUFFIX,xhslw.com
+DOMAIN-SUFFIX,xhsci.com
+DOMAIN-SUFFIX,xhsd.com
+DOMAIN-SUFFIX,xhsd.net
 
 # XHS CDN
-
-# DOMAIN-SUFFIX,xiaohongshu.com.edge.bunnycdn.co
-DOMAIN,xhsci-hk-al.xiaohongshu.net
-DOMAIN,xhsci-hk-cos.xiaohongshu.net
-DOMAIN,picasso-static.xiaohongshu.com.w.kunluncan.com
 DOMAIN,spider-tracker.xiaohongshu.com.w.kunluncan.com
+DOMAIN,live-source-play-hw.xhscdn.com
 DOMAIN,fe-video-qc.xhscdn.com
 DOMAIN,sns-na-i8.xhscdn.com
-DOMAIN,live-source-play-hw.xhscdn.com
 DOMAIN,search.xhscdn.com
-DOMAIN-SUFFIX,xiaohongshu.net
 
+# Tencent Cloud
+DOMAIN-SUFFIX,xiaohongshu.com.w.kunluncan.com
+DOMAIN-SUFFIX,xhsci-10008268.cos.ap-shanghai.myqcloud.com
 DOMAIN-SUFFIX,clb.ap-shanghai.tencentclb.com
 DOMAIN-SUFFIX,xhs.c.cdnhwc2.com
-DOMAIN-SUFFIX,hcdnw.v6.xhs.c.cdnhwc2.com
-DOMAIN-SUFFIX,xhsci-10008268.cos.ap-shanghai.myqcloud.com
-DOMAIN-SUFFIX,fengkongcloud.com
-DOMAIN-SUFFIX,xhscdn.com
 DOMAIN-SUFFIX,clb.sh-tencentclb.cloud
 DOMAIN-SUFFIX,ipip-gl1.qiezibenpao.com
-DOMAIN-SUFFIX,xhscdn.me
+
+DOMAIN-SUFFIX,xhscdn.com
+DOMAIN-SUFFIX,xhscdn.net
 
 DOMAIN-KEYWORD,xiaohongshu
 DOMAIN-KEYWORD,xhscdn
@@ -69,5 +48,7 @@ DOMAIN-KEYWORD,xhsci
 
 IP-CIDR,116.211.127.11/32,no-resolve
 IP-CIDR,1.13.116.46/32,no-resolve
-
 IP-CIDR,8.153.109.248/32,no-resolve
+# 25.07
+IP-CIDR,23.46.230.143/32,no-resolve
+IP-CIDR,43.159.95.157/32,no-resolve
