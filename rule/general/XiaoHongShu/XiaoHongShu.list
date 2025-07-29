@@ -10,39 +10,41 @@
 # UPDATED: 2025-07-27 16:17:40
 # DOMAIN-SUFFIX: 4
 # TOTAL: 36
-
-# DOMAIN,api-tracker.xiaohongshu.com
 DOMAIN-SUFFIX,api-tracker.xiaohongshu.com
+
+# XiaoHongShu CORE DOMAIN
+DOMAIN-SUFFIX,edith.xiaohongshu.com-v1.edgesuite.net
+DOMAIN-SUFFIX,edith.xiaohongshu.com.w.kunlungr.com
+DOMAIN-SUFFIX,edith.xiaohongshu.com.eo.dnse0.com
+DOMAIN-SUFFIX,ros-upload-ali.xiaohongshu.com
+DOMAIN-SUFFIX,ros-upload.xiaohongshu.com
+DOMAIN-SUFFIX,edith.xiaohongshu.com
+DOMAIN-SUFFIX,mall.xiaohongshu.com
+DOMAIN-SUFFIX,www.xiaohongshu.com
+# Jiangsu Telecom Interal CDN
+DOMAIN-SUFFIX,sd-gl.xinqiucc.com
 
 DOMAIN-SUFFIX,xiaohongshu-mycdn.com
 DOMAIN-SUFFIX,xiaohongshulvyou.com
 DOMAIN-SUFFIX,xiaohongshu.net
-
-#
-DOMAIN-SUFFIX,xiaohongshu.com
-
 DOMAIN-SUFFIX,xiaohongshu.com
 DOMAIN-SUFFIX,xhslink.com
 DOMAIN-SUFFIX,xhslw.com
 DOMAIN-SUFFIX,xhsci.com
-DOMAIN-SUFFIX,xhsd.com
-DOMAIN-SUFFIX,xhsd.net
 
 # XHS CDN
+# Tencent Cloud
+DOMAIN,xhsci-10008268.cos.ap-shanghai.myqcloud.com
+DOMAIN-SUFFIX,xiaohongshu.com.w.kunluncan.com
+DOMAIN-SUFFIX,clb.ap-shanghai.tencentclb.com
+DOMAIN-SUFFIX,ipip-gl1.qiezibenpao.com
+DOMAIN-SUFFIX,cf-gl.qiezibenpao.com
+DOMAIN-SUFFIX,clb.sh-tencentclb.cloud
+DOMAIN-SUFFIX,xhs.c.cdnhwc2.com
 DOMAIN,spider-tracker.xiaohongshu.com.w.kunluncan.com
-DOMAIN,live-source-play-hw.xhscdn.com
 DOMAIN,fe-video-qc.xhscdn.com
 DOMAIN,sns-na-i8.xhscdn.com
 DOMAIN,search.xhscdn.com
-
-# Tencent Cloud
-DOMAIN-SUFFIX,xiaohongshu.com.w.kunluncan.com
-DOMAIN-SUFFIX,xhsci-10008268.cos.ap-shanghai.myqcloud.com
-DOMAIN-SUFFIX,clb.ap-shanghai.tencentclb.com
-DOMAIN-SUFFIX,xhs.c.cdnhwc2.com
-DOMAIN-SUFFIX,clb.sh-tencentclb.cloud
-DOMAIN-SUFFIX,ipip-gl1.qiezibenpao.com
-DOMAIN-SUFFIX,cf-gl.qiezibenpao.com
 
 DOMAIN-SUFFIX,xhscdn.com
 DOMAIN-SUFFIX,xhscdn.net
@@ -51,14 +53,21 @@ DOMAIN-KEYWORD,xiaohongshu
 DOMAIN-KEYWORD,xhscdn
 DOMAIN-KEYWORD,xhsci
 
-IP-CIDR,116.211.127.11/32,no-resolve
-IP-CIDR,1.13.116.46/32,no-resolve
-IP-CIDR,8.153.109.248/32,no-resolve
+# XHS EDITH DOMAIN IP-CIDR
+# Tencent Cloud IP
+IP-CIDR,81.69.116.0/24,no-resolve
+IP-CIDR,81.69.154.0/24,no-resolve
+IP-CIDR,114.55.236.0/24,no-resolve
+IP-CIDR,175.24.250.0/24,no-resolve
+IP-CIDR,119.45.0.0/24,no-resolve
+IP-CIDR,1.13.12.27/32,no-resolve
 
-# 25.08 XHS CDN IP
-IP-CIDR,81.69.116.87/32,no-resolve
+# AliCloud IP
+IP-CIDR,114.55.236.88/32,no-resolve
+IP-CIDR,47.97.0.0/16,no-resolve
+IP-CIDR,47.246.0.0/16,no-resolve
+
+# IPv6 EDITH DOMAIN IP-CIDR
+IP-CIDR,[2402:4e00:1410::98f5:ab14:193f:1f0c]/128,no-resolve
+# XHS DOMAIN IP
 IP-CIDR,183.232.212.19/32,no-resolve
-
-# 25.07
-IP-CIDR,23.46.230.143/32,no-resolve
-IP-CIDR,43.159.95.157/32,no-resolve
