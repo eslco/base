@@ -5,6 +5,8 @@
 # DIY List for Clash
 # This list includes various domains and services that can be used in Clash configurations.
 
+
+
 DOMAINS-SUFFIX,tandem.net
 DOMAINS-SUFFIX,tandem.app
 DOMAINS-SUFFIX,tandem.io
@@ -14,3 +16,9 @@ DOMAINS-SUFFIX,todaysdyney.net
 DOMAINS-SUFFIX,routinehub.co
 DOMAINS-SUFFIX,routinehub.app
 DOMAINS-SUFFIX,todaysdyney.com
+
+
+# Domains for various services
+# Alibaba 
+# Taobao
+IP-CIDR,47.246.42.201/32,no-resolve
