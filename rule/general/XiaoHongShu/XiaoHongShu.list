@@ -17,6 +17,10 @@ DOMAIN-SUFFIX,api-tracker.xiaohongshu.com
 DOMAIN-SUFFIX,xiaohongshu-mycdn.com
 DOMAIN-SUFFIX,xiaohongshulvyou.com
 DOMAIN-SUFFIX,xiaohongshu.net
+
+#
+DOMAIN-SUFFIX,xiaohongshu.com
+
 DOMAIN-SUFFIX,xiaohongshu.com
 DOMAIN-SUFFIX,xhslink.com
 DOMAIN-SUFFIX,xhslw.com
@@ -38,6 +42,7 @@ DOMAIN-SUFFIX,clb.ap-shanghai.tencentclb.com
 DOMAIN-SUFFIX,xhs.c.cdnhwc2.com
 DOMAIN-SUFFIX,clb.sh-tencentclb.cloud
 DOMAIN-SUFFIX,ipip-gl1.qiezibenpao.com
+DOMAIN-SUFFIX,cf-gl.qiezibenpao.com
 
 DOMAIN-SUFFIX,xhscdn.com
 DOMAIN-SUFFIX,xhscdn.net
@@ -49,6 +54,11 @@ DOMAIN-KEYWORD,xhsci
 IP-CIDR,116.211.127.11/32,no-resolve
 IP-CIDR,1.13.116.46/32,no-resolve
 IP-CIDR,8.153.109.248/32,no-resolve
+
+# 25.08 XHS CDN IP
+IP-CIDR,81.69.116.87/32,no-resolve
+IP-CIDR,183.232.212.19/32,no-resolve
+
 # 25.07
 IP-CIDR,23.46.230.143/32,no-resolve
 IP-CIDR,43.159.95.157/32,no-resolve
