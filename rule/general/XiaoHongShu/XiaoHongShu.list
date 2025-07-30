@@ -13,23 +13,24 @@
 DOMAIN-SUFFIX,api-tracker.xiaohongshu.com
 
 # XiaoHongShu CORE DOMAIN
-DOMAIN-SUFFIX,edith.xiaohongshu.com-v1.edgesuite.net
-DOMAIN-SUFFIX,edith.xiaohongshu.com.w.kunlungr.com
-DOMAIN-SUFFIX,edith.xiaohongshu.com.eo.dnse0.com
-DOMAIN-SUFFIX,ros-upload-ali.xiaohongshu.com
-DOMAIN-SUFFIX,ros-upload.xiaohongshu.com
-DOMAIN-SUFFIX,edith.xiaohongshu.com
-DOMAIN-SUFFIX,mall.xiaohongshu.com
-DOMAIN-SUFFIX,www.xiaohongshu.com
+
+DOMAIN,edith.xiaohongshu.com-v1.edgesuite.net
+DOMAIN,edith.xiaohongshu.com.w.kunlungr.com
+DOMAIN,edith.xiaohongshu.com.eo.dnse0.com
+DOMAIN,ros-upload-ali.xiaohongshu.com
+DOMAIN,ros-upload.xiaohongshu.com
+DOMAIN,edith.xiaohongshu.com
+DOMAIN,mall.xiaohongshu.com
+DOMAIN,www.xiaohongshu.com
 # Jiangsu Telecom Interal CDN
 DOMAIN-SUFFIX,sd-gl.xinqiucc.com
+DOMAIN-KEYWORD,edith.xiaohongshu
 
 DOMAIN-SUFFIX,xiaohongshu-mycdn.com
 DOMAIN-SUFFIX,xiaohongshulvyou.com
 DOMAIN-SUFFIX,xiaohongshu.net
 DOMAIN-SUFFIX,xiaohongshu.com
 DOMAIN-SUFFIX,xhslink.com
-DOMAIN-SUFFIX,xhslw.com
 DOMAIN-SUFFIX,xhsci.com
 
 # XHS CDN
