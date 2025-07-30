@@ -1,11 +1,26 @@
 # Name: DIY.list
 # URL: https://github.com/eslco/base/raw/main/rule/Clash/DIY/DIY.list
-# Update Time: 2025.07
+# Update Time: 2025.08
 # Description: This is a DIY list for Clash, containing various rules and configurations for different services and platforms.
 # DIY List for Clash
 # This list includes various domains and services that can be used in Clash configurations.
 
-
+# XiaoHongShu CORE DOMAIN
+DOMAIN-SUFFIX,edith.xiaohongshu.com-v1.edgesuite.net
+DOMAIN-SUFFIX,edith.xiaohongshu.com.w.kunlungr.com
+DOMAIN-SUFFIX,edith.xiaohongshu.com.eo.dnse0.com
+DOMAIN-SUFFIX,ros-upload-ali.xiaohongshu.com
+DOMAIN-SUFFIX,ros-upload.xiaohongshu.com
+DOMAIN-SUFFIX,edith.xiaohongshu.com
+DOMAIN-SUFFIX,mall.xiaohongshu.com
+DOMAIN-SUFFIX,www.xiaohongshu.com
+# Jiangsu Telecom Interal CDN
+DOMAIN-SUFFIX,sd-gl.xinqiucc.com
+DOMAIN-SUFFIX,xiaohongshu-mycdn.com
+DOMAIN-SUFFIX,xiaohongshulvyou.com
+DOMAIN-SUFFIX,xiaohongshu.net
+DOMAIN-SUFFIX,xiaohongshu.com
+DOMAIN-SUFFIX,xhslink.com
 
 DOMAINS-SUFFIX,tandem.net
 DOMAINS-SUFFIX,tandem.app
