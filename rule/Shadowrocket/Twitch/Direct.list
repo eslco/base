@@ -4,10 +4,14 @@
 
 # This Domain list for test and study usages only
 
-URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?(?:static-cdn\.)?jtvnw\.net\/.*$
-URL-REGEX,^https?:\/\/[\w-]+\.live-video\.net\/.*$
+# URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?(?:static-cdn\.)?jtvnw\.net\/.*$
+DOMAIN-SUFFIX,static-cdn.jtvnw.net
+DOMAIN-SUFFIX,static.jtvnw.net
+# URL-REGEX,^https?:\/\/[\w-]+\.live-video\.net\/.*$
+DOMAIN-SUFFIX,live-video.net
 DOMAIN-SUFFIX,live001-ttvnw.akamaized.net
 URL-REGEX,^https?:\/\/(?:.*\.)？playlist\.ttvnw\.net\/.*$
+DOMAIN-SUFFIX,playlist.ttvnw.net
 # DOMAIN-SUFFIX,usher.ttvnw.net
 # URL-REGEX,^https?:\/\/.*\.ext-twitch\.tv\/.*$
 
@@ -56,5 +60,6 @@ IP-CIDR,103.53.48.215/32,no-resolve
 URL-REGEX,^https?:\/\/video-weaver\..*\.hls\.ttvnw\.net\/.*$
 URL-REGEX,^https?:\/\/video-edge-.*\.abs\.hls\.ttvnw\.net\/.*$
 
+DOMAIN-SUFFIX,abs.hls.ttvnw.net
 # DOMAIN-SUFFIX,hls.ttvnw.net
 # DOMAIN-KEYWORD,hls.ttvnw.net

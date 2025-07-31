@@ -12,7 +12,9 @@ DOMAIN-SUFFIX,jtvnw.net
 DOMAIN-SUFFIX,live-video.net
 DOMAIN-SUFFIX,playlist.ttvnw.net
 DOMAIN-SUFFIX,global.poe.live-video.net
+DOMAIN-SUFFIX,live001-ttvnw.akamaized.net
 DOMAIN-SUFFIX,ttvnw.*.akamaized.net
+
 # Depercated RULE SET
 # URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?(?:static-cdn\.)?jtvnw\.net\/.*$
 URL-REGEX,^https?:\/\/(?:.*\.)？playlist\.ttvnw\.net\/.*$
