@@ -1,5 +1,5 @@
 # 注意规则在满足自己需求情况下，尽量做到精简，不要过度复杂，以免影响性能。
-# 订阅
+# Sub订阅
 proxy-providers:
   ESub:
     url: "https://sub.example.com/sub?token=XXX&clash"
@@ -38,11 +38,11 @@ profile:
   store-fake-ip: true
 
 # 控制面板
-# external-controller: 0.0.0.0:9090
-# secret: ""
-# external-ui: "/etc/nikki/run"
-# external-ui-name: zashboard
-# external-ui-url: "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/gh-pages.zip"
+external-controller: 0.0.0.0:9090
+secret: ""
+external-ui: "/etc/nikki/run/ui"
+external-ui-name: zashboard
+external-ui-url: "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/gh-pages.zip"
 
 # Sniffer Module
 # 注意: Sniffer 模块，开启后会增加 CPU 和内存的使用
@@ -87,10 +87,11 @@ dns:
   respect-rules: true
   # enhanced-mode: fake-ip
   enhanced-mode: redir-host
+  # fake-ip-range: 28.0.0.1/8
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter-mode: blacklist
   fake-ip-filter:
-  # - "rule-set:cn_domain"
+    - "rule-set:cn_domain"
     - "rule-set:private_domain"
     - "+.market.xiaomi.com"
     - "+.msftconnecttest.com"
@@ -98,13 +99,13 @@ dns:
     - "time.*.com"
     - "*.localhost"
     - "*.local"
-    - "*.lan"
+    - "*.lan" 
   default-nameserver:
     - 8.8.4.4
     - 119.28.28.28
   proxy-server-nameserver:
     - https://8.8.4.4/dns-query
-    - tls://120.53.53.53:853
+    - https://1.0.0.1/dns-query
   # namesever尽量用运营商提供的DNS
   nameserver:
     - 8.8.4.4
@@ -337,7 +338,7 @@ rule-providers:
   category-games: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-games-!cn.mrs"}
   category-game-platforms-download: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-game-platforms-download.mrs"}
   category-game-platforms-download-cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-game-platforms-download@cn.mrs"}
-  category-android-app: { <<: *domain, url: <<:"https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-android-app-download.mrs"}
+  category-android-app: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-android-app-download.mrs"}
   # Social+ Apps
   twitter_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/twitter.mrs"}
   facebook_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/facebook.mrs"}
@@ -368,7 +369,7 @@ rule-providers:
   tiktok_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/tiktok.mrs"}
   gfw_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/gfw.mrs"}
   geolocation-!cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/geolocation-!cn.mrs"}
-# cn_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/cn.mrs"}
+  cn_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/cn.mrs"}
 # GeoIP  
 # cn_ip: { <<: *ip, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geoip/cn.mrs"}
   google_ip: { <<: *ip, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geoip/google.mrs"}
