@@ -7,9 +7,9 @@
 # AUTHOR: blackmatrix7 x eslco
 # REPO: https://github.com/eslco/base/blob/main
 
-# UPDATED: 2025-07-27 16:17:40
-# DOMAIN-SUFFIX: 4
-# TOTAL: 36
+# UPDATED: 2025-08-01 16:17:40
+# DOMAIN-SUFFIX: 59 
+# TOTAL: 68
 DOMAIN-SUFFIX,api-tracker.xiaohongshu.com
 
 # XiaoHongShu CORE DOMAIN
@@ -69,6 +69,6 @@ IP-CIDR,47.97.0.0/16,no-resolve
 IP-CIDR,47.246.0.0/16,no-resolve
 
 # IPv6 EDITH DOMAIN IP-CIDR
-IP-CIDR,[2402:4e00:1410::98f5:ab14:193f:1f0c]/128,no-resolve
+# IP-CIDR,[2402:4e00:1410::98f5:ab14:193f],no-resolve
 # XHS DOMAIN IP
 IP-CIDR,183.232.212.19/32,no-resolve
