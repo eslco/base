@@ -23,7 +23,7 @@ DOMAIN-SUFFIX,api-3-0-0.twitter.com
 DOMAIN-SUFFIX,api-46-0-0.twitter.com
 DOMAIN-SUFFIX,dc-api.twitter.com
 # URL-REGEX,^https?:\/\/([a-zA-Z0-9-]+\.)*api([a-zA-Z0-9-]+)?\.twitter\.com(\/.*)?$
-URL-REGEX,^https?:\/\/(?:[a-zA-Z0-9-]+\.)*(?:api[a-zA-Z0-9-]*|(?:[a-zA-Z0-9-]+-)*api)(?:\.[a-zA-Z0-9-]+)*\.twitter\.com(?:\/.*)?$
+# URL-REGEX,^https?:\/\/(?:[a-zA-Z0-9-]+\.)*(?:api[a-zA-Z0-9-]*|(?:[a-zA-Z0-9-]+-)*api)(?:\.[a-zA-Z0-9-]+)*\.twitter\.com(?:\/.*)?$
 
 # 媒體相關域名
 DOMAIN-SUFFIX,pbs.twimg.com
