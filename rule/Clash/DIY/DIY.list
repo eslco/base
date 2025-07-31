@@ -22,15 +22,15 @@ DOMAIN-SUFFIX,xiaohongshu.net
 DOMAIN-SUFFIX,xiaohongshu.com
 DOMAIN-SUFFIX,xhslink.com
 
-DOMAINS-SUFFIX,tandem.net
-DOMAINS-SUFFIX,tandem.app
-DOMAINS-SUFFIX,tandem.io
-DOMAINS-KEYWORD,tandem
+DOMAIN-SUFFIX,tandem.net
+DOMAIN-SUFFIX,tandem.app
+DOMAIN-SUFFIX,tandem.io
+DOMAIN-KEYWORD,tandem
 
-DOMAINS-SUFFIX,todaysdyney.net
-DOMAINS-SUFFIX,routinehub.co
-DOMAINS-SUFFIX,routinehub.app
-DOMAINS-SUFFIX,todaysdyney.com
+DOMAIN-SUFFIX,todaysdyney.net
+DOMAIN-SUFFIX,routinehub.co
+DOMAIN-SUFFIX,routinehub.app
+DOMAIN-SUFFIX,todaysdyney.com
 
 
 # Domains for various services
