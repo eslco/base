@@ -1,5 +1,5 @@
 # 注意规则在满足自己需求情况下，尽量做到精简，不要过度复杂，以免影响性能。
-# 机场订阅
+# 订阅
 proxy-providers:
   ESub:
     url: "https://sub.example.com/sub?token=XXX&clash"
@@ -92,19 +92,19 @@ dns:
   fake-ip-filter:
   # - "rule-set:cn_domain"
     - "rule-set:private_domain"
-    - "+.market.xiaomi.com"    
+    - "+.market.xiaomi.com"
     - "+.msftconnecttest.com"
     - "+.msftncsi.com"
     - "time.*.com"
     - "*.localhost"
-    - "*.local"    
-    - "*.lan"    
+    - "*.local"
+    - "*.lan"
   default-nameserver:
     - 8.8.4.4
     - 119.28.28.28
   proxy-server-nameserver:
-    - https://120.53.53.53/dns-query
     - https://8.8.4.4/dns-query
+    - tls://120.53.53.53:853
   # namesever尽量用运营商提供的DNS
   nameserver:
     - 8.8.4.4
