@@ -50,23 +50,25 @@ sniffer:
   enable: true
   sniff:
     HTTP:
-      ports: [80, 8080-8880, 2052, 2053, 2082, 2086, 2095]
+      ports: [80, 8080,8880, 2052, 2053, 2082, 2086, 2095]
       override-destination: true
     TLS:
       ports: [443, 8443, 853]
     QUIC:
-      ports: [443, 8443, 2053, 2083, 2087, 2096]
+      ports: [0-65535]
+      override-destination: true
   force-domain:
     - "+.v2ex.com"
     - "+.whatsapp.net"
     - "+.whatsapp.com"
     - "+.facebook.com"
+    - "edith.xiaohongshu.com"
+    - "+.xiaohongshu.com"
   skip-domain:
     - "+.baidu.com"
     - "+.msftconnecttest.com"
     - "+.msftncsi.com"
     - "+.market.xiaomi.com"
-    
 # Outbound
 tun:
   enable: true
@@ -87,7 +89,8 @@ dns:
   fake-ip-range: 28.0.0.1/8
   fake-ip-filter-mode: blacklist
   fake-ip-filter:
-    - "rule-set:private_domain,cn_domain"
+  # - "rule-set:cn_domain"
+    - "rule-set:private_domain"
     - "+.market.xiaomi.com"    
     - "+.msftconnecttest.com"
     - "+.msftncsi.com"
@@ -97,7 +100,7 @@ dns:
     - "*.lan"    
   default-nameserver:
     - 8.8.4.4
-    - 1.0.0.1
+    - 119.28.28.28
   proxy-server-nameserver:
     - https://120.53.53.53/dns-query
     - https://8.8.4.4/dns-query
@@ -133,7 +136,7 @@ proxy-groups:
   - {name: 🎥 ProxyMedia, <<: *pr}
   - {name: 🌐 Social+, <<: *pr}
   - {name: 📱 WhatsApp, <<: *pr}
-  - {name: 📞 WeChat, <<: *cn}
+  - {name: 📞 WeChat, <<: *pr}
   - {name: 📕 XHS RedNote, <<: *cn}
   - {name: 🔯 HK Back, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇭🇰|HK|港|(?i)🇭🇰|HK|澳|hong|Macau|MO|HKG|MFM|Central|Kowloon|观塘|中环))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|🇯🇵|JP|日|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
   - {name: 🔯 JP Back, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇯🇵|JP|日|(?i)🇰🇷|KR|韩|Korea|🇯🇵|JP|日|Japan|Tokyo|Osaka|NRT|KIX|NGO|CTS|FUK|东京|大阪|[^-]日|沪日))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
@@ -158,10 +161,16 @@ proxy-groups:
 # 規則匹配
 # 此規則尚未作DNS防泄漏處理，because of the (弊大於利) CON is more than benefit
 rules:
+  - DOMAIN,www.xiaohongshu.com,📕 XHS RedNote
+  - DOMAIN-SUFFIX,edith.xiaohongshu.com,📕 XHS RedNote
+  - DOMAIN-SUFFIX,xiaohongshu.com,📕 XHS RedNote
   - DOMAIN-SUFFIX,aesin.eu,🚀 Proxy
-   # XHS RedNote
+  # XHS RedNote
   - RULE-SET,xhs_rednote,📕 XHS RedNote
   - RULE-SET,rednote,📕 XHS RedNote
+  # WeChat
+  - RULE-SET,wechat_NobyDa,📞 WeChat
+  - RULE-SET,wechat_list,📞 WeChat
   # DIY List
   - RULE-SET,diy_list,🚀 Proxy
   # PayPal
@@ -200,8 +209,6 @@ rules:
   - RULE-SET,netease_music_list,🎵 Netease Music
   - RULE-SET,netease_music,🎵 Netease Music
   # IM Apps
-  - RULE-SET,wechat_NobyDa,📞 WeChat
-  - RULE-SET,wechat_list,📞 WeChat
   - RULE-SET,whatsapp_diy,📱 WhatsApp
   - RULE-SET,whatsapp_list,📱 WhatsApp
   - RULE-SET,whatsapp_domain,📱 WhatsApp
@@ -227,7 +234,8 @@ rules:
   - RULE-SET,iptv_tw,🇹🇼 TW
   # TikTok
   - RULE-SET,tiktok_list,🎵 TikTok
-  - RULE-SET,tiktok_domain,🎵 TikTok  
+  - RULE-SET,tiktok_domain,🎵 TikTok
+  - RULE-SET,tiktok_us,🎵 TikTok  
   # Twitch
   - RULE-SET,twitch_proxy,🚀 Proxy
   - RULE-SET,twitch_direct,Direct
@@ -251,11 +259,11 @@ rules:
   # GFW
   - RULE-SET,gfw_domain,🚀 Proxy
   - RULE-SET,geolocation-!cn,🚀 Proxy
-  - RULE-SET,cn_domain,🎯 DirectN
+  # - RULE-SET,cn_domain,🎯 DirectN
   - RULE-SET,google_ip,🍀 Google,no-resolve
   - RULE-SET,netflix_ip,🎥 ProxyMedia,no-resolve
   - RULE-SET,telegram_ip,☎️ Telegram,no-resolve
-  - RULE-SET,cn_ip,🎯 DirectN
+  # - RULE-SET,cn_ip,🎯 DirectN
   - MATCH,🐟 Final
 
 # 规则集
@@ -265,6 +273,9 @@ rule-anchor:
   class: &class {type: http, interval: 86400, behavior: classical, format: text}
 rule-providers: 
 # ES Rules.ymal
+# WeChat
+  wechat_NobyDa: { <<: *class, url: "https://github.com/NobyDa/Script/raw/master/Surge/WeChat.list"}
+  wechat_list: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/WeChat/WeChat.list"}
 # DIY_list
   diy_list: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/DIY/DIY.list"}
 # XHS RedNote
@@ -286,9 +297,6 @@ rule-providers:
   messenger_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/messenger.mrs"}
   rakuten_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/rakuten.mrs"}
   line_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/line.mrs"}
-  # WeChat
-  wechat_NobyDa: { <<: *class, url: "https://github.com/NobyDa/Script/raw/master/Surge/WeChat.list"}
-  wechat_list: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/WeChat/WeChat.list"}
   # AI
   aide: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/general/AIDE.list"}
   ai: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/general/AI.list"}
@@ -322,6 +330,7 @@ rule-providers:
   ttproxy: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/Talkatone/ttproxy.list"}
   # TikTok
   tiktok_list: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/TikTok/TikTok.list"}
+  tiktok_us: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/TikTok/TikTok_US.list"}
 # Downloads Games
   category_games_cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-games-cn.mrs"}
   category_games: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-games-!cn.mrs"}
@@ -358,9 +367,9 @@ rule-providers:
   tiktok_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/tiktok.mrs"}
   gfw_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/gfw.mrs"}
   geolocation-!cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/geolocation-!cn.mrs"}
-  cn_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/cn.mrs"}
+# cn_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/cn.mrs"}
 # GeoIP  
-  cn_ip: { <<: *ip, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geoip/cn.mrs"}
+# cn_ip: { <<: *ip, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geoip/cn.mrs"}
   google_ip: { <<: *ip, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geoip/google.mrs"}
   telegram_ip: { <<: *ip, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geoip/telegram.mrs"}
   netflix_ip: { <<: *ip, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geoip/netflix.mrs"}
