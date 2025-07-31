@@ -1,0 +1,31 @@
+# NAME: Reject.list
+# Author: eslco, eslion
+# CDN URL: https://raw.gitmirror.com/eslco/base/main/rule/Surge/Twitch/TR.list
+# URL: https://raw.githubusercontent.com/eslco/base/main/rule/Surge/Twitch/TR.list
+# UPDATED: 2025-01-23 08:02 PM
+# DOMAIN-KEYWORD: 1
+# DOMAIN-SUFFIX: ~
+# IP-CIDR: ~~
+# TOTAL: ~~
+DOMAIN-SUFFIX,d2v02itv0y9u9t.cloudfront.net
+DOMAIN-SUFFIX,secure-sts-prod.imrworldwide.com
+DOMAIN-SUFFIX,aax-us-east.amazon-adsystem.com
+DOMAIN-SUFFIX,vaes.amazon-adsystem.com
+DOMAIN-SUFFIX,cdn-a.amazon-adsystem.com
+DOMAIN-SUFFIX,pubads.g.doubleclick.net
+#
+DOMAIN-SUFFIX,sb.scorecardresearch.com
+DOMAIN-SUFFIX,s.amazon-adsystem.com
+#
+DOMAIN-SUFFIX,reporting.cdndex.io
+DOMAIN-KEYWORD,ingest.sentry.io
+DOMAIN-SUFFIX,ad.doubleclick.net
+DOMAIN-SUFFIX,api.mixpanel.com
+DOMAIN-SUFFIX,spade.twitch.tv
+# DOMAIN-SUFFIX,fan.twitch.tv
+#
+# Test API
+DOMAIN-SUFFIX,api.amplitude.com
+DOMAIN-SUFFIX,api.sprig.com
+# Test API
+DOMAIN-SUFFIX,ads.twitch.tv

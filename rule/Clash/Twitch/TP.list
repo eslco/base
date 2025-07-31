@@ -1,0 +1,50 @@
+# Name: TP.list (TwitchProxy)
+# CDN URL: https://raw.gitmirror.com/eslco/base/main/rule/Surge/Twitch/TP.list
+# URL: https://raw.githubusercontent.com/eslco/base/main/rule/Surge/Twitch/TP.list
+# Author: eslco 
+# Repo URL: https://github.com/eslco/base/rule
+# Update at 2025.08.01
+
+# ======== Twitch Region Detect ======== #
+DOMAIN-SUFFIX,usher.ttvnw.net
+
+# ======== Twitch Core Services ======== #
+DOMAIN-SUFFIX,ext-twitch.tv
+DOMAIN-SUFFIX,twitchcdn.net
+DOMAIN-SUFFIX,twitchsvc.net
+
+# ======== Critical Subdomains (API/Player) ======== #
+DOMAIN-SUFFIX,pubsub-edge.twitch.tv
+DOMAIN-SUFFIX,player.twitch.tv
+DOMAIN-SUFFIX,assets.twitch.tv
+DOMAIN-SUFFIX,api.twitch.tv
+DOMAIN-SUFFIX,gql.twitch.tv
+DOMAIN-SUFFIX,twitch.tv
+
+# ======== Dynamic Subdomains (Regex) ======== #
+# 匹配所有 ext-twitch.tv 的动态子域名（如 *.ext-twitch.tv)
+DOMAIN-SUFFIX,ext-twitch.tv
+# URL-REGEX,^https?:\/\/(?:[a-z0-9-]+\.)+ext-twitch\.tv\/.*$
+
+# ======== Third-Party Extensions ======== #
+DOMAIN-SUFFIX,twitch-ext.rootonline.de
+
+# ======== Twitch Chat Server ======= #
+DOMAIN-SUFFIX,irc-ws.chat.twitch.tv
+DOMAIN-SUFFIX,chat.twitch.tv
+## IP-CIDR of Twitch Chat Server 聊天室伺服器IP-CIDR ##
+IP-CIDR,52.26.161.211/32,no-resolve
+IP-CIDR,44.235.206.9/32,no-resolve
+IP-CIDR,34.213.205.75/32,no-resolve
+IP-CIDR,52.89.201.32/32,no-resolve
+IP-CIDR,54.69.102.66/32,no-resolve
+IP-CIDR,52.36.231.249/32,no-resolve
+IP-CIDR,44.238.175.31/32,no-resolve
+IP-CIDR,44.228.62.191/32,no-resolve
+
+# ====== Twitch IP-ASN ====== #
+# ASN (Autonomous System Number) of Twitch AS46489
+IP-ASN,48489,no-resolve
+
+# Deprecated RULESET #
+# RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Twitch/Twitch.list
