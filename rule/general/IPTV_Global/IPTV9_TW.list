@@ -10,7 +10,7 @@
 # DOMAIN-SUFFIX,iptv.mydiver.eu.org
 # DOMAIN-SUFFIX,4gtv.livednow.dpdns.org
 
-#　以下全部走TW
+# 以下全部走TW
 DOMAIN-SUFFIX,ofissaifreepc.akamaized.net
 DOMAIN-SUFFIX,litvpc-hichannel.cdn.hinet.net
 DOMAIN-SUFFIX,4gtvfreepc-cds.cdn.hinet.net
@@ -20,5 +20,5 @@ DOMAIN-SUFFIX,ntd-tgc.cdn.hinet.net
 DOMAIN-SUFFIX,4gtvfree-mozai.4gtv.tv
 DOMAIN-SUFFIX,api2.4gtv.tv
 
-# 或者简单一点
+# TW
 DOMAIN-SUFFIX,cdn.hinet.net
