@@ -38,11 +38,11 @@ profile:
   store-fake-ip: true
 
 # 控制面板
-external-controller: 0.0.0.0:9090
-secret: ""
-external-ui: "/etc/nikki/run"
-external-ui-name: zashboard
-external-ui-url: "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/gh-pages.zip"
+# external-controller: 0.0.0.0:9090
+# secret: ""
+# external-ui: "/etc/nikki/run"
+# external-ui-name: zashboard
+# external-ui-url: "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/gh-pages.zip"
 
 # Sniffer Module
 # 注意: Sniffer 模块，开启后会增加 CPU 和内存的使用
@@ -55,7 +55,7 @@ sniffer:
     TLS:
       ports: [443, 8443, 853]
     QUIC:
-      ports: [0-65535]
+      ports: [443, 8443]
       override-destination: true
   force-domain:
     - "+.v2ex.com"
@@ -85,8 +85,9 @@ dns:
   listen: 0.0.0.0:1053
   ipv6: false
   respect-rules: true
-  enhanced-mode: fake-ip
-  fake-ip-range: 28.0.0.1/8
+  # enhanced-mode: fake-ip
+  enhanced-mode: redir-host
+  fake-ip-range: 198.18.0.1/16
   fake-ip-filter-mode: blacklist
   fake-ip-filter:
   # - "rule-set:cn_domain"
@@ -113,7 +114,7 @@ dns:
 # 注意锚点必须放在引用的上方， 也可以集中把锚点全部放.yaml顶部
 CN: &cn {type: select, proxies: [ Direct, 🚀 Proxy, 🔯 JP Back, 🔯 HK Back, 🇦🇺 AU, 🇬🇧 GB, 🇹🇼 TW, 🇸🇬 SG, 🇺🇸 US, ☑️ Manual]}
 PR: &pr {type: select, proxies: [ ☑️ Manual, 🚀 Proxy, 🔯 JP Back, 🔯 HK Back, ♻️ JP Auto, ♻️ HK Auto, 🇦🇺 AU, 🇬🇧 GB, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US, Direct]} # 🇭🇰 HK, 🇯🇵 JP
-TR: &dtcn {type: select, proxies: [ ☑️ Manual, 🚀 Proxy, Direct]}
+DTCN: &dtcn {type: select, proxies: [ ☑️ Manual, 🚀 Proxy, Direct]}
 
 # 代理組 Group Policy
 # 注意: 如果有多個代理組, 必須保證每個代理組的名稱唯一, 否則將會無法切換
@@ -155,7 +156,7 @@ proxy-groups:
   - {name: 🎵 Spotify, <<: *pr}
   - {name: ✈️ Speedtest, <<: *pr}
   - {name: Ⓜ️ Microsoft, <<: *pr}
-  - {name: 🍎 Apple,<<: *dtcn }
+  - {name: 🍎 Apple,<<: *pr }
   - {name: 🎯 DirectN, type: select, proxies: [Direct, 🚀 Proxy, ☑️ Manual]}
   - {name: 🐟 Final, <<: *pr}
 # 規則匹配
@@ -240,10 +241,10 @@ rules:
   - RULE-SET,twitch_proxy,🚀 Proxy
   - RULE-SET,twitch_direct,Direct
   # Download Games
-  - RULE-SET,category_games_cn,🎯 DirectN
+  - RULE-SET,category-games-cn,🎯 DirectN
   - RULE-SET,category-game-platforms-download-cn,🎯 DirectN
-  - RULE-SET,category_games,🚀 Proxy
-  - RULE-SET,category--android-app,🚀 Proxy  
+  - RULE-SET,category-games,🚀 Proxy
+  - RULE-SET,category-android-app,🚀 Proxy  
   - RULE-SET,category-game-platforms-download,🚀 Proxy
 
   # Apps
@@ -332,11 +333,11 @@ rule-providers:
   tiktok_list: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/TikTok/TikTok.list"}
   tiktok_us: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/TikTok/TikTok_US.list"}
 # Downloads Games
-  category_games_cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-games-cn.mrs"}
-  category_games: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-games-!cn.mrs"}
+  category-games-cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-games-cn.mrs"}
+  category-games: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-games-!cn.mrs"}
   category-game-platforms-download: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-game-platforms-download.mrs"}
   category-game-platforms-download-cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-game-platforms-download@cn.mrs"}
-  category--android-app: { <<: *domain, url <<:"https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-android-app-download.mrs"}
+  category-android-app: { <<: *domain, url: <<:"https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-android-app-download.mrs"}
   # Social+ Apps
   twitter_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/twitter.mrs"}
   facebook_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/facebook.mrs"}
