@@ -3,7 +3,7 @@
 # URL: https://raw.githubusercontent.com/eslco/base/main/rule/Surge/Twitch/TP.list
 # Author: eslco 
 # Repo URL: https://github.com/eslco/base/rule
-# Update at 2025.02.03
+# Update at 2025.08.01
 
 # ======== Twitch Region Detect ======== #
 DOMAIN-SUFFIX,usher.ttvnw.net
@@ -44,7 +44,7 @@ IP-CIDR,44.228.62.191/32,no-resolve
 
 # ====== Twitch IP-ASN ====== #
 # ASN (Autonomous System Number) of Twitch AS46489
-# IP-ASN,48489,no-resolve
+IP-ASN,48489,no-resolve
 
 # Deprecated RULESET #
 # RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Twitch/Twitch.list
