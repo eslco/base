@@ -1,0 +1,436 @@
+### 一份人人看得懂的通用配置文件 ###
+# Author： 科技探索者
+# TG 群组：https://t.me/seeker_group
+# TG 频道：https://t.me/seeker_channel
+# YouTube 频道：科技探索者
+# 使用此配置，请保留原作者信息，尊重作者
+
+# 使用前必读
+# 1、原则上只要填入机场订阅地址即可，搜索 proxy-providers
+# 2、DNS 泄露检测：https://browserleaks.com/webrtc / https://ipleak.net
+# 3、自定义规则，请参考 rule-providers 抄作业即可
+# 4、有部分下载资源使用了国外的，如果首次使用更新不了，先临时提供一下特殊网络环境或者修改下载地址
+
+#### ---- 基础设置 ---- ####
+# HTTP 代理端口
+port: 7890
+
+# Socks5 代理端口
+socks-port: 7891
+
+# HTTP / Sock5 混合端口
+mixed-port: 7892
+
+# 透明代理转发端口
+redir-port: 7893
+tproxy-port: 7894
+
+# 是否允许局域网其他设置访问，true / false，建议设置为 true
+allow-lan: true
+
+# 绑定 IP 地址，当 allow-lan 为 true 时生效
+bind-address: "*"
+
+# 模式，Rule（规则） / Global（全局） / Direct（直连），建议设置为 rule
+mode: rule
+
+# 更换延迟计算方式，去除握手等额外延迟，true / false，建议设置为 true
+unified-delay: true
+
+# TCP并发，true / false，建议设置为 true
+tcp-concurrent: true
+
+# 输出日志等级
+# silent 不输出
+# error 仅输出发生错误至无法使用的日志
+# warning 输出发生错误但不影响运行的日志，以及 error 级别内容
+# info 输出一般运行的内容，以及 error 和 warning 级别的日志
+# debug 尽可能的输出运行中所有的信息
+# 建议：当出现问题无法启动问题时，将日志等级修改为 debug，然后 Google 搜索答案或者电报群求助
+log-level: warning
+
+# 是否允许内核接受 IPv6 流量，true / false，建议设置为 false
+# 建议：如果你对 ipv6 没有需求时，就不要打开了，容易引发各种未知问题
+ipv6: false
+
+#### ---- 界面(API) ---- ####
+# 外部用户界面表态资源存储路径，直接写 ui 也可以，Clash 的工作目录的相对路径或者绝对路径都可以
+# 如果多个工具使用，建议写相对路径就好了，例如 ui
+external-ui: ui
+
+# 自定义外部用户界面名字，非必须，更新时会更新到指定文件夹，不配置则直接更新到 external-ui 目录
+external-ui-name: metacubexd
+
+# 自定义外部用户界面下载地址
+# 国内：https://ghp.ci/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip
+# 国外：https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip
+external-ui-url: https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip
+
+# API 监听地址，默认为 0.0.0.0:9090
+external-controller: 0.0.0.0:9090
+
+# HTTPS API 监听地址，需要配置 tls 部分证书和其私钥配置，使用 TLS 也必须填写 external-controller
+# 不建议这样用，可以另外通过其他反向代理来启动 HTTP，当前也不建议你把 UI 开放到公网
+# external-controller-tls: 127.0.0.1:9443
+
+# 访问密钥，建议认真设置，不推荐设置为空
+secret: ChangeMe
+
+#### ---- Geo Data ---- ####
+# 更改 geoip 使用文件，mmdb 或 dat，可选 true / false，true 为 dat，此项有默认值 false
+geodata-mode: false
+
+# GEO文件加载模式
+# standard：标准加载器
+# memconservative：专为内存受限(小内存)设备优化的加载器(默认值)
+geodata-loader: standard
+
+# 自定 GEO 下载地址
+# 如果下载不了，可以在前面增加 https://ghp.ci/
+geox-url:
+  geosite: https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat
+  mmdb: https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country-lite.mmdb
+  geoip: https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat
+  asn: https://gh-proxy.com/https://github.com/xishang0128/geoip/releases/download/latest/GeoLite2-ASN.mmdb
+
+# 是否自动更新 GEO 数据
+geo-auto-update: true
+
+# GEO 数据更新间隔，单位为小时
+geo-update-interval: 24
+
+#### ---- 扩展配置 ---- ####
+# always 开启，强制匹配所有进程
+# strict 默认，由 Clash 判断是否开启
+# off 不匹配进程，推荐在路由器上使用此模式
+find-process-mode: strict
+
+# 全局 TLS 指纹，优先低于 proxy 内的 client-fingerprint。
+# 目前支持开启 TLS 传输的 TCP/grpc/WS/HTTP , 支持协议有 VLESS,Vmess 和 trojan.
+# 可选："chrome", "firefox", "safari", "iOS", "android", "edge", "360"," qq", "random"
+# 若选择 "random", 则按 Cloudflare Radar 数据按概率生成一个现代浏览器指纹。
+global-client-fingerprint: chrome
+
+# TCP Keep Alive 的最大空闲时间，单位为秒
+keep-alive-idle: 600
+
+# 控制 Clash 发出 TCP Keep Alive 包的间隔，单位为秒，减少移动设备耗电问题的临时措施。
+keep-alive-interval: 30
+
+# 禁用 TCP Keep Alive，在 Android 默认为 true
+# disable-keep-alive: false
+
+profile:
+  # 储存 API 对策略组的选择，以供下次启动时使用
+  store-selected: true
+
+  # 储存 fakeip 映射表，域名再次发生连接时，使用原有映射地址
+  store-fake-ip: true
+
+# 流量嗅探
+sniffer:
+  # 是否启用功能，true / false，建议设置为 true
+  enable: true
+
+  # 对 redir-host 类型识别的流量进行强制嗅探，建议设置为 true
+  force-dns-mapping: true
+
+  # 对所有未获取到域名的流量进行强制嗅探，建议设置为 true
+  parse-pure-ip: true
+
+  # 是否使用嗅探结果作为实际访问，默认为 true
+  override-destination: false
+
+  # 需要嗅探的协议设置，仅支持 HTTP / TLS / QUIC
+  # ports: 端口范围
+  # override-destination: 覆盖全局 override-destination 设置
+  # 建议：默认即可
+  sniff:
+    HTTP:
+      ports: [80, 8080-8880]
+      override-destination: true
+    TLS:
+      ports: [443, 8443]
+    QUIC:
+      ports: [443, 8443]
+
+  # 强制进行嗅探的域名列表，使用域名通配，按需设置
+  force-domain:
+    - +.v2ex.com
+
+  # 跳过嗅探的域名列表，使用域名通配，按需设置
+  skip-domain:
+    - "dlg.io.mi.com"
+    - "+.push.apple.com"
+    - "+.apple.com"
+  
+  # 跳过嗅探的来源 IP 段列表，按需设置
+  # skip-src-address:
+  #   - 192.168.0.3/32
+
+  # 跳过嗅探的目标 IP 段列表，按需设置
+  # skip-dst-address:
+  #   - 192.168.0.3/32
+
+#### ---- DNS 配置 ---- ####
+dns:
+  # 是否启用 DNS 挟持功能，true / false，建议设置为 true
+  enable: true
+
+  # DNS 服务监听，仅支持 udp
+  listen: 0.0.0.0:7874
+
+  # 是否解析 IPV6, 如为 false, 则回应 AAAA 的空解析
+  ipv6: false
+
+  # DOH 优先使用 http/3，true / false，建议设置为 true
+  prefer-h3: true
+
+  # dns 连接遵守路由规则，需配置 proxy-server-nameserver
+  respect-rules: true
+
+  # DNS 处理模式，可选值 fake-ip / redir-host，默认 redir-host
+  # 建议：如果想要兼容性好，选择 redir-host 会减少一些问题，如果想性能好一丢丢，可以选择 fake-ip
+  enhanced-mode: redir-host
+
+  # fakeip 下的 IP 段设置，tun 的默认 IPV4 地址 也使用此值作为参考
+  fake-ip-range: 198.18.0.1/16
+
+  # 可选 blacklist / whitelist，默认 blacklist，whitelist 即只有匹配成功才返回 fake-ip
+  fake-ip-filter-mode: blacklist
+
+  # fakeip 过滤，以下地址不会下发 fakeip 映射用于连接，值支持域名通配以及引入域名集合
+  # geoip:private 为特殊项，囊括了内网IP和保留IP，其余类别囊括了各个国家/地区的IP地址段
+  # 建议：如果使用 fake-ip 模式，建议这里将国内和特殊项返回真实 IP
+  fake-ip-filter:
+    - "+.lan"
+    - "+.local"
+    - geosite:private
+    - geosite:cn
+  
+  # 默认 DNS, 用于解析 DNS 服务器 的域名
+  # 建议：设置国内的 UDP DNS 即可，如果有挟持情况，可考虑为 DoH / DoT
+  default-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+
+  # 代理节点域名解析服务器，仅用于解析代理节点的域名，如果不填则遵循nameserver-policy、nameserver和fallback的配置
+  # 建议：设置国内的 UDP DNS 即可
+  proxy-server-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+
+  # 默认的域名解析服务器
+  # 建议：设置国内的 UDP DNS 即可
+  nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+
+  # 后备域名解析服务器，一般情况下使用境外 DNS, 保证结果可信，配置 fallback后默认启用 fallback-filter,geoip-code为 cn
+  # 建议：设置国外的 UDP DNS 即可，如果想更安全一丢丢，可以使用 DoH / DoT
+  fallback:
+    - 8.8.8.8
+    - 8.8.4.4
+
+  # 指定域名查询的解析服务器，可使用 geosite, 优先于 nameserver/fallback 查询
+  # 建议：这里可用来做 DNS 分流，防泄露 / 防挟持，可根据自己的规则适当增加，此处支持 rule-set
+  nameserver-policy:
+    "geosite:cn,private": # 国内，如果 UDP DNS 没啥问题，国内不建议使用 DoH / DoT
+      - "https://doh.pub/dns-query"
+      - "https://dns.alidns.com/dns-query"
+    "geosite:geolocation-!cn": # 非CN，即国外，一般建议 DoH / DoT
+      - "https://dns.cloudflare.com/dns-query"
+      - "https://dns.google/dns-query"
+
+#### ---- Tun Proxy 配置 ---- ####
+tun:
+  # 是否启用 Tun Proxy 透明代理，true / false，建议设置为 true
+  enable: true
+
+  # tun 模式堆栈，可用值 system / gvisor / mixed，如无使用问题，建议使用 mixed栈，默认 gvisor
+  # system 使用系统协议栈，可以提供更稳定/全面的 tun 体验，且占用相对其他堆栈更低
+  # gvisor 通过在用户空间中实现网络协议栈，可以提供更高的安全性和隔离性，同时可以避免操作系统内核和用户空间之间的切换，从而在特定情况下具有更好的网络处理性能
+  # mixed 混合堆栈，tcp 使用 system栈，udp 使用 gvisor栈，使用体验可能相对更好
+  # 建议：设置为 mixed
+  stack: mixed
+
+  # 自动设置全局路由，可以自动将全局流量路由进入 tun 网卡
+  auto-route: true
+
+  # 仅支持 Linux，自动配置 iptables/nftables 以重定向 TCP 连接，需要auto-route已启用
+  # 在 Android 中：仅转发本地 IPv4 连接。要通过热点或中继共享您的 VPN 连接，请使用 VPNHotspot。
+  # 在 Linux 中：带有 auto-route 的 auto-redirect 现在可以在路由器上按预期工作，无需干预。
+  auto-redirect: true
+
+  # 自动选择流量出口接口，多出口网卡同时连接的设备建议手动指定出口网卡
+  auto-detect-interface: true
+  
+  # dns 劫持，将匹配到的连接导入内部 dns 模块，不书写协议则为 udp://
+  # 在 MacOS/Windows 无法自动劫持发往局域网的 dns 请求
+  # 在 Android 如开启 私人dns 则无法自动劫持 dns 请求
+  dns-hijack:
+    - "any:53"
+    - "tcp://any:53"
+
+  # 最大传输单元，会影响极限状态下的速率，一般用户默认即可。
+  mtu: 9000
+
+  # 指定 tun 网卡名称，MacOS 设备只能使用 utun 开头的网卡名，可选项
+  # device: utun0
+
+  # 启用 auto-route 时执行严格的路由规则
+  # 在 Linux 中: 让不支持的网络无法到达，将所有连接路由到 tun，它可以防止地址泄漏，并使 DNS 劫持在 Android 上工作。
+  # 在 Windows 中:，添加防火墙规则以阻止 Windows 的 普通多宿主 DNS 解析行为 造成的 DNS 泄露，它可能会使某些应用程序（如 VirtualBox）在某些情况下无法正常工作。
+  # strict-route: true
+
+  # 启用通用分段卸载，仅支持 Linux
+  # gso: true
+
+  # 数据块的最大长度
+  # gso-max-size: 65536
+
+  # UDP NAT 过期时间，以秒为单位，默认为 300(5 分钟)
+  # udp-timeout: 300
+
+  # auto-route 生成的 iproute2 路由表索引，默认使用 2022
+  # iproute2-table-index: 2022
+
+  # auto-route 生成的 iproute2 规则起始索引，默认使用 9000
+  # iproute2-rule-index: 9000
+
+  # 启用独立于端点的 NAT，性能可能会略有下降，所以不建议在不需要的时候开启。
+  # endpoint-independent-nat: false
+
+  # 将指定规则集中的目标 IP CIDR 规则添加到防火墙，不匹配的流量将绕过路由 仅支持 Linux，且需要 nftables 以及auto-route 和 auto-redirect 已启用。
+  # route-address-set:
+  #   - ruleset-1
+
+  # 将指定规则集中的目标 IP CIDR 规则添加到防火墙，匹配的流量将绕过路由 仅支持 Linux，且需要 nftables 以及auto-route 和 auto-redirect 已启用。
+  # 与任意配置中的 routing-mark 冲突
+  # route-exclude-address-set:
+  #   - ruleset-2
+
+  # 启用 auto-route时路由自定义路由网段而不是默认路由，一般无需配置。
+  # route-address:
+  #   - 0.0.0.0/1
+  #   - 128.0.0.0/1
+  #   - "::/1"
+  #   - "8000::/1"
+
+  # 启用 auto-route 时排除自定义网段
+  # route-exclude-address:
+  #   - 192.168.0.0/16
+  #   - fc00::/7
+
+  # 限制被路由的接口，默认不限制，与 exclude-interface 冲突，不可一起配置
+  # include-interface:
+  #   - eth0
+  
+  # 排除路由的接口，与 include-interface 冲突，不可一起配置
+  # exclude-interface:
+  #   - eth1
+
+  # 包含的用户，使其被 Tun 路由流量，未被配置的用户不会被 Tun 路由流量，默认不限制
+  # UID 规则仅在 Linux 下被支持,并且需要 auto-route
+  # include-uid:
+  #   - 0
+
+  # 包含的用户范围，使其被 Tun 路由流量，未被配置的用户不会被 Tun 路由流量
+  # include-uid-range:
+  #   - 1000:9999
+
+  # 排除用户，使其避免被 Tun 路由流量
+  # exclude-uid:
+  #  - 1000
+
+  # 排除用户范围，使其避免被 Tun 路由流量
+  # exclude-uid-range:
+  #    - 1000:9999
+
+  # 包含的 Android 用户，使其被 Tun 路由流量，未被配置的用户不会被 Tun 路由流量
+  # Android 用户和应用规则仅在 Android 下被支持,并且需要 auto-route
+  # 常用用户ID，机主：0，手机分身：10，应用多开：999
+  # include-android-user:
+  #   - 0
+  #   - 10
+
+  # 包含的 Android 应用包名，使其被 Tun 路由流量，未配置的应用包不会被 Tun 路由流量
+  # include-package:
+  #   - com.android.chrome
+
+  # 排除 Android 应用包名，使其避免被 Tun 路由流量
+  # exclude-package:
+  #   - com.android.captiveportallogin
+
+# 锚点，用于简化配置
+# for proxy-providers
+pp: &pp {type: http, interval: 86400, proxy: DIRECT, "health-check": {enable: true, url: http://www.gstatic.com/generate_204, interval: 300}}
+
+# for proxy-groups 
+pg_fb: &pg_fb {type: fallback, url: http://www.gstatic.com/generate_204, tolerance: 20, interval: 300}
+pg_ut: &pg_ut {type: url-test, url: http://www.gstatic.com/generate_204, tolerance: 20, interval: 300}
+
+# for rule-providers
+ip_mrs: &ip_mrs {type: http, interval: 86400, behavior: ipcidr, format: mrs}
+domain_mrs: &domain_mrs {type: http, interval: 86400, behavior: domain, format: mrs}
+domain_yaml: &domain_yaml {type: http, interval: 86400, behavior: domain, format: yaml}
+class_yaml: &class_yaml {type: http, interval: 86400, behavior: classical, format: yaml}
+
+# 机场代理地址
+# proxy-providers:  
+#   AirPort: {!!merge <<: *pp, url: "sub.example.com"}
+
+# 机场代理策略组分组
+# proxy-groups:
+# - {name: Proxy, type: select, proxies: [HK手选, HK自选, HK故转, JP手选, JP故转, JP自选, US手选, US自选, US故转]}
+# - {name: All, type: select, include-all: true}
+# - {name: HK手选, type: select, include-all: true, filter: "(?i)港|hk|hongkong|hong kong"}
+# - {name: HK自选, !!merge <<: *pg_ut, include-all: true, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$"}
+# - {name: HK故转, !!merge <<: *pg_fb, include-all: true, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$"}
+# - {name: US手选, type: select, include-all: true, filter: "(?i)美|us|unitedstates|united states"}
+# - {name: US自选, !!merge <<: *pg_ut, include-all: true, filter: "(?=.*(美|US|(?i)States|America))^((?!(港|台|日|韩|新)).)*$"}
+# - {name: US故转, !!merge <<: *pg_fb, include-all: true, filter: "(?=.*(美|US|(?i)States|America))^((?!(港|台|日|韩|新)).)*$"}
+# - {name: JP手选, type: select, include-all: true, filter: "(?i)日|jp|japan"}
+# - {name: JP自选, !!merge <<: *pg_ut, include-all: true, filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$"}
+# - {name: JP故转, !!merge <<: *pg_fb, include-all: true, filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$"}
+
+
+# 规则订阅
+# rule-providers:
+#   private: {!!merge <<: *domain_mrs, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs"}
+#   geolocation-!cn: {!!merge <<: *domain_mrs, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs"}
+#   cn_site: {!!merge <<: *domain_mrs, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs"}
+#   cn_ip: {!!merge <<: *ip_mrs, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs"}
+#   AWAvenue: {!!merge <<: *domain_yaml, url: "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/refs/heads/main/Filters/AWAvenue-Ads-Rule-Clash.yaml"}
+  
+  # Classical 格式文件
+  # https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash
+  # telegram: {!!merge <<: *class_yaml, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml"}
+  # RULE-SET,telegram,Proxy
+
+  # Mrs 格式文件
+  # https://github.com/MetaCubeX/meta-rules-dat/tree/meta/geo/geosite
+  # telegram_ip: {!!merge <<: *ip_mrs, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs"}
+  # telegram_domain: {!!merge <<: *domain_mrs, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs"}
+  # RULE-SET,telegram_ip,Proxy
+  # RULE-SET,telegram_domain,Proxy
+
+# 规则
+rules:
+- RULE-SET,private,DIRECT
+- RULE-SET,telegram_ip,Proxy,no-resolve
+- RULE-SET,telegram_domain,Proxy
+- RULE-SET,AWAvenue,REJECT
+- RULE-SET,geolocation-!cn,Proxy
+- DOMAIN-SUFFIX,cn,DIRECT
+- RULE-SET,cn_site,DIRECT
+- RULE-SET,cn_ip,DIRECT
+- GEOSITE,CN,DIRECT
+- GEOIP,CN,DIRECT
+- IP-CIDR,192.168.0.0/16,DIRECT
+- IP-CIDR,10.0.0.0/8,DIRECT
+- IP-CIDR,172.16.0.0/12,DIRECT
+- IP-CIDR,127.0.0.0/8,DIRECT
+- IP-CIDR,100.64.0.0/10,DIRECT
+- IP-CIDR6,fe80::/10,DIRECT
+- Match,Proxy
