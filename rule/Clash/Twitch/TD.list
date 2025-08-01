@@ -1,7 +1,7 @@
 # Name: TD.list (TwitchDirect.list)
 
-# CDN URL: https://raw.gitmirror.com/eslco/base/main/rule/Surge/Twitch/TD.list
-# URL: https://raw.githubusercontent.com/eslco/base/main/rule/Surge/Twitch/TD.list
+# CDN URL: https://raw.gitmirror.com/eslco/base/main/rule/Clash/Twitch/TD.list
+# URL: https://raw.githubusercontent.com/eslco/base/main/rule/Clash/Twitch/TD.list
 # Author: eslco 
 # Repo URzL: https://github.com/eslco/base
 # Update at 2025.01.23
@@ -17,7 +17,7 @@ DOMAIN-SUFFIX,ttvnw.*.akamaized.net
 
 # Depercated RULE SET
 # URL-REGEX,^https?:\/\/(?:[\w.-]*\.)?(?:static-cdn\.)?jtvnw\.net\/.*$
-URL-REGEX,^https?:\/\/(?:.*\.)？playlist\.ttvnw\.net\/.*$
+# URL-REGEX,^https?:\/\/(?:.*\.)？playlist\.ttvnw\.net\/.*$
 # URL-REGEX,^https?:\/\/[\w.-]+\.live-video\.net\/.*$
 
 # ======== Twitch Region Detect ======== #
