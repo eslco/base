@@ -217,8 +217,8 @@ dns:
   # 代理节点域名解析服务器，仅用于解析代理节点的域名，如果不填则遵循nameserver-policy、nameserver和fallback的配置
   # 建议：设置国内的 UDP DNS 即可
   proxy-server-nameserver:
-    - 223.5.5.5
-    - 119.29.29.29
+    - https://dns.cloudflare.com/dns-query
+    - https://dns.google/dns-query
 
   # 默认的域名解析服务器
   # 建议：设置国内的 UDP DNS 即可
@@ -229,18 +229,18 @@ dns:
   # 后备域名解析服务器，一般情况下使用境外 DNS, 保证结果可信，配置 fallback后默认启用 fallback-filter,geoip-code为 cn
   # 建议：设置国外的 UDP DNS 即可，如果想更安全一丢丢，可以使用 DoH / DoT
   fallback:
-    - 8.8.8.8
+    - 120.53.53.53
     - 8.8.4.4
 
   # 指定域名查询的解析服务器，可使用 geosite, 优先于 nameserver/fallback 查询
   # 建议：这里可用来做 DNS 分流，防泄露 / 防挟持，可根据自己的规则适当增加，此处支持 rule-set
   nameserver-policy:
-    "geosite:cn,private": # 国内，如果 UDP DNS 没啥问题，国内不建议使用 DoH / DoT
-      - "https://doh.pub/dns-query"
-      - "https://dns.alidns.com/dns-query"
+    "geosite:cn,private": # 大陆 推荐 (UDP) DNS IP，国内不建议使用 DoH / DoT
+      - https://doh.pub/dns-query
+      - https://dns.alidns.com/dns-query
     "geosite:geolocation-!cn": # 非CN，即国外，一般建议 DoH / DoT
-      - "https://dns.cloudflare.com/dns-query"
-      - "https://dns.google/dns-query"
+      - https://dns.cloudflare.com/dns-query
+      - https://dns.google/dns-query
 
 #### ---- Tun Proxy 配置 ---- ####
 tun:
