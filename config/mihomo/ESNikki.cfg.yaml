@@ -17,13 +17,10 @@ proxies:
   - {name: Reject, type: reject}
 # General Settings
 # # mode: rule
-# # hosts:
-# #   localhost:
-# #     - 127.0.0.1
-# #     - ::1
+# use system-hosts: true
 port: 7890
-socks-port: 7891
-redir-port: 7893
+socks-port: 20087
+redir-port: 7892
 mixed-port: 7893
 tproxy-port: 7894
 allow-lan: true
@@ -54,7 +51,7 @@ geox-url:
 geo-auto-update: true
 
 # GEO 数据更新间隔，单位为小时
-geo-update-interval: 48
+geo-update-interval: 24
 
 #### ---- 扩展配置 ---- ####
 # always 开启，强制匹配所有进程
@@ -88,21 +85,15 @@ sniffer:
     TLS:
       ports: [443, 8443, 853]
     QUIC:
-      ports: [443, 8443, 5332]
+      ports: [443, 8443]
       override-destination: true
   force-domain:
-    - "www.anthropic.com"
-    - "+.claude.ai"
     - "+.v2ex.com"
     - "+.whatsapp.net"
     - "+.whatsapp.com"
     - "+.facebook.com"
-    - "www.xiaohongshu.com"
     - "edith.xiaohongshu.com"
     - "+.xiaohongshu.com"
-    - "+.xiaohongshu.net"
-    - "+.xhscdn.com"
-    - "+.xhscdn.net"
   skip-domain:
     - "+.baidu.com"
     - "+.msftconnecttest.com"
@@ -128,6 +119,7 @@ tun:
 dns:
   enable: true
   listen: 0.0.0.0:1053
+
   ipv6: false
     # DOH 优先使用 http/3，true / false，建议设置为 true
   prefer-h3: true
@@ -138,7 +130,6 @@ dns:
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter-mode: blacklist
   fake-ip-filter:
-    - "rule-set:cn_domain"
     - "rule-set:private_domain"
     - "+.market.xiaomi.com"
     - "+.msftconnecttest.com"
@@ -146,15 +137,20 @@ dns:
     - "time.*.com"
     - "*.localhost"
     - "*.local"
-    - "*.lan" 
+    - "*.lan"
+  use-hosts: true
+hosts:
+  localhost:
+    - 127.0.0.1
+    - ::1
   default-nameserver:
-    - 223.6.6.6
+   - 223.6.6.6
   proxy-server-nameserver:
-    - https://dns.cloudflare-dns.com/dns-query
-    - https://8.8.4.4/dns-query
+   - https://public.dns.iij.jp/dns-query
+   - https://8.8.4.4/dns-query
   # namesever尽量用运营商提供的DNS
   nameserver:
-   - 8.8.4.4
+   - 223.6.6.6
    - 119.28.28.28
   fallback:
    - 120.53.53.53
@@ -162,12 +158,11 @@ dns:
 # 建议：这里可用来做 DNS 分流，防泄露 / 防挟持，可根据自己的规则适当增加，此处支持 rule-set
   nameserver-policy:
   "geosite:cn,private": # 国内，如果 UDP DNS 没啥问题，国内不建议使用 DoH / DoT
-    - 120.53.53.53
-    - 223.6.6.6
+   - https://223.6.6.6/dns-query
+   - https://120.53.53.53/dns-query
   "geosite:geolocation-!cn": # 非CN，即国外，一般建议 DoH / DoT
-    - https://dns.cloudflare.com/dns-query
-    - https://8.8.4.4/dns-query
-
+   - https://public.dns.iij.jp/dns-query
+   - https://8.8.4.4/dns-query
 # 锚点引用 Anthor: Mihomo
 # 注意锚点必须放在引用的上方， 也可以集中把锚点全部放.yaml顶部
 CN: &cn {type: select, proxies: [ Direct, 🚀 Proxy, 🔯 JP Back, 🔯 HK Back, 🇦🇺 AU, 🇬🇧 GB, 🇹🇼 TW, 🇸🇬 SG, 🇺🇸 US, ☑️ Manual]}
@@ -330,7 +325,7 @@ rule-anchor:
   ip: &ip {type: http, interval: 86400, behavior: ipcidr, format: mrs}
   domain: &domain {type: http, interval: 86400, behavior: domain, format: mrs}
   class: &class {type: http, interval: 86400, behavior: classical, format: text}
-rule-providers: 
+rule-providers:
 # ES Rules.ymal
 # WeChat
   wechat_NobyDa: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/WeChat/WeChat.list"}
@@ -339,7 +334,6 @@ rule-providers:
   diy_list: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/DIY/DIY.list"}
 # XHS RedNote
   rednote: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/general/XiaoHongShu/XiaoHongShu.list"}
-  rednote_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/xiaohongshu.mrs"}
   xhs_rednote: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/XiaoHongShu/XiaoHongShu.list"}
   # DEX
   dex_domain: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/DEX/DEX.list"}
@@ -405,13 +399,14 @@ rule-providers:
   # Spotify
   spotify_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/spotify.mrs"}
   # Twitch
-  twitch_direct : { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/Twitch/TD.list"}
-  twitch_proxy: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/Twitch/TP.list"}
+  twitch_direct : { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Surge/Twitch/TD.list"}
+  twitch_proxy: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Surge/Twitch/TP.list"}
   twitch_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/twitch.mrs"}
 # ES Rules.yaml
 
 # qcy_nikki.config.yaml
   private_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/private.mrs"}
+  # proxylite: { <<: *class, url: "https://raw.githubusercontent.com/qichiyuhub/rule/main/proxy.list"}
   ai_domain: {  <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-ai-!cn.mrs"}
   youtube_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/youtube.mrs"}
   google_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/google.mrs"}
