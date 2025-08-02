@@ -69,6 +69,6 @@ IP-CIDR,47.97.0.0/16,no-resolve
 IP-CIDR,47.246.0.0/16,no-resolve
 
 # IPv6 EDITH DOMAIN IP-CIDR
-# IP-CIDR,[2402:4e00:1410::98f5:ab14:193f],no-resolve
+# IP-CIDR,2402:4e00:1410::98f5:ab14:193f/128,no-resolve
 # XHS DOMAIN IP
 IP-CIDR,183.232.212.19/32,no-resolve
