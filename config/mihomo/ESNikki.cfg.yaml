@@ -16,9 +16,14 @@ proxies:
   - {name: Direct, type: direct}
   - {name: Reject, type: reject}
 # General Settings
+# # mode: rule
+# # hosts:
+# #   localhost:
+# #     - 127.0.0.1
+# #     - ::1
 port: 7890
-socks-port: 20087
-redir-port: 7892
+socks-port: 7891
+redir-port: 7893
 mixed-port: 7893
 tproxy-port: 7894
 allow-lan: true
@@ -27,6 +32,34 @@ ipv6: false
 unified-delay: false
 tcp-concurrent: true
 log-level: warning
+
+#### ---- Geo Data ---- ####
+# 更改 geoip 使用文件，mmdb 或 dat，可选 true / false，true 为 dat，此项有默认值 false
+geodata-mode: false
+
+# GEO文件加载模式
+# standard：标准加载器
+# memconservative：专为内存受限(小内存)设备优化的加载器(默认值)
+geodata-loader: standard
+
+# 自定 GEO 下载地址
+# 如果下载不了，可以在前面增加 https://ghp.ci/
+geox-url:
+  geosite: https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat
+  mmdb: https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country-lite.mmdb
+  geoip: https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat
+  asn: https://gh-proxy.com/https://github.com/xishang0128/geoip/releases/download/latest/GeoLite2-ASN.mmdb
+
+# 是否自动更新 GEO 数据
+geo-auto-update: true
+
+# GEO 数据更新间隔，单位为小时
+geo-update-interval: 48
+
+#### ---- 扩展配置 ---- ####
+# always 开启，强制匹配所有进程
+# strict 默认，由 Clash 判断是否开启
+# off 不匹配进程，推荐在路由器上使用此模式
 find-process-mode: 'off'
 # interface-name: en0
 global-client-fingerprint: chrome
@@ -40,9 +73,9 @@ profile:
 # 控制面板
 external-controller: 0.0.0.0:9090
 secret: ""
-external-ui: "/etc/nikki/run/ui"
+external-ui: ui
 external-ui-name: zashboard
-external-ui-url: "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/gh-pages.zip"
+external-ui-url: https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/gh-pages.zip
 
 # Sniffer Module
 # 注意: Sniffer 模块，开启后会增加 CPU 和内存的使用
@@ -50,20 +83,26 @@ sniffer:
   enable: true
   sniff:
     HTTP:
-      ports: [80, 8080,8880, 2052, 2053, 2082, 2086, 2095]
+      ports: [80, 8080, 8880, 2082]
       override-destination: true
     TLS:
       ports: [443, 8443, 853]
     QUIC:
-      ports: [443, 8443]
+      ports: [443, 8443, 5332]
       override-destination: true
   force-domain:
+    - "www.anthropic.com"
+    - "+.claude.ai"
     - "+.v2ex.com"
     - "+.whatsapp.net"
     - "+.whatsapp.com"
     - "+.facebook.com"
+    - "www.xiaohongshu.com"
     - "edith.xiaohongshu.com"
     - "+.xiaohongshu.com"
+    - "+.xiaohongshu.net"
+    - "+.xhscdn.com"
+    - "+.xhscdn.net"
   skip-domain:
     - "+.baidu.com"
     - "+.msftconnecttest.com"
@@ -75,15 +114,23 @@ tun:
   # system/gvisor/mixed
   stack: mixed
   dns-hijack: ["any:53", "tcp://any:53"]
-  auto-route: true
-  auto-redirect: true
-  auto-detect-interface: true
 
+  auto-route: true
+  # 仅支持 Linux，自动配置 iptables/nftables 以重定向 TCP 连接，需要auto-route已启用
+  # 在 Android 中：仅转发本地 IPv4 连接。要通过热点或中继共享您的 VPN 连接，请使用 VPNHotspot。
+  # 在 Linux 中：带有 auto-route 的 auto-redirect 现在可以在路由器上按预期工作，无需干预。
+  auto-redirect: true
+  # 自动选择流量出口接口，多出口网卡同时连接的设备建议手动指定出口网卡
+  auto-detect-interface: true
+  # 最大传输单元，会影响极限状态下的速率，一般用户默认即可。
+  mtu: 1500
 # DNS Module
 dns:
   enable: true
   listen: 0.0.0.0:1053
   ipv6: false
+    # DOH 优先使用 http/3，true / false，建议设置为 true
+  prefer-h3: true
   respect-rules: true
   # enhanced-mode: fake-ip
   enhanced-mode: redir-host
@@ -101,16 +148,26 @@ dns:
     - "*.local"
     - "*.lan" 
   default-nameserver:
-    - 8.8.4.4
-    - 119.28.28.28
+    - 223.6.6.6
   proxy-server-nameserver:
+    - https://dns.cloudflare-dns.com/dns-query
     - https://8.8.4.4/dns-query
-    - https://1.0.0.1/dns-query
   # namesever尽量用运营商提供的DNS
   nameserver:
-    - 8.8.4.4
-    - 119.28.28.28
- 
+   - 8.8.4.4
+   - 119.28.28.28
+  fallback:
+   - 120.53.53.53
+# 指定域名查询的解析服务器，可使用 geosite, 优先于 nameserver/fallback 查询
+# 建议：这里可用来做 DNS 分流，防泄露 / 防挟持，可根据自己的规则适当增加，此处支持 rule-set
+  nameserver-policy:
+  "geosite:cn,private": # 国内，如果 UDP DNS 没啥问题，国内不建议使用 DoH / DoT
+    - 120.53.53.53
+    - 223.6.6.6
+  "geosite:geolocation-!cn": # 非CN，即国外，一般建议 DoH / DoT
+    - https://dns.cloudflare.com/dns-query
+    - https://8.8.4.4/dns-query
+
 # 锚点引用 Anthor: Mihomo
 # 注意锚点必须放在引用的上方， 也可以集中把锚点全部放.yaml顶部
 CN: &cn {type: select, proxies: [ Direct, 🚀 Proxy, 🔯 JP Back, 🔯 HK Back, 🇦🇺 AU, 🇬🇧 GB, 🇹🇼 TW, 🇸🇬 SG, 🇺🇸 US, ☑️ Manual]}
@@ -276,18 +333,19 @@ rule-anchor:
 rule-providers: 
 # ES Rules.ymal
 # WeChat
-  wechat_NobyDa: { <<: *class, url: "https://github.com/NobyDa/Script/raw/master/Surge/WeChat.list"}
+  wechat_NobyDa: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/WeChat/WeChat.list"}
   wechat_list: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/WeChat/WeChat.list"}
 # DIY_list
   diy_list: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/DIY/DIY.list"}
 # XHS RedNote
   rednote: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/general/XiaoHongShu/XiaoHongShu.list"}
+  rednote_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/xiaohongshu.mrs"}
   xhs_rednote: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/XiaoHongShu/XiaoHongShu.list"}
   # DEX
   dex_domain: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/DEX/DEX.list"}
   # ADBlock
   ttblock: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/Talkatone/ttblock.list"}
-  twitch_reject: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Surge/Twitch/TR.list"}
+  twitch_reject: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/Twitch/TR.list"}
   httpdns_adblock: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-httpdns-cn.mrs"}
   # Whatsapp
   whatsapp_diy: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/WhatsApp/WhatsApp.list"}
@@ -306,7 +364,7 @@ rule-providers:
   netease_music_list: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/NetEaseMusic/NetEaseMusic.list"}
   netease_music: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/netease.mrs"}
   #Bilibili
-  bilibili: { <<: *class, url: "https://github.com/ACL4SSR/ACL4SSR/raw/master/Clash/Ruleset/Bilibili.list"}
+  bilibili: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/BiliBili/BiliBili.list"}
   bilibili_global: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/BiliBili/BiliBili.list"}
   # Emarket    
     # Alibaba 1688 Taobao Goofish
@@ -347,14 +405,13 @@ rule-providers:
   # Spotify
   spotify_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/spotify.mrs"}
   # Twitch
-  twitch_direct : { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Surge/Twitch/TD.list"}
-  twitch_proxy: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Surge/Twitch/TP.list"}
+  twitch_direct : { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/Twitch/TD.list"}
+  twitch_proxy: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/Twitch/TP.list"}
   twitch_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/twitch.mrs"}
 # ES Rules.yaml
 
 # qcy_nikki.config.yaml
   private_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/private.mrs"}
-  # proxylite: { <<: *class, url: "https://raw.githubusercontent.com/qichiyuhub/rule/main/proxy.list"}
   ai_domain: {  <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-ai-!cn.mrs"}
   youtube_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/youtube.mrs"}
   google_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/google.mrs"}
