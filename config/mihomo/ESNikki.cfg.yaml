@@ -9,8 +9,7 @@ proxy-providers:
       enable: true
       url: https://www.apple.com/library/test/success.html
       interval: 300
-    proxy: direct
-
+      proxy: Direct
 # 节点信息
 proxies:
   - {name: Direct, type: direct}
@@ -33,6 +32,13 @@ ipv6: false
 unified-delay: false
 tcp-concurrent: true
 log-level: warning
+
+# 控制面板 External Monitor #
+external-controller: 0.0.0.0:9090
+secret: vi
+external-ui: ui
+external-ui-name: zashboard
+external-ui-url: https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/gh-pages.zip
 
 #### ---- Geo Data ---- ####
 # 更改 geoip 使用文件，mmdb 或 dat，可选 true / false，true 为 dat，此项有默认值 false
@@ -71,12 +77,6 @@ profile:
   store-selected: true
   store-fake-ip: true
 
-# 控制面板
-external-controller: 0.0.0.0:9090
-secret: ""
-external-ui: ui
-external-ui-name: zashboard
-external-ui-url: https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/gh-pages.zip
 
 # Sniffer Module
 # 注意: Sniffer 模块，开启后会增加 CPU 和内存的使用
