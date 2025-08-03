@@ -181,8 +181,8 @@ dns:
 
 # 锚点引用 Anthor: Mihomo
 # 注意锚点必须放在引用的上方， 也可以集中把锚点全部放.yaml顶部
-CN: &cn {type: select, proxies: [ Direct, 🚀 Proxy, 🔯 JP Back, 🔯 HK Back, 🇦🇺 AU, 🇬🇧 GB, 🇹🇼 TW, 🇸🇬 SG, 🇺🇸 US, ☑️ Manual]}
 PR: &pr {type: select, proxies: [ ☑️ Manual, 🚀 Proxy, 🔯 JP Back, 🔯 HK Back, ♻️ JP Auto, ♻️ HK Auto, 🇦🇺 AU, 🇬🇧 GB, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US, Direct, Reject]} # 🇭🇰 HK, 🇯🇵 JP
+CN: &cn {type: select, proxies: [ Reject, Direct, 🚀 Proxy, 🔯 JP Back, 🔯 HK Back, ♻️ JP Auto, ☑️ Manual, 🇦🇺 AU, 🇬🇧 GB, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US]}
 # QUIC 流量策略 默认使用 REJECT
 QUIC: &quic {type: select, proxies: [ Reject, ☑️ Manual, 🚀 Proxy, Direct]}
 
@@ -190,8 +190,8 @@ QUIC: &quic {type: select, proxies: [ Reject, ☑️ Manual, 🚀 Proxy, Direct]
 # 注意: 如果有多個代理組, 必須保證每個代理組的名稱唯一, 否則將會無法切換
 # (Must be unique for each group, otherwise it will not work) 🇭🇰 HK, 🇯🇵 JP
 proxy-groups:
-  - {name: 🚀 Proxy, type: select, proxies: [ ☑️ Manual, 🔯 JP Back, 🔯 HK Back, ♻️ JP Auto, ♻️ HK Auto, 🇦🇺 AU, 🇬🇧 GB, 🇹🇼 TW, 🇸🇬 SG, 🇺🇸 US, Direct]}
-  - {name: ☑️ Manual, type: select, include-all: true}
+  - {name: 🚀 Proxy, type: select, proxies: [ ☑️ Manual, 🔯 JP Back, 🔯 HK Back, ♻️ JP Auto, ♻️ HK Auto, 🇦🇺 AU, 🇬🇧 GB, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US, Direct]}
+  - {name: ☑️ Manual, type: select, include-all: true, proxies: [ Reject, Direct, 🔯 JP Back, 🔯 HK Back, 🇦🇺 AU, 🇬🇧 GB, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US]}
   - {name: 🔯 AI, <<: *pr}
   - {name: 📕 XHS RedNote, <<: *cn}
   - {name: 💫 QUIC, <<: *quic}
@@ -205,7 +205,7 @@ proxy-groups:
   - {name: 🍀 Google, <<: *pr}
   - {name: 🎵 TikTok, <<: *pr}
   - {name: 📺 IPTV Global, <<: *pr}
-  - {name: 🎵 Netease Music,<<: *pr}
+  - {name: 🎵 Netease Music,<<: *cn}
   - {name: ☎️ Telegram, <<: *pr}
   - {name: 🎥 ProxyMedia, <<: *pr}
   - {name: 🌐 Social+, <<: *pr}
@@ -228,7 +228,6 @@ proxy-groups:
   - {name: ✈️ Speedtest, <<: *pr}
   - {name: Ⓜ️ Microsoft, <<: *pr}
   - {name: 🍎 Apple,<<: *pr}
-  # - {name: 🎯 DirectN, type: select, proxies: [Direct, 🚀 Proxy, ☑️ Manual]}
   - {name: 🎯 DirectN,<<: *cn}
   - {name: 🐟 Final, <<: *pr}
 # 規則匹配
