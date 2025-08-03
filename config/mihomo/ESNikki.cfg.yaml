@@ -31,13 +31,14 @@ bind-address: "*"
 ipv6: false
 unified-delay: false
 tcp-concurrent: true
+
 log-level: warning
 
 # 控制面板 External Monitor #
 external-controller: 0.0.0.0:9090
-secret: vi
+secret: ""
 external-ui: ui
-external-ui-name: zashboard
+external-ui-name: zash
 external-ui-url: https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/gh-pages.zip
 
 #### ---- Geo Data ---- ####
@@ -72,11 +73,14 @@ find-process-mode: 'off'
 global-client-fingerprint: chrome
 # keep-alive-idle: 600
 # keep-alive-interval: 15
+# 禁用 Keep-Alive 保護TCP進程
 disable-keep-alive: false
 profile:
   store-selected: true
   store-fake-ip: true
-
+# 是否启用认证 Authentication
+authentication:
+  - meta:visa
 
 # Sniffer Module
 # 注意: Sniffer 模块，开启后会增加 CPU 和内存的使用
@@ -84,7 +88,7 @@ sniffer:
   enable: true
   sniff:
     HTTP:
-      ports: [80, 8080, 8880, 2082]
+      ports: [80, 8080, 8880]
       override-destination: true
     TLS:
       ports: [443, 8443, 853]
@@ -100,6 +104,7 @@ sniffer:
     - "+.facebook.com"
     - "www.xiaohongshu.com"
     - "edith.xiaohongshu.com"
+    - "search.xiaohongshu.com"
     - "+.xiaohongshu.com"
     - "+.xiaohongshu.net"
     - "+.xhscdn.com"
@@ -153,6 +158,7 @@ dns:
   localhost:
    - 127.0.0.1
    - ::1
+
   default-nameserver:
     - 223.6.6.6
   proxy-server-nameserver:
@@ -185,23 +191,25 @@ DTCN: &dtcn {type: select, proxies: [ ☑️ Manual, 🚀 Proxy, Direct]}
 proxy-groups:
   - {name: 🚀 Proxy, type: select, proxies: [ ☑️ Manual, 🔯 JP Back, 🔯 HK Back, ♻️ JP Auto, ♻️ HK Auto, 🇦🇺 AU, 🇬🇧 GB, 🇹🇼 TW, 🇸🇬 SG, 🇺🇸 US, Direct]}
   - {name: ☑️ Manual, type: select, include-all: true}
-  - {name: 💶 PayPal, <<: *pr} 
+  - {name: 🔯 AI, <<: *pr}  
+  - {name: 📕 XHS RedNote, <<: *cn}
+  - {name: 💫 QUIC, <<: *pr}
+  - {name: 💶 PayPal, <<: *pr}
+  - {name: ☕ DEX, <<: *pr}
+  - {name: 📊 EMarket, <<: *pr}
+  - {name: 🎵 Spotify, <<: *pr}
   - {name: 📹 YouTube, <<: *pr}
   - {name: 📺 Bilibili, <<: *cn}
+  - {name: 👨🏿‍💻 GitHub, <<: *pr}  
   - {name: 🍀 Google, <<: *pr}
-  - {name: 🔯 AI, <<: *pr}
-  - {name: ☕ DEX, <<: *pr}
-  - {name: 👨🏿‍💻 GitHub, <<: *pr}
+  - {name: 🎵 TikTok, <<: *pr}
   - {name: 📺 IPTV Global, <<: *pr}
   - {name: 🎵 Netease Music,<<: *pr}
-  - {name: 🎵 TikTok, <<: *pr}
-  - {name: 📊 EMarket, <<: *pr}
   - {name: ☎️ Telegram, <<: *pr}
   - {name: 🎥 ProxyMedia, <<: *pr}
   - {name: 🌐 Social+, <<: *pr}
   - {name: 📱 WhatsApp, <<: *pr}
   - {name: 📞 WeChat, <<: *pr}
-  - {name: 📕 XHS RedNote, <<: *cn}
   - {name: 🔯 HK Back, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇭🇰|HK|港|(?i)🇭🇰|HK|澳|hong|Macau|MO|HKG|MFM|Central|Kowloon|观塘|中环))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|🇯🇵|JP|日|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
   - {name: 🔯 JP Back, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇯🇵|JP|日|(?i)🇰🇷|KR|韩|Korea|🇯🇵|JP|日|Japan|Tokyo|Osaka|NRT|KIX|NGO|CTS|FUK|东京|大阪|[^-]日|沪日))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
   - {name: ♻️ HK Auto, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇭🇰|HK|港|(?i)🇭🇰|HK|澳|hong|Macau|MO|HKG|MFM|Central|Kowloon|观塘|中环))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|🇯🇵|JP|日|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
@@ -216,19 +224,16 @@ proxy-groups:
   - {name: 🇺🇸 US, type: select, include-all: true, filter: "🇺🇸|US|美|United States|San Jose|Portland|Dallas|Phoenix|Las Vegas|Angeles|Seattle|Chicago|New York|Atlanta|ATL|BUF|DFW|EWR|IAD|LAX|MCI|MIA|ORD|PHX|PDX|SEA|SJC|JFK|LGA"}
   - {name: ♻️ Auto, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(Direct)).)*$"}
   # - {name: 🐬 OneDrive, <<: *pr}
-  - {name: 🎵 Spotify, <<: *pr}
   - {name: ✈️ Speedtest, <<: *pr}
   - {name: Ⓜ️ Microsoft, <<: *pr}
   - {name: 🍎 Apple,<<: *pr}
   # - {name: 🎯 DirectN, type: select, proxies: [Direct, 🚀 Proxy, ☑️ Manual]}
-  - {name: 🎯 DirectN,<<: *cn}  
+  - {name: 🎯 DirectN,<<: *cn}
   - {name: 🐟 Final, <<: *pr}
 # 規則匹配
 # 此規則尚未作DNS防泄漏處理，because of the (弊大於利) CON is more than benefit
 rules:
-  - DOMAIN,www.xiaohongshu.com,📕 XHS RedNote
-  - DOMAIN-SUFFIX,edith.xiaohongshu.com,📕 XHS RedNote
-  - DOMAIN-SUFFIX,xiaohongshu.com,📕 XHS RedNote
+  - DOMAIN,edith.xiaohongshu.com,📕 XHS RedNote
   - DOMAIN-SUFFIX,aesin.eu,🚀 Proxy
   # XHS RedNote
   - RULE-SET,xhs_rednote,📕 XHS RedNote
@@ -331,6 +336,9 @@ rules:
   - RULE-SET,google_ip,🍀 Google,no-resolve
   - RULE-SET,netflix_ip,🎥 ProxyMedia,no-resolve
   - RULE-SET,telegram_ip,☎️ Telegram,no-resolve
+  # 用于匹配 QUIC 流量只有在上面的 RULE-SET 没有命中的情况下，
+  # 这条规则会将所有剩余的 QUIC (UDP:443) 流量全部拒绝
+  - RULE-SET,quic_ip_ports,💫 QUIC
   - RULE-SET,cn_ip,🎯 DirectN
   - MATCH,🐟 Final
 
@@ -341,6 +349,8 @@ rule-anchor:
   class: &class {type: http, interval: 86400, behavior: classical, format: text}
 rule-providers:
 # ES Rules.ymal
+# quic_ip_ports
+  quic_ip_ports: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/general/QUIC/quic_ip_ports.list"}
 # DIY_list
   diy_list: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/DIY/DIY.list"}
 # WeChat
