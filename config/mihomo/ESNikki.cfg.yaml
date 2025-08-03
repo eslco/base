@@ -182,8 +182,9 @@ dns:
 # 锚点引用 Anthor: Mihomo
 # 注意锚点必须放在引用的上方， 也可以集中把锚点全部放.yaml顶部
 CN: &cn {type: select, proxies: [ Direct, 🚀 Proxy, 🔯 JP Back, 🔯 HK Back, 🇦🇺 AU, 🇬🇧 GB, 🇹🇼 TW, 🇸🇬 SG, 🇺🇸 US, ☑️ Manual]}
-PR: &pr {type: select, proxies: [ ☑️ Manual, 🚀 Proxy, 🔯 JP Back, 🔯 HK Back, ♻️ JP Auto, ♻️ HK Auto, 🇦🇺 AU, 🇬🇧 GB, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US, Direct]} # 🇭🇰 HK, 🇯🇵 JP
-DTCN: &dtcn {type: select, proxies: [ ☑️ Manual, 🚀 Proxy, Direct]}
+PR: &pr {type: select, proxies: [ ☑️ Manual, 🚀 Proxy, 🔯 JP Back, 🔯 HK Back, ♻️ JP Auto, ♻️ HK Auto, 🇦🇺 AU, 🇬🇧 GB, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US, Direct, Reject]} # 🇭🇰 HK, 🇯🇵 JP
+# QUIC 流量策略 默认使用 REJECT
+QUIC: &quic {type: select, proxies: [ Reject, ☑️ Manual, 🚀 Proxy, Direct]}
 
 # 代理組 Group Policy
 # 注意: 如果有多個代理組, 必須保證每個代理組的名稱唯一, 否則將會無法切換
@@ -191,16 +192,16 @@ DTCN: &dtcn {type: select, proxies: [ ☑️ Manual, 🚀 Proxy, Direct]}
 proxy-groups:
   - {name: 🚀 Proxy, type: select, proxies: [ ☑️ Manual, 🔯 JP Back, 🔯 HK Back, ♻️ JP Auto, ♻️ HK Auto, 🇦🇺 AU, 🇬🇧 GB, 🇹🇼 TW, 🇸🇬 SG, 🇺🇸 US, Direct]}
   - {name: ☑️ Manual, type: select, include-all: true}
-  - {name: 🔯 AI, <<: *pr}  
+  - {name: 🔯 AI, <<: *pr}
   - {name: 📕 XHS RedNote, <<: *cn}
-  - {name: 💫 QUIC, <<: *pr}
+  - {name: 💫 QUIC, <<: *quic}
   - {name: 💶 PayPal, <<: *pr}
   - {name: ☕ DEX, <<: *pr}
   - {name: 📊 EMarket, <<: *pr}
   - {name: 🎵 Spotify, <<: *pr}
   - {name: 📹 YouTube, <<: *pr}
   - {name: 📺 Bilibili, <<: *cn}
-  - {name: 👨🏿‍💻 GitHub, <<: *pr}  
+  - {name: 👨🏿‍💻 GitHub, <<: *pr}
   - {name: 🍀 Google, <<: *pr}
   - {name: 🎵 TikTok, <<: *pr}
   - {name: 📺 IPTV Global, <<: *pr}
@@ -233,7 +234,10 @@ proxy-groups:
 # 規則匹配
 # 此規則尚未作DNS防泄漏處理，because of the (弊大於利) CON is more than benefit
 rules:
+  - DOMAIN,www.xiaohongshu.com,📕 XHS RedNote
   - DOMAIN,edith.xiaohongshu.com,📕 XHS RedNote
+  - DOMAIN,search.xiaohongshu.com,📕 XHS RedNote
+  - DOMAIN-SUFFIX,xiaohongshu.com,📕 XHS RedNote
   - DOMAIN-SUFFIX,aesin.eu,🚀 Proxy
   # XHS RedNote
   - RULE-SET,xhs_rednote,📕 XHS RedNote
