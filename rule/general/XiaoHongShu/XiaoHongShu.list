@@ -46,12 +46,10 @@ DOMAIN,spider-tracker.xiaohongshu.com.w.kunluncan.com
 DOMAIN,fe-video-qc.xhscdn.com
 DOMAIN,sns-na-i8.xhscdn.com
 DOMAIN,search.xhscdn.com
-
 DOMAIN-SUFFIX,xhscdn.com
 DOMAIN-SUFFIX,xhscdn.net
-
-DOMAIN-KEYWORD,xiaohongshu
 DOMAIN-KEYWORD,xhscdn
+DOMAIN-KEYWORD,xiaohongshu
 DOMAIN-KEYWORD,xhsci
 
 # XHS EDITH DOMAIN IP-CIDR

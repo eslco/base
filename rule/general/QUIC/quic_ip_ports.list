@@ -9,7 +9,7 @@ DST-PORT,5333,network=udp
 # 如果还有其他端口，继续在下面添加
 DST-PORT,8443,network=udp
 
-[QUIC-443]
+# [QUIC-443]
 # 拦截所有 QUIC 443 端口的流量
-network=udp
+# network=udp
 DST-PORT,443,network=udp
