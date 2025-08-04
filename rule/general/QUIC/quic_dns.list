@@ -1,0 +1,57 @@
+# Rule Name: quic_dns.list
+# DNS and QUIC IPs for interception
+# This file contains rules for intercepting QUIC traffic on specific IP addresses and ports.
+# Author: ESLCO
+# URL: https://github.com/eslco/base/raw/main/general/QUIC/quic_cndns.list
+# Last Modified: 2025-08-04
+
+IP-CDIR,223.5.5.5,network=udp
+IP-CDIR,223.6.6.6,network=udp
+
+IP-CDIR,119.29.29.29,network=udp
+IP-CDIR,1.12.12.12,network=udp
+IP-CDIR,120.53.53.53,network=udp
+
+IP-CDIR,114.114.114.114,network=udp
+IP-CDIR,114.114.115.115,network=udp
+IP-CDIR,114.114.114.119,network=udp
+IP-CDIR,114.114.115.119,network=udp
+IP-CDIR,114.114.114.110,network=udp
+IP-CDIR,114.114.115.110,network=udp
+
+IP-CDIR,180.184.1.1,network=udp
+IP-CDIR,180.184.2.2,network=udp
+
+IP-CIDR,180.76.76.76,network=udp
+IP-CDIR,101.226.4.6,network=udp
+
+IP-CDIR,218.30.118.6,network=udpH
+IP-CDIR,123.125.81.6,network=udp
+IP-CDIR,140.207.198.6,network=udp
+
+IP-CDIR,1.2.4.8,network=udpQ
+IP-CDIR,210.2.4.8,network=udp
+
+IP-CIDR,117.50.22.22,network=udp
+IP-CIDR,117.50.10.10,network=udp
+IP-CIDR,117.50.60.30,network=udp
+IP-CIDR,52.80.52.52,network=udp
+IP-CIDR,52.80.60.30,network=udp
+IP-CIDR,52.80.66.66,network=udp
+
+IP-CIDR,2400:3200::1/128,network=udp
+IP-CIDR,2400:3200:baba::1/128,network=udp
+IP-CIDR,2402:4e00::/128,network=udp
+IP-CIDR,2402:4e00:1::/128,network=udp
+  
+IP-CIDR,2400:da00::6666/128,network=udp
+IP-CIDR,2400:7fc0:849e:200::4/128,network=udp
+IP-CIDR,2404:c2c0:85d8:901::4/128,network=udp
+IP-CIDR,2400:7fc0:849e:200::8/128,network=udp
+IP-CIDR,2404:c2c0:85d8:901::8/128,network=udp
+
+# 拦截所有 DoQ 784/UDP 标准端口的流量? (DNS over QUIC)
+# 如果需要拦截 DNS over QUIC 流量，可以取消下面的注释
+# 注意：这可能会影响 DNS 查询功能
+DST-PORT,784,network=udp
+# DST-PORT,784,network=tcp
