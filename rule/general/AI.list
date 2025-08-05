@@ -7,9 +7,9 @@
 # UPDATED: 2025-06-06 09:20:01
 
 # NAME: Claude
-DOMAIN-SUFFIX,claude.ai
+DOMAIN-SUFFIX,claudeusercontent.com
 DOMAIN-SUFFIX,anthropic.com
-DOMAIN,cdn.usefathom.com
+DOMAIN-SUFFIX,claude.ai
 
 # Cursor IDE
 DOMAIN-SUFFIX,api.cursor.com
@@ -27,7 +27,7 @@ DOMAIN-SUFFIX,cursor.sh
 DOMAIN-SUFFIX,workos.com
 
 #! ChatGPT /cdn-cgi/trace
-#! https://chatgpt.com/cdn-cgi/trace]
+#! https://chatgpt.com/cdn-cgi/trace
 DOMAIN-SUFFIX,chat.openai.com
 DOMAIN-SUFFIX,ios.chat.openai.com
 DOMAIN-SUFFIX,ios.chat.openai.com.cdn.cloudflare.net

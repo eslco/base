@@ -5,27 +5,29 @@
 # REPO: https://github.com/eslco/base/tree/main/rule/general
 # Update 2025.06.13
 
-# GitHub Copilot
-# DOMAIN-SUFFIX,github.com
-# DOMAIN-SUFFIX,api.github.com
-# DOMAIN-SUFFIX,api.githubcopilot.com
-# DOMAIN-SUFFIX,copilot-proxy.githubusercontent.com
+# GitHub Copilot 官方 API 與代理
+DOMAIN-SUFFIX,githubcopilot.com
+DOMAIN-SUFFIX,copilot-proxy.githubusercontent.com
 # DOMAIN-SUFFIX,raw.githubusercontent.com
+DOMAIN-SUFFIX,alive.github.com
+
+# Microsoft Copilot 服務
+# DOMAIN-SUFFIX,copilot.microsoft.com
+# DOMAIN-SUFFIX,copilotapi.microsoft.com
+# DOMAIN-SUFFIX,copilot.office.com
+# DOMAIN-SUFFIX,copilot.microsoft365.com
+
+# Copilot Labs/Chat/Telemetry
+DOMAIN-SUFFIX,copilot-labs.github.com
+DOMAIN-SUFFIX,copilot-chat.github.com
+DOMAIN-SUFFIX,copilot-telemetry.githubusercontent.com
+
+# Copilot Marketplace
+DOMAIN-SUFFIX,marketplace.visualstudio.com
 
 # Cursor IDE
-DOMAIN-SUFFIX,api.cursor.com
 DOMAIN-SUFFIX,cursor.com
-
-DOMAIN-SUFFIX,authenticate.cursor.sh
-DOMAIN-SUFFIX,authenticator.cursor.sh
-DOMAIN-SUFFIX,repo42.cursor.sh
-DOMAIN-SUFFIX,api3.cursor.sh
-DOMAIN-SUFFIX,api2.cursor.sh
-DOMAIN-SUFFIX,api1.cursor.sh
-DOMAIN-SUFFIX,api0.cursor.sh
-DOMAIN-SUFFIX,api.cursor.sh
 DOMAIN-SUFFIX,cursor.sh
-
 DOMAIN-SUFFIX,workos.com
 
 #Windsurf
