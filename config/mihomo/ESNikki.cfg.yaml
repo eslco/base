@@ -1,7 +1,7 @@
 # 注意规则在满足自己需求情况下，尽量做到精简，不要过度复杂，以免影响性能。
 # Sub订阅
 proxy-providers:
-  ESub:
+  MySub:
     url: "https://sub.example.com/sub?token=XXX&clash"
     type: http
     interval: 86400
@@ -23,7 +23,7 @@ proxies:
 mode: rule
 port: 7890
 socks-port: 7891
-redir-port: 7893
+redir-port: 7892
 mixed-port: 7893
 tproxy-port: 7894
 allow-lan: true
@@ -51,7 +51,7 @@ geodata-mode: false
 geodata-loader: standard
 
 # 自定 GEO 下载地址
-# 如果下载不了，可以在前面增加 https://ghp.ci/
+# 如果下载不了，可以在前面增加 https://gh-proxy.com/
 geox-url:
   geosite: https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat
   mmdb: https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country-lite.mmdb
@@ -79,8 +79,8 @@ profile:
   store-selected: true
   store-fake-ip: true
 # 是否启用认证 Authentication
-authentication:
-  - meta:visa
+# authentication:
+#  - username:password
 
 # Sniffer Module
 # 注意: Sniffer 模块，开启后会增加 CPU 和内存的使用
@@ -116,20 +116,34 @@ sniffer:
     - "+.market.xiaomi.com"
 # Outbound
 tun:
+  # 是否启用 Tun Proxy 透明代理，true / false，建议设置为 true
   enable: true
-  # system/gvisor/mixed
+  # tun 模式堆栈，可用值 system / gvisor / mixed，如无使用问题，建议使用 mixed栈，默认 gvisor
+  # system 使用系统协议栈，可以提供更稳定/全面的 tun 体验，且占用相对其他堆栈更低
+  # gvisor 通过在用户空间中实现网络协议栈，可以提供更高的安全性和隔离性，同时可以避免操作系统内核和用户空间之间的切换，从而在特定情况下具有更好的网络处理性能
+  # mixed 混合堆栈，tcp 使用 system栈，udp 使用 gvisor栈，使用体验可能相对更好
+  # 建议：设置为 mixed
   stack: mixed
+  # 自动设置全局路由，可以自动将全局流量路由进入 tun 网卡
+  auto-route: true  
   dns-hijack: ["any:53", "tcp://any:53"]
-
-  auto-route: true
   # 仅支持 Linux，自动配置 iptables/nftables 以重定向 TCP 连接，需要auto-route已启用
   # 在 Android 中：仅转发本地 IPv4 连接。要通过热点或中继共享您的 VPN 连接，请使用 VPNHotspot。
   # 在 Linux 中：带有 auto-route 的 auto-redirect 现在可以在路由器上按预期工作，无需干预。
   auto-redirect: true
+
   # 自动选择流量出口接口，多出口网卡同时连接的设备建议手动指定出口网卡
   auto-detect-interface: true
+  # 指定 tun 网卡名称，MacOS 设备只能使用 utun 开头的网卡名，可选项
+  # device: utun0
+
   # 最大传输单元，会影响极限状态下的速率，一般用户默认即可。
-  mtu: 1500
+  mtu: 9000
+  # 启用通用分段卸载，仅支持 Linux
+  gso: true
+  # UDP NAT 过期时间，以秒为单位，默认为 300(5 分钟) 设置为2小时 2x 3600s
+  udp-timeout: 7200
+
 # DNS Module
 dns:
   enable: true
@@ -152,39 +166,56 @@ dns:
     - "*.localhost"
     - "*.local"
     - "*.lan"
-  # use-system-hosts: true    
+  # use-system-hosts: true
   use-hosts: true
   hosts:
   localhost:
    - 127.0.0.1
    - ::1
 
-  default-nameserver:
-    - 223.6.6.6
-  proxy-server-nameserver:
-   - https://8.8.4.4/dns-query
+  # 默认 DNS 服务器
+  default-nameserver: # *tw_dns
+   - 168.95.192.1
+   - 168.95.1.1  
+  # Proxy 代理 DNS 服务器
+  proxy-server-nameserver: # *global_dns
    - https://public.dns.iij.jp/dns-query
+   - https://1.0.0.2/dns-query
   # namesever尽量用运营商提供的DNS
-  nameserver:
-    - 223.6.6.6
-  fallback:
-    - 120.53.53.53
-# 指定域名查询的解析服务器，可使用 geosite, 优先于 nameserver/fallback 查询
-# 建议：这里可用来做 DNS 分流，防泄露 / 防挟持，可根据自己的规则适当增加，此处支持 rule-set
-  nameserver-policy:
-  "geosite:cn,private": # Mainland (UDP) DNS IP，不建议使用 DoH / DoT
-   - https://223.6.6.6/dns-query
-   - https://120.53.53.53/dns-query
-  "geosite:geolocation-!cn": # 非CN，即国外，一般建议 DoH / DoT
-   - https://8.8.4.4/dns-query
+  nameserver: # *tw_dns
+   - 168.95.192.1
+   - 168.95.1.1
+  fallback: # *back_dns
+   - 1.0.0.3
+   - 1.1.1.3
+  # 指定域名查询的解析服务器，可使用 geosite, 优先于 nameserver/fallback 查询
+  # 建议：这里可用来做 DNS 分流，防泄露 / 防挟持，可根据自己的规则适当增加，此处支持 rule-set
+  # Overwrite 配置 已知 Bug : 
+  # Nikki 重复配置Mixin nameserver-policy:字段 将导致 Startup.Yaml 文档语法错误, Router陷入高负载循环 ，宕机状态
+  # nameserver-policy: # 取消注释即可启用
+  #  'geosite:cn,private': *cn_dns # Mainland (UDP) DNS IP，不建议使用 DoH / DoT
+  #  'geosite:geolocation-!cn': *global_dns # 非CN，即国外，一般建议 DoH / DoT
+
+DNS_Definition:
+   #  锚点引用 DNS
+  CN_DNS : &cn_dns
+   - 120.53.53.53
+  TW_DNS : &tw_dns
+   - 168.95.192.1
+   - 168.95.1.1
+  Global_dns : &global_dns
    - https://public.dns.iij.jp/dns-query
+   - https://1.0.0.2/dns-query
+  Fallback_dns : &back_dns
+   - 1.0.0.3
+   - 1.1.1.3
 
 # 锚点引用 Anthor: Mihomo
 # 注意锚点必须放在引用的上方， 也可以集中把锚点全部放.yaml顶部
-PR: &pr {type: select, proxies: [ ☑️ Manual, 🚀 Proxy, 🔯 JP Back, 🔯 HK Back, ♻️ JP Auto, ♻️ HK Auto, 🇦🇺 AU, 🇬🇧 GB, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US, Direct, Reject]} # 🇭🇰 HK, 🇯🇵 JP
-CN: &cn {type: select, proxies: [ Reject, Direct, 🚀 Proxy, 🔯 JP Back, 🔯 HK Back, ♻️ JP Auto, ☑️ Manual, 🇦🇺 AU, 🇬🇧 GB, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US]}
+PR: &pr {type: select, proxies: [ 🚀 Proxy, ☑️ Manual, Direct, Reject, 🔯 JP Back, 🔯 HK Back, ♻️ JP Auto, ♻️ HK Auto, 🇦🇺 AU, 🇬🇧 GB, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US]} # 🇭🇰 HK, 🇯🇵 JP
+CN: &cn {type: select, proxies: [ 🚀 Proxy, ☑️ Manual, Direct, Reject, 🔯 JP Back, 🔯 HK Back, 🇦🇺 AU, 🇬🇧 GB, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US]}
 # QUIC 流量策略 默认使用 REJECT
-QUIC: &quic {type: select, proxies: [ Reject, ☑️ Manual, 🚀 Proxy, Direct]}
+QUIC: &quic {type: select, proxies: [ 🚀 Proxy, ☑️ Manual, Direct, 🎮 Games, 📕 XHS RedNote, Reject ]}
 
 # 代理組 Group Policy
 # 注意: 如果有多個代理組, 必須保證每個代理組的名稱唯一, 否則將會無法切換
@@ -193,30 +224,31 @@ proxy-groups:
   - {name: 🚀 Proxy, type: select, proxies: [ ☑️ Manual, 🔯 JP Back, 🔯 HK Back, ♻️ JP Auto, ♻️ HK Auto, 🇦🇺 AU, 🇬🇧 GB, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US, Direct]}
   - {name: ☑️ Manual, type: select, include-all: true, proxies: [ Reject, Direct, 🔯 JP Back, 🔯 HK Back, 🇦🇺 AU, 🇬🇧 GB, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US]}
   - {name: 🔯 AI, <<: *pr}
+  - {name: 🎵 Spotify, <<: *pr}
   - {name: 📕 XHS RedNote, <<: *cn}
   - {name: 💫 QUIC, <<: *quic}
-  - {name: 💶 PayPal, <<: *pr}
-  - {name: ☕ DEX, <<: *pr}
-  - {name: 📊 EMarket, <<: *pr}
-  - {name: 🎵 Spotify, <<: *pr}
-  - {name: 📹 YouTube, <<: *pr}
-  - {name: 📺 Bilibili, <<: *cn}
   - {name: 👨🏿‍💻 GitHub, <<: *pr}
   - {name: 🍀 Google, <<: *pr}
-  - {name: 🎵 TikTok, <<: *pr}
-  - {name: 📺 IPTV Global, <<: *pr}
-  - {name: 🎵 Netease Music,<<: *cn}
-  - {name: ☎️ Telegram, <<: *pr}
-  - {name: 🎥 ProxyMedia, <<: *pr}
+  - {name: 💶 PayPal, <<: *pr}
+  - {name: ☕ DEX, <<: *pr}
+  - {name: 🎮 Games, <<: *pr}
   - {name: 🌐 Social+, <<: *pr}
   - {name: 📱 WhatsApp, <<: *pr}
   - {name: 📞 WeChat, <<: *pr}
+  - {name: 📊 EMarket, <<: *pr}
+  - {name: 🎵 TikTok, <<: *pr}
+  - {name: 📹 YouTube, <<: *pr}
+  - {name: 📺 Bilibili, <<: *cn}
+  - {name: 🎥 ProxyMedia, <<: *pr}
+  - {name: 📺 IPTV Global, <<: *pr}
+  - {name: 🎵 Netease Music,<<: *cn}
+  - {name: ☎️ Telegram, <<: *pr}
   - {name: 🔯 HK Back, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇭🇰|HK|港|(?i)🇭🇰|HK|澳|hong|Macau|MO|HKG|MFM|Central|Kowloon|观塘|中环))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|🇯🇵|JP|日|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
   - {name: 🔯 JP Back, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇯🇵|JP|日|(?i)🇰🇷|KR|韩|Korea|🇯🇵|JP|日|Japan|Tokyo|Osaka|NRT|KIX|NGO|CTS|FUK|东京|大阪|[^-]日|沪日))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
   - {name: ♻️ HK Auto, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇭🇰|HK|港|(?i)🇭🇰|HK|澳|hong|Macau|MO|HKG|MFM|Central|Kowloon|观塘|中环))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|🇯🇵|JP|日|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
   - {name: ♻️ JP Auto, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇯🇵|JP|日|(?i)🇰🇷|KR|韩|Korea|🇯🇵|JP|日|Japan|Tokyo|Osaka|NRT|KIX|NGO|CTS|FUK|东京|大阪|[^-]日|沪日))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
   - {name: 🇦🇺 AU, type: select, include-all: true, filter: "🇦🇺|aus|Aus|澳|悉尼|墨尔本|布里斯班|堪培拉|珀斯|阿德莱德|Darwin|Sydney|Melbourne|Brisbane|Canberra|Perth|Adelaide|DRW|SYD|MEL|BNE|CBR|PER|ADL"}
-  - {name: 🇬🇧 GB, type: select, include-all: true, filter: "(?i)🇬🇧|GB|UK|Britain|英国|伦敦|曼彻斯特|伯明翰|利兹|London|Manchester|Birmingham|Leeds|LON|MAN|BHX|LBA"}                            
+  - {name: 🇬🇧 GB, type: select, include-all: true, filter: "(?i)🇬🇧|GB|UK|Britain|英国|伦敦|曼彻斯特|伯明翰|利兹|London|Manchester|Birmingham|Leeds|LON|MAN|BHX|LBA"}
   # - {name: 🇭🇰 HK, type: select, include-all: true, filter: "(?i)🇭🇰|HK|港|澳門|hong|Macau|MO|HKG|MFM|Central|Kowloon|觀塘|中環|銅鑼灣"}
   # - {name: 🇯🇵 JP, type: select, include-all: true, filter: "(?i)🇰🇷|KR|韩|Korea|🇯🇵|JP|日|Japan|Tokyo|Osaka|Nagoya|Fukuoka|NRT|KIX|NGO|CTS|FUK|东京|大阪|神奈川|埼玉|[^-]日|沪日|深日"}
   # # - {name: 🇰🇷 KR, type: select, include-all: true, filter: "(?i)🇰🇷|KR|韩|Korea|KOR|Seoul|首尔|春川|釜山|大邱|仁川|光州|大田|韩|韓|ICN|PUS|TAE|INC|KWJ|CJJ"}
@@ -233,10 +265,6 @@ proxy-groups:
 # 規則匹配
 # 此規則尚未作DNS防泄漏處理，because of the (弊大於利) CON is more than benefit
 rules:
-  - DOMAIN,www.xiaohongshu.com,📕 XHS RedNote
-  - DOMAIN,edith.xiaohongshu.com,📕 XHS RedNote
-  - DOMAIN,search.xiaohongshu.com,📕 XHS RedNote
-  - DOMAIN-SUFFIX,xiaohongshu.com,📕 XHS RedNote
   - DOMAIN-SUFFIX,aesin.eu,🚀 Proxy
   # XHS RedNote
   - RULE-SET,xhs_rednote,📕 XHS RedNote
@@ -248,6 +276,7 @@ rules:
   # DIY List
   - RULE-SET,diy_list,🚀 Proxy
   # PayPal
+  - RULE-SET,paypal_diy,💶 PayPal
   - RULE-SET,paypal_domain,💶 PayPal
   - RULE-SET,speedtest_domain,✈️ Speedtest
   # ADBlock
@@ -267,7 +296,7 @@ rules:
   - RULE-SET,ai,🔯 AI
   - RULE-SET,ai_domain,🔯 AI
 
-  # EMarket  
+  # EMarket
   # Amazon Alibaba Ebay Shopee JD
   - RULE-SET,alibaba_list,📊 EMarket
   - RULE-SET,alibaba_domain,📊 EMarket
@@ -311,16 +340,25 @@ rules:
   # TikTok
   - RULE-SET,tiktok_list,🎵 TikTok
   - RULE-SET,tiktok_domain,🎵 TikTok
-  - RULE-SET,tiktok_us,🎵 TikTok  
+  - RULE-SET,tiktok_us,🎵 TikTok
   # Twitch
   - RULE-SET,twitch_proxy,🚀 Proxy
   - RULE-SET,twitch_direct,Direct
-  # Download Games
+  # Cloudflare CDN CN
+  - RULE-SET,cloudflare_cn,🎯 DirectN
+  # Games
+  - RULE-SET,steam_domain,🎮 Games
+  - RULE-SET,steam_cn,🎯 DirectN
+  - RULE-SET,epicgames,🎮 Games
+  - RULE-SET,supercell_domain,🎮 Games
+  - RULE-SET,category-games-!cn,🎮 Games
   - RULE-SET,category-games-cn,🎯 DirectN
+  - RULE-SET,tencent-games-!cn,🎮 Games
+  - RULE-SET,tencent-games-cn,🎯 DirectN
+  # Download Games
+  - RULE-SET,category-android-app,🚀 Proxy
+  - RULE-SET,category-game-platforms-download,🎮 Games
   - RULE-SET,category-game-platforms-download-cn,🎯 DirectN
-  - RULE-SET,category-games,🚀 Proxy
-  - RULE-SET,category-android-app,🚀 Proxy  
-  - RULE-SET,category-game-platforms-download,🚀 Proxy
 
   # Apps
   - RULE-SET,github_domain,👨🏿‍💻 GitHub
@@ -328,7 +366,6 @@ rules:
   - RULE-SET,google_domain,🍀 Google
   - RULE-SET,onedrive_domain,Ⓜ️ Microsoft
   - RULE-SET,microsoft_domain,Ⓜ️ Microsoft
-# - RULE-SET,speedtest_domain,✈️ Speedtest
 
   # Private
   - RULE-SET,private_domain,Direct
@@ -339,9 +376,9 @@ rules:
   - RULE-SET,google_ip,🍀 Google,no-resolve
   - RULE-SET,netflix_ip,🎥 ProxyMedia,no-resolve
   - RULE-SET,telegram_ip,☎️ Telegram,no-resolve
-  # 用于匹配 QUIC 流量只有在上面的 RULE-SET 没有命中的情况下，
-  # 这条规则会将所有剩余的 QUIC (UDP:443) 流量全部拒绝
-  - RULE-SET,quic_ip_ports,💫 QUIC
+  # 用于匹配 QUIC 流量 (只有在上规则未命中) RULE-SET 拦截
+  - RULE-SET,quic_list,💫 QUIC
+  - RULE-SET,quic_ports,💫 QUIC
   - RULE-SET,cn_ip,🎯 DirectN
   - MATCH,🐟 Final
 
@@ -351,18 +388,21 @@ rule-anchor:
   domain: &domain {type: http, interval: 86400, behavior: domain, format: mrs}
   class: &class {type: http, interval: 86400, behavior: classical, format: text}
 rule-providers:
-# ES Rules.ymal
-# quic_ip_ports
-  quic_ip_ports: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/general/QUIC/quic_ip_ports.list"}
-# DIY_list
+ # ES Rules.ymal
+  # quic_ip_ports
+  quic_list: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/general/QUIC/quic.list"}
+  quic_ports: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/general/QUIC/quic_ports.list"}
+  # DIY_list
   diy_list: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/DIY/DIY.list"}
-# WeChat
+  # WeChat
   wechat_NobyDa: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/WeChat/WeChat.list"}
   wechat_list: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/WeChat/WeChat.list"}
-# XHS RedNote
+  # XHS RedNote
   rednote: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/general/XiaoHongShu/XiaoHongShu.list"}
   rednote_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/xiaohongshu.mrs"}
   xhs_rednote: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/XiaoHongShu/XiaoHongShu.list"}
+  # PayPal
+  paypal_diy: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/PayPal/PayPal.list"}
   # DEX
   dex_domain: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/DEX/DEX.list"}
   # ADBlock
@@ -372,7 +412,7 @@ rule-providers:
   # Whatsapp
   whatsapp_diy: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/WhatsApp/WhatsApp.list"}
   whatsapp_list: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/Whatsapp/Whatsapp.list"}
-  whatsapp_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/whatsapp.mrs"}  
+  whatsapp_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/whatsapp.mrs"}
   # IM Apps
   signal_list: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/general/signal/signal.list"}
   signal_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/signal.mrs"}
@@ -385,10 +425,10 @@ rule-providers:
   # Netease Music
   netease_music_list: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/NetEaseMusic/NetEaseMusic.list"}
   netease_music: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/netease.mrs"}
-  #Bilibili
+  # Bilibili
   bilibili: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/BiliBili/BiliBili.list"}
   bilibili_global: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/BiliBili/BiliBili.list"}
-  # Emarket    
+  # Emarket
     # Alibaba 1688 Taobao Goofish
   alibaba_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/alibaba.mrs"}
   alibaba_list: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/Alibaba/Alibaba.list"}
@@ -413,12 +453,22 @@ rule-providers:
   # TikTok
   tiktok_list: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/TikTok/TikTok.list"}
   tiktok_us: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/TikTok/TikTok_US.list"}
-# Downloads Games
+
+  # Cloudflare CN
+  cloudflare_cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/cloudflare-cn.mrs"}
+  # Games
+  steam_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/steam.mrs"}
+  steam_cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/steam@cn.mrs"}
+  epicgames: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/epicgames.mrs"}
+  supercell_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/supercell.mrs"}
   category-games-cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-games-cn.mrs"}
-  category-games: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-games-!cn.mrs"}
+  category-games-!cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-games-!cn.mrs"}
+  tencent-games-cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/tencent-games@cn.mrs"}
+  tencent-games-!cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/tencent-games@!cn.mrs"}
+  # Downloads Games
+  category-android-app: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-android-app-download.mrs"}
   category-game-platforms-download: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-game-platforms-download.mrs"}
   category-game-platforms-download-cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-game-platforms-download@cn.mrs"}
-  category-android-app: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-android-app-download.mrs"}
   # Social+ Apps
   twitter_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/twitter.mrs"}
   facebook_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/facebook.mrs"}
@@ -430,9 +480,9 @@ rule-providers:
   twitch_direct : { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/Twitch/TD.list"}
   twitch_proxy: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/Twitch/TP.list"}
   twitch_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/twitch.mrs"}
-# ES Rules.yaml
+ # ES Rules.yaml
 
-# qcy_nikki.config.yaml
+ # qcy_nikki.config.yaml
   private_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/private.mrs"}
   ai_domain: {  <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-ai-!cn.mrs"}
   youtube_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/youtube.mrs"}
@@ -449,7 +499,7 @@ rule-providers:
   gfw_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/gfw.mrs"}
   geolocation-!cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/geolocation-!cn.mrs"}
   # cn_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/cn.mrs"}
-# GeoIP  
+ # GeoIP  
   cn_ip: { <<: *ip, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geoip/cn.mrs"}
   google_ip: { <<: *ip, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geoip/google.mrs"}
   telegram_ip: { <<: *ip, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geoip/telegram.mrs"}
