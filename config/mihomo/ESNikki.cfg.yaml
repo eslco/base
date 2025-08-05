@@ -22,7 +22,7 @@ proxies:
 #     - ::1
 mode: rule
 port: 7890
-socks-port: 7891
+socks-port: 20087
 redir-port: 7892
 mixed-port: 7893
 tproxy-port: 7894
@@ -326,6 +326,7 @@ rules:
   - RULE-SET,linkedin,🚀 Proxy
   - RULE-SET,linkedin_cn,🎯 DirectN
   # Social+
+  - RULE-SET,facebook_list,🌐 Social+
   - RULE-SET,facebook_domain,🌐 Social+
   - RULE-SET,instagram_domain,🌐 Social+
   - RULE-SET,threads_domain,🌐 Social+
@@ -467,11 +468,12 @@ rule-providers:
   tencent-games-!cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/tencent-games@!cn.mrs"}
   # Downloads Games
   category-android-app: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-android-app-download.mrs"}
-  category-game-platforms-download: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-game-platforms-download.mrs"}
+  category-game-platforms-download: { <<: *domain, url: "https://g ithub.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-game-platforms-download.mrs"}
   category-game-platforms-download-cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-game-platforms-download@cn.mrs"}
   # Social+ Apps
-  twitter_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/twitter.mrs"}
+  facebook_list: { <<: *domain, url: "https://github.com/eslco/base/raw/main/rule/Clash/Facebook/Facebook.list"}
   facebook_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/facebook.mrs"}
+  twitter_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/twitter.mrs"}
   instagram_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/instagram.mrs"}
   threads_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/threads.mrs"}
   # Spotify
