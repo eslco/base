@@ -20,8 +20,8 @@ DOMAIN,mall.xiaohongshu.com,network=udp
 DOMAIN,www.xiaohongshu.com,network=udp
 DOMAIN,api.xiaohongshu.com,network=udp
 DOMAIN,xiaohongshu.net,network=udp
-DOMAIN,xhslink.com,network=udp
 DOMAIN-SUFFIX,xiaohongshu.com,network=udp
+DOMAIN-SUFFIX,xiaohongshu.net,network=udp
 
 # 规则示例 QUIC DNS
 # IP-CIDR,223.6.6.6/32,network=udp
