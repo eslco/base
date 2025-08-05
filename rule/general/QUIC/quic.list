@@ -7,10 +7,24 @@
 # Last Modified: 2025-08-04
 
 # 拦截特定域名的QUIC流量 (Clash系列仅支持嗅探 网络层 UDP协议)
-# 域名后缀格式: DOMAIN-SUFFIX,example.com,network=udp
-# DOMAIN-SUFFIX,dns.google,network=udp
+# 格式: DOMAIN-SUFFIX,dns.google,network=udp
 
+# 规则示例 XHS RedNote
+DOMAIN,edith.xiaohongshu.com-v1.edgesuite.net,network=udp
+DOMAIN,edith.xiaohongshu.com.w.kunlungr.com,network=udp
+DOMAIN,edith.xiaohongshu.com.eo.dnse0.com,network=udp
+DOMAIN,ros-upload-ali.xiaohongshu.com,network=udp
+DOMAIN,ros-upload.xiaohongshu.com,network=udp
+DOMAIN,edith.xiaohongshu.com,network=udp
+DOMAIN,mall.xiaohongshu.com,network=udp
+DOMAIN,www.xiaohongshu.com,network=udp
+DOMAIN,api.xiaohongshu.com,network=udp
+DOMAIN,xiaohongshu.net,network=udp
+DOMAIN,xhslink.com,network=udp
 DOMAIN-SUFFIX,xiaohongshu.com,network=udp
+
+# 规则示例 QUIC DNS
+# IP-CIDR,223.6.6.6/32,network=udp
 
 # 组合规则（如果支持）
 # 有些规则引擎 支持组合条件：
