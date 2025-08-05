@@ -11,60 +11,56 @@
 # DOMAIN-SUFFIX: 59 
 # TOTAL: 68
 DOMAIN-SUFFIX,api-tracker.xiaohongshu.com
-
 # XiaoHongShu CORE DOMAIN
 
-DOMAIN,edith.xiaohongshu.com-v1.edgesuite.net
-DOMAIN,edith.xiaohongshu.com.w.kunlungr.com
-DOMAIN,edith.xiaohongshu.com.eo.dnse0.com
-DOMAIN,ros-upload-ali.xiaohongshu.com
-DOMAIN,ros-upload.xiaohongshu.com
-DOMAIN,edith.xiaohongshu.com
-DOMAIN,mall.xiaohongshu.com
-DOMAIN,www.xiaohongshu.com
-# Jiangsu Telecom Interal CDN
-DOMAIN-SUFFIX,sd-gl.xinqiucc.com
-DOMAIN-KEYWORD,edith.xiaohongshu
-
+DOMAIN,edith.xiaohongshu.com-v1.edgesuite.net,network=udp
+DOMAIN,edith.xiaohongshu.com.w.kunlungr.com,network=udp
+DOMAIN,edith.xiaohongshu.com.eo.dnse0.com,network=udp
+DOMAIN,ros-upload-ali.xiaohongshu.com,network=udp
+DOMAIN,ros-upload.xiaohongshu.com,network=udp
+DOMAIN,edith.xiaohongshu.com,network=udp
+DOMAIN,mall.xiaohongshu.com,network=udp
+DOMAIN,www.xiaohongshu.com,network=udp
 DOMAIN-SUFFIX,xiaohongshu-mycdn.com
 DOMAIN-SUFFIX,xiaohongshulvyou.com
+DOMAIN-KEYWORD,edith.xiaohongshu
 DOMAIN-SUFFIX,xiaohongshu.net
 DOMAIN-SUFFIX,xiaohongshu.com
 DOMAIN-SUFFIX,xhslink.com
 DOMAIN-SUFFIX,xhsci.com
 
 # XHS CDN
-# Tencent Cloud
+# Jiangsu Telecom Interal CDN
+DOMAIN-SUFFIX,sd-gl.xinqiucc.com
+
+# Tencent Cloud CDN
+DOMAIN,spider-tracker.xiaohongshu.com.w.kunluncan.com
 DOMAIN,xhsci-10008268.cos.ap-shanghai.myqcloud.com
 DOMAIN-SUFFIX,xiaohongshu.com.w.kunluncan.com
 DOMAIN-SUFFIX,clb.ap-shanghai.tencentclb.com
+DOMAIN-SUFFIX,clb.sh-tencentclb.cloud
 DOMAIN-SUFFIX,ipip-gl1.qiezibenpao.com
 DOMAIN-SUFFIX,cf-gl.qiezibenpao.com
-DOMAIN-SUFFIX,clb.sh-tencentclb.cloud
 DOMAIN-SUFFIX,xhs.c.cdnhwc2.com
-DOMAIN,spider-tracker.xiaohongshu.com.w.kunluncan.com
 DOMAIN,fe-video-qc.xhscdn.com
 DOMAIN,sns-na-i8.xhscdn.com
 DOMAIN,search.xhscdn.com
 DOMAIN-SUFFIX,xhscdn.com
 DOMAIN-SUFFIX,xhscdn.net
+
 DOMAIN-KEYWORD,xhscdn
 DOMAIN-KEYWORD,xiaohongshu
-DOMAIN-KEYWORD,xhsci
 
-# XHS EDITH DOMAIN IP-CIDR
+# XHS DOMAIN IP-CIDR
 # Tencent Cloud IP
 IP-CIDR,81.69.116.0/24,no-resolve
 IP-CIDR,81.69.154.0/24,no-resolve
-IP-CIDR,114.55.236.0/24,no-resolve
 IP-CIDR,43.174.57.187/32,no-resolve
-IP-CIDR,119.45.2.92/32,no-resolve
 IP-CIDR,119.45.249.52/32,no-resolve
+IP-CIDR,119.45.2.92/32,no-resolve
 IP-CIDR,1.13.12.27/32,no-resolve
 
 # AliCloud IP
-IP-CIDR,47.97.0.0/16,no-resolve
-IP-CIDR,47.246.0.0/16,no-resolve
 
 # Kaopucloud IP
 IP-CIDR,38.60.181.157/32,no-resolve
