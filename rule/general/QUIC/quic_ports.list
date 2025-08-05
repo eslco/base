@@ -1,0 +1,12 @@
+# Rule Name: quic_ip_ports.list 
+# Description: This file contains rules for intercepting QUIC traffic on specific UDP ports.
+# URL: https://github.com/eslco/base/raw/main/general/QUIC/quic_ports.list
+# [QUIC-Ports]
+# 用于拦截的 UDP 端口列表
+# 每一行都是一条独立的 DST-PORT 规则 (不含最终策略)
+DST-PORT,5332,network=udp
+DST-PORT,8443,network=udp
+# 拦截所有 QUIC 443 端口的流量
+DST-PORT,443,network=udp
+
+# 若有其他端口，繼續在下面添加

@@ -1,23 +1,18 @@
 # Rule Name: quic.list
+# URL: https://github.com/eslco/base/raw/main/general/QUIC/quic.list
 # Author: @eslco
 # Version: 1.0
-# URL: https://github.com/eslco/base/raw/main/general/QUIC/quic.list
-
 # More QUIC Lists: https://github.com/eslco/base/raw/main/general/QUIC
-
-# Description: 拦截指定IP和端口的QUIC流量
+# Description: 拦截指定域名和端口的 UDP (QUIC)流量
 # Last Modified: 2025-08-04
 
-# 拦截特定域名的QUIC流量 (UDP协议)
-# 域名后缀格式 : DOMAIN-SUFFIX,example.com,network=udp
+# 拦截特定域名的QUIC流量 (Clash系列仅支持嗅探 网络层 UDP协议)
+# 域名后缀格式: DOMAIN-SUFFIX,example.com,network=udp
+# DOMAIN-SUFFIX,dns.google,network=udp
 
 DOMAIN-SUFFIX,xiaohongshu.com,network=udp
-
-# 拦截所有443端口的UDP流量 (DNS Default Port)
-# DST-PORT,443,network=udp
 
 # 组合规则（如果支持）
 # 有些规则引擎 支持组合条件：
 # 同时匹配IP和端口
-IP-CIDR,1.1.1.1/32,DST-PORT,443,network=udp
-IP-CIDR,8.8.8.8/32,DST-PORT,443,network=udp
+# IP-CIDR,1.1.1.1/32,DST-PORT,443,network=udp
