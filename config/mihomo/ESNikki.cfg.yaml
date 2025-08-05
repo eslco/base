@@ -197,7 +197,7 @@ dns:
   #  'geosite:geolocation-!cn': *global_dns # 非CN，即国外，一般建议 DoH / DoT
 
 DNS_Definition:
-   #  锚点引用 DNS
+   #  启用 锚点引用 DNS
   CN_DNS : &cn_dns
    - 120.53.53.53
   TW_DNS : &tw_dns
