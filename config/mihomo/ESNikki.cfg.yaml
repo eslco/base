@@ -1,5 +1,4 @@
-# 注意规则在满足自己需求情况下，尽量做到精简，不要过度复杂，以免影响性能
-# Update RUL: https://github.com/eslco/base/raw/main/config/mihomo/ESNikki.cfg.yaml
+# 注意规则在满足自己需求情况下，尽量做到精简，不要过度复杂，以免影响性能。
 # Sub订阅
 proxy-providers:
   MySub:
@@ -228,6 +227,7 @@ proxy-groups:
   - {name: 🎵 Spotify, <<: *pr}
   - {name: 📕 XHS RedNote, <<: *cn}
   - {name: 💫 QUIC, <<: *quic}
+  - {name: 💫 DNSQ, <<: *quic}
   - {name: 👨🏿‍💻 GitHub, <<: *pr}
   - {name: 🍀 Google, <<: *pr}
   - {name: 💶 PayPal, <<: *pr}
@@ -380,7 +380,7 @@ rules:
   - RULE-SET,telegram_ip,☎️ Telegram,no-resolve
   # 用于匹配 QUIC 流量 (只有在上规则未命中) RULE-SET 拦截
   - RULE-SET,quic_list,💫 QUIC
-  - RULE-SET,quic_ports,💫 QUIC
+  - RULE-SET,quic_dns,💫 DNSQ
   - RULE-SET,cn_ip,🎯 DirectN
   - MATCH,🐟 Final
 
@@ -392,7 +392,7 @@ rule-anchor:
 rule-providers:
  # ES Rules.ymal
   # quic_ip_ports
-  quic_list: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/general/QUIC/quic.list"}
+  quic_dns: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/general/QUIC/quic_dns.list"}
   quic_ports: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/general/QUIC/quic_ports.list"}
   # DIY_list
   diy_list: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/DIY/DIY.list"}
@@ -469,7 +469,7 @@ rule-providers:
   tencent-games-!cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/tencent-games@!cn.mrs"}
   # Downloads Games
   category-android-app: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-android-app-download.mrs"}
-  category-game-platforms-download: { <<: *domain, url: "https://g ithub.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-game-platforms-download.mrs"}
+  category-game-platforms-download: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-game-platforms-download.mrs"}
   category-game-platforms-download-cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-game-platforms-download@cn.mrs"}
   # Social+ Apps
   facebook_list: { <<: *domain, url: "https://github.com/eslco/base/raw/main/rule/Clash/Facebook/Facebook.list"}
