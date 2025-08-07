@@ -10,18 +10,19 @@
 # 格式: DOMAIN-SUFFIX,dns.google,network=udp
 
 # 规则示例 XHS RedNote
-DOMAIN,edith.xiaohongshu.com-v1.edgesuite.net,network=udp
-DOMAIN,edith.xiaohongshu.com.w.kunlungr.com,network=udp
-DOMAIN,edith.xiaohongshu.com.eo.dnse0.com,network=udp
-DOMAIN,ros-upload-ali.xiaohongshu.com,network=udp
-DOMAIN,ros-upload.xiaohongshu.com,network=udp
-DOMAIN,edith.xiaohongshu.com,network=udp
-DOMAIN,mall.xiaohongshu.com,network=udp
-DOMAIN,www.xiaohongshu.com,network=udp
-DOMAIN,api.xiaohongshu.com,network=udp
-DOMAIN,xiaohongshu.net,network=udp
-DOMAIN-SUFFIX,xiaohongshu.com,network=udp
-DOMAIN-SUFFIX,xiaohongshu.net,network=udp
+# DOMAIN,edith.xiaohongshu.com-v1.edgesuite.net,network=udp
+# DOMAIN,edith.xiaohongshu.com.w.kunlungr.com,network=udp
+# DOMAIN,edith.xiaohongshu.com.eo.dnse0.com,network=udp
+# DOMAIN,ros-upload-ali.xiaohongshu.com,network=udp
+# DOMAIN,ros-upload.xiaohongshu.com,network=udp
+# DOMAIN,edith.xiaohongshu.com,network=udp
+# DOMAIN,mall.xiaohongshu.com,network=udp
+# DOMAIN,www.xiaohongshu.com,network=udp
+# DOMAIN,api.xiaohongshu.com,network=udp
+# DOMAIN,xiaohongshu.net,network=udp
+
+# DOMAIN-SUFFIX,xiaohongshu.com,network=udp
+# DOMAIN-SUFFIX,xiaohongshu.net,network=udp
 
 # 规则示例 QUIC DNS
 # IP-CIDR,223.6.6.6/32,network=udp
