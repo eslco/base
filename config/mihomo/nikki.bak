@@ -4,16 +4,16 @@ config status 'status'
 config subscription
 	option name 'ESNewSub'
 	option url 'https://sub.example.com/sub?token=xxx&clash'
-	option user_agent 'clash'
+	option user_agent 'mihomo'
 	option prefer 'remote'
 	option update_interval '3600'
 
 config config 'config'
 	option enabled '0'
-	option profile 'subscription:ESNewSub'
-	option start_delay '6'
+	option profile 'subscription:ESub'
+	option start_delay '3'
 	option scheduled_restart '0'
-	option cron_expression '0 3 * * *'
+	option cron_expression '0 3 */2 * *'
 	option test_profile '1'
 	option fast_reload '1'
 
@@ -148,44 +148,43 @@ config hosts
 config nameserver
 	option enabled '1'
 	option type 'default-nameserver'
-	list nameserver '119.28.28.28'
-	list nameserver '223.6.6.6'
-
+	list nameserver '168.95.1.1'
+	list nameserver '168.95.192.1'
+config nameserver
+	option enabled '1'
+	option type 'nameserver'
+	list nameserver '168.95.1.1'
+	list nameserver '168.95.192.1'
 config nameserver
 	option enabled '1'
 	option type 'proxy-server-nameserver'
 	list nameserver 'https://public.dns.iij.jp/dns-query'
-	list nameserver 'https://8.8.4.4/dns-query'
+	list nameserver 'https://1.0.0.2/dns-query'
 
 config nameserver
 	option enabled '0'
-	option type 'direct-nameserver'
-	list nameserver 'https://120.53.53.53/dns-query'
-	list nameserver 'https://223.6.6.6/dns-query'
+	option type 'fallback-nameserver'
+	list nameserver '1.0.0.3'
+	list nameserver '1.1.1.3'
 
-config nameserver
+config nameserver_policy
 	option enabled '1'
-	option type 'nameserver'
-	list nameserver 'https://1.1.8.8/dns-query'
-	list nameserver 'https://223.6.6.6/dns-query'
-
-config nameserver_policy
-	option enabled '0'
 	option matcher 'geosite:private,cn'
-	list nameserver 'https://119.28.28.28/dns-query'
-	list nameserver 'https://223.6.6.6/dns-query'
+	list nameserver '168.95.1.1'
+	list nameserver '168.95.192.1'
 
 config nameserver_policy
-	option enabled '0'
+	option enabled '1'
 	option matcher 'geosite:geolocation-!cn'
-	list nameserver 'https://1.0.0.1/dns-query'
-	list nameserver 'https://8.8.4.4/dns-query'
+	list nameserver 'https://public.dns.iij.jp/dns-query'
+	list nameserver 'https://1.0.0.2/dns-query'
 
 config sniff
 	option enabled '1'
 	option protocol 'HTTP'
 	list port '80'
 	list port '8080'
+	list port '8880'
 	option overwrite_destination '1'
 
 config sniff
@@ -200,6 +199,7 @@ config sniff
 	option protocol 'QUIC'
 	list port '443'
 	list port '8443'
+	list port '5332'
 	option overwrite_destination '1'
 
 config editor 'editor'
