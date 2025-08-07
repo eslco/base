@@ -1,4 +1,8 @@
 {
+  "config/file-name": "zashboard-settings.json",
+  "config/url": "https://github.com/eslco/base/raw/main/config/mihomo/zashboard-settings.json",
+  "config/update-interval": "86400000",
+
   "config/theme": "default",
   "config/swipe-in-pages": "true",
   "config/hidden-group-map": "{\"🚀 Proxy\":false,\"🌐 Manual\":false}",
