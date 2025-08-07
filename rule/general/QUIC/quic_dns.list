@@ -5,57 +5,57 @@
 # URL: https://github.com/eslco/base/raw/main/general/QUIC/quic_cndns.list
 # Last Modified: 2025-08-04
 
-IP-CDIR,223.5.5.5,no-resolve,network=udp
-IP-CDIR,223.6.6.6,no-resolve,network=udp
+IP-CDIR,223.5.5.5/32,network=udp
+IP-CDIR,223.6.6.6/32,network=udp
 
-IP-CDIR,119.29.29.29,no-resolve,network=udp
-IP-CDIR,1.12.12.12,no-resolve,network=udp
-IP-CDIR,120.53.53.53,no-resolve,network=udp
+IP-CDIR,119.29.29.29/32,network=udp
+IP-CDIR,1.12.12.12/32,network=udp
+IP-CDIR,120.53.53.53/32,network=udp
 
-IP-CDIR,114.114.114.114,no-resolve,network=udp
-IP-CDIR,114.114.115.115,no-resolve,network=udp
-IP-CDIR,114.114.114.119,no-resolve,network=udp
-IP-CDIR,114.114.115.119,no-resolve,network=udp
-IP-CDIR,114.114.114.110,no-resolve,network=udp
-IP-CDIR,114.114.115.110,no-resolve,network=udp
+IP-CDIR,114.114.114.114/32,network=udp
+IP-CDIR,114.114.115.115/32,network=udp
+IP-CDIR,114.114.114.119/32,network=udp
+IP-CDIR,114.114.115.119/32,network=udp
+IP-CDIR,114.114.114.110/32,network=udp
+IP-CDIR,114.114.115.110/32,network=udp
 
-IP-CDIR,180.184.1.1,no-resolve,network=udp
-IP-CDIR,180.184.2.2,no-resolve,network=udp
+IP-CDIR,180.184.1.1/32,network=udp
+IP-CDIR,180.184.2.2/32,network=udp
 
-IP-CIDR,180.76.76.76,no-resolve,network=udp
-IP-CDIR,101.226.4.6,no-resolve,network=udp
+IP-CIDR,180.76.76.76/32,network=udp
+IP-CDIR,101.226.4.6/32,network=udp
 
-IP-CDIR,218.30.118.6,no-resolve,network=udp
-IP-CDIR,123.125.81.6,no-resolve,network=udp
-IP-CDIR,140.207.198.6,no-resolve,network=udp
+IP-CDIR,218.30.118.6/32,network=udp
+IP-CDIR,123.125.81.6/32,network=udp
+IP-CDIR,140.207.198.6/32,network=udp
 
-IP-CDIR,1.2.4.8,no-resolve,network=udp
-IP-CDIR,210.2.4.8,no-resolve,network=udp
+IP-CDIR,1.2.4.8/32,network=udp
+IP-CDIR,210.2.4.8/32,network=udp
 
-IP-CIDR,117.50.22.22,no-resolve,network=udp
-IP-CIDR,117.50.10.10,no-resolve,network=udp
-IP-CIDR,117.50.60.30,no-resolve,network=udp
-IP-CIDR,52.80.52.52,no-resolve,network=udp
-IP-CIDR,52.80.60.30,no-resolve,network=udp
-IP-CIDR,52.80.66.66,no-resolve,network=udp
+IP-CIDR,117.50.22.22/32,network=udp
+IP-CIDR,117.50.10.10/32,network=udp
+IP-CIDR,117.50.60.30/32,network=udp
+IP-CIDR,52.80.52.52/32,network=udp
+IP-CIDR,52.80.60.30/32,network=udp
+IP-CIDR,52.80.66.66/32,network=udp
 
-IP-CIDR,2400:3200::1/128,no-resolve,network=udp
-IP-CIDR,2400:3200:baba::1/128,no-resolve,network=udp
-IP-CIDR,2402:4e00::/128,no-resolve,network=udp
-IP-CIDR,2402:4e00:1::/128,no-resolve,network=udp
+IP-CIDR,2400:3200::1/128,network=udp
+IP-CIDR,2400:3200:baba::1/128,network=udp
+IP-CIDR,2402:4e00::/128,network=udp
+IP-CIDR,2402:4e00:1::/128,network=udp
   
-IP-CIDR,2400:da00::6666/128,no-resolve,network=udp
-IP-CIDR,2400:7fc0:849e:200::4/128,no-resolve,network=udp
-IP-CIDR,2404:c2c0:85d8:901::4/128,no-resolve,network=udp
-IP-CIDR,2400:7fc0:849e:200::8/128,no-resolve,network=udp
-IP-CIDR,2404:c2c0:85d8:901::8/128,no-resolve,network=udp
+IP-CIDR,2400:da00::6666/128,network=udp
+IP-CIDR,2400:7fc0:849e:200::4/128,network=udp
+IP-CIDR,2404:c2c0:85d8:901::4/128,network=udp
+IP-CIDR,2400:7fc0:849e:200::8/128,network=udp
+IP-CIDR,2404:c2c0:85d8:901::8/128,network=udp
 
 # 拦截所有 DoQ 784/UDP 标准端口的流量? (DNS over QUIC)
 # 如果需要拦截 DNS over QUIC 流量，可以取消下面的注释
-# DST-PORT,784,no-resolve,network=udp
+# DST-PORT,784,network=udp
 # 注意：这会影响 DoQ 查询功能
 # DST-PORT,784,network=tcp
 
 # 拦截所有 DNS 53/UDP 标准端口的流量? (DNS UDP)
-# DST-PORT,53,no-resolve,network=udp
-# 注意：这会影响 DNS 查询功能
+# DST-PORT,53,network=udp
+# 注意：这会影响 (UDP) 默认 DNS 查询功能
