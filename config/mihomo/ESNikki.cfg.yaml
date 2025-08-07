@@ -268,7 +268,7 @@ proxy-groups:
 rules:
   - DOMAIN-SUFFIX,aesin.eu,🚀 Proxy
   # XHS RedNote
-  - RULE-SET,xhs_rednote,📕 XHS RedNote
+  # - RULE-SET,xhs_list,📕 XHS RedNote
   - RULE-SET,rednote,📕 XHS RedNote
   - RULE-SET,rednote_domain,📕 XHS RedNote
   # WeChat
@@ -402,7 +402,7 @@ rule-providers:
   # XHS RedNote
   rednote: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/general/XiaoHongShu/XiaoHongShu.list"}
   rednote_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/xiaohongshu.mrs"}
-  xhs_rednote: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/XiaoHongShu/XiaoHongShu.list"}
+  # xhs_list: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/XiaoHongShu/XiaoHongShu.list"}
   # PayPal
   paypal_diy: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/PayPal/PayPal.list"}
   # DEX
