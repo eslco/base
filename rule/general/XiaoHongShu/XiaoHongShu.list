@@ -7,7 +7,7 @@
 # AUTHOR: blackmatrix7 x eslco
 # REPO: https://github.com/eslco/base/blob/main
 
-# UPDATED: 2025-08-01 16:17:40
+# UPDATED: 2025-08-07 16:17:40
 # DOMAIN-SUFFIX: 59 
 # TOTAL: 68
 DOMAIN-SUFFIX,api-tracker.xiaohongshu.com
@@ -21,6 +21,10 @@ DOMAIN,ros-upload.xiaohongshu.com,network=udp
 DOMAIN,edith.xiaohongshu.com,network=udp
 DOMAIN,mall.xiaohongshu.com,network=udp
 DOMAIN,www.xiaohongshu.com,network=udp
+DOMAIN-SUFFIX,xiaohongshu.com,network=udp
+DOMAIN-SUFFIX,xiaohongshu.net,network=udp
+
+DOMAIN-KEYWORD,edith.xiaohongshu
 DOMAIN-SUFFIX,xiaohongshu-mycdn.com
 DOMAIN-SUFFIX,xiaohongshulvyou.com
 DOMAIN-KEYWORD,edith.xiaohongshu
@@ -35,11 +39,11 @@ DOMAIN-SUFFIX,sd-gl.xinqiucc.com
 
 # Tencent Cloud CDN
 DOMAIN,spider-tracker.xiaohongshu.com.w.kunluncan.com
-DOMAIN,xhsci-10008268.cos.ap-shanghai.myqcloud.com
+# DOMAIN,xhsci-10008268.cos.ap-shanghai.myqcloud.com
 DOMAIN-SUFFIX,xiaohongshu.com.w.kunluncan.com
 DOMAIN-SUFFIX,clb.ap-shanghai.tencentclb.com
-DOMAIN-SUFFIX,clb.sh-tencentclb.cloud
 DOMAIN-SUFFIX,ipip-gl1.qiezibenpao.com
+DOMAIN-SUFFIX,clb.sh-tencentclb.cloud
 DOMAIN-SUFFIX,cf-gl.qiezibenpao.com
 DOMAIN-SUFFIX,xhs.c.cdnhwc2.com
 DOMAIN,fe-video-qc.xhscdn.com
@@ -48,8 +52,9 @@ DOMAIN,search.xhscdn.com
 DOMAIN-SUFFIX,xhscdn.com
 DOMAIN-SUFFIX,xhscdn.net
 
-DOMAIN-KEYWORD,xhscdn
 DOMAIN-KEYWORD,xiaohongshu
+DOMAIN-KEYWORD,xhscdn
+DOMAIN-KEYWORD,xhsci
 
 # XHS DOMAIN IP-CIDR
 # Tencent Cloud IP
