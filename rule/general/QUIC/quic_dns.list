@@ -5,32 +5,32 @@
 # URL: https://github.com/eslco/base/raw/main/general/QUIC/quic_cndns.list
 # Last Modified: 2025-08-04
 
-IP-CDIR,223.5.5.5/32,network=udp
-IP-CDIR,223.6.6.6/32,network=udp
+IP-CIDR,223.5.5.5/32,network=udp
+IP-CIDR,223.6.6.6/32,network=udp
 
-IP-CDIR,119.29.29.29/32,network=udp
-IP-CDIR,1.12.12.12/32,network=udp
-IP-CDIR,120.53.53.53/32,network=udp
+IP-CIDR,119.29.29.29/32,network=udp
+IP-CIDR,1.12.12.12/32,network=udp
+IP-CIDR,120.53.53.53/32,network=udp
 
-IP-CDIR,114.114.114.114/32,network=udp
-IP-CDIR,114.114.115.115/32,network=udp
-IP-CDIR,114.114.114.119/32,network=udp
-IP-CDIR,114.114.115.119/32,network=udp
-IP-CDIR,114.114.114.110/32,network=udp
-IP-CDIR,114.114.115.110/32,network=udp
+IP-CIDR,114.114.114.114/32,network=udp
+IP-CIDR,114.114.115.115/32,network=udp
+IP-CIDR,114.114.114.119/32,network=udp
+IP-CIDR,114.114.115.119/32,network=udp
+IP-CIDR,114.114.114.110/32,network=udp
+IP-CIDR,114.114.115.110/32,network=udp
 
-IP-CDIR,180.184.1.1/32,network=udp
-IP-CDIR,180.184.2.2/32,network=udp
+IP-CIDR,180.184.1.1/32,network=udp
+IP-CIDR,180.184.2.2/32,network=udp
 
 IP-CIDR,180.76.76.76/32,network=udp
-IP-CDIR,101.226.4.6/32,network=udp
+IP-CIDR,101.226.4.6/32,network=udp
 
-IP-CDIR,218.30.118.6/32,network=udp
-IP-CDIR,123.125.81.6/32,network=udp
-IP-CDIR,140.207.198.6/32,network=udp
+IP-CIDR,218.30.118.6/32,network=udp
+IP-CIDR,123.125.81.6/32,network=udp
+IP-CIDR,140.207.198.6/32,network=udp
 
-IP-CDIR,1.2.4.8/32,network=udp
-IP-CDIR,210.2.4.8/32,network=udp
+IP-CIDR,1.2.4.8/32,network=udp
+IP-CIDR,210.2.4.8/32,network=udp
 
 IP-CIDR,117.50.22.22/32,network=udp
 IP-CIDR,117.50.10.10/32,network=udp

@@ -43,7 +43,7 @@ DOMAIN-SUFFIX,cdg10.abs.hls.ttvnw.net
 # ...
 # hls.ttvnw.net
 
-# hls.ttvnw.net IP-CDIR
+# hls.ttvnw.net IP-CIDR
 IP-CIDR,35.163.143.41/32,no-resolve
 IP-CIDR,52.129.131.86/32,no-resolve
 IP-CIDR,52.223.203.200/32,no-resolve
