@@ -162,6 +162,11 @@ dns:
     - "+.market.xiaomi.com"
     - "+.msftconnecttest.com"
     - "+.msftncsi.com"
+ # // QQ快速登录检测失败
+    - "localhost.ptlogin2.qq.com"
+    - "localhost.sec.qq.com"
+ # // 微信快速登录检测失败
+    - "localhost.work.weixin.qq.com"
     - "time.*.com"
     - "*.localhost"
     - "*.local"
@@ -190,14 +195,13 @@ dns:
    - 1.1.1.3
   # 指定域名查询的解析服务器，可使用 geosite, 优先于 nameserver/fallback 查询
   # 建议：这里可用来做 DNS 分流，防泄露 / 防挟持，可根据自己的规则适当增加，此处支持 rule-set
-  # Overwrite 配置 已知 Bug : 
-  # Nikki 重复配置Mixin nameserver-policy:字段 将导致 Startup.Yaml 文档语法错误, Router陷入高负载循环 ，宕机状态
-  # nameserver-policy: # 取消注释即可启用
+  # Nikki Config Mixin 混入配置 已知 Bug : 重复配置 nameserver-policy:字段 将导致 Startup.Yaml 文档语法错误, Router陷入高负载循环 ，宕机状态
+  # nameserver-policy:
   #  'geosite:cn,private': *cn_dns # Mainland (UDP) DNS IP，不建议使用 DoH / DoT
   #  'geosite:geolocation-!cn': *global_dns # 非CN，即国外，一般建议 DoH / DoT
 
 DNS_Definition:
-   #  启用 锚点引用 DNS
+   #  锚点引用 DNS
   CN_DNS : &cn_dns
    - 120.53.53.53
   TW_DNS : &tw_dns
@@ -222,25 +226,25 @@ QUIC: &quic {type: select, proxies: [ 🚀 Proxy, ☑️ Manual, Direct, 🎮 Ga
 # (Must be unique for each group, otherwise it will not work) 🇭🇰 HK, 🇯🇵 JP
 proxy-groups:
   - {name: 🚀 Proxy, type: select, proxies: [ ☑️ Manual, 🔯 JP Back, 🔯 HK Back, ♻️ JP Auto, ♻️ HK Auto, 🇦🇺 AU, 🇬🇧 GB, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US, Direct]}
-  - {name: ☑️ Manual, type: select, include-all: true, proxies: [ Reject, Direct, 🔯 JP Back, 🔯 HK Back, 🇦🇺 AU, 🇬🇧 GB, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US]}
+  - {name: ☑️ Manual, type: select, include-all: true, proxies: [🔯 JP Back, Reject, Direct,  🔯 HK Back, 🇦🇺 AU, 🇬🇧 GB, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US]}
   - {name: 🔯 AI, <<: *pr}
   - {name: 🎵 Spotify, <<: *pr}
   - {name: 📕 XHS RedNote, <<: *cn}
   - {name: 💫 QUIC, <<: *quic}
   - {name: 💫 DNSQ, <<: *quic}
   - {name: 👨🏿‍💻 GitHub, <<: *pr}
+  - {name: 📹 YouTube, <<: *pr}
+  - {name: 📺 Bilibili, <<: *cn}
+  - {name: 🎥 ProxyMedia, <<: *pr}
   - {name: 🍀 Google, <<: *pr}
   - {name: 💶 PayPal, <<: *pr}
   - {name: ☕ DEX, <<: *pr}
   - {name: 🎮 Games, <<: *pr}
-  - {name: 🌐 Social+, <<: *pr}
   - {name: 📱 WhatsApp, <<: *pr}
+  - {name: 🌐 Social+, <<: *pr}
   - {name: 📞 WeChat, <<: *pr}
   - {name: 📊 EMarket, <<: *pr}
   - {name: 🎵 TikTok, <<: *pr}
-  - {name: 📹 YouTube, <<: *pr}
-  - {name: 📺 Bilibili, <<: *cn}
-  - {name: 🎥 ProxyMedia, <<: *pr}
   - {name: 📺 IPTV Global, <<: *pr}
   - {name: 🎵 Netease Music,<<: *cn}
   - {name: ☎️ Telegram, <<: *pr}
@@ -248,7 +252,7 @@ proxy-groups:
   - {name: 🔯 JP Back, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇯🇵|JP|日|(?i)🇰🇷|KR|韩|Korea|🇯🇵|JP|日|Japan|Tokyo|Osaka|NRT|KIX|NGO|CTS|FUK|东京|大阪|[^-]日|沪日))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
   - {name: ♻️ HK Auto, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇭🇰|HK|港|(?i)🇭🇰|HK|澳|hong|Macau|MO|HKG|MFM|Central|Kowloon|观塘|中环))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|🇯🇵|JP|日|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
   - {name: ♻️ JP Auto, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇯🇵|JP|日|(?i)🇰🇷|KR|韩|Korea|🇯🇵|JP|日|Japan|Tokyo|Osaka|NRT|KIX|NGO|CTS|FUK|东京|大阪|[^-]日|沪日))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
-  - {name: 🇦🇺 AU, type: select, include-all: true, filter: "🇦🇺|aus|Aus|澳|悉尼|墨尔本|布里斯班|堪培拉|珀斯|阿德莱德|Darwin|Sydney|Melbourne|Brisbane|Canberra|Perth|Adelaide|DRW|SYD|MEL|BNE|CBR|PER|ADL"}
+  - {name: 🇦🇺 AU, type: select, include-all: true, filter: "🇦🇺|aus|Aus|澳|澳大利亚|悉尼|墨尔本|布里斯班|堪培拉|珀斯|阿德莱德|Darwin|Sydney|Melbourne|Brisbane|Canberra|Perth|Adelaide|DRW|SYD|MEL|BNE|CBR|PER|ADL"}
   - {name: 🇬🇧 GB, type: select, include-all: true, filter: "(?i)🇬🇧|GB|UK|Britain|英国|伦敦|曼彻斯特|伯明翰|利兹|London|Manchester|Birmingham|Leeds|LON|MAN|BHX|LBA"}
   # - {name: 🇭🇰 HK, type: select, include-all: true, filter: "(?i)🇭🇰|HK|港|澳門|hong|Macau|MO|HKG|MFM|Central|Kowloon|觀塘|中環|銅鑼灣"}
   # - {name: 🇯🇵 JP, type: select, include-all: true, filter: "(?i)🇰🇷|KR|韩|Korea|🇯🇵|JP|日|Japan|Tokyo|Osaka|Nagoya|Fukuoka|NRT|KIX|NGO|CTS|FUK|东京|大阪|神奈川|埼玉|[^-]日|沪日|深日"}
@@ -391,9 +395,9 @@ rule-anchor:
   class: &class {type: http, interval: 86400, behavior: classical, format: text}
 rule-providers:
  # ES Rules.ymal
-  # quic_ip_ports
+  # QUIC
   quic_dns: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/general/QUIC/quic_dns.list"}
-  quic_ports: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/general/QUIC/quic_ports.list"}
+  quic_list: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/general/QUIC/quic_ports.list"}
   # DIY_list
   diy_list: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/DIY/DIY.list"}
   # WeChat
@@ -472,7 +476,7 @@ rule-providers:
   category-game-platforms-download: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-game-platforms-download.mrs"}
   category-game-platforms-download-cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-game-platforms-download@cn.mrs"}
   # Social+ Apps
-  facebook_list: { <<: *domain, url: "https://github.com/eslco/base/raw/main/rule/Clash/Facebook/Facebook.list"}
+  facebook_list: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/Facebook/Facebook.list"}
   facebook_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/facebook.mrs"}
   twitter_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/twitter.mrs"}
   instagram_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/instagram.mrs"}
