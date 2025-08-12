@@ -1,6 +1,4 @@
 # Mixin File
-# URL: # Update RUL: https://github.com/eslco/base/raw/main/config/mihomo/Mixin.yaml
-
 # You can set any mihomo profile's config at here, it will mixin to the profile.
 #
 # For example:
@@ -29,46 +27,6 @@
 #   - GEOIP,cn,DIRECT
 #   - Match,PROXY
 
-
-
-# DNS Module
-dns:
-  enable: true
-  listen: 0.0.0.0:1053
-  ipv6: false
-    # DOH Prefer http/3，true / false，建议设置为 true
-  prefer-h3: true
-  respect-rules: true
-  # enhanced-mode: fake-ip
-  enhanced-mode: redir-host
-  # fake-ip-range: 28.0.0.1/8
-  fake-ip-range: 198.18.0.1/16
-  fake-ip-filter-mode: blacklist
-  fake-ip-filter:
-    - "rule-set:private_domain"
-    - "+.market.xiaomi.com"
-    - "+.msftconnecttest.com"
-    - "+.msftncsi.com"
-    - "time.*.com"
-    - "*.localhost"
-    - "*.local"
-    - "*.lan"
-  # use-system-hosts: true
-  use-hosts: true
-  hosts:
-  localhost:
-   - 127.0.0.1
-   - ::1
-
-  # 默认 DNS 服务器
-  default-nameserver: *tw_dns
-  # Proxy 代理 DNS 服务器
-  proxy-server-nameserver: *global_dns
-  # namesever尽量用运营商提供的DNS
-  nameserver: *tw_dns
-  # fallback 回退 DNS 服务器
-  fallback: *back_dns
-
 DNS_Definition:
    # 锚点引用
   CN_DNS : &cn_dns
@@ -77,6 +35,10 @@ DNS_Definition:
   TW_DNS : &tw_dns
    - 168.95.192.1
    - 168.95.1.1
+  PR_DNS : &pr_dns
+   - 114.114.114.114
+   - 101.102.103.104
+
   Global_dns : &global_dns
    - https://public.dns.iij.jp/dns-query
    - https://1.0.0.2/dns-query
@@ -85,7 +47,7 @@ DNS_Definition:
    - 1.1.1.3
 
   nameserver-policy:
-    'geosite:private,cn': *cn_dns  # 引用在主配置中定义的锚点
+    'geosite:private,cn': *pr_dns  # 引用在主配置中定义的锚点
     'geosite:geolocation-!cn': *global_dns # 引用在主配置中定义的锚点
 
 # Nikki Config Mixin 混入配置 已知 Bug : 重复配置 nameserver-policy:字段 将导致 Startup.Yaml 文档语法错误, Router陷入高负载循环 ，宕机状态

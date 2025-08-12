@@ -197,7 +197,7 @@ dns:
   # 建议：这里可用来做 DNS 分流，防泄露 / 防挟持，可根据自己的规则适当增加，此处支持 rule-set
   # Nikki Config Mixin 混入配置 已知 Bug : 重复配置 nameserver-policy:字段 将导致 Startup.Yaml 文档语法错误, Router陷入高负载循环 ，宕机状态
   # nameserver-policy:
-  #  'geosite:cn,private': *cn_dns # Mainland (UDP) DNS IP，不建议使用 DoH / DoT
+  #  'geosite:cn,private': *pr_dns # Mainland (UDP) DNS IP，不建议使用 DoH / DoT
   #  'geosite:geolocation-!cn': *global_dns # 非CN，即国外，一般建议 DoH / DoT
 
 DNS_Definition:
@@ -207,6 +207,9 @@ DNS_Definition:
   TW_DNS : &tw_dns
    - 168.95.192.1
    - 168.95.1.1
+  PR_DNS : &pr_dns
+   - 114.114.114.114
+   - 101.102.103.104
   Global_dns : &global_dns
    - https://public.dns.iij.jp/dns-query
    - https://1.0.0.2/dns-query
