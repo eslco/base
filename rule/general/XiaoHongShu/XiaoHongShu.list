@@ -13,42 +13,25 @@
 DOMAIN-SUFFIX,api-tracker.xiaohongshu.com
 # XiaoHongShu CORE DOMAIN
 
-DOMAIN,edith.xiaohongshu.com-v1.edgesuite.net,network=udp
-DOMAIN,edith.xiaohongshu.com.w.kunlungr.com,network=udp
-DOMAIN,edith.xiaohongshu.com.eo.dnse0.com,network=udp
-DOMAIN,ros-upload-ali.xiaohongshu.com,network=udp
-DOMAIN,ros-upload.xiaohongshu.com,network=udp
-DOMAIN,edith.xiaohongshu.com,network=udp
-DOMAIN,mall.xiaohongshu.com,network=udp
-DOMAIN,www.xiaohongshu.com,network=udp
+DOMAIN-KEYWORD,edith.xiaohongshu,network=udp
 DOMAIN-SUFFIX,xiaohongshu.com,network=udp
 DOMAIN-SUFFIX,xiaohongshu.net,network=udp
+DOMAIN,edith.xiaohongshu.com,network=udp
 
-DOMAIN-KEYWORD,edith.xiaohongshu
 DOMAIN-SUFFIX,xiaohongshu-mycdn.com
 DOMAIN-SUFFIX,xiaohongshulvyou.com
-DOMAIN-KEYWORD,edith.xiaohongshu
 DOMAIN-SUFFIX,xiaohongshu.net
 DOMAIN-SUFFIX,xiaohongshu.com
 DOMAIN-SUFFIX,xhslink.com
 DOMAIN-SUFFIX,xhsci.com
 
 # XHS CDN
-# Jiangsu Telecom Interal CDN
-DOMAIN-SUFFIX,sd-gl.xinqiucc.com
-
 # Tencent Cloud CDN
 DOMAIN,spider-tracker.xiaohongshu.com.w.kunluncan.com
 # DOMAIN,xhsci-10008268.cos.ap-shanghai.myqcloud.com
 DOMAIN-SUFFIX,xiaohongshu.com.w.kunluncan.com
-DOMAIN-SUFFIX,clb.ap-shanghai.tencentclb.com
-DOMAIN-SUFFIX,ipip-gl1.qiezibenpao.com
-DOMAIN-SUFFIX,clb.sh-tencentclb.cloud
-DOMAIN-SUFFIX,cf-gl.qiezibenpao.com
+DOMAIN-SUFFIX,qiezibenpao.com
 DOMAIN-SUFFIX,xhs.c.cdnhwc2.com
-DOMAIN,fe-video-qc.xhscdn.com
-DOMAIN,sns-na-i8.xhscdn.com
-DOMAIN,search.xhscdn.com
 DOMAIN-SUFFIX,xhscdn.com
 DOMAIN-SUFFIX,xhscdn.net
 
