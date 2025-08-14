@@ -10,9 +10,7 @@
 # UPDATED: 2025-08-07 16:17:40
 # DOMAIN-SUFFIX: 59 
 # TOTAL: 68
-DOMAIN-SUFFIX,api-tracker.xiaohongshu.com
 # XiaoHongShu CORE DOMAIN
-
 DOMAIN-KEYWORD,edith.xiaohongshu,network=udp
 DOMAIN-SUFFIX,xiaohongshu.com,network=udp
 DOMAIN-SUFFIX,xiaohongshu.net,network=udp
@@ -27,8 +25,6 @@ DOMAIN-SUFFIX,xhsci.com
 
 # XHS CDN
 # Tencent Cloud CDN
-DOMAIN,spider-tracker.xiaohongshu.com.w.kunluncan.com
-# DOMAIN,xhsci-10008268.cos.ap-shanghai.myqcloud.com
 DOMAIN-SUFFIX,xiaohongshu.com.w.kunluncan.com
 DOMAIN-SUFFIX,qiezibenpao.com
 DOMAIN-SUFFIX,xhs.c.cdnhwc2.com
