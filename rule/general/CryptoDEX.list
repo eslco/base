@@ -1,9 +1,7 @@
-
-
+# Coinbase
 DOMAIN-SUFFIX,coinbase.com
 DOMAIN-SUFFIX,binance.com
 
-# OKX
 # OKX
 DOMAIN-SUFFIX,okx.com
 DOMAIN-SUFFIX,okex.com
@@ -26,8 +24,6 @@ DOMAIN-SUFFIX,wspri.ouyich.show
 DOMAIN-SUFFIX,web3.okx.com
 DOMAIN-SUFFIX,aws.okx.com
 DOMAIN-SUFFIX,cdn.okx.com
-w
 
-
-
+# Bybit
 DOMAIN-SUFFIX,bybit.com
