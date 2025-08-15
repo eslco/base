@@ -1,20 +1,26 @@
 {
- "version": 4,
+ "version": 3,
  "rules":[{
         "domain": [
-            "xhscdn.com",
-            "xhscdn.net",
-            "edith.xiaohongshu.com",
-            "search.xiaohongshu.com"       
+         "ci.xiaohongshu.com",
+         "edith.xiaohongshu.com",
+         "miniprogram.xiaohongshu.com",
+         "pages.xiaohongshu.com",
+         "picasso-static.xiaohongshu.com",
+         "rec.xiaohongshu.com",
+         "so.xiaohongshu.com",
+         "live-room.xiaohongshu.com",
+         "www.xiaohongshu.com",
+         "search.xiaohongshu.com"
         ],
         "domain_suffix": [
-            ".xhscdn.com",
-            ".xhscdn.net",
-            ".xiaohongshu.com",
-            ".xiaohongshu-mycdn.com",
-            ".xiaohongshulvyou.com",             
-            ".xhslink.com",
-            ".xhsci.com"
+         ".xhscdn.com",
+         ".xhscdn.net",
+         ".xiaohongshu.com",
+         ".xiaohongshu-mycdn.com",
+         ".xiaohongshulvyou.com",
+         ".xhslink.com",
+         ".xhsci.com"
         ],
         "domain_keyword": [
             "xiaohongshu",
@@ -26,9 +32,9 @@
             "udp",
             "tcp"
         ],
-        "source_port": [
+        "port": [
             443,8443,5332
         ]
-    }
+     }
     ]
 }
