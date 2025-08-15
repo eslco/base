@@ -4,14 +4,15 @@
 # Name: ttdirect.list
 # Author: eslco
 
+# Author: eslco
 # Direct rules
+
 DOMAIN-SUFFIX,mobilefuse.com
 DOMAIN-SUFFIX,crashlytics.com
 DOMAIN-SUFFIX,kochava.com
+
 # IP-CIDR
 IP-CIDR,50.117.27.0/24,no-resolve
-IP-CIDR,63.251.124.0/2,no-resolve
 IP-CIDR,69.46.75.0/24,no-resolve
-IP-CIDR,205.164.56.0/2,no-resolve
-IP-CIDR,205.164.56.29/,no-resolve
-IP-CIDR,63.251.124.0/2,no-resolve
+IP-CIDR,205.164.56.0/24,no-resolve
+IP-CIDR,63.251.124.0/24,no-resolve
