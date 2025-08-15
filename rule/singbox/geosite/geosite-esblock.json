@@ -1,48 +1,46 @@
-{ 
-    "version": 4,
-    "rules":  [   
-        { 
-            "domain":[
-            "ip.sy",    
-            "qn-cdnfile1pcdn.msstatic.com",
-             "livewebbs2pcdn.msstatic.com",
-             "7h1s_rul35et_i5_mad3_by_5ukk4w-ruleset.skk.moe"
-           ],
-           "domain_suffix": [
-             "ip.sy",
-             "ppio.cloud",
-             "yfp2p.net",
-             "yfcdn.net",
-             "onethingpcs.com",
-             "tianwenca.com",
-             "pkoplink.com",
-             "kuiniuca.com",
-             "yfcloud.com",
-             "saxysec.com",
-             "pcdn.yximgs.com",
-             "szbdyd.com",
-             "xycdn.com",
-             "uhabo.com",
-             "p2cdn.com",
-             "p2p.huya.com",
-             "p2ptun.qq.com",
-             "p2pupgrade.gamedl.qq.com",
-             "p2pupdate.gamedl.qq.com",
-             "p2p.qq.com",
-             "cdnnodedns.cn",
-             "mcdn.bilivideo.cn",
-             "p2perrorlog.douyucdn.cn",
-             "p2plog.douyucdn.cn",
-             "-p2p.pull.yximgs.com"
-            ],
-              "domain_keyword": ["-p2p.pull.yximgs.com","-p2p-v2.pull.yximgs.com"],
-              "domain_regex": [
-            "^p2pchunk-[\\w.-]*?\\.douyucdn\\.cn$",
-            "^p2plive-*[\\w.-]*?\\.douyucdn\\.cn$",
-            "^p2p[\\w.-]*?\\.douyucdn\\.cn$",
-            "^dyp2p-[\\w.-]*?\\.douyucdn\\.cn$",
-            "^p2p-[\\w.-]*?\\.douyucdn\\.cn$"
-            ]
-        }
-   ]
+{
+  "version": 2,
+  "rules": [
+    {
+      "domain": [
+        "ip.sy",
+        "qn-cdnfile1pcdn.msstatic.com",
+        "livewebbs2pcdn.msstatic.com"
+      ],
+      "domain_suffix": [
+        "+.ip.sy",
+        "ppio.cloud",
+        "yfp2p.net",
+        "yfcdn.net",
+        "onethingpcs.com",
+        "tianwenca.com",
+        "pkoplink.com",
+        "kuiniuca.com",
+        "yfcloud.com",
+        "saxysec.com",
+        "pcdn.yximgs.com",
+        "szbdyd.com",
+        "xycdn.com",
+        "uhabo.com",
+        "p2cdn.com",
+        "p2p.huya.com",
+        "p2ptun.qq.com",
+        "p2pupgrade.gamedl.qq.com",
+        "p2pupdate.gamedl.qq.com",
+        "p2p.qq.com",
+        "cdnnodedns.cn",
+        "mcdn.bilivideo.cn",
+        "p2perrorlog.douyucdn.cn",
+        "p2plog.douyucdn.cn"
+      ],
+      "domain_keyword": ["-p2p.pull.yximgs.com", "-p2p-v2.pull.yximgs.com"],
+      "domain_regex": [
+        "^p2pchunk-[\\w.-]*?\\.douyucdn\\.cn$",
+        "^p2plive-*[\\w.-]*?\\.douyucdn\\.cn$",
+        "^p2p[\\w.-]*?\\.douyucdn\\.cn$",
+        "^dyp2p-[\\w.-]*?\\.douyucdn\\.cn$",
+        "^p2p-[\\w.-]*?\\.douyucdn\\.cn$"
+      ]
+    }
+  ]
 }
