@@ -10,15 +10,15 @@ proxy-providers:
       url: https://www.apple.com/library/test/success.html
       interval: 300
       proxy: Direct
-  Sub2:
-    url: "https://sub.example.com/sub?token=XXX"
-    type: http
-    interval: 86400
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-      proxy: Direct
+# Sub2:
+#   url: "https://sub.example.com/sub?token=XXX"
+#   type: http
+#   interval: 86400
+#   health-check:
+#     enable: true
+#     url: https://www.gstatic.com/generate_204
+#     interval: 300
+#     proxy: Direct
 
 # 节点信息
 proxies:
@@ -251,7 +251,7 @@ proxy-groups:
   - {name: 🎥 ProxyMedia, <<: *pr}
   - {name: 🍀 Google, <<: *pr}
   - {name: 💶 PayPal, <<: *pr}
-  - {name: ☕ DEX, <<: *pr}
+  - {name: 🏪 DEX, <<: *pr}
   - {name: 🎮 Games, <<: *pr}
   - {name: 📱 WhatsApp, <<: *pr}
   - {name: 🌐 Social+, <<: *pr}
@@ -261,17 +261,17 @@ proxy-groups:
   - {name: 📺 IPTV Global, <<: *pr}
   - {name: 🎵 Netease Music,<<: *cn}
   - {name: ☎️ Telegram, <<: *pr}
-  - {name: 🔯 HK Back, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇭🇰|HK|港|(?i)🇭🇰|HK|澳|hong|Macau|MO|HKG|MFM|Central|Kowloon|观塘|中环))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|🇯🇵|JP|日|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
-  - {name: 🔯 JP Back, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇯🇵|JP|日|(?i)🇰🇷|KR|韩|Korea|🇯🇵|JP|日|Japan|Tokyo|Osaka|NRT|KIX|NGO|CTS|FUK|东京|大阪|[^-]日|沪日))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
-  - {name: ♻️ HK Auto, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇭🇰|HK|港|(?i)🇭🇰|HK|澳|hong|Macau|MO|HKG|MFM|Central|Kowloon|观塘|中环))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|🇯🇵|JP|日|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
-  - {name: ♻️ JP Auto, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇯🇵|JP|日|(?i)🇰🇷|KR|韩|Korea|🇯🇵|JP|日|Japan|Tokyo|Osaka|NRT|KIX|NGO|CTS|FUK|东京|大阪|[^-]日|沪日))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
-  - {name: 🇦🇺 AU, type: select, include-all: true, filter: "🇦🇺|aus|Aus|澳|澳大利亚|悉尼|墨尔本|布里斯班|堪培拉|珀斯|阿德莱德|Darwin|Sydney|Melbourne|Brisbane|Canberra|Perth|Adelaide|DRW|SYD|MEL|BNE|CBR|PER|ADL"}
-  - {name: 🇬🇧 GB, type: select, include-all: true, filter: "(?i)🇬🇧|GB|UK|Britain|英国|伦敦|曼彻斯特|伯明翰|利兹|London|Manchester|Birmingham|Leeds|LON|MAN|BHX|LBA"}
-  # - {name: 🇭🇰 HK, type: select, include-all: true, filter: "(?i)🇭🇰|HK|港|澳門|hong|Macau|MO|HKG|MFM|Central|Kowloon|觀塘|中環|銅鑼灣"}
-  # - {name: 🇯🇵 JP, type: select, include-all: true, filter: "(?i)🇰🇷|KR|韩|Korea|🇯🇵|JP|日|Japan|Tokyo|Osaka|Nagoya|Fukuoka|NRT|KIX|NGO|CTS|FUK|东京|大阪|神奈川|埼玉|[^-]日|沪日|深日"}
+  - {name: 🔯 HK Back, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇭🇰|HK|(?i)🇭🇰|HK|港|hong|Hong|HKG|Central|Kowloon|观塘|中环))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|🇯🇵|JP|日|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
+  - {name: 🔯 JP Back, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇯🇵|JP|(?i)🇯🇵|JP|日|Japan|Tokyo|Osaka|NRT|KIX|NGO|CTS|FUK|东京|大阪|[^-]日))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
+  - {name: ♻️ HK Auto, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇭🇰|HK|(?i)🇭🇰|HK|港|hong|Hong|HKG|Central|Kowloon|观塘|中环))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|🇯🇵|JP|日|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
+  - {name: ♻️ JP Auto, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(🇯🇵|JP|(?i)🇯🇵|JP|日|Japan|Tokyo|Osaka|NRT|KIX|NGO|CTS|FUK|东京|大阪|[^-]日))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
+  - {name: 🇦🇺 AU, type: select, include-all: true, filter: "🇦🇺|aus|Aus|澳|悉尼|墨尔本|Sydney|Perth|Adelaide|DRW|SYD|MEL|BNE|CBR|PER|ADL"}
+  - {name: 🇬🇧 GB, type: select, include-all: true, filter: "(?i)🇬🇧|GB|UK|Britain|英国|伦敦|London|LON|MAN|BHX|LBA"}
+  # - {name: 🇭🇰 HK, type: select, include-all: true, filter: "(?i)🇭🇰|HK|港|hong|Hong|HKG|Central|Kowloon|观塘|中环"}
+  # - {name: 🇯🇵 JP, type: select, include-all: true, filter: "(?i)🇯🇵|JP|日|Japan|Tokyo|Osaka|Nagoya|Fukuoka|NRT|KIX|NGO|CTS|FUK|东京|大阪|[^-]日"}
   # # - {name: 🇰🇷 KR, type: select, include-all: true, filter: "(?i)🇰🇷|KR|韩|Korea|KOR|Seoul|首尔|春川|釜山|大邱|仁川|光州|大田|韩|韓|ICN|PUS|TAE|INC|KWJ|CJJ"}
-  - {name: 🇸🇬 SG, type: select, include-all: true, filter: "(?i)🇸🇬|SG|新加坡|坡|狮城|Singapore|Changi|Jurong|Woodlands|SIN|XSP|樟宜|裕廊|兀兰"}
-  - {name: 🇹🇼 TW, type: select, include-all: true, filter: "(?i)🇹🇼|TW|taiwan|台|臺灣|新北|彰化|桃園|台中|高雄|Taipei|Taichung|Kaohsiung|TPE|KHH|TSA|RMQ"}
+  - {name: 🇸🇬 SG, type: select, include-all: true, filter: "(?i)🇸🇬|SG|狮城|坡|Singapore|Changi|Woodlands|SIN|XSP|樟宜"}
+  - {name: 🇹🇼 TW, type: select, include-all: true, filter: "(?i)🇹🇼|TW|taiwan|台|臺灣|新北|彰化|桃園|台中|高雄|Taipei|Taichung|TPE|KHH|TSA"}
   - {name: 🇺🇸 US, type: select, include-all: true, filter: "🇺🇸|US|美|United States|San Jose|Portland|Dallas|Phoenix|Las Vegas|Angeles|Seattle|Chicago|New York|Atlanta|ATL|BUF|DFW|EWR|IAD|LAX|MCI|MIA|ORD|PHX|PDX|SEA|SJC|JFK|LGA"}
   - {name: ♻️ Auto, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(Direct)).)*$"}
   # - {name: 🐬 OneDrive, <<: *pr}
@@ -306,7 +306,7 @@ rules:
   - RULE-SET,ttdirect,Direct
   - RULE-SET,ttproxy,🔯 AI
   # DEX
-  - RULE-SET,dex_domain,☕ DEX
+  - RULE-SET,dex_domain,🏪 DEX
   # AI
   - DOMAIN-SUFFIX,www.anthropic.com,🔯 AI
   - DOMAIN-SUFFIX,claude.ai,🔯 AI
