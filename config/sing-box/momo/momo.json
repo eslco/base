@@ -20,17 +20,20 @@
   },
   "outbounds": [
     {"tag": "🚀 Proxy", "type": "selector", "outbounds": ["🔯🇯🇵 JP Auto", "🔯🇭🇰 HK Auto", "🚀 Proxy", "🎯 DirectN", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual", "♻️ Auto"]},
+    {"tag": "☑️ Manual", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "exclude", "keywords": ["网站|流量|地址|剩余|过期|免费|时间|有效|Traffic|ExpireDate|GB|Expire Date"]}]},
+    {"tag": "📕 XHS RedNote", "type": "selector", "outbounds": ["🚀 Proxy", "🎯 DirectN", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"]},
+    {"tag": "📞 WeChat", "type": "selector", "outbounds": ["🚀 Proxy", "🎯 DirectN", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"]},
     {"tag": "🧠 AI", "type": "selector", "outbounds": ["🔯🇯🇵 JP Auto", "🔯🇭🇰 HK Auto", "🚀 Proxy", "🎯 DirectN", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"]},
-     {"tag": "💶 PayPal", "type": "selector", "outbounds": ["🔯🇯🇵 JP Auto", "🔯🇭🇰 HK Auto", "🚀 Proxy", "🎯 DirectN", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"]},
     {"tag": "🏪 DEX", "type": "selector","outbounds": ["🔯🇯🇵 JP Auto", "🔯🇭🇰 HK Auto", "🚀 Proxy", "🎯 DirectN", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"]},
+     {"tag": "💶 PayPal", "type": "selector", "outbounds": ["🔯🇯🇵 JP Auto", "🔯🇭🇰 HK Auto", "🚀 Proxy", "🎯 DirectN", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"]},
+    {"tag": "📞 WhatsApp", "type": "selector", "outbounds": ["🔯🇯🇵 JP Auto", "🔯🇭🇰 HK Auto", "🚀 Proxy", "🎯 DirectN", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"]},
+    {"tag": "🎵 Spotify", "type": "selector", "outbounds": ["🔯🇯🇵 JP Auto", "🔯🇭🇰 HK Auto", "🚀 Proxy", "🎯 DirectN", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"]},
+
     {"tag": "📹 YouTube", "type": "selector", "outbounds": ["🔯🇯🇵 JP Auto", "🔯🇭🇰 HK Auto", "🚀 Proxy", "🎯 DirectN", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"]},
     {"tag": "🍀 Google", "type": "selector", "outbounds": ["🔯🇯🇵 JP Auto", "🔯🇭🇰 HK Auto", "🚀 Proxy", "🎯 DirectN", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"]},
     {"tag": "👨‍💻 Github", "type": "selector", "outbounds": ["🔯🇯🇵 JP Auto", "🔯🇭🇰 HK Auto", "🚀 Proxy", "🎯 DirectN", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"]},
-       
-    {"tag": "📞 WeChat", "type": "selector", "outbounds": ["🚀 Proxy", "🎯 DirectN", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"]},
-    {"tag": "📕 XHS RedNote", "type": "selector", "outbounds": ["🚀 Proxy", "🎯 DirectN", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"]},
-    {"tag": "🎵 Spotify", "type": "selector", "outbounds": ["🔯🇯🇵 JP Auto", "🔯🇭🇰 HK Auto", "🚀 Proxy", "🎯 DirectN", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"]},
-    {"tag": "📞 WhatsApp", "type": "selector", "outbounds": ["🔯🇯🇵 JP Auto", "🔯🇭🇰 HK Auto", "🚀 Proxy", "🎯 DirectN", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"]},
+    {"tag": "📺 Bilibili", "type": "selector", "outbounds": ["🎯 DirectN", "🔯🇯🇵 JP Auto", "🔯🇭🇰 HK Auto", "🚀 Proxy", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"]},
+    
     {"tag": "🌐 Social+", "type": "selector", "outbounds": ["🔯🇯🇵 JP Auto", "🔯🇭🇰 HK Auto", "🚀 Proxy", "🎯 DirectN", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"]},
     {"tag": "☎️ Telegram", "type": "selector", "outbounds": ["🔯🇯🇵 JP Auto", "🔯🇭🇰 HK Auto", "🚀 Proxy", "🎯 DirectN", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"]},
     {"tag": "🎵 TikTok", "type": "selector", "outbounds": ["🔯🇯🇵 JP Auto", "🔯🇭🇰 HK Auto", "🚀 Proxy", "🎯 DirectN", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"]},
@@ -50,7 +53,6 @@
     {"tag": "🇸🇬 SG", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇸🇬|SG|狮城|坡|Singapore|Changi|Woodlands|SIN|XSP|樟宜"]}, {"action": "exclude", "keywords": ["免费"]}]},
     {"tag": "🇹🇼 TW", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇹🇼|TW|taiwan|台|臺灣|新北|彰化|桃園|台中|高雄|Taipei|Taichung|TPE|KHH"]}, {"action": "exclude", "keywords": ["免费"]}]},
     {"tag": "🇺🇸 US", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇺🇸|US|美|United States|San Jose|Portland|Dallas|Phoenix|Las Vegas|Angeles|Seattle|Chicago|York|Atlanta|ATL|BUF|DFW|EWR|IAD|LAX|MCI|MIA|ORD|PHX|PDX|SEA|SJC|JFK|LGA"]}, {"action": "exclude", "keywords": ["AUS|RUS|免费"]}]},
-    {"tag": "☑️ Manual", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "exclude", "keywords": ["网站|流量|地址|剩余|过期|免费|时间|有效|Traffic|ExpireDate|GB|Expire Date"]}]},
     {"tag": "♻️ Auto", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "exclude", "keywords": ["官网|到期时间|剩余|流量|套餐|免费|订阅|全球直连|GB|Expire Date|Traffic|ExpireDate"]}], "interval": "10m", "tolerance": 100},
     {"tag": "🍃 URLTest", "type": "urltest", "outbounds": ["🚀 Proxy", "🎯 DirectN"]},
     {"tag": "GLOBAL", "type": "selector", "outbounds": ["🚀 Proxy", "🧠 AI", "📹 YouTube", "🍀 Google", "👨‍💻 Github", "☎️ Telegram", "🎵 TikTok", "🎥 Netflix", "💶 PayPal", "🎮 Steam", "🎮 Games", "Ⓜ️ Microsoft", "🐬 OneDrive", "🍏 Apple", "🐠 Final", "🔯🇭🇰 HK Auto", "🔯🇯🇵 JP Auto", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual", "♻️ Auto", "🍃 URLTest", "🎯 DirectN"]},
@@ -87,14 +89,13 @@
       {"rule_set": "geosite-line", "outbound": "📞 WhatsApp"},
       {"rule_set": "geosite-kakao", "outbound": "📞 WhatsApp"},
       {"rule_set": "geosite-signal", "outbound": "📞 WhatsApp"},
-      {"rule_set": "geosite-session", "outbound": "📞 WhatsApp"},
-
       {"rule_set": "geosite-facebook", "outbound": "🌐 Social+"},
       {"rule_set": "geosite-twitter", "outbound": "🌐 Social+"},
       {"rule_set": "geosite-threads", "outbound": "🌐 Social+"},
       {"rule_set": "geosite-instagram", "outbound": "🌐 Social+"},
-
       {"rule_set": "geosite-linkedin", "outbound": "🚀 Proxy"},
+
+      {"rule_set": "geosite-bilibili", "outbound": "📺 Bilibili"},
 
       {"rule_set": "geosite-youtube", "outbound": "📹 YouTube"},
       {"rule_set": "geosite-google", "outbound": "🍀 Google"},
@@ -151,6 +152,7 @@
       {"tag": "geosite-facebook", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/facebook.srs", "download_detour": "🎯 DirectN"},
       {"tag": "geosite-linkedin", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/linkedin.srs", "download_detour": "🎯 DirectN"},
 
+      {"tag": "geosite-bilibili", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/bilibili.srs", "download_detour": "🎯 DirectN"},
       {"tag": "epicgames", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/epicgames.srs", "download_detour": "🎯 DirectN"},
       {"tag": "supercell", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/supercell.srs", "download_detour": "🎯 DirectN"},
       {"tag": "category-games-!cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/category-games-!cn.srs", "download_detour": "🎯 DirectN"},
