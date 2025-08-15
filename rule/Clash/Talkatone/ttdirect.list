@@ -1,28 +1,17 @@
-# Name: ttblock.list
-# DESC: Talkatone NoAD 
+# Name: ttdirect.list
+# DESC: Talkatone Direct
 # URL: https://github.com/eslco/base/raw/main/rule/Clash/Talkatone/ttdirect.list
 # Name: ttdirect.list
 # Author: eslco
-## DOMAIN-SUFFIX,tktn.be
-## DOMAIN-SUFFIX,talkatone.com
-## DOMAIN-SUFFIX,tenor.com
-## DOMAIN-SUFFIX,agkn.com
-## DOMAIN-SUFFIX,tktn.at
-## The above domain name must be set up with Proxy
-
 
 # Direct rules
-DOMAIN-SUFFIX,inmobi.com
 DOMAIN-SUFFIX,mobilefuse.com
 DOMAIN-SUFFIX,crashlytics.com
 DOMAIN-SUFFIX,kochava.com
-# DOMAIN-SUFFIX,cohere.com
-# DOMAIN-SUFFIX,ip-api.com
 # IP-CIDR
-IP-CIDR,50.117.27.0/24
-IP-CIDR,63.251.124.0/24
-IP-CIDR,69.46.75.0/24
-IP-CIDR,205.164.56.0/24
-IP-CIDR,205.164.56.29/24
-IP-CIDR,63.251.124.0/24
-
+IP-CIDR,50.117.27.0/24,no-resolve
+IP-CIDR,63.251.124.0/2,no-resolve
+IP-CIDR,69.46.75.0/24,no-resolve
+IP-CIDR,205.164.56.0/2,no-resolve
+IP-CIDR,205.164.56.29/,no-resolve
+IP-CIDR,63.251.124.0/2,no-resolve

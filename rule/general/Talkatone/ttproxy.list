@@ -1,6 +1,7 @@
 # Talkatone Proxy Rule(Update)
 # Author: eslco
-# Updated at 2024.10.29 05:31 PM
+# Updated at 2025.08.15 05:31 PM
+# URL: https://github.com/eslco/base/raw/main/rule/Clash/Talkatone/ttproxy.list
 # './n'
 
 DOMAIN-SUFFIX,talkatone.com
@@ -8,5 +9,11 @@ DOMAIN-SUFFIX,tenor.com
 DOMAIN-SUFFIX,agkn.com
 DOMAIN-SUFFIX,tktn.at
 DOMAIN-SUFFIX,tktn.be
-# DOMAIN-SUFFIX,cohere.com
-# DOMAIN-SUFFIX,ip-api.com
+
+IP-CIDR,23.19.73.39/32,no-resolve
+IP-CIDR,34.120.13.18/32,no-resolve
+IP-CIDR,23.253.145.244/32,no-resolve
+IP-CIDR,216.172.154.50/32,no-resolve
+
+IP-CIDR,23.235.228.136/29,no-resolve
+IP-CIDR,72.18.158.120/29,no-resolve

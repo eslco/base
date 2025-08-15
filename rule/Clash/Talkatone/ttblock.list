@@ -28,9 +28,6 @@ DOMAIN-SUFFIX,c.amazon-adsystem.com
 DOMAIN-SUFFIX,cr.adsappier.com
 DOMAIN-SUFFIX,ets-ap-southeast-1.track.smaato.net
 DOMAIN-SUFFIX,exchange-b-events.inner-active.mobi
-DOMAIN-SUFFIX,firebaseinstallations.googleapis.com
-DOMAIN-SUFFIX,firebaseremoteconfig.googleapis.com
-DOMAIN-SUFFIX,firebase-settings.crashlytics.com
 DOMAIN-SUFFIX,gum.criteo.com
 DOMAIN-SUFFIX,i.l.inmobicdn.net
 DOMAIN-SUFFIX,i.l-dsp.inmobicdn.net
@@ -50,7 +47,6 @@ DOMAIN-SUFFIX,view.adjust.com
 DOMAIN-SUFFIX,vst.c.appier.net
 
 # 完全阻止的請求 - Google Ads 及相关
-DOMAIN-KEYWORD,googleads
 DOMAIN-SUFFIX,googleads.g.doubleclick.net
 DOMAIN-SUFFIX,googleads.g.doubleclick-cn.net
 DOMAIN-SUFFIX,lh3.googleadsserving.cn
