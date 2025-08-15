@@ -12,8 +12,8 @@ DOMAIN,ads-vp5.xhscdn.com
 DOMAIN-WILDCARD,ads-*.xhscdn.com
 DOMAIN,growth-img.xhscdn.com
 DOMAIN,sns-webpic.xhscdn.com
-# DOMAIN,xhslive-video.xhscdn.com
 
+# DOMAIN,xhslive-video.xhscdn.com
 # DOMAIN,ci.xiaohongshu.com
 # DOMAIN,edith.xiaohongshu.com
 # DOMAIN,gslb.xiaohongshu.com
@@ -23,7 +23,7 @@ DOMAIN,sns-webpic.xhscdn.com
 # DOMAIN,rec.xiaohongshu.com
 # DOMAIN,so.xiaohongshu.com
 # DOMAIN,live-room.xiaohongshu.com
-# DOMAIN,www.xiaohongshu.com Proxy
+# DOMAIN,www.xiaohongshu.com
 
 # DOMAIN-SUFFIX,xiaohongshu.com
 DOMAIN-SUFFIX,redbascket.com

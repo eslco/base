@@ -12,8 +12,8 @@ DOMAIN,ads-vp5.xhscdn.com
 DOMAIN-WILDCARD,ads-*.xhscdn.com
 DOMAIN,growth-img.xhscdn.com
 DOMAIN,sns-webpic.xhscdn.com
-DOMAIN,xhslive-video.xhscdn.com
 
+# DOMAIN,xhslive-video.xhscdn.com
 # DOMAIN,ci.xiaohongshu.com
 # DOMAIN,edith.xiaohongshu.com
 # DOMAIN,gslb.xiaohongshu.com
