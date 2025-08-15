@@ -1,7 +1,6 @@
 {
  "version": 4,
-    "rules": [
-     {
+ "rules":[{
         "domain": [
             "xhscdn.com",
             "xhscdn.net",
@@ -29,7 +28,7 @@
         ],
         "source_port": [
             443,8443,5332
-         ]
-       }
+        ]
+    }
     ]
 }
