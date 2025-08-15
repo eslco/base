@@ -7,46 +7,38 @@
 # https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list
 # Talkatone如果发现有剩余的广告，可以引用上面两个分流，自行排查（欢迎反馈，Thx）
 
+
+# 合并基础域名规则
 DOMAIN-SUFFIX,impression-asia.liftoff.io
-DOMAIN-SUFFIX,cdn2.inner-active.mobi
-DOMAIN-SUFFIX,wv.inner-active.mobi
-DOMAIN-SUFFIX,cdn-f.adsmoloco.com
+DOMAIN-SUFFIX,inner-active.mobi
+DOMAIN-SUFFIX,adsmoloco.com
 DOMAIN-SUFFIX,impression.link
 
-# API接口類請求
-DOMAIN-SUFFIX,ads.pubmatic.com
+# 广告平台域名API
 DOMAIN-SUFFIX,amazon-adsystem.com
-DOMAIN-SUFFIX,app-analytics-services.com
 DOMAIN-SUFFIX,appier.net
-DOMAIN-SUFFIX,appiersig.com
-DOMAIN-SUFFIX,aax.amazon-adsystem.com
-DOMAIN-SUFFIX,aax-fe.amazon-adsystem.com
-DOMAIN-SUFFIX,aax-fe-sin.amazon-adsystem.com
-DOMAIN-SUFFIX,adsappier.com
-DOMAIN-SUFFIX,bidder.criteo.com
-DOMAIN-SUFFIX,c.amazon-adsystem.com
 DOMAIN-SUFFIX,cr.adsappier.com
-DOMAIN-SUFFIX,ets-ap-southeast-1.track.smaato.net
+DOMAIN-SUFFIX,bidder.criteo.com
 DOMAIN-SUFFIX,exchange-b-events.inner-active.mobi
-DOMAIN-SUFFIX,gum.criteo.com
+DOMAIN-SUFFIX,firebaseinstallations.googleapis.com
+DOMAIN-SUFFIX,firebaseremoteconfig.googleapis.com
+DOMAIN-SUFFIX,firebase-settings.crashlytics.com
 DOMAIN-SUFFIX,i.l.inmobicdn.net
-DOMAIN-SUFFIX,i.l-dsp.inmobicdn.net
 DOMAIN-SUFFIX,ins.track.tappx.com
-DOMAIN-SUFFIX,mads.amazon-adsystem.com
 DOMAIN-SUFFIX,mfx.mobilefuse.com
 DOMAIN-SUFFIX,mt-usw.appiersig.com
-DOMAIN-SUFFIX,sdk-dnt.ad.smaato.net
 DOMAIN-SUFFIX,sdk-events.inner-active.mobi
-DOMAIN-SUFFIX,sdk-files.smaato.net
-DOMAIN-SUFFIX,sdk-hb-cfg.smaato.net
-DOMAIN-SUFFIX,skadnetworks.fyber.com
 DOMAIN-SUFFIX,ssp.api.tappx.com
-DOMAIN-SUFFIX,supply.inmobicdn.net
-DOMAIN-SUFFIX,tappx.com
 DOMAIN-SUFFIX,view.adjust.com
-DOMAIN-SUFFIX,vst.c.appier.net
 
-# 完全阻止的請求 - Google Ads 及相关
+# Ad Networks
+DOMAIN-SUFFIX,pubmatic.com
+DOMAIN-SUFFIX,smaato.net
+DOMAIN-SUFFIX,criteo.com
+DOMAIN-SUFFIX,inmobi.com
+
+# Google Ads 系列（关键字+精确域名）
+DOMAIN-KEYWORD,googleads
 DOMAIN-SUFFIX,googleads.g.doubleclick.net
 DOMAIN-SUFFIX,googleads.g.doubleclick-cn.net
 DOMAIN-SUFFIX,lh3.googleadsserving.cn
@@ -54,12 +46,9 @@ DOMAIN-SUFFIX,pagead2.googlesyndication-cn.com
 DOMAIN-SUFFIX,tpc.googlesyndication-cn.com
 DOMAIN-SUFFIX,www.googletagservices-cn.com
 
-# 完全阻止的請求 - 通用广告平台
-DOMAIN-SUFFIX,ow.pubmatic.com
-DOMAIN-SUFFIX,pubmatic.com
-DOMAIN-SUFFIX,smaato.net
-DOMAIN-SUFFIX,criteo.com
-DOMAIN-SUFFIX,inmobi.com
+# 第三方分析服务
+DOMAIN-SUFFIX,app-analytics-services.com
+DOMAIN-SUFFIX,track.smaato.net
 
 # [URL Rewrite]
 # hostname = alt-r.my.com, imgx.jampp.com
