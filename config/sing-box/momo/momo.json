@@ -68,8 +68,14 @@
       {"ip_is_private": true, "outbound": "Direct"},
       {"clash_mode": "direct", "outbound": "Direct"},
       {"clash_mode": "global", "outbound": "GLOBAL"},
-
+      {"domain": [
+        "clash.razord.top",
+        "yacd.metacubex.one",
+        "yacd.haishan.me",
+        "d.metacubex.one"],
+      "outbound": "direct"},
       {"protocol": "quic","outbound": "Block"},
+
       {"rule_set": "geosite-ai", "outbound": "🧠 AI"},
       {"rule_set": "geosite-xhs", "outbound": "📕 XHS RedNote"},
       {"rule_set": "geosite-wechat", "outbound": "📞 WeChat"},
@@ -101,7 +107,7 @@
       {"rule_set": "geosite-netflix", "outbound": "🎥 Netflix"},
       {"rule_set": "geosite-paypal", "outbound": "💶 PayPal"},
 
-      
+    
       {"rule_set": "epicgames", "outbound": "🎮 Games"},
       {"rule_set": "supercell", "outbound": "🎮 Games"},
       {"rule_set": "category-games-!cn", "outbound": "🎯 DirectN"},
@@ -169,7 +175,7 @@
       {"tag": "geosite-paypal", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/paypal.srs", "download_detour": "🎯 DirectN"},
       {"tag": "geosite-!cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/geolocation-!cn.srs", "download_detour": "🎯 DirectN"},
       {"tag": "geosite-cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/cn.srs", "download_detour": "🎯 DirectN"},
-
+      
       {"tag": "geoip-twitter", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geoip/twitter.srs", "download_detour": "🎯 DirectN"},
       {"tag": "geoip-google", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geoip/google.srs", "download_detour": "🎯 DirectN"},
       {"tag": "geoip-apple", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo-lite/geoip/apple.srs", "download_detour": "🎯 DirectN"},

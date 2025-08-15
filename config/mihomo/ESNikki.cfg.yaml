@@ -366,18 +366,18 @@ rules:
   # Cloudflare CDN CN
   - RULE-SET,cloudflare_cn,🎯 DirectN
   # Games
-  - RULE-SET,steam_domain,🎮 Games
   - RULE-SET,steam_cn,🎯 DirectN
+  - RULE-SET,steam_domain,🎮 Games
   - RULE-SET,epicgames,🎮 Games
   - RULE-SET,supercell_domain,🎮 Games
-  - RULE-SET,category-games-!cn,🎮 Games
   - RULE-SET,category-games-cn,🎯 DirectN
-  - RULE-SET,tencent-games-!cn,🎮 Games
+  - RULE-SET,category-games-!cn,🎮 Games
   - RULE-SET,tencent-games-cn,🎯 DirectN
+  - RULE-SET,tencent-games-!cn,🎮 Games
   # Download Games
   - RULE-SET,category-android-app,🚀 Proxy
-  - RULE-SET,category-game-platforms-download,🎮 Games
   - RULE-SET,category-game-platforms-download-cn,🎯 DirectN
+  - RULE-SET,category-game-platforms-download,🎮 Games
 
   # Apps
   - RULE-SET,github_domain,👨🏿‍💻 GitHub
@@ -475,19 +475,19 @@ rule-providers:
 
   # Cloudflare CN
   cloudflare_cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/cloudflare-cn.mrs"}
-  # Games
-  steam_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/steam.mrs"}
+  # Games  
   steam_cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/steam@cn.mrs"}
+  steam_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/steam.mrs"}
   epicgames: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/epicgames.mrs"}
   supercell_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/supercell.mrs"}
-  category-games-cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-games-cn.mrs"}
   category-games-!cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-games-!cn.mrs"}
-  tencent-games-cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/tencent-games@cn.mrs"}
+  category-games-cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-games-cn.mrs"}
   tencent-games-!cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/tencent-games@!cn.mrs"}
+  tencent-games-cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/tencent-games@cn.mrs"}
   # Downloads Games
   category-android-app: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-android-app-download.mrs"}
-  category-game-platforms-download: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-game-platforms-download.mrs"}
   category-game-platforms-download-cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-game-platforms-download@cn.mrs"}
+  category-game-platforms-download: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-game-platforms-download.mrs"}
   # Social+ Apps
   facebook_list: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/Facebook/Facebook.list"}
   facebook_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/facebook.mrs"}
