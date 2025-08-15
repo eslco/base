@@ -1,0 +1,28 @@
+# Filename: XHSReject.list
+# AUTHOR: @eslco
+# URL : https://github.com/eslco/base/raw/rule/Clash/XiaoHongShu/XHSReject.list
+# Modify: 2025-08-14
+
+DOMAIN,dns.alidns.com
+DOMAIN,ads-img-al.xhscdn.com
+DOMAIN,ads-img-qc.xhscdn.com
+DOMAIN,ads-video-al.xhscdn.com
+DOMAIN,ads-video-qc.xhscdn.com
+DOMAIN,ads-vp5.xhscdn.com
+DOMAIN-WILDCARD,ads-*.xhscdn.com
+DOMAIN,growth-img.xhscdn.com
+DOMAIN,sns-webpic.xhscdn.com
+DOMAIN,xhslive-video.xhscnd.com
+# DOMAIN,ci.xiaohongshu.com
+# DOMAIN,edith.xiaohongshu.com
+# DOMAIN,gslb.xiaohongshu.com
+# DOMAIN,miniprogram.xiaohongshu.com
+# DOMAIN,pages.xiaohongshu.com
+# DOMAIN,picasso-static.xiaohongshu.com
+# DOMAIN,rec.xiaohongshu.com
+# DOMAIN,so.xiaohongshu.com
+# DOMAIN,live-room.xiaohongshu.com
+# DOMAIN,www.xiaohongshu.com
+DOMAIN-SUFFIX,xiaohongshu.com
+DOMAIN-SUFFIX,redbascket.com
+DOMAIN-SUFFIX,qiezibenpao.com
