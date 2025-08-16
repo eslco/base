@@ -184,8 +184,8 @@
       {"tag": "geosite-facebook", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/facebook.srs", "download_detour": "🎯 DirectN"},
       {"tag": "geosite-linkedin", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/linkedin.srs", "download_detour": "🎯 DirectN"},
 
-      {"tag": "iptv-tw", "type": "remote", "format": "source", "url": "https://ecos.dpdns.org/ https://github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-iptv-tw.json", "download_detour": "🎯 DirectN"},
-      {"tag": "iptv-!tw", "type": "remote", "format": "source", "url": "https://ecos.dpdns.org/ https://github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-iptv-!tw.json", "download_detour": "🎯 DirectN"},
+      {"tag": "iptv-tw", "type": "remote", "format": "source", "url": "https://ecos.dpdns.org/https://github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-iptv-tw.json", "download_detour": "🎯 DirectN"},
+      {"tag": "iptv-!tw", "type": "remote", "format": "source", "url": "https://ecos.dpdns.org/https://github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-iptv-!tw.json", "download_detour": "🎯 DirectN"},
       
       {"tag": "geosite-bilibili", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/bilibili.srs", "download_detour": "🎯 DirectN"},
       {"tag": "epicgames", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/epicgames.srs", "download_detour": "🎯 DirectN"},
