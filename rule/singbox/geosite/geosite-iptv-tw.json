@@ -1,0 +1,24 @@
+{
+ "version": 3,
+ "rules":
+ [
+   {
+     "domain":
+     [
+       "ofissaifreepc.akamaized.net",
+       "litvpc-hichannel.cdn.hinet.net",
+       "4gtvfreepc-cds.cdn.hinet.net",
+       "4gtvfree-cds.cdn.hinet.net",
+       "ntd-tgc.cdn.hinet.net",
+       "4gtvfree-mozai.4gtv.tv",
+       "api2.4gtv.tv"
+     ]
+   },
+   {
+     "domain_suffix":
+     [
+       ".cdn.hinet.net"
+     ]
+   }
+ ]
+}

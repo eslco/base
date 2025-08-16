@@ -1,0 +1,22 @@
+{ 
+  "version":3,
+  "rules":
+  [
+    { 
+     "domain":
+      [
+       "tv.pendy.dpdns.org",
+       "smart.pendy.dpdns.org",
+       "sport.pendy.dpdns.org",
+       "iptv.mydiver.eu.org",
+       "4gtv.livednow.dpdns.org"
+      ],
+     "domain_suffix":
+      [
+       ".pendy.dpdns.org",
+       ".livednow.dpdns.org",
+       ".mydiver.eu.org"
+      ]
+    }
+  ]
+}
