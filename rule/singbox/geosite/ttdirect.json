@@ -2,12 +2,12 @@
  "version": 3,
 "rules":[
       {
-       "domain-suffix": [
-        "mobilefuse.com",
-        "crashlytics.com",
-        "kochava.com"
+         "domain_suffix": [
+        ".mobilefuse.com",
+        ".crashlytics.com",
+        ".kochava.com"
        ],
-       "ip-cidr":[
+       "ip_cidr":[
         "50.117.27.0/24",
         "63.251.124.0/24",
         "69.46.75.0/24",

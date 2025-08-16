@@ -2,7 +2,7 @@
   "version": 3,
   "rules": [
     {
-      "domain-suffix": [
+      "domain_suffix": [
         ".impression-asia.liftoff.io",
         ".sdk-events.inner-active.mobi",
         ".inner-active.mobi",
@@ -24,7 +24,7 @@
         ".track.smaato.net",
         ".imgx.jampp.com"
       ],
-      "domain-keyword": [
+      "domain_keyword": [
         "googleads"
       ]
     }
