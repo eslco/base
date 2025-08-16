@@ -27,6 +27,7 @@
 #   - GEOIP,cn,DIRECT
 #   - Match,PROXY
 
+
 DNS_Definition:
    # 锚点引用
   CN_DNS : &cn_dns
@@ -45,12 +46,18 @@ DNS_Definition:
   Fallback_dns : &back_dns
    - 1.0.0.3
    - 1.1.1.3
-
   nameserver-policy:
     'geosite:private,cn': *pr_dns  # 引用在主配置中定义的锚点
     'geosite:geolocation-!cn': *global_dns # 引用在主配置中定义的锚点
 
 # Nikki Config Mixin 混入配置 已知 Bug : 重复配置 nameserver-policy:字段 将导致 Startup.Yaml 文档语法错误, Router陷入高负载循环 ，宕机状态
 # nameserver-policy:
-#  'geosite:private,cn': *cn_dns # Mainland (UDP) DNS IP，不建议使用 DoH / DoT
-#  'geosite:geolocation-!cn': *global_dns # 非CN，即国外，一般建议 DoH / DoT
+#  'geosite:private,cn': *cn_dns #锚点 Mainland (UDP) DNS IP，不建议使用 DoH / DoT
+#  'geosite:geolocation-!cn': *global_dns #锚点 非CN，即国外，一般建议 DoH / DoT
+
+# 控制面板 External Monitor #
+external-controller: "0.0.0.0:9090"
+secret: ""
+external-ui: ui
+external-ui-name: zashboard
+external-ui-url: "https://ecos.dpdns.org/https://github.com/Zephyruso/zashboard/archive/gh-pages.zip"
