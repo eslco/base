@@ -1,19 +1,20 @@
 {
  "version": 3,
- "rules":[
-        {
-         "domain": [
-          "ci.xiaohongshu.com",
-          "edith.xiaohongshu.com"
-         ],
-         "domain_suffix": [
-          ".xhscdn.com",
-          ".xhscdn.net",
-          ".xiaohongshu.com"
-         ],
-         "network": ["udp"],
-         "port": [443,8443,5332],
-         "port_range": ["50000:65535"]
-        }
-    ]
+ "rules":
+ [
+  {
+   "domain": [
+     "ci.xiaohongshu.com",
+     "edith.xiaohongshu.com"
+   ],
+   "domain_suffix": [
+     ".xhscdn.com",
+     ".xhscdn.net",
+     ".xiaohongshu.com"
+   ],
+    "network": ["udp"],
+    "port": [443,8443,5332],
+    "port_range": ["50000:65535"]
+  }
+ ]
 }
