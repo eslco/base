@@ -14,9 +14,6 @@
 # 主域名匹配
 DOMAIN,api.imem.app
 DOMAIN,api.swiftgram.app
-DOMAIN,nekobox.messenger
-DOMAIN,org.telegram.messenger
-DOMAIN,telegram-desktop
 
 # 域名後綴匹配
 DOMAIN-SUFFIX,cdn-telegram.org
