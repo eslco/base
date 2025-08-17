@@ -72,8 +72,8 @@
     "rules": [
       {"sniffer": ["http", "tls", "quic", "dns"], "action": "sniff" },
       {"inbound": "dns-in", "action": "hijack-dns"},
+      {"rule_set": "geoip-cndns","outbound": "🧭 DNSQ"},
       {"port":[784,853],"network": "udp","outbound": "🧭 DNSQ"},
-      {"rule_set": "geoip-cndns","network": "udp","outbound": "🧭 DNSQ"},
       {"domain": [
         "clash.razord.top",
         "yacd.metacubex.one",
