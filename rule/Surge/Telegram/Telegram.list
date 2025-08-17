@@ -14,9 +14,6 @@
 # 主域名匹配
 DOMAIN,api.imem.app
 DOMAIN,api.swiftgram.app
-DOMAIN,nekobox.messenger
-DOMAIN,org.telegram.messenger
-DOMAIN,telegram-desktop
 
 # 域名後綴匹配
 DOMAIN-SUFFIX,cdn-telegram.org
@@ -49,29 +46,24 @@ DOMAIN-SUFFIX,usercontent.dev
 #DOMAIN-KEYWORD,turrit
 
 # IP-CIDR 匹配 - DC 分類
-## DC1
-IP-CIDR,91.108.12.0/22,no-resolve
+# DC1
+IP-CIDR,91.108.8.0/21,no-resolve
 IP-CIDR,149.154.172.0/22,no-resolve
-## DC2
-IP-CIDR,91.108.20.0/22,no-resolve
-## DC3
+# DC2
+IP-CIDR,91.108.16.0/21,no-resolve
+# DC3
 IP-CIDR,91.105.192.0/23,no-resolve
 IP-CIDR,185.76.151.0/24,no-resolve
-## DC4
+# DC4
 IP-CIDR,91.108.4.0/22,no-resolve
-IP-CIDR,91.108.8.0/22,no-resolve
 IP-CIDR,91.108.56.0/22,no-resolve
 IP-CIDR,95.161.64.0/20,no-resolve
-IP-CIDR,149.154.160.0/22,no-resolve
-IP-CIDR,149.154.162.0/23,no-resolve
-IP-CIDR,149.154.164.0/22,no-resolve
-IP-CIDR,149.154.166.0/23,no-resolve
-## DC5
-IP-CIDR,91.108.16.0/22,no-resolve
+IP-CIDR,149.154.160.0/21,no-resolve
+# DC5
 IP-CIDR,91.108.56.0/23,no-resolve
 IP-CIDR,149.154.168.0/22,no-resolve
 
-## 其他
+# 其他
 IP-CIDR,109.239.140.0/24,no-resolve
 IP-CIDR,149.154.160.0/20,no-resolve
 IP-CIDR,5.28.192.0/18,no-resolve
@@ -81,27 +73,27 @@ IP-CIDR,95.161.76.100/31,REJECT-NO-DROP,no-resolve
 # IP-CIDR DC5 額外規則
 
 # IPv6 CIDR 匹配 - DC 分類
-## DC1-V6
+# DC1-V6
 IP-CIDR6,2001:b28:f23d::/48,no-resolve
-## DC2-V6
+# DC2-V6
 IP-CIDR6,2001:b28:f23c::/48,no-resolve
-## DC3-V6
+# DC3-V6
 IP-CIDR6,2a0a:f280:203::/48,no-resolve
-## DC4-V6
+# DC4-V6
 IP-CIDR6,2001:67c:4e8::/48,no-resolve
-## DC5-V6
+# DC5-V6
 IP-CIDR6,2001:b28:f23f::/48,no-resolve
 
 # IP-ASN 匹配 - DC 分類
-## DC1-ASN
+# DC1
 IP-ASN,59930,no-resolve
-## DC2-ASN
+# DC2
 IP-ASN,44907,no-resolve
-## DC3-ASN
+# DC3
 IP-ASN,211157,no-resolve
-## DC4-ASN
+# DC4
 IP-ASN,62041,no-resolve
-## DC5-ASN
+# DC5
 IP-ASN,62014,no-resolve
 
 # PROCESS-NAME,nekox.messenger
