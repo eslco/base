@@ -1,6 +1,6 @@
 # Name: TP.list (TwitchProxy)
-# CDN URL: https://raw.gitmirror.com/eslco/base/main/rule/Surge/Twitch/TP.list
-# URL: https://raw.githubusercontent.com/eslco/base/main/rule/Surge/Twitch/TP.list
+# CDN URL: https://gh-proxy.com/eslco/base/main/rule/Clash/Twitch/TP.list
+# URL: https://raw.github.com/eslco/base/main/rule/Surge/Twitch/TP.list
 # Author: eslco 
 # Repo URL: https://github.com/eslco/base/rule
 # Update at 2025.08.01
@@ -10,7 +10,6 @@ DOMAIN-SUFFIX,usher.ttvnw.net
 
 # ======== Twitch Core Services ======== #
 DOMAIN-SUFFIX,ext-twitch.tv
-DOMAIN-SUFFIX,twitchcdn.net
 DOMAIN-SUFFIX,twitchsvc.net
 
 # ======== Critical Subdomains (API/Player) ======== #
