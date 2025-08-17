@@ -1,0 +1,43 @@
+{ 
+  "version": 3,
+  "rules":
+  [
+    {
+      "domain":[
+        "usher.ttvnw.net",
+        "pubsub-edge.twitch.tv",
+        "player.twitch.tv",
+        "assets.twitch.tv",
+        "api.twitch.tv",
+        "gql.twitch.tv"
+      ]
+    },
+    {
+      "domain_suffix":[
+       "twitchsvc.net",
+       "ext-twitch.tv",
+       "twitch-ext.rootonline.de",
+       "irc-ws.chat.twitch.tv",
+       "chat.twitch.tv"
+      ]
+    },
+    { 
+      "domain_regex":[
+       "^(?:[a-z0-9-]+\\.)+ext-twitch\\.tv$"
+      ]
+    },
+    {
+      "ip_cidr":[
+
+       "52.26.161.211/32",
+       "44.235.206.9/32",
+       "34.213.205.75/32",
+       "52.89.201.32/32",
+       "54.69.102.66/32",
+       "52.36.231.249/32",
+       "44.238.175.31/32",
+       "44.228.62.191/32"
+      ]
+    }
+  ]
+}
