@@ -10,10 +10,9 @@ DOMAIN-SUFFIX,agkn.com
 DOMAIN-SUFFIX,tktn.at
 DOMAIN-SUFFIX,tktn.be
 
-IP-CIDR,23.19.73.39/32,no-resolve
-IP-CIDR,34.120.13.18/32,no-resolve
 IP-CIDR,23.253.145.244/32,no-resolve
-IP-CIDR,216.172.154.50/32,no-resolve
-
 IP-CIDR,23.235.228.136/29,no-resolve
 IP-CIDR,72.18.158.120/29,no-resolve
+
+IP-CIDR,34.120.13.18/32,no-resolve
+IP-CIDR,23.19.73.39/32,no-resolve

@@ -51,7 +51,15 @@ rules:
   - DOMAIN-SUFFIX,mobilefuse.com,DIRECT
   - DOMAIN-SUFFIX,inmobi.com,DIRECT
   - DOMAIN-SUFFIX,kochava.com,DIRECT
-# IPCIDR
+  
+# IP-CIDR
+
+  - IP-CIDR,23.19.73.39/32,PROXY,no-resolve
+  - IP-CIDR,34.120.13.18/32,PROXY,no-resolve
+  - IP-CIDR,23.253.145.244/32,PROXY,no-resolve
+  - IP-CIDR,23.235.228.136/29,PROXY,no-resolve
+  - IP-CIDR,72.18.158.120/29,PROXY,no-resolve
+
   - IP-CIDR,205.164.56.0/24,DIRECT,no-resolve
   - IP-CIDR,216.172.154.0/24,DIRECT,no-resolve
   - IP-CIDR,50.117.27.0/24,DIRECT,no-resolve
