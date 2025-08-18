@@ -5,8 +5,7 @@
     {
      "domain": [
         "www.ecosia.org",
-        "www.duckduckgo.com",
-        "ecosia.org" 
+        "www.duckduckgo.com"
       ]
     },
     {
@@ -14,7 +13,8 @@
         "www.google.com",
         "www.google.com.hk",
         "www.google.com.tw",
-        "www.google.com.sg"
+        "www.google.com.sg",
+        "ecosia.org"
       ]
     }
   ]
