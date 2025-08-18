@@ -4,17 +4,20 @@
   [
     {
      "domain": [
-        "www.ecosia.org",
-        "www.duckduckgo.com"
+       "www.qwant.com",
+       "www.ecosia.org",
+       "www.startpage.com",
+       "www.duckduckgo.com"
+       
       ]
     },
     {
-     "domain_suffix":[ 
-        "www.google.com",
-        "www.google.com.hk",
-        "www.google.com.tw",
-        "www.google.com.sg",
-        "ecosia.org"
+     "domain_suffix":[
+       "qwant.com",
+       "startpage.com",
+       "search.yahoo.com",
+       "duckduckgo.com",
+       "ecosia.org"
       ]
     }
   ]

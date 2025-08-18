@@ -3,12 +3,12 @@
   "rules": [
     {
       "domain": [
-        "ip.sy",
+        "www.bannedbook.org",
+        "www.ip.sy",
         "qn-cdnfile1pcdn.msstatic.com",
         "livewebbs2pcdn.msstatic.com"
       ],
       "domain_suffix": [
-
         ".d2v02itv0y9u9t.cloudfront.net",
         ".secure-sts-prod.imrworldwide.com",
         ".aax-us-east.amazon-adsystem.com",
