@@ -1,24 +1,34 @@
+# MetaCubeX Mihomo
+# emplate : https://github.com/MetaCubeX/mihomo/raw/Meta/docs/config.yaml  
 # 注意规则在满足自己需求情况下，尽量做到精简，不要过度复杂，以免影响性能。
-# Sub订阅
+# Sub订阅 Provider 配置
 proxy-providers:
   Sub1:
-    url: "https://sub.example.com/sub?token=XXX&clash"
     type: http
+    url: "https://sub.example.com/sub?token=XXX&clash"
     interval: 86400
+    # path: "etc/nikki/run/Sub1.yaml" # 配置文件保存 绝对路径
+    proxy: Direct    
+    header:
+      User-Agent:
+      - "mihomo/1.19.12"
     health-check:
       enable: true
       url: https://www.apple.com/library/test/success.html
       interval: 300
-      proxy: Direct
 # Sub2:
-#   url: "https://sub.example.com/sub?token=XXX"
 #   type: http
+#   url: "https://sub.example.com/sub?token=XXX"
 #   interval: 86400
+#   # path: "etc/nikki/run/Sub2.yaml"
+#   proxy: Direct    
+#   header:
+#     User-Agent:
+#     - "mihomo/1.19.12"
 #   health-check:
 #     enable: true
 #     url: https://www.gstatic.com/generate_204
 #     interval: 300
-#     proxy: Direct
 
 # 节点信息
 proxies:
@@ -44,7 +54,7 @@ tcp-concurrent: true
 
 log-level: warning
 
-# 控制面板 External Monitor #
+# 控制面板 External Monitor # 配置 WEB UI 目录，使用 http://{{external-controller}}/ui 访问
 external-controller: 0.0.0.0:9090
 secret: ""
 external-ui: ui
@@ -246,7 +256,7 @@ proxy-groups:
   - {name: 💫 QUIC, <<: *quic}
   - {name: 💫 DNSQ, <<: *quic}
   - {name: 👨🏿‍💻 GitHub, <<: *pr}
-  - {name: 📹 YouTube, <<: *pr}
+  - {name: 🔴 YouTube, <<: *pr}
   - {name: 📺 Bilibili, <<: *cn}
   - {name: 🎥 ProxyMedia, <<: *pr}
   - {name: 🍀 Google, <<: *pr}
@@ -381,7 +391,7 @@ rules:
 
   # Apps
   - RULE-SET,github_domain,👨🏿‍💻 GitHub
-  - RULE-SET,youtube_domain,📹 YouTube
+  - RULE-SET,youtube_domain,🔴 YouTube
   - RULE-SET,google_domain,🍀 Google
   - RULE-SET,onedrive_domain,Ⓜ️ Microsoft
   - RULE-SET,microsoft_domain,Ⓜ️ Microsoft
@@ -480,10 +490,10 @@ rule-providers:
   steam_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/steam.mrs"}
   epicgames: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/epicgames.mrs"}
   supercell_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/supercell.mrs"}
-  category-games-!cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-games-!cn.mrs"}
   category-games-cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-games-cn.mrs"}
-  tencent-games-!cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/tencent-games@!cn.mrs"}
+  category-games-!cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-games-!cn.mrs"}
   tencent-games-cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/tencent-games@cn.mrs"}
+  tencent-games-!cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/tencent-games@!cn.mrs"}
   # Downloads Games
   category-android-app: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-android-app-download.mrs"}
   category-game-platforms-download-cn: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-game-platforms-download@cn.mrs"}
