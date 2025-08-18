@@ -1,0 +1,21 @@
+{
+  "version": 3,
+  "rules":
+  [
+    {
+     "domain": [
+        "www.ecosia.org",
+        "www.duckduckgo.com",
+        "ecosia.org" 
+      ]
+    },
+    {
+     "domain_suffix":[ 
+        "www.google.com",
+        "www.google.com.hk",
+        "www.google.com.tw",
+        "www.google.com.sg"
+      ]
+    }
+  ]
+}
