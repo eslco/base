@@ -1,19 +1,20 @@
 {
   "dns": {
     "servers": [
-     {"tag": "local", "type": "udp", "server": "223.6.6.6"},
+     {"tag": "local", "type": "udp", "server": "120.53.53.53"},
      {"tag": "public", "type": "https", "server": "dns.alidns.com", "domain_resolver": "local"},
      {"tag": "google", "type": "https", "server": "dns.google", "domain_resolver": "local"},
      {"tag": "iij", "type": "https", "server": "public.dns.iij.jp", "domain_resolver": "local"}
     ],
     "rules": [
-     {"clash_mode": "direct", "server": "local"},
-     {"clash_mode": "global", "server": "iij"},
+     {"clash_mode": "direct", "server": "public"},
+     {"clash_mode": "global", "server": "google"},
      {
       "domain": ["pcdn.yximgs.com"],
       "action": "predefined",
       "rcode": "REFUSED"
      },
+     {"rule_set":["geosite-youtube","geosite-google"], "server": "google"},
      {"rule_set": ["geosite-cn", "geosite-steamcn", "geosite-apple", "category-games-!cn", "tencent-games-!cn", "category-game-platforms-download@cn"], "server": "local"}
     ],
     "final": "iij",
@@ -45,13 +46,12 @@
      {"tag": "🌐 Social+", "type": "selector", "outbounds": ["🔯🇯🇵 JP Auto", "🔯🇭🇰 HK Auto", "🚀 Proxy", "🎯 DirectN", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"]},
      {"tag": "☎️ Telegram", "type": "selector", "outbounds": ["🔯🇯🇵 JP Auto", "🔯🇭🇰 HK Auto", "🚀 Proxy", "🎯 DirectN", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"]},
      {"tag": "🎵 TikTok", "type": "selector", "outbounds": ["🔯🇯🇵 JP Auto", "🔯🇭🇰 HK Auto", "🚀 Proxy", "🎯 DirectN", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"]},
-     {"tag": "🎥 Netflix", "type": "selector", "outbounds": ["🔯🇯🇵 JP Auto", "🔯🇭🇰 HK Auto", "🚀 Proxy", "🎯 DirectN", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"]},
+     {"tag": "🎥 ProxyMedia", "type": "selector", "outbounds": ["🔯🇯🇵 JP Auto", "🔯🇭🇰 HK Auto", "🚀 Proxy", "🎯 DirectN", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"]},
      {"tag": "🎮 Games", "type": "selector", "outbounds": ["🔯🇯🇵 JP Auto", "🔯🇭🇰 HK Auto", "🚀 Proxy", "🎯 DirectN", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"]},
      {"tag": "🎮 Steam", "type": "selector", "outbounds": ["🔯🇯🇵 JP Auto", "🔯🇭🇰 HK Auto", "🚀 Proxy", "🎯 DirectN", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"]},
-     {"tag": "Ⓜ️ Microsoft", "type": "selector", "outbounds": ["🔯🇯🇵 JP Auto", "🔯🇭🇰 HK Auto", "🚀 Proxy", "🎯 DirectN", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"]},
-     {"tag": "🐬 OneDrive", "type": "selector", "outbounds": ["🔯🇯🇵 JP Auto", "🔯🇭🇰 HK Auto", "🚀 Proxy", "🎯 DirectN", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"]},
-     {"tag": "🍏 Apple", "type": "selector", "outbounds": ["🔯🇯🇵 JP Auto", "🔯🇭🇰 HK Auto", "🚀 Proxy", "🎯 DirectN", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"]},
-     {"tag": "🐠 Final", "type": "selector", "outbounds": ["🔯🇯🇵 JP Auto", "🔯🇭🇰 HK Auto", "🚀 Proxy", "🎯 DirectN", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"]},
+     {"tag": "Ⓜ️ Microsoft", "type": "selector", "outbounds": ["🎯 DirectN", "🔯🇯🇵 JP Auto", "🔯🇭🇰 HK Auto", "🚀 Proxy", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"]},
+     {"tag": "🍏 Apple", "type": "selector", "outbounds": ["🎯 DirectN", "🔯🇯🇵 JP Auto", "🔯🇭🇰 HK Auto", "🚀 Proxy", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"]},
+     {"tag": "🐠 Final", "type": "selector", "outbounds": ["🔯🇯🇵 JP Auto", "🔯🇭🇰 HK Auto", "🚀 Proxy", "🎯 DirectN", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"]},
      {"tag": "🔯🇭🇰 HK Auto","type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇭🇰|HK|港|hong|Hong|HKG|Central|Kowloon|观塘|中环"]}, {"action": "exclude", "keywords": ["免费"]}]},
      {"tag": "🔯🇯🇵 JP Auto","type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇯🇵|JP|日|Japan|Tokyo|Osaka|NRT|KIX|NGO|CTS|FUK|东京|大阪|[^-]日"]}, {"action": "exclude", "keywords": ["免费"]}]},
      {"tag": "🇦🇺 AU", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇦🇺|aus|Aus|澳|悉尼|墨尔本|Sydney|Perth|Adelaide|DRW|SYD|MEL|BNE|CBR|PER|ADL"]}, {"action": "exclude", "keywords": ["免费"]}]},
@@ -62,7 +62,7 @@
      {"tag": "🇹🇼 TW", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇹🇼|TW|taiwan|台|臺灣|新北|彰化|桃園|台中|高雄|Taipei|Taichung|TPE|KHH"]}, {"action": "exclude", "keywords": ["免费"]}]},
      {"tag": "🇺🇸 US", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇺🇸|US|美|United States|San Jose|Portland|Dallas|Phoenix|Las Vegas|Angeles|Seattle|Chicago|York|Atlanta|ATL|BUF|DFW|EWR|IAD|LAX|MCI|MIA|ORD|PHX|PDX|SEA|SJC|JFK|LGA"]}, {"action": "exclude", "keywords": ["AUS|RUS|免费"]}]},
      {"tag": "♻️ Auto", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "exclude", "keywords": ["官网|到期时间|剩余|流量|套餐|免费|订阅|全球直连|GB|Expire Date|Traffic|ExpireDate"]}], "interval": "10m", "tolerance": 100},
-     {"tag": "GLOBAL", "type": "selector", "outbounds": ["🚀 Proxy", "🧠 AI", "🔴 YouTube", "🍀 Google", "👨‍💻 Github", "☎️ Telegram", "🎵 TikTok", "🎥 Netflix", "💶 PayPal", "🎮 Steam", "🎮 Games", "Ⓜ️ Microsoft", "🐬 OneDrive", "🍏 Apple", "🐠 Final", "🔯🇭🇰 HK Auto", "🔯🇯🇵 JP Auto", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual", "♻️ Auto", "🎯 DirectN"]},
+     {"tag": "GLOBAL", "type": "selector", "outbounds": ["🚀 Proxy", "🧠 AI", "🔴 YouTube", "🍀 Google", "👨‍💻 Github", "☎️ Telegram", "🎵 TikTok", "🎥 ProxyMedia", "💶 PayPal", "🎮 Steam", "🎮 Games", "Ⓜ️ Microsoft", "🍏 Apple", "🐠 Final", "🔯🇭🇰 HK Auto", "🔯🇯🇵 JP Auto", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual", "♻️ Auto", "🎯 DirectN"]},
      {"tag": "🎯 DirectN", "type": "selector","outbounds":["Direct","🚀 Proxy", "☑️ Manual"]},
 
      {"tag": "Block","type": "block"},
@@ -72,7 +72,12 @@
     "rules": [
       {"sniffer": ["http", "tls", "quic", "dns"], "action": "sniff" },
       {"inbound": "dns-in", "action": "hijack-dns"},
-      {"rule_set": "geoip-cndns","outbound": "🧭 DNSQ"},
+
+      {"ip_is_private": true, "outbound": "Direct"},
+      {"clash_mode": "direct", "outbound": "Direct"},
+      {"clash_mode": "global", "outbound": "GLOBAL"},
+
+      {"rule_set": "geoip-cndns","outbound": "🎯 DirectN"},
       {"port":[784,853],"network": "udp","outbound": "🧭 DNSQ"},
       {"domain": [
         "clash.razord.top",
@@ -80,13 +85,11 @@
         "yacd.haishan.me",
         "d.metacubex.one"],
       "outbound": "direct"},
-      {"ip_is_private": true, "outbound": "Direct"},
-      {"clash_mode": "direct", "outbound": "Direct"},
-      {"clash_mode": "global", "outbound": "GLOBAL"},
 
       {"rule_set": "ttblock", "outbound": "Block"},
       {"rule_set": "esblock","outbound": "Block"},
       {"rule_set": "sukkaw-reject-no-drop", "outbound": "Block"},
+      {"rule_set": "geosite-adv", "outbound": "🚀 Proxy"},
 
       {"rule_set": "geosite-ai", "outbound": "🧠 AI"},
       {"rule_set": "geosite-xhs", "outbound": "📕 XHS RedNote"},
@@ -94,7 +97,10 @@
 
       {"rule_set": "ttproxy", "outbound": "🧠 AI"},
       {"rule_set": "ttdirect", "outbound": "Direct"},
-
+      
+      {"rule_set": "twitch-proxy", "outbound": "🚀 Proxy"},
+      {"rule_set": "twitch-direct", "outbound": "🎯 DirectN"},
+      
       {"rule_set": "geosite-dex", "outbound": "🏪 DEX"},
       {"rule_set": "geosite-spotify", "outbound": "🎵 Spotify"},
       {"rule_set": "geosite-netease-music", "outbound": "🎵 Netease Music"},
@@ -116,14 +122,14 @@
       {"rule_set": "geosite-youtube", "outbound": "🔴 YouTube"},
       {"rule_set": "geosite-google", "outbound": "🍀 Google"},
       {"rule_set": "geosite-github", "outbound": "👨‍💻 Github"},
-      {"rule_set": "geosite-onedrive", "outbound": "🐬 OneDrive"},
+      {"rule_set": "geosite-onedrive", "outbound": "Ⓜ️ Microsoft"},
       {"rule_set": "geosite-microsoft", "outbound": "Ⓜ️ Microsoft"},
       {"rule_set": "geosite-apple", "outbound": "🍏 Apple"},
       {"rule_set": "sukkaw-apple-cdn", "outbound": "🍏 Apple"},
 
       {"rule_set": "geosite-telegram", "outbound": "☎️ Telegram"},
       {"rule_set": "geosite-tiktok", "outbound": "🎵 TikTok"},
-      {"rule_set": "geosite-netflix", "outbound": "🎥 Netflix"},
+      {"rule_set": "geosite-netflix", "outbound": "🎥 ProxyMedia"},
       {"rule_set": "geosite-paypal", "outbound": "💶 PayPal"},
 
       {"rule_set": "epicgames", "outbound": "🎮 Games"},
@@ -145,7 +151,7 @@
       {"rule_set": "geoip-google", "outbound": "🍀 Google"},
       {"rule_set": "geoip-apple", "outbound": "🍏 Apple"},
       {"rule_set": "geoip-telegram", "outbound": "☎️ Telegram"},
-      {"rule_set": "geoip-netflix", "outbound": "🎥 Netflix"},
+      {"rule_set": "geoip-netflix", "outbound": "🎥 ProxyMedia"},
       {"rule_set": "GeoQUIC","outbound": "💫 QUIC"},
       {"protocol": "quic","outbound": "💫 QUIC"},
       {"type": "logical",
@@ -174,6 +180,9 @@
       {"tag": "ttblock", "type": "remote", "format": "source", "url": "https://ecos.dpdns.org/https://github.com/eslco/base/raw/main/rule/singbox/geosite/ttblock.json", "download_detour": "🎯 DirectN"},
       {"tag": "ttproxy", "type": "remote", "format": "source", "url": "https://ecos.dpdns.org/https://github.com/eslco/base/raw/main/rule/singbox/geosite/ttproxy.json", "download_detour": "🎯 DirectN"},
       {"tag": "ttdirect", "type": "remote", "format": "source", "url": "https://ecos.dpdns.org/https://github.com/eslco/base/raw/main/rule/singbox/geosite/ttdirect.json", "download_detour": "🎯 DirectN"},
+
+      {"tag": "twitch-proxy", "type": "remote", "format": "source", "url": "https://ecos.dpdns.org/https://github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-twitch-proxy.json", "download_detour": "🎯 DirectN"},
+      {"tag": "twitch-direct", "type": "remote", "format": "source", "url": "https://ecos.dpdns.org/https://github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-twitch-direct.json", "download_detour": "🎯 DirectN"},
 
       {"tag": "geosite-ai", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/category-ai-!cn.srs", "download_detour": "🎯 DirectN"},
       {"tag": "geosite-youtube", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/youtube.srs", "download_detour": "🎯 DirectN"},
@@ -209,13 +218,13 @@
       
       {"tag": "geosite-steamcn", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/steam@cn.srs", "download_detour": "🎯 DirectN"},
       {"tag": "geosite-steam", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/steam.srs", "download_detour": "🎯 DirectN"},
-  
+      
       {"tag": "geosite-google", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/google.srs", "download_detour": "🎯 DirectN"},
       {"tag": "geosite-github", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/github.srs", "download_detour": "🎯 DirectN"},
       {"tag": "geosite-onedrive", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/onedrive.srs", "download_detour": "🎯 DirectN"},
       {"tag": "geosite-microsoft", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/microsoft.srs", "download_detour": "🎯 DirectN"},
       {"tag": "geosite-apple", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/apple.srs", "download_detour": "🎯 DirectN"},
-      {"tag": "geosite-telegram", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/telegram.srs", "download_detour": "🎯 DirectN"},
+      {"tag": "geosite-telegram", "type": "remote", "format": "source", "url": "https://ecos.dpdns.org/https://github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-telegram.json", "download_detour": "🎯 DirectN"},
       {"tag": "geosite-tiktok", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/tiktok.srs", "download_detour": "🎯 DirectN"},
       {"tag": "geosite-netflix", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/netflix.srs", "download_detour": "🎯 DirectN"},
       {"tag": "geosite-paypal", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/paypal.srs", "download_detour": "🎯 DirectN"},
