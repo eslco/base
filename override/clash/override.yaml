@@ -151,48 +151,48 @@ proxy-groups:
     - AUTO
     - DIRECT
     - 🇺🇸US
-    - 🇬🇧UK
-    - 🇨🇦CA
+    - 🇬🇧 UK
+    - 🇨🇦 CA
     - 🇷🇺RU
     - 🇯🇵JP
     - 🇹🇼TW
-    - 🇸🇬SG
-    - 🇭🇰HK
+    - 🇸🇬 SG
+    - 🇭🇰 HK
     - Balance
     - Lantency
     include-all: true
     exclude-filter: (?i)GB|Traffic|Expire|Premium|頻道|訂閱|ISP|流量|到期|重置
 
 # 地區分組 | Regional groups
-- name: 🇺🇸US
+- name: 🇺🇸 US
     type: url-test
     hidden: true
     include-all: true
     filter: (?i)美國|USA|US|🇺🇸|美国
     interval: 300
     tolerance: 50
-    url: c.com/generate_204
+    url: "https://www.gstatic.com/generate_204"
     exclude-filter: (?i)GB|Traffic|Expire|Premium|頻道|訂閱|ISP|流量|到期|重置
 
-- name: 🇬🇧UK
+- name: 🇬🇧 UK
     type: url-test
     hidden: true
     include-all: true
-    filter: (?i)英國|🇬🇧UK|GB|🇬🇧
+    filter: (?i)英國|🇬🇧 UK|GB|🇬🇧
     interval: 300
     tolerance: 50
-    url: https://www.gstatic.com/generate_204
+    url: "https://www.gstatic.com/generate_204"
     exclude-filter: (?i)GB|Traffic|Expire|Premium|頻道|訂閱|ISP|流量|到期|重置
 
-- name: 🇨🇦CA
-    type: url-test
-    include-all: true
-    hidden: true
-    filter: (?i)加拿大|Canada|CA|🇨🇦
-    interval: 300
-    tolerance: 50
-    url: https://www.gstatic.com/generate_204
-    exclude-filter: (?i)GB|Traffic|Expire|Premium|頻道|訂閱|ISP|流量|到期|重置
+ - name: 🇨🇦 CA
+     type: url-test
+     include-all: true
+     hidden: true
+     filter: (?i)加拿大|Canada|CA|🇨🇦
+     interval: 300
+     tolerance: 50
+     url: "https://www.gstatic.com/generate_204"
+     exclude-filter: (?i)GB|Traffic|Expire|Premium|頻道|訂閱|ISP|流量|到期|重置
 
 - name: 🇷🇺RU
     type: url-test
@@ -201,7 +201,7 @@ proxy-groups:
     hidden: true
     interval: 300
     tolerance: 50
-    url: https://www.gstatic.com/generate_204
+    url: "https://www.gstatic.com/generate_204"
     exclude-filter: (?i)GB|Traffic|Expire|Premium|頻道|訂閱|ISP|流量|到期|重置
 
 - name: 🇯🇵JP
@@ -211,7 +211,7 @@ proxy-groups:
     hidden: true
     interval: 300
     tolerance: 50
-    url: https://www.gstatic.com/generate_204
+    url: "https://www.gstatic.com/generate_204"
     exclude-filter: (?i)GB|Traffic|Expire|Premium|頻道|訂閱|ISP|流量|到期|重置
 
 - name: 🇹🇼TW
@@ -221,27 +221,27 @@ proxy-groups:
     hidden: true
     interval: 300
     tolerance: 50
-    url: https://www.gstatic.com/generate_204
+    url: "https://www.gstatic.com/generate_204"
     exclude-filter: (?i)GB|Traffic|Expire|Premium|頻道|訂閱|ISP|流量|到期|重置
 
-- name: 🇸🇬SG
+- name: 🇸🇬 SG
     type: url-test
     include-all: true
     filter: (?i)新加坡|Singapore|SG|🇸🇬
     hidden: true
     interval: 300
     tolerance: 50
-    url: https://www.gstatic.com/generate_204
+    url: "https://www.gstatic.com/generate_204"
     exclude-filter: (?i)GB|Traffic|Expire|Premium|頻道|訂閱|ISP|流量|到期|重置
 
-- name: 🇭🇰HK
+- name: 🇭🇰 HK
     type: url-test
     include-all: true
     filter: (?i)香港|Hong Kong|HK|🇭🇰
     hidden: true
     interval: 300
     tolerance: 50
-    url: https://www.gstatic.com/generate_204
+    url: "https://www.gstatic.com/generate_204"
     exclude-filter: (?i)GB|Traffic|Expire|Premium|頻道|訂閱|ISP|流量|到期|重置
 
 # AI和谷歌服務分組 | AI and Google services group
@@ -249,13 +249,13 @@ proxy-groups:
     type: select
     proxies:
     - 🇺🇸US
-    - 🇬🇧UK
-    - 🇨🇦CA
+    - 🇬🇧 UK
+    - 🇨🇦 CA
     - 🇷🇺RU
     - 🇯🇵JP
     - 🇹🇼TW
-    - 🇸🇬SG
-    - 🇭🇰HK
+    - 🇸🇬 SG
+    - 🇭🇰 HK
     - AUTO
     - PROXY
     - Balance
@@ -265,13 +265,13 @@ proxy-groups:
     type: select
     proxies:
     - 🇺🇸US
-    - 🇬🇧UK
-    - 🇨🇦CA
+    - 🇬🇧 UK
+    - 🇨🇦 CA
     - 🇷🇺RU
     - 🇯🇵JP
     - 🇹🇼TW
-    - 🇸🇬SG
-    - 🇭🇰HK
+    - 🇸🇬 SG
+    - 🇭🇰 HK
     - AUTO
     - PROXY
     - Balance
@@ -284,30 +284,30 @@ proxy-groups:
     - AUTO
     - PROXY
     - 🇺🇸US
-    - 🇬🇧UK
-    - 🇨🇦CA
+    - 🇬🇧 UK
+    - 🇨🇦 CA
     - 🇷🇺RU
     - 🇯🇵JP
     - 🇹🇼TW
-    - 🇸🇬SG
-    - 🇭🇰HK
+    - 🇸🇬 SG
+    - 🇭🇰 HK
     - Balance
     - Lantency
 
 # 社交媒體分組 | Social media group
-- name: Social
+- name: "Social"
     type: select
     proxies:
     - AUTO
     - PROXY
     - 🇺🇸US
-    - 🇬🇧UK
-    - 🇨🇦CA
+    - 🇬🇧 UK
+    - 🇨🇦 CA
     - 🇷🇺RU
     - 🇯🇵JP
     - 🇹🇼TW
-    - 🇸🇬SG
-    - 🇭🇰HK
+    - 🇸🇬 SG
+    - 🇭🇰 HK
     - Balance
     - Lantency
 
@@ -318,17 +318,17 @@ proxy-groups:
     - AUTO
     - PROXY
     - 🇺🇸US
-    - 🇬🇧UK
-    - 🇨🇦CA
+    - 🇬🇧 UK
+    - 🇨🇦 CA
     - 🇯🇵JP
     - 🇹🇼TW
-    - 🇸🇬SG
-    - 🇭🇰HK
+    - 🇸🇬 SG
+    - 🇭🇰 HK
 
 # 自動選擇分組 | Auto select group
 - name: AUTO
     type: url-test
-    url: https://www.gstatic.com/generate_204
+    url: "https://www.gstatic.com/generate_204"
     interval: 300
     tolerance: 50
     include-all: true
@@ -336,44 +336,44 @@ proxy-groups:
 
 # 策略組 | Strategy group
 - name: Balance
-    type: load-balance
+    type: "load-balance"
     strategy: round-robin
-    url: https://www.gstatic.com/generate_204
+    url: "https://www.gstatic.com/generate_204"
     interval: 300
     proxies:
     - 🇺🇸US
-    - 🇬🇧UK
-    - 🇨🇦CA
+    - 🇬🇧 UK
+    - 🇨🇦 CA
     - 🇷🇺RU
     - 🇯🇵JP
     - 🇹🇼TW
-    - 🇸🇬SG
-    - 🇭🇰HK
+    - 🇸🇬 SG
+    - 🇭🇰 HK
 
 - name: Lantency
     type: url-test
-    url: https://www.gstatic.com/generate_204
+    url: ""https://www.gstatic.com/generate_204""
     interval: 300
     tolerance: 50
     proxies:
     - 🇺🇸US
-    - 🇬🇧UK
-    - 🇨🇦CA 
+    - 🇬🇧 UK
+    - 🇨🇦 CA 
     - 🇷🇺RU
     - 🇯🇵JP
-    - 🇸🇬SG
+    - 🇸🇬 SG
 
 - name:  # 故障轉移 | Failover
     type: fallback
-    url: https://www.gstatic.com/generate_204
+    url: "https://www.gstatic.com/generate_204"
     interval: 300
     proxies:
     - 🇺🇸US
-    - 🇬🇧UK
-    - 🇨🇦CA
+    - 🇬🇧 UK
+    - 🇨🇦 CA
     - 🇷🇺RU
     - 🇯🇵JP
-    - 🇸🇬SG
+    - 🇸🇬 SG
     - AUTO
     - Balance
     - Lantency
