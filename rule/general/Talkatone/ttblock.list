@@ -1,7 +1,8 @@
 # Name: ttblock.list
 # DESC: Talkatone NoAD
 # Author : eslco
-# URL: https://raw.githubusercontent.com/eslco/base/main/rule/Shadowrocket/talkatone/ttblock.list
+# CDN: https://gh-proxy.com/ | https://e2e.dpdns.org/
+# URL: https://github.com/eslco/base/raw/main/rule/general/Talkatone/ttblock.list
 # Ref List URL: https://raw.githubusercontent.com/baiitang/Sakura/main/Loon/Rules/TalkatoneAD.list
 # 规则来源于
 # https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
@@ -49,8 +50,3 @@ DOMAIN-SUFFIX,www.googletagservices-cn.com
 # 第三方分析服务
 DOMAIN-SUFFIX,app-analytics-services.com
 DOMAIN-SUFFIX,track.smaato.net
-
-# [URL Rewrite]
-# hostname = alt-r.my.com, imgx.jampp.com
-# URL-Regex,^https?:\/\/alt-r\.my\.com\/mobile url reject-dict
-# URL-Regex,^https?:\/\/imgx\.jampp\.com\/imgsrv\/tn url reject-img
