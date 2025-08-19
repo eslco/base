@@ -1,0 +1,15 @@
+# Name: ttdirect.list
+# DESC: Talkatone Direct
+# URL: https://github.com/eslco/base/raw/main/rule/Shadowrocket/Talkatone/ttdirect.list
+# Author: eslco
+# Direct rules
+
+DOMAIN-SUFFIX,mobilefuse.com
+DOMAIN-SUFFIX,crashlytics.com
+DOMAIN-SUFFIX,kochava.com
+
+# IP-CIDR
+IP-CIDR,50.117.27.0/24
+IP-CIDR,69.46.75.0/24
+IP-CIDR,205.164.56.0/24
+IP-CIDR,63.251.124.0/24

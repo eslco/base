@@ -1,0 +1,39 @@
+# Name: ttblock.list
+# DESC: Talkatone NoAD 
+# URL: https://github.com/eslco/base/raw/main/rule/Shadowrocket/Talkatone/ttblock.list
+# Ref List URL: https://raw.githubusercontent.com/baiitang/Sakura/main/Loon/Rules/TalkatoneAD.list
+
+# Talkatone如果发现有剩余的广告，可以引用上面两个分流，自行排查（欢迎反馈，Thx
+# 基础域名规则
+DOMAIN-SUFFIX,impression-asia.liftoff.io
+DOMAIN-SUFFIX,sdk-events.inner-active.mobi
+DOMAIN-SUFFIX,inner-active.mobi
+DOMAIN-SUFFIX,adsmoloco.com
+DOMAIN-SUFFIX,impression.link
+DOMAIN-SUFFIX,bidder.criteo.com
+DOMAIN-SUFFIX,ins.track.tappx.com
+DOMAIN-SUFFIX,mfx.mobilefuse.com
+DOMAIN-SUFFIX,i.l.inmobicdn.net
+DOMAIN-SUFFIX,ssp.api.tappx.com
+
+# Ad Networks
+DOMAIN-SUFFIX,pubmatic.com
+DOMAIN-SUFFIX,smaato.net
+DOMAIN-SUFFIX,criteo.com
+DOMAIN-SUFFIX,inmobi.com
+
+# 广告平台域名API
+# DOMAIN-SUFFIX,amazon-adsystem.com
+DOMAIN-SUFFIX,adsappier.com
+DOMAIN-SUFFIX,appiersig.com
+DOMAIN-SUFFIX,appier.net
+DOMAIN-KEYWORD,googleads
+
+# 第三方分析服务
+DOMAIN-SUFFIX,app-analytics-services.com
+DOMAIN-SUFFIX,track.smaato.net
+
+# [URL Rewrite]
+# hostname = alt-r.my.com, imgx.jampp.com
+URL-Regex,^https?:\/\/alt-r\.my\.com\/mobile url reject-dict
+URL-Regex,^https?:\/\/imgx\.jampp\.com\/imgsrv\/tn url reject-img
