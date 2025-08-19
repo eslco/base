@@ -1,0 +1,19 @@
+# Talkatone Proxy Rule(Update)
+# URL : https://e2e.dpdns.org/https://github.com/eslco/base/raw/main/rule/Shadowrocket/Talkatone/ttproxy.list
+# Author: eslco
+# Updated at 2024.10.29 05:31 PM
+# './n'
+
+DOMAIN-SUFFIX,talkatone.com
+DOMAIN-SUFFIX,tenor.com
+DOMAIN-SUFFIX,agkn.com
+DOMAIN-SUFFIX,tktn.at
+DOMAIN-SUFFIX,tktn.be
+
+IP-CIDR,216.172.154.50/32,no-resolve
+IP-CIDR,23.253.145.244/32,no-resolve
+IP-CIDR,34.120.13.18/32,no-resolve
+IP-CIDR,23.19.73.39/32,no-resolve
+
+IP-CIDR,23.235.228.136/29,no-resolve
+IP-CIDR,72.18.158.120/29,no-resolve
