@@ -12,6 +12,7 @@ proxy-providers:
     header:
       User-Agent:
       - "mihomo/1.19.12"
+      - "clash/1.18.0"
     health-check:
       enable: true
       url: https://www.apple.com/library/test/success.html
@@ -296,8 +297,11 @@ rules:
   - DOMAIN-SUFFIX,aesin.eu,🚀 Proxy
   # XHS RedNote
   # - RULE-SET,xhs_list,📕 XHS RedNote
-  - RULE-SET,rednote,📕 XHS RedNote
-  - RULE-SET,rednote_domain,📕 XHS RedNote
+  - AND ((DOMAIN-SUFFIX,xiaohongshu.com),(NETWORK,UDP)),📕 XHS RedNote
+  - AND ((DOMAIN-SUFFIX,xhscdn.com),(NETWORK,UDP)),📕 XHS RedNote
+  - AND ((DOMAIN-SUFFIX,xhscdn.net),(NETWORK,UDP)),📕 XHS RedNote
+  - RULE-SET,xhs_list,📕 XHS RedNote
+  - RULE-SET,xhs_mrs,📕 XHS RedNote
   # WeChat
   - RULE-SET,wechat_NobyDa,📞 WeChat
   - RULE-SET,wechat_list,📞 WeChat
@@ -396,6 +400,9 @@ rules:
   - RULE-SET,onedrive_domain,Ⓜ️ Microsoft
   - RULE-SET,microsoft_domain,Ⓜ️ Microsoft
 
+# Sub-Rules
+  - SUB-RULE,(OR,((Network,TCP),(Network,UDP))),dns-google1
+  - SUB-RULE,(AND,((Network,UDP))),dns-google2
   # Private
   - RULE-SET,private_domain,Direct
   # GFW
@@ -410,6 +417,16 @@ rules:
   - RULE-SET,quic_dns,💫 DNSQ
   - RULE-SET,cn_ip,🎯 DirectN
   - MATCH,🐟 Final
+# SUB-Rules
+SUB-RULE:
+  dns-google1:
+    - DOMAIN-SUFFIX,dns.google,Reject
+    - DST-PORT,443,Reject
+  dns-google2:
+    - IP-CIDR, 8.8.8.8/32,Reject
+    - IP-CIDR, 8.8.4.4/32,Direct
+    - IP-CIDR, 2001:4860:4860::8888/128,🚀 Proxy
+    - IP-CIDR, 2001:4860:4860::8844/128,🚀 Proxy
 
 # 规则集
 rule-anchor:
@@ -427,9 +444,8 @@ rule-providers:
   wechat_NobyDa: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/WeChat/WeChat.list"}
   wechat_list: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/WeChat/WeChat.list"}
   # XHS RedNote
-  rednote: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/general/XiaoHongShu/XiaoHongShu.list"}
-  rednote_domain: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/xiaohongshu.mrs"}
-  # xhs_list: { <<: *class, url: "https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/XiaoHongShu/XiaoHongShu.list"}
+  xhs_list: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/general/XiaoHongShu/XiaoHongShu.list"}
+  xhs_mrs: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/xiaohongshu.mrs"}
   # PayPal
   paypal_diy: { <<: *class, url: "https://github.com/eslco/base/raw/main/rule/Clash/PayPal/PayPal.list"}
   # DEX
