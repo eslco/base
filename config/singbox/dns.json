@@ -1,0 +1,30 @@
+{
+  "dns": {
+   "servers": [
+     { "tag": "dns_block", "server": "rcode://success" },
+     { "tag": "dns_direct", "server": [ "120.53.53.53", "223.5.5.5" ], "detour": "DIRECT" },
+     { "tag": "dns_proxy", "server": [ "https://8.8.4.4/dns-query", "https://1.0.0.1/dns-query" ] },
+     { 
+       "tag": "dns_fakeip",
+       "server": "fakeip",
+       "inet4_range": "198.18.0.0/15",
+       "inet6_range": "fc00::/18" }
+   ],
+   "rules": [
+     { "query_type": [ "A", "AAAA" ], "server": "fakeip" },
+     { "outbound": "any", "server": "dns_direct" },
+     { "clash_mode": "Direct", "query_type": [ "A", "AAAA" ], "server": "dns_direct" },
+     { "clash_mode": "Global", "query_type": [ "A", "AAAA" ], "server": "dns_proxy" },
+     { "rule_set": [ "ads" ], "server": "dns_block" },
+     { "rule_set": [ "proxy" ], "query_type": [ "A", "AAAA" ], "server": "dns_fakeip", "rewrite_ttl": 0 },
+     { "rule_set": [ "cn" ], "query_type": [ "A", "AAAA" ], "server": "dns_direct" },
+     { "fallback_rules": [ { "rule_set": [ "cnip" ], "server": "dns_direct" }, { "match_all": true, "server": "dns_fakeip", "rewrite_ttl": 0 } ], "allow_fallthrough": true, "server": "dns_proxy" }
+   ],
+    "final": "dns_direct",
+    "strategy": "prefer_ipv4",
+    "independent_cache": true,
+    "lazy_cache": true,
+    "reverse_mapping": true,
+    "mapping_override": true
+  }
+}
