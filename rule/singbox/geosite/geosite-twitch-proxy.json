@@ -5,30 +5,27 @@
     {
       "domain":[
         "usher.ttvnw.net",
-        "pubsub-edge.twitch.tv",
-        "player.twitch.tv",
-        "assets.twitch.tv",
-        "api.twitch.tv",
-        "gql.twitch.tv"
+        "k.twitchcdn.net"
       ]
     },
     {
       "domain_suffix":[
-       "twitchsvc.net",
-       "ext-twitch.tv",
-       "twitch-ext.rootonline.de",
-       "irc-ws.chat.twitch.tv",
-       "chat.twitch.tv"
+       ".twitchsvc.net",
+       ".twitchcdn.net",
+       ".ext-twitch.tv",
+       ".twitch-ext.rootonline.de",
+       ".irc-ws.chat.twitch.tv",
+       ".twitch.tv"
       ]
     },
     { 
       "domain_regex":[
-       "^(?:[a-z0-9-]+\\.)+ext-twitch\\.tv$"
+       "^(?:[a-z0-9-]+)?\\.ext-twitch\\.tv$",
+       "^(?:[\\w-]+\\.)*?cloudfront\\.(?:[\\w-]+\\.)*?ttvnw\\.net$"
       ]
     },
     {
       "ip_cidr":[
-
        "52.26.161.211/32",
        "44.235.206.9/32",
        "34.213.205.75/32",

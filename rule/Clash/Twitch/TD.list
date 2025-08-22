@@ -20,14 +20,15 @@ DOMAIN-SUFFIX,ttvnw.*.akamaized.net
 # URL-REGEX,^https?:\/\/(?:.*\.)？playlist\.ttvnw\.net\/.*$
 # URL-REGEX,^https?:\/\/[\w.-]+\.live-video\.net\/.*$
 
-# ======== Twitch Region Detect ======== #
+# ======== Twitch Region Detect (Proxy Detect) ======== #
 # DOMAIN-SUFFIX,usher.ttvnw.net
 
 # ======== Twitch Streaming ======== #
 # 精准匹配 Twitch (Cloudfront) CDN #
-# URL-REGEX,^https?:\/\/(?:[a-z0-9-]+\.)*cloudfront\.[a-z0-9-]+\.(?:hls\.)?ttvnw\.net\/.*$
-## Twitch Video (Weaver|Edge) ##1080P+ Fixed | 精准匹配 最高效率(使用非捕獲組,子域名兼容匹配合法字符，防止非邏輯URL)
-# URL-REGEX,^https?:\/\/(?:[a-z0-9-]+\.)*video-(?:weaver|edge)(?:-[a-z0-9-]+)*(?:\.abs)?\.hls\.ttvnw\.net\/.*$
+# URL-REGEX,^https?:\/\/(?:[\w-]+\.)*?[cloudfront|akamaized]\.(?:[\w-]+\.)*?ttvnw\.net\/.*$
 
-# Final Matches #
+# Twitch Video (Weaver|Edge) ##1080P+ Fixed | 精准匹配 最高效率(使用非捕獲組,子域名兼容匹配合法字符，防止非邏輯URL)
+# URL-REGEX,^https?:\/\/(?:[\w-]+\.)*?(video-[weaver|edge])?([\w-]+\.)*?\.hls\.ttvnw\.net\/.*$
+
+# hls.ttvnw.net Final Matches #
 DOMAIN-SUFFIX,hls.ttvnw.net

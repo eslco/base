@@ -1,4 +1,4 @@
-# Name: TP.list (TwitchProxy)
+# Name: TP.list (TwitchProxy.list)
 # CDN URL: https://gh-proxy.com/eslco/base/main/rule/Clash/Twitch/TP.list
 # URL: https://raw.github.com/eslco/base/main/rule/Surge/Twitch/TP.list
 # Author: eslco 
@@ -21,9 +21,9 @@ DOMAIN-SUFFIX,gql.twitch.tv
 DOMAIN-SUFFIX,twitch.tv
 
 # ======== Dynamic Subdomains (Regex) ======== #
-# 匹配所有 ext-twitch.tv 的动态子域名（如 *.ext-twitch.tv)
+# 匹配所有 ext-twitch.tv 的动态子域名如 (*.ext-twitch.tv)
 DOMAIN-SUFFIX,ext-twitch.tv
-# URL-REGEX,^https?:\/\/(?:[a-z0-9-]+\.)+ext-twitch\.tv\/.*$
+# URL-REGEX,^https?:\/\/(?:[\w-]+\.)*?ext-twitch\.tv\/.*$
 
 # ======== Third-Party Extensions ======== #
 DOMAIN-SUFFIX,twitch-ext.rootonline.de
