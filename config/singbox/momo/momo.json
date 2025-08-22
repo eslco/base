@@ -4,7 +4,7 @@
       { "tag": "dns_direct", "type": "tls", "server": "120.53.53.53", "server_port": 853 },
       { "tag": "dns_alidns", "type": "tls", "server": "dns.alidns.com", "domain_resolver": "dns_direct" },
       { "tag": "dns_google", "type": "tls", "server": "dns.google", "domain_resolver": "dns_direct", "detour": "🚀 Proxy" },
-      { "tag": "dns_iij", "type": "https", "server": "public.dns.iij.jp", "domain_resolver": "dns_direct", "detour": "🚀 Proxy" }
+      { "tag": "dns_iij", "type": "quic", "server": "public.dns.iij.jp", "domain_resolver": "dns_direct", "detour": "🚀 Proxy" }
     ],
     "rules": [
       { "domain": "akaochangnode.xyz", "server": "dns_alidns", "client_subnet": "1.0.1.0" },
@@ -14,12 +14,11 @@
       { "clash_mode": "global", "query_type": [ "A", "AAAA" ], "server": "dns_google" },
       { "rule_set":["geosite-youtube","geosite-google"], "server": "dns_google" },
       {
-        "domain": ["pcdn.yximgs.com"],
+        "domain": [ "pcdn.yximgs.com","bannedbook.org" ],
         "action": "predefined",
         "rcode": "REFUSED"
-     },
-     { "rule_set":["geosite-youtube","geosite-google"], "server": "dns_google" },
-     { "rule_set": [
+      },
+      { "rule_set": [
           "geosite-cn",
           "geosite-steamcn",
           "geosite-apple",
