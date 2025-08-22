@@ -11,8 +11,15 @@
        
       ]
     },
+    {"domain_keyword": [
+      "aesin"
+    ]
+    },
     {
      "domain_suffix":[
+      "aesin.ltd",
+      "aesin.eu",
+
        "qwant.com",
        "startpage.com",
        "search.yahoo.com",
