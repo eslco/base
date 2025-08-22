@@ -1,9 +1,10 @@
+# 必读！！！
 # 注意规则在满足自己需求情况下，尽量做到精简，不要过度复杂，以免影响性能。
-
-# 订阅
+# 跑裸核用户请自行去掉下方控制面板模块的注释。
+# 机场订阅
 proxy-providers:
   Airport1:
-    url: "https://abc.example.com/sub?token=XXX&clash"
+    url: "https://esub.doh.dpdns.org/sub?token=aes"
     type: http
     interval: 86400
     health-check:
@@ -18,32 +19,32 @@ proxies:
   - {name: Reject, type: reject}
 # 全局配置 
 port: 7890
-socks-port: 20087
+socks-port: 7891
 redir-port: 7892
 mixed-port: 7893
 tproxy-port: 7894
 allow-lan: true
 bind-address: "*"
 ipv6: false
-unified-delay: false
+unified-delay: true
 tcp-concurrent: true
+# interface-name: enp6s18
 log-level: warning
 find-process-mode: 'off'
-# interface-name: en0
 global-client-fingerprint: chrome
-# keep-alive-idle: 600
-# keep-alive-interval: 15
+keep-alive-idle: 600
+keep-alive-interval: 15
 disable-keep-alive: false
 profile:
   store-selected: true
   store-fake-ip: true
 
 # 控制面板
-# external-controller: 0.0.0.0:9090
-# secret: ""
-# external-ui: "/etc/nikki/run"
-# external-ui-name: zashboard
-# external-ui-url: "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
+external-controller: "0.0.0.0:9090"
+secret: ""
+external-ui: ui
+external-ui-name: zash
+external-ui-url: "https://ecos.dpdns.org/github.com/Zephyruso/zashboard/archive/gh-pages.zip"
 
 # 嗅探
 sniffer:
@@ -78,14 +79,14 @@ dns:
   ipv6: false
   respect-rules: true
   enhanced-mode: fake-ip
-  fake-ip-range: 28.0.0.1/8
+  fake-ip-range: 198.18.0.1/16
   fake-ip-filter-mode: blacklist
   fake-ip-filter:
     - "rule-set:private_domain,cn_domain"
     - "+.msftconnecttest.com"
     - "+.msftncsi.com"
     - "time.*.com"
-    - "+.market.xiaomi.com"  
+    - "+.market.xiaomi.com"
   default-nameserver:
     - 8.8.4.4
     - 1.0.0.1
@@ -133,7 +134,6 @@ proxy-groups:
 # 此规则部分没有做防泄露处理，因为弊严重大于利！
 rules:
   - DOMAIN-SUFFIX,qichiyu.com,🚀 Proxy
-  - RULE-SET,private_domain,Direct
   - RULE-SET,apple_domain,🍎 Apple
   - RULE-SET,proxylite,🚀 Proxy
   - RULE-SET,ai,🤖 ChatGPT
@@ -152,35 +152,41 @@ rules:
   - RULE-SET,cn_domain,🎯 DirectN
   - RULE-SET,google_ip,🍀 Google,no-resolve
   - RULE-SET,netflix_ip,🎥 NETFLIX,no-resolve
+  - RULE-SET,apple_ip,🍎 Apple,no-resolve
   - RULE-SET,telegram_ip,📲 Telegram,no-resolve
+  - RULE-SET,private_domain,Direct
+  - RULE-SET,private_ip,Direct,no-resolve
   - RULE-SET,cn_ip,🎯 DirectN
   - MATCH,🐟 Final
 
 # 规则集
+## type：可选http/file/inline  behavior：可选domain/ipcidr/classical format：可选yaml/text/mrs
 rule-anchor:
   ip: &ip {type: http, interval: 86400, behavior: ipcidr, format: mrs}
   domain: &domain {type: http, interval: 86400, behavior: domain, format: mrs}
   class: &class {type: http, interval: 86400, behavior: classical, format: text}
 rule-providers: 
-  private_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs"}
-  proxylite: { <<: *class, url: "https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/proxy.list"}
-  ai: {  <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-ai-!cn.mrs" }
-  youtube_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs"}
-  google_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs"}
-  github_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs"}
-  telegram_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs"}
-  netflix_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.mrs"}
-  paypal_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/paypal.mrs"}
-  onedrive_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/onedrive.mrs"}
-  microsoft_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs"}
-  apple_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-cn.mrs"}
-  speedtest_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/ookla-speedtest.mrs"}
-  tiktok_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/tiktok.mrs"}
-  gfw_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/gfw.mrs"}
-  geolocation-!cn: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs"}
-  cn_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs"}
+  private_domain: { <<: *domain, url: "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/private.mrs"}
+  proxylite: { <<: *class, url: "https://raw.gitmirror.com/qichiyuhub/rule/main/proxy.list"}
+  ai: {  <<: *domain, url: "https://ecos.dpdns.org/github.comMetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-ai-!cn.mrs" }
+  youtube_domain: { <<: *domain, url: "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/youtube.mrs"}
+  google_domain: { <<: *domain, url: "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/google.mrs"}
+  github_domain: { <<: *domain, url: "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/github.mrs"}
+  telegram_domain: { <<: *domain, url: "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/telegram.mrs"}
+  netflix_domain: { <<: *domain, url: "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/netflix.mrs"}
+  paypal_domain: { <<: *domain, url: "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/paypal.mrs"}
+  onedrive_domain: { <<: *domain, url: "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/onedrive.mrs"}
+  microsoft_domain: { <<: *domain, url: "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/microsoft.mrs"}
+  apple_domain: { <<: *domain, url: "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/apple-cn.mrs"}
+  speedtest_domain: { <<: *domain, url: "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/ookla-speedtest.mrs"}
+  tiktok_domain: { <<: *domain, url: "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/tiktok.mrs"}
+  gfw_domain: { <<: *domain, url: "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/gfw.mrs"}
+  geolocation-!cn: { <<: *domain, url: "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/geolocation-!cn.mrs"}
+  cn_domain: { <<: *domain, url: "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/cn.mrs"}
   
-  cn_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs"}
-  google_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs"}
-  telegram_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs"}
-  netflix_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs"}
+  private_ip: {<<: *ip, url: "https://ecos.dpdns.org/github.comMetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geoip/private.mrs"}
+  cn_ip: { <<: *ip, url: "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geoip/cn.mrs"}
+  google_ip: { <<: *ip, url: "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geoip/google.mrs"}
+  telegram_ip: { <<: *ip, url: "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geoip/telegram.mrs"}
+  netflix_ip: { <<: *ip, url: "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geoip/netflix.mrs"}
+  apple_ip: {<<: *ip, url: "https://ecos.dpdns.org/github.comMetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo-lite/geoip/apple.mrs"}
