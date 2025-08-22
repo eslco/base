@@ -30,8 +30,8 @@ DOMAIN-SUFFIX,usher.ttvnw.net
 
 # Twitch HD+
 # 精准匹配 Twitch (Cloudfront|akamaized) CDN
-URL-REGEX,^https?:\/\/(?:[\w-]+\.)*?[cloudfront|akamaized]\.(?:[\w-]+\.)*?ttvnw\.net\/.*$
-## Twitch 1080P+ Fixed ## (Direct Available)
+# URL-REGEX,^https?:\/\/(?:[\w-]+\.)*?[cloudfront|akamaized]\.(?:[\w-]+\.)*?ttvnw\.net\/.*$
+# Twitch 1080P+ Fixed ## (Direct Available)
 # 精准匹配 最高效率(使用非捕獲組,可選子域名兼容匹配合法字符，防止非邏輯URL)
 # URL-REGEX,^https?:\/\/(?:[\w-]+\.)*?(video-[weaver|edge])?([\w-]+\.)*?\.hls\.ttvnw\.net\/.*$
 # DOMAIN-SUFFIX,hls.ttvnw.net
