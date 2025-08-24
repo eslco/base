@@ -21,7 +21,7 @@
     },
     { 
       "domain_regex":[
-       "^(?:[a-z0-9-]+)?\\.ext-twitch\\.tv$"
+       "^(?:[\\w-]+\\.)*?\\.ext-twitch\\.tv$"
       ]
     },
     {
