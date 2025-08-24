@@ -8,7 +8,7 @@
     ],
     "rules": [
       { "domain": "akaochangnode.xyz", "server": "dns_alidns", "client_subnet": "1.0.1.0" },
-      { "domain": "dns.google", "server": "dns_gopgle", "client_subnet": "1.34.1.0" },
+      { "domain": "dns.google", "server": "dns_google", "client_subnet": "1.34.1.0" },
       { "domain": "public.dns.iij.jp", "server": "dns_iij", "client_subnet": "1.34.1.0" },
       { "clash_mode": "direct", "query_type": [ "A", "AAAA" ], "server": "dns_direct" },
       { "clash_mode": "global", "query_type": [ "A", "AAAA" ], "server": "dns_google" },
@@ -81,8 +81,8 @@
      { "tag": "GLOBAL", "type": "selector", "outbounds": ["🚀 Proxy", "🧠 AI", "🔴 YouTube", "🍀 Google", "👨‍💻 Github", "☎️ Telegram", "🎵 TikTok", "🎥 ProxyMedia", "💶 PayPal", "🎮 Steam", "🎮 Games", "Ⓜ️ Microsoft", "🍏 Apple", "🐠 Final", "🔯🇭🇰 HK Auto", "🔯🇯🇵 JP Auto", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual", "♻️ Auto", "🎯 DirectN"] },
      { "tag": "🎯 DirectN", "type": "selector","outbounds":["Direct","🚀 Proxy", "☑️ Manual"] },
 
-     {"tag": "Block","type": "block"},
-     {"tag": "Direct", "type": "direct"}
+     { "tag": "Block","type": "block" },
+     { "tag": "Direct", "type": "direct" }
    ],
   "route": {
     "rules": [
@@ -189,16 +189,16 @@
       { "type": "logical",
         "mode": "and",
         "rules": [
-          {"protocol": "quic" },
-          {"network": "udp" },
-          {"port": [443,8443] }
+          { "protocol": "quic" },
+          { "network": "udp" },
+          { "port": [443,8443] }
         ] ,"outbound": "💫 QUIC"
       },
       { "type": "logical",
         "mode": "and",
         "rules": [
-          {"rule_set": "geoip-cn","invert": false },
-          {"rule_set": "geosite-!cn"}
+          { "rule_set": "geoip-cn","invert": false },
+          { "rule_set": "geosite-!cn"  }
         ],
        "outbound": "🚀 Proxy"
       },
