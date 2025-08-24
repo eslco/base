@@ -38,7 +38,7 @@
   "outbounds": [
      { "tag": "🚀 Proxy", "type": "selector", "outbounds": ["🔯🇯🇵 JP Auto", "🔯🇭🇰 HK Auto", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual", "♻️ Auto"] },
      { "tag": "☑️ Manual", "type": "selector", "outbounds": ["{all}", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US" ], "filter": [{"action": "exclude", "keywords": ["网站|流量|地址|剩余|过期|免费|时间|有效|Traffic|ExpireDate|GB|Expire Date"] }] },
-     
+
      { "tag": "🧭 DNSQUIC","type": "selector","outbounds": ["Direct", "🚀 Proxy", "🎯 DirectN", "🎮 Steam", "🎮 Games", "📕 XHS RedNote"] },
      { "tag": "💫 QUIC","type": "selector","outbounds": ["🚀 Proxy", "🎯 DirectN", "🎮 Steam", "🎮 Games", "📕 XHS RedNote", "Direct", "Block"] },
 
@@ -60,6 +60,8 @@
      { "tag": "🌐 Social+", "type": "selector", "outbounds": ["🔯🇯🇵 JP Auto", "🔯🇭🇰 HK Auto", "🚀 Proxy", "🎯 DirectN", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"] },
      { "tag": "☎️ Telegram", "type": "selector", "outbounds": ["🔯🇯🇵 JP Auto", "🔯🇭🇰 HK Auto", "🚀 Proxy", "🎯 DirectN", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"] },
      { "tag": "🎵 TikTok", "type": "selector", "outbounds": ["🔯🇯🇵 JP Auto", "🔯🇭🇰 HK Auto", "🚀 Proxy", "🎯 DirectN", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"] },
+     { "tag": "🔴 Streaming", "type": "selector", "outbounds": ["🔯🇯🇵 JP Auto", "🔯🇭🇰 HK Auto", "🚀 Proxy", "🎯 DirectN", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"] },
+     
      { "tag": "🎥 ProxyMedia", "type": "selector", "outbounds": ["🔯🇯🇵 JP Auto", "🔯🇭🇰 HK Auto", "🚀 Proxy", "🎯 DirectN", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"] },
      { "tag": "🎮 Games", "type": "selector", "outbounds": ["🔯🇯🇵 JP Auto", "🔯🇭🇰 HK Auto", "🚀 Proxy", "🎯 DirectN", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"] },
      { "tag": "🎮 Steam", "type": "selector", "outbounds": ["🔯🇯🇵 JP Auto", "🔯🇭🇰 HK Auto", "🚀 Proxy", "🎯 DirectN", "Direct", "🇦🇺 AU", "🇬🇧 GB", "🇭🇰 HK", "🇯🇵 JP", "🇸🇬 SG", "🇹🇼 TW", "🇺🇸 US", "☑️ Manual"] },
@@ -89,7 +91,7 @@
       { "ip_is_private": true, "outbound": "Direct" },
       { "clash_mode": "direct", "outbound": "Direct" },
       { "clash_mode": "global", "outbound": "GLOBAL" },
-      { "rule_set": "geoip-cndns","outbound": "Direct" },      
+      { "rule_set": "geoip-cndns","outbound": "Direct" },
       { "type": "logical",
         "mode": "and",
         "rules": [
@@ -103,11 +105,27 @@
         "yacd.haishan.me",
         "d.metacubex.one"],
       "outbound": "Direct" },
-
+      {
+        "domain_suffix": [
+          "xumo.com",
+          "xumo.tv",
+          "xumo.wurl.tv"
+        ],
+        "outbound": "🇺🇸 US"
+      },      
+      {
+        "domain_suffix": [
+          "cloudfront.hls.ttvnw.net",
+          "fastly.hls.ttvnw.net",
+          "abs.hls.ttvnw.net"
+        ],
+        "outbound": "🔴 Streaming"
+      },
       { "rule_set": "ttblock", "outbound": "Block" },
       { "rule_set": "geosite-esblock","outbound": "Block" },
       { "rule_set": "sukkaw-reject-no-drop", "outbound": "Block" },
       { "rule_set": "geosite-adv", "outbound": "🚀 Proxy" },
+      { "rule_set": "geosite-au", "outbound": "🇦🇺 AU" },
 
       { "rule_set": "geosite-ai", "outbound": "🧠 AI" },
       { "rule_set": "geosite-xhs", "outbound": "📕 XHS RedNote" },
@@ -115,10 +133,11 @@
 
       { "rule_set": "ttproxy", "outbound": "🧠 AI" },
       { "rule_set": "ttdirect", "outbound": "Direct" },
-      
-      { "rule_set": "twitch-proxy", "outbound": "🚀 Proxy" },
+
+      { "rule_set": "geosite-stream", "outbound": "🔴 Streaming" },
       { "rule_set": "twitch-direct", "outbound": "🎯 DirectN" },
-      
+      { "rule_set": "twitch-proxy", "outbound": "🚀 Proxy" },
+
       { "rule_set": "geosite-dex", "outbound": "🏪 DEX" },
       { "rule_set": "geosite-spotify", "outbound": "🎵 Spotify" },
       { "rule_set": "geosite-netease-music", "outbound": "🎵 Netease Music" },
@@ -195,79 +214,83 @@
         ] ,"outbound": "Block"
       },
       { "rule_set": "geosite-cn", "outbound": "🎯 DirectN" },
-      { "rule_set": "geoip-cn", "outbound": "🎯 DirectN" }
+      { "rule_set": "geoip-cn", "outbound": "🎯 DirectN" },
+      { "rule_set": "geoip-au", "outbound": "🇦🇺 AU" }
    ],
 
    "rule_set": [
-      { "tag": "geosite-adv","type": "remote","format": "source","url": "https://ecos.dpdns.org/https://github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-adv.json","download_detour": "Direct" },
-      { "tag": "geosite-esblock","type": "remote","format": "source","url": "https://ecos.dpdns.org/https://github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-esblock.json","download_detour": "Direct" },
+      { "tag": "geosite-adv","type": "remote","format": "source","url": "https://ecos.dpdns.org/github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-adv.json","download_detour": "Direct" },
+      { "tag": "geosite-esblock","type": "remote","format": "source","url": "https://ecos.dpdns.org/github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-esblock.json","download_detour": "Direct" },
       { "tag": "sukkaw-reject-no-drop","type": "remote","format": "source","url": "https://ruleset.skk.moe/sing-box/non_ip/reject-no-drop.json","download_detour": "🎯 DirectN" },
       { "tag": "sukkaw-apple-cdn","type": "remote","format": "source","url": "https://ruleset.skk.moe/sing-box/non_ip/apple_cdn.json","download_detour": "🎯 DirectN" },
-      
-      { "tag": "ttblock", "type": "remote", "format": "source", "url": "https://ecos.dpdns.org/https://github.com/eslco/base/raw/main/rule/singbox/geosite/ttblock.json", "download_detour": "Direct" },
-      { "tag": "ttproxy", "type": "remote", "format": "source", "url": "https://ecos.dpdns.org/https://github.com/eslco/base/raw/main/rule/singbox/geosite/ttproxy.json", "download_detour": "Direct" },
-      { "tag": "ttdirect", "type": "remote", "format": "source", "url": "https://ecos.dpdns.org/https://github.com/eslco/base/raw/main/rule/singbox/geosite/ttdirect.json", "download_detour": "Direct" },
 
-      { "tag": "twitch-proxy", "type": "remote", "format": "source", "url": "https://ecos.dpdns.org/https://github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-twitch-proxy.json", "download_detour": "Direct" },  
-      { "tag": "twitch-direct", "type": "remote", "format": "source", "url": "https://ecos.dpdns.org/https://github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-twitch-direct.json", "download_detour": "Direct" },
+      { "tag": "ttblock", "type": "remote", "format": "source", "url": "https://ecos.dpdns.org/github.com/eslco/base/raw/main/rule/singbox/geosite/ttblock.json", "download_detour": "Direct" },
+      { "tag": "ttproxy", "type": "remote", "format": "source", "url": "https://ecos.dpdns.org/github.com/eslco/base/raw/main/rule/singbox/geosite/ttproxy.json", "download_detour": "Direct" },
+      { "tag": "ttdirect", "type": "remote", "format": "source", "url": "https://ecos.dpdns.org/github.com/eslco/base/raw/main/rule/singbox/geosite/ttdirect.json", "download_detour": "Direct" },
 
-      { "tag": "geosite-xhs","type": "remote","format": "source","url": "https://ecos.dpdns.org/https://github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-xiaohongshu.json","download_detour": "Direct" },
-      { "tag": "geosite-dex", "type": "remote", "format": "source", "url": "https://ecos.dpdns.org/https://github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-dex.json", "download_detour": "Direct" },
-      { "tag": "geosite-ai", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/category-ai-!cn.srs", "download_detour": "Direct" },
-      { "tag": "geosite-youtube", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/youtube.srs", "download_detour": "Direct" },
-      { "tag": "geosite-wechat", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/Toperlock/sing-box-geosite/raw/main/rule/WeChat.srs", "download_detour": "Direct" },
-      { "tag": "geosite-spotify", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/spotify.srs", "download_detour": "Direct" },
-      {"tag": "geosite-netease-music", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/netease.srs", "download_detour": "Direct" },
-      
-      { "tag": "geosite-wa", "type": "remote", "format": "source", "url": "https://ecos.dpdns.org/https://github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-whatsapp.json", "download_detour": "Direct" }, 
-      { "tag": "geosite-whatsapp", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/whatsapp.srs", "download_detour": "Direct" },
-      { "tag": "geosite-rakuten", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/rakuten.srs", "download_detour": "Direct" },
-      { "tag": "geosite-line", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/line.srs", "download_detour": "Direct" },
-      { "tag": "geosite-kakao", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/kakao.srs", "download_detour": "Direct" },
-      { "tag": "geosite-signal", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/signal.srs", "download_detour": "Direct" },
+      { "tag": "twitch-proxy", "type": "remote", "format": "source", "url": "https://ecos.dpdns.org/github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-twitch-proxy.json", "download_detour": "Direct" },  
+      { "tag": "twitch-direct", "type": "remote", "format": "source", "url": "https://ecos.dpdns.org/github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-twitch-direct.json", "download_detour": "Direct" },
+      { "tag": "geosite-stream", "type": "remote", "format": "source", "url": "https://ecos.dpdns.org/github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-stream.json", "download_detour": "Direct" },
 
-      { "tag": "geosite-twitter", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/twitter.srs", "download_detour": "Direct" },
-      { "tag": "geosite-threads", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/threads.srs", "download_detour": "Direct" },
-      { "tag": "geosite-instagram", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/instagram.srs", "download_detour": "Direct" },
-      { "tag": "geosite-facebook", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/facebook.srs", "download_detour": "Direct" },
-      { "tag": "geosite-linkedin", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/linkedin.srs", "download_detour": "Direct" },
+      { "tag": "geosite-xhs","type": "remote","format": "source","url": "https://ecos.dpdns.org/github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-xiaohongshu.json","download_detour": "Direct" },
+      { "tag": "geosite-dex", "type": "remote", "format": "source", "url": "https://ecos.dpdns.org/github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-dex.json", "download_detour": "Direct" },
+      { "tag": "geosite-ai", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/category-ai-!cn.srs", "download_detour": "Direct" },
+      { "tag": "geosite-youtube", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/youtube.srs", "download_detour": "Direct" },
+      { "tag": "geosite-wechat", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/Toperlock/sing-box-geosite/raw/main/rule/WeChat.srs", "download_detour": "Direct" },
+      { "tag": "geosite-spotify", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/spotify.srs", "download_detour": "Direct" },
+      {"tag": "geosite-netease-music", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/netease.srs", "download_detour": "Direct" },
 
-      { "tag": "iptv-tw", "type": "remote", "format": "source", "url": "https://ecos.dpdns.org/https://github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-iptv-tw.json", "download_detour": "Direct" },
-      { "tag": "iptv-!tw", "type": "remote", "format": "source", "url": "https://ecos.dpdns.org/https://github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-iptv-!tw.json", "download_detour": "Direct" },
-      
-      { "tag": "geosite-bilibili", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/bilibili.srs", "download_detour": "Direct" },
-      { "tag": "epicgames", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/epicgames.srs", "download_detour": "Direct" },
-      { "tag": "supercell", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/supercell.srs", "download_detour": "Direct" },
-      { "tag": "category-games-!cn", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/category-games-!cn.srs", "download_detour": "Direct" },
-      { "tag": "category-games-cn", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/category-games-cn.srs", "download_detour": "Direct" },
-      { "tag": "tencent-games-!cn", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/tencent-games@!cn.srs", "download_detour": "Direct" },
-      { "tag": "tencent-games-cn", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/tencent-games@cn.srs", "download_detour": "Direct" },
-      { "tag": "category-android-app", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/category-android-app-download.srs", "download_detour": "Direct" },
-      { "tag": "category-game-platforms-download", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/category-game-platforms-download.srs", "download_detour": "Direct" },
-      { "tag": "category-game-platforms-download@cn", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/category-game-platforms-download@cn.srs", "download_detour": "Direct" },
-      
-      { "tag": "geosite-steamcn", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/steam@cn.srs", "download_detour": "Direct" },
-      { "tag": "geosite-steam", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/steam.srs", "download_detour": "Direct" },
-      
-      { "tag": "geosite-telegram", "type": "remote", "format": "source", "url": "https://ecos.dpdns.org/https://github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-telegram.json", "download_detour": "Direct" },
-      { "tag": "geosite-google", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/google.srs", "download_detour": "Direct" },
-      { "tag": "geosite-github", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/github.srs", "download_detour": "Direct" },
-      { "tag": "geosite-onedrive", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/onedrive.srs", "download_detour": "Direct" },
-      { "tag": "geosite-microsoft", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/microsoft.srs", "download_detour": "Direct" },
-      { "tag": "geosite-apple", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/apple.srs", "download_detour": "Direct" },
-      { "tag": "geosite-tiktok", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/tiktok.srs", "download_detour": "Direct" },
-      { "tag": "geosite-netflix", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/netflix.srs", "download_detour": "Direct" },
-      { "tag": "geosite-paypal", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/paypal.srs", "download_detour": "Direct" },
-      { "tag": "geosite-!cn", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/geolocation-!cn.srs", "download_detour": "Direct" },
-      { "tag": "geosite-cn", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/cn.srs", "download_detour": "Direct" },
+      { "tag": "geosite-wa", "type": "remote", "format": "source", "url": "https://ecos.dpdns.org/github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-whatsapp.json", "download_detour": "Direct" }, 
+      { "tag": "geosite-whatsapp", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/whatsapp.srs", "download_detour": "Direct" },
+      { "tag": "geosite-rakuten", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/rakuten.srs", "download_detour": "Direct" },
+      { "tag": "geosite-line", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/line.srs", "download_detour": "Direct" },
+      { "tag": "geosite-kakao", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/kakao.srs", "download_detour": "Direct" },
+      { "tag": "geosite-signal", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/signal.srs", "download_detour": "Direct" },
 
-      { "tag": "geoip-cndns", "type": "remote", "format": "source", "url": "https://ecos.dpdns.org/https://github.com/eslco/base/raw/main/rule/singbox/geoip/geoip-cndns.json", "download_detour": "Direct" },
-      { "tag": "geoip-twitter", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geoip/twitter.srs", "download_detour": "Direct" },
-      { "tag": "geoip-google", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geoip/google.srs", "download_detour": "Direct" },
-      { "tag": "geoip-apple", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo-lite/geoip/apple.srs", "download_detour": "Direct" },
-      { "tag": "geoip-telegram", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geoip/telegram.srs", "download_detour": "Direct" },
-      { "tag": "geoip-netflix", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geoip/netflix.srs", "download_detour": "Direct" },
-      { "tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/https://github.com/qljsyph/ruleset-icon/raw/main/sing-box/geoip/China-ASN-combined-ip.srs", "download_detour": "Direct" }
+      { "tag": "geosite-twitter", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/twitter.srs", "download_detour": "Direct" },
+      { "tag": "geosite-threads", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/threads.srs", "download_detour": "Direct" },
+      { "tag": "geosite-instagram", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/instagram.srs", "download_detour": "Direct" },
+      { "tag": "geosite-facebook", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/facebook.srs", "download_detour": "Direct" },
+      { "tag": "geosite-linkedin", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/linkedin.srs", "download_detour": "Direct" },
+
+      { "tag": "iptv-tw", "type": "remote", "format": "source", "url": "https://ecos.dpdns.org/github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-iptv-tw.json", "download_detour": "Direct" },
+      { "tag": "iptv-!tw", "type": "remote", "format": "source", "url": "https://ecos.dpdns.org/github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-iptv-!tw.json", "download_detour": "Direct" },
+
+      { "tag": "geosite-bilibili", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/bilibili.srs", "download_detour": "Direct" },
+      { "tag": "epicgames", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/epicgames.srs", "download_detour": "Direct" },
+      { "tag": "supercell", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/supercell.srs", "download_detour": "Direct" },
+      { "tag": "category-games-!cn", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/category-games-!cn.srs", "download_detour": "Direct" },
+      { "tag": "category-games-cn", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/category-games-cn.srs", "download_detour": "Direct" },
+      { "tag": "tencent-games-!cn", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/tencent-games@!cn.srs", "download_detour": "Direct" },
+      { "tag": "tencent-games-cn", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/tencent-games@cn.srs", "download_detour": "Direct" },
+      { "tag": "category-android-app", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/category-android-app-download.srs", "download_detour": "Direct" },
+      { "tag": "category-game-platforms-download", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/category-game-platforms-download.srs", "download_detour": "Direct" },
+      { "tag": "category-game-platforms-download@cn", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/category-game-platforms-download@cn.srs", "download_detour": "Direct" },
+
+      { "tag": "geosite-steamcn", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/steam@cn.srs", "download_detour": "Direct" },
+      { "tag": "geosite-steam", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/steam.srs", "download_detour": "Direct" },
+
+      { "tag": "geosite-au", "type": "remote", "format": "source", "url": "https://ecos.dpdns.org/github.com/eslco/base/raw/main/rule/singbox/geosite/au.json", "download_detour": "Direct" },
+      { "tag": "geosite-telegram", "type": "remote", "format": "source", "url": "https://ecos.dpdns.org/github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-telegram.json", "download_detour": "Direct" },
+      { "tag": "geosite-google", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/google.srs", "download_detour": "Direct" },
+      { "tag": "geosite-github", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/github.srs", "download_detour": "Direct" },
+      { "tag": "geosite-onedrive", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/onedrive.srs", "download_detour": "Direct" },
+      { "tag": "geosite-microsoft", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/microsoft.srs", "download_detour": "Direct" },
+      { "tag": "geosite-apple", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/apple.srs", "download_detour": "Direct" },
+      { "tag": "geosite-tiktok", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/tiktok.srs", "download_detour": "Direct" },
+      { "tag": "geosite-netflix", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/netflix.srs", "download_detour": "Direct" },
+      { "tag": "geosite-paypal", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/paypal.srs", "download_detour": "Direct" },
+      { "tag": "geosite-!cn", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/geolocation-!cn.srs", "download_detour": "Direct" },
+      { "tag": "geosite-cn", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/cn.srs", "download_detour": "Direct" },
+
+      { "tag": "geoip-cndns", "type": "remote", "format": "source", "url": "https://ecos.dpdns.org/github.com/eslco/base/raw/main/rule/singbox/geoip/geoip-cndns.json", "download_detour": "Direct" },
+      { "tag": "geoip-twitter", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geoip/twitter.srs", "download_detour": "Direct" },
+      { "tag": "geoip-google", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geoip/google.srs", "download_detour": "Direct" },
+      { "tag": "geoip-apple", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo-lite/geoip/apple.srs", "download_detour": "Direct" },
+      { "tag": "geoip-telegram", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geoip/telegram.srs", "download_detour": "Direct" },
+      { "tag": "geoip-netflix", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geoip/netflix.srs", "download_detour": "Direct" },
+      { "tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/qljsyph/ruleset-icon/raw/main/sing-box/geoip/China-ASN-combined-ip.srs", "download_detour": "Direct" },
+      { "tag": "geoip-au", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geoip/au.srs", "download_detour": "Direct" }
     ],
     "final": "🐠 Final",
     "default_domain_resolver": {"server": "dns_alidns"}
