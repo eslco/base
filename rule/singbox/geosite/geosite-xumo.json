@@ -4,7 +4,10 @@
   [
     {
       "domain": [
-        "xumo.map.fastly"]
+        "xumo.map.fastly",
+        "xumo.wurl",
+        "xumo.wurl.com"
+      ]
     },
     {
      "domain_suffix": [
@@ -15,7 +18,6 @@
     },
     {
       "domain_keyword": [
-
         "xumo.tv"
       ]
     }
