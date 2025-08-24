@@ -4,24 +4,24 @@
   [
     {
       "domain":[
+        "twitch.amazon.com",
         "usher.ttvnw.net",
         "k.twitchcdn.net"
       ]
     },
     {
       "domain_suffix":[
-       ".twitchsvc.net",
-       ".twitchcdn.net",
-       ".ext-twitch.tv",
-       ".twitch-ext.rootonline.de",
-       ".irc-ws.chat.twitch.tv",
-       ".twitch.tv"
+       "twitchsvc.net",
+       "twitchcdn.net",
+       "ext-twitch.tv",
+       "twitch-ext.rootonline.de",
+       "irc-ws.chat.twitch.tv",
+       "twitch.tv"
       ]
     },
     { 
       "domain_regex":[
-       "^(?:[a-z0-9-]+)?\\.ext-twitch\\.tv$",
-       "^(?:[\\w-]+\\.)*?cloudfront\\.(?:[\\w-]+\\.)*?ttvnw\\.net$"
+       "^(?:[a-z0-9-]+)?\\.ext-twitch\\.tv$"
       ]
     },
     {

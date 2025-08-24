@@ -2,23 +2,27 @@
   "version": 3,
   "rules": [
     { "domain": [
-        "playlist.ttvnw.net",
-        "live001-ttvnw.akamaized.net"
+        "prod.ivs-device-config.live-video.net",
+
+        "live001-ttvnw.akamaized.net",
+        "static-cdn.jtvnw.net"
      ],
       "domain_suffix": [
-        "jtvnw.net",
+        "playlist.ttvnw.net",        
         "live-video.net",
-        "global.poe.live-video.net",
-        "hls.ttvnw.net"
+        "jtvnw.net",
+
+        "abs.hls.ttvnw.net"
       ],
       "domain_keyword": [
-        "cloudfront.hls.ttvnw.net"
+        "abs.hls.ttvnw.net"
       ],
       "domain_regex":[
         "^(?:[\\w-]+\\.)*?live-video\\.net$",
+        "^(?:[\\w-]+\\.)*?playlist\\.ttvnw\\.net$",        
         "^(?:[\\w-]+\\.)*?ttvnw.\\.akamaized\\.net$",
-        "^(?:[\\w-]*\\.)?(?:static-cdn\\.)?jtvnw\\.net$",
-        "^(?:[\\w-]+\\.)*?(video-[weaver|edge])?(?:[\\w-]+\\.)*?\\.hls\\.ttvnw\\.net$"
+        "^(?:[\\w-]+\\.)*?(?:static-cdn\\.)?jtvnw\\.net$",
+        "^(?:[\\w-]+\\.)*?video-[weaver|edge](?:[\\w-]+\\.)*?\\.hls\\.ttvnw\\.net$"
       ]
     }
   ]
