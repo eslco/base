@@ -14,13 +14,12 @@
         "t-dev.nineanalytics.io",
         "imageresizer.static9.net.au",
         
-
         "prod-simulcast-syd-ch9.livestream-cdn.9vms.com.au"
       ]
     },
     {
       "domain_suffix":[
-       "9news.com.au",        
+       "9news.com.au",
        "nine.com.au",
        "9now.com.au",
 
@@ -30,10 +29,8 @@
     { 
       "domain_regex":[
        "^(?:[\\w-]+\\.)*?\\.[nine|9news|9now]\\.com\\.au$",
-       "^(?:[\\w-]+\\.)*?[livestream-cdn|9vms]\\.com\\.au$",
-       "^(?:[\\w-]+\\.)*?live(?:[\\w-]+\\.)*?\\.yospace\\.com$",
-       
-       ""
+       "^(?:[\\w-]+\\.)*?[livestream|9vms|nine|9news]*?\\.com\\.au$",
+       "^(?:[\\w-]+\\.)*?live(?:[\\w-]+\\.)*?\\.yospace\\.com$"
       ]
     },
     {
