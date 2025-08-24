@@ -1,0 +1,30 @@
+{ 
+  "version": 3,
+  "rules":
+  [
+    {
+      "domain": [
+        "prod.ivs-device-config.live-video.net",
+        "live001-ttvnw.akamaized.net",        
+        "static-cdn.jtvnw.net"
+      ]
+    },
+    {
+      "domain_suffix": [
+        "playlist.ttvnw.net",
+        "live-video.net",
+        "jtvnw.net",
+
+        ".cloudfront.hls.ttvnw.net",
+        ".fastly.hls.ttvnw.net",
+        ".abs.hls.ttvnw.net"
+      ]
+    },
+    {
+      "domain_regex": [
+       "^(?:[\\w-]+\\.)*?(?:[cloudfornt|fastly|abs])?\\.hls\\.ttvnw\\.net$",
+       "^(?:[\\w-]+\\.)*?video-[weaver|edge](?:[\\w-]+\\.)*?\\.hls\\.ttvnw\\.net$"
+      ]
+    }
+  ]
+}
