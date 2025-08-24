@@ -25,6 +25,13 @@
        "^(?:[\\w-]+\\.)*?(?:[cloudfornt|fastly|abs])?\\.hls\\.ttvnw\\.net$",
        "^(?:[\\w-]+\\.)*?video-[weaver|edge](?:[\\w-]+\\.)*?\\.hls\\.ttvnw\\.net$"
       ]
+    },
+    {
+      "domain_keyword": [
+        "abs.hls.ttvnw.net",
+        "video-weaver",
+        "video-edge"
+      ]
     }
   ]
 }
