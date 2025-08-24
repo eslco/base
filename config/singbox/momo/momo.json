@@ -4,11 +4,11 @@
       { "tag": "dns_direct", "type": "tls", "server": "120.53.53.53", "server_port": 853 },
       { "tag": "dns_alidns", "type": "tls", "server": "dns.alidns.com", "domain_resolver": "dns_direct" },
       { "tag": "dns_google", "type": "tls", "server": "dns.google", "domain_resolver": "dns_direct", "detour": "🚀 Proxy" },
-      { "tag": "dns_iij", "type": "quic", "server": "public.dns.iij.jp", "domain_resolver": "dns_direct", "detour": "🚀 Proxy" }
+      { "tag": "dns_iij", "type": "https", "server": "public.dns.iij.jp", "domain_resolver": "dns_direct", "detour": "🚀 Proxy" }
     ],
     "rules": [
       { "domain": "akaochangnode.xyz", "server": "dns_alidns", "client_subnet": "1.0.1.0" },
-      { "domain": "dns.google", "server": "dns_gopgle", "client_subnet": "1.0.1.0" },
+      { "domain": "dns.google", "server": "dns_gopgle", "client_subnet": "1.34.1.0" },
       { "domain": "public.dns.iij.jp", "server": "dns_iij", "client_subnet": "1.34.1.0" },
       { "clash_mode": "direct", "query_type": [ "A", "AAAA" ], "server": "dns_direct" },
       { "clash_mode": "global", "query_type": [ "A", "AAAA" ], "server": "dns_google" },
@@ -112,7 +112,7 @@
           "xumo.wurl.tv"
         ],
         "outbound": "🇺🇸 US"
-      },      
+      },
       {
         "domain_suffix": [
           "cloudfront.hls.ttvnw.net",
@@ -232,7 +232,7 @@
       { "tag": "twitch-direct", "type": "remote", "format": "source", "url": "https://ecos.dpdns.org/github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-twitch-direct.json", "download_detour": "Direct" },
       { "tag": "geosite-stream", "type": "remote", "format": "source", "url": "https://ecos.dpdns.org/github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-stream.json", "download_detour": "Direct" },
 
-      { "tag": "geosite-xhs","type": "remote","format": "source","url": "https://ecos.dpdns.org/github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-xiaohongshu.json","download_detour": "Direct" },
+      { "tag": "geosite-xhs","type": "remote","format": "source", "url": "https://ecos.dpdns.org/github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-xiaohongshu.json","download_detour": "Direct" },
       { "tag": "geosite-dex", "type": "remote", "format": "source", "url": "https://ecos.dpdns.org/github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-dex.json", "download_detour": "Direct" },
       { "tag": "geosite-ai", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/category-ai-!cn.srs", "download_detour": "Direct" },
       { "tag": "geosite-youtube", "type": "remote", "format": "binary", "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/youtube.srs", "download_detour": "Direct" },
