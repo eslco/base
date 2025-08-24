@@ -1,0 +1,23 @@
+{ 
+  "version": 3,
+  "rules": 
+  [
+    {
+      "domain": [
+        "xumo.map.fastly"]
+    },
+    {
+     "domain_suffix": [
+       "xumo.com",
+       "xumo.tv",
+       "xumo.wurl.tv"
+     ]
+    },
+    {
+      "domain_keyword": [
+
+        "xumo.tv"
+      ]
+    }
+  ]
+}
