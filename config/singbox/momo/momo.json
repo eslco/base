@@ -104,11 +104,11 @@
         "yacd.metacubex.one",
         "yacd.haishan.me",
         "d.metacubex.one"],
-      "outbound": "Direct" 
+      "outbound": "Direct"
       },
       { 
         "rule_set": "geosite-au", "outbound": "🇦🇺 AU" 
-      },      
+      },
       { 
         "rule_set": "geosite-xumo", "outbound": "🇺🇸 US"
       },
@@ -226,7 +226,7 @@
       { "tag": "ttproxy", "type": "remote", "format": "source", "url": "https://gh.xmly.dev/github.com/eslco/base/raw/main/rule/singbox/geosite/ttproxy.json", "download_detour": "Direct" },
       { "tag": "ttdirect", "type": "remote", "format": "source", "url": "https://gh.xmly.dev/github.com/eslco/base/raw/main/rule/singbox/geosite/ttdirect.json", "download_detour": "Direct" },
 
-      { "tag": "twitch-proxy", "type": "remote", "format": "source", "url": "https://gh.xmly.dev/github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-twitch-proxy.json", "download_detour": "Direct" },  
+      { "tag": "twitch-proxy", "type": "remote", "format": "source", "url": "https://gh.xmly.dev/github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-twitch-proxy.json", "download_detour": "Direct" },
       { "tag": "twitch-direct", "type": "remote", "format": "source", "url": "https://gh.xmly.dev/github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-twitch-direct.json", "download_detour": "Direct" },
       { "tag": "geosite-stream", "type": "remote", "format": "source", "url": "https://gh.xmly.dev/github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-stream.json", "download_detour": "Direct" },
 
