@@ -6,10 +6,16 @@
       "domain":[
         "www.9now.com.au",
         "loc.nine.com.au",
+        "api.9now.com.au",
+        "deliver.oztam.com.au",
         "nine-publishing.map.fastly.net",
-
         "ninecareers.com.au",
-        "nineforbrands.com.au"
+        "nineforbrands.com.au",
+        "t-dev.nineanalytics.io",
+        "imageresizer.static9.net.au",
+        
+
+        "prod-simulcast-syd-ch9.livestream-cdn.9vms.com.au"
       ]
     },
     {
@@ -18,13 +24,16 @@
        "nine.com.au",
        "9now.com.au",
 
-
-       ""
+       "livestream-cdn.9vms.com.au"
       ]
     },
     { 
       "domain_regex":[
-       "^(?:[\\w-]+\\.)*?\\.[nine|9news|9now]\\.com\\.au$"
+       "^(?:[\\w-]+\\.)*?\\.[nine|9news|9now]\\.com\\.au$",
+       "^(?:[\\w-]+\\.)*?[livestream-cdn|9vms]\\.com\\.au$",
+       "^(?:[\\w-]+\\.)*?live(?:[\\w-]+\\.)*?\\.yospace\\.com$",
+       
+       ""
       ]
     },
     {
