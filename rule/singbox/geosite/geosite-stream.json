@@ -15,9 +15,9 @@
         "live-video.net",
         "jtvnw.net",
 
-        ".cloudfront.hls.ttvnw.net",
-        ".fastly.hls.ttvnw.net",
-        ".abs.hls.ttvnw.net"
+        "cloudfront.hls.ttvnw.net",
+        "fastly.hls.ttvnw.net",
+        "abs.hls.ttvnw.net"
       ]
     },
     {
