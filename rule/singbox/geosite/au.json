@@ -1,0 +1,39 @@
+{ 
+  "version": 3,
+  "rules":
+  [
+    {
+      "domain":[
+        "www.9now.com.au",
+        "loc.nine.com.au",
+        "nine-publishing.map.fastly.net",
+
+        "ninecareers.com.au",
+        "nineforbrands.com.au"
+      ]
+    },
+    {
+      "domain_suffix":[
+       "9news.com.au",        
+       "nine.com.au",
+       "9now.com.au",
+
+
+       ""
+      ]
+    },
+    { 
+      "domain_regex":[
+       "^(?:[\\w-]+\\.)*?\\.[nine|9news|9now]\\.com\\.au$"
+      ]
+    },
+    {
+     "ip_cidr": [
+        "76.223.34.124/32",
+        "13.248.160.137/32",
+        "99.83.186.106/32",
+        "75.2.43.150/32"
+      ]
+    }
+  ]
+}
