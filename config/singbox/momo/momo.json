@@ -114,9 +114,7 @@
       },
       {
         "domain_suffix": [
-          "cloudfront.hls.ttvnw.net",
-          "fastly.hls.ttvnw.net",
-          "abs.hls.ttvnw.net"
+          "hls.ttvnw.net"
         ],
         "outbound": "🔴 Streaming"
       },
