@@ -19,9 +19,10 @@
       ],
       "domain_regex":[
         "^(?:[\\w-]+\\.)*?live-video\\.net$",
-        "^(?:[\\w-]+\\.)*?playlist\\.ttvnw\\.net$",        
+
         "^(?:[\\w-]+\\.)*?ttvnw.\\.akamaized\\.net$",
         "^(?:[\\w-]+\\.)*?(?:static-cdn\\.)?jtvnw\\.net$",
+
         "^(?:[\\w-]+\\.)*?video-[weaver|edge](?:[\\w-]+\\.)*?\\.hls\\.ttvnw\\.net$"
       ]
     }
