@@ -23,8 +23,8 @@
     {
       "domain_regex": [
 
-       "^(?:[\\w-]+\\.)*?([akamai|cloudflare|cloudfornt|fastly|abs])*?\\.hls\\.ttvnw\\.net$",
-       "^(?:[\\w-]+\\.)*?video-[weaver|edge](?:[\\w-]+\\.)*?\\.hls\\.ttvnw\\.net$"
+       "^(?:[\\w-]+\\.)+(?:akamai|cloudflare|cloudfront|fastly|abs)\\.hls\\.ttvnw\\.net$",
+       "^(?:[\\w-]+\\.)*video-(?:weaver|edge)[\\w-]*\\.(?:[\\w-]+\\.)*abs\\.hls\\.ttvnw\\.net$"
 
       ]
     },

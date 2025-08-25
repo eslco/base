@@ -18,12 +18,11 @@
         "abs.hls.ttvnw.net"
       ],
       "domain_regex":[
-        "^(?:[\\w-]+\\.)*?live-video\\.net$",
+        "^(?:[\\w-]+\\.)*jtvnw\\.net$",
+        "^(?:[\\w-]+\\.)*live-video\\.net$",
+        "^(?:[\\w-]+\\.)*ttvnw.\\.akamaized\\.net$",
 
-        "^(?:[\\w-]+\\.)*?ttvnw.\\.akamaized\\.net$",
-        "^(?:[\\w-]+\\.)*?(?:static-cdn\\.)?jtvnw\\.net$",
-
-        "^(?:[\\w-]+\\.)*?video-[weaver|edge](?:[\\w-]+\\.)*?\\.hls\\.ttvnw\\.net$"
+        "^(?:[\\w-]+\\.)*video-(?:weaver|edge)[\\w-]*\\.(?:[\\w-]+\\.)*abs\\.hls\\.ttvnw\\.net$"
       ]
     }
   ]
