@@ -1,5 +1,5 @@
 # Whitelist 白名单 不应被屏蔽的特殊规则列表
-#!update url https://raw.githubusercontent.com/eslco/base/main/rule/Shadowrocket/UnBan.list
+#!update url https://github.com/eslco/ruleset/raw/main/rule/Shadowrocket/UnBan.list
 
 # Twitch TV
 # URL-REGEX,^https?:\/\/.*\.jtvnw\.net\/.*$

@@ -1,5 +1,5 @@
 # NAME:DirectN.list
-# URL: https://raw.githubusercontent.com/eslco/base/main/rule/general/DirectN.list
+# URL: https://github.com/eslco/ruleset/raw/main/rule/general/DirectN.list
 
 # 250318 added
 DOMAIN-SUFFIX,spaceship.com

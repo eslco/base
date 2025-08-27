@@ -1,5 +1,5 @@
 # YouTubeMusic.list
-# URL: https://raw.githubusercontent.com/eslco/base/main/rule/general/YouTube/YouTubeMusic.list
+# URL: https://github.com/eslco/ruleset/raw/main/rule/general/YouTube/YouTubeMusic.list
 
 USER-AGENT,*YouTubeMusic*
 USER-AGENT,YouTube*
