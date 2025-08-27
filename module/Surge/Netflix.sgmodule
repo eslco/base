@@ -1,9 +1,9 @@
 #!name= NetflixMod
 #!desc= Dual Subtitles+Douban Rating
-#!url=https://raw.githubusercontent.com/eslco/base/main/module/Surge/Netflix.sgmodule
+#!url=https://github.com/eslco/base/raw/main/module/Surge/Netflix.sgmodule
 #!icon=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png
 
-# Public Template URL = https://raw.githubusercontent.com/eslco/base/main/Shadowrocket/NetflixMod.sgmodule
+# Public Template URL = https://github.com/eslco/base/raw/main/Shadowrocket/NetflixMod.sgmodule
 
 [Script]
 奈菲迪士尼评分=type=http-request,pattern=^https?://ios\.prod\.ftl\.netflix\.com/iosui/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js, requires-body=true, timeout=10

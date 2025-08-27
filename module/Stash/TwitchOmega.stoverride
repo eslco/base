@@ -1,4 +1,4 @@
-# SUBSCRIBED https://raw.githubusercontent.com/eslco/base/main/module/Stash/TwitchOmega.stoverride
+# SUBSCRIBED https://github.com/eslco/base/raw/main/module/Stash/TwitchOmega.stoverride
 
 name: |-
   TwitchOmega
@@ -7,7 +7,7 @@ desc: |-
 icon: |-
   https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1062.png
 url: |-
-  https://raw.githubusercontent.com/eslco/base/main/module/Stash/TwitchOmega.stoverride
+  https://github.com/eslco/base/raw/main/module/Stash/TwitchOmega.stoverride
 
 rules:
 # Twitch static CDN 
@@ -17,7 +17,7 @@ rules:
   - DOMAIN-SUFFIX,global.poe.live-video.net,Direct
 # Final Matches 
   - DOMAIN-SUFFIX,hls.ttvnw.net,Direct
-  - RULE-SET,https://raw.githubusercontent.com/eslco/base/main/rule/Surge/Twitch/TD.list,Direct
+  - RULE-SET,https://github.com/eslco/base/raw/main/rule/Surge/Twitch/TD.list,Direct
 
 
 # ======== Critical Subdomains (API/Player)
@@ -40,7 +40,7 @@ rules:
 - DOMAIN-SUFFIX,twitchcdn.net,Proxy
 - DOMAIN-SUFFIX,twitchsvc.net,Proxy
 - DOMAIN-SUFFIX,twitch.tv,Proxy
-- RULE-SET,https://raw.githubusercontent.com/eslco/base/main/rule/Surge/Twitch/TP.list,Proxy
+- RULE-SET,https://github.com/eslco/base/raw/main/rule/Surge/Twitch/TP.list,Proxy
 
 http:
 

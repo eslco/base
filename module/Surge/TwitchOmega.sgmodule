@@ -1,4 +1,4 @@
-#!url=https://raw.githubusercontent.com/eslco/base/main/module/Surge/TwitchOmega.sgmodule
+#!url=https://github.com/eslco/base/raw/main/module/Surge/TwitchOmega.sgmodule
 #!name=TwitchOmega
 #!desc=HD+ Guaranteed & NoAD(update)
 
@@ -10,7 +10,7 @@
 # 本模組主要用於解決使用Workers&Pages等CDN节点無法穩定連線Twitch串流網路(ttvnw.net)問題，使用本模組進行策略分流，並附帶去廣告規則。 
 #本模組僅適用於登入Twitch後串流使用，不適用於Twitch軟體註冊。
 # 倉庫地址：https://github.com/eslco/base/main/module
-# Reversed Rule # RULE-SET,https://raw.githubusercontent.com/eslco/base/main/rule/Shadowrocket/Twitch/Proxy.list,PROXY
+# Reversed Rule # RULE-SET,https://github.com/eslco/base/raw/main/rule/Shadowrocket/Twitch/Proxy.list,PROXY
 
 [URL Rewrite]
 # ========== Amazon广告拦截 ========== #

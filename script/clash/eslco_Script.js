@@ -1,5 +1,5 @@
 // Define main function (script entry)
-// Online File URL: https://raw.githubusercontent.com/eslco/base/main/script/clash/eslco_Script.js
+// Online File URL: https://github.com/eslco/base/raw/main/script/clash/eslco_Script.js
 // Online CDN URL: https://raw.gitmirror.com/eslco/base/main/script/clash/eslco_Script.js
 //function main(config, profileName) {
 // return config;}
@@ -74,7 +74,7 @@ const domesticNameservers = [
      wotb: {
      ...ruleProviderCommon,
      behavior: "domain",
-     url: "https://raw.githubusercontent.com/eslco/base/main/rule/Clash/Wotb.list",
+     url: "https://github.com/eslco/base/raw/main/rule/Clash/Wotb.list",
      path: "./rulesets/254c/Wotb.yaml",
    },
    reject: {

@@ -173,7 +173,7 @@ generate_command_example() {
     echo "# 您可以使用以下命令直接執行相同的配置："
     echo -e "${YELLOW}$COMMAND_EXAMPLE${NC}"
     echo -e "\n# 或者使用以下命令在其他伺服器上執行相同的配置："
-    echo -e "${YELLOW}wget -O rootsetup.sh https://raw.githubusercontent.com/eslco/base/main/rootsetup.sh"
+    echo -e "${YELLOW}wget -O rootsetup.sh https://github.com/eslco/base/raw/main/rootsetup.sh"
     echo "chmod +x rootsetup.sh"
     echo -e "$COMMAND_EXAMPLE${NC}"
     echo -e "\n${RED}注意：請確保在使用一鍵指令前備份重要數據。${NC}"

@@ -1,7 +1,7 @@
 # OR: https://whatshub.top/stoverride/rates.stoverride
 name: |- 當前匯率
 desc: |- 匯率面板
-url:  |- https://raw.githubusercontent.com/eslco/base/main/module/Stash/rates.stoverride
+url:  |- https://github.com/eslco/base/raw/main/module/Stash/rates.stoverride
 category: tiles
 icon: https://telegraph.19940731.xyz/file/9671fec8f736d76ea0004.png
 tiles:

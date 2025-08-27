@@ -5,7 +5,7 @@ desc: |-
 icon: |-
   https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1056.png
 url: |-
-  https://raw.githubusercontent.com/eslco/base/main/module/Stash/Talkatone_Opt.stoverride
+  https://github.com/eslco/base/raw/main/module/Stash/Talkatone_Opt.stoverride
 
 rules:
 # 图片类广告资源 (REJECT-TINYGIF)

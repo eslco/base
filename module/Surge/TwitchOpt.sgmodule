@@ -1,4 +1,4 @@
-#!url=https://raw.githubusercontent.com/eslco/base/main/module/Surge/TwitchOpt.sgmodule
+#!url=https://github.com/eslco/base/raw/main/module/Surge/TwitchOpt.sgmodule
 #!name=TwitchOpt
 #!desc=HD+ Guaranteed & NoAD(update)
 
@@ -9,7 +9,7 @@
 # 本模組主要用於解決使用Workers&Pages等CDN节点無法穩定連線Twitch串流網路(ttvnw.net)問題，使用本模組進行策略分流，並附帶去廣告規則。 
 #本模組僅適用於登入Twitch後串流使用，不適用於Twitch軟體註冊。
 # 倉庫地址：https://github.com/eslco/base/main/module
-# Reversed Rule # RULE-SET,https://raw.githubusercontent.com/eslco/base/main/rule/Surge/Twitch/TP.list,PROXY
+# Reversed Rule # RULE-SET,https://github.com/eslco/base/raw/main/rule/Surge/Twitch/TP.list,PROXY
 
 [URL Rewrite]
 # ========== Amz AD攔截 ========== #
@@ -42,7 +42,7 @@ AND,((USER-AGENT,Twitch*), (^https?:\/\/\w+\.twitch\.tv\/gql\?operationName=Play
 
 [Rule]
 # ======== Twitch DIRECT Services ======== #
-RULE-SET, https://raw.githubusercontent.com/eslco/base/main/rule/Surge/Twitch/TD.list,DIRECT
+RULE-SET, https://github.com/eslco/base/raw/main/rule/Surge/Twitch/TD.list,DIRECT
 
 # ======== Twitch basic CDN ======== #
 URL-REGEX, ^https?:\/\/[^\/]* ttvnw[^\/]*\.akamaized\.net(\/.*)?$,DIRECT
@@ -54,7 +54,7 @@ URL-REGEX, ^https?:\/\/(?:[a-z0-9-]+\.)*video-(?:weaver|edge)(?:-[a-z0-9-]+)*(?:
 URL-REGEX, ^https?:\/\/(?:[a-z0-9-]+\.)*cloudfront\.[a-z0-9-]+\.(?:hls\.)?ttvnw\.net\/.*$,PROXY
 
 # ======== Twitch PROXY Services ======== #
-RULE-SET, https://raw.githubusercontent.com/eslco/base/main/rule/Surge/Twitch/TP.list,PROXY
+RULE-SET, https://github.com/eslco/base/raw/main/rule/Surge/Twitch/TP.list,PROXY
 
 [MITM]
 Passphrase = Shadowrocket
