@@ -1,0 +1,13 @@
+[wsl2]
+memory=4GB #内存的一半即可
+swap=2GB #Memory的一半
+processors=4 #留4个线程给windows即可
+swapFile=S:\\VHDX\\WinVHDX.vhdx #交换文件位置,放在非系统盘
+networkingMode=mirrored #这个比较方便
+firewall=true #启用防火墙
+dnsTunneling=true #启用后可以解决部分dns污染问题
+autoProxy=false #很重要的网络设置, 为true时导致docker环境被覆盖,找不到原因
+[experimental]
+# sparseVhd=false #启用后会导致wsl2启动
+hostAddressLoopback=true #启用后可以通过localhost访问wsl2
+autoMemoryReclaim=gradual #启用后可以动态回收内存
