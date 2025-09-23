@@ -3,11 +3,11 @@
 "rules":[
       {
        "domain_suffix": [
-        ".talkatone.com",
-        ".tenor.com",
-        ".agkn.com",
-        ".tktn.at",
-        ".tktn.be"
+        "talkatone.com",
+        "tenor.com",
+        "agkn.com",
+        "tktn.at",
+        "tktn.be"
        ],
        "ip_cidr":[
         "23.19.73.39/32",

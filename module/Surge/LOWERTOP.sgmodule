@@ -13,6 +13,7 @@ DOMAIN-SUFFIX,pubmatic.com,REJECT-DROP
 DOMAIN-SUFFIX,smaato.net,REJECT-DROP
 DOMAIN-SUFFIX,amazon-adsystem.com,REJECT-DROP
 DOMAIN-SUFFIX,googleads.g.doubleclick.net,REJECT-DROP
+DOMAIN-SUFFIX,inner-active.mobi,REJECT-DROP
 DOMAIN-SUFFIX,adsappier.com,REJECT-DROP
 DOMAIN-SUFFIX,appier.net,REJECT-DROP
 DOMAIN-SUFFIX,appiersig.com,REJECT-DROP
@@ -21,7 +22,6 @@ DOMAIN-SUFFIX,appiersig.com,REJECT-DROP
 DOMAIN-SUFFIX,tktn.be,PROXY
 
 # 以下需要走直连
-DOMAIN-SUFFIX,inner-active.mobi,DIRECT
 DOMAIN-SUFFIX,mobilefuse.com,DIRECT
 DOMAIN-SUFFIX,inmobi.com,DIRECT
 DOMAIN-SUFFIX,crashlytics.com,DIRECT

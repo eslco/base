@@ -2,28 +2,37 @@
   "version": 3,
   "rules": [
     {
+      "domain"  : [
+        "ads.pubmatic.com",
+        "impression-asia.liftoff.io",
+        "app-analytics-services.com",
+        "sdk-events.inner-active.mobi"
+
+
+      ]
+    },
+    {
       "domain_suffix": [
-        ".impression-asia.liftoff.io",
-        ".sdk-events.inner-active.mobi",
-        ".inner-active.mobi",
-        ".adsmoloco.com",
-        ".impression.link",
-        ".bidder.criteo.com",
-        ".ins.track.tappx.com",
-        ".mfx.mobilefuse.com",
-        ".i.l.inmobicdn.net",
-        ".ssp.api.tappx.com",
-        ".pubmatic.com",
-        ".smaato.net",
-        ".criteo.com",
-        ".inmobi.com",
-        ".adsappier.com",
-        ".appiersig.com",
-        ".appier.net",
-        ".app-analytics-services.com",
-        ".track.smaato.net",
-        ".imgx.jampp.com"
-      ],
+        "inner-active.mobi",
+        "adsmoloco.com",
+        "impression.link",
+        "bidder.criteo.com",
+        "ins.track.tappx.com",
+        "mfx.mobilefuse.com",
+        "i.l.inmobicdn.net",
+        "ssp.api.tappx.com",
+        "pubmatic.com",
+        "smaato.net",
+        "criteo.com",
+        "inmobi.com",
+        "adsappier.com",
+        "appiersig.com",
+        "appier.net",
+        "track.smaato.net",
+        "imgx.jampp.com"
+      ]
+    },
+    { 
       "domain_keyword": [
         "googleads"
       ]
