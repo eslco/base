@@ -1290,49 +1290,49 @@
         "tag": "geosite-xhs",
         "type": "remote",
         "format": "source",
-        "url": "https://ecos.dpdns.org/github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-xiaohongshu.json",
+        "url": "https://gh.xmly.dev/https://github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-xiaohongshu.json",
         "download_detour": "Direct"
       },
       {
         "tag": "geosite-dex",
         "type": "remote",
         "format": "source",
-        "url": "https://ecos.dpdns.org/github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-dex.json",
+        "url": "https://gh.xmly.dev/https://github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-dex.json",
         "download_detour": "Direct"
       },
       {
         "tag": "geosite-ai",
         "type": "remote",
         "format": "binary",
-        "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/category-ai-!cn.srs",
+        "url": "https://gh.xmly.dev/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/category-ai-!cn.srs",
         "download_detour": "Direct"
       },
       {
         "tag": "geosite-youtube",
         "type": "remote",
         "format": "binary",
-        "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/youtube.srs",
+        "url": "https://gh.xmly.dev/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/youtube.srs",
         "download_detour": "Direct"
       },
       {
         "tag": "geosite-wechat",
         "type": "remote",
         "format": "binary",
-        "url": "https://ecos.dpdns.org/github.com/Toperlock/sing-box-geosite/raw/main/rule/WeChat.srs",
+        "url": "https://gh.xmly.dev/https://github.com/Toperlock/sing-box-geosite/raw/main/rule/WeChat.srs",
         "download_detour": "Direct"
       },
       {
         "tag": "geosite-spotify",
         "type": "remote",
         "format": "binary",
-        "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/spotify.srs",
+        "url": "https://gh.xmly.dev/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/spotify.srs",
         "download_detour": "Direct"
       },
       {
         "tag": "geosite-netease-music",
         "type": "remote",
         "format": "binary",
-        "url": "https://ecos.dpdns.org/github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/netease.srs",
+        "url": "https://gh.xmly.dev/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/netease.srs",
         "download_detour": "Direct"
       },
       {
