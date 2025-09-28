@@ -1,0 +1,51 @@
+{
+    "servers": [
+        {
+            "tag": "dns-resolver",
+            "address": "101.102.103.104",
+            "detour": "direct"
+        },
+        {
+            "tag": "dns_proxy",
+            "address": "https://public.dns.iij.jp/dns-query",
+            "address_resolver": "dns-resolver",
+            "strategy": "ipv4_only",
+            "detour": "proxy"
+        },
+        {
+            "tag": "dns_direct",
+            "address": "https://120.53.53.53/dns-query",
+            "address_resolver": "dns-resolver",
+            "strategy": "ipv4_only",
+            "detour": "direct"
+        },
+        {
+            "tag": "dns_block",
+            "address": "rcode://success"
+        }
+    ],
+    "rules": [
+        {
+            "rule_set": [
+                "geosite-geolocation-!cn"
+            ],
+            "server": "dns_proxy"
+        },
+        {
+            "outbound": "any",
+            "server": "dns_direct"
+        },
+        {
+            "rule_set": [
+                "geosite-category-ads-all"
+            ],
+            "server": "dns_block",
+            "query_type": [
+                "A",
+                "AAAA"
+            ]
+        }
+    ],
+    "final": "dns_proxy",
+    "strategy": "ipv4_only"
+}
