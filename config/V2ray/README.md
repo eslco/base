@@ -1,7 +1,11 @@
-# This is a Dir of V2ray Repo storages.
+# This is a Dir of V2ray Repo storages
 
-## Disclaimer 
-  - Just for test and study usages only. Do not share with others plz!
+## Disclaimer
+
+- Just for test and study usages only. Do not share with others plz!
+
   > Test template and related config files. Uploaded by author eslco.
-## License 
-  - CC BY 4.0 LICENCE
+  >
+## License
+
+- CC BY 4.0 LICENCE

@@ -1100,10 +1100,6 @@
       },
       {
         "rule_set": "tencent-games-cn",
-        "outbound": "🎯 大陆直连"
-      },
-      {
-        "rule_set": "tencent-games-!cn",
         "outbound": "🎮 Games"
       },
       {
@@ -1469,17 +1465,10 @@
         "download_detour": "Direct"
       },
       {
-        "tag": "tencent-games-!cn",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://gh.xmly.dev/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/tencent-games@!cn.srs",
-        "download_detour": "Direct"
-      },
-      {
         "tag": "tencent-games-cn",
         "type": "remote",
         "format": "binary",
-        "url": "https://gh.xmly.dev/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/tencent-games@cn.srs",
+        "url": "https://gh.xmly.dev/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/tencent-games.srs",
         "download_detour": "Direct"
       },
       {
