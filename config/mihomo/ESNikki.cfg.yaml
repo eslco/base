@@ -386,7 +386,7 @@ rules:
   - RULE-SET,supercell_domain,🎮 Games
   - RULE-SET,category-games-cn,🎯 DirectN
   - RULE-SET,category-games-!cn,🎮 Games
-  - RULE-SET,tencent-games-!cn,🎮 Games
+  - RULE-SET,tencent-games,🎮 Games
   # Download Games
   - RULE-SET,category-android-app,🚀 Proxy
   - RULE-SET,category-game-platforms-download-cn,🎯 DirectN
