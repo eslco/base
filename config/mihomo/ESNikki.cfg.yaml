@@ -56,10 +56,10 @@ tcp-concurrent: true
 log-level: warning
 
 # 控制面板 External Monitor # 配置 WEB UI 目录，使用 http://{{external-controller}}/ui 访问
-external-controller: "0.0.0.0:9090"
+external-controller: "[::]:9090"
 secret: ""
-external-ui: ui
-external-ui-name: zash
+external-ui: "ui"
+external-ui-name: "zash"
 external-ui-url: "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/gh-pages.zip"
 
 #### ---- Geo Data ---- ####
@@ -90,7 +90,7 @@ geo-update-interval: 48
 # strict 默认，由 Clash 判断是否开启
 # off 不匹配进程，推荐在路由器上使用此模式
 find-process-mode: "off"
-# interface-name: en0
+interface-name: en0
 # global-client-fingerprint: chrome
 keep-alive-idle: 600
 keep-alive-interval: 15
@@ -168,7 +168,7 @@ tun:
 # DNS Module
 dns:
   enable: true
-  listen: 0.0.0.0:1053
+  listen: "[::]:1053"
   ipv6: false
     # DOH 优先使用 http/3，true / false，建议设置为 true
   prefer-h3: false
@@ -203,14 +203,13 @@ dns:
   default-nameserver: # *tw_dns
     - 223.6.6.6
     - 119.29.29.29
-
   # Proxy 代理 DNS 服务器
   proxy-server-nameserver: # *global_dns
     - https://8.8.4.4/dns-query
     - https://1.0.0.2/dns-query
   # namesever尽量用运营商提供的DNS
   nameserver: # *tw_dns
-    - 114.114.114.114
+    - 223.6.6.6
   fallback: # *back_dns
     - 1.0.0.2
     - 1.0.0.3
