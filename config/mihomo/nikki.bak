@@ -148,8 +148,8 @@ config hosts
 config nameserver
 	option enabled '1'
 	option type 'default-nameserver'
-	list nameserver '168.95.1.1'
-	list nameserver '168.95.192.1'
+	list nameserver '119.29.29.29'
+	list nameserver '223.6.6.6'
 config nameserver
 	option enabled '1'
 	option type 'nameserver'
@@ -176,7 +176,7 @@ config nameserver_policy
 config nameserver_policy
 	option enabled '1'
 	option matcher 'geosite:geolocation-!cn'
-	list nameserver 'https://public.dns.iij.jp/dns-query'
+	list nameserver 'https://8.8.4.4/dns-query'
 	list nameserver 'https://1.0.0.2/dns-query'
 
 config sniff
