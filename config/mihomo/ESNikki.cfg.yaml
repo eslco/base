@@ -2,7 +2,7 @@
 # 注意规则在满足自己需求情况下，尽量做到精简，不要过度复杂，以免影响性能。
 # Sub订阅
 proxy-providers:
-  Sub1:
+  ESUB+:
     type: http
     url: "https://sub.example.com/sub?token=XXX&clash"
     interval: 86400
@@ -225,8 +225,8 @@ DNS_Definition:
 
 # 锚点引用 Anthor: Mihomo
 # 注意锚点必须放在引用的上方， 也可以集中把锚点全部放.yaml顶部
-PR: &pr {type: select, proxies: [ 🚀 Proxy, ☑️ Manual, Direct, Reject, 🔯 JP Back, 🔯 HK Back, ♻️ JP Auto, ♻️ HK Auto, 🇦🇺 AU, 🇬🇧 GB, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US]} # 🇭🇰 HK, 🇯🇵 JP
-CN: &cn {type: select, proxies: [ 🚀 Proxy, ☑️ Manual, Direct, Reject, 🔯 JP Back, 🔯 HK Back, 🇦🇺 AU, 🇬🇧 GB, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US]}
+PR: &pr {type: select, proxies: [ 🚀 Proxy, ☑️ Manual, Direct, Reject, 🇯🇵 JP, 🇭🇰 HK, ♻️ JP Auto, ♻️ HK Auto, 🇦🇺 AU, 🇬🇧 GB, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US]} # 🇭🇰 HK, 🇯🇵 JP
+CN: &cn {type: select, proxies: [ 🚀 Proxy, ☑️ Manual, Direct, Reject, 🇯🇵 JP, 🇭🇰 HK, 🇦🇺 AU, 🇬🇧 GB, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US]}
 # QUIC 流量策略 默认使用 REJECT
 QUIC: &quic {type: select, proxies: [ Direct, 🚀 Proxy, ☑️ Manual, 🎮 Games, 📕 XHS RedNote, Reject ]}
 
@@ -235,15 +235,17 @@ QUIC: &quic {type: select, proxies: [ Direct, 🚀 Proxy, ☑️ Manual, 🎮 Ga
 # (Must be unique for each group, otherwise it will not work) 🇭🇰 HK, 🇯🇵 JP
 proxy-groups:
   - {name: 🚀 Proxy, type: select, proxies: [ ☑️ Manual, 🇯🇵 JP, 🇭🇰 HK, ♻️ JP Auto, ♻️ HK Auto, 🇦🇺 AU, 🇬🇧 GB, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US, Direct]}
-  - {name: ☑️ Manual, type: select, include-all: true, proxies: [🇯🇵 JP, Reject, Direct,  🇭🇰 HK, 🇦🇺 AU, 🇬🇧 GB, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US]}
+  - {name: ☑️ Manual, type: select, include-all: true, proxies: [🇯🇵 JP, Reject, Direct,  🇭🇰 HK, 🇦🇺 AU, 🇬🇧 GB, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US], filter: "^((?!(免费|官网|到期|群组|建议|加入|Expired)).)*$"}
+  - { name: 🎯 DirectN, <<: *cn }  
   - { name: 🔯 AI, <<: *pr }
+  - { name: 📹 YouTube, <<: *pr }  
   - { name: 🎵 Spotify, <<: *pr }
   - { name: 📕 XHS RedNote, <<: *cn }
+  - { name: 🎵 Netease Music, <<: *cn }
+  - { name: 📺 Bilibili, <<: *cn }  
   - { name: 💫 QUIC, <<: *quic }
   - { name: 💫 DNSQ, <<: *quic }
   - { name: 👨🏿‍💻 GitHub, <<: *pr }
-  - { name: 📹 YouTube, <<: *pr }
-  - { name: 📺 Bilibili, <<: *cn }
   - { name: 🎥 ProxyMedia, <<: *pr }
   - { name: 🍀 Google, <<: *pr }
   - { name: 💶 PayPal, <<: *pr }
@@ -255,12 +257,11 @@ proxy-groups:
   - { name: 📊 EMarket, <<: *pr }
   - { name: 🎵 TikTok, <<: *pr }
   - { name: 📺 IPTV Global, <<: *pr }
-  - { name: 🎵 Netease Music, <<: *cn }
   - { name: ☎️ Telegram, <<: *pr }
   - {name: 🇭🇰 HK, type: select, include-all: true, filter: "(?=.*(🇭🇰|HK|(?i)🇭🇰|HK|港|hong|Hong|HKG|Central|Kowloon|观塘|中环))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|🇯🇵|JP|日|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
   - {name: 🇯🇵 JP, type: select, include-all: true, filter: "(?=.*(🇯🇵|JP|(?i)🇯🇵|JP|日|Japan|Tokyo|Osaka|NRT|KIX|NGO|CTS|FUK|东京|大阪|[^-]日))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
-  - {name: ♻️ HK Auto, type: url-test, include-all: true, filter: "(?=.*(🇭🇰|HK|(?i)🇭🇰|HK|港|hong|Hong|HKG|Central|Kowloon|观塘|中环))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|🇯🇵|JP|日|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
-  - {name: ♻️ JP Auto, type: url-test, include-all: true, filter: "(?=.*(🇯🇵|JP|(?i)🇯🇵|JP|日|Japan|Tokyo|Osaka|NRT|KIX|NGO|CTS|FUK|东京|大阪|[^-]日))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
+  - {name: ♻️ HK Auto, type: url-test, include-all: true, tolerance: 20, interval: 300, url: https://www.gstatic.com/generate_204, filter: "(?=.*(🇭🇰|HK|(?i)🇭🇰|HK|港|hong|Hong|HKG|Central|Kowloon|观塘|中环))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|🇯🇵|JP|日|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
+  - {name: ♻️ JP Auto, type: url-test, include-all: true, tolerance: 20, interval: 300, url: https://www.gstatic.com/generate_204, filter: "(?=.*(🇯🇵|JP|(?i)🇯🇵|JP|日|Japan|Tokyo|Osaka|NRT|KIX|NGO|CTS|FUK|东京|大阪))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
   - {name: 🇦🇺 AU, type: select, include-all: true, filter: "🇦🇺|aus|Aus|澳|悉尼|墨尔本|Sydney|Perth|Adelaide|DRW|SYD|MEL|BNE|CBR|PER|ADL"}
   - {name: 🇬🇧 GB, type: select, include-all: true, filter: "(?i)🇬🇧|GB|UK|Britain|英国|伦敦|London|LON|MAN|BHX|LBA"}
   # - {name: 🇭🇰 HK, type: select, include-all: true, filter: "(?i)🇭🇰|HK|港|hong|Hong|HKG|Central|Kowloon|观塘|中环"}
@@ -274,7 +275,6 @@ proxy-groups:
   - { name: ✈️ Speedtest, <<: *pr }
   - { name: Ⓜ️ Microsoft, <<: *pr }
   - { name: 🍎 Apple, <<: *pr }
-  - { name: 🎯 DirectN, <<: *cn }
   - { name: 🐟 Final, <<: *pr }
 # 規則匹配
 # 此規則尚未作DNS防泄漏處理，because of the (弊大於利) CON is more than benefit
