@@ -22,7 +22,7 @@
   "config/speedtest-mode": "dashboard",
   "config/swipe-in-tabs": "false",
   "config/min-proxy-card-width": "145",
-  "config/proxy-preview-type": "auto",
+  "config/proxy-preview-type": "dots",
   "config/import-settings-url": "./zashboard-settings.json",
   "config/use-smart-group-sort": "false",
   "config/table-width-mode": "auto",
