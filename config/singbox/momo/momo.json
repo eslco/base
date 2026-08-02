@@ -803,6 +803,8 @@
       "type": "selector",
       "outbounds": [
         "🚀 Proxy",
+        "☑️ Manual",
+        "🎯 DirectN",
         "🧠 AI",
         "🔴 YouTube",
         "🍀 Google",
@@ -825,9 +827,7 @@
         "🇸🇬 SG",
         "🇹🇼 TW",
         "🇺🇸 US",
-        "☑️ Manual",
-        "♻️ Auto",
-        "🎯 DirectN"
+        "♻️ Auto"
       ]
     },
     {
