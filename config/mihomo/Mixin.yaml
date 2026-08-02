@@ -31,14 +31,14 @@
 DNS_Definition:
    # 锚点引用
   CN_DNS : &cn_dns
-   - 120.53.53.53
+   - 1.1.8.8
    - 223.6.6.6
   TW_DNS : &tw_dns
    - 168.95.192.1
    - 168.95.1.1
   PR_DNS : &pr_dns
-   - 114.114.114.114
-   - 101.102.103.104
+   - 1.0.0.1
+   - 8.8.4.4
 
   Global_dns : &global_dns
    - https://public.dns.iij.jp/dns-query
@@ -58,6 +58,6 @@ DNS_Definition:
 # 控制面板 External Monitor #
 external-controller: "0.0.0.0:9090"
 secret: ""
-external-ui: ui
-external-ui-name: zashboard
-external-ui-url: "https://ecos.dpdns.org/https://github.com/Zephyruso/zashboard/archive/gh-pages.zip"
+external-ui: "ui"
+external-ui-name: "zashboard"
+external-ui-url: "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/gh-pages.zip"
