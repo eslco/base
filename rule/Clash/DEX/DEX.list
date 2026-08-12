@@ -33,6 +33,9 @@ DOMAIN-SUFFIX,www.bmwweb.net
 
 
 # OKX
+# 2026-08-12 20:42:00 LIVE Streaming OKX
+DOMAIN-SUFFIX,livepull.okx.ac
+
 DOMAIN-SUFFIX,okx.com
 DOMAIN-SUFFIX,okex.com
 DOMAIN-SUFFIX,ouyicn.vip

@@ -3,8 +3,14 @@
 # Time : 2023 0202 15:34 PM 
 DOMAIN-SUFFIX,binance.com
 DOMAIN-SUFFIX,binance.cloud
+
+DOMAIN-SUFFIX,okx.io
+DOMAIN-SUFFIX,okx.be
 DOMAIN-SUFFIX,okex.com
+DOMAIN-SUFFIX,okx.ac
 DOMAIN-SUFFIX,okx.com
+DOMAIN-SUFFIX,wspri.okx.com.cdn.cloudflare.net
+
 DOMAIN-SUFFIX,huobi.com
 DOMAIN-SUFFIX,debank.com
 DOMAIN-SUFFIX,zks.org
