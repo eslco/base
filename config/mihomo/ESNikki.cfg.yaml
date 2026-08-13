@@ -236,7 +236,7 @@ QUIC: &quic {type: select, proxies: [  Reject, Direct, 🚀 Proxy, ☑️ Manual
 # (Must be unique for each group, otherwise it will not work) 🇭🇰 HK, 🇯🇵 JP
 proxy-groups:
   - {name: 🚀 Proxy, type: select, proxies: [ 🔯 JP Back, 🔯 HK Back, ☑️ Manual, ♻️ JP Auto, ♻️ HK Auto, 🇦🇺 AU, 🇬🇧 GB, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US, Direct]}
-  - {name: ☑️ Manual, type: select, include-all: true, proxies: [ 🔯 JP Back, 🔯 HK Back, Reject, Direct, 🇦🇺 AU, 🇬🇧 GB, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US], filter: "^((?!(免费|官网|到期|群组|建议|加入|Expired)).)*$"}
+  - {name: ☑️ Manual, type: select, include-all: true, proxies: [ 🔯 JP Back, 🔯 HK Back, Reject, Direct, 🇦🇺 AU, 🇬🇧 GB, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US], filter: "^((?!(免费|试用|官网|机场|代理|重置|节点|流量|地址|过期|时间|有效|剩余|套餐|到期|群组|建议|加入|Expired|Traffic)).)*$"}
   - { name: 🎯 DirectN, <<: *cn }
   - { name: 🔯 AI, <<: *pr }
   - { name: 📹 YouTube, <<: *pr }  
