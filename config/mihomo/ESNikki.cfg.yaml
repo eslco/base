@@ -388,7 +388,7 @@ rules:
   - RULE-SET,private_domain,Direct
   # GFW
   - RULE-SET,gfw_domain,🚀 Proxy
-  - RULE-SET,geolocation-!cn,🚀 Proxy
+  # - RULE-SET,geolocation-!cn,🚀 Proxy
   # - RULE-SET,cn_domain,🎯 DirectN
   - RULE-SET,google_ip,🍀 Google,no-resolve
   - RULE-SET,netflix_ip,🎥 ProxyMedia,no-resolve
@@ -524,7 +524,7 @@ rule-providers:
   speedtest_domain: { <<: *domain, url: "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/ookla-speedtest.mrs"} 
   tiktok_domain: { <<: *domain, url: "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/tiktok.mrs"}
   gfw_domain: { <<: *domain, url: "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/gfw.mrs"}
-  geolocation-!cn: { <<: *domain, url: "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/geolocation-!cn.mrs"}
+  # geolocation-!cn: { <<: *domain, url: "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/geolocation-!cn.mrs"}
   # cn_domain: { <<: *domain, url: "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/cn.mrs"}
  # GeoIP  
   cn_ip: { <<: *ip, url: "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geoip/cn.mrs"}
