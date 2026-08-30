@@ -299,7 +299,7 @@ rules:
   - RULE-SET,twitch_reject,Reject
   - RULE-SET,apple_domain,🍎 Apple
   # Talkatone
-  - RULE-SET,ttdirect,Direct
+  # - RULE-SET,ttdirect,Direct
   - RULE-SET,ttproxy,🔯 AI
   # DEX
   - RULE-SET,dex_domain,☕ DEX
@@ -475,7 +475,7 @@ rule-providers:
   linkedin: { <<: *domain, url: "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/linkedin.mrs"}
   linkedin_cn: { <<: *domain, url: "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/linkedin@cn.mrs"}
   # Talkatone
-  ttdirect: { <<: *class, url: "https://gh-proxy.com/https://github.com/eslco/base/raw/main/rule/Clash/Talkatone/ttdirect.list"}
+  # ttdirect: { <<: *class, url: "https://gh-proxy.com/https://github.com/eslco/base/raw/main/rule/Clash/Talkatone/ttdirect.list"}
   ttproxy: { <<: *class, url: "https://gh-proxy.com/https://github.com/eslco/base/raw/main/rule/Clash/Talkatone/ttproxy.list"}
   # TikTok
   tiktok_list: { <<: *class, url: "https://gh-proxy.com/https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/TikTok/TikTok.list"}
