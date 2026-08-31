@@ -15,7 +15,7 @@ proxy-providers:
     health-check:
       enable: true
       url: https://www.apple.com/library/test/success.html
-      interval: 300
+      interval: 7200
     override: # 覆写节点加载时的一些配置项
       skip-cert-verify: true
       udp: true
@@ -150,7 +150,7 @@ tun:
   mtu: 1500
   # 启用通用分段卸载，仅支持 Linux
   gso: true
-  # UDP NAT 过期时间，以秒为单位，默认为 300(5 分钟) 设置为2小时 2x 3600s
+  # UDP NAT 过期时间，以秒为单位，默认为 1440(5 分钟) 设置为2小时 2x 3600s
   udp-timeout: 7200
 
 # DNS Module
@@ -258,10 +258,10 @@ proxy-groups:
   - { name: 🎵 TikTok, <<: *pr }
   - { name: 📺 IPTV Global, <<: *pr }
   - { name: ☎️ Telegram, <<: *pr }
-  - {name: 🔯 HK Back, type: fallback, include-all: true, tolerance: 20, interval: 300, url: http://cp.cloudflare.com/generate_204, filter: "(?=.*(🇭🇰|HK|(?i)🇭🇰|HK|港|hong|Hong|HKG|Central|Kowloon|观塘|中环))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|🇯🇵|JP|日|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
-  - {name: 🔯 JP Back, type: fallback, include-all: true, tolerance: 20, interval: 300, url: http://cp.cloudflare.com/generate_204, filter: "(?=.*(🇯🇵|JP|(?i)🇯🇵|JP|日|Japan|Tokyo|Osaka|NRT|KIX|NGO|CTS|FUK|东京|大阪|[^-]日))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
-  - {name: ♻️ HK Auto, type: url-test, include-all: true, tolerance: 20, interval: 300, url: https://www.gstatic.com/generate_204, filter: "(?=.*(🇭🇰|HK|(?i)🇭🇰|HK|港|hong|Hong|HKG|Central|Kowloon|观塘|中环))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|🇯🇵|JP|日|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
-  - {name: ♻️ JP Auto, type: url-test, include-all: true, tolerance: 20, interval: 300, url: https://www.gstatic.com/generate_204, filter: "(?=.*(🇯🇵|JP|(?i)🇯🇵|JP|日|Japan|Tokyo|Osaka|NRT|KIX|NGO|CTS|FUK|东京|大阪))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
+  - {name: 🔯 HK Back, type: fallback, include-all: true, tolerance: 20, interval: 1440, url: http://cp.cloudflare.com/generate_204, filter: "(?=.*(🇭🇰|HK|(?i)🇭🇰|HK|港|hong|Hong|HKG|Central|Kowloon|观塘|中环))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|🇯🇵|JP|日|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
+  - {name: 🔯 JP Back, type: fallback, include-all: true, tolerance: 20, interval: 1440, url: http://cp.cloudflare.com/generate_204, filter: "(?=.*(🇯🇵|JP|(?i)🇯🇵|JP|日|Japan|Tokyo|Osaka|NRT|KIX|NGO|CTS|FUK|东京|大阪|[^-]日))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
+  - {name: ♻️ HK Auto, type: url-test, include-all: true, tolerance: 20, interval: 1440, url: https://www.gstatic.com/generate_204, filter: "(?=.*(🇭🇰|HK|(?i)🇭🇰|HK|港|hong|Hong|HKG|Central|Kowloon|观塘|中环))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|🇯🇵|JP|日|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
+  - {name: ♻️ JP Auto, type: url-test, include-all: true, tolerance: 20, interval: 1440, url: https://www.gstatic.com/generate_204, filter: "(?=.*(🇯🇵|JP|(?i)🇯🇵|JP|日|Japan|Tokyo|Osaka|NRT|KIX|NGO|CTS|FUK|东京|大阪))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
   - {name: 🇦🇺 AU, type: select, include-all: true, filter: "🇦🇺|aus|Aus|澳|悉尼|墨尔本|Sydney|Perth|Adelaide|DRW|SYD|MEL|BNE|CBR|PER|ADL"}
   - {name: 🇬🇧 GB, type: select, include-all: true, filter: "(?i)🇬🇧|GB|UK|Britain|英国|伦敦|London|LON|MAN|BHX|LBA"}
   # - {name: 🇭🇰 HK, type: select, include-all: true, filter: "(?i)🇭🇰|HK|港|hong|Hong|HKG|Central|Kowloon|观塘|中环"}
@@ -270,7 +270,7 @@ proxy-groups:
   - {name: 🇸🇬 SG, type: select, include-all: true, filter: "(?i)🇸🇬|SG|狮城|Singapore|Changi|Woodlands|SIN|XSP|樟宜"}
   - {name: 🇹🇼 TW, type: select, include-all: true, filter: "(?i)🇹🇼|TW|taiwan|台|臺灣|新北|彰化|桃園|台中|高雄|Taipei|Taichung|TPE|KHH|TSA"}
   - {name: 🇺🇸 US, type: select, include-all: true, filter: "🇺🇸|US|美|United States|San Jose|Portland|Dallas|Phoenix|Las Vegas|Angeles|Seattle|Chicago|New York|Atlanta|ATL|BUF|DFW|EWR|IAD|LAX|MCI|MIA|ORD|PHX|PDX|SEA|SJC|JFK|LGA"}
-  - {name: ♻️ Auto, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(Direct)).)*$"}
+  - {name: ♻️ Auto, type: url-test, include-all: true, tolerance: 20, interval: 1440, filter: "^((?!(Direct)).)*$"}
   # - {name: 🐬 OneDrive, <<: *pr}
   - { name: ✈️ Speedtest, <<: *pr }
   - { name: Ⓜ️ Microsoft, <<: *pr }
