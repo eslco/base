@@ -53,8 +53,8 @@ DOMAIN-SUFFIX,jpushws.okx.com
 # DOMAIN-SUFFIX,wsdexpri.ouyich.biz
 # DOMAIN-SUFFIX,wsdexpri.ouyich.show
 # DOMAIN-SUFFIX,wspri.okx.com
-DOMAIN-SUFFIX,wspri.ouyich.biz
-DOMAIN-SUFFIX,wspri.ouyich.show
+# DOMAIN-SUFFIX,wspri.ouyich.biz
+# DOMAIN-SUFFIX,wspri.ouyich.show
 DOMAIN-SUFFIX,web3.okx.com
 DOMAIN-SUFFIX,aws.okx.com
 DOMAIN-SUFFIX,cdn.okx.com
