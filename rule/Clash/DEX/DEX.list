@@ -34,12 +34,11 @@ DOMAIN-SUFFIX,www.bmwweb.net
 
 # OKX Livestreaming
 # 2026-09-07 19:52:00 Streaming OKX
-# DOMAIN-SUFFIX,wsdexpri.okx.com
 # DOMAIN-SUFFIX,livepull.okx.ac
 # DOMAIN-SUFFIX,livepull.okx.com
-# DOMAIN-SUFFIX,wspri.okx.com.cdn.cloudflare.net
+# DOMAIN-SUFFIX,wsdexpri.okx.com
+# DOMAIN-SUFFIX,wsdexpri.okx.com.cdn.cloudflare.net
 # DOMAIN,www.okx.com
-
 DOMAIN-SUFFIX,okex.com
 DOMAIN-SUFFIX,ouyicn.vip
 DOMAIN-SUFFIX,api.okx.com
