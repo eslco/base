@@ -192,7 +192,7 @@ DOMAIN-SUFFIX,tvb.com
 DOMAIN-SUFFIX,naver.com
 DOMAIN-SUFFIX,smartmediarep.com
 
-# > Netflix
+# > Netflix Disabled
 # USER-AGENT,Argo*
 # DOMAIN-SUFFIX,netflix.com
 # DOMAIN-SUFFIX,netflix.net
@@ -277,12 +277,12 @@ DOMAIN,d2anahhhmp1ffz.cloudfront.net
 DOMAIN,dfp6rglgjqszk.cloudfront.net
 # > TikTok
 # # USER-AGENT,TikTok*
-# DOMAIN-SUFFIX,byteoversea.com
-# DOMAIN-SUFFIX,ibytedtos.com
-# DOMAIN-SUFFIX,muscdn.com
-# DOMAIN-SUFFIX,musical.ly
-# DOMAIN-SUFFIX,tiktok.com
-# DOMAIN-SUFFIX,tik-tokapi.com
-# DOMAIN-SUFFIX,tiktokcdn.com
-# DOMAIN-SUFFIX,tiktokv.com
-# DOMAIN-KEYWORD,-tiktokcdn-com
+DOMAIN-SUFFIX,byteoversea.com
+DOMAIN-SUFFIX,ibytedtos.com
+DOMAIN-SUFFIX,muscdn.com
+DOMAIN-SUFFIX,musical.ly
+DOMAIN-SUFFIX,tiktok.com
+DOMAIN-SUFFIX,tik-tokapi.com
+DOMAIN-SUFFIX,tiktokcdn.com
+DOMAIN-SUFFIX,tiktokv.com
+DOMAIN-KEYWORD,-tiktokcdn-com
