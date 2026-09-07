@@ -33,10 +33,12 @@ DOMAIN-SUFFIX,binance.com
 
 # OKX
 DOMAIN,www.okx.com
-DOMAIN-SUFFIX,okx.com
-DOMAIN-SUFFIX,wspri.okx.com.cdn.cloudflare.net
-DOMAIN-SUFFIX,wspri.okx.com
-DOMAIN-SUFFIX,wsdexpri.okx.com
+# OKX Livestreaming
+# 2026-08-12 20:42:00 LIVE Streaming OKX
+# DOMAIN-SUFFIX,wsdexpri.okx.com
+# DOMAIN-SUFFIX,livepull.okx.ac
+# DOMAIN-SUFFIX,livepull.okx.com
+# DOMAIN-SUFFIX,wspri.okx.com.cdn.cloudflare.net
 DOMAIN-SUFFIX,wspri.ouyich.biz
 DOMAIN-SUFFIX,wsdexpri.ouyich.biz
 DOMAIN-SUFFIX,wsdexpri.ouyich.show
