@@ -1,0 +1,19 @@
+# Rule Name: DEXLive.list
+# Created: 2026-09-07 20:07:00
+# https://www.github.com/eslco/base/raw/rule/Clash/Streaming/DEXLive.list
+
+
+# Binance Livestreaming
+DOMAIN-SUFFIX,fstream.binance.com
+DOMAIN-SUFFIX,nbstream.binance.com
+
+# OKX Livestreaming
+# 2026-08-12 20:42:00 LIVE Streaming OKX
+DOMAIN-SUFFIX,wsdexpri.okx.com
+DOMAIN-SUFFIX,livepull.okx.ac
+DOMAIN-SUFFIX,livepull.okx.com
+DOMAIN-SUFFIX,wspri.okx.com.cdn.cloudflare.net
+DOMAIN,www.okx.com
+
+# Gate.io Livestreaming
+DOMAIN-SUFFIX,https://www.gate.com

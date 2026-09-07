@@ -32,11 +32,16 @@ DOMAIN-SUFFIX,api.binance.com
 DOMAIN-SUFFIX,www.bmwweb.net
 
 
-# OKX
-# 2026-08-12 20:42:00 LIVE Streaming OKX
-DOMAIN-SUFFIX,livepull.okx.ac
+# OKX Livestreaming
+# 2026-09-07 19:52:00 Streaming OKX
+# DOMAIN-SUFFIX,wsdexpri.okx.com
+# DOMAIN-SUFFIX,livepull.okx.ac
+# DOMAIN-SUFFIX,livepull.okx.com
+# DOMAIN-SUFFIX,wspri.okx.com.cdn.cloudflare.net
+# DOMAIN,www.okx.com
 
-DOMAIN-SUFFIX,okx.com
+
+DOMAIN,www.okx.com
 DOMAIN-SUFFIX,okex.com
 DOMAIN-SUFFIX,ouyicn.vip
 DOMAIN-SUFFIX,api.okx.com
@@ -45,13 +50,11 @@ DOMAIN-SUFFIX,app.okx.com
 DOMAIN-SUFFIX,okz8.com
 DOMAIN-SUFFIX,okz8.me
 DOMAIN-SUFFIX,tashuo.cc
-DOMAIN-SUFFIX,68bbq.com
 DOMAIN-SUFFIX,jpushws.okx.com
 DOMAIN-SUFFIX,wsdexpri.okx.com
 DOMAIN-SUFFIX,wsdexpri.ouyich.biz
 DOMAIN-SUFFIX,wsdexpri.ouyich.show
 DOMAIN-SUFFIX,wspri.okx.com
-DOMAIN-SUFFIX,wspri.okx.com.cdn.cloudflare.net
 DOMAIN-SUFFIX,wspri.ouyich.biz
 DOMAIN-SUFFIX,wspri.ouyich.show
 DOMAIN-SUFFIX,web3.okx.com
