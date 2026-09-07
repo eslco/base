@@ -40,8 +40,6 @@ DOMAIN-SUFFIX,www.bmwweb.net
 # DOMAIN-SUFFIX,wspri.okx.com.cdn.cloudflare.net
 # DOMAIN,www.okx.com
 
-
-DOMAIN,www.okx.com
 DOMAIN-SUFFIX,okex.com
 DOMAIN-SUFFIX,ouyicn.vip
 DOMAIN-SUFFIX,api.okx.com
@@ -51,9 +49,9 @@ DOMAIN-SUFFIX,okz8.com
 DOMAIN-SUFFIX,okz8.me
 DOMAIN-SUFFIX,tashuo.cc
 DOMAIN-SUFFIX,jpushws.okx.com
-DOMAIN-SUFFIX,wsdexpri.okx.com
-DOMAIN-SUFFIX,wsdexpri.ouyich.biz
-DOMAIN-SUFFIX,wsdexpri.ouyich.show
+# DOMAIN-SUFFIX,wsdexpri.okx.com
+# DOMAIN-SUFFIX,wsdexpri.ouyich.biz
+# DOMAIN-SUFFIX,wsdexpri.ouyich.show
 DOMAIN-SUFFIX,wspri.okx.com
 DOMAIN-SUFFIX,wspri.ouyich.biz
 DOMAIN-SUFFIX,wspri.ouyich.show
