@@ -2,7 +2,7 @@
 # 注意规则在满足自己需求情况下，尽量做到精简，不要过度复杂，以免影响性能。
 # Sub订阅
 proxy-providers:
-  ESUB+:
+  SUB:
     type: http
     url: "https://sub.example.com/sub?token=XXX&clash"
     interval: 86400
@@ -15,7 +15,24 @@ proxy-providers:
     health-check:
       enable: true
       url: https://www.apple.com/library/test/success.html
-      interval: 7200
+      interval: 86400
+    override: # 覆写节点加载时的一些配置项
+      skip-cert-verify: true
+      udp: true
+  SubExample:
+    type: http
+    url: "https://sub.example.com/sub?token=XXX&clash"
+    interval: 86400
+    # path: "etc/nikki/run/ESub.yaml"
+    proxy: Direct
+    header:
+      User-Agent:
+      - "clash.meta/1.18.0"
+      - "mihomo/1.19.12"
+    health-check:
+      enable: true
+      url: https://www.apple.com/library/test/success.html
+      interval: 86400
     override: # 覆写节点加载时的一些配置项
       skip-cert-verify: true
       udp: true
@@ -226,8 +243,8 @@ DNS_Definition:
 
 # 锚点引用 Anthor: Mihomo
 # 注意锚点必须放在引用的上方， 也可以集中把锚点全部放.yaml顶部
-PR: &pr {type: select, proxies: [ 🚀 Proxy, ☑️ Manual, Direct, Reject, 🇯🇵 JP Back, 🇭🇰 HK Back, ♻️ JP Auto, ♻️ HK Auto, 🇦🇺 AU, 🇬🇧 GB, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US]}
-CN: &cn {type: select, proxies: [ Direct, 🚀 Proxy, ☑️ Manual, Reject, 🇯🇵 JP Back, 🇭🇰 HK Back, 🇦🇺 AU, 🇬🇧 GB, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US]}
+PR: &pr {type: select, proxies: [ 🚀 Proxy, ☑️ Manual, Direct, Reject, 🇯🇵🇰🇷 J&K, 🇭🇰 HK Back, ♻️ JP Auto, ♻️ HK Auto, 🇦🇺 AU, 🇪🇺 EU, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US]}
+CN: &cn {type: select, proxies: [ Direct, 🚀 Proxy, ☑️ Manual, Reject, 🇯🇵🇰🇷 J&K, 🇭🇰 HK Back, 🇦🇺 AU, 🇪🇺 EU, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US]}
 # QUIC 流量策略 默认使用 REJECT
 QUIC: &quic {type: select, proxies: [  Reject, Direct, 🚀 Proxy, ☑️ Manual, 🎮 Games, 📕 XHS RedNote ]}
 
@@ -235,11 +252,11 @@ QUIC: &quic {type: select, proxies: [  Reject, Direct, 🚀 Proxy, ☑️ Manual
 # 注意: 如果有多個代理組, 必須保證每個代理組的名稱唯一, 否則將會無法切換
 # (Must be unique for each group, otherwise it will not work) 🇭🇰 HK, 🇯🇵 JP
 proxy-groups:
-  - {name: 🚀 Proxy, type: select, proxies: [ 🇯🇵 JP Back, 🇭🇰 HK Back, ☑️ Manual, ♻️ JP Auto, ♻️ HK Auto, 🇦🇺 AU, 🇬🇧 GB, 🇰🇷 KR, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US, Direct]}
-  - {name: ☑️ Manual, type: select, include-all: true, proxies: [ 🇯🇵 JP Back, 🇭🇰 HK Back, Reject, Direct, 🇦🇺 AU, 🇬🇧 GB, 🇰🇷 KR, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US], filter: "^((?!(免费|试用|官网|机场|代理|重置|节点|流量|地址|过期|时间|有效|剩余|套餐|到期|群组|建议|加入|Expired|Traffic)).)*$"}
+  - {name: 🚀 Proxy, type: select, proxies: [ 🇯🇵🇰🇷 J&K, 🇭🇰 HK Back, ☑️ Manual, ♻️ JP Auto, ♻️ HK Auto, 🇦🇺 AU, 🇪🇺 EU, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US, Direct]}
+  - {name: ☑️ Manual, type: select, include-all: true, proxies: [ 🇯🇵🇰🇷 J&K, 🇭🇰 HK Back, Reject, Direct, 🇦🇺 AU, 🇪🇺 EU, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US], filter: "^((?!(免费|试用|官网|机场|代理|重置|节点|流量|地址|过期|时间|有效|剩余|套餐|到期|群组|建议|加入|Expired|Traffic)).)*$"}
   - { name: 🎯 DirectN, <<: *cn }
   - { name: 🔯 AI, <<: *pr }
-  - { name: 📹 YouTube, <<: *pr }  
+  - { name: 📹 YouTube, <<: *pr }
   - { name: 🎵 Spotify, <<: *pr }
   - { name: 📕 XHS RedNote, <<: *cn }
   - { name: 🎵 Netease Music, <<: *cn }
@@ -247,26 +264,21 @@ proxy-groups:
   - { name: 💫 DNSQ, <<: *quic }
   - { name: 👨🏿‍💻 GitHub, <<: *pr }
   - { name: 🎥 ProxyMedia, <<: *pr }
-  - { name: 🍀 Google, <<: *pr }
-  - { name: 💶 PayPal, <<: *pr }
+  - { name: 💶 Pay&Market, <<: *pr }
   - { name: ☕ DEX, <<: *pr }
   - { name: 🎮 Games, <<: *pr }
   - { name: 📱 WhatsApp, <<: *pr }
-  - { name: 🌐 Social+, <<: *pr }
+  - { name: 🌐SocialApp+, <<: *pr }
   - { name: 📞 WeChat, <<: *pr }
-  - { name: 📊 EMarket, <<: *pr }
   - { name: 🎵 TikTok, <<: *pr }
   - { name: 🔴 Streaming, <<: *pr }
   - { name: ☎️ Telegram, <<: *pr }
   - {name: 🇭🇰 HK Back, type: fallback, include-all: true, tolerance: 20, interval: 1440, url: http://www.google-analytics.com/generate_204, filter: "(?=.*(🇭🇰|HK|(?i)🇭🇰|HK|港|hong|Hong|HKG|Central|Kowloon|观塘|中环))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|🇯🇵|JP|日|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
-  - {name: 🇯🇵 JP Back, type: fallback, include-all: true, tolerance: 20, interval: 1440, url: http://www.google-analytics.com/generate_204, filter: "(?=.*(🇯🇵|JP|(?i)🇯🇵|JP|日|Japan|Tokyo|Osaka|NRT|KIX|NGO|CTS|FUK|东京|大阪|[^-]日))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
+  - {name: 🇯🇵🇰🇷 J&K, type: fallback, include-all: true, tolerance: 20, interval: 1440, url: http://www.google-analytics.com/generate_204, filter: "(?=.*(🇯🇵|JP|🇰🇷|KR|(?i)🇯🇵|JP|日|Japan|Tokyo|Osaka|NRT|KIX|NGO|CTS|FUK|东京|大阪|日|韩|Korea|KOR|Seoul|首尔|春川|釜山|大邱|仁川|光州|大田|韩|韓|ICN))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
   - {name: ♻️ HK Auto, type: url-test, include-all: true, tolerance: 20, interval: 1440, url: https://www.gstatic.com/generate_204, filter: "(?=.*(🇭🇰|HK|(?i)🇭🇰|HK|港|hong|Hong|HKG|Central|Kowloon|观塘|中环))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|🇯🇵|JP|日|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
   - {name: ♻️ JP Auto, type: url-test, include-all: true, tolerance: 20, interval: 1440, url: https://www.gstatic.com/generate_204, filter: "(?=.*(🇯🇵|JP|(?i)🇯🇵|JP|日|Japan|Tokyo|Osaka|NRT|KIX|NGO|CTS|FUK|东京|大阪))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
-  - {name: 🇦🇺 AU, type: select, include-all: true, filter: "🇦🇺|aus|Aus|澳|悉尼|墨尔本|Sydney|Perth|Adelaide|DRW|SYD|MEL|BNE|CBR|PER|ADL"}
-  - {name: 🇬🇧 GB, type: select, include-all: true, filter: "(?i)🇬🇧|GB|UK|Britain|英国|伦敦|London|LON|MAN|BHX|LBA"}
-  # - {name: 🇭🇰 HK, type: select, include-all: true, filter: "(?i)🇭🇰|HK|港|hong|Hong|HKG|Central|Kowloon|观塘|中环"}
-  # - {name: 🇯🇵 JP, type: select, include-all: true, filter: "(?i)🇯🇵|JP|日|Japan|Tokyo|Osaka|Nagoya|Fukuoka|NRT|KIX|NGO|CTS|FUK|东京|大阪|[^-]日"}
-  - {name: 🇰🇷 KR, type: select, include-all: true, filter: "(?i)🇰🇷|KR|韩|Korea|KOR|Seoul|首尔|春川|釜山|大邱|仁川|光州|大田|韩|韓|ICN|INC"}
+  - {name: 🇦🇺 AU, type: select, include-all: true, filter: "🇦🇺|Aus|澳|悉尼|墨尔本|Sydney|Perth|Adelaide|DRW|SYD|MEL|BNE|CBR|PER|ADL"}
+  - {name: 🇪🇺 EU, type: select, include-all: true, filter: "(?i)🇪🇺|🇬🇧|🇫🇷|🇩🇪|🇪🇸|🇸🇪|🇫🇮|🇳🇱|🇮🇹|🇨🇭|EU|UK|GB|欧|英|法|德国|西班牙|瑞|芬|荷|意|伦敦|巴黎|柏林|马德里|斯德|赫尔辛基|阿姆|罗马|米兰|苏黎世|日内瓦|London|Paris|Berlin|Frankfurt|Madrid|Stockholm|Helsinki|Amsterdam|Rome|Milan|Zurich|Geneva|LHR|CDG|FRA|MAD|ARN|HEL|AMS|FCO|MXP|ZRH|GVA"}
   - {name: 🇸🇬 SG, type: select, include-all: true, filter: "(?i)🇸🇬|SG|狮城|Singapore|Changi|Woodlands|SIN|XSP|樟宜"}
   - {name: 🇹🇼 TW, type: select, include-all: true, filter: "(?i)🇹🇼|TW|taiwan|台|臺灣|新北|彰化|桃園|台中|高雄|Taipei|Taichung|TPE|KHH|TSA"}
   - {name: 🇺🇸 US, type: select, include-all: true, filter: "🇺🇸|US|美|United States|San Jose|Portland|Dallas|Phoenix|Las Vegas|Angeles|Seattle|Chicago|New York|Atlanta|ATL|BUF|DFW|EWR|IAD|LAX|MCI|MIA|ORD|PHX|PDX|SEA|SJC|JFK|LGA"}
@@ -276,6 +288,8 @@ proxy-groups:
   - { name: Ⓜ️ Microsoft, <<: *pr }
   - { name: 🍎 Apple, <<: *pr }
   - { name: 🐟 Final, <<: *pr }
+  # - {name: 🇭🇰 HK, type: select, include-all: true, filter: "(?i)🇭🇰|HK|港|hong|Hong|HKG|Central|Kowloon|观塘|中环"}
+  # - {name: 🇯🇵 JP, type: select, include-all: true, filter: "(?i)🇯🇵|JP|日|Japan|Tokyo|Osaka|Nagoya|Fukuoka|NRT|KIX|NGO|CTS|FUK|东京|大阪|[^-]日"}  
 # 規則匹配
 # 此規則尚未作DNS防泄漏處理，because of the (弊大於利) CON is more than benefit
 rules:
@@ -289,10 +303,6 @@ rules:
   - RULE-SET,wechat_list,📞 WeChat
   # DIY List
   - RULE-SET,diy_list,🚀 Proxy
-  # PayPal
-  - RULE-SET,paypal_diy,💶 PayPal
-  - RULE-SET,paypal_domain,💶 PayPal
-  - RULE-SET,speedtest_domain,✈️ Speedtest
   # ADBlock
   - RULE-SET,ttblock,Reject
   - RULE-SET,httpdns_adblock,Reject
@@ -309,15 +319,18 @@ rules:
   - RULE-SET,aide,🔯 AI
   - RULE-SET,ai,🔯 AI
   - RULE-SET,ai_domain,🔯 AI
-
   # EMarket
+    # PayPal
+  - RULE-SET,paypal_diy,💶 Pay&Market
+  - RULE-SET,paypal_domain,💶 Pay&Market
+  - RULE-SET,speedtest_domain,✈️ Speedtest
   # Amazon Alibaba Ebay Shopee JD
-  - RULE-SET,alibaba_list,📊 EMarket
-  - RULE-SET,alibaba_domain,📊 EMarket
-  - RULE-SET,amazon_domain,📊 EMarket
-  - RULE-SET,shopee_domain,📊 EMarket
-  - RULE-SET,ebay_domain,📊 EMarket
-  - RULE-SET,jd_domain,📊 EMarket
+  - RULE-SET,alibaba_list,💶 Pay&Market
+  - RULE-SET,alibaba_domain,💶 Pay&Market
+  - RULE-SET,amazon_domain,💶 Pay&Market
+  - RULE-SET,shopee_domain,💶 Pay&Market
+  - RULE-SET,ebay_domain,💶 Pay&Market
+  - RULE-SET,jd_domain,💶 Pay&Market
 
   # Bili
   - RULE-SET,bilibili,📺 Bilibili
@@ -339,12 +352,12 @@ rules:
   # LinkedIn
   - RULE-SET,linkedin,🚀 Proxy
   - RULE-SET,linkedin_cn,🎯 DirectN
-  # Social+
-  - RULE-SET,facebook_list,🌐 Social+
-  - RULE-SET,facebook_domain,🌐 Social+
-  - RULE-SET,instagram_domain,🌐 Social+
-  - RULE-SET,threads_domain,🌐 Social+
-  - RULE-SET,twitter_domain,🌐 Social+
+  #SocialApp+
+  - RULE-SET,facebook_list,🌐SocialApp+
+  - RULE-SET,facebook_domain,🌐SocialApp+
+  - RULE-SET,instagram_domain,🌐SocialApp+
+  - RULE-SET,threads_domain,🌐SocialApp+
+  - RULE-SET,twitter_domain,🌐SocialApp+
 
   # Spotify
   - RULE-SET,spotify_domain,🎵 Spotify
@@ -374,11 +387,10 @@ rules:
   - RULE-SET,category-android-app,🚀 Proxy
   - RULE-SET,category-game-platforms-download,🎮 Games
   - RULE-SET,category-game-platforms-download-cn,🎯 DirectN
-
   # Apps
   - RULE-SET,github_domain,👨🏿‍💻 GitHub
   - RULE-SET,youtube_domain,📹 YouTube
-  - RULE-SET,google_domain,🍀 Google
+  - RULE-SET,google_domain,🚀 Proxy
   - RULE-SET,onedrive_domain,Ⓜ️ Microsoft
   - RULE-SET,microsoft_domain,Ⓜ️ Microsoft
 
@@ -391,7 +403,7 @@ rules:
   - RULE-SET,gfw_domain,🚀 Proxy
   # - RULE-SET,geolocation-!cn,🚀 Proxy
   # - RULE-SET,cn_domain,🎯 DirectN
-  - RULE-SET,google_ip,🍀 Google,no-resolve
+  - RULE-SET,google_ip,🚀 Proxy
   - RULE-SET,netflix_ip,🎥 ProxyMedia,no-resolve
   - RULE-SET,telegram_ip,☎️ Telegram,no-resolve
   # 用于匹配 QUIC 流量 (只有在上规则未命中) RULE-SET 拦截
@@ -428,9 +440,6 @@ rule-providers:
   # XHS RedNote
   rednote: { <<: *class, url: "https://gh-proxy.com/https://github.com/eslco/base/raw/main/rule/general/XiaoHongShu/XiaoHongShu.list"}
   rednote_domain: { <<: *domain, url: "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/xiaohongshu.mrs"}
-  # xhs_list: { <<: *class, url: "https://gh-proxy.com/https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/XiaoHongShu/XiaoHongShu.list"}
-  # PayPal
-  paypal_diy: { <<: *class, url: "https://gh-proxy.com/https://github.com/eslco/base/raw/main/rule/Clash/PayPal/PayPal.list"}
   # DEX
   dex_domain: { <<: *class, url: "https://gh-proxy.com/https://github.com/eslco/base/raw/main/rule/Clash/DEX/DEX.list"}
   # ADBlock
@@ -456,7 +465,9 @@ rule-providers:
   # Bilibili
   bilibili: { <<: *class, url: "https://gh-proxy.com/https://github.com/eslco/base/raw/main/rule/Clash/BiliBili/BiliBili.list"}
   bilibili_global: { <<: *class, url: "https://gh-proxy.com/https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/BiliBili/BiliBili.list"}
-  # Emarket
+  # Emarket  
+    # PayPal
+  paypal_diy: { <<: *class, url: "https://gh-proxy.com/https://github.com/eslco/base/raw/main/rule/Clash/PayPal/PayPal.list"}
     # Alibaba 1688 Taobao Goofish
   alibaba_domain: { <<: *domain, url: "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/alibaba.mrs"}
   alibaba_list: { <<: *class, url: "https://gh-proxy.com/https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/Alibaba/Alibaba.list"}
@@ -468,9 +479,9 @@ rule-providers:
   ebay_domain: { <<: *domain, url: "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/ebay.mrs"}
     # JD
   jd_domain: { <<: *domain, url: "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/jd.mrs"}
-  # Streaming DEX
+  # Streaming
   dex_live: { <<: *class, url: "https://gh-proxy.com/https://github.com/eslco/base/raw/main/rule/Clash/Streaming/DEXLive.list"}
-  # IPTV
+   # IPTV
   iptv_global: { <<: *class, url: "https://gh-proxy.com/https://github.com/eslco/base/raw/main/rule/general/IPTV_Global/IPTV9.list"}
   iptv_tw: { <<: *class, url: "https://gh-proxy.com/https://github.com/eslco/base/raw/main/rule/general/IPTV_Global/IPTV9_TW.list"}
   iptv_cn: { <<: *class, url: "https://gh-proxy.com/https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/IPTVMainland/IPTVMainland.list"}
@@ -498,7 +509,7 @@ rule-providers:
   category-android-app: { <<: *domain, url: "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-android-app-download.mrs"}
   category-game-platforms-download: { <<: *domain, url: "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-game-platforms-download.mrs"}
   category-game-platforms-download-cn: { <<: *domain, url: "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/category-game-platforms-download@cn.mrs"}
-  # Social+ Apps
+  #SocialApp+ Apps
   facebook_list: { <<: *class, url: "https://gh-proxy.com/https://github.com/eslco/base/raw/main/rule/Clash/Facebook/Facebook.list"}
   facebook_domain: { <<: *domain, url: "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/facebook.mrs"}
   twitter_domain: { <<: *domain, url: "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/twitter.mrs"}
