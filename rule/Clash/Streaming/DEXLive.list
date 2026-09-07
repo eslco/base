@@ -9,6 +9,7 @@ DOMAIN-SUFFIX,nbstream.binance.com
 
 # OKX Livestreaming
 # 2026-08-12 20:42:00 OKX
+DOMAIN,jpushws.okx.com
 # LIVE Streaming
 DOMAIN,wspri.okx.com
 DOMAIN,wspri.ouyich.biz

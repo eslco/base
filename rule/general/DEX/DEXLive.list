@@ -2,28 +2,24 @@
 # Created: 2026-09-07 20:07:00
 # https://github.com/eslco/base/raw/main/general/DEX/DEXLive.list
 
-
 # Binance Livestreaming
 DOMAIN-SUFFIX,fstream.binance.com
 DOMAIN-SUFFIX,nbstream.binance.com
 
 # OKX Livestreaming
 # 2026-08-12 20:42:00 OKX
+DOMAIN,wspri.okx.com
+DOMAIN,jpushws.okx.com
+
 # LIVE Streaming
-DOMAIN-SUFFIX,livepull.heqrpq.cn
-DOMAIN-SUFFIX,livepull.roufxb.cn
-DOMAIN-SUFFIX,livepull.okx.ac
-DOMAIN-SUFFIX,livepull.okx.com
-DOMAIN-SUFFIX,wsdexpri.okx.com
-DOMAIN-SUFFIX,wsdexpri.okx.com.cdn.cloudflare.net
+DOMAIN,livepull.okx.ac
+DOMAIN,wsdexpri.okx.com
+DOMAIN,livepull.okx.com
+DOMAIN,livepull.heqrpq.cn
+DOMAIN,livepull.roufxb.cn
+DOMAIN,wsdexpri.okx.com.cdn.cloudflare.net
 DOMAIN-REGEX,^livepull\.[a-zA-Z0-9\-]+\.cn$
 DOMAIN-KEYWORD,livepull.okx
-
-# Previously included domains for OKX that are now commented out
-DOMAIN-SUFFIX,wspri.ouyich.biz
-DOMAIN-SUFFIX,wsdexpri.ouyich.biz
-DOMAIN-SUFFIX,wsdexpri.ouyich.show
-DOMAIN-SUFFIX,wspri.ouyich.show
 
 # Gate.io Livestreaming
 DOMAIN-SUFFIX,www.gate.com

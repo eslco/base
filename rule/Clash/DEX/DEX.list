@@ -48,7 +48,7 @@ DOMAIN-SUFFIX,app.okx.com
 DOMAIN-SUFFIX,okz8.com
 DOMAIN-SUFFIX,okz8.me
 DOMAIN-SUFFIX,tashuo.cc
-DOMAIN-SUFFIX,jpushws.okx.com
+# DOMAIN-SUFFIX,jpushws.okx.com
 # DOMAIN-SUFFIX,wsdexpri.okx.com
 # DOMAIN-SUFFIX,wsdexpri.ouyich.biz
 # DOMAIN-SUFFIX,wsdexpri.ouyich.show
