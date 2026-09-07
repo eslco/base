@@ -193,7 +193,7 @@ dns:
   # - 223.6.6.6
   # Proxy 代理 DNS 服务器
   proxy-server-nameserver: # *global_dns
-   - 223.5.5.5
+   - 223.6.6.6
    - 119.29.29.29
   # namesever尽量用运营商提供的DNS
   nameserver: # *tw_dns
@@ -226,8 +226,8 @@ DNS_Definition:
 
 # 锚点引用 Anthor: Mihomo
 # 注意锚点必须放在引用的上方， 也可以集中把锚点全部放.yaml顶部
-PR: &pr {type: select, proxies: [ 🚀 Proxy, ☑️ Manual, Direct, Reject, 🔯 JP Back, 🔯 HK Back, ♻️ JP Auto, ♻️ HK Auto, 🇦🇺 AU, 🇬🇧 GB, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US]}
-CN: &cn {type: select, proxies: [ Direct, 🚀 Proxy, ☑️ Manual, Reject, 🔯 JP Back, 🔯 HK Back, 🇦🇺 AU, 🇬🇧 GB, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US]}
+PR: &pr {type: select, proxies: [ 🚀 Proxy, ☑️ Manual, Direct, Reject, 🇯🇵 JP Back, 🇭🇰 HK Back, ♻️ JP Auto, ♻️ HK Auto, 🇦🇺 AU, 🇬🇧 GB, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US]}
+CN: &cn {type: select, proxies: [ Direct, 🚀 Proxy, ☑️ Manual, Reject, 🇯🇵 JP Back, 🇭🇰 HK Back, 🇦🇺 AU, 🇬🇧 GB, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US]}
 # QUIC 流量策略 默认使用 REJECT
 QUIC: &quic {type: select, proxies: [  Reject, Direct, 🚀 Proxy, ☑️ Manual, 🎮 Games, 📕 XHS RedNote ]}
 
@@ -235,8 +235,8 @@ QUIC: &quic {type: select, proxies: [  Reject, Direct, 🚀 Proxy, ☑️ Manual
 # 注意: 如果有多個代理組, 必須保證每個代理組的名稱唯一, 否則將會無法切換
 # (Must be unique for each group, otherwise it will not work) 🇭🇰 HK, 🇯🇵 JP
 proxy-groups:
-  - {name: 🚀 Proxy, type: select, proxies: [ 🔯 JP Back, 🔯 HK Back, ☑️ Manual, ♻️ JP Auto, ♻️ HK Auto, 🇦🇺 AU, 🇬🇧 GB, 🇰🇷 KR, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US, Direct]}
-  - {name: ☑️ Manual, type: select, include-all: true, proxies: [ 🔯 JP Back, 🔯 HK Back, Reject, Direct, 🇦🇺 AU, 🇬🇧 GB, 🇰🇷 KR, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US], filter: "^((?!(免费|试用|官网|机场|代理|重置|节点|流量|地址|过期|时间|有效|剩余|套餐|到期|群组|建议|加入|Expired|Traffic)).)*$"}
+  - {name: 🚀 Proxy, type: select, proxies: [ 🇯🇵 JP Back, 🇭🇰 HK Back, ☑️ Manual, ♻️ JP Auto, ♻️ HK Auto, 🇦🇺 AU, 🇬🇧 GB, 🇰🇷 KR, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US, Direct]}
+  - {name: ☑️ Manual, type: select, include-all: true, proxies: [ 🇯🇵 JP Back, 🇭🇰 HK Back, Reject, Direct, 🇦🇺 AU, 🇬🇧 GB, 🇰🇷 KR, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US], filter: "^((?!(免费|试用|官网|机场|代理|重置|节点|流量|地址|过期|时间|有效|剩余|套餐|到期|群组|建议|加入|Expired|Traffic)).)*$"}
   - { name: 🎯 DirectN, <<: *cn }
   - { name: 🔯 AI, <<: *pr }
   - { name: 📹 YouTube, <<: *pr }  
@@ -256,10 +256,10 @@ proxy-groups:
   - { name: 📞 WeChat, <<: *pr }
   - { name: 📊 EMarket, <<: *pr }
   - { name: 🎵 TikTok, <<: *pr }
-  - { name: 📺 IPTV Global, <<: *pr }
+  - { name: 🔴 Streaming, <<: *pr }
   - { name: ☎️ Telegram, <<: *pr }
-  - {name: 🔯 HK Back, type: fallback, include-all: true, tolerance: 20, interval: 1440, url: http://cp.cloudflare.com/generate_204, filter: "(?=.*(🇭🇰|HK|(?i)🇭🇰|HK|港|hong|Hong|HKG|Central|Kowloon|观塘|中环))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|🇯🇵|JP|日|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
-  - {name: 🔯 JP Back, type: fallback, include-all: true, tolerance: 20, interval: 1440, url: http://cp.cloudflare.com/generate_204, filter: "(?=.*(🇯🇵|JP|(?i)🇯🇵|JP|日|Japan|Tokyo|Osaka|NRT|KIX|NGO|CTS|FUK|东京|大阪|[^-]日))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
+  - {name: 🇭🇰 HK Back, type: fallback, include-all: true, tolerance: 20, interval: 1440, url: http://www.google-analytics.com/generate_204, filter: "(?=.*(🇭🇰|HK|(?i)🇭🇰|HK|港|hong|Hong|HKG|Central|Kowloon|观塘|中环))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|🇯🇵|JP|日|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
+  - {name: 🇯🇵 JP Back, type: fallback, include-all: true, tolerance: 20, interval: 1440, url: http://www.google-analytics.com/generate_204, filter: "(?=.*(🇯🇵|JP|(?i)🇯🇵|JP|日|Japan|Tokyo|Osaka|NRT|KIX|NGO|CTS|FUK|东京|大阪|[^-]日))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
   - {name: ♻️ HK Auto, type: url-test, include-all: true, tolerance: 20, interval: 1440, url: https://www.gstatic.com/generate_204, filter: "(?=.*(🇭🇰|HK|(?i)🇭🇰|HK|港|hong|Hong|HKG|Central|Kowloon|观塘|中环))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|🇯🇵|JP|日|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
   - {name: ♻️ JP Auto, type: url-test, include-all: true, tolerance: 20, interval: 1440, url: https://www.gstatic.com/generate_204, filter: "(?=.*(🇯🇵|JP|(?i)🇯🇵|JP|日|Japan|Tokyo|Osaka|NRT|KIX|NGO|CTS|FUK|东京|大阪))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
   - {name: 🇦🇺 AU, type: select, include-all: true, filter: "🇦🇺|aus|Aus|澳|悉尼|墨尔本|Sydney|Perth|Adelaide|DRW|SYD|MEL|BNE|CBR|PER|ADL"}
@@ -348,8 +348,9 @@ rules:
 
   # Spotify
   - RULE-SET,spotify_domain,🎵 Spotify
-  # IPTV
-  - RULE-SET,iptv_global,📺 IPTV Global
+  # IPTV & Streaming
+  - RULE-SET,dex_live,🔴 Streaming
+  - RULE-SET,iptv_global,🔴 Streaming
   - RULE-SET,iptv_cn,🎯 DirectN
   - RULE-SET,iptv_tw,🇹🇼 TW
   # TikTok
@@ -467,6 +468,8 @@ rule-providers:
   ebay_domain: { <<: *domain, url: "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/ebay.mrs"}
     # JD
   jd_domain: { <<: *domain, url: "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/meta/geo/geosite/jd.mrs"}
+  # Streaming DEX
+  dex_live: { <<: *class, url: "https://gh-proxy.com/https://github.com/eslco/base/raw/main/rule/Clash/Streaming/DEXLive.list"}
   # IPTV
   iptv_global: { <<: *class, url: "https://gh-proxy.com/https://github.com/eslco/base/raw/main/rule/general/IPTV_Global/IPTV9.list"}
   iptv_tw: { <<: *class, url: "https://gh-proxy.com/https://github.com/eslco/base/raw/main/rule/general/IPTV_Global/IPTV9_TW.list"}
