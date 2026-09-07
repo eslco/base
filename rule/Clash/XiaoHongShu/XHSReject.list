@@ -3,7 +3,6 @@
 # URL : https://github.com/eslco/base/raw/rule/Clash/XiaoHongShu/XHSReject.list
 # Modify: 2025-08-14
 
-DOMAIN,dns.alidns.com
 DOMAIN,ads-img-al.xhscdn.com
 DOMAIN,ads-img-qc.xhscdn.com
 DOMAIN,ads-video-al.xhscdn.com
