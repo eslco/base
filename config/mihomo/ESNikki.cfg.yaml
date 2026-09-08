@@ -256,22 +256,22 @@ proxy-groups:
   - {name: ☑️ Manual, type: select, include-all: true, proxies: [ 🇯🇵🇰🇷 J&K, 🇭🇰 HK Back, Reject, Direct, 🇦🇺 AU, 🇪🇺 EU, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US], filter: "^((?!(免费|试用|官网|机场|代理|重置|节点|流量|地址|过期|时间|有效|剩余|套餐|到期|群组|建议|加入|Expired|Traffic)).)*$"}
   - { name: 🎯 DirectN, <<: *cn }
   - { name: 🔯 AI, <<: *pr }
-  - { name: 🍀🔴 YouTube, <<: *pr }
+  - { name: ☕ DEX, <<: *pr }
+  - { name: 🍀Google🔴YouTube, <<: *pr }
+  - { name: 🔴 Streaming, <<: *pr }
+  - { name: 🎥 ProxyMedia, <<: *pr }
   - { name: 🎵 Spotify, <<: *pr }
   - { name: 📕 XHS RedNote, <<: *cn }
   - { name: 🎵 Netease Music, <<: *cn }
   - { name: 📺 Bilibili, <<: *cn }
   - { name: 💫 DNSQ, <<: *quic }
   - { name: 👨🏿‍💻 GitHub, <<: *pr }
-  - { name: 🎥 ProxyMedia, <<: *pr }
   - { name: 💶 Pay&Market, <<: *pr }
-  - { name: ☕ DEX, <<: *pr }
   - { name: 🎮 Games, <<: *pr }
   - { name: 📱 WhatsApp, <<: *pr }
-  - { name: 🌐SocialApp+, <<: *pr }
+  - { name: 🌐 Social+, <<: *pr }
   - { name: 📞 WeChat, <<: *pr }
   - { name: 🎵 TikTok, <<: *pr }
-  - { name: 🔴 Streaming, <<: *pr }
   - { name: ☎️ Telegram, <<: *pr }
   - {name: 🇭🇰 HK Back, type: fallback, include-all: true, tolerance: 20, interval: 1440, url: http://www.google-analytics.com/generate_204, filter: "(?=.*(🇭🇰|HK|(?i)🇭🇰|HK|港|hong|Hong|HKG|Central|Kowloon|观塘|中环))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|🇯🇵|JP|日|韩|🇰🇷|KR|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
   - {name: 🇯🇵🇰🇷 J&K, type: fallback, include-all: true, tolerance: 20, interval: 1440, url: http://www.google-analytics.com/generate_204, filter: "(?=.*(🇯🇵|JP|🇰🇷|KR|(?i)🇯🇵|JP|日|Japan|Tokyo|Osaka|NRT|KIX|NGO|CTS|FUK|东京|大阪|日|韩|Korea|KOR|Seoul|首尔|春川|釜山|大邱|仁川|光州|大田|韩|韓|ICN))^((?!(🇦🇺|AU|澳|🇹🇼|TW|台|🇸🇬|SG|坡|深|🇺🇸|US|美)).)*$"}
@@ -355,11 +355,11 @@ rules:
   - RULE-SET,linkedin,🚀 Proxy
   - RULE-SET,linkedin_cn,🎯 DirectN
   #SocialApp+
-  - RULE-SET,facebook_list,🌐SocialApp+
-  - RULE-SET,facebook_domain,🌐SocialApp+
-  - RULE-SET,instagram_domain,🌐SocialApp+
-  - RULE-SET,threads_domain,🌐SocialApp+
-  - RULE-SET,twitter_domain,🌐SocialApp+
+  - RULE-SET,facebook_list,🌐 Social+
+  - RULE-SET,facebook_domain,🌐 Social+
+  - RULE-SET,instagram_domain,🌐 Social+
+  - RULE-SET,threads_domain,🌐 Social+
+  - RULE-SET,twitter_domain,🌐 Social+
   # DEX
   - RULE-SET,dex_domain,☕ DEX
   # Spotify
