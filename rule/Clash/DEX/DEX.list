@@ -5,7 +5,7 @@
 
 # Leading No.10 DEX (Data as 250508 from https://cryptorank.io/exchanges )
 DOMAIN-SUFFIX,binance.com
-DOMAIN-SUFFIX,okx.com
+DOMAIN,www.okx.com
 DOMAIN-SUFFIX,bitget.com
 DOMAIN-SUFFIX,bybit.com
 DOMAIN-SUFFIX,www.gate.io
@@ -43,15 +43,16 @@ DOMAIN-SUFFIX,okz8.com
 DOMAIN-SUFFIX,okz8.me
 DOMAIN-SUFFIX,tashuo.cc
 
-# OKX Livestreaming
-# 2026-09-07 19:52:00 Streaming OKX
+DOMAIN,wspri.okx.com
+DOMAIN,wspri.ouyich.biz
+DOMAIN,wspri.ouyich.show
 # DOMAIN,jpushws.okx.com
 # DOMAIN,wsdexpri.okx.com
 # DOMAIN,wsdexpri.ouyich.biz
 # DOMAIN,wsdexpri.ouyich.show
-# DOMAIN,wspri.okx.com
-# DOMAIN,wspri.ouyich.biz
-# DOMAIN,wspri.ouyich.show
+
+# OKX Livestreaming
+# 2026-09-07 19:52:00 Streaming OKX
 # DOMAIN-SUFFIX,livepull.okx.ac
 # DOMAIN-SUFFIX,livepull.okx.com
 # DOMAIN-SUFFIX,wsdexpri.okx.com
@@ -60,6 +61,13 @@ DOMAIN-SUFFIX,tashuo.cc
 DOMAIN-SUFFIX,web3.okx.com
 DOMAIN-SUFFIX,aws.okx.com
 DOMAIN-SUFFIX,cdn.okx.com
+
+# Bitget
+DOMAIN,www.bitget.com
+DOMAIN-SUFFIX,www.bitget.ninja
+DOMAIN-SUFFIX,appapi.bitget.com
+DOMAIN-SUFFIX,appapi.bitgetapps.com
+DOMAIN-KEYWORD,www.bitget
 
 # Bybit
 DOMAIN-SUFFIX,bybit.com

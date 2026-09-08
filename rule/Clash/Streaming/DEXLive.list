@@ -11,9 +11,6 @@ DOMAIN-SUFFIX,nbstream.binance.com
 # 2026-08-12 20:42:00 OKX
 DOMAIN,jpushws.okx.com
 # LIVE Streaming
-DOMAIN,wspri.okx.com
-DOMAIN,wspri.ouyich.biz
-DOMAIN,wspri.ouyich.show
 DOMAIN,wsdexpri.okx.com
 DOMAIN,wsdexpri.ouyich.biz
 DOMAIN,wsdexpri.ouyich.show
@@ -27,6 +24,8 @@ DOMAIN,wsdexpri.okx.com.cdn.cloudflare.net
 DOMAIN-REGEX,^livepull\.[a-zA-Z0-9\-]+\.cn$
 DOMAIN-KEYWORD,livepull.okx
 
+# Bitget Livestreaming
+DOMAIN-SUFFIX,stream.bitget.com
 
 # Gate.io Livestreaming
 DOMAIN-SUFFIX,www.gate.com
