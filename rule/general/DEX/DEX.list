@@ -33,6 +33,7 @@ DOMAIN-SUFFIX,binance.com
 
 # OKX
 DOMAIN,www.okx.com
+DOMAIN,static.okx.com
 # OKX Livestreaming
 # 2026-08-12 20:42:00 LIVE Streaming OKX
 # DOMAIN-SUFFIX,wsdexpri.okx.com
