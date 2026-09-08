@@ -256,7 +256,7 @@ proxy-groups:
   - {name: ☑️ Manual, type: select, include-all: true, proxies: [ 🇯🇵🇰🇷 J&K, 🇭🇰 HK Back, Reject, Direct, 🇦🇺 AU, 🇪🇺 EU, 🇸🇬 SG, 🇹🇼 TW, 🇺🇸 US], filter: "^((?!(免费|试用|官网|机场|代理|重置|节点|流量|地址|过期|时间|有效|剩余|套餐|到期|群组|建议|加入|Expired|Traffic)).)*$"}
   - { name: 🎯 DirectN, <<: *cn }
   - { name: 🔯 AI, <<: *pr }
-  - { name: 📹 YouTube, <<: *pr }
+  - { name: 🍀🔴 YouTube, <<: *pr }
   - { name: 🎵 Spotify, <<: *pr }
   - { name: 📕 XHS RedNote, <<: *cn }
   - { name: 🎵 Netease Music, <<: *cn }
@@ -311,8 +311,6 @@ rules:
   # Talkatone
   # - RULE-SET,ttdirect,Direct
   - RULE-SET,ttproxy,🔯 AI
-  # DEX
-  - RULE-SET,dex_domain,☕ DEX
   # AI
   - DOMAIN-SUFFIX,www.anthropic.com,🔯 AI
   - DOMAIN-SUFFIX,claude.ai,🔯 AI
@@ -331,7 +329,11 @@ rules:
   - RULE-SET,shopee_domain,💶 Pay&Market
   - RULE-SET,ebay_domain,💶 Pay&Market
   - RULE-SET,jd_domain,💶 Pay&Market
-
+  # IPTV & Streaming
+  - RULE-SET,dex_live,🔴 Streaming
+  - RULE-SET,iptv_global,🔴 Streaming
+  - RULE-SET,iptv_cn,🎯 DirectN
+  - RULE-SET,iptv_tw,🇹🇼 TW
   # Bili
   - RULE-SET,bilibili,📺 Bilibili
   - RULE-SET,bilibili_global,📺 Bilibili
@@ -358,14 +360,10 @@ rules:
   - RULE-SET,instagram_domain,🌐SocialApp+
   - RULE-SET,threads_domain,🌐SocialApp+
   - RULE-SET,twitter_domain,🌐SocialApp+
-
+  # DEX
+  - RULE-SET,dex_domain,☕ DEX
   # Spotify
   - RULE-SET,spotify_domain,🎵 Spotify
-  # IPTV & Streaming
-  - RULE-SET,dex_live,🔴 Streaming
-  - RULE-SET,iptv_global,🔴 Streaming
-  - RULE-SET,iptv_cn,🎯 DirectN
-  - RULE-SET,iptv_tw,🇹🇼 TW
   # TikTok
   - RULE-SET,tiktok_list,🎵 TikTok
   - RULE-SET,tiktok_domain,🎵 TikTok
@@ -389,8 +387,8 @@ rules:
   - RULE-SET,category-game-platforms-download-cn,🎯 DirectN
   # Apps
   - RULE-SET,github_domain,👨🏿‍💻 GitHub
-  - RULE-SET,youtube_domain,📹 YouTube
-  - RULE-SET,google_domain,🚀 Proxy
+  - RULE-SET,youtube_domain,🍀🔴 YouTube
+  - RULE-SET,google_domain,🍀🔴 YouTube
   - RULE-SET,onedrive_domain,Ⓜ️ Microsoft
   - RULE-SET,microsoft_domain,Ⓜ️ Microsoft
 
@@ -403,7 +401,7 @@ rules:
   - RULE-SET,gfw_domain,🚀 Proxy
   # - RULE-SET,geolocation-!cn,🚀 Proxy
   # - RULE-SET,cn_domain,🎯 DirectN
-  - RULE-SET,google_ip,🚀 Proxy
+  - RULE-SET,google_ip,🍀🔴 YouTube
   - RULE-SET,netflix_ip,🎥 ProxyMedia,no-resolve
   - RULE-SET,telegram_ip,☎️ Telegram,no-resolve
   # 用于匹配 QUIC 流量 (只有在上规则未命中) RULE-SET 拦截
