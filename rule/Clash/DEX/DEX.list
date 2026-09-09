@@ -34,18 +34,18 @@ DOMAIN-SUFFIX,www.bmwweb.net
 # OKX Exchange
 DOMAIN,www.okx.com
 DOMAIN,static.okx.com
-DOMAIN,api.okx.com
-DOMAIN,my.okx.com
-DOMAIN,app.okx.com
+# DOMAIN,api.okx.com
+# DOMAIN,my.okx.com
+# DOMAIN,app.okx.com
 DOMAIN-SUFFIX,okex.com
 DOMAIN-SUFFIX,ouyicn.vip
 DOMAIN-SUFFIX,okz8.com
 DOMAIN-SUFFIX,okz8.me
 DOMAIN-SUFFIX,tashuo.cc
 
-DOMAIN,wspri.okx.com
-DOMAIN,wspri.ouyich.biz
-DOMAIN,wspri.ouyich.show
+# DOMAIN,wspri.okx.com
+# DOMAIN,wspri.ouyich.biz
+# DOMAIN,wspri.ouyich.show
 # DOMAIN,jpushws.okx.com
 # DOMAIN,wsdexpri.okx.com
 # DOMAIN,wsdexpri.ouyich.biz
