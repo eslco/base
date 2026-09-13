@@ -1,13 +1,13 @@
 # Rule Name: DEXLive.list
 # Created: 2026-09-07 20:07:00
-# https://github.com/eslco/base/raw/main/rule/Clash/Streaming/DEXLive.list
+# https://github.com/eslco/base/raw/main/rule/Clash/DEX/DEXLive.list
 
 
 # Binance Live streaming
 
-DOMAIN,stream.binance.com
-DOMAIN,fstream.binance.com
-DOMAIN,nbstream.binance.com
+# DOMAIN,stream.binance.com
+# DOMAIN,fstream.binance.com
+# DOMAIN,nbstream.binance.com
 
 # OKX Livestreaming
 # 2026-08-12 20:42:00 OKX
