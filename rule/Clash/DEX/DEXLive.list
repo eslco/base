@@ -3,7 +3,8 @@
 # https://github.com/eslco/base/raw/main/rule/Clash/Streaming/DEXLive.list
 
 
-# Binance Live Streaming
+# Binance Live streaming
+
 DOMAIN,stream.binance.com
 DOMAIN,fstream.binance.com
 DOMAIN,nbstream.binance.com
