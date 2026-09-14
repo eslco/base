@@ -5,9 +5,11 @@
 
 # Binance Live streaming
 
-# DOMAIN,stream.binance.com
-# DOMAIN,fstream.binance.com
-# DOMAIN,nbstream.binance.com
+DOMAIN,stream.binance.com
+DOMAIN,fstream.binance.com
+DOMAIN,nbstream.binance.com
+DOMAIN,bnliveplay-ag.bblivestream.com
+DOMAIN-SUFFIX,bblivestream.com
 
 # OKX Livestreaming
 # 2026-08-12 20:42:00 OKX
