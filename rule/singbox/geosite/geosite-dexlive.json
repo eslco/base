@@ -1,0 +1,29 @@
+{
+   "version": 1,
+   "rules":
+  [
+    {
+    "domain": [
+            "stream.binance.com",
+            "fstream.binance.com",
+            "nbstream.binance.com",
+            "bnliveplay-ag.bblivestream.com",
+            
+            "livepull.okx.ac",
+            "livepull.okx.com",
+            "livepull.roufxb.cn",
+            "livepull.heqrpq.cn",
+
+            "stream.bitget.com"
+        ]
+    },
+    {
+     "domain_suffix": [
+       "binance.com",
+       "bblivestream.com",
+       "livepull.okx.ac",
+       "zb.live"
+      ]
+    }
+  ]
+}

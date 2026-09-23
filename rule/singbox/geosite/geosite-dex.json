@@ -4,7 +4,8 @@
   [
     {
     "domain": [
-            "token-api.metaswap.codefi.network"
+            "token-api.metaswap.codefi.network",
+            "www.okx.com"
         ]
     },
     {
@@ -36,9 +37,7 @@
        "binance.com",
        "api.binance.com",
        "www.bmwweb.net",
-       
-       
-       "okx.com",
+
        "okex.com",
        "ouyicn.vip",
        "api.okx.com",
@@ -49,13 +48,16 @@
        "tashuo.cc",
        "68bbq.com",
        "jpushws.okx.com",
+
        "wsdexpri.okx.com",
        "wsdexpri.ouyich.biz",
        "wsdexpri.ouyich.show",
+
        "wspri.okx.com",
-       "wspri.okx.com.cdn.cloudflare.net",
        "wspri.ouyich.biz",
-       "wspri.ouyich.show",
+       "wspri.ouyich.show",       
+       "wspri.okx.com.cdn.cloudflare.net",
+
        "web3.okx.com",
        "aws.okx.com",
        "cdn.okx.com",
