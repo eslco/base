@@ -975,6 +975,10 @@
         "outbound": "🏪 DEX"
       },
       {
+        "rule_set": "geosite-dexlive",
+        "outbound": "🔴 Streaming"
+      },
+      {
         "rule_set": "geosite-spotify",
         "outbound": "🎵 Spotify"
       },
@@ -1296,6 +1300,15 @@
         "url": "https://gh.xmly.dev/https://github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-dex.json",
         "download_detour": "Direct"
       },
+      {
+        "tag": "geosite-dexlive",
+        "type": "remote",
+        "format": "source",
+        "url": "https://gh.xmly.dev/https://github.com/eslco/base/raw/main/rule/singbox/geosite/geosite-dexlive.json",
+        "download_detour": "Direct"
+      },
+
+      
       {
         "tag": "geosite-ai",
         "type": "remote",
