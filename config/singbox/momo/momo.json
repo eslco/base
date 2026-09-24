@@ -232,6 +232,25 @@
       ]
     },
     {
+      "tag": "🔴 Streaming",
+      "type": "selector",
+      "outbounds": [
+        "🔯🇯🇵 JP Auto",
+        "🔯🇭🇰 HK Auto",
+        "🚀 Proxy",
+        "🎯 DirectN",
+        "Direct",
+        "🇦🇺 AU",
+        "🇬🇧 GB",
+        "🇭🇰 HK",
+        "🇯🇵 JP",
+        "🇸🇬 SG",
+        "🇹🇼 TW",
+        "🇺🇸 US",
+        "☑️ Manual"
+      ]
+    },
+    {
       "tag": "💶 PayPal",
       "type": "selector",
       "outbounds": [
@@ -459,25 +478,7 @@
         "☑️ Manual"
       ]
     },
-    {
-      "tag": "🔴 Streaming",
-      "type": "selector",
-      "outbounds": [
-        "🔯🇯🇵 JP Auto",
-        "🔯🇭🇰 HK Auto",
-        "🚀 Proxy",
-        "🎯 DirectN",
-        "Direct",
-        "🇦🇺 AU",
-        "🇬🇧 GB",
-        "🇭🇰 HK",
-        "🇯🇵 JP",
-        "🇸🇬 SG",
-        "🇹🇼 TW",
-        "🇺🇸 US",
-        "☑️ Manual"
-      ]
-    },
+
     {
       "tag": "🎥 ProxyMedia",
       "type": "selector",
